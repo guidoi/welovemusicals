@@ -150,7 +150,10 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+// Cloudflare Pages kompatible Plugins (vitePluginManusRuntime nur lokal)
+const plugins = process.env.NODE_ENV === 'production' 
+  ? [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector()]
+  : [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
   plugins,

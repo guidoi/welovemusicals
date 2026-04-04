@@ -1,0 +1,20 @@
+name = "welovemusicals"
+type = "javascript"
+main = "dist/index.js"
+compatibility_date = "2026-04-04"
+
+[build]
+command = "pnpm run build"
+cwd = "."
+watch_paths = ["client/src/**/*.{ts,tsx,css}"]
+
+[env.production]
+routes = [
+  { pattern = "welovemusicals.com/*", zone_name = "welovemusicals.com" }
+]
+
+[[analytics_engine_datasets]]
+dataset = "musical_tickets"
+
+[observability]
+enabled = true
