@@ -1,6 +1,6 @@
 /*
  * Design: Theatrical Noir – Art Deco trifft Film Noir
- * Home: Startseite mit Hero, Featured Musicals, alle Musicals, Städte, Anbieter
+ * Home: Startseite mit Hero, Featured Musicals, alle Musicals mit erweiterten Filtern, Städte, Anbieter
  */
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
@@ -8,7 +8,6 @@ import {
   Ticket,
   Star,
   MapPin,
-  Filter,
   ChevronDown,
   ExternalLink,
   Music,
@@ -21,6 +20,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
+import MusicalFilters, { type FilterCategory, type SortOption } from "@/components/MusicalFilters";
 import {
   musicals,
   cities,
@@ -33,26 +33,55 @@ import {
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
-type FilterCategory = "alle" | "standort" | "tournee" | "familie";
 type FilterProvider = "alle" | string;
 
 export default function Home() {
   const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("alle");
   const [providerFilter, setProviderFilter] = useState<FilterProvider>("alle");
+  const [cityFilter, setCityFilter] = useState<string>("alle");
+  const [sortOption, setSortOption] = useState<SortOption>("featured");
   const [showAllMusicals, setShowAllMusicals] = useState(false);
 
   const featured = useMemo(() => getFeaturedMusicals(), []);
 
   const filteredMusicals = useMemo(() => {
     let result = musicals;
+
+    // Filter nach Kategorie
     if (categoryFilter !== "alle") {
       result = result.filter((m) => m.category === categoryFilter);
     }
+
+    // Filter nach Anbieter
     if (providerFilter !== "alle") {
       result = result.filter((m) => m.provider === providerFilter);
     }
+
+    // Filter nach Stadt
+    if (cityFilter !== "alle") {
+      result = result.filter((m) => m.city === cities.find((c) => c.slug === cityFilter)?.name);
+    }
+
+    // Sortierung
+    if (sortOption === "name") {
+      result = result.sort((a, b) => a.title.localeCompare(b.title, "de"));
+    } else if (sortOption === "city") {
+      result = result.sort((a, b) => {
+        const cityA = a.city || "";
+        const cityB = b.city || "";
+        return cityA.localeCompare(cityB, "de");
+      });
+    } else if (sortOption === "featured") {
+      // Featured musicals first, then by name
+      result = result.sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        return a.title.localeCompare(b.title, "de");
+      });
+    }
+
     return result;
-  }, [categoryFilter, providerFilter]);
+  }, [categoryFilter, providerFilter, cityFilter, sortOption]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 9);
 
@@ -174,56 +203,24 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Alle Musicals & Shows
           </h2>
-          <p className="text-muted-foreground max-w-2xl mb-8">
+          <p className="text-muted-foreground max-w-2xl mb-10">
             Entdecke alle aktuellen Musical-Produktionen in Deutschland – von Standort-Musicals über Tourneen bis hin zu Familienmusicals.
           </p>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              {(["alle", "standort", "tournee", "familie"] as FilterCategory[]).map((cat) => {
-                const labels: Record<FilterCategory, string> = {
-                  alle: "Alle",
-                  standort: "Standort",
-                  tournee: "Tournee",
-                  familie: "Familie",
-                };
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setCategoryFilter(cat)}
-                    className={`px-4 py-2 text-sm rounded-sm border transition-all ${
-                      categoryFilter === cat
-                        ? "bg-gold text-background border-gold font-semibold"
-                        : "border-border text-muted-foreground hover:border-gold/40 hover:text-foreground"
-                    }`}
-                  >
-                    {labels[cat]}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Provider Filter */}
-            <select
-              value={providerFilter}
-              onChange={(e) => setProviderFilter(e.target.value)}
-              className="px-4 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none"
-            >
-              <option value="alle">Alle Anbieter</option>
-              {providers.map((p) => (
-                <option key={p.slug} value={p.name}>
-                  {p.name}
-                </option>
-              ))}
-            </select>
+          {/* Advanced Filters */}
+          <div className="mb-10 p-6 bg-card border border-gold/10 rounded-sm">
+            <MusicalFilters
+              categoryFilter={categoryFilter}
+              setCategoryFilter={setCategoryFilter}
+              providerFilter={providerFilter}
+              setProviderFilter={setProviderFilter}
+              cityFilter={cityFilter}
+              setCityFilter={setCityFilter}
+              sortOption={sortOption}
+              setSortOption={setSortOption}
+              resultCount={filteredMusicals.length}
+            />
           </div>
-
-          {/* Results Count */}
-          <p className="text-sm text-muted-foreground mb-6">
-            {filteredMusicals.length} {filteredMusicals.length === 1 ? "Ergebnis" : "Ergebnisse"}
-          </p>
 
           {/* Musical Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -299,55 +296,58 @@ export default function Home() {
             {cities.slice(0, 6).map((city, i) => (
               <motion.a
                 key={city.slug}
-                href={city.hotelSearchUrl}
+                href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(city.name)}&checkin_month=&checkin_monthday=&checkin_year=&checkout_month=&checkout_monthday=&checkout_year=&group_adults=2&no_rooms=1&group_children=0`}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group bg-card border border-border/50 rounded-sm p-5 hover:border-gold/30 transition-all flex items-center gap-4"
+                transition={{ delay: i * 0.1 }}
+                className="group bg-card border border-gold/10 rounded-sm p-6 hover:border-gold/40 transition-all"
               >
-                <div className="w-16 h-16 rounded-sm overflow-hidden flex-shrink-0">
-                  <img
-                    src={city.image}
-                    alt={city.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-gold transition-colors">
+                      {city.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {city.musicalCount} Musicals
+                    </p>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-gold/50 group-hover:text-gold transition-colors" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-gold transition-colors">
-                    Hotels in {city.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {city.musicalCount} {city.musicalCount === 1 ? "Musical" : "Musicals"} in der Stadt
-                  </p>
-                </div>
-                <div className="flex-shrink-0">
-                  <Hotel className="w-5 h-5 text-gold/50 group-hover:text-gold transition-colors" />
-                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Entdecke Hotels in {city.name} und buche deine Übernachtung für das Musical-Wochenende.
+                </p>
               </motion.a>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="https://www.booking.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors"
+            >
+              Alle Hotels durchsuchen
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Gold Divider */}
-      <div className="container"><div className="gold-line" /></div>
-
-      {/* ===== ANBIETER ===== */}
-      <section id="anbieter" className="py-16 md:py-24 scroll-mt-24">
+      {/* ===== PROVIDERS SECTION ===== */}
+      <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Partner</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Unsere Musical-Anbieter
+            Vertrauensvolle Anbieter
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-10">
-            Wir arbeiten mit den führenden Musical-Produzenten und Veranstaltern Deutschlands zusammen.
+            Wir arbeiten mit den führenden Musical-Anbietern in Deutschland zusammen.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -356,67 +356,24 @@ export default function Home() {
                 key={provider.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-card border border-border/50 rounded-sm p-6 hover:border-gold/30 transition-all group"
+                transition={{ delay: i * 0.1 }}
+                className="bg-card border border-gold/10 rounded-sm p-6 hover:border-gold/40 transition-all"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-gold transition-colors">
-                    {provider.name}
-                  </h3>
-                  <Building2 className="w-5 h-5 text-gold/30 flex-shrink-0" />
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <Building2 className="w-8 h-8 text-gold mb-3" />
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                  {provider.name}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {provider.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground/60">
-                    {musicals.filter((m) => m.provider === provider.name).length} Produktionen
-                  </span>
-                  <a
-                    href={provider.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gold hover:text-gold-light transition-colors inline-flex items-center gap-1"
-                  >
-                    Website
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== AFFILIATE CTA ===== */}
-      <section className="py-16 md:py-24 bg-card">
-        <div className="container text-center">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-12 h-px bg-gold/50" />
-            <Ticket className="w-5 h-5 text-gold" />
-            <div className="w-12 h-px bg-gold/50" />
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Bereit für dein Musical-Erlebnis?
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            Sichere dir jetzt Tickets für die besten Musicals in Deutschland – bequem und sicher über Eventim.
-          </p>
-          <a
-            href={createAwinLink("https://www.eventim.de/events/musical-show-4/")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-10 py-4 bg-gold text-background font-bold rounded-sm hover:bg-gold-light transition-colors text-lg tracking-wide"
-          >
-            Jetzt Tickets bei Eventim sichern
-            <ArrowRight className="w-5 h-5" />
-          </a>
-          <p className="text-xs text-muted-foreground/50 mt-4">
-            Weiterleitung zu eventim.de – Affiliate-Link
-          </p>
-        </div>
-      </section>
+      {/* Gold Divider */}
+      <div className="container"><div className="gold-line" /></div>
 
       <Footer />
     </div>
