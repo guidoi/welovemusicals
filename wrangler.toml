@@ -5,12 +5,9 @@ compatibility_date = "2026-04-04"
 command = "pnpm run build"
 cwd = "."
 
-[build.upload]
-format = "service-worker"
-
-[[routes]]
-pattern = "*"
-zone_name = "welovemusicals.com"
+[assets]
+directory = "dist/public"
+binding = "ASSETS"
 
 [env.production]
 routes = [
