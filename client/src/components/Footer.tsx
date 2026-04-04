@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Ticket className="w-5 h-5 text-gold" />
               <span className="font-display text-lg font-bold text-gold">
-                Musical<span className="text-foreground">Tickets</span>
+                We Love<span className="text-foreground">Musicals</span>
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground/50">
-            &copy; {new Date().getFullYear()} MusicalTickets.de – Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} We Love Musicals – Alle Rechte vorbehalten.
           </p>
           <p className="text-xs text-muted-foreground/50 flex items-center gap-1">
             Gemacht mit <Heart className="w-3 h-3 text-burgundy" /> für Musical-Fans

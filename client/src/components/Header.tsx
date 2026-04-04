@@ -25,7 +25,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <Ticket className="w-6 h-6 text-gold group-hover:text-gold-light transition-colors" />
           <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-wide">
-            Musical<span className="text-foreground">Tickets</span>
+            We Love<span className="text-foreground">Musicals</span>
           </span>
         </Link>
 
