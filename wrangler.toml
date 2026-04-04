@@ -1,11 +1,16 @@
 name = "welovemusicals"
-main = "dist/index.js"
 compatibility_date = "2026-04-04"
-compatibility_flags = ["nodejs_compat"]
 
 [build]
 command = "pnpm run build"
 cwd = "."
+
+[build.upload]
+format = "service-worker"
+
+[[routes]]
+pattern = "*"
+zone_name = "welovemusicals.com"
 
 [env.production]
 routes = [
