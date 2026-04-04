@@ -7,7 +7,6 @@ cwd = "."
 
 [assets]
 directory = "dist/public"
-binding = "ASSETS"
 
 [env.production]
 routes = [
