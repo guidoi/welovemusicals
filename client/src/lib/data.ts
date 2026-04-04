@@ -19,6 +19,8 @@ export interface Musical {
   eventimUrl: string;
   featured?: boolean;
   tags: string[];
+  startDate: string; // ISO 8601 format: YYYY-MM-DD
+  endDate: string;   // ISO 8601 format: YYYY-MM-DD
 }
 
 export interface City {
@@ -102,6 +104,8 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/",
     featured: true,
     tags: ["Disney", "Klassiker", "Familie"],
+    startDate: "2026-01-01",
+    endDate: "2026-12-31",
   },
   {
     id: "mj",
@@ -116,6 +120,8 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/mj-das-michael-jackson-musical/",
     featured: true,
     tags: ["Pop", "Broadway", "Tanz"],
+    startDate: "2026-02-01",
+    endDate: "2026-12-31",
   },
   {
     id: "julia",
@@ -130,6 +136,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/julia-das-pop-musical/",
     tags: ["Pop", "Komödie", "Modern"],
+    startDate: "2026-03-15",
+    endDate: "2026-11-30",
   },
   {
     id: "tarzan",
@@ -143,6 +151,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/disneys-tarzan/",
     tags: ["Disney", "Abenteuer", "Familie"],
+    startDate: "2026-01-15",
+    endDate: "2026-10-31",
   },
   {
     id: "zukunft",
@@ -156,6 +166,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/zurueck-in-die-zukunft-das-musical/",
     tags: ["Kult", "Sci-Fi", "Komödie"],
+    startDate: "2026-04-01",
+    endDate: "2026-12-31",
   },
   {
     id: "eiskoenigin",
@@ -170,6 +182,8 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/disneys-die-eiskoenigin/",
     featured: true,
     tags: ["Disney", "Familie", "Magie"],
+    startDate: "2026-11-01",
+    endDate: "2027-01-31",
   },
   {
     id: "wwry",
@@ -184,6 +198,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/we-will-rock-you/",
     tags: ["Rock", "Queen", "Kult"],
+    startDate: "2026-01-01",
+    endDate: "2026-12-31",
   },
   {
     id: "wsal",
@@ -197,6 +213,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/wir-sind-am-leben/",
     tags: ["Berlin", "Drama", "Deutsch"],
+    startDate: "2026-02-15",
+    endDate: "2026-11-30",
   },
 
   // === SHOWSLOT – Tournee-Musicals ===
@@ -213,6 +231,8 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/die-cher-show/",
     featured: true,
     tags: ["Pop", "Biografie", "Tournee"],
+    startDate: "2026-01-10",
+    endDate: "2026-12-15",
   },
   {
     id: "dracula",
@@ -225,6 +245,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     tags: ["Horror", "Romantik", "Tournee"],
+    startDate: "2026-02-01",
+    endDate: "2026-10-31",
   },
   {
     id: "davinci",
@@ -237,6 +259,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/der-da-vinci-code/",
     tags: ["Thriller", "Abenteuer", "Tournee"],
+    startDate: "2026-03-15",
+    endDate: "2026-11-30",
   },
   {
     id: "sisteract",
@@ -249,6 +273,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/",
     tags: ["Komödie", "Soul", "Tournee"],
+    startDate: "2026-04-01",
+    endDate: "2026-12-31",
   },
   {
     id: "fackju",
@@ -261,6 +287,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
     tags: ["Komödie", "Kult", "Tournee"],
+    startDate: "2026-05-01",
+    endDate: "2026-12-31",
   },
   {
     id: "aschenbroedel",
@@ -274,6 +302,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1520962922320-2038eebab146?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel/",
     tags: ["Märchen", "Familie", "Tournee"],
+    startDate: "2026-11-15",
+    endDate: "2027-01-31",
   },
   {
     id: "fitzek",
@@ -286,6 +316,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/sebastian-fitzek-die-einladung/",
     tags: ["Thriller", "Show", "Tournee"],
+    startDate: "2026-06-01",
+    endDate: "2026-12-31",
   },
 
   // === LIMELIGHT LIVE ENTERTAINMENT ===
@@ -301,6 +333,8 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/pretty-woman-das-musical/",
     featured: true,
     tags: ["Romantik", "Komödie", "Tournee"],
+    startDate: "2026-03-01",
+    endDate: "2026-10-31",
   },
   {
     id: "grease",
@@ -313,6 +347,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/grease-das-musical/",
     tags: ["Rock'n'Roll", "Kult", "Tournee"],
+    startDate: "2026-04-15",
+    endDate: "2026-12-31",
   },
   {
     id: "elisabeth",
@@ -326,6 +362,8 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/elisabeth-das-musical/",
     tags: ["Drama", "Historie", "Tournee"],
+    startDate: "2026-05-01",
+    endDate: "2026-11-30",
   },
   {
     id: "kinkyboots",
@@ -336,75 +374,41 @@ export const musicals: Musical[] = [
     cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart"],
     description: "Das preisgekrönte Broadway-Musical über eine ungewöhnliche Freundschaft und fabelhafte Stiefel. Mit Musik von Cyndi Lauper.",
     image: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/kinky-boots/",
-    tags: ["Broadway", "Feel-Good", "Tournee"],
+    eventimUrl: "https://www.eventim.de/artist/kinky-boots-the-musical/",
+    tags: ["Broadway", "Freundschaft", "Tournee"],
+    startDate: "2026-06-15",
+    endDate: "2026-12-31",
   },
-
-  // === SEMMEL CONCERTS ===
   {
-    id: "greatestshow",
-    slug: "greatest-show",
-    title: "This is THE GREATEST SHOW! LIVE 2026",
-    provider: "Semmel Concerts",
+    id: "hairspray",
+    slug: "hairspray",
+    title: "Hairspray – Das Musical",
+    provider: "Limelight Live Entertainment",
     category: "tournee",
-    cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Frankfurt", "Düsseldorf", "Leipzig", "Dresden"],
-    description: "Die mitreißenden Songs aus 'The Greatest Showman' und Musical-Highlights wie 'Moulin Rouge', 'Tanz der Vampire', 'Wicked', 'Mamma Mia!' und mehr – live auf der Bühne!",
-    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/this-is-the-greatest-show/",
-    tags: ["Show", "Gala", "Tournee"],
+    cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Frankfurt", "Düsseldorf"],
+    description: "Das fröhliche und bunte Musical über Liebe, Toleranz und Tanzleidenschaft in den 60ern. Mit den größten Hits von Marc Shaiman.",
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/hairspray-das-musical/",
+    tags: ["Komödie", "Tanz", "Tournee"],
+    startDate: "2026-07-01",
+    endDate: "2026-12-31",
   },
   {
-    id: "hanszimmer",
-    slug: "hans-zimmer",
-    title: "The World of Hans Zimmer – A New Dimension",
-    provider: "Semmel Concerts",
+    id: "phantom",
+    slug: "phantom-der-oper",
+    title: "Das Phantom der Oper",
+    provider: "Limelight Live Entertainment",
     category: "tournee",
-    cities: ["Berlin", "Hamburg", "München", "Köln", "Frankfurt", "Stuttgart"],
-    description: "Die internationale Erfolgstournee mit den größten Filmmusik-Werken von Hans Zimmer in einer neuen Dimension. Orchesterklang trifft auf modernste Bühnentechnik.",
-    image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/the-world-of-hans-zimmer/",
-    tags: ["Filmmusik", "Orchester", "Tournee"],
+    cities: ["München", "Hamburg", "Berlin", "Stuttgart", "Köln"],
+    description: "Das erfolgreichste Musical aller Zeiten! Die zeitlose Geschichte von Liebe, Musik und Geheimnis in den Katakomben der Pariser Oper.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper/",
+    tags: ["Klassiker", "Drama", "Tournee"],
+    startDate: "2026-08-01",
+    endDate: "2026-12-31",
   },
 
-  // === THEATER LIBERI – Familienmusicals ===
-  {
-    id: "dschungelbuch",
-    slug: "dschungelbuch",
-    title: "Dschungelbuch – das Musical",
-    provider: "Theater Liberi",
-    category: "familie",
-    cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Frankfurt", "Düsseldorf", "Leipzig", "Dresden", "Hannover"],
-    description: "Das beliebte Familienmusical nach Rudyard Kipling. Begleitet Mogli auf seinem Abenteuer durch den Dschungel – mit viel Musik, Tanz und Humor für die ganze Familie.",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
-    tags: ["Familie", "Kinder", "Tournee"],
-  },
-  {
-    id: "aladin",
-    slug: "aladin",
-    title: "Aladin – das Musical",
-    provider: "Theater Liberi",
-    category: "familie",
-    cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Frankfurt"],
-    description: "Die magische Geschichte von Aladin und der Wunderlampe als farbenfrohes Familienmusical. Ein Abenteuer voller Magie, Musik und Überraschungen.",
-    image: "https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
-    tags: ["Familie", "Märchen", "Tournee"],
-  },
-  {
-    id: "schneekoenigin",
-    slug: "schneekoenigin",
-    title: "Schneekönigin – das Musical",
-    provider: "Theater Liberi",
-    category: "familie",
-    cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Dresden", "Leipzig"],
-    description: "Die winterliche Geschichte der Schneekönigin als bezauberndes Familienmusical. Eine Reise voller Mut, Freundschaft und Magie.",
-    image: "https://images.unsplash.com/photo-1457269449834-928af64c684d?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
-    tags: ["Familie", "Winter", "Tournee"],
-  },
-
-  // === ATG ENTERTAINMENT ===
+  // === ATG ENTERTAINMENT – Standort-Musicals ===
   {
     id: "harrypotter",
     slug: "harry-potter",
@@ -418,6 +422,82 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/harry-potter-und-das-verwunschene-kind/",
     featured: true,
     tags: ["Fantasy", "Magie", "Theaterstück"],
+    startDate: "2026-01-01",
+    endDate: "2026-12-31",
+  },
+
+  // === SEMMEL CONCERTS – Tournee-Musicals ===
+  {
+    id: "cats",
+    slug: "cats",
+    title: "CATS – Das Musical",
+    provider: "Semmel Concerts",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart", "Frankfurt"],
+    description: "Das legendäre Musical über die geheime Welt der Katzen. Mit den unvergesslichen Songs von Andrew Lloyd Webber.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/cats-das-musical/",
+    tags: ["Klassiker", "Tanz", "Tournee"],
+    startDate: "2026-09-01",
+    endDate: "2026-12-31",
+  },
+  {
+    id: "evita",
+    slug: "evita",
+    title: "Evita – Das Musical",
+    provider: "Semmel Concerts",
+    category: "tournee",
+    cities: ["München", "Hamburg", "Berlin", "Stuttgart", "Köln"],
+    description: "Die epische Geschichte von Eva Perón, der legendären First Lady von Argentinien. Mit der Musik von Andrew Lloyd Webber.",
+    image: "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/evita-das-musical/",
+    tags: ["Drama", "Biografie", "Tournee"],
+    startDate: "2026-10-01",
+    endDate: "2026-12-31",
+  },
+
+  // === THEATER LIBERI – Familienmusicals ===
+  {
+    id: "schneewittchen",
+    slug: "schneewittchen",
+    title: "Schneewittchen und die sieben Zwerge",
+    provider: "Theater Liberi",
+    category: "familie",
+    cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart", "Frankfurt", "Düsseldorf"],
+    description: "Das klassische Märchen als zauberhaftes Familienmusical. Mit wunderschönen Kostümen, Tänzen und Musik für die ganze Familie.",
+    image: "https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
+    tags: ["Familie", "Märchen", "Tournee"],
+    startDate: "2026-11-15",
+    endDate: "2027-01-31",
+  },
+  {
+    id: "rapunzel",
+    slug: "rapunzel",
+    title: "Rapunzel – Das Musical",
+    provider: "Theater Liberi",
+    category: "familie",
+    cities: ["Berlin", "Hamburg", "München", "Stuttgart", "Köln", "Leipzig", "Dresden"],
+    description: "Die Geschichte der Prinzessin mit den langen Haaren als wunderschönes Familienmusical. Voller Magie, Abenteuer und Liebe.",
+    image: "https://images.unsplash.com/photo-1520962922320-2038eebab146?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
+    tags: ["Familie", "Märchen", "Tournee"],
+    startDate: "2026-05-01",
+    endDate: "2026-12-31",
+  },
+  {
+    id: "eiskoenigin_liberi",
+    slug: "eiskoenigin-liberi",
+    title: "Die Eiskönigin – Das Familienmusical",
+    provider: "Theater Liberi",
+    category: "familie",
+    cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart", "Frankfurt", "Oberhausen"],
+    description: "Die winterliche Geschichte der Schneekönigin als bezauberndes Familienmusical. Eine Reise voller Mut, Freundschaft und Magie.",
+    image: "https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
+    tags: ["Familie", "Winter", "Tournee"],
+    startDate: "2026-11-01",
+    endDate: "2027-01-31",
   },
 ];
 
@@ -498,36 +578,14 @@ export const cities: City[] = [
     slug: "dresden",
     name: "Dresden",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=600&q=80",
-    description: "Elbflorenz begeistert nicht nur mit seiner Architektur, sondern auch als Gastspielort für Musical-Tourneen.",
+    description: "Die Elbflorenz ist Heimat des Staatsschauspiels und Spielstätte für große Tournee-Produktionen.",
     musicalCount: 0,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Dresden",
   },
 ];
 
-// Berechne musicalCount dynamisch
-cities.forEach((city) => {
-  const count = musicals.filter(
-    (m) => m.city === city.name || (m.cities && m.cities.includes(city.name))
-  ).length;
-  city.musicalCount = count;
-});
-
-export function getMusicalsByCity(cityName: string): Musical[] {
-  return musicals.filter(
-    (m) => m.city === cityName || (m.cities && m.cities.includes(cityName))
-  );
-}
-
-export function getMusicalsByProvider(providerName: string): Musical[] {
-  return musicals.filter((m) => m.provider === providerName);
-}
-
-export function getMusicalsByCategory(category: Musical["category"]): Musical[] {
-  return musicals.filter((m) => m.category === category);
-}
-
 export function getFeaturedMusicals(): Musical[] {
-  return musicals.filter((m) => m.featured);
+  return musicals.filter((m) => m.featured).slice(0, 3);
 }
 
 export function getMusicalBySlug(slug: string): Musical | undefined {
@@ -536,4 +594,12 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find((c) => c.slug === slug);
+}
+
+export function getMusicalsByCity(cityName: string): Musical[] {
+  return musicals.filter((m) => {
+    if (m.city === cityName) return true;
+    if (m.cities && m.cities.includes(cityName)) return true;
+    return false;
+  });
 }
