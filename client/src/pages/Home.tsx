@@ -21,7 +21,6 @@ import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
 import MusicalFilters, { type FilterCategory, type SortOption } from "@/components/MusicalFilters";
-import DateRangeFilter from "@/components/DateRangeFilter";
 import {
   musicals,
   cities,
@@ -41,8 +40,6 @@ export default function Home() {
   const [providerFilter, setProviderFilter] = useState<FilterProvider>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
   const [sortOption, setSortOption] = useState<SortOption>("featured");
-  const [startDate, setStartDate] = useState<string | null>(null);
-  const [endDate, setEndDate] = useState<string | null>(null);
   const [showAllMusicals, setShowAllMusicals] = useState(false);
 
   const featured = useMemo(() => getFeaturedMusicals(), []);
@@ -65,21 +62,6 @@ export default function Home() {
       result = result.filter((m) => m.city === cities.find((c) => c.slug === cityFilter)?.name);
     }
 
-    // Filter nach Verfügbarkeitsdatum
-    if (startDate || endDate) {
-      result = result.filter((m) => {
-        const musicalStart = new Date(m.startDate);
-        const musicalEnd = new Date(m.endDate);
-        const filterStart = startDate ? new Date(startDate) : null;
-        const filterEnd = endDate ? new Date(endDate) : null;
-
-        // Musical muss mit dem Filter-Zeitraum überlappen
-        if (filterStart && musicalEnd < filterStart) return false; // Musical endet vor Filter-Start
-        if (filterEnd && musicalStart > filterEnd) return false; // Musical startet nach Filter-End
-        return true;
-      });
-    }
-
     // Sortierung
     if (sortOption === "name") {
       result = result.sort((a, b) => a.title.localeCompare(b.title, "de"));
@@ -99,7 +81,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, providerFilter, cityFilter, sortOption, startDate, endDate]);
+  }, [categoryFilter, providerFilter, cityFilter, sortOption]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 9);
 
@@ -226,35 +208,18 @@ export default function Home() {
           </p>
 
           {/* Advanced Filters */}
-          <div className="mb-10 space-y-6">
-            {/* Date Range Filter */}
-            <div className="p-6 bg-card border border-gold/10 rounded-sm">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-8 h-px bg-gold" />
-                <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Verfügbarkeit</span>
-              </div>
-              <DateRangeFilter
-                startDate={startDate}
-                setStartDate={setStartDate}
-                endDate={endDate}
-                setEndDate={setEndDate}
-              />
-            </div>
-
-            {/* Other Filters */}
-            <div className="p-6 bg-card border border-gold/10 rounded-sm">
-              <MusicalFilters
-                categoryFilter={categoryFilter}
-                setCategoryFilter={setCategoryFilter}
-                providerFilter={providerFilter}
-                setProviderFilter={setProviderFilter}
-                cityFilter={cityFilter}
-                setCityFilter={setCityFilter}
-                sortOption={sortOption}
-                setSortOption={setSortOption}
-                resultCount={filteredMusicals.length}
-              />
-            </div>
+          <div className="mb-10 p-6 bg-card border border-gold/10 rounded-sm">
+            <MusicalFilters
+              categoryFilter={categoryFilter}
+              setCategoryFilter={setCategoryFilter}
+              providerFilter={providerFilter}
+              setProviderFilter={setProviderFilter}
+              cityFilter={cityFilter}
+              setCityFilter={setCityFilter}
+              sortOption={sortOption}
+              setSortOption={setSortOption}
+              resultCount={filteredMusicals.length}
+            />
           </div>
 
           {/* Musical Grid */}
