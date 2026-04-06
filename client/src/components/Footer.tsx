@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Dein Portal für die besten Musical-Produktionen in Deutschland. Tickets, Hotels und mehr.
+              Dein Portal für die besten Musical-Produktionen im deutschsprachigen Raum. Tickets, Hotels und mehr.
             </p>
           </div>
 
@@ -33,11 +33,17 @@ export default function Footer() {
               Top Musicals
             </h4>
             <ul className="space-y-2">
-              {["König der Löwen", "Die Eiskönigin", "Pretty Woman", "Harry Potter", "MJ Musical"].map((item) => (
-                <li key={item}>
-                  <span className="text-sm text-muted-foreground hover:text-gold transition-colors cursor-default">
-                    {item}
-                  </span>
+              {[
+                { label: "König der Löwen", slug: "koenig-der-loewen" },
+                { label: "Die Eiskönigin", slug: "die-eiskoenigin" },
+                { label: "Pretty Woman", slug: "pretty-woman" },
+                { label: "Harry Potter", slug: "harry-potter" },
+                { label: "MJ Musical", slug: "mj-michael-jackson" },
+              ].map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/musical/${item.slug}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -49,11 +55,17 @@ export default function Footer() {
               Musical-Städte
             </h4>
             <ul className="space-y-2">
-              {["Hamburg", "Stuttgart", "Berlin", "München", "Köln"].map((item) => (
-                <li key={item}>
-                  <span className="text-sm text-muted-foreground hover:text-gold transition-colors cursor-default">
-                    {item}
-                  </span>
+              {[
+                { label: "Hamburg", slug: "hamburg" },
+                { label: "Stuttgart", slug: "stuttgart" },
+                { label: "Berlin", slug: "berlin" },
+                { label: "München", slug: "muenchen" },
+                { label: "Köln", slug: "koeln" },
+              ].map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/#staedte`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
