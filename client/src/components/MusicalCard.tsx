@@ -51,13 +51,6 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-            {/* Provider Badge */}
-            <div className="absolute top-3 right-3">
-              <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-black/50 text-foreground/80 backdrop-blur-sm">
-                {musical.provider}
-              </span>
-            </div>
-
             {/* Title Overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-4">
               <h3 className="font-display text-lg md:text-xl font-bold text-white leading-tight">
