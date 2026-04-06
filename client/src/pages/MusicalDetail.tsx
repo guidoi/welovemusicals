@@ -159,7 +159,7 @@ export default function MusicalDetail() {
       {/* Keyvisual */}
       <section className="py-12 md:py-16 bg-muted/20">
         <div className="container">
-          <MusicalKeyVisual image={musical.image} title={musical.title} />
+          <MusicalKeyVisual image={musical.image} title={musical.title} ticketLink={ticketLink} />
         </div>
       </section>
 
