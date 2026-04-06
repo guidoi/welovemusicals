@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ChevronDown, MapPin, Calendar, Filter } from "lucide-react";
 import { cities, providers, type Musical } from "@/lib/data";
 
-export type FilterCategory = "alle" | "standort" | "tournee" | "familie";
+export type FilterCategory = "alle" | "ensuite" | "tournee" | "kinder";
 export type SortOption = "name" | "city" | "featured";
 
 interface MusicalFiltersProps {
@@ -36,9 +36,9 @@ export default function MusicalFilters({
 
   const categoryLabels: Record<FilterCategory, string> = {
     alle: "Alle Kategorien",
-    standort: "Standort-Musicals",
+    ensuite: "En-Suite-Musicals",
     tournee: "Tournee-Musicals",
-    familie: "Familienmusicals",
+    kinder: "Kinder-Musicals",
   };
 
   const sortLabels: Record<SortOption, string> = {
@@ -68,9 +68,9 @@ export default function MusicalFilters({
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
           >
             <option value="alle">Alle Kategorien</option>
-            <option value="standort">Standort-Musicals</option>
+            <option value="ensuite">En-Suite-Musicals</option>
             <option value="tournee">Tournee-Musicals</option>
-            <option value="familie">Familienmusicals</option>
+            <option value="kinder">Kinder-Musicals</option>
           </select>
         </div>
 

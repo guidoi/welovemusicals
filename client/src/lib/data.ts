@@ -39,7 +39,7 @@ export interface Musical {
   title: string;
   subtitle?: string;
   provider: string;
-  category: "standort" | "tournee" | "familie";
+  category: "ensuite" | "tournee" | "kinder";
   city?: string;
   cities?: string[];
   venue?: string;
@@ -119,7 +119,7 @@ export const providers: Provider[] = [
   {
     name: "Theater Liberi",
     slug: "theater-liberi",
-    description: "Spezialist für hochwertige Familienmusicals auf Deutschlandtournee.",
+    description: "Spezialist für hochwertige Familien-Musicals auf Deutschlandtournee.",
     website: "https://theater-liberi.de",
   },
   {
@@ -143,13 +143,13 @@ export const providers: Provider[] = [
 ];
 
 export const musicals: Musical[] = [
-  // === STAGE ENTERTAINMENT – Standort-Musicals ===
+  // === STAGE ENTERTAINMENT – En-Suite-Musicals ===
   {
     id: "kdl",
     slug: "koenig-der-loewen",
     title: "Disneys DER KÖNIG DER LÖWEN",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Theater im Hafen",
     description: "Erleben Sie eine unvergessliche Reise durch die Serengeti Afrikas. Seit über 20 Jahren begeistert das meistbesuchte Musical der Welt in Hamburg mit atemberaubenden Kostümen, Masken und der Musik von Elton John und Tim Rice.",
@@ -192,7 +192,7 @@ export const musicals: Musical[] = [
     slug: "mj-michael-jackson",
     title: "MJ – Das Michael Jackson Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Theater an der Elbe",
     description: "Der Broadway-Erfolg jetzt live in Hamburg! Erleben Sie die weltbekannten Hits und ikonischen Choreographien des King of Pop in einer mitreißenden Inszenierung.",
@@ -239,7 +239,7 @@ export const musicals: Musical[] = [
     title: "& JULIA – Das Pop-Musical",
     subtitle: "Es gibt ein Leben nach Romeo!",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Operettenhaus",
     description: "Was würde passieren, wenn Julia nach Romeos Tod eine zweite Chance auf das Leben und die Liebe bekäme? Ein modernes Pop-Musical mit den größten Hits von Max Martin.",
@@ -283,7 +283,7 @@ export const musicals: Musical[] = [
     slug: "tarzan",
     title: "Disney Musical TARZAN",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Theater Neue Flora",
     description: "Das Musicalcomeback in Hamburg: Die Geschichte von Tarzan als das spektakulärste Musical unserer Zeit mit der Musik von Weltstar Phil Collins.",
@@ -331,7 +331,7 @@ export const musicals: Musical[] = [
     slug: "zurueck-in-die-zukunft",
     title: "ZURÜCK IN DIE ZUKUNFT – Das Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Operettenhaus",
     description: "Der Kult-Film der 80er Jahre als mehrfach ausgezeichnetes Musical. Nah am Original inszeniert – mit seinem Witz und den Hits des Blockbusters.",
@@ -379,7 +379,7 @@ export const musicals: Musical[] = [
     slug: "eiskoenigin",
     title: "Disneys DIE EISKÖNIGIN",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Stuttgart",
     venue: "Stage Apollo Theater",
     description: "Machen Sie sich auf zu einem magischen Abenteuer im eisigen Königreich Arendelle und treffen Sie die beliebten Figuren aus dem weltbekannten Disney-Film!",
@@ -429,7 +429,7 @@ export const musicals: Musical[] = [
     title: "WE WILL ROCK YOU",
     subtitle: "Das Queen-Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Stuttgart",
     venue: "Stage Palladium Theater",
     description: "Der Welterfolg mit den 24 größten Queen-Songs im englischen Original. Ein frischer und individueller Ansatz mit neuer Choreographie und modernisiertem Drehbuch.",
@@ -477,7 +477,7 @@ export const musicals: Musical[] = [
     slug: "wir-sind-am-leben",
     title: "WIR SIND AM LEBEN – Das Berlin Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Berlin",
     venue: "Stage Theater des Westens",
     description: "Das erste vollständig selbst entwickelte Musical von Peter Plate und Ulf Leo Sommer – eine Geschichte über Familie, Freiheit und das Lebensgefühl im Berlin der frühen 90er-Jahre.",
@@ -525,7 +525,7 @@ export const musicals: Musical[] = [
     slug: "der-teufel-traegt-prada",
     title: "Der Teufel trägt Prada – Das Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Theater an der Elbe",
     description: "Die Geschichte von Andy Sachs, die sich ihren Weg durch die Modewelt kämpft. Ein Musical über Ehrgeiz, Freundschaft und die Frage, wer man wirklich sein will.",
@@ -573,7 +573,7 @@ export const musicals: Musical[] = [
     slug: "bibi-tina",
     title: "Bibi & Tina – Das Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Stage Theater Neue Flora",
     description: "Die beliebten Hexen-Abenteuer von Bibi und Tina auf der großen Bühne. Ein farbenfrohes Musical für die ganze Familie mit Musik, Tanz und Magie.",
@@ -621,7 +621,7 @@ export const musicals: Musical[] = [
     slug: "die-amme",
     title: "Die Amme – Das Musical",
     provider: "Stage Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Stuttgart",
     venue: "Stage Apollo Theater",
     description: "Ein Musical über die ungewöhnliche Freundschaft zwischen einer Amme und ihrer Schützling. Voller Humor, Herz und unvergesslichen Melodien.",
@@ -1287,13 +1287,13 @@ export const musicals: Musical[] = [
     ],
   },
 
-  // === THEATER LIBERI – Familienmusicals ===
+  // === THEATER LIBERI – Familien-Musicals ===
   {
     id: "dschungelbuch",
     slug: "dschungelbuch",
     title: "Dschungelbuch – das Musical",
     provider: "Theater Liberi",
-    category: "familie",
+    category: "kinder",
     cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Frankfurt", "Düsseldorf", "Leipzig", "Dresden", "Hannover"],
     description: "Das beliebte Familienmusical nach Rudyard Kipling. Begleitet Mogli auf seinem Abenteuer durch den Dschungel – mit viel Musik, Tanz und Humor für die ganze Familie.",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80",
@@ -1340,7 +1340,7 @@ export const musicals: Musical[] = [
     slug: "aladin",
     title: "Aladin – das Musical",
     provider: "Theater Liberi",
-    category: "familie",
+    category: "kinder",
     cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Frankfurt"],
     description: "Die magische Geschichte von Aladin und der Wunderlampe als farbenfrohes Familienmusical. Ein Abenteuer voller Magie, Musik und Überraschungen.",
     image: "https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?w=600&q=80",
@@ -1387,7 +1387,7 @@ export const musicals: Musical[] = [
     slug: "schneekoenigin",
     title: "Schneekönigin – das Musical",
     provider: "Theater Liberi",
-    category: "familie",
+    category: "kinder",
     cities: ["Berlin", "Hamburg", "München", "Köln", "Stuttgart", "Dresden", "Leipzig"],
     description: "Die winterliche Geschichte der Schneekönigin als bezauberndes Familienmusical. Eine Reise voller Mut, Freundschaft und Magie.",
     image: "https://images.unsplash.com/photo-1457269449834-928af64c684d?w=600&q=80",
@@ -1436,7 +1436,7 @@ export const musicals: Musical[] = [
     slug: "harry-potter",
     title: "Harry Potter und das verwunschene Kind",
     provider: "ATG Entertainment",
-    category: "standort",
+    category: "ensuite",
     city: "Hamburg",
     venue: "Theater am Großmarkt",
     description: "Das achte Harry-Potter-Abenteuer als preisgekröntes Theaterstück. 19 Jahre nach der Schlacht von Hogwarts beginnt ein neues Kapitel.",
