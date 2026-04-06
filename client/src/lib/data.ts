@@ -143,7 +143,7 @@ export const providers: Provider[] = [
 ];
 
 export const musicals: Musical[] = [
-  // === STAGE ENTERTAINMENT – En-Suite-Musicals ===
+  // === STAGE ENTERTAINMENT – Dauerbrenner & Klassiker ===
   {
     id: "kdl",
     slug: "koenig-der-loewen",

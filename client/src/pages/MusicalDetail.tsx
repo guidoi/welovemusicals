@@ -91,7 +91,7 @@ export default function MusicalDetail() {
 
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-accent/20 text-accent">
-                {musical.category === "ensuite" ? "En-Suite-Musical" : musical.category === "tournee" ? "Tournee" : "Kinder-Musical"}
+                {musical.category === "ensuite" ? "Dauerbrenner & Klassiker" : musical.category === "tournee" ? "Tournee" : "Kinder-Musical"}
               </span>
               <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-secondary text-secondary-foreground">
                 {musical.provider}

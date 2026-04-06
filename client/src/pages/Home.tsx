@@ -121,7 +121,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
-              Entdecke alle aktuellen Musical-Produktionen in Deutschland – von En-Suite-Musicals über Tourneen bis hin zu Familien-Musicals.
+              Entdecke alle aktuellen Musical-Produktionen in Deutschland – von Dauerbrenner & Klassiker über Tourneen bis hin zu Familien-Musicals.
             </p>
 
             {/* Stats */}
@@ -203,7 +203,7 @@ export default function Home() {
             Alle Musicals & Shows
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-10">
-            Entdecke alle aktuellen Musical-Produktionen in Deutschland – von En-Suite-Musicals über Tourneen bis hin zu Familien-Musicals.
+            Entdecke alle aktuellen Musical-Produktionen in Deutschland – von Dauerbrenner & Klassiker über Tourneen bis hin zu Familien-Musicals.
           </p>
 
           {/* Advanced Filters */}
