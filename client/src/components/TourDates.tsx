@@ -92,10 +92,7 @@ export default function TourDates({ tourDates }: TourDatesProps) {
                 href={date.eventimUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-block px-4 py-2 font-semibold rounded-sm text-center transition-colors"
-                style={{ backgroundColor: 'rgb(239, 68, 68)', color: 'white' }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+                className="w-full inline-block px-4 py-2 font-semibold rounded-sm text-center transition-colors bg-gold hover:bg-gold/90 text-background"
               >
                 Tickets
               </a>

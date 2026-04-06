@@ -32,7 +32,7 @@ export default function MusicalShowFacts({ facts }: MusicalShowFactsProps) {
               key={idx}
               className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4 text-accent">
+              <div className="flex justify-center mb-4 text-gold">
                 {iconMap[fact.label] || <Calendar className="w-8 h-8" />}
               </div>
               <h3 className="text-lg font-semibold text-card-foreground mb-2">

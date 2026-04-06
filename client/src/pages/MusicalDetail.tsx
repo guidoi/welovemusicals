@@ -84,13 +84,13 @@ export default function MusicalDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/" className="inline-flex items-center gap-2 transition-colors mb-6" style={{ color: 'rgb(239, 68, 68)' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgb(239, 68, 68)')}>
+            <Link href="/" className="inline-flex items-center gap-2 transition-colors mb-6 text-gold hover:text-gold/80">
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm">Zurück zur Übersicht</span>
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-xs font-medium px-2.5 py-1 rounded-sm" style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)', color: 'rgb(239, 68, 68)' }}>
+              <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-gold/20 text-gold">
                 {musical.category === "ensuite" ? "En-Suite-Musical" : musical.category === "tournee" ? "Tournee" : "Kinder-Musical"}
               </span>
               <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-secondary text-secondary-foreground">
@@ -102,11 +102,11 @@ export default function MusicalDetail() {
               {musical.title}
             </h1>
             {musical.subtitle && (
-              <p className="text-lg italic mb-4" style={{ color: 'rgb(248, 113, 113)' }}>{musical.subtitle}</p>
+              <p className="text-lg italic mb-4 text-gold/80">{musical.subtitle}</p>
             )}
 
             <div className="flex items-center gap-2 text-white/70">
-              <MapPin className="w-4 h-4" style={{ color: 'rgb(239, 68, 68)' }} />
+              <MapPin className="w-4 h-4 text-gold" />
               {musical.city ? (
                 <span>{musical.city} – {musical.venue}</span>
               ) : (
@@ -192,10 +192,7 @@ export default function MusicalDetail() {
               href={ticketLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg"
-              style={{ backgroundColor: 'rgb(239, 68, 68)', color: 'white' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg bg-gold hover:bg-gold/90 text-background"
             >
               Tickets
               <ExternalLink className="w-5 h-5" />
