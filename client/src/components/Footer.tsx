@@ -16,9 +16,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <Ticket className="w-5 h-5 text-gold" />
-              <span className="font-display text-lg font-bold text-gold">
-                We Love<span className="text-foreground">Musicals</span>
+              <span className="font-display text-lg font-bold text-gold uppercase tracking-wide">
+                We <Heart className="w-5 h-5 inline" style={{ color: 'rgb(239, 68, 68)', fill: 'rgb(239, 68, 68)' }} /> Musicals
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
