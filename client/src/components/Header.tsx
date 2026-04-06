@@ -23,7 +23,7 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-widest flex items-center gap-2 uppercase" style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '0.15em' }}>
+          <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-widest flex items-center gap-2 uppercase" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
             We
             <Heart className="w-7 h-7 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2.5 }} />
             <span className="text-foreground">Musicals</span>
