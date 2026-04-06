@@ -245,28 +245,25 @@ export default function MusicalDetail() {
       <section className="py-12 md:py-16 bg-card/50">
         <div className="container max-w-4xl">
           <div className="bg-card border border-border/50 rounded-sm p-8">
-            <div className="flex items-start gap-4">
-              <Building2 className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
-              <div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-2">
-                  {musical.provider}
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Dieses Musical wird produziert und veranstaltet von {musical.provider}.
-                  Tickets sind über Eventim erhältlich.
-                </p>
-                {providerInfo && (
-                  <a
-                    href={providerInfo.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold"
-                  >
-                    Zur Website des Anbieters
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
+            <div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-2">
+                {musical.provider}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Dieses Musical wird produziert und veranstaltet von {musical.provider}.
+                Tickets sind über Eventim erhältlich.
+              </p>
+              {providerInfo && (
+                <a
+                  href={providerInfo.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold"
+                >
+                  Zur Website des Anbieters
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
         </div>
