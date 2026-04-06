@@ -12,7 +12,7 @@ interface MusicalKeyVisualProps {
 
 export default function MusicalKeyVisual({ image, title, ticketLink }: MusicalKeyVisualProps) {
   const content = (
-    <div className="aspect-square rounded-lg overflow-hidden" style={{ boxShadow: '0 20px 25px -5px rgba(239, 68, 68, 0.3)' }}>
+    <div className="aspect-square rounded-lg overflow-hidden">
       <img
         src={image}
         alt={title}

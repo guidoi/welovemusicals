@@ -3,6 +3,7 @@
  * MusicalDetail: Detailseite für einzelnes Musical mit erweiterten Komponenten
  */
 import { useParams, Link } from "wouter";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -27,7 +28,13 @@ import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
-  const musical = getMusicalBySlug(params.slug || "");
+  const slug = params.slug || "";
+  const musical = getMusicalBySlug(slug);
+
+  // Force re-render when slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!musical) {
     return (
