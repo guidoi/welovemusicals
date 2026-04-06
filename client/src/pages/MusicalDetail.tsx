@@ -148,19 +148,7 @@ export default function MusicalDetail() {
                   ))}
                 </div>
 
-                {/* Provider Info */}
-                <div className="bg-card border border-border/50 rounded-sm p-6 mb-8">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Building2 className="w-5 h-5 text-accent" />
-                    <h3 className="font-display text-lg font-semibold text-foreground">
-                      {musical.provider}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Dieses Musical wird produziert und veranstaltet von {musical.provider}.
-                    Tickets sind über Eventim erhältlich.
-                  </p>
-                </div>
+
               </motion.div>
             </div>
 
@@ -244,6 +232,37 @@ export default function MusicalDetail() {
       {musical.faqItems && musical.faqItems.length > 0 && (
         <MusicalFAQSection items={musical.faqItems} />
       )}
+
+      {/* Provider Section */}
+      <section className="py-12 md:py-16 bg-card/50">
+        <div className="container max-w-4xl">
+          <div className="bg-card border border-border/50 rounded-sm p-8">
+            <div className="flex items-start gap-4">
+              <Building2 className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground mb-2">
+                  {musical.provider}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Dieses Musical wird produziert und veranstaltet von {musical.provider}.
+                  Tickets sind über Eventim erhältlich.
+                </p>
+                {providerInfo && (
+                  <a
+                    href={providerInfo.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-semibold"
+                  >
+                    Zur Website des Anbieters
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Hotels Section */}
       {relevantCities.length > 0 && (
