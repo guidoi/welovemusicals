@@ -25,7 +25,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-widest flex items-center gap-2 uppercase" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
             We
-            <Heart className="w-7 h-7 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2.5 }} />
+            <Heart className="w-7 h-7 transition-colors" style={{ fill: 'none', stroke: 'var(--color-red)', strokeWidth: 2.5, '--color-red': 'rgb(239, 68, 68)' } as React.CSSProperties} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
             <span className="text-foreground">Musicals</span>
           </span>
         </Link>

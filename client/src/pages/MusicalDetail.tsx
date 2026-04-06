@@ -176,10 +176,11 @@ export default function MusicalDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-card border border-accent/20 rounded-sm p-8"
+            className="rounded-sm p-8"
+            style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgb(239, 68, 68)' }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <Ticket className="w-6 h-6 text-accent" />
+              <Ticket className="w-6 h-6" style={{ color: 'rgb(239, 68, 68)' }} />
               <h2 className="font-display text-2xl font-bold text-foreground">
                 Tickets sichern
               </h2>
@@ -191,7 +192,10 @@ export default function MusicalDetail() {
               href={ticketLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-bold rounded-sm hover:bg-accent/90 transition-colors text-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg"
+              style={{ backgroundColor: 'rgb(239, 68, 68)', color: 'white' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
             >
               Jetzt Tickets kaufen
               <ExternalLink className="w-5 h-5" />
