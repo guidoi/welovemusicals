@@ -177,7 +177,7 @@ export default function MusicalDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="rounded-sm p-8"
-            style={{ backgroundColor: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgb(239, 68, 68)' }}
+            style={{ border: '1px solid rgb(239, 68, 68)' }}
           >
             <div className="flex items-center gap-3 mb-4">
               <Ticket className="w-6 h-6" style={{ color: 'rgb(239, 68, 68)' }} />
