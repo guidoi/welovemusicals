@@ -4,7 +4,7 @@
  */
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Ticket } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Ticket className="w-6 h-6 text-gold group-hover:text-gold-light transition-colors" />
+          <Heart className="w-6 h-6 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2 }} />
           <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-wide">
             We Love<span className="text-foreground">Musicals</span>
           </span>
