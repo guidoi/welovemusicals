@@ -5,7 +5,6 @@
 
 import { MusicalTourDate } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Building2 } from "lucide-react";
 import { useState } from "react";
 
 interface TourDatesProps {
@@ -73,36 +72,19 @@ export default function TourDates({ tourDates }: TourDatesProps) {
               key={idx}
               className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-card-foreground">
-                    {date.city}
-                  </h3>
-                </div>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-card-foreground mb-1">
+                  {date.city}
+                </h3>
+                <p className="text-sm text-card-foreground/70">
+                  {date.venue}
+                </p>
               </div>
 
-              <div className="space-y-3 mb-6">
-                {/* Venue */}
-                <div className="flex items-start gap-3">
-                  <Building2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm text-card-foreground/60">Spielstätte</p>
-                    <p className="font-semibold text-card-foreground">
-                      {date.venue}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Date Range */}
-                <div className="flex items-start gap-3">
-                  <Calendar className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm text-card-foreground/60">Spielzeit</p>
-                    <p className="font-semibold text-card-foreground">
-                      {formatDate(date.startDate)} – {formatDate(date.endDate)}
-                    </p>
-                  </div>
-                </div>
+              <div className="mb-6">
+                <p className="text-sm text-card-foreground/60 mb-1">
+                  {formatDate(date.startDate)} – {formatDate(date.endDate)}
+                </p>
               </div>
 
               {/* Tickets Button */}

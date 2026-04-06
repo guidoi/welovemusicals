@@ -23,7 +23,7 @@ import MusicalGallery from "@/components/MusicalGallery";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
 import MusicalFAQSection from "@/components/MusicalFAQ";
 import TourDates from "@/components/TourDates";
-import { getMusicalBySlug, musicals, cities, createAwinLink } from "@/lib/data";
+import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@/lib/data";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -57,6 +57,9 @@ export default function MusicalDetail() {
   const relevantCities = musical.city
     ? cities.filter((c) => c.name === musical.city)
     : cities.filter((c) => musical.cities?.includes(c.name));
+
+  // Get provider info
+  const providerInfo = providers.find((p) => p.name === musical.provider);
 
   const ticketLink = createAwinLink(musical.eventimUrl);
 
@@ -239,7 +242,6 @@ export default function MusicalDetail() {
       {musical.youtubeTrailerId && (
         <section className="py-12 md:py-16 bg-background">
           <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold mb-8 text-foreground">Tourtrailer</h2>
             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
           </div>
         </section>
@@ -268,6 +270,72 @@ export default function MusicalDetail() {
       {/* FAQ */}
       {musical.faqItems && musical.faqItems.length > 0 && (
         <MusicalFAQSection items={musical.faqItems} />
+      )}
+
+      {/* Provider Section */}
+      {providerInfo && (
+        <section className="py-12 md:py-16 bg-card/50">
+          <div className="container max-w-4xl">
+            <div className="bg-card border border-border/50 rounded-sm p-8">
+              <div className="flex items-start gap-4 mb-4">
+                <Building2 className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
+                <div>
+                  <h2 className="font-display text-2xl font-bold text-foreground mb-2">
+                    {providerInfo.name}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {providerInfo.description}
+                  </p>
+                  <a
+                    href={providerInfo.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-semibold"
+                  >
+                    Zur Website
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Hotels Section */}
+      {relevantCities.length > 0 && (
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container max-w-4xl">
+            <h2 className="font-display text-2xl font-bold text-foreground mb-8">
+              Hotels in der Nähe
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relevantCities.map((city) => (
+                <a
+                  key={city.slug}
+                  href={city.hotelSearchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-card border border-border/50 rounded-sm p-6 hover:border-accent/30 transition-all"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="font-display text-lg font-bold text-foreground group-hover:text-accent transition-colors">
+                      {city.name}
+                    </h3>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {city.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-accent font-semibold">
+                    <Hotel className="w-4 h-4" />
+                    Hotels durchsuchen
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Related Musicals */}
