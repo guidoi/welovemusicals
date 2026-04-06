@@ -121,7 +121,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
-              Entdecke die besten Musicals in Deutschland, Österreich und in der Schweiz – von echten Dauerbrennern und Klassikern über magische Tournee-Produktionen bis hin zum ersten Musical-Erlebnis für die kleinsten Fans.
+              Entdecke die besten Musicals in Deutschland, Österreich und der Schweiz – ob legendäre Dauerbrenner in den großen Metropolen, spektakuläre Tourneen direkt in deiner Nähe bis hin zum ersten Musical-Erlebnis für die kleinsten Fans. <span className="text-gold font-semibold">Licht aus, Magie an!</span>
             </p>
 
             {/* Stats */}
