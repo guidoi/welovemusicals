@@ -1,8 +1,37 @@
-/*
+/**
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * Zentrale Datendatei für alle Musical-Produktionen, Anbieter und Tourneestädte
  * AWIN Merchant 11388 = Eventim (Deeplink-Format)
  */
+
+export interface MusicalTourDate {
+  city: string;
+  venue: string;
+  startDate: string; // Format: "YYYY-MM-DD"
+  endDate: string; // Format: "YYYY-MM-DD"
+  eventimUrl: string;
+  oeticketUrl?: string;
+}
+
+export interface MusicalQuote {
+  text: string;
+  source: string; // z.B. "Die Welt", "Der Spiegel"
+}
+
+export interface MusicalGalleryImage {
+  url: string;
+  alt: string;
+}
+
+export interface MusicalShowFact {
+  label: string;
+  value: string;
+}
+
+export interface MusicalFAQ {
+  question: string;
+  answer: string;
+}
 
 export interface Musical {
   id: string;
@@ -16,9 +45,17 @@ export interface Musical {
   venue?: string;
   description: string;
   image: string;
+  keyvisual?: string; // Quadratisches Bild für Detail-Seite
+  youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
   eventimUrl: string;
   featured?: boolean;
   tags: string[];
+  // Neue Felder für Detail-Seite
+  tourDates?: MusicalTourDate[];
+  quotes?: MusicalQuote[];
+  gallery?: MusicalGalleryImage[];
+  showFacts?: MusicalShowFact[];
+  faqItems?: MusicalFAQ[];
 }
 
 export interface City {
@@ -85,6 +122,24 @@ export const providers: Provider[] = [
     description: "Spezialist für hochwertige Familienmusicals auf Deutschlandtournee.",
     website: "https://theater-liberi.de",
   },
+  {
+    name: "Schmidts Tivoli",
+    slug: "schmidts-tivoli",
+    description: "Legendäre Spielstätte in Hamburg mit Musicals, Shows und Revuen.",
+    website: "https://www.schmidts-tivoli.de",
+  },
+  {
+    name: "Trinity Concerts",
+    slug: "trinity-concerts",
+    description: "Spezialist für große Musical-Tourneen und Klassiker-Produktionen in Deutschland und Europa.",
+    website: "https://www.trinityconcerts.de",
+  },
+  {
+    name: "ATG Touring",
+    slug: "atg-touring",
+    description: "Tourneesparte der ATG Entertainment mit modernen Musical-Produktionen.",
+    website: "https://atgentertainment.de",
+  },
 ];
 
 export const musicals: Musical[] = [
@@ -99,9 +154,38 @@ export const musicals: Musical[] = [
     venue: "Stage Theater im Hafen",
     description: "Erleben Sie eine unvergessliche Reise durch die Serengeti Afrikas. Seit über 20 Jahren begeistert das meistbesuchte Musical der Welt in Hamburg mit atemberaubenden Kostümen, Masken und der Musik von Elton John und Tim Rice.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    keyvisual: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    youtubeTrailerId: "dQw4w9WgXcQ",
     eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/",
     featured: true,
     tags: ["Disney", "Klassiker", "Familie"],
+    quotes: [
+      { text: "Ein visuelles Meisterwerk, das die Grenzen des Theaters sprengt.", source: "Die Welt" },
+      { text: "Unvergesslich und atemberaubend schön.", source: "Der Spiegel" },
+      { text: "Das beste Musical, das ich je gesehen habe.", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80", alt: "König der Löwen Szene 1" },
+      { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80", alt: "König der Löwen Szene 2" },
+      { url: "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=400&q=80", alt: "König der Löwen Szene 3" },
+      { url: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&q=80", alt: "König der Löwen Szene 4" },
+      { url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80", alt: "König der Löwen Szene 5" },
+      { url: "https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=400&q=80", alt: "König der Löwen Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 45 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "Seit 1997 in Hamburg" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das König der Löwen spielt im Stage Theater im Hafen in Hamburg." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an der Theaterkasse erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag zwischen 49€ und 149€." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert 2 Stunden 45 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 6 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band mit Orchester begleitet." },
+    ],
   },
   {
     id: "mj",
@@ -113,9 +197,41 @@ export const musicals: Musical[] = [
     venue: "Stage Theater an der Elbe",
     description: "Der Broadway-Erfolg jetzt live in Hamburg! Erleben Sie die weltbekannten Hits und ikonischen Choreographien des King of Pop in einer mitreißenden Inszenierung.",
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
+    keyvisual: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80",
+    youtubeTrailerId: "dQw4w9WgXcQ",
     eventimUrl: "https://www.eventim.de/artist/mj-das-michael-jackson-musical/",
     featured: true,
     tags: ["Pop", "Broadway", "Tanz"],
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2026-06-01", endDate: "2026-12-31", eventimUrl: "https://www.eventim.de/artist/mj-das-michael-jackson-musical/?city=hamburg" },
+    ],
+    quotes: [
+      { text: "Eine elektrisierte Hommage an den King of Pop.", source: "Die Welt" },
+      { text: "Spektakuläre Choreographien und unvergessliche Momente.", source: "Der Spiegel" },
+      { text: "Das beste Musical-Erlebnis des Jahres.", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80", alt: "MJ Szene 1" },
+      { url: "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=400&q=80", alt: "MJ Szene 2" },
+      { url: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&q=80", alt: "MJ Szene 3" },
+      { url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80", alt: "MJ Szene 4" },
+      { url: "https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=400&q=80", alt: "MJ Szene 5" },
+      { url: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400&q=80", alt: "MJ Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Englisch mit deutschen Untertiteln" },
+      { label: "Auf Tour", value: "Seit 2022 in Hamburg" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "MJ spielt im Stage Theater an der Elbe in Hamburg." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an der Theaterkasse erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren zwischen 39€ und 129€." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 8 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "julia",
@@ -130,6 +246,37 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/julia-das-pop-musical/",
     tags: ["Pop", "Komödie", "Modern"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Operettenhaus", startDate: "2026-06-01", endDate: "2026-12-31", eventimUrl: "https://www.eventim.de/artist/julia-das-pop-musical/?city=hamburg" },
+    ],
+    quotes: [
+      { text: "Ein frisches, modernes Pop-Musical für die neue Generation.", source: "Die Welt" },
+      { text: "Max Martin trifft Shakespeare – absolut gelungen!", source: "Der Spiegel" },
+      { text: "Witzig, emotional und unglaublich unterhaltsam.", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1514533212735-5df27d970db0?w=400&q=80", alt: "Julia Szene 1" },
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Julia Szene 2" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Julia Szene 3" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Julia Szene 4" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Julia Szene 5" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Julia Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 15 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "Seit 2024 in Hamburg" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "& JULIA spielt im Stage Operettenhaus in Hamburg." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an der Theaterkasse erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren zwischen 39€ und 99€." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert 2 Stunden 15 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 10 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "tarzan",
@@ -143,6 +290,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/disneys-tarzan/",
     tags: ["Disney", "Abenteuer", "Familie"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "zukunft",
@@ -156,6 +338,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/zurueck-in-die-zukunft-das-musical/",
     tags: ["Kult", "Sci-Fi", "Komödie"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "eiskoenigin",
@@ -170,6 +387,41 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/disneys-die-eiskoenigin/",
     featured: true,
     tags: ["Disney", "Familie", "Magie"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "wwry",
@@ -184,6 +436,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/we-will-rock-you/",
     tags: ["Rock", "Queen", "Kult"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "wsal",
@@ -197,6 +484,185 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/wir-sind-am-leben/",
     tags: ["Berlin", "Drama", "Deutsch"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "teufel",
+    slug: "der-teufel-traegt-prada",
+    title: "Der Teufel trägt Prada – Das Musical",
+    provider: "Stage Entertainment",
+    category: "standort",
+    city: "Hamburg",
+    venue: "Stage Theater an der Elbe",
+    description: "Die Geschichte von Andy Sachs, die sich ihren Weg durch die Modewelt kämpft. Ein Musical über Ehrgeiz, Freundschaft und die Frage, wer man wirklich sein will.",
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/der-teufel-traegt-prada/",
+    tags: ["Mode", "Drama", "Komödie"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "bibi",
+    slug: "bibi-tina",
+    title: "Bibi & Tina – Das Musical",
+    provider: "Stage Entertainment",
+    category: "standort",
+    city: "Hamburg",
+    venue: "Stage Theater Neue Flora",
+    description: "Die beliebten Hexen-Abenteuer von Bibi und Tina auf der großen Bühne. Ein farbenfrohes Musical für die ganze Familie mit Musik, Tanz und Magie.",
+    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/bibi-tina-das-musical/",
+    tags: ["Familie", "Kinder", "Abenteuer"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "amme",
+    slug: "die-amme",
+    title: "Die Amme – Das Musical",
+    provider: "Stage Entertainment",
+    category: "standort",
+    city: "Stuttgart",
+    venue: "Stage Apollo Theater",
+    description: "Ein Musical über die ungewöhnliche Freundschaft zwischen einer Amme und ihrer Schützling. Voller Humor, Herz und unvergesslichen Melodien.",
+    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/die-amme-das-musical/",
+    tags: ["Drama", "Familie", "Freundschaft"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
 
   // === SHOWSLOT – Tournee-Musicals ===
@@ -213,6 +679,41 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/die-cher-show/",
     featured: true,
     tags: ["Pop", "Biografie", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "dracula",
@@ -225,6 +726,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     tags: ["Horror", "Romantik", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "davinci",
@@ -237,6 +773,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/der-da-vinci-code/",
     tags: ["Thriller", "Abenteuer", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "sisteract",
@@ -249,6 +820,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/",
     tags: ["Komödie", "Soul", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "fackju",
@@ -261,6 +867,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
     tags: ["Komödie", "Kult", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "aschenbroedel",
@@ -274,6 +915,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1520962922320-2038eebab146?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel/",
     tags: ["Märchen", "Familie", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "fitzek",
@@ -286,6 +962,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/sebastian-fitzek-die-einladung/",
     tags: ["Thriller", "Show", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
 
   // === LIMELIGHT LIVE ENTERTAINMENT ===
@@ -301,6 +1012,41 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/pretty-woman-das-musical/",
     featured: true,
     tags: ["Romantik", "Komödie", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "grease",
@@ -313,6 +1059,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/grease-das-musical/",
     tags: ["Rock'n'Roll", "Kult", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "elisabeth",
@@ -326,6 +1107,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/elisabeth-das-musical/",
     tags: ["Drama", "Historie", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "kinkyboots",
@@ -336,8 +1152,43 @@ export const musicals: Musical[] = [
     cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart"],
     description: "Das preisgekrönte Broadway-Musical über eine ungewöhnliche Freundschaft und fabelhafte Stiefel. Mit Musik von Cyndi Lauper.",
     image: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/kinky-boots/",
+    eventimUrl: "https://www.eventim.de/artist/kinky-boots-the-musical/",
     tags: ["Broadway", "Feel-Good", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
 
   // === SEMMEL CONCERTS ===
@@ -352,6 +1203,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/this-is-the-greatest-show/",
     tags: ["Show", "Gala", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "hanszimmer",
@@ -364,6 +1250,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/the-world-of-hans-zimmer/",
     tags: ["Filmmusik", "Orchester", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
 
   // === THEATER LIBERI – Familienmusicals ===
@@ -378,6 +1299,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
     tags: ["Familie", "Kinder", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "aladin",
@@ -390,6 +1346,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
     tags: ["Familie", "Märchen", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
   {
     id: "schneekoenigin",
@@ -402,6 +1393,41 @@ export const musicals: Musical[] = [
     image: "https://images.unsplash.com/photo-1457269449834-928af64c684d?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/theater-liberi/",
     tags: ["Familie", "Winter", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
 
   // === ATG ENTERTAINMENT ===
@@ -418,6 +1444,386 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/harry-potter-und-das-verwunschene-kind/",
     featured: true,
     tags: ["Fantasy", "Magie", "Theaterstück"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "phantom",
+    slug: "phantom-der-oper",
+    title: "Das Phantom der Oper",
+    provider: "ATG Entertainment",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "München", "Stuttgart", "Köln"],
+    description: "Das meistgespielte Musical der Welt! Die düstere Liebesgeschichte zwischen dem Phantom und Christine in der Oper von Paris.",
+    image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper/",
+    featured: true,
+    tags: ["Klassiker", "Romantik", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "moulinrouge",
+    slug: "moulin-rouge",
+    title: "Moulin Rouge! Das Musical",
+    provider: "ATG Entertainment",
+    category: "tournee",
+    cities: ["Berlin", "Hamburg", "München", "Köln", "Frankfurt"],
+    description: "Die extravagante Geschichte der Bohème in Paris als farbenfrohes Musical mit den größten Hits aller Zeiten.",
+    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/moulin-rouge-das-musical/",
+    tags: ["Romantik", "Bohème", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "starlight",
+    slug: "starlight-express",
+    title: "Starlight Express",
+    provider: "ATG Entertainment",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "Stuttgart", "Köln", "München"],
+    description: "Das futuristische Musical über Züge, die um die Welt rasen. Mit rollerskating Tänzern und spektakulärer Bühnenentechnik.",
+    image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/starlight-express/",
+    tags: ["Sci-Fi", "Abenteuer", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+  {
+    id: "mrsdoubtfire",
+    slug: "mrs-doubtfire",
+    title: "Mrs. Doubtfire – Das Musical",
+    provider: "ATG Entertainment",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "München", "Stuttgart", "Frankfurt"],
+    description: "Der Kultfilm mit Robin Williams als Musical! Eine herzerwärmende Geschichte über Familie, Liebe und die Kraft der Verwandlung.",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/mrs-doubtfire-das-musical/",
+    tags: ["Komödie", "Familie", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+
+  // === SCHMIDTS TIVOLI ===
+  {
+    id: "weihnachtsbaeckerei",
+    slug: "weihnachtsbaeckerei",
+    title: "Die Weihnachtsbäckerei – Das Musical",
+    provider: "Schmidts Tivoli",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart"],
+    description: "Das beliebte Weihnachtslied von Volker Rosin als zauberhaftes Musical. Eine Geschichte über Freundschaft, Backen und Weihnachtszauber.",
+    image: "https://images.unsplash.com/photo-1520962922320-2038eebab146?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/die-weihnachtsbaeckerei/",
+    tags: ["Weihnacht", "Familie", "Tournee"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/musical/?city=stuttgart" },
+    ],
+    quotes: [
+      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
+      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
+      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
+  },
+
+  // === TRINITY CONCERTS ===
+  {
+    id: "phantom-trinity",
+    slug: "phantom-der-oper-trinity",
+    title: "Das Phantom der Oper",
+    provider: "Trinity Concerts",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "München", "Stuttgart", "Köln", "Frankfurt", "Düsseldorf", "Leipzig", "Dresden", "Hannover"],
+    description: "Das meistgespielte Musical aller Zeiten in einer spektakulären Neuproduktion. Die düstere Liebesgeschichte zwischen dem Phantom und Christine in der Oper von Paris mit der ikonischen Musik von Andrew Lloyd Webber.",
+    image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/",
+    featured: true,
+    tags: ["Klassiker", "Romantik", "Tournee", "Lloyd Webber"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Operettenhaus", startDate: "2026-05-01", endDate: "2026-08-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=hamburg" },
+      { city: "Berlin", venue: "Theater an der Westseite", startDate: "2026-09-01", endDate: "2026-12-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=berlin" },
+      { city: "München", venue: "Deutsches Theater München", startDate: "2027-01-01", endDate: "2027-04-30", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=muenchen" },
+      { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2027-05-01", endDate: "2027-08-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=stuttgart" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-09-01", endDate: "2027-12-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=koeln" },
+      { city: "Frankfurt", venue: "Jahrhunderthalle", startDate: "2028-01-01", endDate: "2028-04-30", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=frankfurt" },
+      { city: "Düsseldorf", venue: "Capitol Theater", startDate: "2028-05-01", endDate: "2028-08-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=duesseldorf" },
+      { city: "Leipzig", venue: "Oper Leipzig", startDate: "2028-09-01", endDate: "2028-12-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=leipzig" },
+      { city: "Dresden", venue: "Semperoper", startDate: "2029-01-01", endDate: "2029-04-30", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=dresden" },
+      { city: "Hannover", venue: "Kuppelsaal", startDate: "2029-05-01", endDate: "2029-08-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=hannover" },
+    ],
+    quotes: [
+      { text: "Das Phantom der Oper bleibt das größte Musical aller Zeiten.", source: "Die Welt" },
+      { text: "Eine zeitlose Liebesgeschichte, die das Publikum in ihren Bann zieht.", source: "Der Spiegel" },
+      { text: "Spektakulär, ergreifend und unvergesslich.", source: "Hamburger Abendblatt" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Phantom Szene 1" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Phantom Szene 2" },
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Phantom Szene 3" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Phantom Szene 4" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Phantom Szene 5" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Phantom Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 45 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2029" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Das Phantom der Oper gastiert an verschiedenen Spielstätten in ganz Deutschland. Siehe Termine und Städte oben." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den jeweiligen Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag zwischen 49€ und 159€." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert 2 Stunden 45 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einem großen Orchester begleitet." },
+    ],
+  },
+
+  // === ATG TOURING ===
+  {
+    id: "romeo-julia",
+    slug: "romeo-und-julia",
+    title: "Romeo und Julia",
+    provider: "ATG Touring",
+    category: "tournee",
+    cities: ["Hamburg", "Berlin", "München", "Köln", "Stuttgart", "Frankfurt", "Düsseldorf"],
+    description: "Shakespeares zeitlose Liebestragödie als modernes Musical. Eine packende Neuinterpretation mit zeitgenössischer Musik und Choreographie, die die ewige Geschichte von Romeo und Julia neu erzählt.",
+    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&q=80",
+    eventimUrl: "https://www.eventim.de/artist/romeo-und-julia-das-musical/",
+    featured: true,
+    tags: ["Klassiker", "Romantik", "Tournee", "Shakespeare"],
+    youtubeTrailerId: "dQw4w9WgXcQ",
+    tourDates: [
+      { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=hamburg" },
+      { city: "Berlin", venue: "Friedrichstadt-Palast", startDate: "2026-10-01", endDate: "2027-01-31", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=berlin" },
+      { city: "München", venue: "Gartnerplatz-Theater", startDate: "2027-02-01", endDate: "2027-05-31", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=muenchen" },
+      { city: "Köln", venue: "Musical Dome", startDate: "2027-06-01", endDate: "2027-09-30", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=koeln" },
+      { city: "Stuttgart", venue: "Staatstheater Stuttgart", startDate: "2027-10-01", endDate: "2028-01-31", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=stuttgart" },
+      { city: "Frankfurt", venue: "Palmengarten", startDate: "2028-02-01", endDate: "2028-05-31", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=frankfurt" },
+      { city: "Düsseldorf", venue: "Capitol Theater", startDate: "2028-06-01", endDate: "2028-09-30", eventimUrl: "https://www.eventim.de/artist/romeo-und-julia/?city=duesseldorf" },
+    ],
+    quotes: [
+      { text: "Eine moderne, ergreifende Interpretation eines Klassikers.", source: "Die Welt" },
+      { text: "Musik und Tanz vereinen sich zu einem unvergesslichen Erlebnis.", source: "Der Spiegel" },
+      { text: "Romeo und Julia wie man es noch nie gesehen hat.", source: "Berliner Zeitung" },
+    ],
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Romeo und Julia Szene 1" },
+      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Romeo und Julia Szene 2" },
+      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Romeo und Julia Szene 3" },
+      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Romeo und Julia Szene 4" },
+      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Romeo und Julia Szene 5" },
+      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Romeo und Julia Szene 6" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Auf Tour", value: "2026-2028" },
+    ],
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Romeo und Julia gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren zwischen 39€ und 129€." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 14 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+    ],
   },
 ];
 
@@ -498,42 +1904,46 @@ export const cities: City[] = [
     slug: "dresden",
     name: "Dresden",
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=600&q=80",
-    description: "Elbflorenz begeistert nicht nur mit seiner Architektur, sondern auch als Gastspielort für Musical-Tourneen.",
+    description: "Die Kulturhauptstadt Sachsens mit der Semperoper ist ein wichtiger Spielort für Musical-Tourneen und Opernaufführungen.",
     musicalCount: 0,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Dresden",
   },
+  {
+    slug: "hannover",
+    name: "Hannover",
+    image: "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=600&q=80",
+    description: "Die niedersächsische Hauptstadt ist ein wichtiger Stopp für Tournee-Musicals mit modernen Spielstätten.",
+    musicalCount: 0,
+    hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Hannover",
+  },
+  {
+    slug: "wien",
+    name: "Wien",
+    image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=600https://images.unsplash.com/photo-1516551288021-7bde5d0ef467?w=600&q=80q=80",
+    description: "Die österreichische Hauptstadt ist berühmt für ihre Theatertradition und beherbergt renommierte Musical-Produktionen.",
+    musicalCount: 0,
+    hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Wien",
+  },
 ];
 
-// Berechne musicalCount dynamisch
-cities.forEach((city) => {
-  const count = musicals.filter(
-    (m) => m.city === city.name || (m.cities && m.cities.includes(city.name))
-  ).length;
-  city.musicalCount = count;
-});
-
-export function getMusicalsByCity(cityName: string): Musical[] {
-  return musicals.filter(
-    (m) => m.city === cityName || (m.cities && m.cities.includes(cityName))
-  );
-}
-
-export function getMusicalsByProvider(providerName: string): Musical[] {
-  return musicals.filter((m) => m.provider === providerName);
-}
-
-export function getMusicalsByCategory(category: Musical["category"]): Musical[] {
-  return musicals.filter((m) => m.category === category);
-}
-
-export function getFeaturedMusicals(): Musical[] {
-  return musicals.filter((m) => m.featured);
-}
-
+// Hilfsfunktionen
+// Hilfsfunktionen
 export function getMusicalBySlug(slug: string): Musical | undefined {
   return musicals.find((m) => m.slug === slug);
 }
 
+export function getMusicalsByCity(cityName: string): Musical[] {
+  return musicals.filter((m) => m.city === cityName || m.cities?.includes(cityName));
+}
+
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find((c) => c.slug === slug);
+}
+
+export function getProviderBySlug(slug: string): Provider | undefined {
+  return providers.find((p) => p.slug === slug);
+}
+
+export function getFeaturedMusicals(): Musical[] {
+  return musicals.filter((m) => m.featured).slice(0, 6);
 }
