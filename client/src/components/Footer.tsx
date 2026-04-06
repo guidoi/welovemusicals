@@ -4,6 +4,7 @@
  */
 import { Ticket, Heart } from "lucide-react";
 import { Link } from "wouter";
+import { cities } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -61,13 +62,16 @@ export default function Footer() {
                 { label: "Berlin", slug: "berlin" },
                 { label: "München", slug: "muenchen" },
                 { label: "Köln", slug: "koeln" },
-              ].map((item) => (
-                <li key={item.slug}>
-                  <Link href={`/#staedte`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              ].map((item) => {
+                const city = cities.find((c) => c.slug === item.slug);
+                return (
+                  <li key={item.slug}>
+                    <Link href={city ? `/stadt/${city.slug}` : `/#staedte`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
