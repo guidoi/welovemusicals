@@ -121,7 +121,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
-              Entdecke die besten Musicals in Deutschland. Tickets sichern, Hotels buchen
+              Entdecke die besten Musicals in Deutschland, Österreich und in der Schweiz. Tickets sichern, Hotels buchen
               und unvergessliche Abende erleben.
             </p>
 
