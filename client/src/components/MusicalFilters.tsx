@@ -36,7 +36,7 @@ export default function MusicalFilters({
 
   const categoryLabels: Record<FilterCategory, string> = {
     alle: "Alle Kategorien",
-    ensuite: "Dauerbrenner & Klassiker",
+    ensuite: "En-Suite-Musicals",
     tournee: "Tournee-Musicals",
     kinder: "Kinder-Musicals",
   };
@@ -68,7 +68,7 @@ export default function MusicalFilters({
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
           >
             <option value="alle">Alle Kategorien</option>
-            <option value="ensuite">Dauerbrenner & Klassiker</option>
+            <option value="ensuite">En-Suite-Musicals</option>
             <option value="tournee">Tournee-Musicals</option>
             <option value="kinder">Kinder-Musicals</option>
           </select>
