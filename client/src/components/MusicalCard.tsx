@@ -51,14 +51,6 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-            {/* Category Badge */}
-            <div className="absolute top-3 left-3">
-              <span className={`text-xs font-medium px-2.5 py-1 rounded-sm flex items-center gap-1 ${categoryColors[musical.category]}`}>
-                <span>{categoryIcons[musical.category]}</span>
-                {categoryLabels[musical.category]}
-              </span>
-            </div>
-
             {/* Provider Badge */}
             <div className="absolute top-3 right-3">
               <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-black/50 text-foreground/80 backdrop-blur-sm">
