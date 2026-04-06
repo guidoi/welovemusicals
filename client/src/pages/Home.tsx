@@ -24,7 +24,7 @@ import MusicalFilters, { type FilterCategory, type SortOption } from "@/componen
 import {
   musicals,
   cities,
-  providers,
+
   getFeaturedMusicals,
   createAwinLink,
   type Musical,
@@ -134,10 +134,7 @@ export default function Home() {
                 <MapPin className="w-5 h-5 text-gold" />
                 <span className="text-white/80 text-sm">{cities.length} Städte</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{providers.length} Anbieter</span>
-              </div>
+
             </div>
 
             {/* CTA Buttons */}
@@ -339,45 +336,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROVIDERS SECTION ===== */}
-      <section id="anbieter" className="py-16 md:py-24 relative overflow-hidden scroll-mt-24">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-3">
-            <div className="w-8 h-px bg-gold" />
-            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Partner</span>
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Vertrauensvolle Anbieter
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mb-10">
-            Wir arbeiten mit den führenden Musical-Anbietern in Deutschland zusammen.
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {providers.map((provider, i) => (
-              <motion.div
-                key={provider.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card border border-gold/10 rounded-sm p-6 hover:border-gold/40 transition-all"
-              >
-                {provider.logo ? (
-                  <img src={provider.logo} alt={provider.name} className="h-12 mb-3 object-contain" />
-                ) : (
-                  <Building2 className="w-8 h-8 text-gold mb-3" />
-                )}
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
-                  {provider.name}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {provider.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Gold Divider */}
       <div className="container"><div className="gold-line" /></div>

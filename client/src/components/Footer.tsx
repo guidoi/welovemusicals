@@ -56,22 +56,31 @@ export default function Footer() {
               Musical-Städte
             </h4>
             <ul className="space-y-2">
-              {[
-                { label: "Hamburg", slug: "hamburg" },
-                { label: "Stuttgart", slug: "stuttgart" },
-                { label: "Berlin", slug: "berlin" },
-                { label: "München", slug: "muenchen" },
-                { label: "Köln", slug: "koeln" },
-              ].map((item) => {
-                const city = cities.find((c) => c.slug === item.slug);
-                return (
-                  <li key={item.slug}>
-                    <Link href={city ? `/stadt/${city.slug}` : `/#staedte`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
+              <li>
+                <Link href="/stadt/hamburg" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  Hamburg
+                </Link>
+              </li>
+              <li>
+                <Link href="/stadt/stuttgart" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  Stuttgart
+                </Link>
+              </li>
+              <li>
+                <Link href="/stadt/berlin" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  Berlin
+                </Link>
+              </li>
+              <li>
+                <Link href="/stadt/muenchen" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  München
+                </Link>
+              </li>
+              <li>
+                <Link href="/stadt/koeln" className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                  Köln
+                </Link>
+              </li>
             </ul>
           </div>
 
