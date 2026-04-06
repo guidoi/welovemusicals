@@ -28,7 +28,7 @@ export default function MusicalFAQSection({ items }: MusicalFAQProps) {
         <Accordion type="single" collapsible className="w-full">
           {items.map((faq, idx) => (
             <AccordionItem key={idx} value={`faq-${idx}`}>
-              <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-accent transition-colors">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="text-foreground/80 leading-relaxed">

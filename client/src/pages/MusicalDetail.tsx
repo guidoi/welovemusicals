@@ -192,7 +192,10 @@ export default function MusicalDetail() {
               href={ticketLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg bg-gold hover:bg-gold/90 text-background"
+              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
+              style={{ backgroundColor: 'rgb(239, 68, 68)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
             >
               Tickets
               <ExternalLink className="w-5 h-5" />
@@ -257,7 +260,7 @@ export default function MusicalDetail() {
                     href={providerInfo.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-semibold"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold"
                   >
                     Zur Website des Anbieters
                     <ExternalLink className="w-4 h-4" />
@@ -286,15 +289,15 @@ export default function MusicalDetail() {
                   className="group bg-card border border-border/50 rounded-sm p-6 hover:border-accent/30 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-display text-lg font-bold text-foreground group-hover:text-accent transition-colors">
+                    <h3 className="font-display text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                       {city.name}
                     </h3>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     {city.description}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm text-accent font-semibold">
+                  <span className="inline-flex items-center gap-1.5 text-sm text-primary font-semibold">
                     <Hotel className="w-4 h-4" />
                     Hotels durchsuchen
                   </span>
