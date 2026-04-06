@@ -197,34 +197,7 @@ export default function MusicalDetail() {
                   </p>
                 </div>
 
-                {/* Hotel CTA */}
-                {relevantCities.length > 0 && (
-                  <div className="bg-card border border-border/50 rounded-sm p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Hotel className="w-5 h-5 text-accent" />
-                      <h3 className="font-display text-lg font-semibold text-foreground">
-                        Hotels in der Nähe
-                      </h3>
-                    </div>
-                    <div className="space-y-3">
-                      {relevantCities.slice(0, 4).map((city) => (
-                        <a
-                          key={city.slug}
-                          href={city.hotelSearchUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-3 bg-secondary rounded-sm hover:bg-secondary/80 transition-colors group"
-                        >
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-3.5 h-3.5 text-accent/50" />
-                            <span className="text-sm text-foreground">Hotels in {city.name}</span>
-                          </div>
-                          <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
+
               </motion.div>
             </div>
           </div>
@@ -270,36 +243,6 @@ export default function MusicalDetail() {
       {/* FAQ */}
       {musical.faqItems && musical.faqItems.length > 0 && (
         <MusicalFAQSection items={musical.faqItems} />
-      )}
-
-      {/* Provider Section */}
-      {providerInfo && (
-        <section className="py-12 md:py-16 bg-card/50">
-          <div className="container max-w-4xl">
-            <div className="bg-card border border-border/50 rounded-sm p-8">
-              <div className="flex items-start gap-4 mb-4">
-                <Building2 className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h2 className="font-display text-2xl font-bold text-foreground mb-2">
-                    {providerInfo.name}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {providerInfo.description}
-                  </p>
-                  <a
-                    href={providerInfo.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-semibold"
-                  >
-                    Zur Website
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       )}
 
       {/* Hotels Section */}
