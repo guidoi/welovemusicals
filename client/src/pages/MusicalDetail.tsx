@@ -120,9 +120,9 @@ export default function MusicalDetail() {
       {/* Content */}
       <section className="py-12 md:py-16">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 gap-10">
             {/* Main Content */}
-            <div className="lg:col-span-2">
+            <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -161,70 +161,6 @@ export default function MusicalDetail() {
                     Tickets sind über Eventim erhältlich.
                   </p>
                 </div>
-              </motion.div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="sticky top-24 space-y-6"
-              >
-                {/* Ticket CTA */}
-                <div className="bg-card border border-accent/20 rounded-sm p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Ticket className="w-5 h-5 text-accent" />
-                    <h3 className="font-display text-lg font-semibold text-foreground">
-                      Tickets sichern
-                    </h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-6">
-                    Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.
-                  </p>
-                  <a
-                    href={ticketLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-accent text-accent-foreground font-bold rounded-sm hover:bg-accent/90 transition-colors"
-                  >
-                    Jetzt Tickets kaufen
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <p className="text-xs text-muted-foreground/50 mt-3 text-center">
-                    Weiterleitung zu eventim.de – Affiliate-Link
-                  </p>
-                </div>
-
-                {/* Hotel CTA */}
-                {relevantCities.length > 0 && (
-                  <div className="bg-card border border-border/50 rounded-sm p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Hotel className="w-5 h-5 text-accent" />
-                      <h3 className="font-display text-lg font-semibold text-foreground">
-                        Hotels in der Nähe
-                      </h3>
-                    </div>
-                    <div className="space-y-3">
-                      {relevantCities.slice(0, 4).map((city) => (
-                        <a
-                          key={city.slug}
-                          href={city.hotelSearchUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-3 bg-secondary rounded-sm hover:bg-secondary/80 transition-colors group"
-                        >
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-3.5 h-3.5 text-accent/50" />
-                            <span className="text-sm text-foreground">Hotels in {city.name}</span>
-                          </div>
-                          <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </motion.div>
             </div>
           </div>
