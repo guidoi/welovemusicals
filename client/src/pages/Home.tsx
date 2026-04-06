@@ -336,7 +336,7 @@ export default function Home() {
       </section>
 
       {/* ===== PROVIDERS SECTION ===== */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section id="anbieter" className="py-16 md:py-24 relative overflow-hidden scroll-mt-24">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />

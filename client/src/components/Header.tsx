@@ -22,13 +22,13 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-gold/10">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-widest flex items-center gap-2 uppercase" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
             We
             <Heart className="w-7 h-7 transition-colors" style={{ fill: 'none', stroke: 'var(--color-red)', strokeWidth: 2.5, '--color-red': 'rgb(239, 68, 68)' } as React.CSSProperties} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
             <span className="text-foreground">Musicals</span>
           </span>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
