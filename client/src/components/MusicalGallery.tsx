@@ -55,7 +55,7 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
           {/* Navigation Buttons */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gold hover:bg-gold/80 text-background rounded-full p-2 transition-colors duration-200 z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-primary hover:bg-primary/80 text-primary-foreground rounded-full p-2 transition-colors duration-200 z-10"
             aria-label="Scroll left"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -63,7 +63,7 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
 
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gold hover:bg-gold/80 text-background rounded-full p-2 transition-colors duration-200 z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-primary hover:bg-primary/80 text-primary-foreground rounded-full p-2 transition-colors duration-200 z-10"
             aria-label="Scroll right"
           >
             <ChevronRight className="w-6 h-6" />

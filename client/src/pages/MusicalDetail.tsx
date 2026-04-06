@@ -84,13 +84,13 @@ export default function MusicalDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/" className="inline-flex items-center gap-2 transition-colors mb-6 text-gold hover:text-gold/80">
+            <Link href="/" className="inline-flex items-center gap-2 transition-colors mb-6 text-primary hover:text-primary/80">
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm">Zurück zur Übersicht</span>
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-gold/20 text-gold">
+              <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-primary/20 text-primary">
                 {musical.category === "ensuite" ? "En-Suite-Musical" : musical.category === "tournee" ? "Tournee" : "Kinder-Musical"}
               </span>
               <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-secondary text-secondary-foreground">
@@ -102,11 +102,11 @@ export default function MusicalDetail() {
               {musical.title}
             </h1>
             {musical.subtitle && (
-              <p className="text-lg italic mb-4 text-gold/80">{musical.subtitle}</p>
+              <p className="text-lg italic mb-4 text-primary/80">{musical.subtitle}</p>
             )}
 
             <div className="flex items-center gap-2 text-white/70">
-              <MapPin className="w-4 h-4 text-gold" />
+              <MapPin className="w-4 h-4 text-primary" />
               {musical.city ? (
                 <span>{musical.city} – {musical.venue}</span>
               ) : (
