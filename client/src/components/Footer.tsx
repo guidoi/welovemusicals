@@ -15,13 +15,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-display text-lg font-bold uppercase tracking-wide flex items-center gap-2" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
+            <Link href="/" className="flex items-center gap-2 mb-4 group">
+              <span className="font-display text-lg font-bold uppercase tracking-wide flex items-center gap-2 group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
                 <span className="text-gold">We</span>
                 <Heart className="w-5 h-5" style={{ color: 'rgb(239, 68, 68)', fill: 'rgb(239, 68, 68)' }} />
                 <span className="text-foreground">Musicals</span>
               </span>
-            </div>
+            </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Dein Portal für die besten Musical-Produktionen im deutschsprachigen Raum. Tickets, Hotels und mehr.
             </p>
