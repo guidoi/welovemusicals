@@ -72,6 +72,7 @@ export interface Provider {
   slug: string;
   description: string;
   website: string;
+  logo?: string; // Logo URL
 }
 
 // AWIN Deeplink-Funktion: Merchant ID 11388 (Eventim)
@@ -91,54 +92,63 @@ export const providers: Provider[] = [
     slug: "stage-entertainment",
     description: "Europas führender Musical-Produzent mit festen Spielstätten in Hamburg, Stuttgart und Berlin.",
     website: "https://www.stage-entertainment.de",
+    logo: "https://www.stage-entertainment.de/assets/logo.png",
   },
   {
     name: "ShowSlot",
     slug: "showslot",
     description: "Produzent und Veranstalter von Tournee-Musicals und Shows in Deutschland, Österreich und der Schweiz.",
     website: "https://showslot.com",
+    logo: "https://showslot.com/assets/logo.png",
   },
   {
     name: "Limelight Live Entertainment",
     slug: "limelight",
     description: "Produzent und Veranstalter von Musical- und Showformaten auf großer Tournee.",
     website: "https://limelight-live.de",
+    logo: "https://limelight-live.de/assets/logo.png",
   },
   {
     name: "ATG Entertainment",
     slug: "atg",
     description: "Internationaler Live-Entertainment-Konzern mit Theatern in Europa und den USA.",
     website: "https://atgentertainment.de",
+    logo: "https://atgentertainment.de/assets/logo.png",
   },
   {
     name: "Semmel Concerts",
     slug: "semmel-concerts",
     description: "Einer der größten deutschen Konzert- und Showveranstalter mit Musical-Events.",
     website: "https://semmel.de",
+    logo: "https://semmel.de/assets/logo.png",
   },
   {
     name: "Theater Liberi",
     slug: "theater-liberi",
     description: "Spezialist für hochwertige Familien-Musicals auf Deutschlandtournee.",
     website: "https://theater-liberi.de",
+    logo: "https://theater-liberi.de/assets/logo.png",
   },
   {
     name: "Schmidts Tivoli",
     slug: "schmidts-tivoli",
     description: "Legendäre Spielstätte in Hamburg mit Musicals, Shows und Revuen.",
     website: "https://www.schmidts-tivoli.de",
+    logo: "https://www.schmidts-tivoli.de/assets/logo.png",
   },
   {
     name: "Trinity Concerts",
     slug: "trinity-concerts",
-    description: "Spezialist für große Musical-Tourneen und Klassiker-Produktionen in Deutschland und Europa.",
+    description: "Spezialist für große Musical-Tournéen und Klassiker-Produktionen in Deutschland und Europa.",
     website: "https://www.trinityconcerts.de",
+    logo: "https://www.trinityconcerts.de/assets/logo.png",
   },
   {
     name: "ATG Touring",
     slug: "atg-touring",
     description: "Tourneesparte der ATG Entertainment mit modernen Musical-Produktionen.",
     website: "https://atgentertainment.de",
+    logo: "https://atgentertainment.de/assets/logo.png",
   },
 ];
 

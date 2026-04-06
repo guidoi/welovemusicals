@@ -358,7 +358,11 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-card border border-gold/10 rounded-sm p-6 hover:border-gold/40 transition-all"
               >
-                <Building2 className="w-8 h-8 text-gold mb-3" />
+                {provider.logo ? (
+                  <img src={provider.logo} alt={provider.name} className="h-12 mb-3 object-contain" />
+                ) : (
+                  <Building2 className="w-8 h-8 text-gold mb-3" />
+                )}
                 <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                   {provider.name}
                 </h3>
