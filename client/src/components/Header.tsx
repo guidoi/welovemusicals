@@ -23,9 +23,10 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Heart className="w-6 h-6 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2 }} />
-          <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-wide">
-            We Love<span className="text-foreground">Musicals</span>
+          <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-wide flex items-center gap-2">
+            We
+            <Heart className="w-5 h-5 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2 }} />
+            <span className="text-foreground">Musicals</span>
           </span>
         </Link>
 
