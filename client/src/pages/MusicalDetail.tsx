@@ -197,7 +197,7 @@ export default function MusicalDetail() {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
             >
-              Jetzt Tickets kaufen
+              Tickets
               <ExternalLink className="w-5 h-5" />
             </a>
             <p className="text-xs text-muted-foreground/50 mt-4">

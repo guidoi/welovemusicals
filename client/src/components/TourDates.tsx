@@ -97,7 +97,7 @@ export default function TourDates({ tourDates }: TourDatesProps) {
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
               >
-                Tickets kaufen
+                Tickets
               </a>
             </div>
           ))}
