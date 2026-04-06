@@ -25,7 +25,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 group">
           <span className="font-display text-xl md:text-2xl font-bold text-gold tracking-wide flex items-center gap-2">
             We
-            <Heart className="w-5 h-5 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2 }} />
+            <Heart className="w-7 h-7 text-red-500 group-hover:text-red-400 transition-colors" style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 2.5 }} />
             <span className="text-foreground">Musicals</span>
           </span>
         </Link>
