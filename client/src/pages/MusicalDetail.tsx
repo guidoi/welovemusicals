@@ -152,42 +152,6 @@ export default function MusicalDetail() {
               </motion.div>
             </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="sticky top-24 space-y-6"
-              >
-                {/* Ticket CTA */}
-                <div className="bg-card border border-accent/20 rounded-sm p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Ticket className="w-5 h-5 text-accent" />
-                    <h3 className="font-display text-lg font-semibold text-foreground">
-                      Tickets sichern
-                    </h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-6">
-                    Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.
-                  </p>
-                  <a
-                    href={ticketLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-accent text-accent-foreground font-bold rounded-sm hover:bg-accent/90 transition-colors"
-                  >
-                    Jetzt Tickets kaufen
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <p className="text-xs text-muted-foreground/50 mt-3 text-center">
-                    Weiterleitung zu eventim.de – Affiliate-Link
-                  </p>
-                </div>
-
-
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
@@ -196,6 +160,40 @@ export default function MusicalDetail() {
       <section className="py-12 md:py-16 bg-muted/20">
         <div className="container">
           <MusicalKeyVisual image={musical.image} title={musical.title} />
+        </div>
+      </section>
+
+      {/* Ticket CTA */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-card border border-accent/20 rounded-sm p-8"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Ticket className="w-6 h-6 text-accent" />
+              <h2 className="font-display text-2xl font-bold text-foreground">
+                Tickets sichern
+              </h2>
+            </div>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Sichere dir jetzt deine Tickets für {musical.title} - bequem und sicher über Eventim.
+            </p>
+            <a
+              href={ticketLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground font-bold rounded-sm hover:bg-accent/90 transition-colors text-lg"
+            >
+              Jetzt Tickets kaufen
+              <ExternalLink className="w-5 h-5" />
+            </a>
+            <p className="text-xs text-muted-foreground/50 mt-4">
+              Weiterleitung zu eventim.de - Affiliate-Link
+            </p>
+          </motion.div>
         </div>
       </section>
 
