@@ -14,15 +14,21 @@ interface MusicalCardProps {
 }
 
 const categoryLabels: Record<string, string> = {
-  standort: "Standort-Musical",
+  ensuite: "En-Suite-Musical",
   tournee: "Tournee",
-  familie: "Familienmusical",
+  kinder: "Kinder-Musical",
 };
 
 const categoryColors: Record<string, string> = {
-  standort: "bg-gold/20 text-gold",
+  ensuite: "bg-gold/20 text-gold",
   tournee: "bg-burgundy/30 text-burgundy-light",
-  familie: "bg-emerald-900/30 text-emerald-400",
+  kinder: "bg-emerald-900/30 text-emerald-400",
+};
+
+const categoryIcons: Record<string, string> = {
+  ensuite: "🏛️",
+  tournee: "🚌",
+  kinder: "👶",
 };
 
 export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
@@ -47,7 +53,8 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
 
             {/* Category Badge */}
             <div className="absolute top-3 left-3">
-              <span className={`text-xs font-medium px-2.5 py-1 rounded-sm ${categoryColors[musical.category]}`}>
+              <span className={`text-xs font-medium px-2.5 py-1 rounded-sm flex items-center gap-1 ${categoryColors[musical.category]}`}>
+                <span>{categoryIcons[musical.category]}</span>
                 {categoryLabels[musical.category]}
               </span>
             </div>
