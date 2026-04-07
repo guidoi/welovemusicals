@@ -97,7 +97,7 @@ export default function MusicalFilters({
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
             <MapPin className="w-3 h-3 inline mr-1" />
-            Tourneestädte
+            Städte
           </label>
           <div className="relative">
             <button
