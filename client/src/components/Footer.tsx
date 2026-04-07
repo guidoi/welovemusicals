@@ -118,7 +118,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground/50">
-            &copy; {new Date().getFullYear()} We Love Musicals – Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} WE LOVE MUSICALS – Alle Rechte vorbehalten.
           </p>
           <p className="text-xs text-muted-foreground/50 flex items-center gap-1">
             Gemacht mit <Heart className="w-3 h-3" style={{ color: 'rgb(239, 68, 68)', fill: 'rgb(239, 68, 68)' }} /> für Musical-Fans
