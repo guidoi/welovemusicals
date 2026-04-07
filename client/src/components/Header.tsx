@@ -13,7 +13,7 @@ export default function Header() {
 
   const navItems = [
     { label: "Musicals", href: "/#musicals" },
-    { label: "Tourneestädte", href: "/#staedte" },
+    { label: "Städte", href: "/#staedte" },
     { label: "Hotels", href: "/#hotels" },
   ];
 
