@@ -16,12 +16,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <span className="font-display text-lg font-bold uppercase tracking-wide flex items-center gap-2 group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
-                <span className="text-gold">We</span>
-                <Heart className="w-5 h-5 transition-colors" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
-                <span className="text-foreground">Musicals</span>
-              </span>
+            <Link href="/" className="flex items-center mb-4 group">
+              <div className="flex flex-col items-center leading-none group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-gold font-extrabold text-sm tracking-[0.2em] uppercase">We</span>
+                  <Heart className="w-4 h-4 transition-colors" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
+                </div>
+                <span className="text-foreground font-extrabold text-lg tracking-[0.18em] uppercase -mt-0.5">Musicals</span>
+              </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Dein Portal für die besten Musical-Produktionen im deutschsprachigen Raum. Tickets, Hotels und mehr.
