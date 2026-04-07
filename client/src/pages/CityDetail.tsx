@@ -3,6 +3,7 @@
  * CityDetail: Detailseite für eine Musical-Stadt mit Musicals und Hotels
  */
 import { useParams, Link } from "wouter";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -20,6 +21,10 @@ import { getCityBySlug, getMusicalsByCity, cities } from "@/lib/data";
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
   const city = getCityBySlug(params.slug || "");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [params.slug]);
 
   if (!city) {
     return (
@@ -48,7 +53,7 @@ export default function CityDetail() {
       <Header />
 
       {/* Hero */}
-      <section className="relative min-h-[45vh] flex items-end overflow-hidden">
+      <section id="city-hero" className="relative min-h-[45vh] flex items-end overflow-hidden pt-20">
         <div className="absolute inset-0">
           <img
             src={city.image}
