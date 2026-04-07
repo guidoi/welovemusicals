@@ -8,6 +8,7 @@ import { Clock, Globe, Calendar, Mic2 } from "lucide-react";
 
 interface MusicalShowFactsProps {
   facts: MusicalShowFact[];
+  provider?: string;
 }
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -17,8 +18,11 @@ const iconMap: Record<string, React.ReactNode> = {
   "Veranstalter": <Mic2 className="w-8 h-8" />,
 };
 
-export default function MusicalShowFacts({ facts }: MusicalShowFactsProps) {
+export default function MusicalShowFacts({ facts, provider }: MusicalShowFactsProps) {
   if (!facts || facts.length === 0) return null;
+
+  // Füge Veranstalter hinzu wenn provider vorhanden
+  const allFacts = provider ? [...facts, { label: "Veranstalter", value: provider }] : facts;
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-muted/30 to-background">
@@ -28,7 +32,7 @@ export default function MusicalShowFacts({ facts }: MusicalShowFactsProps) {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {facts.map((fact, idx) => (
+          {allFacts.map((fact, idx) => (
             <div
               key={idx}
               className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300"

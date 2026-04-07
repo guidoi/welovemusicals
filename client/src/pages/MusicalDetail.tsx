@@ -240,7 +240,7 @@ export default function MusicalDetail() {
 
       {/* Show Facts */}
       {musical.showFacts && musical.showFacts.length > 0 && (
-        <MusicalShowFacts facts={musical.showFacts} />
+        <MusicalShowFacts facts={musical.showFacts} provider={musical.provider} />
       )}
 
       {/* FAQ */}
