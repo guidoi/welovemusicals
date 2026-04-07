@@ -19,7 +19,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-4 group">
               <span className="font-display text-lg font-bold uppercase tracking-wide flex items-center gap-2 group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 700, letterSpacing: '0.12em' }}>
                 <span className="text-gold">We</span>
-                <Heart className="w-5 h-5" style={{ color: 'rgb(239, 68, 68)', fill: 'rgb(239, 68, 68)' }} />
+                <Heart className="w-5 h-5 transition-colors" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
                 <span className="text-foreground">Musicals</span>
               </span>
             </Link>
