@@ -57,7 +57,7 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
-          <span className="text-xl md:text-2xl font-extrabold tracking-[0.15em] flex items-center gap-2 uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <span className="text-xl md:text-2xl font-extrabold tracking-[0.15em] flex items-center gap-2 uppercase" style={{ fontFamily: 'Poppins, sans-serif' }}>
             <span className="text-gold">We</span>
             <Heart className="w-6 h-6 md:w-7 md:h-7 transition-colors" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
             <span className="text-foreground">Musicals</span>
