@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "König der Löwen", slug: "koenig-der-loewen" },
-                { label: "Die Eiskönigin", slug: "die-eiskoenigin" },
+                { label: "Die Eiskönigin", slug: "eiskoenigin" },
                 { label: "Pretty Woman", slug: "pretty-woman" },
                 { label: "Harry Potter", slug: "harry-potter" },
                 { label: "MJ Musical", slug: "mj-michael-jackson" },
