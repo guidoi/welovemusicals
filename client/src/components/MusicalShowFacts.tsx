@@ -4,7 +4,7 @@
  */
 
 import { MusicalShowFact } from "@/lib/data";
-import { Clock, Globe, Calendar } from "lucide-react";
+import { Clock, Globe, Calendar, Mic2 } from "lucide-react";
 
 interface MusicalShowFactsProps {
   facts: MusicalShowFact[];
@@ -14,6 +14,7 @@ const iconMap: Record<string, React.ReactNode> = {
   "Showdauer": <Clock className="w-8 h-8" />,
   "Sprache": <Globe className="w-8 h-8" />,
   "Auf Tour": <Calendar className="w-8 h-8" />,
+  "Veranstalter": <Mic2 className="w-8 h-8" />,
 };
 
 export default function MusicalShowFacts({ facts }: MusicalShowFactsProps) {
@@ -26,8 +27,8 @@ export default function MusicalShowFacts({ facts }: MusicalShowFactsProps) {
           Wissenswertes zur Show
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {facts.slice(0, 3).map((fact, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {facts.map((fact, idx) => (
             <div
               key={idx}
               className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300"
