@@ -74,25 +74,6 @@ export default function MusicalFilters({
           </select>
         </div>
 
-        {/* Provider Filter */}
-        <div>
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            Anbieter
-          </label>
-          <select
-            value={providerFilter}
-            onChange={(e) => setProviderFilter(e.target.value)}
-            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
-          >
-            <option value="alle">Alle Anbieter</option>
-            {providers.map((p) => (
-              <option key={p.slug} value={p.name}>
-                {p.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
         {/* City Filter */}
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
@@ -148,6 +129,25 @@ export default function MusicalFilters({
               </div>
             )}
           </div>
+        </div>
+
+        {/* Provider Filter */}
+        <div>
+          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
+            Anbieter
+          </label>
+          <select
+            value={providerFilter}
+            onChange={(e) => setProviderFilter(e.target.value)}
+            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
+          >
+            <option value="alle">Alle Anbieter</option>
+            {providers.map((p) => (
+              <option key={p.slug} value={p.name}>
+                {p.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/* Sort Option */}
