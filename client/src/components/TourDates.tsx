@@ -76,13 +76,13 @@ export default function TourDates({ tourDates }: TourDatesProps) {
                 <h3 className="text-xl font-bold text-card-foreground mb-1">
                   {date.city}
                 </h3>
-                <p className="text-sm text-card-foreground/70">
+                <p className="text-sm text-white font-medium">
                   {date.venue}
                 </p>
               </div>
 
               <div className="mb-6">
-                <p className="text-sm text-card-foreground/60 mb-1">
+                <p className="text-sm text-gold font-semibold mb-1">
                   {formatDate(date.startDate)} – {formatDate(date.endDate)}
                 </p>
               </div>
