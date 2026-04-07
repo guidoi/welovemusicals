@@ -2,7 +2,7 @@
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * Home: Startseite mit Hero, Featured Musicals, alle Musicals mit erweiterten Filtern, Städte, Anbieter
  */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Ticket,
@@ -41,6 +41,16 @@ export default function Home() {
   const [cityFilter, setCityFilter] = useState<string>("alle");
   const [sortOption, setSortOption] = useState<SortOption>("featured");
   const [showAllMusicals, setShowAllMusicals] = useState(false);
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
 
   const featured = useMemo(() => getFeaturedMusicals(), []);
 
