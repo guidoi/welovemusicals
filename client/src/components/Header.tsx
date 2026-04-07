@@ -17,6 +17,19 @@ export default function Header() {
     { label: "Hotels", href: "/#hotels" },
   ];
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const anchor = href.split('#')[1];
+    if (location === '/') {
+      // Already on home page, scroll to anchor
+      const element = document.getElementById(anchor);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Not on home page, navigate to home with anchor
+      window.location.href = href;
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-gold/10">
       <div className="container flex items-center justify-between h-16 md:h-20">
@@ -35,6 +48,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
+              onClick={(e) => handleAnchorClick(e, item.href)}
               className="text-sm font-medium text-muted-foreground hover:text-gold transition-colors tracking-wide uppercase"
             >
               {item.label}
@@ -72,7 +86,10 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    handleAnchorClick(e, item.href);
+                    setMobileOpen(false);
+                  }}
                   className="text-lg font-display text-foreground hover:text-gold transition-colors py-2 border-b border-border/30"
                 >
                   {item.label}
