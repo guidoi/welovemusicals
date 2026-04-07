@@ -2,7 +2,7 @@
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * Header: Dunkler, eleganter Header mit goldenem Logo und Art-Deco-Akzenten
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,6 +10,11 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  useEffect(() => {
+    setIsNavigating(false);
+  }, [location]);
 
   const navItems = [
     { label: "Musicals", href: "/#musicals" },
@@ -25,10 +30,27 @@ export default function Header() {
       const element = document.getElementById(anchor);
       element?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Not on home page, navigate to home with anchor
+      // Not on home page, navigate to home first
+      setIsNavigating(true);
       window.location.href = href;
     }
   };
+
+  // Listen for hash changes and scroll to anchor
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-gold/10">
