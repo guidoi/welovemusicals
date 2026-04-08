@@ -268,7 +268,7 @@ export default function Home() {
             Musical-Städte in Deutschland, Österreich & der Schweiz
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Von Hamburg bis München – entdecke die wichtigsten Musical-Standorte und finde passende Hotels für deinen Musical-Trip.
+            Vom Hamburger Hafen bis zu den Prachtboulevards von Wien – entdecke die schönsten Musical-Metropolen und mach deine Reise mit dem perfekten Hotel zu einem Erlebnis, das du nie vergisst!
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
