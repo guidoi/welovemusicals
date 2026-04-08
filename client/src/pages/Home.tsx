@@ -161,7 +161,7 @@ export default function Home() {
                 className="px-8 py-3.5 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors tracking-wide inline-flex items-center gap-2"
               >
                 <MapPin className="w-4 h-4" />
-                Tourneestädte
+                Musical-Städte
               </a>
             </div>
           </motion.div>
@@ -169,13 +169,27 @@ export default function Home() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer hidden sm:block"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           onClick={() => {
             const element = document.getElementById('musicals');
             element?.scrollIntoView({ behavior: 'smooth' });
           }}
+        >
+          <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
+        </motion.div>
+        
+        {/* Mobile Scroll Indicator - Below Buttons */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer sm:hidden"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          onClick={() => {
+            const element = document.getElementById('musicals');
+            element?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          style={{ bottom: '-60px' }}
         >
           <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
         </motion.div>
