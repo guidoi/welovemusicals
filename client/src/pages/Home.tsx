@@ -213,7 +213,7 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Alle Musicals & Shows
           </h2>
-          <p className="text-muted-foreground max-w-2xl mb-10">
+          <p className="text-white max-w-2xl mb-10">
             Entdecke alle aktuellen Musical-Produktionen in Deutschland – von Dauerbrenner & Klassiker über Tourneen bis hin zu Familien-Musicals.
           </p>
 
@@ -267,7 +267,7 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Musical-Städte in Deutschland
           </h2>
-          <p className="text-muted-foreground max-w-2xl mb-10">
+          <p className="text-white max-w-2xl mb-10">
             Von Hamburg bis München – entdecke die wichtigsten Musical-Standorte und finde passende Hotels für deinen Musical-Trip.
           </p>
 
@@ -298,7 +298,7 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Hotels in Musical-Städten
           </h2>
-          <p className="text-muted-foreground max-w-2xl mb-10">
+          <p className="text-white max-w-2xl mb-10">
             Mach deinen Musical-Besuch zum perfekten Kurzurlaub. Finde passende Hotels in der Nähe der Theater.
           </p>
 
