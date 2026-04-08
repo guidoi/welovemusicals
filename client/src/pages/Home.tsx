@@ -211,10 +211,10 @@ export default function Home() {
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">VORHANG AUF</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Alle Musicals & Shows
+            Alle Musicals & Shows – wo Träume lebendig werden
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Entdecke alle aktuellen Musical-Produktionen in Deutschland – von Dauerbrenner & Klassiker über Tourneen bis hin zu Familien-Musicals.
+            Wo Träume lebendig werden: Finde das Musical, dass dein Herz höher schlagen lässt!
           </p>
 
           {/* Advanced Filters */}
