@@ -169,27 +169,16 @@ export default function Home() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer hidden sm:block"
+          className="absolute left-1/2 -translate-x-1/2 cursor-pointer"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           onClick={() => {
             const element = document.getElementById('musicals');
             element?.scrollIntoView({ behavior: 'smooth' });
           }}
-        >
-          <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
-        </motion.div>
-        
-        {/* Mobile Scroll Indicator - Below Buttons */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer sm:hidden"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          onClick={() => {
-            const element = document.getElementById('musicals');
-            element?.scrollIntoView({ behavior: 'smooth' });
+          style={{
+            bottom: 'calc(100% + 20px)',
           }}
-          style={{ bottom: '-60px' }}
         >
           <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
         </motion.div>
