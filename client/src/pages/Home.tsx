@@ -214,7 +214,7 @@ export default function Home() {
             Alle Musicals & Shows – wo Träume lebendig werden
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Wo Träume lebendig werden: Finde das Musical, dass dein Herz höher schlagen lässt!
+            Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt.
           </p>
 
           {/* Advanced Filters */}
