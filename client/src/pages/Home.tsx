@@ -265,7 +265,7 @@ export default function Home() {
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Destinationen</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Musical-Städte in Deutschland
+            Musical-Städte in Deutschland, Österreich & der Schweiz
           </h2>
           <p className="text-white max-w-2xl mb-10">
             Von Hamburg bis München – entdecke die wichtigsten Musical-Standorte und finde passende Hotels für deinen Musical-Trip.
