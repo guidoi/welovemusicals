@@ -149,7 +149,7 @@ export default function MusicalDetail() {
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
                   Über das Musical
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-lg mb-8">
+                <p className="text-white leading-relaxed text-lg mb-8">
                   {musical.description}
                 </p>
 

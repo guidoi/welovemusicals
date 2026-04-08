@@ -75,7 +75,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             </div>
 
             {/* Description */}
-            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
+            <p className="text-sm text-white leading-relaxed line-clamp-2 mb-4">
               {musical.description}
             </p>
 
