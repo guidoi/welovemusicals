@@ -148,7 +148,7 @@ export default function Home() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative pb-12">
               <a
                 href="#musicals"
                 className="px-8 py-3.5 bg-gold text-background font-semibold rounded-sm hover:bg-gold-light transition-colors tracking-wide inline-flex items-center gap-2"
@@ -163,25 +163,27 @@ export default function Home() {
                 <MapPin className="w-4 h-4" />
                 Musical-Städte
               </a>
+              
+              {/* Scroll Indicator Inside Box */}
+              <motion.div
+                className="absolute left-1/2 -translate-x-1/2 cursor-pointer"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                onClick={() => {
+                  const element = document.getElementById('musicals');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{
+                  bottom: '-40px',
+                }}
+              >
+                <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
+              </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute left-1/2 -translate-x-1/2 cursor-pointer"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          onClick={() => {
-            const element = document.getElementById('musicals');
-            element?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          style={{
-            bottom: 'calc(100% + 20px)',
-          }}
-        >
-          <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
-        </motion.div>
+
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}
