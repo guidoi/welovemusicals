@@ -208,7 +208,7 @@ export default function Home() {
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
-            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Programm</span>
+            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">VORHANG AUF</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Alle Musicals & Shows
