@@ -50,6 +50,7 @@
   --color-red-light: rgb(248, 113, 113);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "DM Sans", system-ui, sans-serif;
+  --font-roboto: "Roboto", system-ui, sans-serif;
 }
 
 :root {
