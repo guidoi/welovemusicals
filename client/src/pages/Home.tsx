@@ -33,11 +33,8 @@ import {
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
-type FilterProvider = "alle" | string;
-
 export default function Home() {
   const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("alle");
-  const [providerFilter, setProviderFilter] = useState<FilterProvider>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
   const [sortOption, setSortOption] = useState<SortOption>("featured");
   const [showAllMusicals, setShowAllMusicals] = useState(false);
@@ -60,11 +57,6 @@ export default function Home() {
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
       result = result.filter((m) => m.category === categoryFilter);
-    }
-
-    // Filter nach Anbieter
-    if (providerFilter !== "alle") {
-      result = result.filter((m) => m.provider === providerFilter);
     }
 
     // Filter nach Stadt
@@ -91,7 +83,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, providerFilter, cityFilter, sortOption]);
+  }, [categoryFilter, cityFilter, sortOption]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 9);
 
@@ -222,8 +214,6 @@ export default function Home() {
             <MusicalFilters
               categoryFilter={categoryFilter}
               setCategoryFilter={setCategoryFilter}
-              providerFilter={providerFilter}
-              setProviderFilter={setProviderFilter}
               cityFilter={cityFilter}
               setCityFilter={setCityFilter}
               sortOption={sortOption}

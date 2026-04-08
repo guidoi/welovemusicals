@@ -11,6 +11,8 @@
 - [x] Musical-Detailseite
 - [x] Stadt-Detailseite
 - [x] Header & Footer
+- [x] Anbieter-Filter entfernt
+- [x] Filterreihenfolge geändert: Städte → Kategorie → Sortierung
 - [ ] Letzte visuelle Optimierungen prüfen
 
 ## Phase 5 – Webflow-Import-Paket

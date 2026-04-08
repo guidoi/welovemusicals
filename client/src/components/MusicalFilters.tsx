@@ -12,8 +12,6 @@ export type SortOption = "name" | "city" | "featured";
 interface MusicalFiltersProps {
   categoryFilter: FilterCategory;
   setCategoryFilter: (cat: FilterCategory) => void;
-  providerFilter: string;
-  setProviderFilter: (provider: string) => void;
   cityFilter: string;
   setCityFilter: (city: string) => void;
   sortOption: SortOption;
@@ -24,8 +22,6 @@ interface MusicalFiltersProps {
 export default function MusicalFilters({
   categoryFilter,
   setCategoryFilter,
-  providerFilter,
-  setProviderFilter,
   cityFilter,
   setCityFilter,
   sortOption,
@@ -56,24 +52,7 @@ export default function MusicalFilters({
       </div>
 
       {/* Filters Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-        {/* Category Filter */}
-        <div>
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            Kategorie
-          </label>
-          <select
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value as FilterCategory)}
-            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
-          >
-            <option value="alle">Alle Kategorien</option>
-            <option value="ensuite">En-Suite-Musicals</option>
-            <option value="tournee">Tournee-Musicals</option>
-            <option value="kinder">Kinder-Musicals</option>
-          </select>
-        </div>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {/* City Filter */}
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
@@ -131,22 +110,20 @@ export default function MusicalFilters({
           </div>
         </div>
 
-        {/* Provider Filter */}
+        {/* Category Filter */}
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            Anbieter
+            Kategorie
           </label>
           <select
-            value={providerFilter}
-            onChange={(e) => setProviderFilter(e.target.value)}
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value as FilterCategory)}
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
           >
-            <option value="alle">Alle Anbieter</option>
-            {providers.map((p) => (
-              <option key={p.slug} value={p.name}>
-                {p.name}
-              </option>
-            ))}
+            <option value="alle">Alle Kategorien</option>
+            <option value="ensuite">En-Suite-Musicals</option>
+            <option value="tournee">Tournee-Musicals</option>
+            <option value="kinder">Kinder-Musicals</option>
           </select>
         </div>
 
@@ -175,13 +152,11 @@ export default function MusicalFilters({
           {resultCount === 1 ? "Ergebnis" : "Ergebnisse"}
         </p>
         {(categoryFilter !== "alle" ||
-          providerFilter !== "alle" ||
           cityFilter !== "alle" ||
           sortOption !== "featured") && (
           <button
             onClick={() => {
               setCategoryFilter("alle");
-              setProviderFilter("alle");
               setCityFilter("alle");
               setSortOption("featured");
             }}
