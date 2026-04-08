@@ -161,7 +161,7 @@ export default function Home() {
                 className="px-8 py-3.5 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors tracking-wide inline-flex items-center gap-2"
               >
                 <MapPin className="w-4 h-4" />
-                Tourneestädte
+                Musical-Städte
               </a>
             </div>
           </motion.div>
