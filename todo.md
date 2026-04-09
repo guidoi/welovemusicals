@@ -13,6 +13,7 @@
 - [x] Header & Footer
 - [x] Anbieter-Filter entfernt
 - [x] Filterreihenfolge geändert: Städte → Kategorie → Sortierung
+- [x] Build-Konfiguration: outDir von dist/public zu dist geändert (für Cloudflare Pages)
 - [ ] Letzte visuelle Optimierungen prüfen
 
 ## Phase 5 – Webflow-Import-Paket
