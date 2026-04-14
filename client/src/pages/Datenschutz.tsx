@@ -97,6 +97,29 @@ export default function Datenschutz() {
               <p className="text-muted-foreground leading-relaxed">
                 Diese Website wird auf der Manus-Plattform gehostet, die eine sichere und zuverlässige Infrastruktur für Webanwendungen bereitstellt. Der Quellcode des Projekts wird auf GitHub verwaltet und versioniert. Die Website wird über Cloudflare bereitgestellt, das zusätzliche Sicherheits- und Performance-Optimierungen wie DDoS-Schutz, SSL/TLS-Verschlüsselung und globale Content Delivery bietet. Diese Kombination aus Manus (Hosting), GitHub (Versionskontrolle) und Cloudflare (Edge-Sicherheit) gewährleistet eine sichere, schnelle und zuverlässige Verfügbarkeit unserer Website.
               </p>
+              
+              <div className="mt-6 space-y-4">
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Manus – Hosting & Infrastruktur</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Manus ist eine spezialisierte Hosting-Plattform für moderne Webanwendungen. Die Plattform verarbeitet und speichert Ihre personenbezogenen Daten auf sicheren Servern mit Datenschutz nach DSGVO-Standards. Alle Datenübertragungen erfolgen verschlüsselt. Weitere Informationen finden Sie unter <a href="https://manus.im" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">manus.im</a>.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">GitHub – Versionskontrolle</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Der Quellcode dieser Website wird auf GitHub verwaltet. GitHub ist ein Dienst von Microsoft und unterliegt den GitHub-Datenschutzrichtlinien. Der Code wird ausschließlich für Versionskontrolle und Deployment verwendet. Ihre persönlichen Daten werden nicht im GitHub-Repository gespeichert. Weitere Informationen: <a href="https://github.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">github.com/privacy</a>.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Cloudflare – Content Delivery & Sicherheit</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Cloudflare ist ein globales Content Delivery Network (CDN) und Sicherheitsanbieter. Cloudflare verarbeitet Ihre Anfragen und Verbindungsdaten, um DDoS-Schutz, SSL/TLS-Verschlüsselung und Performance-Optimierungen bereitzustellen. Dies geschieht gemäß den Cloudflare-Datenschutzrichtlinien und EU-Standardvertragsklauseln. Cloudflare speichert Ihre IP-Adresse und Zugriffsprotokolle temporär. Weitere Informationen: <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">cloudflare.com/privacypolicy</a>.
+                  </p>
+                </div>
+              </div>
             </section>
 
             {/* Allgemeine Hinweise und Pflichtinformationen */}
