@@ -15,6 +15,7 @@
 - [x] Filterreihenfolge geändert: Städte → Kategorie → Sortierung
 - [x] Build-Konfiguration: outDir von dist/public zu dist geändert (für Cloudflare Pages)
 - [x] Logo-Spacing: Abstand zwischen WE, Herz und MUSICALS verringert (gap-2 zu gap-1)
+- [x] Impressum-Seite erstellt mit Headerfoto und Footer-Link
 - [ ] Letzte visuelle Optimierungen prüfen
 
 ## Phase 5 – Webflow-Import-Paket

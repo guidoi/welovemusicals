@@ -93,13 +93,19 @@ export default function Footer() {
               {[
                 { label: "Über uns", href: "#" },
                 { label: "Datenschutz", href: "#" },
-                { label: "Impressum", href: "#" },
+                { label: "Impressum", href: "/impressum" },
                 { label: "Kontakt", href: "#" },
               ].map((item) => (
                 <li key={item.label}>
-                  <span className="text-sm text-muted-foreground hover:text-gold transition-colors cursor-default">
-                    {item.label}
-                  </span>
+                  {item.href.startsWith("/") ? (
+                    <Link href={item.href} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <span className="text-sm text-muted-foreground hover:text-gold transition-colors cursor-default">
+                      {item.label}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

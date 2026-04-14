@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import MusicalDetail from "./pages/MusicalDetail";
 import CityDetail from "./pages/CityDetail";
+import Impressum from "./pages/Impressum";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/musical/:slug"} component={MusicalDetail} />
       <Route path={"/stadt/:slug"} component={CityDetail} />
+      <Route path={"/impressum"} component={Impressum} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
