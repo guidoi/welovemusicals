@@ -92,6 +92,14 @@ export default function Impressum() {
                 </p>
               </section>
 
+              {/* Affiliate-Links und Monetarisierung */}
+              <section>
+                <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Affiliate-Links und Monetarisierung</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Diese Website enthält Affiliate-Links zu Ticketanbietern, Veranstaltern und anderen Partnern. Wenn Sie über diese Links einen Kauf tätigen oder eine Buchung vornehmen, erhalten wir eine Provision. Dies hat keine Auswirkungen auf den Preis für Sie – Sie zahlen denselben Preis wie beim direkten Besuch der Partner-Website. Wir kennzeichnen Affiliate-Links entsprechend den geltenden Richtlinien und Gesetzen. Unsere Empfehlungen basieren auf der Qualität und Relevanz der Angebote für unsere Besucher.
+                </p>
+              </section>
+
               {/* Urheberrecht */}
               <section>
                 <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Urheberrecht</h2>
