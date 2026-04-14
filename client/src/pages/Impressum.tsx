@@ -44,8 +44,8 @@ export default function Impressum() {
               {/* Anbieter */}
               <section>
                 <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Anbieter</h2>
-                <p className="text-lg font-semibold mb-2">Guido Illigen</p>
                 <p className="text-muted-foreground leading-relaxed">
+                  Guido Illigen<br />
                   Im Laukenstein 16<br />
                   55270 Jugenheim in Rheinhessen
                 </p>
@@ -54,21 +54,15 @@ export default function Impressum() {
               {/* Kontakt */}
               <section>
                 <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Kontakt</h2>
-                <div className="space-y-2 text-muted-foreground">
+                <div className="space-y-2 text-muted-foreground leading-relaxed">
                   <p>
-                    <strong className="text-foreground">Telefon:</strong> +49 (0) 160 7488576
+                    Telefon: +49 (0) 160 7488576
                   </p>
                   <p>
-                    <strong className="text-foreground">E-Mail:</strong>{" "}
-                    <a href="mailto:info@welovemusicals.com" className="text-gold hover:text-gold-light transition-colors">
-                      info@welovemusicals.com
-                    </a>
+                    E-Mail: info(at)welovemusicals.com
                   </p>
                   <p>
-                    <strong className="text-foreground">Website:</strong>{" "}
-                    <a href="https://www.welovemusicals.com" className="text-gold hover:text-gold-light transition-colors">
-                      www.welovemusicals.com
-                    </a>
+                    Website: www.welovemusicals.com
                   </p>
                 </div>
               </section>
@@ -76,10 +70,10 @@ export default function Impressum() {
               {/* Umsatzsteuer-ID */}
               <section>
                 <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Umsatzsteuer-ID</h2>
-                <p className="text-muted-foreground leading-relaxed mb-2">
-                  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+                <p className="text-muted-foreground leading-relaxed">
+                  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+                  DE323392768
                 </p>
-                <p className="text-lg font-mono text-foreground">DE323392768</p>
               </section>
 
               {/* Redaktionell verantwortlich */}
