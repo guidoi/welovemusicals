@@ -222,23 +222,31 @@ export default function Home() {
             />
           </div>
 
-          {/* Musical Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayedMusicals.map((musical, i) => (
-              <MusicalCard key={musical.id} musical={musical} index={i} />
-            ))}
-          </div>
+          {/* Musical Grid - Conditional Rendering */}
+          {import.meta.env.VITE_SHOW_MUSICALS === 'true' ? (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {displayedMusicals.map((musical, i) => (
+                  <MusicalCard key={musical.id} musical={musical} index={i} />
+                ))}
+              </div>
 
-          {/* Show More */}
-          {!showAllMusicals && filteredMusicals.length > 9 && (
-            <div className="text-center mt-10">
-              <button
-                onClick={() => setShowAllMusicals(true)}
-                className="px-8 py-3 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors inline-flex items-center gap-2"
-              >
-                Alle {filteredMusicals.length} Musicals anzeigen
-                <ChevronDown className="w-4 h-4" />
-              </button>
+              {/* Show More */}
+              {!showAllMusicals && filteredMusicals.length > 9 && (
+                <div className="text-center mt-10">
+                  <button
+                    onClick={() => setShowAllMusicals(true)}
+                    className="px-8 py-3 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors inline-flex items-center gap-2"
+                  >
+                    Alle {filteredMusicals.length} Musicals anzeigen
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">Die Musical-Übersicht wird in Kürze aktiviert.</p>
             </div>
           )}
         </div>
