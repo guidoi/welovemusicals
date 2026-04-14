@@ -2,6 +2,7 @@
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * Impressum: Rechtliche Informationen und Kontaktdaten
  */
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
@@ -10,6 +11,9 @@ import { Link } from "wouter";
 const HEADER_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 
 export default function Impressum() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
