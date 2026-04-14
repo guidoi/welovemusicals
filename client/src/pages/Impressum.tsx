@@ -54,17 +54,11 @@ export default function Impressum() {
               {/* Kontakt */}
               <section>
                 <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Kontakt</h2>
-                <div className="space-y-2 text-muted-foreground leading-relaxed">
-                  <p>
-                    Telefon: +49 (0) 160 7488576
-                  </p>
-                  <p>
-                    E-Mail: info(at)welovemusicals.com
-                  </p>
-                  <p>
-                    Website: www.welovemusicals.com
-                  </p>
-                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Telefon: +49 (0) 160 7488576<br />
+                  E-Mail: info(at)welovemusicals.com<br />
+                  Website: www.welovemusicals.com
+                </p>
               </section>
 
               {/* Umsatzsteuer-ID */}
