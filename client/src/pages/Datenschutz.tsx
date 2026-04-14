@@ -183,7 +183,7 @@ export default function Datenschutz() {
 
             {/* Back to Home */}
             <div className="mt-12 pt-8 border-t border-border/30">
-              <Link href="/" className="text-gold hover:text-gold-light transition-colors font-semibold">
+              <Link href="/" onClick={() => window.scrollTo(0, 0)} className="text-gold hover:text-gold-light transition-colors font-semibold">
                 ← Zurück zur Startseite
               </Link>
             </div>

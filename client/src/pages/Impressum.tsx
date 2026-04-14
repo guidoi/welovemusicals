@@ -38,7 +38,7 @@ export default function Impressum() {
         <div className="container py-12 md:py-16">
           <div className="max-w-3xl mx-auto">
             {/* Back Button */}
-            <Link href="/" className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors mb-8">
+            <Link href="/" onClick={() => window.scrollTo(0, 0)} className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors mb-8">
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm font-medium">Zurück zur Startseite</span>
             </Link>
