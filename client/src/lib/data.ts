@@ -1021,8 +1021,7 @@ export const musicals: Musical[] = [
     description: "Die romantischste Komödie der 90er auf ihrer ersten großen Tournee! Erleben Sie die Liebesgeschichte von Vivian und Edward mit mitreißender Musik von Bryan Adams.",
     image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/pretty-woman-das-musical/",
-    featured: true,
-    tags: ["Romantik", "Komödie", "Tournee"],
+    tags: ["Romantik", "Klassiker", "Tournee"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
       { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
@@ -1794,7 +1793,6 @@ export const musicals: Musical[] = [
     description: "Shakespeares zeitlose Liebestragödie als modernes Musical. Eine packende Neuinterpretation mit zeitgenössischer Musik und Choreographie, die die ewige Geschichte von Romeo und Julia neu erzählt.",
     image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/romeo-und-julia-das-musical/",
-    featured: true,
     tags: ["Klassiker", "Romantik", "Tournee", "Shakespeare"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
