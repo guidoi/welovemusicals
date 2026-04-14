@@ -735,6 +735,7 @@ export const musicals: Musical[] = [
     description: "Der Mythos Dracula zum ersten Mal auf großer Deutschland-Tour als Musical. Eine düstere, romantische Inszenierung des unsterblichen Klassikers.",
     image: "https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
+    featured: true,
     tags: ["Horror", "Romantik", "Tournee"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
@@ -1740,11 +1741,10 @@ export const musicals: Musical[] = [
     description: "Das meistgespielte Musical aller Zeiten in einer spektakulären Neuproduktion. Die düstere Liebesgeschichte zwischen dem Phantom und Christine in der Oper von Paris mit der ikonischen Musik von Andrew Lloyd Webber.",
     image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/",
-    featured: true,
-    tags: ["Klassiker", "Romantik", "Tournee", "Lloyd Webber"],
+    tags: ["Klassiker", "Romantik", "Tournee"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
-      { city: "Hamburg", venue: "Operettenhaus", startDate: "2026-05-01", endDate: "2026-08-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=hamburg" },
+      { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2026-03-01", endDate: "2026-12-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=hamburg" },
       { city: "Berlin", venue: "Theater an der Westseite", startDate: "2026-09-01", endDate: "2026-12-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=berlin" },
       { city: "München", venue: "Deutsches Theater München", startDate: "2027-01-01", endDate: "2027-04-30", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=muenchen" },
       { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2027-05-01", endDate: "2027-08-31", eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/?city=stuttgart" },
