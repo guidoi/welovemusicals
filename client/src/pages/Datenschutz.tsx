@@ -201,6 +201,31 @@ export default function Datenschutz() {
                     Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
                   </p>
                 </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Datenschutzbeauftragter</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Es wurde kein Datenschutzbeauftragter bestellt, da dies für Einzelunternehmer nach Art. 37 DSGVO nicht erforderlich ist. Sollten Sie Fragen zum Datenschutz haben, können Sie sich direkt an den Websitebetreiber wenden (siehe Kontaktdaten im Impressum).
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Rechtsgrundlagen der Datenverarbeitung</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Grundlage folgender Rechtsgrundlagen gemäß DSGVO:<br /><br />
+                    • <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> – Verarbeitung mit Ihrer ausdrücklichen Einwilligung (z. B. bei Kontaktformularen)<br /><br />
+                    • <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> – Verarbeitung zur Wahrung berechtigter Interessen (z. B. technische Bereitstellung der Website, Sicherheit)<br /><br />
+                    • <strong>Art. 6 Abs. 1 lit. b DSGVO</strong> – Verarbeitung zur Erfüllung eines Vertrags (falls zutreffend)<br /><br />
+                    Sollte die Verarbeitung auf Ihrer Einwilligung beruhen, haben Sie das Recht, diese jederzeit zu widerrufen.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Automatisierte Entscheidungsfindung</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Wir führen keine automatisierte Entscheidungsfindung oder Profiling durch, die rechtliche Auswirkungen auf Sie hätte oder Sie erheblich beeinträchtigen könnte. Alle Entscheidungen, die Ihre Daten betreffen, werden von Menschen getroffen.
+                  </p>
+                </div>
               </div>
             </section>
 
