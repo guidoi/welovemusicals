@@ -1500,9 +1500,8 @@ export const musicals: Musical[] = [
     cities: ["Hamburg", "Berlin", "München", "Stuttgart", "Köln"],
     description: "Das meistgespielte Musical der Welt! Die düstere Liebesgeschichte zwischen dem Phantom und Christine in der Oper von Paris.",
     image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&q=80",
-    eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper/",
-    featured: true,
-    tags: ["Klassiker", "Romantik", "Tournee"],
+    eventimUrl: "https://www.eventim.de/artist/das-phantom-der-oper-trinity/",
+    tags: ["Klassiker", "Romantik", "Tournee", "Lloyd Webber"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
       { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
