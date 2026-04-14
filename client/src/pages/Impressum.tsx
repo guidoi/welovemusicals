@@ -47,7 +47,7 @@ export default function Impressum() {
             <div className="space-y-8 text-foreground">
               {/* Anbieter */}
               <section>
-                <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Verantwortlich</h2>
+                <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Diensteanbieter</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Guido Illigen<br />
                   Im Laukenstein 16<br />
