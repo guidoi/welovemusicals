@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import MusicalDetail from "./pages/MusicalDetail";
 import CityDetail from "./pages/CityDetail";
 import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path={"/musical/:slug"} component={MusicalDetail} />
       <Route path={"/stadt/:slug"} component={CityDetail} />
       <Route path={"/impressum"} component={Impressum} />
+      <Route path={"/datenschutz"} component={Datenschutz} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

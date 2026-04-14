@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "Über uns", href: "#" },
-                { label: "Datenschutz", href: "#" },
+                { label: "Datenschutz", href: "/datenschutz" },
                 { label: "Impressum", href: "/impressum" },
                 { label: "Kontakt", href: "#" },
               ].map((item) => (
