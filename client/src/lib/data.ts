@@ -687,7 +687,6 @@ export const musicals: Musical[] = [
     description: "Die mitreißende Geschichte der Pop-Ikone Cher – von ihrem Aufstieg in den 60ern bis zur Weltkarriere. Mit allen großen Hits wie 'Believe', 'If I Could Turn Back Time' und vielen mehr.",
     image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/die-cher-show/",
-    featured: true,
     tags: ["Pop", "Biografie", "Tournee"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
@@ -830,6 +829,7 @@ export const musicals: Musical[] = [
     description: "Die himmlische Komödie als Musical! Erleben Sie die Geschichte der Nachtclubsängerin Deloris, die sich in einem Kloster verstecken muss – mit Soul, Motown und jeder Menge Humor.",
     image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/",
+    featured: true,
     tags: ["Komödie", "Soul", "Tournee"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
@@ -1955,5 +1955,11 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 }
 
 export function getFeaturedMusicals(): Musical[] {
-  return musicals.filter((m) => m.featured).slice(0, 6);
+  const featured = musicals.filter((m) => m.featured === true);
+  // Dracula an erste Stelle
+  const dracula = featured.find((m) => m.id === 'dracula');
+  if (dracula) {
+    return [dracula, ...featured.filter((m) => m.id !== 'dracula')];
+  }
+  return featured;
 }
