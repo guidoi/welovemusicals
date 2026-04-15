@@ -1982,7 +1982,7 @@ export const cities: City[] = [
   {
     slug: "wien",
     name: "Wien",
-    image: "https://images.unsplash.com/photo-1516551288021-7bde5d0ef467?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1516551288021-7bde5d0ef467?w=600&h=400&fit=crop&q=80&crop=entropy&cs=tinysrgb",
     description: "Die österreichische Hauptstadt ist berühmt für ihre Theatertradition und beherbergt renommierte Musical-Produktionen.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Wien",
