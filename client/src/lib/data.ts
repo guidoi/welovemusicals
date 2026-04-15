@@ -46,6 +46,7 @@ export interface Musical {
   description: string;
   image: string;
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
+  headerImage?: string; // Header-Bild für Detail-Seite (16:9 Format)
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
   eventimUrl: string;
   featured?: boolean;
@@ -757,8 +758,9 @@ export const musicals: Musical[] = [
       { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
       { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
     ],
+    headerImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_header_centered_664722c0.webp",
     gallery: [
-      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_square_c4218831.webp", alt: "Keyvisual" },
       { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
       { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
       { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },

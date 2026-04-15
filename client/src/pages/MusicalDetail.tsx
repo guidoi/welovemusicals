@@ -78,7 +78,7 @@ export default function MusicalDetail() {
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={musical.image}
+            src={musical.headerImage || musical.image}
             alt={musical.title}
             className="w-full h-full object-cover"
           />
