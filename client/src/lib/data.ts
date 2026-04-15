@@ -167,8 +167,8 @@ export const musicals: Musical[] = [
     keyvisual: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
     youtubeTrailerId: "dQw4w9WgXcQ",
     eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/",
-    featured: true,
-    tags: ["Disney", "Klassiker", "Familie"],
+    featured: false,
+    tags: ["Disney", "Abenteuer", "Familie"],
     quotes: [
       { text: "Ein visuelles Meisterwerk, das die Grenzen des Theaters sprengt.", source: "Die Welt" },
       { text: "Unvergesslich und atemberaubend schön.", source: "Der Spiegel" },
@@ -210,7 +210,7 @@ export const musicals: Musical[] = [
     keyvisual: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80",
     youtubeTrailerId: "dQw4w9WgXcQ",
     eventimUrl: "https://www.eventim.de/artist/mj-das-michael-jackson-musical/",
-    featured: true,
+    featured: false,
     tags: ["Pop", "Broadway", "Tanz"],
     tourDates: [
       { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2026-06-01", endDate: "2026-12-31", eventimUrl: "https://www.eventim.de/artist/mj-das-michael-jackson-musical/?city=hamburg" },
@@ -395,8 +395,8 @@ export const musicals: Musical[] = [
     description: "Machen Sie sich auf zu einem magischen Abenteuer im eisigen Königreich Arendelle und treffen Sie die beliebten Figuren aus dem weltbekannten Disney-Film!",
     image: "https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/disneys-die-eiskoenigin/",
-    featured: true,
-    tags: ["Disney", "Familie", "Magie"],
+    featured: false,
+    tags: ["Komödie", "Familie", "Musik"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
       { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
@@ -1452,8 +1452,8 @@ export const musicals: Musical[] = [
     description: "Das achte Harry-Potter-Abenteuer als preisgekröntes Theaterstück. 19 Jahre nach der Schlacht von Hogwarts beginnt ein neues Kapitel.",
     image: "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/harry-potter-und-das-verwunschene-kind/",
-    featured: true,
-    tags: ["Fantasy", "Magie", "Theaterstück"],
+    featured: false,
+    tags: ["Fantasy", "Familie", "Abenteuer"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
       { city: "Hamburg", venue: "Laeiszhalle", startDate: "2026-06-01", endDate: "2026-09-30", eventimUrl: "https://www.eventim.de/artist/musical/?city=hamburg" },
