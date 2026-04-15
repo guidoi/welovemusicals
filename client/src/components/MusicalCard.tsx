@@ -53,7 +53,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
 
             {/* Title Overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="font-sans text-lg md:text-xl font-bold text-white leading-tight">
+              <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
                 {musical.title}
               </h3>
               {musical.subtitle && (
