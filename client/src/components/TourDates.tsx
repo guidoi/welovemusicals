@@ -67,14 +67,14 @@ export default function TourDates({ tourDates }: TourDatesProps) {
         </div>
 
         {/* Tour Dates Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-sm mx-auto">
           {filteredDates.map((date, idx) => (
             <div
               key={idx}
               className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
             >
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-card-foreground mb-1">
+                <h3 className="text-xl font-bold text-card-foreground mb-1 uppercase">
                   {date.city}
                 </h3>
                 <p className="text-sm text-white font-medium">
