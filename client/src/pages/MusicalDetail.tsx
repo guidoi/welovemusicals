@@ -284,8 +284,8 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {/* Related Musicals */}
-      {related.length > 0 && (
+      {/* Related Musicals - Hidden until final release */}
+      {false && related.length > 0 && (
         <section className="py-12 md:py-16 bg-card/50">
           <div className="container">
             <div className="border-t border-border mb-10" />
