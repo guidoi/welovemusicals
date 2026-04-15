@@ -732,7 +732,7 @@ export const musicals: Musical[] = [
     category: "tournee",
     cities: ["Berlin", "Bochum", "Bremen", "Duisburg", "Frankfurt", "Graz", "Halle (Saale)", "Innsbruck", "Köln", "München", "Nürnberg", "Stuttgart", "Wien"],
     description: "Der Mythos Dracula zum ersten Mal auf großer Deutschland-Tour als Musical. Eine düstere, romantische Inszenierung des unsterblichen Klassikers.",
-    image: "https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=600&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     featured: true,
     tags: ["Horror", "Romantik", "Tournee"],
