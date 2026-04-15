@@ -75,17 +75,17 @@ export default function MusicalDetail() {
       <Header />
 
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={musical.image}
             alt={musical.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
 
-        <div className="relative z-10 container pb-10 pt-32">
+        <div className="relative z-10 container pb-10 pt-40">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

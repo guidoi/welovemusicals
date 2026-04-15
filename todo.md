@@ -35,3 +35,4 @@
 - [x] Fix: Inline-CSS auf body für sofortigen dunklen Hintergrund vor CSS-Laden
 - [x] Fix: Cache-Control HTTP-Header auf Server-Ebene für HTML-Responses
 - [x] Dracula Detailseite: Headline und Beschreibungstext aktualisieren
+- [x] Header auf Detailseite vergrößern und Bildausschnitt anpassen (Personen nicht abschneiden)
