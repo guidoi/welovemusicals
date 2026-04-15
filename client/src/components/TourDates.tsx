@@ -67,7 +67,7 @@ export default function TourDates({ tourDates }: TourDatesProps) {
         </div>
 
         {/* Tour Dates Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-2xl mx-auto">
           {filteredDates.map((date, idx) => (
             <div
               key={idx}
@@ -98,7 +98,7 @@ export default function TourDates({ tourDates }: TourDatesProps) {
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
               >
-                Tickets
+                Tickets sichern
               </a>
             </div>
           ))}
