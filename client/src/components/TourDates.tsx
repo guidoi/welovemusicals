@@ -32,7 +32,8 @@ export default function TourDates({ tourDates }: TourDatesProps) {
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString("de-DE", {
-      month: "short",
+      day: "2-digit",
+      month: "2-digit",
       year: "numeric",
     });
   };
