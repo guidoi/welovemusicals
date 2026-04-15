@@ -736,7 +736,7 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     featured: true,
     tags: ["Horror", "Romantik", "Tournee"],
-    youtubeTrailerId: "dQw4w9WgXcQ",
+    youtubeTrailerId: "9lJc0EM-jBo",
     tourDates: [
       { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-05-01", endDate: "2026-06-07", eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/?affiliate=MXA&calendarview=1&cityname=Berlin&utm_medium=dp&_gl=1*1rqipnl*_gcl_au*NjAxODczMDc1LjE3NzYwNjkwMDY.*_ga*MTYzNjY0NDc4LjE3NzU4MTIzMDY.*_ga_HQ4LYZ838W*czE3NzYyMzk4OTAkbzQkZzEkdDE3NzYyNTIzNzMkajM3JGwwJGgxMzEzMTYwNTkx" },
       { city: "Bochum", venue: "RuhrCongress", startDate: "2026-01-18", endDate: "2026-01-19", eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=Bochum&utm_medium=dp&_gl=1*14gpn4v*_gcl_au*NjAxODczMDc1LjE3NzYwNjkwMDY.*_ga*MTYzNjY0NDc4LjE3NzU4MTIzMDY.*_ga_HQ4LYZ838W*czE3NzYyMzk4OTAkbzQkZzEkdDE3NzYyNTM3MDIkajYwJGwwJGgxMzEzMTYwNTkx" },
