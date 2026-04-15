@@ -829,7 +829,7 @@ export const musicals: Musical[] = [
     description: "Die himmlische Komödie als Musical! Erleben Sie die Geschichte der Nachtclubsängerin Deloris, die sich in einem Kloster verstecken muss – mit Soul, Motown und jeder Menge Humor.",
     image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80",
     eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/",
-    featured: true,
+    featured: false,
     tags: ["Komödie", "Soul", "Tournee"],
     youtubeTrailerId: "dQw4w9WgXcQ",
     tourDates: [
