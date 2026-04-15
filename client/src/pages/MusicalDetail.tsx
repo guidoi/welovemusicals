@@ -78,7 +78,7 @@ export default function MusicalDetail() {
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={musical.headerImage || musical.image}
+            src={musical.image}
             alt={musical.title}
             className="w-full h-full object-cover"
           />
@@ -135,7 +135,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.image} title={musical.title} ticketLink={ticketLink} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={ticketLink} />
               </motion.div>
             </div>
 
