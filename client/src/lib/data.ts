@@ -732,7 +732,7 @@ export const musicals: Musical[] = [
     category: "tournee",
     cities: ["Berlin", "Bochum", "Bremen", "Duisburg", "Frankfurt", "Graz", "Halle (Saale)", "Innsbruck", "Köln", "München", "Nürnberg", "Stuttgart", "Wien"],
     description: "Der Mythos Dracula zum ersten Mal auf großer Deutschland-Tour als Musical. Eine düstere, romantische Inszenierung des unsterblichen Klassikers.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_header_1920x1080_f3c37898.webp",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     featured: true,
     tags: ["Horror", "Romantik", "Tournee"],
@@ -757,7 +757,7 @@ export const musicals: Musical[] = [
       { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
       { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
     ],
-    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_square_c4218831.webp",
+    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_square_1200x1200_a6e140f4.webp",
     gallery: [
       { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
       { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
