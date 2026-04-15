@@ -147,11 +147,19 @@ export default function MusicalDetail() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-                  Über das Musical
+                  {musical.detailHeadline || "Über das Musical"}
                 </h2>
-                <p className="text-white leading-relaxed text-lg mb-8">
-                  {musical.description}
-                </p>
+                {musical.detailDescription ? (
+                  <div className="text-white leading-relaxed text-lg mb-8 space-y-4">
+                    {musical.detailDescription.split('\n\n').map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-white leading-relaxed text-lg mb-8">
+                    {musical.description}
+                  </p>
+                )}
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">

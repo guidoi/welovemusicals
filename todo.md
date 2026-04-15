@@ -34,3 +34,4 @@
 - [x] Fix: sonner.tsx importiert useTheme von next-themes statt eigenem ThemeContext
 - [x] Fix: Inline-CSS auf body für sofortigen dunklen Hintergrund vor CSS-Laden
 - [x] Fix: Cache-Control HTTP-Header auf Server-Ebene für HTML-Responses
+- [x] Dracula Detailseite: Headline und Beschreibungstext aktualisieren

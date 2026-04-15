@@ -44,6 +44,8 @@ export interface Musical {
   cities?: string[];
   venue?: string;
   description: string;
+  detailHeadline?: string; // Headline auf der Detail-Seite (z.B. "DER GRAF KEHRT ZURÜCK")
+  detailDescription?: string; // Ausführliche Beschreibung auf der Detail-Seite
   image: string;
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
@@ -732,6 +734,8 @@ export const musicals: Musical[] = [
     category: "tournee",
     cities: ["Berlin", "Bochum", "Bremen", "Duisburg", "Frankfurt", "Graz", "Halle (Saale)", "Innsbruck", "Köln", "München", "Nürnberg", "Stuttgart", "Wien"],
     description: "Der Mythos Dracula zum ersten Mal auf großer Deutschland-Tour als Musical. Eine düstere, romantische Inszenierung des unsterblichen Klassikers.",
+    detailHeadline: "DER GRAF KEHRT ZURÜCK",
+    detailDescription: "Große Nachfrage, neue Tour: Aufgrund der sensationellen Nachfrage nach Tickets und zahlreicher ausverkaufter Shows, kehrt DRACULA – DAS MUSICAL zurück! Der legendäre Vampirmythos um die Macht von Liebe, Verführung und ewiger Nacht geht auch 2027 als packendes Broadway-Musical auf große Tournee durch Deutschland und Österreich.\n\nDie unsterbliche Liebesgeschichte rund um Graf Dracula, ewige Liebe, dunkle Begierde und die Macht der Verführung fasziniert seit Generationen – und entfaltet live auf der Bühne eine ganz besondere Sogwirkung. Bram Stokers weltberühmter Vampirroman erwacht dabei mit einem epischen Soundtrack von Star-Komponist Frank Wildhorn zu neuem Leben. Seine Musik – geprägt von emotionalen Balladen und kraftvollen Rocksongs – verleiht der Geschichte eine moderne, dramatische Intensität.\n\nBegleitet von einer 8-köpfigen Live-Band taucht das Publikum ein in die romantisch-düstere Welt Transsilvaniens und Londons. Spektakuläre Bilder in viktorianischem Bühnenbild, ein atmosphärisches Lichtdesign sowie schaurig-schöne Kostüme schaffen eine eindrucksvolle Szenerie, die die ewige Jagd nach Blut und Liebe eindringlich erlebbar macht. Unter der Regie von Alex Balga wird DRACULA – DAS MUSICAL zu einem fesselnden Gesamterlebnis voller Emotion, Spannung und Gänsehaut.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     featured: true,
