@@ -1854,7 +1854,7 @@ export const cities: City[] = [
   {
     slug: "bremen",
     name: "Bremen",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&crop=entropy&cs=tinysrgb",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Hafenstadt Bremen ist ein wachsender Musical-Standort mit modernen Veranstaltungshallen und Tournee-Gastspielen.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Bremen",
@@ -1878,7 +1878,7 @@ export const cities: City[] = [
   {
     slug: "duisburg",
     name: "Duisburg",
-    image: "https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Ruhrstadt Duisburg ist ein wichtiger Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Duisburg",
@@ -1902,7 +1902,7 @@ export const cities: City[] = [
   {
     slug: "halle",
     name: "Halle (Saale)",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&crop=entropy&cs=tinysrgb",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Kulturstadt Halle ist ein wachsender Musical-Standort mit der Händel-Halle als wichtiger Spielstätte.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Halle",
@@ -1926,7 +1926,7 @@ export const cities: City[] = [
   {
     slug: "innsbruck",
     name: "Innsbruck",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&crop=entropy&cs=tinysrgb",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Tiroler Hauptstadt ist ein wichtiger Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Innsbruck",
@@ -1958,7 +1958,7 @@ export const cities: City[] = [
   {
     slug: "nuernberg",
     name: "Nürnberg",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&crop=entropy&cs=tinysrgb",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die fränkische Metropole ist ein wichtiger Spielort für Musical-Tourneen mit der Meistersingerhalle als Hauptspielstätte.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=N%C3%BCrnberg",
@@ -1982,7 +1982,7 @@ export const cities: City[] = [
   {
     slug: "wien",
     name: "Wien",
-    image: "https://images.unsplash.com/photo-1516551288021-7bde5d0ef467?w=600&q=80&crop=entropy&cs=tinysrgb",
+    image: "https://images.unsplash.com/photo-1516551288021-7bde5d0ef467?w=600&h=400&fit=crop&q=80",
     description: "Die österreichische Hauptstadt ist berühmt für ihre Theatertradition und beherbergt renommierte Musical-Produktionen.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Wien",
