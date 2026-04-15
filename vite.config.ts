@@ -150,9 +150,37 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
+// Cache-Control Plugin für Cloudflare Pages
+function vitePluginCacheControl(): Plugin {
+  return {
+    name: 'cache-control-plugin',
+    apply: 'build',
+    generateBundle(options, bundle) {
+      // Erstelle _headers Datei für Cloudflare Pages
+      const headersContent = `/*
+  Cache-Control: public, max-age=3600
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+`;
+      bundle['_headers'] = {
+        type: 'asset',
+        source: headersContent,
+        fileName: '_headers',
+      } as any;
+    },
+  };
+}
+
 // Cloudflare Pages kompatible Plugins (vitePluginManusRuntime nur lokal)
 const plugins = process.env.NODE_ENV === 'production' 
-  ? [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector()]
+  ? [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector(), vitePluginCacheControl()]
   : [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
