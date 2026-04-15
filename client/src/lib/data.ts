@@ -773,7 +773,7 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
       { label: "Sprache", value: "Deutsch" },
-      { label: "Auf Tour", value: "2026-2028" },
+      { label: "Auf Tour", value: "2026 & 2027" },
     ],
     faqItems: [
       { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
