@@ -128,8 +128,8 @@ export default function MusicalDetail() {
       <section className="py-12 md:py-16">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Keyvisual - Desktop Right */}
-            <div className="lg:col-span-1 order-2 lg:order-1">
+            {/* Keyvisual - Mobile Top, Desktop Right */}
+            <div className="lg:col-span-1 order-1 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -140,7 +140,7 @@ export default function MusicalDetail() {
             </div>
 
             {/* Main Content */}
-            <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="lg:col-span-2 order-2 lg:order-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
