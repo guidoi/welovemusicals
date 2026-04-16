@@ -57,6 +57,8 @@ export interface Musical {
   quotes?: MusicalQuote[];
   gallery?: MusicalGalleryImage[];
   showFacts?: MusicalShowFact[];
+  storyHeadline?: string; // Headline für Story-Bereich
+  storyText?: string; // Story-Text für Detail-Seite
   faqItems?: MusicalFAQ[];
 }
 
@@ -775,6 +777,8 @@ export const musicals: Musical[] = [
       { label: "Sprache", value: "Deutsch" },
       { label: "Auf Tour", value: "2026 & 2027" },
     ],
+    storyHeadline: "VERFÜHRT, GEBISSEN, VERLOREN",
+    storyText: "Für den jungen Anwalt Jonathan Harker wird eine Geschäftsreise zum Albtraum: Graf Dracula lädt ihn nach Transsilvanien ein, um ein Anwesen in London zu erwerben. Doch als der Vampir das Porträt von Jonathans Verlobter Mina entdeckt, verfällt er in eine gefährliche Faszination und das Schicksal nimmt eine unheilvolle Wendung.\n\nDracula verlässt sein Schloss in Transsilvanien, um Mina in London zu finden – und hinterlässt eine Spur aus Blut, Sehnsucht und Verzweiflung. Selbst der legendäre Vampirjäger Van Helsing scheint machtlos gegen diese dunkle Leidenschaft. Im Schatten der Nacht entscheidet sich Minas Schicksal: Wählt sie das Licht – oder das ewige Leben an Draculas Seite?",
     faqItems: [
       { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland und Österreich." },
       { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind online über Eventim und Oeticket erhältlich." },

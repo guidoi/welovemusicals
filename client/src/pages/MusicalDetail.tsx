@@ -252,6 +252,30 @@ export default function MusicalDetail() {
         <TourDates tourDates={musical.tourDates} />
       )}
 
+      {/* Story */}
+      {musical.storyHeadline && musical.storyText && (
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+                {musical.storyHeadline}
+              </h2>
+              <div className="prose prose-invert max-w-none">
+                {musical.storyText.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="text-white/80 leading-relaxed mb-4 text-lg">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Pressequotes */}
       {musical.quotes && musical.quotes.length > 0 && (
         <MusicalQuotes quotes={musical.quotes} />
