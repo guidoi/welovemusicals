@@ -111,6 +111,13 @@ export default function TourDates({ tourDates }: TourDatesProps) {
             </p>
           </div>
         )}
+
+        {/* Affiliate Link Hinweis */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-foreground/60">
+            Weiterleitung zu eventim.de - Affiliate-Link
+          </p>
+        </div>
       </div>
     </section>
   );
