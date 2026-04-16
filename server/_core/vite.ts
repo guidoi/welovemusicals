@@ -40,10 +40,14 @@ export async function setupVite(app: Express, server: Server) {
       );
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ 
-        "Content-Type": "text/html",
-        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
         "Pragma": "no-cache",
-        "Expires": "0"
+        "Expires": "0",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
       }).end(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
@@ -68,9 +72,13 @@ export function serveStatic(app: Express) {
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
     res.set({
-      "Cache-Control": "no-cache, no-store, must-revalidate",
+      "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
       "Pragma": "no-cache",
-      "Expires": "0"
+      "Expires": "0",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-XSS-Protection": "1; mode=block",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
     });
     res.sendFile(path.resolve(distPath, "index.html"));
   });

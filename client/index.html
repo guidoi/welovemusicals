@@ -13,143 +13,55 @@
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#1a1a2e" />
     
+    <!-- Critical CSS - Prevents FOUC (Flash of Unstyled Content) -->
+    <style>
+      /* Prevent white/black flash before CSS loads */
+      html {
+        background-color: #1a1a2e;
+        color: #e8dcc8;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        background-color: #1a1a2e;
+        color: #e8dcc8;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      }
+      
+      /* Ensure root div doesn't cause flash */
+      #root {
+        background-color: #1a1a2e;
+        color: #e8dcc8;
+      }
+    </style>
+    
     <!-- Cache Control -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     
-    <!-- Critical CSS for skeleton loader -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      html, body {
-        background-color: #1a1a2e;
-        color: #e8dcc8;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      }
-      
-      @keyframes shimmer {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
-      }
-      
-      .skeleton-loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #1a1a2e;
-        z-index: 9998;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .skeleton-header {
-        padding: 16px 20px;
-        border-bottom: 1px solid #2a2a3e;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .skeleton-logo {
-        width: 150px;
-        height: 32px;
-        background: linear-gradient(90deg, #2a2a3e 0%, #3a3a4e 50%, #2a2a3e 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-        border-radius: 4px;
-      }
-      
-      .skeleton-nav {
-        width: 100px;
-        height: 32px;
-        background: linear-gradient(90deg, #2a2a3e 0%, #3a3a4e 50%, #2a2a3e 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-        border-radius: 4px;
-      }
-      
-      .skeleton-hero {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(90deg, #2a2a3e 0%, #3a3a4e 50%, #2a2a3e 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-      }
-      
-      .skeleton-content {
-        padding: 20px;
-        flex: 1;
-      }
-      
-      .skeleton-title {
-        width: 80%;
-        height: 28px;
-        background: linear-gradient(90deg, #2a2a3e 0%, #3a3a4e 50%, #2a2a3e 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-        border-radius: 4px;
-        margin-bottom: 16px;
-      }
-      
-      .skeleton-text {
-        width: 100%;
-        height: 16px;
-        background: linear-gradient(90deg, #2a2a3e 0%, #3a3a4e 50%, #2a2a3e 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-        border-radius: 4px;
-        margin-bottom: 12px;
-      }
-      
-      .skeleton-text:last-of-type {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      
-      .skeleton-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
-      }
-      
-      .skeleton-card {
-        height: 250px;
-        background: linear-gradient(90deg, #2a2a3e 0%, #3a3a4e 50%, #2a2a3e 100%);
-        background-size: 200% 100%;
-        animation: shimmer 2s infinite;
-        border-radius: 8px;
-      }
-      
-      #root {
-        display: none;
-      }
-      
-      #root.loaded {
-        display: block;
-      }
-      
-      .skeleton-loader.hidden {
-        display: none;
-      }
-    </style>
-    
     <!-- Theme Bootstrap - Apply dark class before React mounts -->
     <script>
       (function() {
+        // Ensure dark theme is applied immediately
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.backgroundColor = '#1a1a2e';
+        document.documentElement.style.color = '#e8dcc8';
+        
+        // Also set on body for extra safety
+        if (document.body) {
+          document.body.style.backgroundColor = '#1a1a2e';
+          document.body.style.color = '#e8dcc8';
+        }
+        
+        // Store theme preference
         const theme = localStorage.getItem('theme') || 'dark';
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
         }
-        document.documentElement.style.backgroundColor = '#1a1a2e';
-        document.body.style.backgroundColor = '#1a1a2e';
       })();
     </script>
     
@@ -178,33 +90,8 @@
   </head>
 
   <body style="background-color:#1a1a2e;color:#e8dcc8;">
-    <!-- Skeleton Loading Screen (shown while React loads) -->
-    <div id="skeleton-loader" class="skeleton-loader">
-      <div class="skeleton-header">
-        <div class="skeleton-logo"></div>
-        <div class="skeleton-nav"></div>
-      </div>
-      <div class="skeleton-hero"></div>
-      <div class="skeleton-content">
-        <div class="skeleton-title"></div>
-        <div class="skeleton-text"></div>
-        <div class="skeleton-text"></div>
-        <div class="skeleton-text"></div>
-        <div class="skeleton-cards">
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- React Root -->
     <div id="root"></div>
-    
-    <!-- Main App Script -->
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Analytics -->
     <script
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
