@@ -201,7 +201,7 @@ export default function MusicalDetail() {
 
 
       {/* Ticket CTA */}
-      <section className="py-6 md:py-8 bg-background">
+      <section className="py-4 md:py-4 bg-background">
         <div className="container max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
