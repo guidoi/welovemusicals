@@ -739,7 +739,7 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
     featured: true,
-    tags: ["Schaurig schön", "Romantik", "Tournee"],
+    tags: ["Tournee", "Romantik", "Schaurigschön"],
     youtubeTrailerId: "9lJc0EM-jBo",
     tourDates: [
       { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-05-01", endDate: "2026-06-07", eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/?affiliate=MXA&calendarview=1&cityname=Berlin&utm_medium=dp&_gl=1*1rqipnl*_gcl_au*NjAxODczMDc1LjE3NzYwNjkwMDY.*_ga*MTYzNjY0NDc4LjE3NzU4MTIzMDY.*_ga_HQ4LYZ838W*czE3NzYyMzk4OTAkbzQkZzEkdDE3NzYyNTIzNzMkajM3JGwwJGgxMzEzMTYwNTkx" },
