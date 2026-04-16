@@ -763,12 +763,12 @@ export const musicals: Musical[] = [
     ],
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_square_c4218831.webp",
     gallery: [
-      { url: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&q=80", alt: "Szene 1" },
-      { url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80", alt: "Szene 2" },
-      { url: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=400&q=80", alt: "Szene 3" },
-      { url: "https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=400&q=80", alt: "Szene 4" },
-      { url: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80", alt: "Szene 5" },
-      { url: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&q=80", alt: "Szene 6" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-03_54bd2660.jpg", alt: "Dracula Pressefoto 1" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-04_9444c67a.jpg", alt: "Dracula Pressefoto 2" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-05_204269cb.jpg", alt: "Dracula Pressefoto 3" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-06_5f9537cb.jpg", alt: "Dracula Pressefoto 4" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-07_5624bade.jpg", alt: "Dracula Pressefoto 5" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-08_4b76d8e0.jpg", alt: "Dracula Pressefoto 6" },
     ],
     showFacts: [
       { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
