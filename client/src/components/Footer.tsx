@@ -112,8 +112,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Affiliate Disclosure */}
+        {/* Image Credits */}
         <div className="mt-10 pt-6 border-t border-border/30">
+          <p className="text-xs text-muted-foreground/70 leading-relaxed max-w-3xl">
+            <strong className="text-muted-foreground">Bildnachweise:</strong> Pressefotos: © Nico Moser. Grafiken und Videos: © ShowSlot Touring GmbH. 
+            Detaillierte Bildquellen siehe <Link href="/impressum" className="text-gold hover:underline">Impressum</Link>.
+          </p>
+        </div>
+
+        {/* Affiliate Disclosure */}
+        <div className="mt-6 pt-6 border-t border-border/30">
           <p className="text-xs text-muted-foreground/70 leading-relaxed max-w-3xl">
             <strong className="text-muted-foreground">Affiliate-Hinweis:</strong> Diese Website enthält Affiliate-Links zu Eventim (AWIN Merchant ID 11388). 
             Wenn Sie über unsere Links Tickets kaufen, erhalten wir eine kleine Provision – für Sie entstehen keine zusätzlichen Kosten. 
