@@ -92,22 +92,9 @@
   * {
     @apply border-border outline-ring/50;
   }
-  
-  /* Dark mode - default for this app */
-  html.dark {
-    color-scheme: dark;
-  }
-  
   body {
     @apply bg-background text-foreground font-body;
     font-family: var(--font-body);
-    background-color: oklch(0.12 0.005 260);
-    color: oklch(0.92 0.01 85);
-  }
-  
-  html.dark body {
-    background-color: oklch(0.12 0.005 260);
-    color: oklch(0.92 0.01 85);
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
