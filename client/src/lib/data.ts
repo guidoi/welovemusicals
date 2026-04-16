@@ -759,9 +759,9 @@ export const musicals: Musical[] = [
       { city: "Wien", venue: "MuseumsQuartier Halle E", startDate: "2027-11-23", endDate: "2027-11-28", eventimUrl: "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=Wien&utm_medium=dp" },
     ],
     quotes: [
-      { text: "Ein großartiges Erlebnis für die ganze Familie.", source: "Die Welt" },
-      { text: "Unvergessliche Musik und Tanz.", source: "Der Spiegel" },
-      { text: "Absolut sehenswert!", source: "Hamburger Abendblatt" },
+      { text: "Dieser Dracula geht unter die Haut.", source: "Rhein Neckar Zeitung" },
+      { text: "Mitreißend und auch provokativ zugleich.", source: "Abendzeitung" },
+      { text: "Daumen hoch für diesen Dracula!", source: "Münchner Merkur" },
     ],
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_keyvisual_square_c4218831.webp",
     gallery: [
