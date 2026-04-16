@@ -776,7 +776,7 @@ export const musicals: Musical[] = [
       { label: "Auf Tour", value: "2026 & 2027" },
     ],
     faqItems: [
-      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland." },
+      { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland und Österreich." },
       { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind über Eventim und an den Theaterkassen erhältlich." },
       { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
       { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
