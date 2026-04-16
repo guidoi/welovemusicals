@@ -90,6 +90,23 @@
   </head>
 
   <body style="background-color:#1a1a2e;color:#e8dcc8;">
+    <!-- Aggressive FOUC prevention: Set background immediately -->
+    <style>
+      body, html, #root {
+        background-color: #1a1a2e !important;
+        color: #e8dcc8 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    </style>
+    <script>
+      // Ultra-aggressive theme application - runs synchronously
+      document.documentElement.style.backgroundColor = '#1a1a2e';
+      document.documentElement.style.color = '#e8dcc8';
+      document.body.style.backgroundColor = '#1a1a2e';
+      document.body.style.color = '#e8dcc8';
+      document.documentElement.classList.add('dark');
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script
