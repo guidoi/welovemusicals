@@ -153,7 +153,7 @@ export default function MusicalDetail() {
                   {musical.detailHeadline || "Über das Musical"}
                 </h2>
                 {musical.detailDescription ? (
-                  <div className="text-white leading-relaxed text-lg mb-8 space-y-4">
+                  <div className="text-white leading-relaxed text-lg mb-8 space-y-4 md:space-y-6">
                     {musical.detailDescription.split('\n\n').map((paragraph, i) => (
                       <div key={i}>
                         <p>{paragraph}</p>
