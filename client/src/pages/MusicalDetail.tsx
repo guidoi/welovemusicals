@@ -96,13 +96,15 @@ export default function MusicalDetail() {
               <span className="text-sm">Zurück zur Übersicht</span>
             </Link>
 
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-primary/20 text-primary">
-                {musical.category === "ensuite" ? "En-Suite-Musical" : musical.category === "tournee" ? "Tournee" : "Kinder-Musical"}
-              </span>
-              <span className="text-xs font-medium px-2.5 py-1 rounded-sm bg-secondary text-secondary-foreground">
-                {musical.provider}
-              </span>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {musical.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 rounded-sm bg-secondary text-secondary-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
 
             <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-2 leading-tight">
