@@ -52,7 +52,16 @@ const trpcClient = trpc.createClient({
   ],
 });
 
-createRoot(document.getElementById("root")!).render(
+// Hide skeleton loader and show React app when mounted
+const root = document.getElementById("root")!;
+const skeletonLoader = document.getElementById("skeleton-loader");
+
+if (skeletonLoader) {
+  skeletonLoader.classList.add("hidden");
+}
+root.classList.add("loaded");
+
+createRoot(root).render(
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
     <QueryClientProvider client={queryClient}>
       <App />
