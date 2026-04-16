@@ -10,6 +10,33 @@
     <meta name="description" content="Entdecke die besten Musicals in Deutschland. Tickets für König der Löwen, Eiskönigin, Pretty Woman und mehr. Jetzt buchen und Hotels finden!" />
     <meta name="keywords" content="Musicals Deutschland, Musical Tickets, König der Löwen, Eiskönigin, Hamburg, Stuttgart, Berlin" />
     <meta name="author" content="We Love Musicals" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#1a1a2e" />
+    
+    <!-- Critical CSS - Prevents FOUC (Flash of Unstyled Content) -->
+    <style>
+      /* Prevent white/black flash before CSS loads */
+      html {
+        background-color: #1a1a2e;
+        color: #e8dcc8;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        background-color: #1a1a2e;
+        color: #e8dcc8;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      }
+      
+      /* Ensure root div doesn't cause flash */
+      #root {
+        background-color: #1a1a2e;
+        color: #e8dcc8;
+      }
+    </style>
     
     <!-- Cache Control -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -19,6 +46,18 @@
     <!-- Theme Bootstrap - Apply dark class before React mounts -->
     <script>
       (function() {
+        // Ensure dark theme is applied immediately
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.backgroundColor = '#1a1a2e';
+        document.documentElement.style.color = '#e8dcc8';
+        
+        // Also set on body for extra safety
+        if (document.body) {
+          document.body.style.backgroundColor = '#1a1a2e';
+          document.body.style.color = '#e8dcc8';
+        }
+        
+        // Store theme preference
         const theme = localStorage.getItem('theme') || 'dark';
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
