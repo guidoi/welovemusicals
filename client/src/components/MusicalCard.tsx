@@ -84,8 +84,9 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
               {musical.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
+                  className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
                 >
+                  <Tag className="w-3 h-3" />
                   {tag}
                 </span>
               ))}

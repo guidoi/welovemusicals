@@ -100,8 +100,9 @@ export default function MusicalDetail() {
               {musical.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2 py-1 rounded-sm bg-secondary text-secondary-foreground"
+                  className="inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-sm bg-secondary text-secondary-foreground"
                 >
+                  <Tag className="w-3 h-3" />
                   {tag}
                 </span>
               ))}
@@ -200,7 +201,7 @@ export default function MusicalDetail() {
 
 
       {/* Ticket CTA */}
-      <section className="py-12 md:py-16 bg-background">
+      <section className="py-6 md:py-8 bg-background">
         <div className="container max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
