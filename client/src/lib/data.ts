@@ -778,7 +778,7 @@ export const musicals: Musical[] = [
     faqItems: [
       { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland und Österreich." },
       { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind online über Eventim und Oeticket erhältlich." },
-      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Kategorie und Spieltag." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Spieltag und Preiskategorie und beginnen bei ca. 40,00 Euro pro Ticket." },
       { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
       { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
       { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt." },
