@@ -128,8 +128,8 @@ export default function MusicalDetail() {
       <section className="py-12 md:py-16">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Keyvisual - Mobile Top, Desktop Right */}
-            <div className="lg:col-span-1 order-1 lg:order-1">
+            {/* Keyvisual - Desktop Right Only */}
+            <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -152,7 +152,20 @@ export default function MusicalDetail() {
                 {musical.detailDescription ? (
                   <div className="text-white leading-relaxed text-lg mb-8 space-y-4">
                     {musical.detailDescription.split('\n\n').map((paragraph, i) => (
-                      <p key={i}>{paragraph}</p>
+                      <div key={i}>
+                        <p>{paragraph}</p>
+                        {i === 1 && (
+                          <div className="lg:hidden my-8">
+                            <motion.div
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.5, delay: 0.3 }}
+                            >
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={ticketLink} />
+                            </motion.div>
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 ) : (
