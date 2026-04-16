@@ -64,7 +64,13 @@ export default function Home() {
 
     // Filter nach Stadt
     if (cityFilter !== "alle") {
-      result = result.filter((m) => m.city === cities.find((c) => c.slug === cityFilter)?.name);
+      const selectedCityName = cities.find((c) => c.slug === cityFilter)?.name;
+      result = result.filter((m) => {
+        // Prüfe sowohl m.city (einzelne Stadt) als auch m.cities (Array)
+        if (m.city === selectedCityName) return true;
+        if (m.cities && m.cities.includes(selectedCityName || "")) return true;
+        return false;
+      });
     }
 
     // Sortierung
