@@ -115,7 +115,6 @@ export default function Footer() {
         {/* Image Credits */}
         <div className="mt-10 pt-6 border-t border-border/30">
           <p className="text-xs text-muted-foreground/70 leading-relaxed max-w-3xl">
-            <strong className="text-muted-foreground">Bildnachweise:</strong> Pressefotos: © Nico Moser. Grafiken und Videos: © ShowSlot Touring GmbH. 
             Detaillierte Bildquellen siehe <Link href="/impressum" className="text-gold hover:underline">Impressum</Link>.
           </p>
         </div>

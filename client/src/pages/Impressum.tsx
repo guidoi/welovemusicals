@@ -95,14 +95,16 @@ export default function Impressum() {
               {/* Bildnachweise und Lizenzen */}
               <section>
                 <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Bildnachweise und Lizenzen</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    <strong>Pressefotos:</strong> Die Pressefotos der Musicalproduktionen sind Werke des Fotografen Nico Moser und unterliegen seinem Urheberrecht. Alle Rechte vorbehalten.
-                  </p>
-                  <p>
-                    <strong>Grafiken und Videos:</strong> Die Keyvisuals, Grafiken und Videos sind Werke der ShowSlot Touring GmbH und unterliegen ihrem Urheberrecht (© ShowSlot Touring GmbH). Alle Rechte vorbehalten.
-                  </p>
-                  <p>
+                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                  <div>
+                    <h3 className="font-semibold text-gold mb-2">DRACULA - DAS MUSICAL</h3>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos:</strong> © Nico Moser</li>
+                      <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH</li>
+                      <li><strong>YouTube Video:</strong> © ShowSlot Touring GmbH</li>
+                    </ul>
+                  </div>
+                  <p className="text-sm italic">
                     Die Verwendung dieser Bilder und Videos ist nur mit ausdrücklicher Genehmigung der jeweiligen Rechteinhaber gestattet.
                   </p>
                 </div>
