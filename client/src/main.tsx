@@ -8,6 +8,14 @@ import App from "./App";
 import { getLoginUrl } from "./const";
 import "./index.css";
 
+// Expose env vars to window for analytics script
+if (import.meta.env.VITE_ANALYTICS_ENDPOINT) {
+  (window as any).__VITE_ANALYTICS_ENDPOINT__ = import.meta.env.VITE_ANALYTICS_ENDPOINT;
+}
+if (import.meta.env.VITE_ANALYTICS_WEBSITE_ID) {
+  (window as any).__VITE_ANALYTICS_WEBSITE_ID__ = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+}
+
 const queryClient = new QueryClient();
 
 const redirectToLoginIfUnauthorized = (error: unknown) => {

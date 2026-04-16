@@ -92,10 +92,18 @@
   <body style="background-color:#1a1a2e;color:#e8dcc8;">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <!-- Analytics Script - Loaded via main.tsx to handle env vars -->
+    <script>
+      (function() {
+        if (window.__VITE_ANALYTICS_ENDPOINT__ && window.__VITE_ANALYTICS_WEBSITE_ID__) {
+          const script = document.createElement('script');
+          script.defer = true;
+          script.src = window.__VITE_ANALYTICS_ENDPOINT__ + '/umami';
+          script.setAttribute('data-website-id', window.__VITE_ANALYTICS_WEBSITE_ID__);
+          document.body.appendChild(script);
+        }
+      })();
+    </script>
   </body>
 
 </html>
