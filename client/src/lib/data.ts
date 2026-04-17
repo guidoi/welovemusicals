@@ -1868,7 +1868,7 @@ export const musicals: Musical[] = [
       { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause." },
       { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 10 Jahren empfohlen." },
       { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine Pause nach dem ersten Akt." },
-      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+      { question: "Gibt es eine Live-Band?", answer: "Nein, es gibt keine Live-Band. Die Musik wird eingespielt." },
     ],
   },
 ];
