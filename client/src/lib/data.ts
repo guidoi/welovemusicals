@@ -1850,9 +1850,9 @@ export const musicals: Musical[] = [
       { city: "Wien", venue: "Museumsquartier (Halle E)", startDate: "2026-12-29", endDate: "2027-01-03", eventimUrl: "https://www.oeticket.com/artist/fack-ju-goehte-se-mjusicael/?affiliate=J28&cityname=Wien" },
     ],
     quotes: [
-      { text: "Herrlich komisch und überraschend berührend.", source: "Münchner Merkur" },
-      { text: "Der Kinohit hat die Bühne verdient!", source: "Berliner Morgenpost" },
-      { text: "Großes Kino – jetzt live auf der Bühne.", source: "Kölner Stadt-Anzeiger" },
+      { text: "Mitreißende Songs mit erfrischenden und selbstbewussten Texten", source: "Hamburger Morgenpost" },
+      { text: "Ebenso unterhaltsam, witzig und gelungen wie die Kinokomödie!", source: "Die Rheinpfalz" },
+      { text: "Eine explosive Mischung aus Musik, Tanz und Komödie, die das Publikum begeistert!", source: "broadwayworld.com" },
     ],
     showFacts: [
       { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
