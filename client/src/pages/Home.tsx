@@ -54,8 +54,9 @@ export default function Home() {
   const filteredMusicals = useMemo(() => {
     let result = musicals;
 
-    // Blende alle Musicals außer Dracula aus bis zur finalen Fertigstellung
-    result = result.filter((m) => m.id === "dracula");
+    // Nur fertig eingerichtete Musicals anzeigen
+    const activeMusicalIds = ["dracula", "fack-ju-goehte"];
+    result = result.filter((m) => activeMusicalIds.includes(m.id) || activeMusicalIds.includes(m.slug));
 
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
