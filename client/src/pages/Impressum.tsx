@@ -128,6 +128,15 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Fack Ju Göhte */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">FACK JU GÖHTE – DAS MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos:</strong> © Nico Moser – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
