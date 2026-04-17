@@ -118,9 +118,9 @@ export default function Impressum() {
                 <h3 className="text-xl font-bold text-gold mb-4 tracking-wide">Bildnachweise und Lizenzen</h3>
                 <div className="space-y-6 text-muted-foreground leading-relaxed">
 
-                  {/* Eigene Produktionsfotos */}
+                  {/* Produktionsfotos beider Musicals */}
                   <div>
-                    <h4 className="font-semibold text-gold mb-2">DRACULA – DAS MUSICAL</h4>
+                    <h4 className="font-semibold text-gold mb-2">DRACULA – DAS MUSICAL &amp; FACK JU GÖHTE – DAS MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
                       <li><strong>Pressefotos:</strong> © Nico Moser – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
                       <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
@@ -128,35 +128,20 @@ export default function Impressum() {
                     </ul>
                   </div>
 
-                  {/* Fack Ju Göhte */}
+                  {/* Unsplash + Pixabay */}
                   <div>
-                    <h4 className="font-semibold text-gold mb-2">FACK JU GÖHTE – DAS MUSICAL</h4>
-                    <ul className="space-y-2 ml-4">
-                      <li><strong>Pressefotos:</strong> © Nico Moser – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
-                      <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
-                      <li><strong>YouTube Video:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten.</li>
-                    </ul>
-                  </div>
-
-                  {/* Unsplash */}
-                  <div>
-                    <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder (Unsplash)</h4>
-                    <p>
+                    <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
+                    <p className="mb-3">
                       Verschiedene Städtefotos sowie das Bühnenatmosphäre-Bild stammen von{"\ "}
                       <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash</a>.
                       Diese Bilder sind unter der{"\ "}
                       <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash-Lizenz</a>{"\ "}
                       kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar. Eine Namensnennung ist nach der Lizenz nicht verpflichtend, wird jedoch von den Fotografen begrüßt.
                     </p>
-                  </div>
-
-                  {/* Pixabay */}
-                  <div>
-                    <h4 className="font-semibold text-gold mb-2">Städtefotos (Pixabay)</h4>
                     <p>
-                      Einzelne Städtefotos (u.a. Linz) stammen von{"\ "}
-                      <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay</a>.
-                      Fotograf: © Nico Moser. Diese Bilder sind unter der{"\ "}
+                      Einzelne Städtefotos stammen zusätzlich von{"\ "}
+                      <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay</a>{"\ "}
+                      (Fotograf: © Nico Moser). Diese Bilder sind unter der{"\ "}
                       <a href="https://pixabay.com/de/service/license-summary/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay-Lizenz</a>{"\ "}
                       kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar.
                     </p>
