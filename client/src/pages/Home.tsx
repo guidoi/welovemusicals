@@ -272,7 +272,7 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {cities.map((city, i) => (
+            {[...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).map((city, i) => (
               <CityCard key={city.slug} city={city} index={i} />
             ))}
           </div>
@@ -303,7 +303,7 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cities.slice(0, 6).map((city, i) => (
+            {[...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).slice(0, 6).map((city, i) => (
               <motion.a
                 key={city.slug}
                 href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(city.name)}&checkin_month=&checkin_monthday=&checkin_year=&checkout_month=&checkout_monthday=&checkout_year=&group_adults=2&no_rooms=1&group_children=0`}

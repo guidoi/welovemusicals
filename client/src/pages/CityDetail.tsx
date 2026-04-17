@@ -46,7 +46,7 @@ export default function CityDetail() {
   }
 
   const cityMusicals = getActiveMusicalsByCity(city.name);
-  const otherCities = cities.filter((c) => c.slug !== city.slug).slice(0, 5);
+  const otherCities = [...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).filter((c) => c.slug !== city.slug).slice(0, 5);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
