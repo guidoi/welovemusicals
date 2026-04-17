@@ -2013,7 +2013,7 @@ export const cities: City[] = [
   {
     slug: "hildesheim",
     name: "Hildesheim",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-hildesheim_6eb1597c.jpg",
     description: "Die niedersächsische Kulturstadt Hildesheim ist ein wachsender Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Hildesheim",
@@ -2021,7 +2021,7 @@ export const cities: City[] = [
   {
     slug: "linz",
     name: "Linz",
-    image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=600&q=80&crop=entropy&cs=tinysrgb",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-linz_b94539cd.jpg",
     description: "Die oberösterreichische Hauptstadt Linz ist ein wichtiger Spielort für Musical-Tourneen mit der TipsArena als großer Veranstaltungshalle.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Linz",
@@ -2029,7 +2029,7 @@ export const cities: City[] = [
   {
     slug: "solingen",
     name: "Solingen",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-solingen_11864164.jpg",
     description: "Die bergische Klingenstadt Solingen ist ein Spielort für Musical-Tourneen mit dem Theater Solingen als Hauptspielstätte.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.booking.com/searchresults.de.html?ss=Solingen",

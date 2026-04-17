@@ -140,11 +140,11 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-10">
               <div className="flex items-center gap-2">
                 <Music className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{musicals.length} Musicals</span>
+                <span className="text-white/80 text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{cities.length} Städte</span>
+                <span className="text-white/80 text-sm">{cities.filter(c => getActiveMusicalCountByCity(c.name) > 0).length} Städte</span>
               </div>
 
             </div>
@@ -303,7 +303,10 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).slice(0, 6).map((city, i) => (
+            {[...cities]
+              .filter((city) => getActiveMusicalCountByCity(city.name) > 0)
+              .sort((a, b) => a.name.localeCompare(b.name, "de"))
+              .map((city, i) => (
               <motion.a
                 key={city.slug}
                 href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(city.name)}&checkin_month=&checkin_monthday=&checkin_year=&checkout_month=&checkout_monthday=&checkout_year=&group_adults=2&no_rooms=1&group_children=0`}
