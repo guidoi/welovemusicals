@@ -1812,7 +1812,7 @@ export const musicals: Musical[] = [
     description: "Der Kinohit wird zum Musical! Zeki Müller, der chaotische Lehrer, trifft auf Lehrerin Lisi Schnabelstedt – und das Chaos beginnt. Humor, Herz und mitreißende Songs für die ganze Familie.",
     detailHeadline: "DER KINO-MEGAHIT ALS MUSICAL",
     detailDescription: "Was als Kinokomödie die Herzen von Millionen Zuschauern im Sturm eroberte, feiert jetzt seine umjubelte Bühnenpremiere: FACK JU GÖHTE – DAS MUSICAL! Der chaotische Ex-Knacki Zeki Müller landet als Aushilfslehrer an der Goethe-Gesamtschule und trifft dort auf die brav-pedantische Lehrerin Lisi Schnabelstedt. Was folgt, ist eine explosive Mischung aus Chaos, Herzschmerz und unerwarteter Freundschaft – mitreißend inszeniert auf der großen Bühne.\n\nDie Erfolgskomödie von Regisseur Bora Dagtekin begeisterte über 20 Millionen Kinozuschauer und ist damit eine der erfolgreichsten deutschen Filmkomödien aller Zeiten. Jetzt bringt die Tourneeproduktion den Schulwahnsinn, die unvergesslichen Charaktere und die mitreißende Energie des Originals live auf die Bühne – mit neuen Songs, spektakulären Bühnenbildern und jeder Menge Lacher garantiert!\n\nEin Abend voller Energie, Emotionen und Überraschungen – für Fans des Films und alle, die großes Musical-Entertainment lieben.",
-    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/FJG_KV_10B_1080x1080_5da0f5ab.jpg",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
     featured: false,
     tags: ["Tournee", "Komödie", "Filmhit"],
