@@ -48,6 +48,7 @@ export interface Musical {
   detailDescription?: string; // Ausführliche Beschreibung auf der Detail-Seite
   image: string;
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
+  keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
   eventimUrl: string;
   featured?: boolean;
@@ -1814,6 +1815,7 @@ export const musicals: Musical[] = [
     detailDescription: "Ab September 2026 auf Tour in Deutschland und Österreich – mit Zeki, Chantal & Co, derben Sprüchen und einem Hit-Soundtrack!\n\nFack, jetzt singen die auch noch! Oh nein, die Chaosklasse 10B stürmt die Bühne und hat dafür sogar einen Preis gewonnen! Nach dem Mega-Erfolg geht das \"Beste Musical\" zum deutschen Kino-Hit mit Zeki, Lisi und allen kultigen Charakteren auf große Klassenfahrt durch Deutschland und Österreich. Jetzt noch wilder, dreister und musikalischer als je zuvor!\n\nGanz normaler Schulalltag? Von wegen! Hier erlebst du die lustigste Doppelstunde deines Lebens, mit Chaos pur, garantiert inkorrekten Sprüchen – und dann fangen auch noch alle plötzlich an zu singen! Ob Chantal, Danger & Co. den richtigen Ton treffen? Finde es heraus! Eins ist sicher: Du wirst lachen, mitsingen und eine Show erleben, die du so schnell nicht vergisst.\n\nDer Soundtrack garantiert Ohrwürmer von den Hit-Komponisten Simon Triebel (u. a. Mark Forster und Sarah Connor) und Nico Rebscher (u. a. für Adel Tawil und Rea Garvey), während die Choreografien euch von den Stühlen reißen. Kein Wunder, dass die Show als \"Bestes Musical\" beim Deutschen Musical Theater Preis ausgezeichnet wurde.\n\nDieses Musical ist ein Muss für alle, die sich mit einem Augenzwinkern an ihre eigene Schulzeit erinnern wollen. Also: Leise heulen und Tickets sichern, sonst heißt’s beim nächsten Test: Nachsitzen, Leute!",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-01-credit-nico-moser_c103e567.jpg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/FJG_KV_10B_1080x1080_5da0f5ab.jpg",
+    keyvisualLink: "https://www.eventim.de/artist/fack-ju-goehte-se-mjusicael/",
     youtubeTrailerId: "B0vHUyLx2Ac",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
     featured: true,

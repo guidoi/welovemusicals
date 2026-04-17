@@ -69,6 +69,7 @@ export default function MusicalDetail() {
   const providerInfo = providers.find((p) => p.name === musical.provider);
 
   const ticketLink = createAwinLink(musical.eventimUrl);
+  const keyvisualTicketLink = musical.keyvisualLink ?? ticketLink;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -138,7 +139,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={ticketLink} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} />
               </motion.div>
             </div>
 
@@ -164,7 +165,7 @@ export default function MusicalDetail() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={ticketLink} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} />
                             </motion.div>
                           </div>
                         )}
