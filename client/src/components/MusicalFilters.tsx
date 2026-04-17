@@ -88,7 +88,7 @@ export default function MusicalFilters({
                 >
                   Alle Städte
                 </button>
-                {cities.map((city) => (
+                {[...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).map((city) => (
                   <button
                     key={city.slug}
                     onClick={() => {
