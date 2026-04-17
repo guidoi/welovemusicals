@@ -49,6 +49,7 @@ export interface Musical {
   image: string;
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
   keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
+  ticketCtaUrl?: string; // Optionaler eigener Link für den roten "Tickets sichern"-Button
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
   eventimUrl: string;
   featured?: boolean;
@@ -1816,6 +1817,7 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-01-credit-nico-moser_c103e567.jpg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/FJG_KV_10B_1080x1080_5da0f5ab.jpg",
     keyvisualLink: "https://www.eventim.de/artist/fack-ju-goehte-se-mjusicael/",
+    ticketCtaUrl: "https://www.eventim.de/artist/fack-ju-goehte-se-mjusicael/?srsltid=AfmBOorU8-W42OAbVwCE5DZfqFEl-0T3ekktP_bmgBkhBgSQElDkOzaU",
     youtubeTrailerId: "B0vHUyLx2Ac",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
     featured: true,
