@@ -1816,7 +1816,7 @@ export const musicals: Musical[] = [
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/FJG_KV_10B_1080x1080_5da0f5ab.jpg",
     youtubeTrailerId: "B0vHUyLx2Ac",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
-    featured: false,
+    featured: true,
     tags: ["Tournee", "Komödie", "Filmhit"],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-01-credit-nico-moser_c103e567.jpg", alt: "Fack Ju Göhte – Das Musical © Nico Moser" },
