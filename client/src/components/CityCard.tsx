@@ -20,7 +20,7 @@ export default function CityCard({ city, index = 0 }: CityCardProps) {
       viewport={{ once: true, margin: "-30px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Link href={`/stadt/${city.slug}`} className="block group">
+      <Link href={`/stadt/${city.slug}#city-top`} className="block group">
         <div className="relative aspect-[4/5] rounded-sm overflow-hidden card-spotlight border border-border/30 hover:border-gold/30 transition-all duration-400">
           {/* Background Image */}
           <img

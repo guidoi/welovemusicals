@@ -52,6 +52,9 @@ export default function CityDetail() {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
+      {/* Anker für Scroll-to-Top */}
+      <div id="city-top" />
+
       {/* Hero */}
       <section id="city-hero" className="relative min-h-[45vh] flex items-end overflow-hidden pt-20">
         <div className="absolute inset-0">
