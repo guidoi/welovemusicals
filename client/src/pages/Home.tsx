@@ -24,8 +24,9 @@ import MusicalFilters, { type FilterCategory, type SortOption } from "@/componen
 import {
   musicals,
   cities,
-
+  ACTIVE_MUSICAL_IDS,
   getFeaturedMusicals,
+  getActiveMusicalCountByCity,
   createAwinLink,
   type Musical,
 } from "@/lib/data";
@@ -54,9 +55,8 @@ export default function Home() {
   const filteredMusicals = useMemo(() => {
     let result = musicals;
 
-    // Nur fertig eingerichtete Musicals anzeigen
-    const activeMusicalIds = ["dracula", "fack-ju-goehte"];
-    result = result.filter((m) => activeMusicalIds.includes(m.id) || activeMusicalIds.includes(m.slug));
+    // Nur fertig eingerichtete Musicals anzeigen (gesteuert über ACTIVE_MUSICAL_IDS in data.ts)
+    result = result.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
 
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
@@ -320,7 +320,7 @@ export default function Home() {
                       {city.name}
                     </h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {city.musicalCount} Musicals
+                      {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
                     </p>
                   </div>
                   <ExternalLink className="w-5 h-5 text-gold/50 group-hover:text-gold transition-colors" />

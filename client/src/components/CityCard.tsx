@@ -5,6 +5,7 @@
 import { MapPin, Music, Hotel } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { getActiveMusicalCountByCity } from "@/lib/data";
 import type { City } from "@/lib/data";
 
 interface CityCardProps {
@@ -48,7 +49,7 @@ export default function CityCard({ city, index = 0 }: CityCardProps) {
               <div className="flex items-center gap-1.5">
                 <Music className="w-3.5 h-3.5 text-gold/70" />
                 <span className="text-xs text-white/60">
-                  {city.musicalCount} {city.musicalCount === 1 ? "Musical" : "Musicals"}
+                  {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">

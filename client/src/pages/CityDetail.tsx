@@ -16,7 +16,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
-import { getCityBySlug, getMusicalsByCity, cities } from "@/lib/data";
+import { getCityBySlug, getMusicalsByCity, getActiveMusicalsByCity, getActiveMusicalCountByCity, cities } from "@/lib/data";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
@@ -45,8 +45,7 @@ export default function CityDetail() {
     );
   }
 
-  const activeMusicalIds = ["dracula", "fack-ju-goehte"];
-  const cityMusicals = getMusicalsByCity(city.name).filter((m) => activeMusicalIds.includes(m.id) || activeMusicalIds.includes(m.slug));
+  const cityMusicals = getActiveMusicalsByCity(city.name);
   const otherCities = cities.filter((c) => c.slug !== city.slug).slice(0, 5);
 
   return (
@@ -94,7 +93,7 @@ export default function CityDetail() {
               <div className="flex items-center gap-2">
                 <Music className="w-4 h-4 text-gold" />
                 <span className="text-white/80 text-sm">
-                  {cityMusicals.length} {cityMusicals.length === 1 ? "Musical" : "Musicals"}
+                  {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
                 </span>
               </div>
               <a
@@ -193,7 +192,7 @@ export default function CityDetail() {
                     {otherCity.name}
                   </h3>
                   <p className="text-xs text-white/60">
-                    {otherCity.musicalCount} Musicals
+                    {getActiveMusicalCountByCity(otherCity.name)} {getActiveMusicalCountByCity(otherCity.name) === 1 ? "Musical" : "Musicals"}
                   </p>
                 </div>
               </Link>
