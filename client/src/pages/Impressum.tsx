@@ -139,12 +139,11 @@ export default function Impressum() {
                       kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar. Eine Namensnennung ist nach der Lizenz nicht verpflichtend, wird jedoch von den Fotografen begrüßt.
                     </p>
                     <p>
-                      Einzelne Städtefotos stammen zusätzlich von{"\ "}
-                      <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay</a>{"\ "}
-                      (Fotograf: © Nico Moser). Diese Bilder sind unter der{"\ "}
-                      <a href="https://pixabay.com/de/service/license-summary/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay-Lizenz</a>{"\ "}
-                      kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar.
-                    </p>
+                      Einzelne Städtefotos stammen zusätzlich von{"\  "}
+                      <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay</a>.
+                      Diese Bilder sind unter der{"\  "}
+                      <a href="https://pixabay.com/de/service/license-summary/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay-Lizenz</a>{"\  "}
+                      kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar.                 </p>
                   </div>
 
                   {/* Hero-Bild */}
