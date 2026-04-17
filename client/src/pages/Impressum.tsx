@@ -138,9 +138,7 @@ export default function Impressum() {
                       <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash-Lizenz</a>{" "}
                       kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar. Eine Namensnennung ist nach der Lizenz nicht verpflichtend, wird jedoch von den Fotografen begrüßt.
                     </p>
-                    <p className="mt-2 text-sm">
-                      Verwendete Fotos u. a. von: Unsplash-Fotografen (Städteansichten Berlin, Bremen, Dresden, Düsseldorf, Duisburg, Frankfurt, Graz, Halle, Hamburg, Hannover, Innsbruck, Köln, Leipzig, München, Nürnberg, Oberhausen, Stuttgart, Wien sowie Musical-Atmosphärebilder).
-                    </p>
+
                   </div>
 
                   {/* Hero-Bild */}
