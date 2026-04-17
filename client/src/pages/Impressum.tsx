@@ -134,20 +134,32 @@ export default function Impressum() {
                     <ul className="space-y-2 ml-4">
                       <li><strong>Pressefotos:</strong> © Nico Moser – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
                       <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>YouTube Video:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten.</li>
                     </ul>
                   </div>
 
                   {/* Unsplash */}
                   <div>
-                    <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
+                    <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder (Unsplash)</h4>
                     <p>
-                      Verschiedene Städtefotos sowie das Bühnenatmosphäre-Bild stammen von{" "}
+                      Verschiedene Städtefotos sowie das Bühnenatmosphäre-Bild stammen von{"\ "}
                       <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash</a>.
-                      Diese Bilder sind unter der{" "}
-                      <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash-Lizenz</a>{" "}
+                      Diese Bilder sind unter der{"\ "}
+                      <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash-Lizenz</a>{"\ "}
                       kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar. Eine Namensnennung ist nach der Lizenz nicht verpflichtend, wird jedoch von den Fotografen begrüßt.
                     </p>
+                  </div>
 
+                  {/* Pixabay */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">Städtefotos (Pixabay)</h4>
+                    <p>
+                      Einzelne Städtefotos (u.a. Linz) stammen von{"\ "}
+                      <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay</a>.
+                      Fotograf: © Nico Moser. Diese Bilder sind unter der{"\ "}
+                      <a href="https://pixabay.com/de/service/license-summary/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Pixabay-Lizenz</a>{"\ "}
+                      kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar.
+                    </p>
                   </div>
 
                   {/* Hero-Bild */}
