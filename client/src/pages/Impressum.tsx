@@ -117,17 +117,40 @@ export default function Impressum() {
               <section>
                 <h3 className="text-xl font-bold text-gold mb-4 tracking-wide">Bildnachweise und Lizenzen</h3>
                 <div className="space-y-6 text-muted-foreground leading-relaxed">
+
+                  {/* Eigene Produktionsfotos */}
                   <div>
-                    <h4 className="font-semibold text-gold mb-2">DRACULA - DAS MUSICAL</h4>
+                    <h4 className="font-semibold text-gold mb-2">DRACULA – DAS MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
-                      <li><strong>Pressefotos:</strong> © Nico Moser</li>
-                      <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH</li>
-                      <li><strong>YouTube Video:</strong> © ShowSlot Touring GmbH</li>
+                      <li><strong>Pressefotos:</strong> © Nico Moser – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>YouTube Video:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten.</li>
                     </ul>
                   </div>
-                  <p className="text-sm italic">
-                    Die Verwendung dieser Bilder und Videos ist nur mit ausdrücklicher Genehmigung der jeweiligen Rechteinhaber gestattet.
-                  </p>
+
+                  {/* Unsplash */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
+                    <p>
+                      Verschiedene Städtefotos sowie das Bühnenatmosphäre-Bild stammen von{" "}
+                      <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash</a>.
+                      Diese Bilder sind unter der{" "}
+                      <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">Unsplash-Lizenz</a>{" "}
+                      kostenlos für kommerzielle und nicht-kommerzielle Zwecke nutzbar. Eine Namensnennung ist nach der Lizenz nicht verpflichtend, wird jedoch von den Fotografen begrüßt.
+                    </p>
+                    <p className="mt-2 text-sm">
+                      Verwendete Fotos u. a. von: Unsplash-Fotografen (Städteansichten Berlin, Bremen, Dresden, Düsseldorf, Duisburg, Frankfurt, Graz, Halle, Hamburg, Hannover, Innsbruck, Köln, Leipzig, München, Nürnberg, Oberhausen, Stuttgart, Wien sowie Musical-Atmosphärebilder).
+                    </p>
+                  </div>
+
+                  {/* Hero-Bild */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">Header- und Hintergrundbild</h4>
+                    <p>
+                      Das Bühnen-Headerbild wurde für diese Website erstellt und liegt im Eigentum des Seitenbetreibers.
+                    </p>
+                  </div>
+
                 </div>
               </section>
 
