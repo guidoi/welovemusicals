@@ -45,7 +45,8 @@ export default function CityDetail() {
     );
   }
 
-  const cityMusicals = getMusicalsByCity(city.name).filter((m) => m.id === "dracula");
+  const activeMusicalIds = ["dracula", "fack-ju-goehte"];
+  const cityMusicals = getMusicalsByCity(city.name).filter((m) => activeMusicalIds.includes(m.id) || activeMusicalIds.includes(m.slug));
   const otherCities = cities.filter((c) => c.slug !== city.slug).slice(0, 5);
 
   return (
