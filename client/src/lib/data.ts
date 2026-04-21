@@ -1877,7 +1877,7 @@ export const musicals: Musical[] = [
   {
     id: "dreihaselnuesse",
     slug: "drei-haselnuesse-fuer-aschenbroedel",
-    title: "DREI HASELÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL",
+    title: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL",
     provider: "ShowSlot",
     category: "tournee",
     categories: ["tournee", "familie"],
