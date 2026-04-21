@@ -1884,6 +1884,7 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/3hn-keyvisual-header_7bd05c9d.jpg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/3hnfa-keyvisual-sq_31be7ba8.jpg",
     eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/",
+    youtubeTrailerId: "JRu6RNgh2PY",
     featured: true,
     tags: ["Tournee", "Familie", "Märchen"],
     tourDates: [
