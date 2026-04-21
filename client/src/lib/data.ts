@@ -1885,7 +1885,7 @@ export const musicals: Musical[] = [
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/3hnfa-keyvisual-sq_31be7ba8.jpg",
     eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/",
     featured: true,
-    tags: ["Weihnachten", "Familie", "Märchen", "Klassiker"],
+    tags: ["Tournee", "Familie", "Märchen"],
     tourDates: [
       { city: "Aschaffenburg", venue: "Stadthalle am Schloss", startDate: "2026-12-14", endDate: "2026-12-14", eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/" },
       { city: "Aurich", venue: "Stadthalle", startDate: "2026-11-12", endDate: "2026-11-12", eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/" },
