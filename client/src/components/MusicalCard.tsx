@@ -14,21 +14,30 @@ interface MusicalCardProps {
 }
 
 const categoryLabels: Record<string, string> = {
-  ensuite: "En-Suite-Musical",
+  ensuite: "Fester Standort",
+  "fester-standort": "Fester Standort",
   tournee: "Tournee",
-  kinder: "Kinder-Musical",
+  erwachsene: "Erwachsene",
+  familie: "Familie",
+  kinder: "Kinder",
 };
 
 const categoryColors: Record<string, string> = {
   ensuite: "bg-gold/20 text-gold",
+  "fester-standort": "bg-gold/20 text-gold",
   tournee: "bg-burgundy/30 text-burgundy-light",
-  kinder: "bg-emerald-900/30 text-emerald-400",
+  erwachsene: "bg-purple-900/30 text-purple-300",
+  familie: "bg-emerald-900/30 text-emerald-400",
+  kinder: "bg-sky-900/30 text-sky-400",
 };
 
 const categoryIcons: Record<string, string> = {
   ensuite: "🏛️",
+  "fester-standort": "🏛️",
   tournee: "🚌",
-  kinder: "👶",
+  erwachsene: "🎭",
+  familie: "👨‍👩‍👧",
+  kinder: "⭐",
 };
 
 export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {

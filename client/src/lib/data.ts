@@ -39,7 +39,8 @@ export interface Musical {
   title: string;
   subtitle?: string;
   provider: string;
-  category: "ensuite" | "tournee" | "kinder";
+  category: "ensuite" | "tournee" | "kinder"; // Legacy, wird durch categories ersetzt
+  categories?: Array<"fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder">;
   city?: string;
   cities?: string[];
   venue?: string;
@@ -736,6 +737,7 @@ export const musicals: Musical[] = [
     title: "DRACULA – DAS MUSICAL",
     provider: "ShowSlot",
     category: "tournee",
+    categories: ["tournee", "erwachsene"],
     cities: ["Berlin", "Bochum", "Bremen", "Duisburg", "Frankfurt", "Graz", "Halle (Saale)", "Innsbruck", "Köln", "München", "Nürnberg", "Stuttgart", "Wien"],
     description: "Erlebe die unsterbliche Liebesgeschichte von Dracula als fesselndes Musical-Erlebnis über ewige Liebe, dunkle Begierde und die Macht der Verführung.",
     detailHeadline: "MIT MUSICAL-STAR JAN AMMAN ALS GRAF DRACULA",
@@ -1810,6 +1812,7 @@ export const musicals: Musical[] = [
     title: "FACK JU GÖHTE – DAS MUSICAL",
     provider: "ShowSlot",
     category: "tournee",
+    categories: ["tournee", "familie"],
     cities: ["Berlin", "Bochum", "Bremen", "Dresden", "Duisburg", "Frankfurt", "Graz", "Hildesheim", "Köln", "Linz", "München", "Nürnberg", "Solingen", "Stuttgart", "Wien"],
     description: "Das preisgekrönte Musical ist zurück! Zeki, Chantal & Co. stehen wieder auf der Bühne – wilder, dreister und musikalischer als je zuvor. Jetzt Tickets sichern!",
     detailHeadline: "DAS PREISGEKRÖNTE MUSICAL IST ZURÜCK",
@@ -1874,9 +1877,10 @@ export const musicals: Musical[] = [
   {
     id: "dreihaselnuesse",
     slug: "drei-haselnuesse-fuer-aschenbroedel",
-    title: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL",
+    title: "DREI HASELÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL",
     provider: "ShowSlot",
     category: "tournee",
+    categories: ["tournee", "familie"],
     cities: ["Aschaffenburg", "Aurich", "Bad Ischl", "Bad Neustadt a. d. Saale", "Bitburg", "Bochum", "Braunschweig", "Bremen", "Bremerhaven", "Cloppenburg", "Cottbus", "Crailsheim", "Dresden", "Duisburg", "Flensburg", "Frankfurt", "Frankfurt (Oder)", "Fulda", "Gera", "Graz", "Gütersloh", "Halle (Saale)", "Hameln", "Heidenheim", "Heilbronn", "Husum", "Innsbruck", "Jena", "Kiel", "Koblenz", "Köln", "Landau", "Leipzig", "Limburg", "Lindau", "Linz", "Lüneburg", "Magdeburg", "Mainz", "München", "Neuss", "Nürnberg", "Offenburg", "Osnabrück", "Paderborn", "Rastatt", "Ravensburg", "Rostock", "Saarbrücken", "Schwerin", "Siegen", "Singen", "Stuttgart", "Suhl", "Tuttlingen", "Uelzen", "Weiden i. d. Obf.", "Weimar", "Wetzlar", "Wien", "Wolfsburg", "Würzburg", "Zweibrücken", "Zwickau"],
     description: "Der zeitlose Weihnachtsklassiker live auf der Bühne – mit der ikonischen Originalmusik von Karel Svoboda. Ein magisches Erlebnis für die ganze Familie!",
     detailHeadline: "SO FÜHLT SICH WEIHNACHTEN LIVE AN",

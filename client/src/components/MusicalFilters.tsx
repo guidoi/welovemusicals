@@ -17,7 +17,7 @@ const allFilterCities = (() => {
   return Array.from(citySet).sort((a, b) => a.localeCompare(b, "de"));
 })();
 
-export type FilterCategory = "alle" | "ensuite" | "tournee" | "kinder";
+export type FilterCategory = "alle" | "fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder";
 export type SortOption = "name" | "city" | "featured";
 
 interface MusicalFiltersProps {
@@ -43,9 +43,11 @@ export default function MusicalFilters({
 
   const categoryLabels: Record<FilterCategory, string> = {
     alle: "Alle Kategorien",
-    ensuite: "En-Suite-Musicals",
-    tournee: "Tournee-Musicals",
-    kinder: "Kinder-Musicals",
+    "fester-standort": "Fester Standort",
+    tournee: "Tournee",
+    erwachsene: "Erwachsene",
+    familie: "Familie",
+    kinder: "Kinder",
   };
 
   const sortLabels: Record<SortOption, string> = {
@@ -130,9 +132,11 @@ export default function MusicalFilters({
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
           >
             <option value="alle">Alle Kategorien</option>
-            <option value="ensuite">En-Suite-Musicals</option>
-            <option value="tournee">Tournee-Musicals</option>
-            <option value="kinder">Kinder-Musicals</option>
+            <option value="fester-standort">Fester Standort</option>
+            <option value="tournee">Tournee</option>
+            <option value="erwachsene">Erwachsene</option>
+            <option value="familie">Familie</option>
+            <option value="kinder">Kinder</option>
           </select>
         </div>
 

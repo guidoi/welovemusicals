@@ -60,7 +60,17 @@ export default function Home() {
 
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
-      result = result.filter((m) => m.category === categoryFilter);
+      result = result.filter((m) => {
+        // Neue categories-Array-Logik
+        if (m.categories && m.categories.length > 0) {
+          return m.categories.includes(categoryFilter as any);
+        }
+        // Fallback auf altes category-Feld
+        if (categoryFilter === "fester-standort") return m.category === "ensuite";
+        if (categoryFilter === "kinder") return m.category === "kinder";
+        if (categoryFilter === "tournee") return m.category === "tournee";
+        return false;
+      });
     }
 
     // Filter nach Stadt
