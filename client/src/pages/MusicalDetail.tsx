@@ -251,7 +251,7 @@ export default function MusicalDetail() {
 
       {/* Tour Dates */}
       {musical.tourDates && musical.tourDates.length > 0 && (
-        <TourDates tourDates={musical.tourDates} />
+        <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse"} />
       )}
 
       {/* Story */}

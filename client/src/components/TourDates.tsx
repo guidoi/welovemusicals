@@ -1,7 +1,8 @@
 /**
  * TourDates-Komponente
- * Zeigt alphabetisch sortierte Tourneestädte mit Spielort, Venue, Zeitraum und Tickets-Button.
- * Bei mehr als 10 Städten wird ein Dropdown-Select angezeigt, sonst Buttons.
+ * - forceDropdown=true  → Dropdown-Select (für Aschenbrödel mit 64 Städten)
+ * - forceDropdown=false → Button-Reihe (für Dracula, FJG)
+ * Alle gefilterten Termine werden immer untereinander gelistet (keine Grid-Spalten).
  */
 import { MusicalTourDate } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -16,28 +17,24 @@ import { useState } from "react";
 
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
+  forceDropdown?: boolean;
 }
 
-export default function TourDates({ tourDates }: TourDatesProps) {
+export default function TourDates({ tourDates, forceDropdown = false }: TourDatesProps) {
   const [selectedCity, setSelectedCity] = useState<string>("alle");
 
   if (!tourDates || tourDates.length === 0) return null;
 
-  // Alphabetisch sortieren nach Stadt
   const sortedDates = [...tourDates].sort((a, b) =>
     a.city.localeCompare(b.city, "de")
   );
 
-  // Unique Städte für Filter (alphabetisch)
   const cities = Array.from(new Set(sortedDates.map((d) => d.city)));
 
-  // Filtern wenn eine Stadt ausgewählt ist
   const filteredDates =
     selectedCity === "alle"
       ? sortedDates
       : sortedDates.filter((d) => d.city === selectedCity);
-
-  const useDropdown = cities.length > 10;
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr + "T12:00:00");
@@ -60,9 +57,8 @@ export default function TourDates({ tourDates }: TourDatesProps) {
           Spielorte und Termine
         </h2>
 
-        {/* City Filter – Dropdown für viele Städte, Buttons für wenige */}
         <div className="mb-8">
-          {useDropdown ? (
+          {forceDropdown ? (
             <div className="flex items-center gap-4 flex-wrap">
               <Select value={selectedCity} onValueChange={setSelectedCity}>
                 <SelectTrigger className="w-64 bg-card border-border text-foreground">
@@ -113,32 +109,28 @@ export default function TourDates({ tourDates }: TourDatesProps) {
           )}
         </div>
 
-        {/* Tour Dates Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="flex flex-col gap-4 max-w-2xl">
           {filteredDates.map((date, idx) => (
             <div
               key={idx}
-              className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between"
+              className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
             >
-              <div className="mb-4">
+              <div className="flex-1">
                 <h3 className="text-lg font-bold text-card-foreground mb-1 uppercase tracking-wide">
                   {date.city}
                 </h3>
                 <p className="text-sm text-white/80 font-medium leading-snug">
                   {date.venue}
                 </p>
-              </div>
-              <div className="mb-4">
-                <p className="text-sm text-gold font-semibold">
+                <p className="text-sm text-gold font-semibold mt-1">
                   {formatDateRange(date.startDate, date.endDate)}
                 </p>
               </div>
-              {/* Tickets Button */}
               <a
                 href={date.eventimUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-block px-4 py-2 font-semibold rounded-sm text-center transition-colors text-white text-sm"
+                className="shrink-0 px-5 py-2 font-semibold rounded-sm text-center transition-colors text-white text-sm"
                 style={{ backgroundColor: "rgb(239, 68, 68)" }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.backgroundColor = "rgb(220, 38, 38)")
@@ -161,8 +153,7 @@ export default function TourDates({ tourDates }: TourDatesProps) {
           </div>
         )}
 
-        {/* Affiliate Link Hinweis */}
-        <div className="mt-8 text-center">
+        <div className="mt-8">
           <p className="text-sm text-foreground/60">
             Weiterleitung zu eventim.de – Affiliate-Links
           </p>
