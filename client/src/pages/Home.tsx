@@ -89,6 +89,17 @@ export default function Home() {
     // Sortierung
     if (sortOption === "name") {
       result = result.sort((a, b) => a.title.localeCompare(b.title, "de"));
+    } else if (sortOption === "date") {
+      // Früheste Vorstellung zuerst (aus tourDates oder startDate)
+      result = result.sort((a, b) => {
+        const getEarliestDate = (m: Musical): string => {
+          if (m.tourDates && m.tourDates.length > 0) {
+            return m.tourDates.map((t) => t.startDate).sort()[0];
+          }
+          return "9999-12-31";
+        };
+        return getEarliestDate(a).localeCompare(getEarliestDate(b));
+      });
     } else if (sortOption === "featured") {
       // Featured musicals first, then by name
       result = result.sort((a, b) => {
