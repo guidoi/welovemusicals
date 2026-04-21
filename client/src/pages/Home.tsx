@@ -65,11 +65,13 @@ export default function Home() {
 
     // Filter nach Stadt
     if (cityFilter !== "alle") {
-      const selectedCityName = cities.find((c) => c.slug === cityFilter)?.name;
       result = result.filter((m) => {
-        // Prüfe sowohl m.city (einzelne Stadt) als auch m.cities (Array)
-        if (m.city === selectedCityName) return true;
-        if (m.cities && m.cities.includes(selectedCityName || "")) return true;
+        // Prüfe m.city (einzelne Stadt)
+        if (m.city === cityFilter) return true;
+        // Prüfe m.cities (Array)
+        if (m.cities && m.cities.includes(cityFilter)) return true;
+        // Prüfe tourDates
+        if (m.tourDates && m.tourDates.some((t) => t.city === cityFilter)) return true;
         return false;
       });
     }

@@ -4,7 +4,18 @@
  */
 import { useState } from "react";
 import { ChevronDown, MapPin, Calendar, Filter } from "lucide-react";
-import { cities, providers, type Musical } from "@/lib/data";
+import { musicals, ACTIVE_MUSICAL_IDS, providers, type Musical } from "@/lib/data";
+
+// Alle Städte aus aktiven Musicals (m.city + tourDates), alphabetisch sortiert
+const allFilterCities = (() => {
+  const activeMusicals = musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id));
+  const citySet = new Set<string>();
+  activeMusicals.forEach((m) => {
+    if (m.city) citySet.add(m.city);
+    if (m.tourDates) m.tourDates.forEach((t) => citySet.add(t.city));
+  });
+  return Array.from(citySet).sort((a, b) => a.localeCompare(b, "de"));
+})();
 
 export type FilterCategory = "alle" | "ensuite" | "tournee" | "kinder";
 export type SortOption = "name" | "city" | "featured";
@@ -65,9 +76,7 @@ export default function MusicalFilters({
               className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground hover:border-gold/40 transition-colors flex items-center justify-between"
             >
               <span className="truncate">
-                {cityFilter === "alle"
-                  ? "Alle Städte"
-                  : cities.find((c) => c.slug === cityFilter)?.name || "Wähle Stadt"}
+                {cityFilter === "alle" ? "Alle Städte" : cityFilter}
               </span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform ${showCityDropdown ? "rotate-180" : ""}`}
@@ -88,21 +97,21 @@ export default function MusicalFilters({
                 >
                   Alle Städte
                 </button>
-                {[...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).map((city) => (
+                {allFilterCities.map((cityName) => (
                   <button
-                    key={city.slug}
+                    key={cityName}
                     onClick={() => {
-                      setCityFilter(city.slug);
+                      setCityFilter(cityName);
                       setShowCityDropdown(false);
                     }}
                     className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors flex items-center gap-2 ${
-                      cityFilter === city.slug
+                      cityFilter === cityName
                         ? "bg-gold/10 text-gold font-semibold"
                         : "text-foreground"
                     }`}
                   >
                     <MapPin className="w-3 h-3" />
-                    {city.name}
+                    {cityName}
                   </button>
                 ))}
               </div>
