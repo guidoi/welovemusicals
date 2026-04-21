@@ -154,7 +154,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
         )}
 
         <div className="mt-8">
-          <p className="text-sm text-foreground/60">
+          <p className="text-sm text-foreground/60 text-center">
             Weiterleitung zu eventim.de – Affiliate-Links
           </p>
         </div>
