@@ -36,3 +36,8 @@
 - [x] Fix: Cache-Control HTTP-Header auf Server-Ebene für HTML-Responses
 - [x] Dracula Detailseite: Headline und Beschreibungstext aktualisieren
 - [x] Header auf Detailseite vergrößern und Bildausschnitt anpassen (Personen nicht abschneiden)
+
+## Drei Haselnüsse für Aschenbrödel
+- [ ] Keyvisual hochladen und Musical-Eintrag in data.ts anlegen
+- [ ] Dropdown-Komponente für Tourtermine integrieren
+- [ ] Musical aktivieren (ACTIVE_MUSICAL_IDS) und Impressum ergänzen

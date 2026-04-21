@@ -120,7 +120,7 @@ export default function Impressum() {
 
                   {/* Produktionsfotos beider Musicals */}
                   <div>
-                    <h4 className="font-semibold text-gold mb-2">DRACULA – DAS MUSICAL &amp; FACK JU GÖHTE – DAS MUSICAL</h4>
+                    <h4 className="font-semibold text-gold mb-2">DRACULA – DAS MUSICAL &amp; FACK JU GÖHTE – DAS MUSICAL &amp; DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
                       <li><strong>Pressefotos:</strong> © Nico Moser – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
                       <li><strong>Keyvisual & Grafiken:</strong> © ShowSlot Touring GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
