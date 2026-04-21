@@ -89,12 +89,6 @@ export default function Home() {
     // Sortierung
     if (sortOption === "name") {
       result = result.sort((a, b) => a.title.localeCompare(b.title, "de"));
-    } else if (sortOption === "city") {
-      result = result.sort((a, b) => {
-        const cityA = a.city || "";
-        const cityB = b.city || "";
-        return cityA.localeCompare(cityB, "de");
-      });
     } else if (sortOption === "featured") {
       // Featured musicals first, then by name
       result = result.sort((a, b) => {

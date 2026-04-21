@@ -18,7 +18,7 @@ const allFilterCities = (() => {
 })();
 
 export type FilterCategory = "alle" | "fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder";
-export type SortOption = "name" | "city" | "featured";
+export type SortOption = "name" | "featured";
 
 interface MusicalFiltersProps {
   categoryFilter: FilterCategory;
@@ -52,7 +52,6 @@ export default function MusicalFilters({
 
   const sortLabels: Record<SortOption, string> = {
     name: "Nach Name",
-    city: "Nach Stadt",
     featured: "Empfehlungen zuerst",
   };
 
@@ -153,7 +152,6 @@ export default function MusicalFilters({
           >
             <option value="featured">Empfehlungen zuerst</option>
             <option value="name">Nach Name (A–Z)</option>
-            <option value="city">Nach Stadt</option>
           </select>
         </div>
       </div>
