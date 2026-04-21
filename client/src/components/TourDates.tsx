@@ -109,7 +109,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
           )}
         </div>
 
-        <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl"}>
+        <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl mx-auto"}>
           {filteredDates.map((date, idx) => (
             <div
               key={idx}
