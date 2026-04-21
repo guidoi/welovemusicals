@@ -146,7 +146,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{cities.filter(c => getActiveMusicalCountByCity(c.name) > 0).length} Städte</span>
+                <span className="text-white/80 text-sm">{(() => { const s = new Set<string>(); musicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
               </div>
 
             </div>
