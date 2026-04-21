@@ -1952,16 +1952,11 @@ export const musicals: Musical[] = [
       { city: "Zweibrücken", venue: "Festhalle", startDate: "2026-11-20", endDate: "2026-11-21", eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel/" },
       { city: "Zwickau", venue: "Sparkassenarena", startDate: "2026-12-09", endDate: "2026-12-09", eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel/" },
     ],
-    quotes: [
-      { text: "Ein zauberhaftes Erlebnis für die ganze Familie!", source: "Platzhalter" },
-      { text: "Die Magie des Kultfilms lebendig auf der Bühne.", source: "Platzhalter" },
-      { text: "Weihnachtsstimmung pur – mitreißend und berührend!", source: "Platzhalter" },
-    ],
     showFacts: [
       { label: "Showdauer", value: "ca. 2 Stunden (inkl. Pause)" },
       { label: "Sprache", value: "Deutsch" },
       { label: "Altersempfehlung", value: "Ab 5 Jahren" },
-      { label: "Veranstalter", value: "ShowSlot Touring GmbH" },
+      { label: "Veranstalter", value: "ShowSlot" },
     ],
     storyHeadline: "EIN MÄRCHEN, DAS BERÜHRT",
     storyText: "Nach dem Tod ihres Vaters lebt Aschenbrödel bei ihrer strengen Stiefmutter, die sie, im Gegensatz zu ihrer Schwester Dora, als Magd arbeiten lässt. Trotzdem träumt sie von Freiheit und Abenteuern. Als eines Tages ihr Weg in den verschneiten Wald führt, trifft sie den Prinzen – ein Schneeball, ein Lachen, ein Blick.\n\nAls der Prinz zum Ball einlädt, verweigert ihre Stiefmutter ihr die Teilnahme. Dank dreier magischer Haselnüsse gelingt es Aschenbrödel, heimlich am königlichen Ball teilzunehmen. Beim Tanz hat der Prinz nur Augen für sie, doch als die Uhr Mitternacht schlägt, verliert Aschenbrödel einen Schuh auf der Treppe. Ein Moment, der ihr Schicksal für immer verändern wird.",
