@@ -849,7 +849,7 @@ export const musicals: Musical[] = [
     categories: ["tournee", "erwachsene"],
     cities: ["Berlin", "Bremen", "Dresden", "Frankfurt", "Linz", "Ludwigsburg", "München", "Nürnberg", "Wetzlar", "Wien"],
     description: "Halleluja! Nach über 100.000 begeisterten Besuchern sind die Nonnen derzeit wieder auf Tour durch Deutschland und Österreich und präsentieren ein mitreißendes Show-Erlebnis nach dem gleichnamigen Kultfilm.",
-    detailHeadline: "DAS HIMMLISCHE SPEKTAKEL",
+    detailHeadline: "GÖTTLICHER SPASS GARANTIERT!",
     detailDescription: "Halleluja! Nach über 100.000 begeisterten Besuchern sind die Nonnen derzeit wieder auf Tour durch Deutschland und Österreich und präsentieren ein mitreißendes Show-Erlebnis nach dem gleichnamigen Kultfilm. Erlebe Glitzer, Gospel und Feel-Good Entertainment voller Humor, Herz und himmlischer Hits. SISTER ACT – DAS HIMMLISCHE MUSICAL ist ein göttliches Spektakel mit liebgewonnen Charakteren und einem mitreißenden Soundtrack, das den Staub von den Gesangsbüchern fegt und garantiert jedes Publikum aus den Sitzen reißt.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top1_43bcfe49.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SISTERACT-2026-KV-1080x1080_60e7e49f.jpg",
