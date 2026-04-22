@@ -877,11 +877,11 @@ export const musicals: Musical[] = [
     ],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top1_43bcfe49.webp", alt: "Sister Act Ensemble – Nonnen-Chor (c) Nico Moser" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top6_80777fec.webp", alt: "Sister Act – Deloris als Nonne (c) Nico Moser" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top2_17b610a4.webp", alt: "Sister Act – Mutter Oberin und Deloris (c) Nico Moser" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top5_5c20cf4d.webp", alt: "Sister Act – Gangster-Szene (c) Nico Moser" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top3_0e8fc0cd.webp", alt: "Sister Act – Nonnen mit Kardinal (c) Nico Moser" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top4_6673107f.webp", alt: "Sister Act – Deloris auf der Bühne (c) Nico Moser" },
-      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top5_5c20cf4d.webp", alt: "Sister Act – Gangster-Szene (c) Nico Moser" },
-      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top6_80777fec.webp", alt: "Sister Act – Deloris als Nonne (c) Nico Moser" },
     ],
     showFacts: [
       { label: "Showdauer", value: "2,5 Stunden inklusive Pause" },
