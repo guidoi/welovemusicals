@@ -885,8 +885,7 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Showdauer", value: "2,5 Stunden inklusive Pause" },
       { label: "Sprache", value: "Alle Dialoge und Songs in deutscher Sprache" },
-      { label: "Auf Tour", value: "April 2026 bis September 2026" },
-      { label: "Veranstalter", value: "ShowSlot" },
+      { label: "Auf Tour", value: "April bis Juni 2026" },
     ],
     storyHeadline: "SHOWTIME IM KLOSTER",
     storyText: "Als die Disco-Diva Deloris plötzlich im Kloster untertauchen muss, treffen zwei Welten aufeinander: Mit ihrem Groove wirbelt sie den Kirchenchor auf, schlägt ganz neue Töne aus der Feder vom 8-fachen Oscar-Preisträger Alan Menken (u. a. Disneys ALADDIN & DIE SCHÖNE UND DAS BIEST) an und sorgt für göttliches Chaos.\n\nDie Nachtclubsängerin Deloris van Cartier wird nach ihrem Auftritt zufällig Zeugin eines Mordes – und findet sich plötzlich im Zeugenschutzprogramm wieder. Anstatt glamouröser Bühnenlichter erwartet sie ein konservatives Kloster, wo sie als bescheidene Nonne untertauchen soll – zum Leidwesen der strengen Mutter Oberin...\n\nIm Kirchenchor soll die Sängerin Teil der Gemeinde werden, doch die Nonnen treffen keinen Ton und so übernimmt Deloris die Leitung. Mit ihr wird jeder Gottesdienst zum Event und die Messen ziehen immer mehr Publikum an – als sie schließlich vor dem Papst auftreten sollen, kommen die Gangster Deloris auf die Spur und die Nonnen schweben unverhofft in großer Gefahr...",
