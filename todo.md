@@ -41,3 +41,13 @@
 - [ ] Keyvisual hochladen und Musical-Eintrag in data.ts anlegen
 - [ ] Dropdown-Komponente für Tourtermine integrieren
 - [ ] Musical aktivieren (ACTIVE_MUSICAL_IDS) und Impressum ergänzen
+
+## Sister Act – Neues Musical
+- [x] Sister Act Bilder hochladen (6 Show-Impressionen + 1 Keyvisual)
+- [x] Sister Act als neues Musical in data.ts anlegen (Kategorien: Tournee + Erwachsene)
+- [x] Sister Act Tourtermine eintragen (10 Städte)
+- [x] Sister Act Pressestimmen eintragen (WAZ, BUNTE.de, Münchner Merkur)
+- [x] Sister Act FAQ/Wissenswertes eintragen (Show-Dauer, Sprache, Auf Tour, Veranstalter)
+- [x] Sister Act in ACTIVE_MUSICAL_IDS aufnehmen
+- [x] Dracula: Sprache auf „Alle Dialoge und Songs in deutscher Sprache" aktualisieren
+- [x] Dracula/FJG/Aschenbrödel: „Auf Tour"-Zeiträume in FAQ aktualisieren
