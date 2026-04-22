@@ -116,9 +116,16 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
               className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
             >
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-card-foreground mb-1 uppercase tracking-widest font-heading">
-                  {date.city}
-                </h3>
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-lg font-bold text-card-foreground uppercase tracking-widest font-heading">
+                    {date.city}
+                  </h3>
+                  {date.badge && (
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold/20 text-gold border border-gold/30">
+                      {date.badge}
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-white/80 font-medium leading-snug">
                   {date.venue}
                 </p>

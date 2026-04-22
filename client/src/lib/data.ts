@@ -11,6 +11,7 @@ export interface MusicalTourDate {
   endDate: string; // Format: "YYYY-MM-DD"
   eventimUrl: string;
   oeticketUrl?: string;
+  badge?: string; // z.B. "5 Wochen Gastspiel"
 }
 
 export interface MusicalQuote {
@@ -867,7 +868,7 @@ export const musicals: Musical[] = [
       { city: "Ludwigsburg", venue: "Forum am Schlosspark", startDate: "2026-05-29", endDate: "2026-06-07", eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/" },
       { city: "Nürnberg", venue: "Meistersingerhalle", startDate: "2026-06-11", endDate: "2026-06-13", eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/" },
       { city: "München", venue: "Deutsches Theater", startDate: "2026-06-17", endDate: "2026-06-27", eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/" },
-      { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-07-31", endDate: "2026-09-06", eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/" },
+      { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-07-31", endDate: "2026-09-06", eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/", badge: "5 Wochen Gastspiel" },
     ],
     quotes: [
       { text: "Die Show ist lustig und glänzt vor allem mit ihrem komödiantischen Timing.", source: "WAZ" },
