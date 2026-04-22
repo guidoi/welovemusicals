@@ -1990,7 +1990,7 @@ export const musicals: Musical[] = [
   {
     id: "rapunzel",
     slug: "rapunzel",
-    title: "RAPUNZEL – Das märchenhafte Musical",
+    title: "RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL",
     provider: "ShowSlot",
     category: "tournee",
     categories: ["tournee", "familie"],
