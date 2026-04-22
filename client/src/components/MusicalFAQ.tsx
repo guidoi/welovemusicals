@@ -21,7 +21,7 @@ export default function MusicalFAQSection({ items }: MusicalFAQProps) {
   return (
     <section className="py-16 px-4 bg-background">
       <div className="container max-w-4xl">
-        <h2 className="text-3xl font-bold mb-12 text-center text-foreground">
+        <h2 className="text-3xl font-bold mb-12 text-foreground">
           Häufig gestellte Fragen
         </h2>
 
