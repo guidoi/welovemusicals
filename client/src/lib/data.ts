@@ -2210,7 +2210,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "fack-ju-goehte", "dreihaselnuesse", "sister-act"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
