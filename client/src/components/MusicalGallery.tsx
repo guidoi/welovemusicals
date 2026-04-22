@@ -29,7 +29,7 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
   return (
     <section className="py-16 px-4 bg-background">
       <div className="container max-w-6xl">
-        <h2 className="text-3xl font-bold mb-8 text-foreground">Show-Impressionen</h2>
+        <h2 className="text-3xl font-bold mb-8 text-foreground text-center">Show-Impressionen</h2>
 
         <div className="relative">
           {/* Scroll Container */}
