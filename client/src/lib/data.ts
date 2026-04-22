@@ -892,9 +892,11 @@ export const musicals: Musical[] = [
     faqItems: [
       { question: "Wo wird das Musical gespielt?", answer: "Das Musical gastiert an verschiedenen Spielstätten in Deutschland und Österreich." },
       { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind online über Eventim und Oeticket erhältlich." },
-      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Spieltag und Preiskategorie." },
+      { question: "Was kosten die Tickets?", answer: "Die Preise variieren je nach Spieltag und Preiskategorie und beginnen ab 40,40 Euro pro Ticket." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Empfohlen für schulpflichtige Kinder ab 12 Jahren und Erwachsene." },
       { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert etwa 2,5 Stunden inklusive Pause." },
       { question: "In welcher Sprache wird gespielt?", answer: "Alle Dialoge und Songs sind in deutscher Sprache." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer 9-köpfigen Live-Band begleitet." },
       { question: "Wer ist der Veranstalter?", answer: "Das Musical wird von ShowSlot veranstaltet." },
     ],
   },
