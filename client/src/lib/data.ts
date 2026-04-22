@@ -856,6 +856,7 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/",
     featured: true,
     tags: ["Tournee", "Komödie", "Erwachsene"],
+    youtubeTrailerId: "9LJMaLj8Ino",
     tourDates: [
       { city: "Linz", venue: "TipsArena", startDate: "2026-04-23", endDate: "2026-04-26", eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/" },
       { city: "Bremen", venue: "Metropol Theater", startDate: "2026-04-30", endDate: "2026-05-03", eventimUrl: "https://www.eventim.de/artist/sister-act-das-musical/" },
