@@ -86,7 +86,7 @@ export interface Provider {
 // Format: https://www.awin1.com/cread.php?awinmid=11388&awinaffid=YOUR_ID&ued=ENCODED_URL
 // Hinweis: Publisher-ID muss nach AWIN-Registrierung eingesetzt werden
 export const AWIN_MERCHANT_ID = "11388";
-export const AWIN_PUBLISHER_ID = "000000"; // Platzhalter – nach Registrierung ersetzen
+export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
 
 export function createAwinLink(destinationUrl: string): string {
   const encodedUrl = encodeURIComponent(destinationUrl);
