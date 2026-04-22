@@ -151,7 +151,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <h2 className="font-heading text-2xl font-bold text-foreground mb-4 tracking-widest">
+                <h2 className="font-display text-2xl font-bold text-foreground mb-4">
                   {musical.detailHeadline || "Über das Musical"}
                 </h2>
                 {musical.detailDescription ? (
@@ -263,7 +263,7 @@ export default function MusicalDetail() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 tracking-widest">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 {musical.storyHeadline}
               </h2>
               <div className="prose prose-invert max-w-none">
