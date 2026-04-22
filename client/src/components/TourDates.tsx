@@ -116,7 +116,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
               className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
             >
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-card-foreground mb-1 uppercase tracking-wide">
+                <h3 className="text-lg font-bold text-card-foreground mb-1 uppercase tracking-widest font-heading">
                   {date.city}
                 </h3>
                 <p className="text-sm text-white/80 font-medium leading-snug">

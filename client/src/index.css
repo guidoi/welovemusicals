@@ -50,6 +50,7 @@
   --color-red-light: rgb(248, 113, 113);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "DM Sans", system-ui, sans-serif;
+  --font-heading: "Montserrat", system-ui, sans-serif;
 }
 
 :root {
@@ -111,6 +112,9 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
