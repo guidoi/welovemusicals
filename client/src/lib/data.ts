@@ -855,7 +855,7 @@ export const musicals: Musical[] = [
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SISTERACT-2026-KV-1080x1080_60e7e49f.jpg",
     eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/",
     featured: true,
-    tags: ["Tournee", "Komödie", "Erwachsene"],
+    tags: ["Tournee", "Komödie", "Feel-Good Entertainment"],
     youtubeTrailerId: "9LJMaLj8Ino",
     tourDates: [
       { city: "Linz", venue: "TipsArena", startDate: "2026-04-23", endDate: "2026-04-26", eventimUrl: "https://www.eventim.de/artist/sister-act-das-himmlische-musical/" },
