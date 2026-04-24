@@ -40,7 +40,7 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container max-w-6xl px-4">
-        <h2 className="text-3xl font-bold mb-8 text-foreground text-center">Show-Impressionen</h2>
+        <h2 className="text-3xl font-bold mb-8 text-foreground text-center">Live-Momente</h2>
 
         <div className="relative group">
           {/* Scroll Container */}
