@@ -22,7 +22,6 @@ import YouTubeEmbed from "@/components/YouTubeEmbed";
 import MusicalQuotes from "@/components/MusicalQuotes";
 import MusicalGallery from "@/components/MusicalGallery";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
-import MusicalFAQSection from "@/components/MusicalFAQ";
 import TourDates from "@/components/TourDates";
 import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@/lib/data";
 
@@ -337,14 +336,9 @@ export default function MusicalDetail() {
         <MusicalGallery images={musical.gallery} />
       )}
 
-      {/* Show Facts */}
-      {musical.showFacts && musical.showFacts.length > 0 && (
-        <MusicalShowFacts facts={musical.showFacts} provider={musical.provider} />
-      )}
-
-      {/* FAQ */}
-      {musical.faqItems && musical.faqItems.length > 0 && (
-        <MusicalFAQSection items={musical.faqItems} />
+      {/* Show Facts + FAQ */}
+      {(musical.showFacts?.length > 0 || musical.faqItems?.length > 0) && (
+        <MusicalShowFacts facts={musical.showFacts ?? []} provider={musical.provider} faqItems={musical.faqItems} />
       )}
 
       {/* Hotels Section */}
