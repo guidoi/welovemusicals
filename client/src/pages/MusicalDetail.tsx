@@ -130,7 +130,7 @@ export default function MusicalDetail() {
       </section>
 
       {/* Mobile-only Video – direkt nach Hero, nur bei Sister Act */}
-      {(musical.id === 'sisteract' || musical.id === 'fackjugoehte') && musical.youtubeTrailerId && (
+      {(musical.id === 'sisteract' || musical.id === 'fackjugoehte' || musical.id === 'dracula') && musical.youtubeTrailerId && (
         <section className="lg:hidden pt-8 pb-4 bg-background">
           <div className="container max-w-2xl">
             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
