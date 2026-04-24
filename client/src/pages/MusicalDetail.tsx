@@ -38,14 +38,21 @@ export default function MusicalDetail() {
 
   // Sticky CTA: ausblenden wenn Tourtermine sichtbar
   const tourDatesRef = useRef<HTMLDivElement>(null);
-  const [showSticky, setShowSticky] = useState(true);
+  const topCtaRef = useRef<HTMLDivElement>(null);
+  const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!tourDatesRef.current) return;
-      const rect = tourDatesRef.current.getBoundingClientRect();
-      // Ausblenden sobald Tourtermine-Sektion im sichtbaren Bereich
-      setShowSticky(rect.top > window.innerHeight || rect.bottom < 0);
+      // Einblenden erst wenn oberer Button aus dem Viewport gescrollt ist
+      const topCtaGone = topCtaRef.current
+        ? topCtaRef.current.getBoundingClientRect().bottom < 0
+        : true;
+      // Ausblenden wenn Tourtermine-Sektion sichtbar ist
+      const tourDatesVisible = tourDatesRef.current
+        ? tourDatesRef.current.getBoundingClientRect().top <= window.innerHeight &&
+          tourDatesRef.current.getBoundingClientRect().bottom > 0
+        : false;
+      setShowSticky(topCtaGone && !tourDatesVisible);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -149,7 +156,7 @@ export default function MusicalDetail() {
 
       {/* Mobile CTA – direkt nach Hero für alle Musicals */}
       {ctaTicketLink && (
-        <div className="lg:hidden bg-background px-4 pt-6 pb-2">
+        <div ref={topCtaRef} className="lg:hidden bg-background px-4 pt-6 pb-2">
           <a
             href={ctaTicketLink}
             target="_blank"
