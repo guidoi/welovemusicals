@@ -147,6 +147,8 @@ export default function MusicalDetail() {
               <MapPin className="w-4 h-4 text-primary" />
               {musical.city ? (
                 <span>{musical.city} – {musical.venue}</span>
+              ) : musical.headerCities && musical.cities ? (
+                <span>{musical.headerCities.join(", ")} <span className="text-primary">und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span></span>
               ) : (
                 <span>{musical.cities?.join(", ")}</span>
               )}

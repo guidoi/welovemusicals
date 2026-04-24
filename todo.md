@@ -63,3 +63,7 @@
 - [x] cities-Array aktualisiert (69 Städte)
 - [x] showFacts Auf-Tour-Zeitraum aktualisiert: Okt. 2026 bis Dez. 2027
 - [x] TypeScript-Check bestanden (0 Fehler)
+
+## Drei Haselnüsse – Header-Städte begrenzen
+- [x] headerCities-Feld: 11 größte Städte im Header + "und 58 weitere Tourneestädte" in Gold
+- [x] Mobile UX verbessern: weniger Text im Header-Bereich

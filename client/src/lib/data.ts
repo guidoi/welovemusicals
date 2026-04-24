@@ -44,6 +44,7 @@ export interface Musical {
   categories?: Array<"fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder">;
   city?: string;
   cities?: string[];
+  headerCities?: string[]; // Die wichtigsten Städte für die Header-Anzeige (z.B. die 10 größten)
   venue?: string;
   description: string;
   detailHeadline?: string; // Headline auf der Detail-Seite (z.B. "DER GRAF KEHRT ZURÜCK")
@@ -1912,6 +1913,7 @@ export const musicals: Musical[] = [
     category: "tournee",
     categories: ["tournee", "familie"],
     cities: ["Aschaffenburg", "Aurich", "Bad Ischl", "Bad Neustadt a. d. Saale", "Bitburg", "Bochum", "Braunschweig", "Bremen", "Bremerhaven", "Cloppenburg", "Cottbus", "Crailsheim", "Donaueschingen", "Dornbirn", "Dresden", "Duisburg", "Flensburg", "Frankfurt am Main", "Frankfurt (Oder)", "Fulda", "Gera", "Graz", "Gütersloh", "Halle (Saale)", "Hameln", "Heidenheim", "Heilbronn", "Husum", "Innsbruck", "Jena", "Kiel", "Koblenz", "Köln", "Landau", "Leipzig", "Limburg", "Lindau", "Linz", "Lüneburg", "Magdeburg", "Mainz", "München", "Neuss", "Nürnberg", "Offenburg", "Osnabrück", "Paderborn", "Puch bei Salzburg", "Rastatt", "Ravensburg", "Ried im Innkreis", "Rostock", "Saarbrücken", "Schwerin", "Siegen", "Singen", "Stuttgart", "Suhl", "Tuttlingen", "Uelzen", "Vöcklabruck", "Weiden i. d. Oberpfalz", "Weimar", "Wetzlar", "Wien", "Wolfsburg", "Würzburg", "Zweibrücken", "Zwickau"],
+    headerCities: ["Bochum", "Bremen", "Dresden", "Duisburg", "Frankfurt", "Köln", "Leipzig", "München", "Nürnberg", "Stuttgart", "Wien"],
     description: "Der zeitlose Weihnachtsklassiker live auf der Bühne – mit der ikonischen Originalmusik von Karel Svoboda. Ein magisches Erlebnis für die ganze Familie!",
     detailHeadline: "SO FÜHLT SICH WEIHNACHTEN LIVE AN",
     detailDescription: "Der zeitlose Weihnachtsklassiker kehrt zurück – und zwar so lebendig wie nie zuvor. DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL bringt im Winter 2026/27 die Magie des Kultfilms mit seiner berühmten Originalmusik endlich live auf die Bühne und ist in einer erweiterten Tour erstmals in zahlreichen neuen Städten zu erleben. Ein emotionales, mitreißendes Erlebnis für die ganze Familie, das die Adventszeit um ein neues Highlight bereichert.\n\nSeit über 50 Jahren gehört \"Drei Haselnüsse für Aschenbrödel\" zu den wichtigsten Traditionen der Weihnachtszeit. Millionen Menschen verbinden mit dem Film die schönsten Erinnerungen an Wintertage. Das Musical lässt diese Magie neu aufleben: von funkelnden Schneelandschaften über das prachtvolle Schloss bis hin zum glitzernden Ball, auf dem Aschenbrödel und der Prinz auf berührende Weise zueinanderfinden.\n\nDie Musik: Kult trifft Musicalmagie\nDie ikonische Titelmelodie von Karel Svoboda – ein echter Gänsehautmoment für Generationen – bildet das musikalische Fundament der Show. Ergänzt wird sie durch frische, emotionale Kompositionen von Thomas Zaufke (Die wunderbare Reise des Nils Holgersson, Grimm! und Preisträger des Deutschen Musical Theater Preises). Gemeinsam entsteht ein musikalisches Erlebnis, das Nostalgie und Neues perfekt verbindet und das Publikum garantiert in Weihnachtsstimmung versetzt.",
