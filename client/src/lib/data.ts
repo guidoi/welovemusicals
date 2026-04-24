@@ -52,6 +52,9 @@ export interface Musical {
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
   keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
   ticketCtaUrl?: string; // Optionaler eigener Link für den roten "Tickets sichern"-Button
+  awinHeroUrl?: string; // Awin-Link für den Gold-Ghost-Button oben (mit clickref=...-hero)
+  awinStickyUrl?: string; // Awin-Link für den Sticky-Footer-Button (mit clickref=...-sticky)
+  awinBoxUrl?: string; // Awin-Link für den roten CTA-Kasten (mit clickref=...-box)
   priceFrom?: string; // Mindestpreis z.B. "40,40"
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
   eventimUrl: string;
@@ -747,6 +750,9 @@ export const musicals: Musical[] = [
     detailDescription: "Große Nachfrage, neue Tour: Aufgrund der sensationellen Nachfrage nach Tickets und zahlreicher ausverkaufter Shows, kehrt DRACULA – DAS MUSICAL zurück! Der legendäre Vampirmythos um die Macht von Liebe, Verführung und ewiger Nacht geht auch 2027 als packendes Broadway-Musical auf große Tournee durch Deutschland und Österreich.\n\nDie unsterbliche Liebesgeschichte rund um Graf Dracula fasziniert seit Generationen und entfaltet live auf der Bühne eine ganz besondere Sogwirkung. Bram Stokers weltberühmter Vampirroman erwacht dabei mit einem epischen Soundtrack von Star-Komponist Frank Wildhorn zu neuem Leben. Seine Musik – geprägt von emotionalen Balladen und kraftvollen Rocksongs – verleiht der Geschichte eine moderne, dramatische Intensität.\n\nAuf der Tournee 2026 darf sich das Publikum auf niemand Geringeren als Musicalstar Jan Ammann (\"Tanz der Vampire\") freuen, der als Fürst der Finsternis die Titelrolle verkörpern wird – Herzklopfen und Gänsehaut pur garantiert!\n\nBegleitet von einer 8-köpfigen Live-Band taucht das Publikum ein in die romantisch-düstere Welt Transsilvaniens und Londons. Spektakuläre Bilder in viktorianischem Bühnenbild, ein atmosphärisches Lichtdesign sowie schaurig-schöne Kostüme schaffen eine eindrucksvolle Szenerie, die die ewige Jagd nach Blut und Liebe eindringlich erlebbar macht. Unter der Regie von Alex Balga wird DRACULA – DAS MUSICAL zu einem fesselnden Gesamterlebnis voller Emotion, Spannung und Gänsehaut.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
     eventimUrl: "https://www.eventim.de/artist/dracula-das-musical/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
     featured: true,
     tags: ["Tournee", "Romantik", "Schaurigschön"],
     youtubeTrailerId: "9lJc0EM-jBo",

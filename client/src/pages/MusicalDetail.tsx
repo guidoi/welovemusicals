@@ -93,6 +93,10 @@ export default function MusicalDetail() {
   const ticketLink = createAwinLink(musical.eventimUrl);
   const keyvisualTicketLink = musical.keyvisualLink ?? ticketLink;
   const ctaTicketLink = musical.ticketCtaUrl ?? ticketLink;
+  // Awin-spezifische Links für die drei CTA-Positionen (mit clickref)
+  const heroTicketLink = musical.awinHeroUrl ?? ctaTicketLink;
+  const stickyTicketLink = musical.awinStickyUrl ?? ctaTicketLink;
+  const boxTicketLink = musical.awinBoxUrl ?? ctaTicketLink;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -154,10 +158,10 @@ export default function MusicalDetail() {
 
 
       {/* Mobile CTA – direkt nach Hero für alle Musicals */}
-      {ctaTicketLink && (
+      {heroTicketLink && (
         <div ref={topCtaRef} className="lg:hidden bg-background px-4 pt-6 pb-2">
           <a
-            href={ctaTicketLink}
+            href={heroTicketLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-sm py-3 text-sm font-semibold tracking-wide"
@@ -308,7 +312,7 @@ export default function MusicalDetail() {
               Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.
             </p>
             <a
-              href={ctaTicketLink}
+              href={boxTicketLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
@@ -337,7 +341,7 @@ export default function MusicalDetail() {
       )}
 
       {/* Show Facts + FAQ */}
-      {(musical.showFacts?.length > 0 || musical.faqItems?.length > 0) && (
+      {((musical.showFacts?.length ?? 0) > 0 || (musical.faqItems?.length ?? 0) > 0) && (
         <MusicalShowFacts facts={musical.showFacts ?? []} provider={musical.provider} faqItems={musical.faqItems} />
       )}
 
@@ -401,7 +405,7 @@ export default function MusicalDetail() {
           style={{ opacity: showSticky ? 1 : 0, pointerEvents: showSticky ? 'auto' : 'none', transform: showSticky ? 'translateY(0)' : 'translateY(8px)' }}
         >
           <a
-            href={ctaTicketLink}
+            href={stickyTicketLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full rounded-sm py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200"
