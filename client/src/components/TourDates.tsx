@@ -51,7 +51,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
   };
 
   return (
-    <section className="pt-6 pb-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <section className="pt-4 md:pt-16 pb-12 px-4 bg-gradient-to-b from-background to-muted/30">
       <div className="container max-w-6xl">
         <h2 className="text-3xl font-bold mb-8 text-foreground">
           Spielorte und Termine
