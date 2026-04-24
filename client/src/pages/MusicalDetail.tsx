@@ -226,44 +226,6 @@ export default function MusicalDetail() {
 
 
 
-      {/* Ticket CTA */}
-      <section className="py-4 md:py-4 bg-background">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-sm p-8"
-            style={{ border: '1px solid rgb(239, 68, 68)' }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <Ticket className="w-6 h-6" style={{ color: 'rgb(239, 68, 68)' }} />
-              <h2 className="font-display text-2xl font-bold text-foreground">
-                Tickets sichern
-              </h2>
-            </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Sichere dir jetzt deine Tickets für {musical.title} - bequem und sicher über Eventim.
-            </p>
-            <a
-              href={ctaTicketLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
-              style={{ backgroundColor: 'rgb(239, 68, 68)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
-            >
-              Tickets
-              <ExternalLink className="w-5 h-5" />
-            </a>
-            <p className="text-xs text-muted-foreground/50 mt-4">
-              Weiterleitung zu eventim.de - Affiliate-Link
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* YouTube Video */}
       {musical.youtubeTrailerId && (
         <section className="hidden lg:block py-12 md:py-16 bg-background">
@@ -301,6 +263,44 @@ export default function MusicalDetail() {
           </div>
         </section>
       )}
+
+      {/* Ticket CTA – nach Tourtermine & Story, vor Pressequotes */}
+      <section className="py-8 md:py-10 bg-background">
+        <div className="container max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-sm p-8"
+            style={{ border: '1px solid rgb(239, 68, 68)' }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Ticket className="w-6 h-6" style={{ color: 'rgb(239, 68, 68)' }} />
+              <h2 className="font-display text-2xl font-bold text-foreground">
+                Tickets sichern
+              </h2>
+            </div>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.
+            </p>
+            <a
+              href={ctaTicketLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
+              style={{ backgroundColor: 'rgb(239, 68, 68)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+            >
+              Tickets
+              <ExternalLink className="w-5 h-5" />
+            </a>
+            <p className="text-xs text-muted-foreground/50 mt-4">
+              Weiterleitung zu eventim.de – Affiliate-Link
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Pressequotes */}
       {musical.quotes && musical.quotes.length > 0 && (
