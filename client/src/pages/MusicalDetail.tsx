@@ -129,6 +129,15 @@ export default function MusicalDetail() {
         </div>
       </section>
 
+      {/* Mobile-only Video – direkt nach Hero, nur bei Sister Act */}
+      {musical.id === 'sisteract' && musical.youtubeTrailerId && (
+        <section className="lg:hidden pt-8 pb-4 bg-background">
+          <div className="container max-w-2xl">
+            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
+          </div>
+        </section>
+      )}
+
       {/* Content */}
       <section className="py-12 md:py-16">
         <div className="container">
@@ -242,7 +251,7 @@ export default function MusicalDetail() {
 
       {/* YouTube Video */}
       {musical.youtubeTrailerId && (
-        <section className="py-12 md:py-16 bg-background">
+        <section className="hidden lg:block py-12 md:py-16 bg-background">
           <div className="container max-w-4xl">
             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
           </div>
