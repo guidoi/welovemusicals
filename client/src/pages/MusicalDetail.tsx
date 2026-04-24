@@ -3,7 +3,7 @@
  * MusicalDetail: Detailseite für einzelnes Musical mit erweiterten Komponenten
  */
 import { useParams, Link } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -35,6 +35,22 @@ export default function MusicalDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Sticky CTA: ausblenden wenn Tourtermine sichtbar
+  const tourDatesRef = useRef<HTMLDivElement>(null);
+  const [showSticky, setShowSticky] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!tourDatesRef.current) return;
+      const rect = tourDatesRef.current.getBoundingClientRect();
+      // Ausblenden sobald Tourtermine-Sektion im sichtbaren Bereich
+      setShowSticky(rect.top > window.innerHeight || rect.bottom < 0);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!musical) {
     return (
@@ -236,9 +252,11 @@ export default function MusicalDetail() {
       )}
 
       {/* Tour Dates */}
-      {musical.tourDates && musical.tourDates.length > 0 && (
-        <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse"} />
-      )}
+      <div ref={tourDatesRef}>
+        {musical.tourDates && musical.tourDates.length > 0 && (
+          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse"} />
+        )}
+      </div>
 
       {/* Story */}
       {musical.storyHeadline && musical.storyText && (
@@ -376,8 +394,8 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {/* Sticky CTA – Mobile only */}
-      {ctaTicketLink && (
+      {/* Sticky CTA – Mobile only, ausgeblendet wenn Tourtermine sichtbar */}
+      {ctaTicketLink && showSticky && (
         <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg">
           <a
             href={ctaTicketLink}
