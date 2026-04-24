@@ -52,6 +52,7 @@ export interface Musical {
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
   keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
   ticketCtaUrl?: string; // Optionaler eigener Link für den roten "Tickets sichern"-Button
+  priceFrom?: string; // Mindestpreis z.B. "40,40"
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
   eventimUrl: string;
   featured?: boolean;
@@ -737,6 +738,7 @@ export const musicals: Musical[] = [
     slug: "dracula",
     title: "DRACULA – DAS MUSICAL",
     provider: "ShowSlot",
+    priceFrom: "40,40",
     category: "tournee",
     categories: ["tournee", "erwachsene"],
     cities: ["Berlin", "Bochum", "Bremen", "Duisburg", "Frankfurt", "Graz", "Halle (Saale)", "Innsbruck", "Köln", "München", "Nürnberg", "Stuttgart", "Wien"],
@@ -846,6 +848,7 @@ export const musicals: Musical[] = [
     slug: "sister-act",
     title: "SISTER ACT – DAS HIMMLISCHE MUSICAL",
     provider: "ShowSlot",
+    priceFrom: "40,40",
     category: "tournee",
     categories: ["tournee", "erwachsene"],
     cities: ["Berlin", "Bremen", "Dresden", "Frankfurt", "Linz", "Ludwigsburg", "München", "Nürnberg", "Wetzlar", "Wien"],
@@ -1824,6 +1827,7 @@ export const musicals: Musical[] = [
     slug: "fack-ju-goehte",
     title: "FACK JU GÖHTE – DAS MUSICAL",
     provider: "ShowSlot",
+    priceFrom: "40,40",
     category: "tournee",
     categories: ["tournee", "familie"],
     cities: ["Berlin", "Bochum", "Bremen", "Dresden", "Duisburg", "Frankfurt", "Graz", "Hildesheim", "Köln", "Linz", "München", "Nürnberg", "Solingen", "Stuttgart", "Wien"],
@@ -1892,6 +1896,7 @@ export const musicals: Musical[] = [
     slug: "drei-haselnuesse-fuer-aschenbroedel",
     title: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL",
     provider: "ShowSlot",
+    priceFrom: "33,90",
     category: "tournee",
     categories: ["tournee", "familie"],
     cities: ["Aschaffenburg", "Aurich", "Bad Ischl", "Bad Neustadt a. d. Saale", "Bitburg", "Bochum", "Braunschweig", "Bremen", "Bremerhaven", "Cloppenburg", "Cottbus", "Crailsheim", "Dresden", "Duisburg", "Flensburg", "Frankfurt", "Frankfurt (Oder)", "Fulda", "Gera", "Graz", "Gütersloh", "Halle (Saale)", "Hameln", "Heidenheim", "Heilbronn", "Husum", "Innsbruck", "Jena", "Kiel", "Koblenz", "Köln", "Landau", "Leipzig", "Limburg", "Lindau", "Linz", "Lüneburg", "Magdeburg", "Mainz", "München", "Neuss", "Nürnberg", "Offenburg", "Osnabrück", "Paderborn", "Rastatt", "Ravensburg", "Rostock", "Saarbrücken", "Schwerin", "Siegen", "Singen", "Stuttgart", "Suhl", "Tuttlingen", "Uelzen", "Weiden i. d. Obf.", "Weimar", "Wetzlar", "Wien", "Wolfsburg", "Würzburg", "Zweibrücken", "Zwickau"],
@@ -1992,6 +1997,7 @@ export const musicals: Musical[] = [
     slug: "rapunzel",
     title: "RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL",
     provider: "ShowSlot",
+    priceFrom: "40,49",
     category: "tournee",
     categories: ["tournee", "familie"],
     cities: ["Duisburg", "München", "Köln", "Frankfurt", "Bremen"],

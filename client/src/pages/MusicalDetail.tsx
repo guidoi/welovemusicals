@@ -141,7 +141,7 @@ export default function MusicalDetail() {
             className="flex items-center justify-center gap-2 w-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-sm py-3 text-sm font-semibold tracking-wide"
           >
             <Ticket className="w-4 h-4" />
-            Jetzt Tickets sichern
+            Tickets buchen{musical.priceFrom && <span className="font-normal opacity-75 ml-1">– ab {musical.priceFrom} €</span>}
           </a>
         </div>
       )}
