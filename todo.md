@@ -51,3 +51,15 @@
 - [x] Sister Act in ACTIVE_MUSICAL_IDS aufnehmen
 - [x] Dracula: Sprache auf „Alle Dialoge und Songs in deutscher Sprache" aktualisieren
 - [x] Dracula/FJG/Aschenbrödel: „Auf Tour"-Zeiträume in FAQ aktualisieren
+
+## Drei Haselnüsse – Tourtermine-Update (April 2026)
+- [x] 80 aktualisierte Tourtermine in data.ts eingepflegt (vorher 64)
+- [x] 5 neue Städte hinzugefügt: Donaueschingen, Dornbirn, Puch bei Salzburg, Ried im Innkreis, Vöcklabruck
+- [x] 13 Städte mit zusätzlichen zweiten Datumsblöcken (Bochum, Braunschweig, Dresden, Flensburg, Frankfurt am Main, Fulda, Kiel, Leipzig, Magdeburg, Rostock, Schwerin, Wolfsburg)
+- [x] Jahres-Korrekturen: Hameln→2027, Heidenheim→2027, Weiden→2027, Würzburg→2027, Zweibrücken→2027
+- [x] Venue-Korrekturen: Fulda (Esperanto Kongress- und Kulturzentrum), Gera (Kultur- und Kongresszentrum Gera), Weiden (Max-Reger-Halle), Würzburg (Congress Centrum Würzburg), Rostock (Stadthalle), Weimar (Stadthalle)
+- [x] Frankfurt → Frankfurt am Main umbenannt
+- [x] Alle 80 Einträge mit stadtspezifischen Awin-Links und clickrefs
+- [x] cities-Array aktualisiert (69 Städte)
+- [x] showFacts Auf-Tour-Zeitraum aktualisiert: Okt. 2026 bis Dez. 2027
+- [x] TypeScript-Check bestanden (0 Fehler)
