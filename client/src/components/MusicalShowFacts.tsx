@@ -28,7 +28,7 @@ export default function MusicalShowFacts({ facts, provider }: MusicalShowFactsPr
     <section className="py-16 px-4 bg-gradient-to-b from-muted/30 to-background">
       <div className="container max-w-6xl">
         <h2 className="text-3xl font-bold mb-12 text-center text-foreground">
-          Wissenswertes zur Show
+          Good to know
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
