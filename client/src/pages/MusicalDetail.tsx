@@ -129,14 +129,7 @@ export default function MusicalDetail() {
         </div>
       </section>
 
-      {/* Mobile-only Video – direkt nach Hero, nur bei Sister Act */}
-      {(musical.id === 'sisteract' || musical.id === 'fackjugoehte' || musical.id === 'dracula') && musical.youtubeTrailerId && (
-        <section className="lg:hidden pt-8 pb-4 bg-background">
-          <div className="container max-w-2xl">
-            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
-          </div>
-        </section>
-      )}
+
 
       {/* Content */}
       <section className="py-12 md:py-16">
@@ -168,6 +161,7 @@ export default function MusicalDetail() {
                     {musical.detailDescription.split('\n\n').map((paragraph, i) => (
                       <div key={i}>
                         <p>{paragraph}</p>
+                        {/* Mobile Keyvisual: nach Absatz 0 bei Drei Haselnüsse, sonst nach Absatz 1 */}
                         {(musical.id === 'dreihaselnuesse' ? i === 0 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
@@ -177,6 +171,12 @@ export default function MusicalDetail() {
                             >
                               <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} />
                             </motion.div>
+                          </div>
+                        )}
+                        {/* Mobile Video: nach erstem Absatz (i===0) bei Sister Act, FJG, Dracula */}
+                        {i === 0 && (musical.id === 'sisteract' || musical.id === 'fackjugoehte' || musical.id === 'dracula') && musical.youtubeTrailerId && (
+                          <div className="lg:hidden my-8">
+                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
                         )}
                       </div>
