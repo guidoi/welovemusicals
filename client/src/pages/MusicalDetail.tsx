@@ -131,6 +131,21 @@ export default function MusicalDetail() {
 
 
 
+      {/* Mobile CTA – direkt nach Hero für alle Musicals */}
+      {ctaTicketLink && (
+        <div className="lg:hidden bg-background px-4 pt-6 pb-2">
+          <a
+            href={ctaTicketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-sm py-3 text-sm font-semibold tracking-wide"
+          >
+            <Ticket className="w-4 h-4" />
+            Jetzt Tickets sichern
+          </a>
+        </div>
+      )}
+
       {/* Content */}
       <section className="py-12 md:py-16">
         <div className="container">
