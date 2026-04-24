@@ -159,7 +159,7 @@ export default function MusicalDetail() {
                     {musical.detailDescription.split('\n\n').map((paragraph, i) => (
                       <div key={i}>
                         <p>{paragraph}</p>
-                        {i === 1 && (
+                        {(musical.id === 'dreihaselnuesse' ? i === 0 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
