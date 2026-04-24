@@ -393,9 +393,12 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {/* Sticky CTA – Mobile only, ausgeblendet wenn Tourtermine sichtbar */}
-      {ctaTicketLink && showSticky && (
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg">
+      {/* Sticky CTA – Mobile only, mit Fade-Transition */}
+      {ctaTicketLink && (
+        <div
+          className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg transition-all duration-300"
+          style={{ opacity: showSticky ? 1 : 0, pointerEvents: showSticky ? 'auto' : 'none', transform: showSticky ? 'translateY(0)' : 'translateY(8px)' }}
+        >
           <a
             href={ctaTicketLink}
             target="_blank"
