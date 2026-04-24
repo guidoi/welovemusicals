@@ -292,8 +292,9 @@ export default function MusicalDetail() {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
             >
-              Tickets
-              <ExternalLink className="w-5 h-5" />
+              <Ticket className="w-5 h-5" />
+              Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
+              <ExternalLink className="w-4 h-4" />
             </a>
             <p className="text-xs text-muted-foreground/50 mt-4">
               Weiterleitung zu eventim.de – Affiliate-Link
@@ -373,6 +374,24 @@ export default function MusicalDetail() {
             </div>
           </div>
         </section>
+      )}
+
+      {/* Sticky CTA – Mobile only */}
+      {ctaTicketLink && (
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg">
+          <a
+            href={ctaTicketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full rounded-sm py-3 text-sm font-bold tracking-wide text-white transition-colors"
+            style={{ backgroundColor: 'rgb(239, 68, 68)' }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+          >
+            <Ticket className="w-4 h-4" />
+            Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
+          </a>
+        </div>
       )}
 
       <Footer />
