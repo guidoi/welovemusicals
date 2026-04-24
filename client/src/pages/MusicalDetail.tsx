@@ -199,8 +199,8 @@ export default function MusicalDetail() {
                     {musical.detailDescription.split('\n\n').map((paragraph, i) => (
                       <div key={i}>
                         <p>{paragraph}</p>
-                        {/* Mobile Keyvisual: nach Absatz 0 bei Drei Haselnüsse, sonst nach Absatz 1 */}
-                        {(musical.id === 'dreihaselnuesse' ? i === 0 : i === 1) && (
+                        {/* Mobile Keyvisual: nach Absatz 0 bei Drei Haselnüsse, nach Absatz 2 bei FJG, sonst nach Absatz 1 */}
+                        {(musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
@@ -211,8 +211,8 @@ export default function MusicalDetail() {
                             </motion.div>
                           </div>
                         )}
-                        {/* Mobile Video: nach erstem Absatz (i===0) bei Sister Act, FJG, Dracula */}
-                        {i === 0 && (musical.id === 'sisteract' || musical.id === 'fackjugoehte' || musical.id === 'dracula') && musical.youtubeTrailerId && (
+                        {/* Mobile Video: nach Absatz 0 bei Sister Act & Dracula, nach Absatz 1 bei FJG */}
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula')) || (i === 1 && musical.id === 'fackjugoehte')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
