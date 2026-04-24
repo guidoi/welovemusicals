@@ -1849,6 +1849,9 @@ export const musicals: Musical[] = [
     ticketCtaUrl: "https://www.eventim.de/artist/fack-ju-goehte-se-mjusicael/?srsltid=AfmBOorU8-W42OAbVwCE5DZfqFEl-0T3ekktP_bmgBkhBgSQElDkOzaU",
     youtubeTrailerId: "B0vHUyLx2Ac",
     eventimUrl: "https://www.eventim.de/artist/fack-ju-goehte-das-musical/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
     featured: true,
     tags: ["Tournee", "Komödie", "Filmhit"],
     gallery: [
@@ -1915,6 +1918,9 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/3hn-keyvisual-header_7bd05c9d.jpg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/3hnfa-keyvisual-sq_31be7ba8.jpg",
     eventimUrl: "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     featured: true,
     tags: ["Tournee", "Familie", "Märchen"],
     tourDates: [
@@ -2016,6 +2022,9 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/rapunzel-keyvisual-1080x1080_33481579.jpeg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/rapunzel-keyvisual-1080x1080_33481579.jpeg",
     eventimUrl: "https://www.eventim.de/artist/rapunzel-das-maerchenhafte-musical/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F",
     featured: false,
     tags: ["Tournee", "Märchen", "Familie"],
     tourDates: [
