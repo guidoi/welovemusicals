@@ -75,3 +75,6 @@
 - [x] Doppelt encodierte Umlaute in 5 Musicals korrigiert (Köln, Nürnberg, München, Saarbrücken, Gütersloh, Lüneburg, Osnabrück, Würzburg, Zweibrücken, Vöcklabruck)
 - [x] Dracula: Halle → Halle / Saale, Frankfurt → frankfurt
 - [x] 3HN Frankfurt (Oder): Schrägstrich + Plus-Zeichen statt Klammern
+
+## Detailseiten – Floating Back-Button
+- [x] Zurück-Link im Hero durch Floating Back-Button (oben links, rund, halbtransparent) ersetzen – auch auf CityDetail-Seiten

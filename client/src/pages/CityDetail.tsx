@@ -55,6 +55,15 @@ export default function CityDetail() {
       {/* Anker für Scroll-to-Top */}
       <div id="city-top" />
 
+      {/* Floating Back Button */}
+      <Link
+        href="/"
+        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-primary hover:bg-black/70 hover:text-primary/80 transition-all duration-200 shadow-lg"
+        aria-label="Zurück zur Übersicht"
+      >
+        <ArrowLeft className="w-5 h-5" />
+      </Link>
+
       {/* Hero */}
       <section id="city-hero" className="relative min-h-[45vh] flex items-end overflow-hidden pt-20">
         <div className="absolute inset-0">
@@ -72,11 +81,6 @@ export default function CityDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/" className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors mb-6">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm">Zurück zur Übersicht</span>
-            </Link>
-
             <div className="flex items-center gap-2 mb-3">
               <MapPin className="w-5 h-5 text-gold" />
               <span className="text-sm text-gold uppercase tracking-wider">Musical-Stadt</span>

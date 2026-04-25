@@ -102,6 +102,15 @@ export default function MusicalDetail() {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
+      {/* Floating Back Button */}
+      <Link
+        href="/"
+        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-primary hover:bg-black/70 hover:text-primary/80 transition-all duration-200 shadow-lg"
+        aria-label="Zurück zur Übersicht"
+      >
+        <ArrowLeft className="w-5 h-5" />
+      </Link>
+
       {/* Hero */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -119,11 +128,6 @@ export default function MusicalDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/" className="inline-flex items-center gap-2 transition-colors mb-6 text-primary hover:text-primary/80">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm">Zurück zur Übersicht</span>
-            </Link>
-
             <div className="flex flex-wrap gap-2 mb-4">
               {musical.tags.map((tag) => (
                 <span
