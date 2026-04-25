@@ -70,3 +70,8 @@
 
 ## Drei Haselnüsse – Fehlende Eventim-Städtelinks
 - [x] cityname-Werte korrigiert: Frankfurt am Main, Halle (Saale), Lindau, Puch bei Salzburg, Bad Neustadt, Ried im Innkreis, Weiden i.d.Oberpfalz, Frankfurt (Oder), Bad Ischl
+
+## Alle Musicals – cityname-Korrektur global
+- [x] Doppelt encodierte Umlaute in 5 Musicals korrigiert (Köln, Nürnberg, München, Saarbrücken, Gütersloh, Lüneburg, Osnabrück, Würzburg, Zweibrücken, Vöcklabruck)
+- [x] Dracula: Halle → Halle / Saale, Frankfurt → frankfurt
+- [x] 3HN Frankfurt (Oder): Schrägstrich + Plus-Zeichen statt Klammern
