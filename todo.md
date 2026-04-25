@@ -67,3 +67,6 @@
 ## Drei Haselnüsse – Header-Städte begrenzen
 - [x] headerCities-Feld: 11 größte Städte im Header + "und 58 weitere Tourneestädte" in Gold
 - [x] Mobile UX verbessern: weniger Text im Header-Bereich
+
+## Drei Haselnüsse – Fehlende Eventim-Städtelinks
+- [x] cityname-Werte korrigiert: Frankfurt am Main, Halle (Saale), Lindau, Puch bei Salzburg, Bad Neustadt, Ried im Innkreis, Weiden i.d.Oberpfalz, Frankfurt (Oder), Bad Ischl
