@@ -326,7 +326,7 @@ export default function Home() {
               .map((city, i) => (
               <motion.a
                 key={city.slug}
-                href={`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(city.name)}&checkin_month=&checkin_monthday=&checkin_year=&checkout_month=&checkout_monthday=&checkout_year=&group_adults=2&no_rooms=1&group_children=0`}
+                href={city.hotelSearchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
@@ -354,12 +354,12 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <a
-              href="https://www.booking.com"
+              href={`https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-alle&ued=${encodeURIComponent('https://www.hrs.de/web3/search.do?searchterm=Deutschland&adults=2&rooms=1')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors"
             >
-              Alle Hotels durchsuchen
+              Alle Hotels bei HRS durchsuchen
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

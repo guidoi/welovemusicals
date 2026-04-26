@@ -68,7 +68,7 @@ export default function CityDetail() {
   return (
     <>
       <SchemaOrgCity city={city} musicals={cityMusicals} />
-    <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
       {/* Anker für Scroll-to-Top */}
@@ -225,7 +225,7 @@ export default function CityDetail() {
       </section>
 
       <Footer />
-    </div>
+      </div>
     </>
   );
 }

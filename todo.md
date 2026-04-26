@@ -105,3 +105,9 @@
 
 ## SEO – Schema.org auf CityDetail-Seiten
 - [x] CityDetail-Seiten mit TouristDestination + MusicEvent-Liste + BreadcrumbList JSON-LD ausgestattet (SchemaOrgCity.tsx)
+
+## Hotels – HRS statt Booking.com
+- [x] Alle 21 Booking.com-hotelSearchUrl in data.ts durch HRS-Awin-Deeplinks ersetzt (Awin ID 15152)
+- [x] Home.tsx: Städtekarten-Links + CTA-Button auf HRS umgestellt
+- [x] CityDetail.tsx: JSX-Fragment-Fehler behoben
+- [x] MusicalDetail.tsx: Hotel-Karten nutzen city.hotelSearchUrl (automatisch HRS)
