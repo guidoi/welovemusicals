@@ -78,3 +78,9 @@
 
 ## Detailseiten – Floating Back-Button
 - [x] Zurück-Link im Hero durch Floating Back-Button (oben links, rund, halbtransparent) ersetzen – auch auf CityDetail-Seiten
+
+## SEO – "und" vs. "&"
+- [x] Home.tsx: "Alle Musicals und Shows" + "Deutschland, Österreich und der Schweiz" (& → und)
+- [x] TourDates.tsx: bereits korrekt mit "und"
+- [x] index.html Title/Meta: kein & vorhanden, bereits korrekt
+- [x] data.ts: & nur in Eigennamen (Filmtitel, Charakternamen) – korrekt beibehalten
