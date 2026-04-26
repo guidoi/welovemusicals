@@ -8,11 +8,12 @@ interface MusicalKeyVisualProps {
   image: string;
   title: string;
   ticketLink?: string;
+  landscape?: boolean; // Querformat statt quadratisch
 }
 
-export default function MusicalKeyVisual({ image, title, ticketLink }: MusicalKeyVisualProps) {
+export default function MusicalKeyVisual({ image, title, ticketLink, landscape }: MusicalKeyVisualProps) {
   const content = (
-    <div className="aspect-square rounded-lg overflow-hidden">
+    <div className={`${landscape ? 'aspect-video' : 'aspect-square'} rounded-lg overflow-hidden`}>
       <img
         src={image}
         alt={title}
