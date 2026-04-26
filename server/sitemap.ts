@@ -121,7 +121,7 @@ ${urls.join("\n")}
 export function registerSitemapRoute(app: Express): void {
   app.get("/sitemap.xml", (req: Request, res: Response) => {
     const protocol = req.headers["x-forwarded-proto"] || req.protocol || "https";
-    const host = req.headers["x-forwarded-host"] || req.headers.host || "welovemusicals.manus.space";
+    const host = req.headers["x-forwarded-host"] || req.headers.host || "welovemusicals.com";
     const baseUrl = `${protocol}://${host}`;
 
     const sitemap = buildSitemap(baseUrl);

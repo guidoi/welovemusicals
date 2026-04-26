@@ -95,3 +95,7 @@
 - [x] Dynamische Sitemap.xml als Server-Endpoint (/sitemap.xml) implementiert (alle Musical- und Stadtseiten)
 - [x] robots.txt mit Sitemap-Verweis erstellt
 - [x] Schema.org Rich-Results-Test: 0 Fehler, 0 Warnungen (BreadcrumbList + ItemList/MusicEvent)
+
+## SEO – Domain welovemusicals.com
+- [x] Sitemap-Endpoint Fallback-Domain auf welovemusicals.com aktualisiert
+- [x] robots.txt Sitemap-URL auf welovemusicals.com aktualisiert
