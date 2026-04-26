@@ -84,3 +84,9 @@
 - [x] TourDates.tsx: bereits korrekt mit "und"
 - [x] index.html Title/Meta: kein & vorhanden, bereits korrekt
 - [x] data.ts: & nur in Eigennamen (Filmtitel, Charakternamen) – korrekt beibehalten
+
+## SEO – Dynamische Meta-Tags & Schema.org
+- [x] useSEO-Hook erstellt (client/src/hooks/useSEO.ts)
+- [x] Dynamische Meta-Tags auf MusicalDetail-Seite eingebaut
+- [x] Dynamische Meta-Tags auf CityDetail-Seite eingebaut
+- [x] Schema.org MusicEvent + BreadcrumbList JSON-LD auf MusicalDetail-Seite (SchemaOrg.tsx)

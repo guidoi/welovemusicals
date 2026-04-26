@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import { getCityBySlug, getMusicalsByCity, getActiveMusicalsByCity, getActiveMusicalCountByCity, cities } from "@/lib/data";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
@@ -25,6 +26,21 @@ export default function CityDetail() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, [params.slug]);
+
+  // Dynamische SEO-Meta-Tags
+  const musicalCount = city ? getActiveMusicalCountByCity(city.name) : 0;
+  const seoTitle = city
+    ? `Musicals in ${city.name} – Tickets & Spielorte | We Love Musicals`
+    : "Stadt nicht gefunden | We Love Musicals";
+  const seoDescription = city
+    ? `${musicalCount > 0 ? `${musicalCount} Musical${musicalCount !== 1 ? 's' : ''} in ${city.name}` : `Musicals in ${city.name}`} – ${city.description.length > 100 ? city.description.slice(0, 97) + '...' : city.description}`
+    : "";
+  useSEO({
+    title: seoTitle,
+    description: seoDescription,
+    image: city?.image,
+    url: typeof window !== "undefined" ? window.location.href : undefined,
+  });
 
   if (!city) {
     return (

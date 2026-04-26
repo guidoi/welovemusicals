@@ -24,6 +24,8 @@ import MusicalGallery from "@/components/MusicalGallery";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
 import TourDates from "@/components/TourDates";
 import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@/lib/data";
+import { useSEO } from "@/hooks/useSEO";
+import SchemaOrg from "@/components/SchemaOrg";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -34,6 +36,22 @@ export default function MusicalDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Dynamische SEO-Meta-Tags
+  const seoTitle = musical
+    ? `${musical.title} – Tickets & Termine | We Love Musicals`
+    : "Musical nicht gefunden | We Love Musicals";
+  const seoDescription = musical
+    ? musical.description.length > 155
+      ? musical.description.slice(0, 152) + "..."
+      : musical.description
+    : "";
+  useSEO({
+    title: seoTitle,
+    description: seoDescription,
+    image: musical?.image,
+    url: typeof window !== "undefined" ? window.location.href : undefined,
+  });
 
   // Sticky CTA: ausblenden wenn Tourtermine sichtbar
   const tourDatesRef = useRef<HTMLDivElement>(null);
@@ -100,6 +118,7 @@ export default function MusicalDetail() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SchemaOrg musical={musical} />
       <Header />
 
       {/* Floating Back Button */}
