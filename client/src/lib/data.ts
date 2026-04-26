@@ -824,7 +824,7 @@ export const musicals: Musical[] = [
     eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
     featured: true,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
-    youtubeTrailerId: "RqMSXnf4Xb8",
+    youtubeTrailerId: "BN8RYBCYPVM",
     tourDates: [
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-01", endDate: "2027-12-31", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Ab Herbst 2026" },
     ],
