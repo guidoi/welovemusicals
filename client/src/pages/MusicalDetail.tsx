@@ -204,20 +204,34 @@ export default function MusicalDetail() {
       {/* Content */}
       <section className="py-12 md:py-16">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Keyvisual - Desktop Right Only */}
-            <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
+          {/* Moulin Rouge!: Keyvisual quer über volle Breite, dann Text darunter */}
+          {musical.id === 'moulinrouge' && (
+            <div className="hidden lg:block mb-10">
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge'} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape contain />
               </motion.div>
             </div>
+          )}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {/* Keyvisual - Desktop Right Only (nicht für moulinrouge) */}
+            {musical.id !== 'moulinrouge' && (
+              <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} />
+                </motion.div>
+              </div>
+            )}
 
             {/* Main Content */}
-            <div className="lg:col-span-2 order-2 lg:order-2">
+            <div className={`${musical.id === 'moulinrouge' ? 'lg:col-span-3' : 'lg:col-span-2'} order-2 lg:order-2`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -228,9 +242,18 @@ export default function MusicalDetail() {
                 </h2>
                 {musical.detailDescription ? (
                   <div className="text-white leading-relaxed text-lg mb-8 space-y-4 md:space-y-6">
-                    {musical.detailDescription.split('\n\n').map((paragraph, i) => (
+                    {musical.detailDescription.split('\n\n').map((paragraph, i) => {
+                      // Absätze, die nur aus **Text** bestehen, als Zwischenheadline rendern
+                      const headlineMatch = paragraph.match(/^\*\*(.+)\*\*$/);
+                      return (
                       <div key={i}>
-                        <p>{paragraph}</p>
+                        {headlineMatch ? (
+                          <h3 className="font-display text-xl font-bold text-primary mt-6 mb-2 tracking-wide">
+                            {headlineMatch[1]}
+                          </h3>
+                        ) : (
+                          <p>{paragraph}</p>
+                        )}
                         {/* Mobile Keyvisual: nach Absatz 0 bei Drei Haselnüsse, nach Absatz 2 bei FJG, sonst nach Absatz 1 */}
                         {(musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
@@ -239,18 +262,19 @@ export default function MusicalDetail() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge'} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge'} contain={musical.id === 'moulinrouge'} />
                             </motion.div>
                           </div>
                         )}
-                        {/* Mobile Video: nach Absatz 0 bei Sister Act & Dracula, nach Absatz 1 bei FJG */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula')) || (i === 1 && musical.id === 'fackjugoehte')) && musical.youtubeTrailerId && (
+                        {/* Mobile Video: nach Absatz 0 bei Sister Act & Dracula, nach Absatz 1 bei FJG & Moulin Rouge */}
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula')) || (i === 1 && (musical.id === 'fackjugoehte' || musical.id === 'moulinrouge'))) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
                         )}
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 ) : (
                   <p className="text-white leading-relaxed text-lg mb-8">
