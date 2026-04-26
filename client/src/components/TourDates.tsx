@@ -2,7 +2,8 @@
  * TourDates-Komponente
  * - forceDropdown=true  → Dropdown-Select (für Aschenbrödel mit 64 Städten)
  * - forceDropdown=false → Button-Reihe (für Dracula, FJG)
- * Alle gefilterten Termine werden immer untereinander gelistet (keine Grid-Spalten).
+ * Städte mit mehreren Terminen werden in einer einzigen Box zusammengefasst.
+ * Alle Termine einer Stadt werden chronologisch untereinander angezeigt.
  */
 import { MusicalTourDate } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -20,21 +21,43 @@ interface TourDatesProps {
   forceDropdown?: boolean;
 }
 
+/** Gruppiert Tourdaten nach Stadt und sortiert Termine innerhalb jeder Stadt chronologisch. */
+function groupByCity(tourDates: MusicalTourDate[]): Record<string, MusicalTourDate[]> {
+  const result: Record<string, MusicalTourDate[]> = {};
+  for (const date of tourDates) {
+    if (!result[date.city]) {
+      result[date.city] = [];
+    }
+    result[date.city].push(date);
+  }
+  // Termine innerhalb jeder Stadt chronologisch sortieren
+  for (const city of Object.keys(result)) {
+    result[city].sort((a: MusicalTourDate, b: MusicalTourDate) => a.startDate.localeCompare(b.startDate));
+  }
+  return result;
+}
+
 export default function TourDates({ tourDates, forceDropdown = false }: TourDatesProps) {
   const [selectedCity, setSelectedCity] = useState<string>("alle");
 
   if (!tourDates || tourDates.length === 0) return null;
 
-  const sortedDates = [...tourDates].sort((a, b) =>
-    a.city.localeCompare(b.city, "de")
-  );
+  // Städte alphabetisch sortieren
+  const allCities = Array.from(
+    new Set(tourDates.map((d) => d.city))
+  ).sort((a, b) => a.localeCompare(b, "de"));
 
-  const cities = Array.from(new Set(sortedDates.map((d) => d.city)));
-
+  // Gefilterte Daten nach Stadtauswahl
   const filteredDates =
     selectedCity === "alle"
-      ? sortedDates
-      : sortedDates.filter((d) => d.city === selectedCity);
+      ? tourDates
+      : tourDates.filter((d) => d.city === selectedCity);
+
+  // Nach Stadt gruppieren (alphabetisch nach Stadtname sortiert)
+  const grouped = groupByCity(filteredDates);
+  const sortedCityEntries = Object.entries(grouped).sort(([a], [b]) =>
+    a.localeCompare(b, "de")
+  );
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr + "T12:00:00");
@@ -57,6 +80,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
           Spielorte & Termine
         </h2>
 
+        {/* Stadtfilter */}
         <div className="mb-8">
           {forceDropdown ? (
             <div className="flex items-center gap-4 flex-wrap">
@@ -66,9 +90,9 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
                 </SelectTrigger>
                 <SelectContent className="bg-card border-border max-h-80 overflow-y-auto">
                   <SelectItem value="alle">
-                    Alle Städte ({cities.length})
+                    Alle Städte ({allCities.length})
                   </SelectItem>
-                  {cities.map((city) => (
+                  {allCities.map((city) => (
                     <SelectItem key={city} value={city}>
                       {city}
                     </SelectItem>
@@ -93,9 +117,9 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
                 onClick={() => setSelectedCity("alle")}
                 size="sm"
               >
-                Alle Städte ({cities.length})
+                Alle Städte ({allCities.length})
               </Button>
-              {cities.map((city) => (
+              {allCities.map((city) => (
                 <Button
                   key={city}
                   variant={selectedCity === city ? "default" : "outline"}
@@ -109,50 +133,66 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
           )}
         </div>
 
+        {/* Stadtboxen – eine Box pro Stadt, mehrere Termine untereinander */}
         <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl mx-auto"}>
-          {filteredDates.map((date, idx) => (
-            <div
-              key={idx}
-              className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-            >
-              <div className="flex-1">
+          {sortedCityEntries.map(([city, dates]) => {
+            const firstDate = dates[0];
+            return (
+              <div
+                key={city}
+                className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300"
+              >
+                {/* Stadtname + optionales Badge */}
                 <div className="flex items-center gap-2 mb-1">
                   <h3 className="text-lg font-bold text-card-foreground uppercase tracking-widest font-heading">
-                    {date.city}
+                    {city}
                   </h3>
-                  {date.badge && (
+                  {firstDate.badge && (
                     <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold/20 text-gold border border-gold/30">
-                      {date.badge}
+                      {firstDate.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-white/80 font-medium leading-snug">
-                  {date.venue}
+
+                {/* Venue (aus erstem Eintrag – bei gleicher Stadt i.d.R. identisch) */}
+                <p className="text-sm text-white/80 font-medium leading-snug mb-3">
+                  {firstDate.venue}
                 </p>
-                <p className="text-sm text-gold font-semibold mt-1">
-                  {formatDateRange(date.startDate, date.endDate)}
-                </p>
+
+                {/* Alle Termine dieser Stadt */}
+                <div className="flex flex-col gap-2">
+                  {dates.map((date, idx) => (
+                    <div
+                      key={idx}
+                      className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                    >
+                      <p className="text-sm text-gold font-semibold">
+                        {formatDateRange(date.startDate, date.endDate)}
+                      </p>
+                      <a
+                        href={date.eventimUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 px-5 py-2 font-semibold rounded-sm text-center transition-colors text-white text-sm"
+                        style={{ backgroundColor: "rgb(239, 68, 68)" }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.backgroundColor = "rgb(220, 38, 38)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.backgroundColor = "rgb(239, 68, 68)")
+                        }
+                      >
+                        Tickets sichern
+                      </a>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <a
-                href={date.eventimUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 px-5 py-2 font-semibold rounded-sm text-center transition-colors text-white text-sm"
-                style={{ backgroundColor: "rgb(239, 68, 68)" }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor = "rgb(220, 38, 38)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "rgb(239, 68, 68)")
-                }
-              >
-                Tickets sichern
-              </a>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {filteredDates.length === 0 && (
+        {sortedCityEntries.length === 0 && (
           <div className="text-center py-12">
             <p className="text-foreground/60 text-lg">
               Keine Termine für diese Stadt verfügbar.
