@@ -102,3 +102,6 @@
 
 ## SEO – Statische Sitemap für Cloudflare Pages
 - [x] sitemap.xml als statische Datei in client/public/sitemap.xml erstellt (44 URLs: 5 aktive + 37 weitere Musicals + 21 Städte + 3 statische Seiten)
+
+## SEO – Schema.org auf CityDetail-Seiten
+- [x] CityDetail-Seiten mit TouristDestination + MusicEvent-Liste + BreadcrumbList JSON-LD ausgestattet (SchemaOrgCity.tsx)

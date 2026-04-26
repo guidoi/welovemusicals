@@ -18,6 +18,7 @@ import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import { getCityBySlug, getMusicalsByCity, getActiveMusicalsByCity, getActiveMusicalCountByCity, cities } from "@/lib/data";
 import { useSEO } from "@/hooks/useSEO";
+import SchemaOrgCity from "@/components/SchemaOrgCity";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
@@ -65,6 +66,8 @@ export default function CityDetail() {
   const otherCities = [...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).filter((c) => c.slug !== city.slug).slice(0, 5);
 
   return (
+    <>
+      <SchemaOrgCity city={city} musicals={cityMusicals} />
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
@@ -223,5 +226,6 @@ export default function CityDetail() {
 
       <Footer />
     </div>
+    </>
   );
 }
