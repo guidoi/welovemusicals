@@ -830,9 +830,9 @@ export const musicals: Musical[] = [
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28" },
     ],
     quotes: [
-      { text: "Moulin Rouge! Das Musical und Hamburg sind ein 'Perfect Match'.", source: "Marcel Neitzel, General Manager Theater am Großmarkt" },
-      { text: "Die Show transportiert Werte, die heute wichtiger sind denn je: Diversität, Gleichberechtigung und Selbstliebe.", source: "Theater am Großmarkt Hamburg" },
-      { text: "Unterhaltung auf höchstem Niveau – ein Anspruch, der alle Produktionen von ATG weltweit verbindet.", source: "Joachim Hilke, CEO ATG Entertainment GmbH" },
+      { text: "Hereinspaziert, Platz nehmen, Welt vergessen.", source: "Süddeutsche Zeitung" },
+      { text: "Moulin Rouge ist ein Triumph.", source: "Kölner Stadtanzeiger" },
+      { text: "Eine phänomenale Hommage an die Popkultur.", source: "ntv" },
     ],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-02_0295db80.webp", alt: "Moulin Rouge! – Harold Zidler und die Tänzerinnen" },
