@@ -240,22 +240,29 @@ export default function MusicalDetail() {
                         ) : (
                           <p>{paragraph}</p>
                         )}
-                        {/* Mobile Keyvisual: nach Absatz 0 bei Drei Haselnüsse, nach Absatz 2 bei FJG, sonst nach Absatz 1 */}
-                        {(musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : i === 1) && (
+                        {/* Mobile Video:
+                             - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
+                             - Sister Act & Dracula: nach i=0
+                             - FJG: nach i=1 */}
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge')) || (i === 1 && musical.id === 'fackjugoehte')) && musical.youtubeTrailerId && (
+                          <div className="lg:hidden my-8">
+                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
+                          </div>
+                        )}
+                        {/* Mobile Keyvisual:
+                             - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
+                             - Drei Haseelnüsse: nach i=0
+                             - FJG: nach i=2
+                             - alle anderen: nach i=1 */}
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge'} contain={musical.id === 'moulinrouge'} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge'} />
                             </motion.div>
-                          </div>
-                        )}
-                        {/* Mobile Video: nach Absatz 0 bei Sister Act & Dracula, nach Absatz 1 bei FJG & Moulin Rouge */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula')) || (i === 1 && (musical.id === 'fackjugoehte' || musical.id === 'moulinrouge'))) && musical.youtubeTrailerId && (
-                          <div className="lg:hidden my-8">
-                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
                         )}
                       </div>
