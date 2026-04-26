@@ -115,3 +115,12 @@
 ## Hotels – HRS Stadtseiten-Deeplinks
 - [x] HRS location-Codes für alle 21 Städte ermittelt (statt web3/search.do → de/list?location=CODE)
 - [x] data.ts: hotelSearchUrl auf HRS-Stadtseiten-Deeplinks umgestellt
+
+## Moulin Rouge! Das Musical – Neues Musical (ATG Entertainment)
+- [x] Alle 10 Fotos + Keyvisual (quer) auf CDN hochgeladen
+- [x] Musical-Eintrag in data.ts angelegt (fester Standort, Hamburg, Theater am Großmarkt, ab Herbst 2026)
+- [x] SEO-Text mit Headline und Sublines erstellt
+- [x] Musical in ACTIVE_MUSICAL_IDS aufgenommen (Position 2, nach Dracula)
+- [x] Hamburg musicalCount auf 7 aktualisiert
+- [x] Sitemap.xml enthält moulin-rouge bereits
+- [x] Bildnachweise im Impressum ergänzt (© Johan Persson / Nilz Boehme, ATG Entertainment)

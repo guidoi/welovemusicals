@@ -128,6 +128,23 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Moulin Rouge! */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">MOULIN ROUGE! DAS MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos:</strong> © Johan Persson &amp; © Nilz Boehme – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung von ATG Entertainment GmbH.</li>
+                      <li><strong>Keyvisual &amp; Logo:</strong> © ATG Entertainment GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
+                  {/* Sister Act */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">SISTER ACT – DAS MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos &amp; Keyvisual:</strong> © Stage Entertainment / Limelight Live Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash + Pixabay */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>

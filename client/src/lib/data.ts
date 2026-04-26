@@ -804,6 +804,67 @@ export const musicals: Musical[] = [
     ],
   },
   {
+    id: "moulinrouge",
+    slug: "moulin-rouge",
+    title: "MOULIN ROUGE! DAS MUSICAL",
+    subtitle: "Wahrheit. Schönheit. Freiheit. Liebe.",
+    provider: "ATG Entertainment",
+    category: "ensuite",
+    categories: ["fester-standort", "erwachsene"],
+    city: "Hamburg",
+    venue: "Theater am Großmarkt Hamburg",
+    description: "Baz Luhrmanns oscarprämierter Filmklassiker als atemberaubendes Musical-Spektakel: Liebe, Leidenschaft und 75 unvergessliche Songs von Lady Gaga bis Beyoncé – ab Herbst 2026 im Theater am Großmarkt Hamburg.",
+    detailHeadline: "10 TONY AWARDS. 12 MILLIONEN ZUSCHAUER. JETZT IN HAMBURG.",
+    detailDescription: "Der meistausgezeichnete Broadway-Hit aller Zeiten kommt nach Deutschland – und macht Hamburg zu seiner deutschen Heimat: Ab Herbst 2026 bringt ATG Entertainment MOULIN ROUGE! DAS MUSICAL ins eigens umgebaute Theater am Großmarkt. Baz Luhrmanns oscarprämierter Filmklassiker wird damit zum spektakulärsten Live-Erlebnis der Hansestadt.\n\n**75 Songs. 160 Jahre Popmusik. Eine Liebesgeschichte für die Ewigkeit.**\n\nVon Offenbach bis Lady Gaga, von Édith Piaf bis Beyoncé: MOULIN ROUGE! DAS MUSICAL vereint 75 Songs aus 160 Jahren Musikgeschichte zu einem einzigartigen Klangerlebnis. Legendäre Hits wie \"Lady Marmalade\", \"Roxanne\", \"Your Song\" und das eigens für den Film komponierte \"Come What May\" werden ergänzt durch Ohrwürmer von Adele, Katy Perry und Rihanna – live gespielt von einer mitreißenden Band.\n\n**Das Theater, das sich verwandelt.**\n\nFür MOULIN ROUGE! wird das Theater am Großmarkt von Grund auf neu gestaltet: Üppige rote Vorhänge, funkelnde Kronleuchter und das ikonische Herzrahmen-Bühnenbild verwandeln den Saal in den legendären Nachtclub von Montmartre. Wer das Haus betritt, betritt Paris 1899 – und verlässt es als Fan fürs Leben.\n\nSeit der Weltpremiere 2018 haben über 12 Millionen Zuschauer weltweit diese Show erlebt. Mit 10 Tony Awards – darunter Bestes Musical – ist MOULIN ROUGE! DAS MUSICAL die meistprämierte Broadway-Produktion des Jahres 2020. Jetzt ist Hamburg dran.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp",
+    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-keyvisual_24506562.png",
+    ticketCtaUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
+    awinHeroUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
+    awinStickyUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
+    awinBoxUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
+    eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
+    featured: true,
+    tags: ["Fester Standort", "Romantik", "Weltklasse"],
+    youtubeTrailerId: "RqMSXnf4Xb8",
+    tourDates: [
+      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-01", endDate: "2027-12-31", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Ab Herbst 2026" },
+    ],
+    quotes: [
+      { text: "Moulin Rouge! Das Musical und Hamburg sind ein 'Perfect Match'.", source: "Marcel Neitzel, General Manager Theater am Großmarkt" },
+      { text: "Die Show transportiert Werte, die heute wichtiger sind denn je: Diversität, Gleichberechtigung und Selbstliebe.", source: "Theater am Großmarkt Hamburg" },
+      { text: "Unterhaltung auf höchstem Niveau – ein Anspruch, der alle Produktionen von ATG weltweit verbindet.", source: "Joachim Hilke, CEO ATG Entertainment GmbH" },
+    ],
+    gallery: [
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-02_0295db80.webp", alt: "Moulin Rouge! – Harold Zidler und die Tänzerinnen" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-03_0eaf80e9.webp", alt: "Moulin Rouge! – Der prächtige Theatersaal" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-04_7686dc38.webp", alt: "Moulin Rouge! – Die Bühne mit Neonschriftzug" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-05_83e6cdde.webp", alt: "Moulin Rouge! – Ensemble Can-Can" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-06_b011e5d4.jpg", alt: "Moulin Rouge! – Harold Zidler" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-07_a372f019.webp", alt: "Moulin Rouge! – Tanzensemble" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-08_b1203d9d.webp", alt: "Moulin Rouge! – Satine" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-09_8224e309.webp", alt: "Moulin Rouge! – Marina Maniglio" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-10_b49a4df6.webp", alt: "Moulin Rouge! – Christian und Toulouse-Lautrec" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "Ca. 2 Stunden 30 Minuten (inkl. Pause)" },
+      { label: "Sprache", value: "Alle Dialoge und Songs in deutscher Sprache" },
+      { label: "Spielort", value: "Theater am Großmarkt Hamburg (ab Herbst 2026)" },
+      { label: "Veranstalter", value: "ATG Entertainment" },
+    ],
+    storyHeadline: "LIEBE, LEIDENSCHAFT UND DER TRAUM VON FREIHEIT",
+    storyText: "Paris 1899. Der junge Schriftsteller Christian kommt in die Stadt der Liebe und trifft auf die schillernde Welt des Moulin Rouge. Er verliebt sich in Satine, den strahlenden Star des Nachtclubs – doch ihre Liebe steht unter einem schlechten Stern.\n\nDer einflussreiche Duke of Monroth will das finanziell angeschlagene Moulin Rouge übernehmen und hat dabei ein Auge auf Satine geworfen. Gemeinsam mit Clubbesitzer Harold Zidler sowie den schillerndsten Bohemians von ganz Paris – dem brillanten Künstler Toulouse-Lautrec und dem feurigen Tangotänzer Santiago – inszeniert Christian ein musikalisches Schauspiel, um das Moulin Rouge zu retten und für seine Liebe zu kämpfen.\n\nEin Feuerwerk aus 75 unvergesslichen Songs, atemberaubenden Kostümen und spektakulären Choreografien – Moulin Rouge! Das Musical ist eine Ode an die Werte der Bohème: Wahrheit, Schönheit, Freiheit und – vor allem – die Liebe.",
+    faqItems: [
+      { question: "Wo wird das Musical gespielt?", answer: "Moulin Rouge! Das Musical spielt ab Herbst 2026 im Theater am Großmarkt Hamburg." },
+      { question: "Wann ist Premiere?", answer: "Die Premiere ist für Herbst 2026 geplant. Tickets sind bereits im Vorverkauf erhältlich." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind online unter moulin-rouge-musical.de sowie über shop.atgtickets.de erhältlich." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert ca. 2 Stunden 30 Minuten inklusive Pause." },
+      { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
+      { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine Pause nach dem ersten Akt." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
+      { question: "Was macht Moulin Rouge! besonders?", answer: "Mit 10 Tony Awards ist Moulin Rouge! Das Musical die meistprämierte Broadway-Produktion des Jahres 2020. Das Musical vereint über 75 Songs aus 160 Jahren Popmusikgeschichte – von Offenbach bis Lady Gaga, Adele und Beyoncé." },
+    ],
+  },
+  {
     id: "davinci",
     slug: "da-vinci-code",
     title: "Dan Browns DER DA VINCI CODE – SAKRILEG",
@@ -2142,8 +2203,8 @@ export const cities: City[] = [
     slug: "hamburg",
     name: "Hamburg",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-hamburg-hiqvQVm59Z9s8oonK6znyR.webp",
-    description: "Die Musical-Hauptstadt Deutschlands. Mit fünf großen Musical-Theatern und Harry Potter bietet Hamburg das vielfältigste Musical-Angebot des Landes.",
-    musicalCount: 6,
+    description: "Die Musical-Hauptstadt Deutschlands. Mit großen Musical-Theatern und Weltklasse-Shows wie Moulin Rouge! bietet Hamburg das vielfältigste Musical-Angebot des Landes.",
+    musicalCount: 7,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hamburg&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%2525107905%26orderBy%3DRecommendations",
   },
   {
@@ -2252,7 +2313,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
