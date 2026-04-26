@@ -99,3 +99,6 @@
 ## SEO – Domain welovemusicals.com
 - [x] Sitemap-Endpoint Fallback-Domain auf welovemusicals.com aktualisiert
 - [x] robots.txt Sitemap-URL auf welovemusicals.com aktualisiert
+
+## SEO – Statische Sitemap für Cloudflare Pages
+- [x] sitemap.xml als statische Datei in client/public/sitemap.xml erstellt (44 URLs: 5 aktive + 37 weitere Musicals + 21 Städte + 3 statische Seiten)
