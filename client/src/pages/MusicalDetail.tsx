@@ -13,6 +13,10 @@ import {
   Hotel,
   Tag,
   Building2,
+  Music2,
+  Sparkles,
+  Heart,
+  Gift,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -310,6 +314,73 @@ export default function MusicalDetail() {
                   <p key={index} className="text-white/80 leading-relaxed mb-4 text-lg">
                     {paragraph}
                   </p>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* USP-Box – nur für Moulin Rouge! */}
+      {musical.id === "moulinrouge" && (
+        <section className="py-8 md:py-10 bg-background">
+          <div className="container max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-sm overflow-hidden"
+              style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(0,0,0,0) 60%)' }}
+            >
+              {/* Header */}
+              <div className="px-6 pt-6 pb-4 border-b" style={{ borderColor: 'rgba(212,175,55,0.2)' }}>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: 'rgba(212,175,55,0.7)' }}>Das erwartet dich</p>
+                <h3 className="font-display text-xl md:text-2xl font-bold text-white mt-1">Warum Moulin Rouge! ein Erlebnis der Extraklasse ist</h3>
+              </div>
+
+              {/* USP Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                {[
+                  {
+                    icon: <Music2 className="w-5 h-5" />,
+                    title: "Über 70 Welthits",
+                    text: "u.a. von Adele, Lady Gaga, Elton John & Beyoncé",
+                  },
+                  {
+                    icon: <Sparkles className="w-5 h-5" />,
+                    title: "Atemberaubende Ausstattung",
+                    text: "Kulissen, Kostüme & Choreografien auf Broadway-Niveau",
+                  },
+                  {
+                    icon: <Heart className="w-5 h-5" />,
+                    title: "Gänsehautgarantie",
+                    text: "Emotionales Entertainment, das unter die Haut geht",
+                  },
+                  {
+                    icon: <Gift className="w-5 h-5" />,
+                    title: "Perfektes Geschenk",
+                    text: "Das Highlight für einen unvergesslichen Abend in Hamburg",
+                  },
+                ].map((usp, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 px-6 py-5"
+                    style={{
+                      borderRight: i % 2 === 0 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                    }}
+                  >
+                    <div
+                      className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center mt-0.5"
+                      style={{ background: 'rgba(212,175,55,0.12)', color: 'rgb(212,175,55)' }}
+                    >
+                      {usp.icon}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white text-sm leading-snug mb-0.5">{usp.title}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{usp.text}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>
