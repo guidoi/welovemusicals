@@ -8,6 +8,7 @@
  */
 import { MusicalTourDate } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -172,6 +173,14 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
                     </span>
                   )}
                 </div>
+
+                {/* Premiere-Badge wenn vorhanden */}
+                {firstDate.premiereDate && (
+                  <div className="inline-flex items-center gap-1.5 mb-2 px-2.5 py-1 rounded-full bg-primary/15 border border-primary/40 text-primary text-[11px] font-bold uppercase tracking-wider">
+                    <Star className="w-3 h-3 fill-primary" />
+                    Premiere am {new Date(firstDate.premiereDate + 'T00:00:00').toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+                  </div>
+                )}
 
                 {/* Venue (aus erstem Eintrag – bei gleicher Stadt i.d.R. identisch) */}
                 <p className="text-sm text-white/80 font-medium leading-snug mb-3">
