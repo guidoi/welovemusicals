@@ -204,34 +204,20 @@ export default function MusicalDetail() {
       {/* Content */}
       <section className="py-12 md:py-16">
         <div className="container">
-          {/* Moulin Rouge!: Keyvisual quer über volle Breite, dann Text darunter */}
-          {musical.id === 'moulinrouge' && (
-            <div className="hidden lg:block mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {/* Keyvisual - Desktop linke Spalte für alle Musicals */}
+            <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape contain />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge'} />
               </motion.div>
             </div>
-          )}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Keyvisual - Desktop Right Only (nicht für moulinrouge) */}
-            {musical.id !== 'moulinrouge' && (
-              <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} />
-                </motion.div>
-              </div>
-            )}
 
             {/* Main Content */}
-            <div className={`${musical.id === 'moulinrouge' ? 'lg:col-span-3' : 'lg:col-span-2'} order-2 lg:order-2`}>
+            <div className="lg:col-span-2 order-2 lg:order-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
