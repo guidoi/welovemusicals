@@ -826,7 +826,7 @@ export const musicals: Musical[] = [
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     youtubeTrailerId: "BN8RYBCYPVM",
     tourDates: [
-      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-01", endDate: "2027-12-31", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Ab Herbst 2026" },
+      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", endDate: "2027-12-31", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Ab 28.10.2026" },
     ],
     quotes: [
       { text: "Moulin Rouge! Das Musical und Hamburg sind ein 'Perfect Match'.", source: "Marcel Neitzel, General Manager Theater am Großmarkt" },
@@ -847,13 +847,13 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Showdauer", value: "Ca. 2 Stunden 30 Minuten (inkl. Pause)" },
       { label: "Sprache", value: "Alle Dialoge und Songs in deutscher Sprache" },
-      { label: "Spielort", value: "Theater am Großmarkt Hamburg (ab Herbst 2026)" },
+      { label: "Spielort", value: "Theater am Großmarkt Hamburg (ab 28.10.2026)" },
     ],
     storyHeadline: "LIEBE, LEIDENSCHAFT UND DER TRAUM VON FREIHEIT",
     storyText: "Paris 1899. Der junge Schriftsteller Christian kommt in die Stadt der Liebe und trifft auf die schillernde Welt des Moulin Rouge. Er verliebt sich in Satine, den strahlenden Star des Nachtclubs – doch ihre Liebe steht unter einem schlechten Stern.\n\nDer einflussreiche Duke of Monroth will das finanziell angeschlagene Moulin Rouge übernehmen und hat dabei ein Auge auf Satine geworfen. Gemeinsam mit Clubbesitzer Harold Zidler sowie den schillerndsten Bohemians von ganz Paris – dem brillanten Künstler Toulouse-Lautrec und dem feurigen Tangotänzer Santiago – inszeniert Christian ein musikalisches Schauspiel, um das Moulin Rouge zu retten und für seine Liebe zu kämpfen.\n\nEin Feuerwerk aus 75 unvergesslichen Songs, atemberaubenden Kostümen und spektakulären Choreografien – Moulin Rouge! Das Musical ist eine Ode an die Werte der Bohème: Wahrheit, Schönheit, Freiheit und – vor allem – die Liebe.",
     faqItems: [
-      { question: "Wo wird das Musical gespielt?", answer: "Moulin Rouge! Das Musical spielt ab Herbst 2026 im Theater am Großmarkt Hamburg." },
-      { question: "Wann ist Premiere?", answer: "Die Premiere ist für Herbst 2026 geplant. Tickets sind bereits im Vorverkauf erhältlich." },
+      { question: "Wo wird das Musical gespielt?", answer: "Moulin Rouge! Das Musical spielt ab 28. Oktober 2026 im Theater am Großmarkt Hamburg." },
+      { question: "Wann ist Premiere?", answer: "Die Premiere findet am 28. Oktober 2026 statt. Tickets sind bereits im Vorverkauf erhältlich." },
       { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind online unter moulin-rouge-musical.de sowie über shop.atgtickets.de erhältlich." },
       { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert ca. 2 Stunden 30 Minuten inklusive Pause." },
       { question: "Gibt es eine Altersempfehlung?", answer: "Das Musical ist ab 12 Jahren empfohlen." },
