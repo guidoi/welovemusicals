@@ -100,8 +100,8 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
           Spielorte & Termine
         </h2>
 
-        {/* Stadtfilter */}
-        <div className="mb-8">
+        {/* Stadtfilter – nur bei mehr als einer Stadt anzeigen */}
+        {allCities.length > 1 && <div className="mb-8">
           {forceDropdown ? (
             <div className="flex items-center gap-4 flex-wrap">
               <Select value={selectedCity} onValueChange={setSelectedCity}>
@@ -151,7 +151,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
               ))}
             </div>
           )}
-        </div>
+        </div>}
 
         {/* Stadtboxen – eine Box pro Stadt, mehrere Termine untereinander */}
         <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl mx-auto"}>
