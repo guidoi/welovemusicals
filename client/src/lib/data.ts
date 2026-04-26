@@ -1865,7 +1865,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
-    featured: true,
+    featured: false,
     tags: ["Tournee", "Komödie", "Filmhit"],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-01-credit-nico-moser_c103e567.jpg", alt: "Fack Ju Göhte – Das Musical © Nico Moser" },
