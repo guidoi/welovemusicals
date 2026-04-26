@@ -90,3 +90,8 @@
 - [x] Dynamische Meta-Tags auf MusicalDetail-Seite eingebaut
 - [x] Dynamische Meta-Tags auf CityDetail-Seite eingebaut
 - [x] Schema.org MusicEvent + BreadcrumbList JSON-LD auf MusicalDetail-Seite (SchemaOrg.tsx)
+
+## SEO – Sitemap & Rich-Results-Test
+- [x] Dynamische Sitemap.xml als Server-Endpoint (/sitemap.xml) implementiert (alle Musical- und Stadtseiten)
+- [x] robots.txt mit Sitemap-Verweis erstellt
+- [x] Schema.org Rich-Results-Test: 0 Fehler, 0 Warnungen (BreadcrumbList + ItemList/MusicEvent)
