@@ -22,8 +22,10 @@ interface TourDatesProps {
   forceDropdown?: boolean;
 }
 
-/** Gibt true zurück, wenn das endDate heute oder in der Zukunft liegt. */
-function isUpcoming(endDate: string): boolean {
+/** Gibt true zurück, wenn das endDate heute oder in der Zukunft liegt.
+ * Wenn kein endDate gesetzt ist (z.B. En-suite ohne Enddatum), gilt der Termin immer als zukünftig. */
+function isUpcoming(endDate: string | undefined): boolean {
+  if (!endDate) return true; // kein Enddatum = dauerhaft gültig
   // Vergleich auf Tagesebene: Termin gilt noch am Veranstaltungstag selbst als gültig
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -84,7 +86,8 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
     });
   };
 
-  const formatDateRange = (start: string, end: string) => {
+  const formatDateRange = (start: string, end?: string) => {
+    if (!end) return `Ab ${formatDate(start)}`;
     if (start === end) return formatDate(start);
     return `${formatDate(start)} – ${formatDate(end)}`;
   };

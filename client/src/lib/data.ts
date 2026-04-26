@@ -8,7 +8,7 @@ export interface MusicalTourDate {
   city: string;
   venue: string;
   startDate: string; // Format: "YYYY-MM-DD"
-  endDate: string; // Format: "YYYY-MM-DD"
+  endDate?: string; // Format: "YYYY-MM-DD" (optional – wenn nicht gesetzt, kein Enddatum anzeigen)
   eventimUrl: string;
   oeticketUrl?: string;
   badge?: string; // z.B. "5 Wochen Gastspiel"
@@ -826,7 +826,7 @@ export const musicals: Musical[] = [
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     youtubeTrailerId: "BN8RYBCYPVM",
     tourDates: [
-      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", endDate: "2027-12-31", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Ab 28.10.2026" },
+      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Ab 28.10.2026" },
     ],
     quotes: [
       { text: "Moulin Rouge! Das Musical und Hamburg sind ein 'Perfect Match'.", source: "Marcel Neitzel, General Manager Theater am Großmarkt" },
