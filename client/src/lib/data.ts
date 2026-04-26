@@ -2080,7 +2080,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-berlin-isrpM3SJSsQbjuVy58kX5V.webp",
     description: "Die Hauptstadt lockt mit dem Theater des Westens und zahlreichen Tournee-Gastspielen. Kultur und Musical vereint in einer Stadt.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-berlin&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DBerlin%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-berlin&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252555133%26orderBy%3DRecommendations",
   },
   {
     slug: "bremen",
@@ -2088,7 +2088,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Hafenstadt Bremen ist ein wachsender Musical-Standort mit modernen Veranstaltungshallen und Tournee-Gastspielen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-bremen&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DBremen%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-bremen&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%2525145363%26orderBy%3DRecommendations",
   },
   {
     slug: "dresden",
@@ -2096,7 +2096,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=600&q=80",
     description: "Die Kulturhauptstadt Sachsens mit der Semperoper ist ein wichtiger Spielort für Musical-Tourneen und Opernaufführungen.",
     musicalCount: 0,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-dresden&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DDresden%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-dresden&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252530396%26orderBy%3DRecommendations",
   },
   {
     slug: "duesseldorf",
@@ -2104,7 +2104,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80",
     description: "Die Landeshauptstadt NRWs ist ein beliebter Stopp für Musical-Tourneen mit dem Capitol Theater als Hauptspielstätte.",
     musicalCount: 0,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-duesseldorf&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DD%25C3%25BCsseldorf%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-duesseldorf&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252597205%26orderBy%3DRecommendations",
   },
   {
     slug: "duisburg",
@@ -2112,7 +2112,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Ruhrstadt Duisburg ist ein wichtiger Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-duisburg&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DDuisburg%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-duisburg&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252553981%26orderBy%3DRecommendations",
   },
   {
     slug: "frankfurt",
@@ -2120,7 +2120,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80",
     description: "Die Mainmetropole bietet mit der Alten Oper und dem Jahrhunderthalle-Komplex erstklassige Veranstaltungsorte für Musical-Events.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-frankfurt&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DFrankfurt%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-frankfurt&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252591191%26orderBy%3DRecommendations",
   },
   {
     slug: "graz",
@@ -2128,7 +2128,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=600&q=80&crop=entropy&cs=tinysrgb",
     description: "Die steirische Hauptstadt Österreichs ist ein wichtiger Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-graz&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DGraz%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-graz&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252554680%26orderBy%3DRecommendations",
   },
   {
     slug: "halle",
@@ -2136,7 +2136,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Kulturstadt Halle ist ein wachsender Musical-Standort mit der Händel-Halle als wichtiger Spielstätte.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-halle&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DHalle%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-halle&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252584676%26orderBy%3DRecommendations",
   },
   {
     slug: "hamburg",
@@ -2144,7 +2144,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-hamburg-hiqvQVm59Z9s8oonK6znyR.webp",
     description: "Die Musical-Hauptstadt Deutschlands. Mit fünf großen Musical-Theatern und Harry Potter bietet Hamburg das vielfältigste Musical-Angebot des Landes.",
     musicalCount: 6,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hamburg&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DHamburg%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hamburg&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%2525107905%26orderBy%3DRecommendations",
   },
   {
     slug: "hannover",
@@ -2152,7 +2152,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=600&q=80",
     description: "Die niedersächsische Hauptstadt ist ein wichtiger Stopp für Tournee-Musicals mit modernen Spielstätten.",
     musicalCount: 0,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hannover&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DHannover%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hannover&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252557198%26orderBy%3DRecommendations",
   },
   {
     slug: "innsbruck",
@@ -2160,7 +2160,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die Tiroler Hauptstadt ist ein wichtiger Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-innsbruck&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DInnsbruck%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-innsbruck&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252554702%26orderBy%3DRecommendations",
   },
   {
     slug: "koeln",
@@ -2168,7 +2168,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=600&q=80",
     description: "Am Rhein gelegen bietet Köln mit dem Musical Dome eine erstklassige Spielstätte für große Tournee-Produktionen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-koeln&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DK%25C3%25B6ln%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-koeln&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252562901%26orderBy%3DRecommendations",
   },
   {
     slug: "leipzig",
@@ -2176,7 +2176,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1567359781514-3b964e2b04d6?w=600&q=80",
     description: "Die sächsische Kulturstadt ist ein wachsender Musical-Standort mit der Oper Leipzig und dem Gewandhaus als Spielstätten.",
     musicalCount: 0,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-leipzig&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DLeipzig%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-leipzig&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252565248%26orderBy%3DRecommendations",
   },
   {
     slug: "muenchen",
@@ -2184,7 +2184,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1595867818082-083862f3d630?w=600&q=80",
     description: "Das Deutsches Theater München ist eine der wichtigsten Tournee-Spielstätten. Zahlreiche Musical-Highlights gastieren hier regelmäßig.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-muenchen&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DM%25C3%25BCnchen%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-muenchen&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252570801%26orderBy%3DRecommendations",
   },
   {
     slug: "nuernberg",
@@ -2192,7 +2192,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&q=80",
     description: "Die fränkische Metropole ist ein wichtiger Spielort für Musical-Tourneen mit der Meistersingerhalle als Hauptspielstätte.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-nuernberg&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DN%25C3%25BCrnberg%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-nuernberg&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252531353%26orderBy%3DRecommendations",
   },
   {
     slug: "oberhausen",
@@ -2200,7 +2200,7 @@ export const cities: City[] = [
     image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80",
     description: "Das Metronom Theater in Oberhausen ist eine der modernsten Musical-Spielstätten Deutschlands und Heimat großer Tournee-Produktionen.",
     musicalCount: 0,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-oberhausen&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DOberhausen%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-oberhausen&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252547249%26orderBy%3DRecommendations",
   },
   {
     slug: "stuttgart",
@@ -2208,7 +2208,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-stuttgart-jTG7sLRjCNSW9LsE43iiZb.webp",
     description: "Heimat von Disneys Die Eiskönigin und We Will Rock You. Stuttgart ist ein fester Bestandteil der deutschen Musical-Landschaft.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-stuttgart&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DStuttgart%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-stuttgart&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252531002%26orderBy%3DRecommendations",
   },
   {
     slug: "hildesheim",
@@ -2216,7 +2216,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-hildesheim_6eb1597c.jpg",
     description: "Die niedersächsische Kulturstadt Hildesheim ist ein wachsender Spielort für Musical-Tourneen mit modernen Veranstaltungshallen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hildesheim&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DHildesheim%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hildesheim&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252565009%26orderBy%3DRecommendations",
   },
   {
     slug: "linz",
@@ -2224,7 +2224,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-linz_b94539cd.jpg",
     description: "Die oberösterreichische Hauptstadt Linz ist ein wichtiger Spielort für Musical-Tourneen mit der TipsArena als großer Veranstaltungshalle.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-linz&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DLinz%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-linz&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%2525104133%26orderBy%3DRecommendations",
   },
   {
     slug: "solingen",
@@ -2232,7 +2232,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-solingen_11864164.jpg",
     description: "Die bergische Klingenstadt Solingen ist ein Spielort für Musical-Tourneen mit dem Theater Solingen als Hauptspielstätte.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-solingen&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DSolingen%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-solingen&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252532939%26orderBy%3DRecommendations",
   },
   {
     slug: "wien",
@@ -2240,7 +2240,7 @@ export const cities: City[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/wien-city_7fc3dedb.jpg",
     description: "Die österreichische Hauptstadt ist berühmt für ihre Theatertradition und beherbergt renommierte Musical-Produktionen.",
     musicalCount: 1,
-    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-wien&ued=https%3A//www.hrs.de/web3/search.do%3Fsearchterm%3DWien%26adults%3D2%26rooms%3D1",
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-wien&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252545883%26orderBy%3DRecommendations",
   },
 ];
 

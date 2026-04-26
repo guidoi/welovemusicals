@@ -111,3 +111,7 @@
 - [x] Home.tsx: Städtekarten-Links + CTA-Button auf HRS umgestellt
 - [x] CityDetail.tsx: JSX-Fragment-Fehler behoben
 - [x] MusicalDetail.tsx: Hotel-Karten nutzen city.hotelSearchUrl (automatisch HRS)
+
+## Hotels – HRS Stadtseiten-Deeplinks
+- [x] HRS location-Codes für alle 21 Städte ermittelt (statt web3/search.do → de/list?location=CODE)
+- [x] data.ts: hotelSearchUrl auf HRS-Stadtseiten-Deeplinks umgestellt
