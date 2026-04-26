@@ -4,6 +4,7 @@
  * - forceDropdown=false → Button-Reihe (für Dracula, FJG)
  * Städte mit mehreren Terminen werden in einer einzigen Box zusammengefasst.
  * Alle Termine einer Stadt werden chronologisch untereinander angezeigt.
+ * Abgelaufene Termine (endDate < heute) werden automatisch ausgeblendet.
  */
 import { MusicalTourDate } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,15 @@ import { useState } from "react";
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
   forceDropdown?: boolean;
+}
+
+/** Gibt true zurück, wenn das endDate heute oder in der Zukunft liegt. */
+function isUpcoming(endDate: string): boolean {
+  // Vergleich auf Tagesebene: Termin gilt noch am Veranstaltungstag selbst als gültig
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const end = new Date(endDate + "T00:00:00");
+  return end >= today;
 }
 
 /** Gruppiert Tourdaten nach Stadt und sortiert Termine innerhalb jeder Stadt chronologisch. */
@@ -42,16 +52,22 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
 
   if (!tourDates || tourDates.length === 0) return null;
 
-  // Städte alphabetisch sortieren
+  // Abgelaufene Termine herausfiltern
+  const upcomingDates = tourDates.filter((d) => isUpcoming(d.endDate));
+
+  // Wenn alle Termine abgelaufen sind, Abschnitt komplett ausblenden
+  if (upcomingDates.length === 0) return null;
+
+  // Städte alphabetisch sortieren (nur noch aus zukünftigen Terminen)
   const allCities = Array.from(
-    new Set(tourDates.map((d) => d.city))
+    new Set(upcomingDates.map((d) => d.city))
   ).sort((a, b) => a.localeCompare(b, "de"));
 
   // Gefilterte Daten nach Stadtauswahl
   const filteredDates =
     selectedCity === "alle"
-      ? tourDates
-      : tourDates.filter((d) => d.city === selectedCity);
+      ? upcomingDates
+      : upcomingDates.filter((d) => d.city === selectedCity);
 
   // Nach Stadt gruppieren (alphabetisch nach Stadtname sortiert)
   const grouped = groupByCity(filteredDates);
