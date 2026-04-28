@@ -176,8 +176,8 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
 
                 {/* Premiere-Badge wenn vorhanden */}
                 {firstDate.premiereDate && (
-                  <div className="inline-flex items-center gap-1.5 mb-2 px-2.5 py-1 rounded-full bg-primary/15 border border-primary/40 text-primary text-[11px] font-bold uppercase tracking-wider">
-                    <Star className="w-3 h-3 fill-primary" />
+                  <div className="inline-flex items-center gap-1.5 mb-2 px-2.5 py-1 rounded-full border text-[11px] font-bold uppercase tracking-wider" style={{backgroundColor: 'rgba(184,148,74,0.15)', borderColor: 'rgba(184,148,74,0.5)', color: '#b8944a'}}>
+                    <Star className="w-3 h-3" style={{fill: '#b8944a'}} />
                     Premiere am {new Date(firstDate.premiereDate + 'T00:00:00').toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
                   </div>
                 )}
