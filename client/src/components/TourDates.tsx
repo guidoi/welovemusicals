@@ -124,7 +124,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
                   variant="outline"
                   size="sm"
                   onClick={() => setSelectedCity("alle")}
-                  className="text-gold border-gold/40 hover:bg-gold/10"
+                  className="border" style={{color: '#b8944a', borderColor: 'rgba(184,148,74,0.4)'}} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor='rgba(184,148,74,0.1)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor='transparent')}
                 >
                   Filter zurücksetzen
                 </Button>
@@ -168,7 +168,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
                     {city}
                   </h3>
                   {firstDate.badge && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold/20 text-gold border border-gold/30">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider" style={{backgroundColor: 'rgba(184,148,74,0.2)', color: '#b8944a', border: '1px solid rgba(184,148,74,0.4)'}}>
                       {firstDate.badge}
                     </span>
                   )}
@@ -194,7 +194,7 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
                       key={idx}
                       className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
                     >
-                      <p className="text-sm text-gold font-semibold">
+                      <p className="text-sm font-semibold" style={{color: '#b8944a'}}>
                         {formatDateRange(date.startDate, date.endDate)}
                       </p>
                       <a
