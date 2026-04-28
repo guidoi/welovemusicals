@@ -128,7 +128,7 @@ export default function MusicalDetail() {
       {/* Floating Back Button */}
       <Link
         href="/"
-        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-primary hover:bg-black/70 hover:text-primary/80 transition-all duration-200 shadow-lg"
+        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 transition-all duration-200 shadow-lg" style={{color: '#b8944a'}} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor='rgba(0,0,0,0.7)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor='rgba(0,0,0,0.5)')}
         aria-label="Zurück zur Übersicht"
       >
         <ArrowLeft className="w-5 h-5" />
@@ -167,15 +167,15 @@ export default function MusicalDetail() {
               {musical.title}
             </h1>
             {musical.subtitle && (
-              <p className="text-lg italic mb-4 text-primary/80">{musical.subtitle}</p>
+              <p className="text-lg italic mb-4" style={{color: 'rgba(184,148,74,0.8)'}}>{musical.subtitle}</p>
             )}
 
             <div className="flex items-center gap-2 text-white/70">
-              <MapPin className="w-4 h-4 text-primary" />
+              <MapPin className="w-4 h-4" style={{color: '#b8944a'}} />
               {musical.city ? (
                 <span>{musical.city} – {musical.venue}</span>
               ) : musical.headerCities && musical.cities ? (
-                <span>{musical.headerCities.join(", ")} <span className="text-primary">und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span></span>
+                <span>{musical.headerCities.join(", ")} <span style={{color: '#b8944a'}}>und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span></span>
               ) : (
                 <span>{musical.cities?.join(", ")}</span>
               )}
@@ -193,7 +193,7 @@ export default function MusicalDetail() {
             href={heroTicketLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-sm py-3 text-sm font-semibold tracking-wide"
+            className="flex items-center justify-center gap-2 w-full border transition-colors duration-200 rounded-sm py-3 text-sm font-semibold tracking-wide" style={{borderColor: '#b8944a', color: '#b8944a'}} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor='#b8944a'; e.currentTarget.style.color='#1a1a1a'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor='transparent'; e.currentTarget.style.color='#b8944a'; }}
           >
             <Ticket className="w-4 h-4" />
             Tickets buchen{musical.priceFrom && <span className="font-normal opacity-75 ml-1">– ab {musical.priceFrom} €</span>}
@@ -234,7 +234,7 @@ export default function MusicalDetail() {
                       return (
                       <div key={i}>
                         {headlineMatch ? (
-                          <h3 className="font-display text-xl font-bold text-primary mt-6 mb-2 tracking-wide">
+                          <h3 className="font-display text-xl font-bold mt-6 mb-2 tracking-wide" style={{color: '#b8944a'}}>
                             {headlineMatch[1]}
                           </h3>
                         ) : (
@@ -475,15 +475,15 @@ export default function MusicalDetail() {
                   className="group bg-card border border-border/50 rounded-sm p-6 hover:border-accent/30 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-display text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-display text-lg font-bold text-foreground transition-colors">
                       {city.name}
                     </h3>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <ExternalLink className="w-4 h-4 text-muted-foreground transition-colors" />
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     {city.description}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm text-primary font-semibold">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{color: '#b8944a'}}>
                     <Hotel className="w-4 h-4" />
                     Hotels durchsuchen
                   </span>

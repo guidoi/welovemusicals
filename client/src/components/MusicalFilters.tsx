@@ -93,9 +93,8 @@ export default function MusicalFilters({
                     setCityFilter("alle");
                     setShowCityDropdown(false);
                   }}
-                  className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors ${
-                    cityFilter === "alle" ? "bg-gold/10 text-gold font-semibold" : "text-foreground"
-                  }`}
+                  className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors ${cityFilter === "alle" ? "font-semibold" : "text-foreground"}`}
+                  style={cityFilter === "alle" ? {backgroundColor: 'rgba(184,148,74,0.12)', color: '#b8944a'} : {}}
                 >
                   Alle Städte
                 </button>
@@ -106,11 +105,8 @@ export default function MusicalFilters({
                       setCityFilter(cityName);
                       setShowCityDropdown(false);
                     }}
-                    className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors flex items-center gap-2 ${
-                      cityFilter === cityName
-                        ? "bg-gold/10 text-gold font-semibold"
-                        : "text-foreground"
-                    }`}
+                    className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors flex items-center gap-2 ${cityFilter === cityName ? "font-semibold" : "text-foreground"}`}
+                    style={cityFilter === cityName ? {backgroundColor: 'rgba(184,148,74,0.12)', color: '#b8944a'} : {}}
                   >
                     <MapPin className="w-3 h-3" />
                     {cityName}

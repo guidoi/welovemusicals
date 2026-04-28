@@ -49,7 +49,7 @@ export default function MusicalShowFacts({ facts, provider, faqItems }: MusicalS
                 key={idx}
                 className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="flex justify-center mb-4 text-primary">
+                <div className="flex justify-center mb-4" style={{color: '#b8944a'}}>
                   {iconMap[fact.label] || <Calendar className="w-8 h-8" />}
                 </div>
                 <h3 className="text-lg font-semibold text-card-foreground mb-2">
@@ -69,7 +69,7 @@ export default function MusicalShowFacts({ facts, provider, faqItems }: MusicalS
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((faq, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`}>
-                  <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
+                  <AccordionTrigger className="text-lg font-semibold text-foreground transition-colors" onMouseEnter={(e) => (e.currentTarget.style.color='#b8944a')} onMouseLeave={(e) => (e.currentTarget.style.color='')}>
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-foreground/80 leading-relaxed">

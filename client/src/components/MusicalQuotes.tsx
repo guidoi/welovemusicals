@@ -27,12 +27,12 @@ export default function MusicalQuotes({ quotes }: MusicalQuotesProps) {
               className="bg-card border border-border rounded-lg p-8 hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-start gap-4">
-                <Quote className="w-8 h-8 flex-shrink-0 mt-1 text-primary" />
+                <Quote className="w-8 h-8 flex-shrink-0 mt-1" style={{color: '#b8944a'}} />
                 <div className="flex-1">
                   <p className="text-card-foreground italic mb-4 leading-relaxed">
                     "{quote.text}"
                   </p>
-                  <p className="text-sm font-semibold text-primary">
+                  <p className="text-sm font-semibold" style={{color: '#b8944a'}}>
                     — {quote.source}
                   </p>
                 </div>
