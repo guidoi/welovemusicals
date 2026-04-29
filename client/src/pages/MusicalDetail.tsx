@@ -512,6 +512,13 @@ export default function MusicalDetail() {
                 Tickets
                 <ExternalLink className="w-5 h-5" />
               </a>
+              {musical.slug === 'phantom-der-oper' && (
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
+                  alt="ATG Tickets"
+                  className="h-8 w-auto opacity-90 ml-3"
+                />
+              )}
               {musical.slug !== 'moulin-rouge' && musical.slug !== 'phantom-der-oper' && (
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
