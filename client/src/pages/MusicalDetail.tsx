@@ -249,7 +249,7 @@ export default function MusicalDetail() {
                              - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
                              - Sister Act & Dracula: nach i=0
                              - FJG: nach i=1 */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge')) || (i === 1 && musical.id === 'fackjugoehte')) && musical.youtubeTrailerId && (
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'phantom-der-oper')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
@@ -524,7 +524,7 @@ export default function MusicalDetail() {
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
                   alt="ATG Tickets"
-                  className="h-10 w-auto ml-3 opacity-90"
+                  className="h-8 w-auto ml-3 opacity-90"
                 />
               )}
               {musical.slug !== 'moulin-rouge' && musical.slug !== 'phantom-der-oper' && (
@@ -632,11 +632,17 @@ export default function MusicalDetail() {
               <Ticket className="w-4 h-4" />
               Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
             </a>
-            {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge') && (
+            {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge') ? (
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
                 alt="ATG Tickets"
                 className="h-8 w-auto opacity-90 flex-shrink-0"
+              />
+            ) : (
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
+                alt="Eventim"
+                className="h-7 w-auto opacity-80 flex-shrink-0"
               />
             )}
           </div>
