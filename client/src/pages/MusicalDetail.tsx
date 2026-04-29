@@ -619,18 +619,27 @@ export default function MusicalDetail() {
           className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg transition-all duration-300"
           style={{ opacity: showSticky ? 1 : 0, pointerEvents: showSticky ? 'auto' : 'none', transform: showSticky ? 'translateY(0)' : 'translateY(8px)' }}
         >
-          <a
-            href={stickyTicketLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full rounded-sm py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200"
-            style={{ backgroundColor: 'rgb(239, 68, 68)' }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
-          >
-            <Ticket className="w-4 h-4" />
-            Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={stickyTicketLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 flex-1 rounded-sm py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200"
+              style={{ backgroundColor: 'rgb(239, 68, 68)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+            >
+              <Ticket className="w-4 h-4" />
+              Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
+            </a>
+            {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge') && (
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
+                alt="ATG Tickets"
+                className="h-8 w-auto opacity-90 flex-shrink-0"
+              />
+            )}
+          </div>
         </div>
       )}
 
