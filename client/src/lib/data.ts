@@ -896,9 +896,7 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-11-05", premiereDate: "2026-11-15", eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/" },
     ],
-    quotes: [
-      { text: "Das Phantom der Oper ist das einzige Musical in der Geschichte, das jemals zwei gleichermaßen erfolgreiche Versionen hatte.", source: "Cameron Mackintosh" },
-    ],
+    // quotes: [] – vorübergehend ausgeblendet, bis Pressestimmen vorliegen
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-treppe_a010547a.webp", alt: "Das Phantom der Oper – Das Phantom und Christine auf der Treppe" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-02_5b3f764b.webp", alt: "Das Phantom der Oper – Das Phantom und Christine" },
