@@ -2240,8 +2240,8 @@ export const cities: City[] = [
     slug: "koeln",
     name: "Köln",
     image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=600&q=80",
-    description: "Am Rhein gelegen bietet Köln mit dem Musical Dome eine erstklassige Spielstätte für große Tournee-Produktionen.",
-    musicalCount: 1,
+    description: "Köln ist ab 2026 Heimat von Das Phantom der Oper im Musical Dome Köln – und Gastspielort für weitere große Tournee-Produktionen.",
+    musicalCount: 2,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-koeln&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252562901%26orderBy%3DRecommendations",
   },
   {
