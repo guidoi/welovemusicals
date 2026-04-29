@@ -1997,7 +1997,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
-    featured: false,
+    featured: true,
     tags: ["Tournee", "Familie", "Märchen"],
     tourDates: [
       { city: "Aschaffenburg", venue: "Stadthalle am Schloss", startDate: "2026-12-14", endDate: "2026-12-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAschaffenburg" },
