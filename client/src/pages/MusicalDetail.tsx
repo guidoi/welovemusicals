@@ -259,7 +259,7 @@ export default function MusicalDetail() {
                              - Drei Haseelnüsse: nach i=0
                              - FJG: nach i=2
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 1 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
@@ -267,13 +267,7 @@ export default function MusicalDetail() {
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
                               <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper') ? 'ATG Tickets' : 'Eventim'} />
-                              {musical.slug === 'phantom-der-oper' && (
-                                <div className="mt-4 px-1">
-                                  <h3 className="font-display text-sm font-bold text-amber-400/90 leading-snug tracking-wide uppercase">
-                                    Die Musik der Nacht: Andrew Lloyd Webbers unsterbliche Partitur
-                                  </h3>
-                                </div>
-                              )}
+
                             </motion.div>
                           </div>
                         )}
