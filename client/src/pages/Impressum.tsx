@@ -137,6 +137,15 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Das Phantom der Oper */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">DAS PHANTOM DER OPER</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos:</strong> © Alastair Muir &amp; © Robin Savage – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung von ATG Entertainment / Cameron Mackintosh Ltd.</li>
+                      <li><strong>Keyvisual &amp; Logo:</strong> © UK Tour / Cameron Mackintosh Ltd. &amp; ATG Entertainment GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
                   {/* Sister Act */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">SISTER ACT – DAS MUSICAL</h4>

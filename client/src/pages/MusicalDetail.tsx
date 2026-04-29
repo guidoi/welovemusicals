@@ -17,6 +17,10 @@ import {
   Sparkles,
   Heart,
   Gift,
+  Crown,
+  Globe,
+  Star,
+  CalendarDays,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -338,8 +342,74 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {/* USP-Box – nur für Moulin Rouge! */}
-      {musical.id === "moulinrouge" && (
+      {/* USP-Box – für Moulin Rouge! und Phantom der Oper */}
+      {(musical.id === "moulinrouge" || musical.id === "phantom-der-oper") && (
+        <>
+        {musical.id === "phantom-der-oper" && (
+        <section className="py-8 md:py-10 bg-background">
+          <div className="container max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="rounded-sm overflow-hidden"
+              style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(0,0,0,0) 60%)' }}
+            >
+              {/* Header */}
+              <div className="px-6 pt-6 pb-4 border-b" style={{ borderColor: 'rgba(212,175,55,0.2)' }}>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: 'rgba(212,175,55,0.7)' }}>Das erwartet dich</p>
+                <h3 className="font-display text-xl md:text-2xl font-bold text-white mt-1">Warum Das Phantom der Oper ein Erlebnis der Extraklasse ist</h3>
+              </div>
+              {/* USP Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                {[
+                  {
+                    icon: <Crown className="w-5 h-5" />,
+                    title: "Deutschlandpremiere 2026",
+                    text: "Erstmals in Deutschland – exklusiv im Musical Dome Köln",
+                  },
+                  {
+                    icon: <Globe className="w-5 h-5" />,
+                    title: "160 Mio. Zuschauer weltweit",
+                    text: "Das meistgesehene Musical aller Zeiten in 23 Sprachen",
+                  },
+                  {
+                    icon: <Star className="w-5 h-5" />,
+                    title: "40 Jahre Weltklasse",
+                    text: "Jubiläumsproduktion von Cameron Mackintosh & Andrew Lloyd Webber",
+                  },
+                  {
+                    icon: <CalendarDays className="w-5 h-5" />,
+                    title: "Premiere: 15. November 2026",
+                    text: "Jetzt Tickets sichern – ab 59,99 € über ATG Tickets",
+                  },
+                ].map((usp, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 px-6 py-5"
+                    style={{
+                      borderRight: i % 2 === 0 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                      borderBottom: i < 2 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                    }}
+                  >
+                    <div
+                      className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center mt-0.5"
+                      style={{ background: 'rgba(212,175,55,0.12)', color: 'rgb(212,175,55)' }}
+                    >
+                      {usp.icon}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white text-sm leading-snug mb-0.5">{usp.title}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{usp.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        )}
+        {musical.id === "moulinrouge" && (
         <section className="py-8 md:py-10 bg-background">
           <div className="container max-w-4xl">
             <motion.div
@@ -403,6 +473,8 @@ export default function MusicalDetail() {
             </motion.div>
           </div>
         </section>
+        )}
+        </>
       )}
 
       {/* Ticket CTA – nach Tourtermine & Story, vor Pressequotes */}
