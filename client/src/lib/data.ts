@@ -818,6 +818,7 @@ export const musicals: Musical[] = [
     detailDescription: "Der meistausgezeichnete Broadway-Hit aller Zeiten kommt nach Deutschland – und macht Hamburg zu seiner deutschen Heimat: Ab Herbst 2026 bringt ATG Entertainment MOULIN ROUGE! DAS MUSICAL ins eigens umgebaute Theater am Großmarkt. Baz Luhrmanns oscarprämierter Filmklassiker wird damit zum spektakulärsten Live-Erlebnis der Hansestadt.\n\n**75 Songs. 160 Jahre Popmusik. Eine Liebesgeschichte für die Ewigkeit.**\n\nVon Offenbach bis Lady Gaga, von Édith Piaf bis Beyoncé: MOULIN ROUGE! DAS MUSICAL vereint 75 Songs aus 160 Jahren Musikgeschichte zu einem einzigartigen Klangerlebnis. Legendäre Hits wie \"Lady Marmalade\", \"Roxanne\", \"Your Song\" und das eigens für den Film komponierte \"Come What May\" werden ergänzt durch Ohrwürmer von Adele, Katy Perry und Rihanna – live gespielt von einer mitreißenden Band.\n\n**Das Theater, das sich verwandelt.**\n\nFür MOULIN ROUGE! wird das Theater am Großmarkt von Grund auf neu gestaltet: Üppige rote Vorhänge, funkelnde Kronleuchter und das ikonische Herzrahmen-Bühnenbild verwandeln den Saal in den legendären Nachtclub von Montmartre. Wer das Haus betritt, betritt Paris 1899 – und verlässt es als Fan fürs Leben.\n\nSeit der Weltpremiere 2018 haben über 12 Millionen Zuschauer weltweit diese Show erlebt. Mit 10 Tony Awards – darunter Bestes Musical – ist MOULIN ROUGE! DAS MUSICAL die meistprämierte Broadway-Produktion des Jahres 2020. Jetzt ist Hamburg dran.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-keyvisual_24506562.png",
+    priceFrom: "59,90",
     ticketCtaUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
     awinHeroUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
     awinStickyUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28",
@@ -867,6 +868,61 @@ export const musicals: Musical[] = [
       { question: "Gibt es eine Pause?", answer: "Ja, es gibt eine 25-minütige Pause nach dem ersten Akt." },
       { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einer Live-Band begleitet." },
       { question: "Was macht Moulin Rouge! besonders?", answer: "Mit 10 Tony Awards ist Moulin Rouge! Das Musical die meistprämierte Broadway-Produktion des Jahres 2020. Das Musical vereint über 75 Songs aus 160 Jahren Popmusikgeschichte – von Offenbach bis Lady Gaga, Adele und Beyoncé." },
+    ],
+  },
+  {
+    id: "phantom-der-oper",
+    slug: "phantom-der-oper",
+    title: "DAS PHANTOM DER OPER",
+    provider: "ATG Entertainment",
+    category: "ensuite",
+    categories: ["fester-standort", "erwachsene"],
+    city: "Köln",
+    venue: "Musical Dome Köln",
+    description: "Cameron Mackintoshs spektakuläre Neuinszenierung von Andrew Lloyd Webbers Welterfolg – ab November 2026 erstmals in Deutschland: im Musical Dome Köln. Tickets ab 59,99 EUR.",
+    detailHeadline: "DAS GRÖSSTE MUSICAL ALLER ZEITEN. JETZT IN KÖLN.",
+    detailDescription: "Cameron Mackintoshs umjubelte Neuinszenierung von Andrew Lloyd Webbers Das Phantom der Oper kommt erstmals nach Deutschland – und feiert im November 2026 seine Deutschlandpremiere im Musical Dome Köln. Seit seiner Uraufführung 2012 begeisterte diese spektakuläre Produktion bereits in Großbritannien, Nordamerika und Australien, wo sie im legendären Sydney Opera House Premiere feierte. Es folgte die Europapremiere in Wien, wo das Musical bald eine ausverkaufte dreijährige Spielzeit abschließen wird.\n\n**Die Musik der Nacht: Andrew Lloyd Webbers unsterbliche Partitur**\n\nDie Musik der Nacht, Denk an mich, Mehr will ich nicht von dir, Maskenball und der ikonische Titelsong zählen zu den bekanntesten und beliebtesten Musicalhits aller Zeiten. Andrew Lloyd Webbers romantische und mitreißende Musik hat seit der Uraufführung 1986 Generationen von Zuschauer*innen in ihren Bann gezogen. Mit über 160 Millionen Besucher*innen in 217 Städten auf 23 Sprachen und mehr als 70 internationalen Theaterpreisen – darunter Olivier Awards, Tony Awards und Drama Desk Awards – gilt Das Phantom der Oper als einer der größten Bühnenerfolge aller Zeiten.\n\n**Eine Neuproduktion, die Maßstäbe setzt**\n\nUnter der Regie von Seth Sklar-Heyn, basierend auf der Originalinszenierung von Laurence Connor, unter der künstlerischen Leitung von Matthew Bourne und Cameron Mackintosh, haucht diese Inszenierung Andrew Lloyd Webbers phänomenaler Partitur berauschendes neues Leben ein. Paul Browns schillerndes Bühnenbild lässt einen brandneuen Kronleuchter eindrucksvoll zum Leben erwachen, während die gefeierten Kostümentwürfe der verstorbenen Maria Björnson erhalten bleiben. Mit Choreografie von Scott Ambler und dem Sounddesign des herausragenden Mick Potter ist diese Produktion ein Fest für alle Sinne.\n\nAnlässlich des 40-jährigen Jubiläums der Londoner Originalproduktion kehrt dieses fabelhafte Musical erstmals seit über zehn Jahren auf eine deutsche Bühne zurück. 2026 feiert der Musical Dome außerdem sein 30-jähriges Bestehen – ein doppelter Grund zum Feiern.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-treppe_a010547a.webp",
+    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/keyvisual_994fa3c5.jpg",
+    ticketCtaUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
+    awinHeroUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
+    awinStickyUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
+    awinBoxUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
+    eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
+    priceFrom: "59,99",
+    featured: true,
+    tags: ["Fester Standort", "Romantik", "Weltklasse"],
+    tourDates: [
+      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-11-05", premiereDate: "2026-11-15", eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/" },
+    ],
+    quotes: [
+      { text: "Das Phantom der Oper ist das einzige Musical in der Geschichte, das jemals zwei gleichermaßen erfolgreiche Versionen hatte.", source: "Cameron Mackintosh" },
+    ],
+    gallery: [
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-treppe_a010547a.webp", alt: "Das Phantom der Oper – Das Phantom und Christine auf der Treppe" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-02_5b3f764b.webp", alt: "Das Phantom der Oper – Das Phantom und Christine" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-04_a0c7a43f.jpg", alt: "Das Phantom der Oper – Maskenball-Szene" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-03_0b90820e.webp", alt: "Das Phantom der Oper – Dramatische Szene im Regen" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-05_26c485e8.webp", alt: "Das Phantom der Oper – Christine und Raoul" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "Ca. 2,5 Stunden (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch (Übersetzung: Michael Kunze)" },
+      { label: "Vorstellungen", value: "Di 19:00 · Mi–Fr 19:30 · Sa & So 14:30 und 19:30 Uhr" },
+      { label: "Spielort", value: "Musical Dome Köln (ab 5. November 2026)" },
+      { label: "Tickets ab", value: "59,99 EUR" },
+    ],
+    storyHeadline: "OBSESSION, EIFERSUCHT UND UNSTERBLICHE LIEBE",
+    storyText: "Das Phantom der Oper erzählt die spannende Geschichte von Christine Daaé, einer jungen Sopranistin, deren außergewöhnliche Stimme eine mysteriöse, maskierte Gestalt in ihren Bann zieht: das Phantom. Als brillantes, doch zugleich gequältes musikalisches Genie lebt es verborgen in den Tiefen der Pariser Oper und versetzt alle, die dort arbeiten, in Angst und Schrecken.\n\nAngezogen von Christines außergewöhnlichem Talent, wird das Phantom heimlich zu ihrem Mentor. Es ist überzeugt, dass nur sie seine Musik wirklich zum Leben erwecken kann – und verliebt sich dabei immer tiefer und gefährlicher in sie. Als Christine jedoch ihrem Jugendfreund Raoul, der inzwischen Förderer der Oper ist, wiederbegegnet, gerät sie zwischen zwei Welten.\n\nGefangen in einem intensiven Liebesdreieck muss sie sich zwischen Sicherheit und Leidenschaft entscheiden. Die wachsende Besessenheit des Phantoms führt schließlich zu dramatischen Ereignissen, in denen Hingabe, Eifersucht und Leidenschaft aufeinanderprallen.",
+    faqItems: [
+      { question: "Wo wird Das Phantom der Oper gespielt?", answer: "Das Phantom der Oper spielt ab November 2026 im Musical Dome Köln." },
+      { question: "Wann ist Premiere?", answer: "Die erste Vorstellung findet am 5. November 2026 statt. Die offizielle Premiere wird am 15. November 2026 gefeiert." },
+      { question: "Wo sind Tickets erhältlich?", answer: "Tickets sind online unter www.phantom-der-oper.de sowie über www.atgtickets.de erhältlich." },
+      { question: "Ab welchem Preis sind Tickets erhältlich?", answer: "Tickets sind ab 59,99 EUR erhältlich." },
+      { question: "Wann finden die Vorstellungen statt?", answer: "Dienstag 19:00 Uhr, Mittwoch bis Freitag 19:30 Uhr, Samstag und Sonntag jeweils 14:30 Uhr und 19:30 Uhr." },
+      { question: "In welcher Sprache wird das Musical aufgeführt?", answer: "Das Phantom der Oper wird auf Deutsch aufgeführt. Die Übersetzung stammt von Michael Kunze." },
+      { question: "Wie lange dauert eine Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive Pause." },
+      { question: "Was macht diese Inszenierung besonders?", answer: "Cameron Mackintoshs Neuinszenierung wurde seit ihrer Uraufführung 2012 weltweit gefeiert – in Großbritannien, Nordamerika, Australien und Wien. Paul Browns Bühnenbild und die Originalkostüme von Maria Björnson machen diese Produktion zu einem einzigartigen Theatererlebnis." },
     ],
   },
   {
@@ -2271,7 +2327,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
