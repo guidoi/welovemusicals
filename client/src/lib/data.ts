@@ -890,6 +890,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
     eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
     priceFrom: "59,99",
+    youtubeTrailerId: "A02SZ71tgRI",
     featured: true,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     tourDates: [
