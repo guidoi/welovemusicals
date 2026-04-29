@@ -422,7 +422,10 @@ export default function MusicalDetail() {
               </h2>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.
+              {musical.slug === 'moulin-rouge'
+                ? <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über ATG Tickets.</>
+                : <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.</>
+              }
             </p>
             <a
               href={boxTicketLink}
