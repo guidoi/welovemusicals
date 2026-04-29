@@ -427,18 +427,27 @@ export default function MusicalDetail() {
                 : <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.</>
               }
             </p>
-            <a
-              href={boxTicketLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
-              style={{ backgroundColor: 'rgb(239, 68, 68)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
-            >
-              Tickets
-              <ExternalLink className="w-5 h-5" />
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href={boxTicketLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
+                style={{ backgroundColor: 'rgb(239, 68, 68)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+              >
+                Tickets
+                <ExternalLink className="w-5 h-5" />
+              </a>
+              {musical.slug !== 'moulin-rouge' && (
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo_195a7082.png"
+                  alt="Eventim"
+                  className="h-7 w-auto opacity-80"
+                />
+              )}
+            </div>
             <p className="text-xs text-muted-foreground/50 mt-4">
               {musical.slug === 'moulin-rouge'
                 ? 'Weiterleitung zu atgtickets.de – Affiliate-Link'
