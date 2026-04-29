@@ -234,7 +234,7 @@ export default function TourDates({
 
         <div className="mt-8">
           <p className="text-sm text-foreground/60 text-center">
-            {musicalSlug === 'moulin-rouge'
+            {(musicalSlug === 'moulin-rouge' || musicalSlug === 'phantom-der-oper')
               ? 'Weiterleitung zu atgtickets.de – Affiliate-Links'
               : 'Weiterleitung zu eventim.de – Affiliate-Links'
             }

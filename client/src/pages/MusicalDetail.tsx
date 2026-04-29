@@ -440,7 +440,7 @@ export default function MusicalDetail() {
                 Tickets
                 <ExternalLink className="w-5 h-5" />
               </a>
-              {musical.slug !== 'moulin-rouge' && (
+              {musical.slug !== 'moulin-rouge' && musical.slug !== 'phantom-der-oper' && (
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
                   alt="Eventim"
@@ -449,7 +449,7 @@ export default function MusicalDetail() {
               )}
             </div>
             <p className="text-xs text-muted-foreground/50 mt-4">
-              {musical.slug === 'moulin-rouge'
+              {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper')
                 ? 'Weiterleitung zu atgtickets.de – Affiliate-Link'
                 : 'Weiterleitung zu eventim.de – Affiliate-Link'
               }
