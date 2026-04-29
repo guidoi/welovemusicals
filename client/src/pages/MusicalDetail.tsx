@@ -442,9 +442,9 @@ export default function MusicalDetail() {
               </a>
               {musical.slug !== 'moulin-rouge' && (
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo_195a7082.png"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
                   alt="Eventim"
-                  className="h-7 w-auto opacity-80"
+                  className="h-7 w-auto opacity-80 ml-2 md:ml-0"
                 />
               )}
             </div>
