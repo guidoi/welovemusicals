@@ -21,6 +21,7 @@ import { useState } from "react";
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
   forceDropdown?: boolean;
+  musicalSlug?: string;
 }
 
 /** Gibt true zurück, wenn das endDate heute oder in der Zukunft liegt.
@@ -49,8 +50,11 @@ function groupByCity(tourDates: MusicalTourDate[]): Record<string, MusicalTourDa
   }
   return result;
 }
-
-export default function TourDates({ tourDates, forceDropdown = false }: TourDatesProps) {
+export default function TourDates({
+  tourDates,
+  forceDropdown = false,
+  musicalSlug,
+}: TourDatesProps) {
   const [selectedCity, setSelectedCity] = useState<string>("alle");
 
   if (!tourDates || tourDates.length === 0) return null;
@@ -230,7 +234,10 @@ export default function TourDates({ tourDates, forceDropdown = false }: TourDate
 
         <div className="mt-8">
           <p className="text-sm text-foreground/60 text-center">
-            Weiterleitung zu eventim.de – Affiliate-Links
+            {musicalSlug === 'moulin-rouge'
+              ? 'Weiterleitung zu atgtickets.de – Affiliate-Links'
+              : 'Weiterleitung zu eventim.de – Affiliate-Links'
+            }
           </p>
         </div>
       </div>

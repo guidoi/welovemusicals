@@ -310,7 +310,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse"} />
+          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse"} musicalSlug={musical.slug} />
         )}
       </div>
 
@@ -437,7 +437,10 @@ export default function MusicalDetail() {
               <ExternalLink className="w-5 h-5" />
             </a>
             <p className="text-xs text-muted-foreground/50 mt-4">
-              Weiterleitung zu eventim.de – Affiliate-Link
+              {musical.slug === 'moulin-rouge'
+                ? 'Weiterleitung zu atgtickets.de – Affiliate-Link'
+                : 'Weiterleitung zu eventim.de – Affiliate-Link'
+              }
             </p>
           </motion.div>
         </div>
