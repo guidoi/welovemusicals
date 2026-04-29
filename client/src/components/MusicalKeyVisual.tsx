@@ -11,9 +11,10 @@ interface MusicalKeyVisualProps {
   title: string;
   ticketLink?: string;
   landscape?: boolean; // Querformat: natürliche Bildproportion, kein Abschneiden
+  ticketProvider?: string; // z.B. 'ATG Tickets' oder 'Eventim'
 }
 
-export default function MusicalKeyVisual({ image, title, ticketLink, landscape }: MusicalKeyVisualProps) {
+export default function MusicalKeyVisual({ image, title, ticketLink, landscape, ticketProvider = 'Eventim' }: MusicalKeyVisualProps) {
   const imgEl = landscape ? (
     // Querformat: Bild in voller Breite, Höhe automatisch nach Proportion
     <img
@@ -40,7 +41,7 @@ export default function MusicalKeyVisual({ image, title, ticketLink, landscape }
           target="_blank"
           rel="noopener noreferrer"
           className="block group cursor-pointer"
-          title={`Tickets für ${title} auf Eventim kaufen`}
+          title={`Tickets für ${title} über ${ticketProvider} kaufen`}
         >
           {imgEl}
         </a>

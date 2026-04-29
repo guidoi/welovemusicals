@@ -216,7 +216,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper'} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper') ? 'ATG Tickets' : 'Eventim'} />
               </motion.div>
             </div>
 
@@ -265,7 +265,7 @@ export default function MusicalDetail() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper'} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper') ? 'ATG Tickets' : 'Eventim'} />
                             </motion.div>
                           </div>
                         )}
@@ -494,7 +494,7 @@ export default function MusicalDetail() {
               </h2>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              {musical.slug === 'moulin-rouge'
+              {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper')
                 ? <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über ATG Tickets.</>
                 : <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.</>
               }
