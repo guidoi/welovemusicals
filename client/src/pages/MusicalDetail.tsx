@@ -512,7 +512,7 @@ export default function MusicalDetail() {
                 Tickets
                 <ExternalLink className="w-5 h-5" />
               </a>
-              {musical.slug === 'phantom-der-oper' && (
+              {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge') && (
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
                   alt="ATG Tickets"
