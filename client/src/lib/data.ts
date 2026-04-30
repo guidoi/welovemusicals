@@ -2336,8 +2336,25 @@ export function getMusicalsByCity(cityName: string): Musical[] {
   return musicals.filter((m) => m.city === cityName || m.cities?.includes(cityName));
 }
 
+export function hasActiveTourDateForCity(musical: Musical, cityName: string): boolean {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  if (musical.tourDates && musical.tourDates.length > 0) {
+    // Musical has tour dates: check if any date for this city is still active (endDate >= today)
+    return musical.tourDates.some(
+      (td) => td.city === cityName && td.endDate != null && new Date(td.endDate) >= today
+    );
+  }
+  // No tour dates defined: fall back to city field match (always show)
+  return musical.city === cityName || (musical.cities?.includes(cityName) ?? false);
+}
+
 export function getActiveMusicalsByCity(cityName: string): Musical[] {
-  return getActiveMusicals().filter((m) => m.city === cityName || m.cities?.includes(cityName));
+  return getActiveMusicals().filter((m) => {
+    const matchesCity = m.city === cityName || m.cities?.includes(cityName);
+    if (!matchesCity) return false;
+    return hasActiveTourDateForCity(m, cityName);
+  });
 }
 
 export function getActiveMusicalCountByCity(cityName: string): number {
