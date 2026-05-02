@@ -218,11 +218,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                {musical.youtubeTrailerId ? (
-                  <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
-                ) : (
-                  <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame') ? 'ATG Tickets' : 'Eventim'} />
-                )}
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame') ? 'ATG Tickets' : 'Eventim'} />
               </motion.div>
             </div>
 
@@ -254,7 +250,7 @@ export default function MusicalDetail() {
                              - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
                              - Sister Act & Dracula: nach i=0
                              - FJG: nach i=1 */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'phantom-der-oper') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame')) || (i === 1 && musical.id === 'fackjugoehte')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
@@ -264,7 +260,7 @@ export default function MusicalDetail() {
                              - Drei Haseelnüsse: nach i=0
                              - FJG: nach i=2
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 4 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
