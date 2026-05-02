@@ -2283,7 +2283,6 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Dauer", value: "Ca. 150 Min. inkl. Pause" },
       { label: "Sprache", value: "Deutsch" },
-      { label: "Veranstalter", value: "ATG Entertainment" },
       { label: "Tourneestart", value: "Oktober 2026" },
       { label: "Tickets ab", value: "€ 40,49" },
     ],
