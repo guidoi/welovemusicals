@@ -162,6 +162,15 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Disney Der Glöckner von Notre-Dame */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">DISNEY DER GLÖCKNER VON NOTRE-DAME</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Produktionsfotos:</strong> © Imke Trapp Fotografie – alle Rechte vorbehalten. Verwendung mit freundlicher Genehmigung von ATG Entertainment GmbH.</li>
+                      <li><strong>Keyvisual:</strong> © Disney / ATG Entertainment GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash + Pixabay */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>

@@ -2207,6 +2207,79 @@ export const musicals: Musical[] = [
       { question: "Wer ist der Veranstalter?", answer: "Veranstalter ist Bavaria Live Promotion GmbH aus Würzburg, ein erfahrener Tournee-Veranstalter mit jahrzehntelanger Erfahrung im Live-Entertainment-Bereich." },
     ],
   },
+  // === ATG ENTERTAINMENT – Disney Der Glöckner von Notre-Dame ===
+  {
+    id: "gloeckner-von-notre-dame",
+    slug: "gloeckner-von-notre-dame",
+    title: "Disney Der Glöckner von Notre-Dame",
+    subtitle: "Quasimodo. Esmeralda. Notre-Dame.",
+    provider: "ATG Entertainment",
+    category: "tournee",
+    categories: ["tournee", "erwachsene", "familie"],
+    cities: ["München", "Düsseldorf", "Frankfurt", "Zürich", "Leipzig", "Bremen", "Duisburg", "Berlin"],
+    headerCities: ["München", "Düsseldorf", "Berlin", "Frankfurt"],
+    description: "Der Disney-Welterfolg erstmals auf Tournee! Quasimodo, Esmeralda und Notre-Dame – erleben Sie das emotionale Musical mit Musik von Alan Menken und Texten von Stephen Schwartz live auf der Bühne. Mit 14-köpfigem Live-Orchester und über 70 Mitwirkenden.",
+    detailHeadline: "Ein Disney-Welterfolg. Erstmals auf Tournee.",
+    detailDescription: "**Der Disney-Welterfolg geht erstmals auf Tournee**\n\nEin verhängter Brand im April 2019 erschütterte die Welt: Die Kathedrale Notre-Dame de Paris, eines der bedeutendsten Meisterwerke gotischer Architektur Europas, stand in Flammen. Die weltweite Welle der Anteilnahme und Solidarität mündete in einem beispiellosen Wiederaufbau – im Dezember 2024 feierte das Wahrzeichen seine fulminante Wiedereröffnung als Symbol der Hoffnung und des Zusammenhalts.\n\n**Quasimodo, Esmeralda und Notre-Dame**\n\nGenau dieses ikonische Bauwerk steht im Mittelpunkt von Victor Hugos weltbekanntem Roman, der die literarische Vorlage für Disneys eindrucksvolles Musical bildet. Im Zentrum der Geschichte steht Quasimodo, der entstellte Glöckner, der abgeschieden in Notre-Dame lebt – fernab der Welt, doch voller Sehnsucht nach ihr. Als er sich zum Fest der Narren unter die Menschen wagt, stößt er auf Ablehnung – bis ihm die mutige und mitfühlende Esmeralda zur Seite steht. Zwischen beiden entwickelt sich eine zarte Verbindung, die unter den Augen des fanatischen Erzdiakons Frollo bald bedroht wird.\n\n**Musik von Alan Menken und Stephen Schwartz**\n\nDie Klangwelt des Musicals stammt vom mehrfach Oscar-prämierten Komponisten Alan Menken (Arielle, Die Schöne und das Biest, Aladdin, Hercules) und dem legendären Liedtexter Stephen Schwartz (Wicked). Ihr gemeinsames Meisterwerk vereint mitreißende Songs, gewaltige Chöre und zarte Balladen zu einem sinfonischen Klangerlebnis, das der Geschichte eine tiefgreifende emotionale Kraft verleiht. Das hochkarätige Ensemble des Budapester Operettentheaters, das bereits mit seiner Version von Disney Die Schöne und das Biest mehr als eine Million Zuschauerinnen und Zuschauer begeisterte, lässt die Songs in ihrer ganzen Vielschichtigkeit erstrahlen – begleitet von einem imposanten 14-köpfigen Live-Orchester.\n\n**Ein aufwendig inszeniertes Bühnenepos**\n\nÜber 70 Beteiligte führen das Publikum direkt ins monumentale Paris des 15. Jahrhunderts: zwischen Kathedrale, Straßenfest und Kirchturm. Aufwändige Choreografien, eine imposante Bühnenausstattung mit gotischer Architektur, riesigen Glocken und farbenprächtigen Kostümen machen Disney Der Glöckner von Notre-Dame zu einem musikalischen Bühnenepos voller Leidenschaft, Dramatik und Hoffnung.",
+    storyHeadline: "Eine Geschichte über Mut, Liebe und Menschlichkeit",
+    storyText: "Basierend auf Victor Hugos weltbekanntem Roman führt Disney Der Glöckner von Notre-Dame das Publikum von den Türmen der Pariser Kathedrale in die dunklen Gassen des mittelalterlichen Paris. Quasimodo, Esmeralda und Frollo – drei Figuren, deren Schicksale sich in einem unvergesslichen Bühnenerlebnis verflechten.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto04_43df25cb.webp",
+    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-keyvisual_54c3e97d.avif",
+    eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
+    awinHeroUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
+    awinStickyUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
+    awinBoxUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
+    priceFrom: "40,49",
+    youtubeTrailerId: "IWrg3s9gMsY",
+    featured: true,
+    tags: ["Disney", "Familienmusical", "Tournee"],
+    uspItems: [
+      { icon: "Crown", text: "Disney-Welterfolg erstmals auf Tournee" },
+      { icon: "Music", text: "Musik von Oscar-Preisträger Alan Menken" },
+      { icon: "Users", text: "Über 70 Mitwirkende auf der Bühne" },
+      { icon: "Star", text: "14-köpfiges Live-Orchester" },
+    ],
+    showFacts: [
+      { label: "Dauer", value: "Ca. 150 Min. inkl. Pause" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Veranstalter", value: "ATG Entertainment GmbH" },
+      { label: "Tourneestart", value: "Oktober 2026" },
+      { label: "Tickets ab", value: "€ 40,49" },
+    ],
+    gallery: [
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto01_67591fbb.webp", alt: "Quasimodo schwingt sich durch den Glockenturm" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto02_b36260fd.webp", alt: "Ensemble beim Fest der Narren" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto03_ffe82553.webp", alt: "Esmeralda tanzt vor der Kathedrale" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto04_43df25cb.webp", alt: "Esmeralda und Quasimodo im Glockenturm" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto06_92f04f41.webp", alt: "Quasimodo und Esmeralda – eine zarte Verbindung" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto07_f914609e.webp", alt: "Quasimodo an den Seilen" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto09_eadef3b3.webp", alt: "Dramatische Szene im Glockenturm" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto12_9ac93aac.webp", alt: "Esmeralda im Licht der Kathedrale" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto13_d1cc0644.webp", alt: "Dramatische Szene mit dem gesamten Ensemble" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto14_0bfe42a1.webp", alt: "Quasimodo und Esmeralda – Begegnung" },
+    ],
+    tourDates: [
+      { city: "München", venue: "Deutsches Theater", startDate: "2026-10-07", endDate: "2026-11-08", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Düsseldorf", venue: "Capitol Theater", startDate: "2026-11-12", endDate: "2027-01-03", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Frankfurt", venue: "Alte Oper", startDate: "2027-01-06", endDate: "2027-01-16", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Zürich", venue: "Theater 11", startDate: "2027-01-19", endDate: "2027-01-31", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Leipzig", venue: "Oper Leipzig", startDate: "2027-02-09", endDate: "2027-02-14", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Bremen", venue: "Metropol Theater", startDate: "2027-02-16", endDate: "2027-02-21", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-02-23", endDate: "2027-02-28", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Berlin", venue: "Admiralspalast", startDate: "2027-03-03", endDate: "2027-03-20", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+    ],
+    faqItems: [
+      { question: "Was ist Disney Der Glöckner von Notre-Dame?", answer: "Disney Der Glöckner von Notre-Dame ist ein emotionales Musical basierend auf Victor Hugos weltbekanntem Roman und dem Disney-Zeichentrickfilm von 1996. Es erzählt die Geschichte des entstellten Glöckners Quasimodo, seiner Liebe zur schönen Esmeralda und des fanatischen Erzdiakons Frollo." },
+      { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt vom mehrfach Oscar-prämierten Komponisten Alan Menken (Arielle, Die Schöne und das Biest, Aladdin). Die Liedtexte schrieb Stephen Schwartz, bekannt durch das Musical Wicked." },
+      { question: "Wer produziert die Tournee?", answer: "Die Tournee wird von ATG Entertainment GmbH präsentiert. Die Inszenierung stammt vom renommierten Budapester Operettentheater." },
+      { question: "In welchen Städten ist das Musical zu sehen?", answer: "Die Tournee gastiert in München (Deutsches Theater), Düsseldorf (Capitol Theater), Frankfurt (Alte Oper), Zürich (Theater 11), Leipzig (Oper Leipzig), Bremen (Metropol Theater), Duisburg (Theater am Marientor) und Berlin (Admiralspalast)." },
+      { question: "Wo kaufe ich Tickets?", answer: "Tickets sind über ATG Tickets (atgtickets.de) und Eventim erhältlich. Der Vorverkauf läuft auch online unter www.gloeckner-musical.de. Tickets gibt es ab € 40,49 zzgl. Gebühren." },
+      { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 150 Minuten inklusive einer Pause." },
+      { question: "Ab welchem Alter ist das Musical geeignet?", answer: "Das Musical ist für Kinder ab ca. 6 Jahren geeignet." },
+      { question: "Gibt es eine Pause?", answer: "Ja, die Vorstellung beinhaltet eine Pause." },
+      { question: "Wer ist der Veranstalter?", answer: "Veranstalter ist ATG Entertainment GmbH, ein führender Tournee-Veranstalter im deutschsprachigen Raum." },
+    ],
+  },
 ];
 export const cities: City[] = [
   {
@@ -2377,6 +2450,14 @@ export const cities: City[] = [
     musicalCount: 1,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-wien&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252545883%26orderBy%3DRecommendations",
   },
+  {
+    slug: "zuerich",
+    name: "Zürich",
+    image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=600&q=80",
+    description: "Die größte Stadt der Schweiz empfängt Musical-Fans im Theater 11 – einem der modernsten Veranstaltungsorte der Schweiz.",
+    musicalCount: 1,
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-zuerich&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252548099%26orderBy%3DRecommendations",
+  },
 ];
 
 // Hilfsfunktionen
@@ -2387,7 +2468,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
