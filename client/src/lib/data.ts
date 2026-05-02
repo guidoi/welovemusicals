@@ -2242,7 +2242,7 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Dauer", value: "Ca. 150 Min. inkl. Pause" },
       { label: "Sprache", value: "Deutsch" },
-      { label: "Veranstalter", value: "ATG Entertainment GmbH" },
+      { label: "Veranstalter", value: "ATG Entertainment" },
       { label: "Tourneestart", value: "Oktober 2026" },
       { label: "Tickets ab", value: "€ 40,49" },
     ],
@@ -2271,13 +2271,13 @@ export const musicals: Musical[] = [
     faqItems: [
       { question: "Was ist Disney Der Glöckner von Notre-Dame?", answer: "Disney Der Glöckner von Notre-Dame ist ein emotionales Musical basierend auf Victor Hugos weltbekanntem Roman und dem Disney-Zeichentrickfilm von 1996. Es erzählt die Geschichte des entstellten Glöckners Quasimodo, seiner Liebe zur schönen Esmeralda und des fanatischen Erzdiakons Frollo." },
       { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt vom mehrfach Oscar-prämierten Komponisten Alan Menken (Arielle, Die Schöne und das Biest, Aladdin). Die Liedtexte schrieb Stephen Schwartz, bekannt durch das Musical Wicked." },
-      { question: "Wer produziert die Tournee?", answer: "Die Tournee wird von ATG Entertainment GmbH präsentiert. Die Inszenierung stammt vom renommierten Budapester Operettentheater." },
+      { question: "Wer produziert die Tournee?", answer: "Die Tournee wird von ATG Entertainment präsentiert. Die Inszenierung stammt vom renommierten Budapester Operettentheater." },
       { question: "In welchen Städten ist das Musical zu sehen?", answer: "Die Tournee gastiert in München (Deutsches Theater), Düsseldorf (Capitol Theater), Frankfurt (Alte Oper), Zürich (Theater 11), Leipzig (Oper Leipzig), Bremen (Metropol Theater), Duisburg (Theater am Marientor) und Berlin (Admiralspalast)." },
       { question: "Wo kaufe ich Tickets?", answer: "Tickets sind über ATG Tickets (atgtickets.de) und Eventim erhältlich. Der Vorverkauf läuft auch online unter www.gloeckner-musical.de. Tickets gibt es ab € 40,49 zzgl. Gebühren." },
       { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 150 Minuten inklusive einer Pause." },
       { question: "Ab welchem Alter ist das Musical geeignet?", answer: "Das Musical ist für Kinder ab ca. 6 Jahren geeignet." },
       { question: "Gibt es eine Pause?", answer: "Ja, die Vorstellung beinhaltet eine Pause." },
-      { question: "Wer ist der Veranstalter?", answer: "Veranstalter ist ATG Entertainment GmbH, ein führender Tournee-Veranstalter im deutschsprachigen Raum." },
+      { question: "Wer ist der Veranstalter?", answer: "Veranstalter ist ATG Entertainment, ein führender Tournee-Veranstalter im deutschsprachigen Raum." },
     ],
   },
 ];
