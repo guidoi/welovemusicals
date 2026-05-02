@@ -1,10 +1,21 @@
 /*
  * Design: Theatrical Noir – Art Deco trifft Film Noir
- * MusicalFilters: Erweiterte Filter-Komponente für Musicals nach Kategorie, Anbieter, Stadt und Sortierung
+ * MusicalFilters: Erweiterte Filter-Komponente für Musicals nach Land, Kategorie, Stadt und Sortierung
  */
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { ChevronDown, MapPin, Calendar, Filter, Globe } from "lucide-react";
-import { musicals, ACTIVE_MUSICAL_IDS, providers, type Musical } from "@/lib/data";
+import { musicals, ACTIVE_MUSICAL_IDS } from "@/lib/data";
+
+// Österreichische Städte
+const AT_CITIES = new Set(["Graz", "Wien", "Innsbruck", "Linz", "Bad Ischl", "Dornbirn", "Ried im Innkreis", "Vöcklabruck", "Puch bei Salzburg", "Feldkirch", "Salzburg"]);
+// Schweizer Städte
+const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "Luzern", "St. Gallen"]);
+
+function getCityCountry(city: string): "at" | "ch" | "de" {
+  if (AT_CITIES.has(city)) return "at";
+  if (CH_CITIES.has(city)) return "ch";
+  return "de";
+}
 
 // Alle Städte aus aktiven Musicals (m.city + tourDates), alphabetisch sortiert
 const allFilterCities = (() => {
@@ -12,6 +23,7 @@ const allFilterCities = (() => {
   const citySet = new Set<string>();
   activeMusicals.forEach((m) => {
     if (m.city) citySet.add(m.city);
+    if (m.cities) m.cities.forEach((c) => citySet.add(c));
     if (m.tourDates) m.tourDates.forEach((t) => citySet.add(t.city));
   });
   return Array.from(citySet).sort((a, b) => a.localeCompare(b, "de"));
@@ -46,19 +58,21 @@ export default function MusicalFilters({
 }: MusicalFiltersProps) {
   const [showCityDropdown, setShowCityDropdown] = useState(false);
 
-  const categoryLabels: Record<FilterCategory, string> = {
-    alle: "Alle Kategorien",
-    "fester-standort": "Fester Standort",
-    tournee: "Tournee",
-    erwachsene: "Erwachsene",
-    familie: "Familie",
-    kinder: "Kinder",
-  };
+  // Städte nach gewähltem Land filtern
+  const filteredCities = useMemo(() => {
+    if (countryFilter === "alle") return allFilterCities;
+    return allFilterCities.filter((city) => getCityCountry(city) === countryFilter);
+  }, [countryFilter]);
 
-  const sortLabels: Record<SortOption, string> = {
-    name: "Nach Name",
-    featured: "Empfehlungen zuerst",
-    date: "Nach Datum",
+  // Wenn das gewählte Land wechselt und die aktuelle Stadt nicht mehr passt → zurücksetzen
+  const handleCountryChange = (newCountry: CountryFilter) => {
+    setCountryFilter(newCountry);
+    if (cityFilter !== "alle" && newCountry !== "alle") {
+      const cityCountry = getCityCountry(cityFilter);
+      if (cityCountry !== newCountry) {
+        setCityFilter("alle");
+      }
+    }
   };
 
   return (
@@ -70,7 +84,7 @@ export default function MusicalFilters({
       </div>
 
       {/* Filters Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
         {/* Country Filter */}
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
@@ -79,7 +93,7 @@ export default function MusicalFilters({
           </label>
           <select
             value={countryFilter}
-            onChange={(e) => setCountryFilter(e.target.value as CountryFilter)}
+            onChange={(e) => handleCountryChange(e.target.value as CountryFilter)}
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
           >
             <option value="alle">Alle Länder</option>
@@ -92,8 +106,27 @@ export default function MusicalFilters({
         {/* Category Filter */}
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
+            Kategorie
+          </label>
+          <select
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value as FilterCategory)}
+            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
+          >
+            <option value="alle">Alle Kategorien</option>
+            <option value="fester-standort">Fester Standort</option>
+            <option value="tournee">Tournee</option>
+            <option value="erwachsene">Erwachsene</option>
+            <option value="familie">Familie</option>
+            <option value="kinder">Kinder</option>
+          </select>
+        </div>
+
+        {/* City Filter */}
+        <div>
+          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
             <MapPin className="w-3 h-3 inline mr-1" />
-            Städte
+            Stadt
           </label>
           <div className="relative">
             <button
@@ -119,9 +152,9 @@ export default function MusicalFilters({
                   className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors ${cityFilter === "alle" ? "font-semibold" : "text-foreground"}`}
                   style={cityFilter === "alle" ? {backgroundColor: 'rgba(184,148,74,0.12)', color: '#b8944a'} : {}}
                 >
-                  Alle Städte
+                  Alle Städte {countryFilter !== "alle" && <span className="text-xs opacity-60">({filteredCities.length})</span>}
                 </button>
-                {allFilterCities.map((cityName) => (
+                {filteredCities.map((cityName) => (
                   <button
                     key={cityName}
                     onClick={() => {
@@ -138,25 +171,6 @@ export default function MusicalFilters({
               </div>
             )}
           </div>
-        </div>
-
-        {/* Category Filter */}
-        <div>
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            Kategorie
-          </label>
-          <select
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value as FilterCategory)}
-            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
-          >
-            <option value="alle">Alle Kategorien</option>
-            <option value="fester-standort">Fester Standort</option>
-            <option value="tournee">Tournee</option>
-            <option value="erwachsene">Erwachsene</option>
-            <option value="familie">Familie</option>
-            <option value="kinder">Kinder</option>
-          </select>
         </div>
 
         {/* Sort Option */}
