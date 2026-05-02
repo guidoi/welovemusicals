@@ -154,6 +154,14 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Die Schöne und das Biest */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">DIE SCHÖNE UND DAS BIEST – DAS NEUE MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Keyvisual &amp; Logo:</strong> © Bavaria Live Promotion GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash + Pixabay */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
