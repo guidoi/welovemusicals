@@ -1984,7 +1984,7 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Tournee", "Familie", "Märchen"],
     uspItems: [
-      { icon: "Snowflake", title: "Wintermärchen vom Feinsten", text: "Drei Haselnüsse für Aschenbödel – das Original" },
+      { icon: "Snowflake", title: "Wintermärchen vom Feinsten", text: "Drei Haselnüsse für Aschenbrödel – das Original" },
       { icon: "Heart", title: "Für die ganze Familie", text: "Magisches Erlebnis für Kinder und Erwachsene" },
       { icon: "MapPin", title: "60+ Tourneestädte", text: "Quer durch Deutschland und Österreich" },
       { icon: "Star", title: "Weihnachtliche Stimmung", text: "Das perfekte Highlight in der Adventszeit" },
