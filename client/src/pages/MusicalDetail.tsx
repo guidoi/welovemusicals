@@ -245,7 +245,13 @@ export default function MusicalDetail() {
                       const headlineMatch = paragraph.match(/^\*\*(.+)\*\*$/);
                       return (
                       <div key={i}>
-                        <p>{headlineMatch ? headlineMatch[1] : paragraph}</p>
+                        {headlineMatch ? (
+                          <h3 className="font-display text-xl font-bold mt-6 mb-2 tracking-wide" style={{color: '#b8944a'}}>
+                            {headlineMatch[1]}
+                          </h3>
+                        ) : (
+                          <p>{paragraph}</p>
+                        )}
                         {/* Mobile Video:
                              - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
                              - Sister Act & Dracula: nach i=0
