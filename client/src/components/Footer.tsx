@@ -4,7 +4,7 @@
  */
 import { Ticket, Heart } from "lucide-react";
 import { Link } from "wouter";
-import { cities } from "@/lib/data";
+import { cities, getActiveMusicals } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -34,16 +34,10 @@ export default function Footer() {
               Top Musicals
             </h4>
             <ul className="space-y-2">
-              {[
-                { label: "König der Löwen", slug: "koenig-der-loewen" },
-                { label: "Die Eiskönigin", slug: "eiskoenigin" },
-                { label: "Pretty Woman", slug: "pretty-woman" },
-                { label: "Harry Potter", slug: "harry-potter" },
-                { label: "MJ Musical", slug: "mj-michael-jackson" },
-              ].map((item) => (
-                <li key={item.slug}>
-                  <Link href={`/musical/${item.slug}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                    {item.label}
+              {getActiveMusicals().map((musical) => (
+                <li key={musical.slug}>
+                  <Link href={`/musical/${musical.slug}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    {musical.title}
                   </Link>
                 </li>
               ))}
