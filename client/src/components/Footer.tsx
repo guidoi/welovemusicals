@@ -17,9 +17,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <span className="text-lg font-extrabold tracking-[0.15em] flex items-center gap-1 uppercase group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <span className="text-xl md:text-2xl font-extrabold tracking-[0.15em] flex items-center gap-1 uppercase group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <span className="text-gold">We</span>
-                <Heart className="w-5 h-5 transition-colors" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
+                <Heart className="w-6 h-6 md:w-7 md:h-7 transition-colors mr-1" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
                 <span className="text-foreground">Musicals</span>
               </span>
             </Link>
