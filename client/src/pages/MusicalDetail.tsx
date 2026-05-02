@@ -316,7 +316,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse"} musicalSlug={musical.slug} />
+          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} />
         )}
       </div>
 
