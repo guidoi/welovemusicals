@@ -70,7 +70,7 @@ export interface Musical {
   storyHeadline?: string; // Headline für Story-Bereich
   storyText?: string; // Story-Text für Detail-Seite
   faqItems?: MusicalFAQ[];
-  uspItems?: Array<{ icon: string; text: string }>;
+  uspItems?: Array<{ icon: string; title: string; text: string }>;
 }
 
 export interface City {
@@ -759,6 +759,12 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Tournee", "Romantik", "Schaurigschön"],
     youtubeTrailerId: "9lJc0EM-jBo",
+    uspItems: [
+      { icon: "Skull", title: "Bram Stokers Romanvorlage", text: "Schaurige Geschichte um den unsterblichen Grafen" },
+      { icon: "Music", title: "Mitreißende Rockmusik", text: "Packende Songs von Don Black & Christopher Hampton" },
+      { icon: "MapPin", title: "Deutschlandtournee 2026", text: "Live in Berlin, Bochum, Bremen und weiteren Städten" },
+      { icon: "Star", title: "Spektakuläre Bühneneffekte", text: "Atemberaubende Licht- und Nebelshow" },
+    ],
     tourDates: [
       { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-05-01", endDate: "2026-06-07", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-berlin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBerlin", badge: "5 Wochen Gastspiel" },
       { city: "Bochum", venue: "RuhrCongress", startDate: "2028-01-18", endDate: "2028-01-19", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBochum" },
@@ -828,6 +834,12 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     youtubeTrailerId: "BN8RYBCYPVM",
+    uspItems: [
+      { icon: "Music2", title: "Über 70 Welthits", text: "u.a. von Adele, Lady Gaga, Elton John & Beyoncé" },
+      { icon: "Sparkles", title: "Atemberaubende Ausstattung", text: "Kulissen, Kostüme & Choreografien auf Broadway-Niveau" },
+      { icon: "Heart", title: "Gänsehautgarantie", text: "Emotionales Entertainment, das unter die Haut geht" },
+      { icon: "Gift", title: "Perfektes Geschenk", text: "Das Highlight für einen unvergesslichen Abend in Hamburg" },
+    ],
     tourDates: [
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28" },
     ],
@@ -894,6 +906,12 @@ export const musicals: Musical[] = [
     youtubeTrailerId: "A02SZ71tgRI",
     featured: true,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
+    uspItems: [
+      { icon: "Crown", title: "Deutschlandpremiere 2026", text: "Erstmals in Deutschland – exklusiv im Musical Dome Köln" },
+      { icon: "Globe", title: "160 Mio. Zuschauer weltweit", text: "Das meistgesehene Musical aller Zeiten in 23 Sprachen" },
+      { icon: "Star", title: "40 Jahre Weltklasse", text: "Jubiläumsproduktion von Cameron Mackintosh & Andrew Lloyd Webber" },
+      { icon: "CalendarDays", title: "Premiere: 15. November 2026", text: "Jetzt Tickets sichern – ab 59,99 € über ATG Tickets" },
+    ],
     tourDates: [
       { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-11-05", premiereDate: "2026-11-15", eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/" },
     ],
@@ -993,6 +1011,12 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Tournee", "Emotion", "Feel-Good Entertainment"],
     youtubeTrailerId: "9LJMaLj8Ino",
+    uspItems: [
+      { icon: "Music", title: "Mitreißende Gospelmusik", text: "Himmlische Songs, die direkt ins Herz gehen" },
+      { icon: "Laugh", title: "Großartige Komödie", text: "Humor, Herz und Halleluja – für die ganze Familie" },
+      { icon: "MapPin", title: "Tournee durch D-A", text: "Live in österreichischen und deutschen Städten" },
+      { icon: "Star", title: "Kult-Musical nach dem Kinofilm", text: "Mit Whoopi Goldbergs unvergesslicher Geschichte" },
+    ],
     tourDates: [
       { city: "Linz", venue: "TipsArena", startDate: "2026-04-23", endDate: "2026-04-26", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-linz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F%3Fcityname%3DLinz" },
       { city: "Bremen", venue: "Metropol Theater", startDate: "2026-04-30", endDate: "2026-05-03", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-bremen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F%3Fcityname%3DBremen" },
@@ -1893,6 +1917,12 @@ export const musicals: Musical[] = [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-10-credit-nico-moser_390c1a32.jpg", alt: "Fack Ju Göhte – Das Musical © Nico Moser" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-11-credit-nico-moser_33e02b96.jpg", alt: "Fack Ju Göhte – Das Musical © Nico Moser" },
     ],
+    uspItems: [
+      { icon: "GraduationCap", title: "Kult-Komödie aus dem Kino", text: "Basierend auf dem Erfolgsfilm von Bora Dagtekin" },
+      { icon: "Laugh", title: "Humor der Extraklasse", text: "Schule war nie so lustig – Chaos garantiert" },
+      { icon: "Music", title: "Mitreißende Musik", text: "Songs, die im Ohr bleiben" },
+      { icon: "MapPin", title: "Deutschlandtournee 2026", text: "Live in München, Berlin und weiteren Städten" },
+    ],
     tourDates: [
       { city: "München", venue: "Deutsches Theater", startDate: "2026-09-15", endDate: "2026-09-20", eventimUrl: "https://www.deutsches-theater.de/fack-ju-goehte/" },
       { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-09-25", endDate: "2026-09-27", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-berlin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F%3Fcityname%3DBerlin" },
@@ -1953,6 +1983,12 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     featured: true,
     tags: ["Tournee", "Familie", "Märchen"],
+    uspItems: [
+      { icon: "Snowflake", title: "Wintermärchen vom Feinsten", text: "Drei Haselnüsse für Aschenbödel – das Original" },
+      { icon: "Heart", title: "Für die ganze Familie", text: "Magisches Erlebnis für Kinder und Erwachsene" },
+      { icon: "MapPin", title: "60+ Tourneestädte", text: "Quer durch Deutschland und Österreich" },
+      { icon: "Star", title: "Weihnachtliche Stimmung", text: "Das perfekte Highlight in der Adventszeit" },
+    ],
     tourDates: [
       { city: "Aschaffenburg", venue: "Stadthalle am Schloss", startDate: "2026-12-14", endDate: "2026-12-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAschaffenburg" },
       { city: "Aurich", venue: "Stadthalle", startDate: "2027-02-12", endDate: "2027-02-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aurich-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAurich" },
@@ -2073,6 +2109,12 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F",
     featured: false,
     tags: ["Tournee", "Märchen", "Familie"],
+    uspItems: [
+      { icon: "Sparkles", title: "Das Märchen vom langen Haar", text: "Rapunzels Geschichte als großes Musical-Abenteuer" },
+      { icon: "Heart", title: "Für die ganze Familie", text: "Zauberhaftes Erlebnis für Kinder und Erwachsene" },
+      { icon: "MapPin", title: "Deutschlandtournee 2027", text: "Live in Duisburg, München und weiteren Städten" },
+      { icon: "Star", title: "Buntes Bühnenspektakel", text: "Farbenfroh, musikalisch und voller Magie" },
+    ],
     tourDates: [
       { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-03-12", endDate: "2027-03-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F%3Fcityname%3DDuisburg" },
       { city: "München", venue: "Deutsches Theater", startDate: "2027-03-23", endDate: "2027-04-04", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-muenchen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F%3Fcityname%3DM%C3%BCnchen" },
@@ -2122,10 +2164,10 @@ export const musicals: Musical[] = [
     featured: false,
     tags: ["Tournee", "Familie", "Märchen"],
     uspItems: [
-      { icon: "Sparkles", text: "Märchen neu entfacht" },
-      { icon: "MapPin", text: "60+ Tourneestädte" },
-      { icon: "Heart", text: "Für die ganze Familie" },
-      { icon: "Star", text: "Ab Januar 2027" },
+      { icon: "Sparkles", title: "Märchen neu entfacht", text: "Das Disney-Klassiker-Musical in neuer Inszenierung" },
+      { icon: "MapPin", title: "60+ Tourneestädte", text: "Quer durch Deutschland und Österreich" },
+      { icon: "Heart", title: "Für die ganze Familie", text: "Magisches Erlebnis für Groß und Klein" },
+      { icon: "Star", title: "Ab Januar 2027", text: "Jetzt Tickets sichern und frühzeitig planen" },
     ],
     tourDates: [
       { city: "Magdeburg", venue: "AMO Kulturhaus", startDate: "2027-01-25", endDate: "2027-01-25", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMagdeburg" },
@@ -2233,10 +2275,10 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Disney", "Familienmusical", "Tournee"],
     uspItems: [
-      { icon: "Crown", text: "Disney-Welterfolg erstmals auf Tournee" },
-      { icon: "Music", text: "Musik von Oscar-Preisträger Alan Menken" },
-      { icon: "Users", text: "Über 70 Mitwirkende auf der Bühne" },
-      { icon: "Star", text: "14-köpfiges Live-Orchester" },
+      { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
+      { icon: "Music", title: "Musik von Alan Menken", text: "Oscar-Preisträger und Komponist von Weltrang" },
+      { icon: "Users", title: "Über 70 Mitwirkende", text: "Großes Ensemble auf der Bühne" },
+      { icon: "Star", title: "14-köpfiges Live-Orchester", text: "Echte Musik, keine Konserve" },
     ],
     showFacts: [
       { label: "Dauer", value: "Ca. 150 Min. inkl. Pause" },

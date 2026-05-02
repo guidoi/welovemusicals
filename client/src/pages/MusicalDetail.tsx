@@ -13,6 +13,7 @@ import {
   Hotel,
   Tag,
   Building2,
+  Music,
   Music2,
   Sparkles,
   Heart,
@@ -21,6 +22,11 @@ import {
   Globe,
   Star,
   CalendarDays,
+  Skull,
+  Users,
+  Laugh,
+  GraduationCap,
+  Snowflake,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -345,140 +351,67 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {/* USP-Box – für Moulin Rouge! und Phantom der Oper */}
-      {(musical.id === "moulinrouge" || musical.id === "phantom-der-oper") && (
-        <>
-        {musical.id === "phantom-der-oper" && (
-        <section className="py-8 md:py-10 bg-background">
-          <div className="container max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-sm overflow-hidden"
-              style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(0,0,0,0) 60%)' }}
-            >
-              {/* Header */}
-              <div className="px-6 pt-6 pb-4 border-b" style={{ borderColor: 'rgba(212,175,55,0.2)' }}>
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: 'rgba(212,175,55,0.7)' }}>Das erwartet dich</p>
-                <h3 className="font-display text-xl md:text-2xl font-bold text-white mt-1">Warum Das Phantom der Oper ein Erlebnis der Extraklasse ist</h3>
-              </div>
-              {/* USP Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                {[
-                  {
-                    icon: <Crown className="w-5 h-5" />,
-                    title: "Deutschlandpremiere 2026",
-                    text: "Erstmals in Deutschland – exklusiv im Musical Dome Köln",
-                  },
-                  {
-                    icon: <Globe className="w-5 h-5" />,
-                    title: "160 Mio. Zuschauer weltweit",
-                    text: "Das meistgesehene Musical aller Zeiten in 23 Sprachen",
-                  },
-                  {
-                    icon: <Star className="w-5 h-5" />,
-                    title: "40 Jahre Weltklasse",
-                    text: "Jubiläumsproduktion von Cameron Mackintosh & Andrew Lloyd Webber",
-                  },
-                  {
-                    icon: <CalendarDays className="w-5 h-5" />,
-                    title: "Premiere: 15. November 2026",
-                    text: "Jetzt Tickets sichern – ab 59,99 € über ATG Tickets",
-                  },
-                ].map((usp, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 px-6 py-5"
-                    style={{
-                      borderRight: i % 2 === 0 ? '1px solid rgba(212,175,55,0.15)' : 'none',
-                      borderBottom: i < 2 ? '1px solid rgba(212,175,55,0.15)' : 'none',
-                    }}
-                  >
+      {/* USP-Box – generisch für alle Musicals mit uspItems */}
+      {musical.uspItems && musical.uspItems.length > 0 && (() => {
+        const iconMap: Record<string, React.ReactNode> = {
+          Crown: <Crown className="w-5 h-5" />,
+          Globe: <Globe className="w-5 h-5" />,
+          Star: <Star className="w-5 h-5" />,
+          CalendarDays: <CalendarDays className="w-5 h-5" />,
+          Music: <Music className="w-5 h-5" />,
+          Music2: <Music2 className="w-5 h-5" />,
+          Sparkles: <Sparkles className="w-5 h-5" />,
+          Heart: <Heart className="w-5 h-5" />,
+          Gift: <Gift className="w-5 h-5" />,
+          MapPin: <MapPin className="w-5 h-5" />,
+          Skull: <Skull className="w-5 h-5" />,
+          Users: <Users className="w-5 h-5" />,
+          Laugh: <Laugh className="w-5 h-5" />,
+          GraduationCap: <GraduationCap className="w-5 h-5" />,
+          Snowflake: <Snowflake className="w-5 h-5" />,
+        };
+        return (
+          <section className="py-8 md:py-10 bg-background">
+            <div className="container max-w-4xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="rounded-sm overflow-hidden"
+                style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(0,0,0,0) 60%)' }}
+              >
+                <div className="px-6 pt-6 pb-4 border-b" style={{ borderColor: 'rgba(212,175,55,0.2)' }}>
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: 'rgba(212,175,55,0.7)' }}>Das erwartet dich</p>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white mt-1">Warum {musical.title} ein Erlebnis der Extraklasse ist</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                  {musical.uspItems.map((usp, i) => (
                     <div
-                      className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center mt-0.5"
-                      style={{ background: 'rgba(212,175,55,0.12)', color: 'rgb(212,175,55)' }}
+                      key={i}
+                      className="flex items-start gap-4 px-6 py-5"
+                      style={{
+                        borderRight: i % 2 === 0 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                        borderBottom: i < musical.uspItems!.length - 2 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                      }}
                     >
-                      {usp.icon}
+                      <div
+                        className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center mt-0.5"
+                        style={{ background: 'rgba(212,175,55,0.12)', color: 'rgb(212,175,55)' }}
+                      >
+                        {iconMap[usp.icon] ?? <Star className="w-5 h-5" />}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-white text-sm leading-snug mb-0.5">{usp.title}</p>
+                        <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{usp.text}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-semibold text-white text-sm leading-snug mb-0.5">{usp.title}</p>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{usp.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        )}
-        {musical.id === "moulinrouge" && (
-        <section className="py-8 md:py-10 bg-background">
-          <div className="container max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-sm overflow-hidden"
-              style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(0,0,0,0) 60%)' }}
-            >
-              {/* Header */}
-              <div className="px-6 pt-6 pb-4 border-b" style={{ borderColor: 'rgba(212,175,55,0.2)' }}>
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: 'rgba(212,175,55,0.7)' }}>Das erwartet dich</p>
-                <h3 className="font-display text-xl md:text-2xl font-bold text-white mt-1">Warum Moulin Rouge! ein Erlebnis der Extraklasse ist</h3>
-              </div>
-
-              {/* USP Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                {[
-                  {
-                    icon: <Music2 className="w-5 h-5" />,
-                    title: "Über 70 Welthits",
-                    text: "u.a. von Adele, Lady Gaga, Elton John & Beyoncé",
-                  },
-                  {
-                    icon: <Sparkles className="w-5 h-5" />,
-                    title: "Atemberaubende Ausstattung",
-                    text: "Kulissen, Kostüme & Choreografien auf Broadway-Niveau",
-                  },
-                  {
-                    icon: <Heart className="w-5 h-5" />,
-                    title: "Gänsehautgarantie",
-                    text: "Emotionales Entertainment, das unter die Haut geht",
-                  },
-                  {
-                    icon: <Gift className="w-5 h-5" />,
-                    title: "Perfektes Geschenk",
-                    text: "Das Highlight für einen unvergesslichen Abend in Hamburg",
-                  },
-                ].map((usp, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-4 px-6 py-5"
-                    style={{
-                      borderRight: i % 2 === 0 ? '1px solid rgba(212,175,55,0.15)' : 'none',
-                      borderBottom: i < 2 ? '1px solid rgba(212,175,55,0.15)' : 'none',
-                    }}
-                  >
-                    <div
-                      className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center mt-0.5"
-                      style={{ background: 'rgba(212,175,55,0.12)', color: 'rgb(212,175,55)' }}
-                    >
-                      {usp.icon}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-white text-sm leading-snug mb-0.5">{usp.title}</p>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{usp.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        )}
-        </>
-      )}
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Ticket CTA – nach Tourtermine & Story, vor Pressequotes */}
       <section className="py-8 md:py-10 bg-background">
