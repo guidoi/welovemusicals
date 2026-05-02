@@ -2266,7 +2266,7 @@ export const musicals: Musical[] = [
       { city: "Leipzig", venue: "Oper Leipzig", startDate: "2027-02-09", endDate: "2027-02-14", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=178&production=262" },
       { city: "Bremen", venue: "Metropol Theater", startDate: "2027-02-16", endDate: "2027-02-21", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=195&production=262" },
       { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-02-23", endDate: "2027-02-28", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=274&production=262" },
-      { city: "Berlin", venue: "Admiralspalast", startDate: "2027-03-03", endDate: "2027-03-20", eventimUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/" },
+      { city: "Berlin", venue: "Admiralspalast", startDate: "2027-03-03", endDate: "2027-03-20", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=59&production=262" },
     ],
     faqItems: [
       { question: "Was ist Disney Der Glöckner von Notre-Dame?", answer: "Disney Der Glöckner von Notre-Dame ist ein emotionales Musical basierend auf Victor Hugos weltbekanntem Roman und dem Disney-Zeichentrickfilm von 1996. Es erzählt die Geschichte des entstellten Glöckners Quasimodo, seiner Liebe zur schönen Esmeralda und des fanatischen Erzdiakons Frollo." },
