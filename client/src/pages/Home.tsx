@@ -20,7 +20,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
-import MusicalFilters, { type FilterCategory, type SortOption } from "@/components/MusicalFilters";
+import MusicalFilters, { type FilterCategory, type SortOption, type CountryFilter } from "@/components/MusicalFilters";
 import {
   musicals,
   cities,
@@ -34,10 +34,17 @@ import {
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
+// Österreichische Städte (für Länderfilter)
+const AT_CITIES = new Set(["Graz", "Wien", "Innsbruck", "Linz", "Bad Ischl", "Dornbirn", "Ried im Innkreis", "Vöcklabruck", "Puch bei Salzburg", "Feldkirch", "Salzburg"]);
+// Schweizer Städte
+const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "Luzern", "St. Gallen"]);
+
 export default function Home() {
   const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("alle");
+  const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
   const [sortOption, setSortOption] = useState<SortOption>("featured");
+
   const [showAllMusicals, setShowAllMusicals] = useState(false);
 
   useEffect(() => {
@@ -70,6 +77,21 @@ export default function Home() {
         if (categoryFilter === "kinder") return m.category === "kinder";
         if (categoryFilter === "tournee") return m.category === "tournee";
         return false;
+      });
+    }
+
+    // Filter nach Land
+    if (countryFilter !== "alle") {
+      result = result.filter((m) => {
+        const allCities: string[] = [
+          ...(m.city ? [m.city] : []),
+          ...(m.cities || []),
+          ...(m.tourDates?.map((t) => t.city) || []),
+        ];
+        if (countryFilter === "at") return allCities.some((c) => AT_CITIES.has(c));
+        if (countryFilter === "ch") return allCities.some((c) => CH_CITIES.has(c));
+        if (countryFilter === "de") return allCities.some((c) => !AT_CITIES.has(c) && !CH_CITIES.has(c));
+        return true;
       });
     }
 
@@ -110,7 +132,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, cityFilter, sortOption]);
+  }, [categoryFilter, countryFilter, cityFilter, sortOption]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 9);
 
@@ -241,6 +263,8 @@ export default function Home() {
             <MusicalFilters
               categoryFilter={categoryFilter}
               setCategoryFilter={setCategoryFilter}
+              countryFilter={countryFilter}
+              setCountryFilter={setCountryFilter}
               cityFilter={cityFilter}
               setCityFilter={setCityFilter}
               sortOption={sortOption}

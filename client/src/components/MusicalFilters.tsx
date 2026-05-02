@@ -3,7 +3,7 @@
  * MusicalFilters: Erweiterte Filter-Komponente für Musicals nach Kategorie, Anbieter, Stadt und Sortierung
  */
 import { useState } from "react";
-import { ChevronDown, MapPin, Calendar, Filter } from "lucide-react";
+import { ChevronDown, MapPin, Calendar, Filter, Globe } from "lucide-react";
 import { musicals, ACTIVE_MUSICAL_IDS, providers, type Musical } from "@/lib/data";
 
 // Alle Städte aus aktiven Musicals (m.city + tourDates), alphabetisch sortiert
@@ -19,10 +19,13 @@ const allFilterCities = (() => {
 
 export type FilterCategory = "alle" | "fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder";
 export type SortOption = "name" | "featured" | "date";
+export type CountryFilter = "alle" | "de" | "at" | "ch";
 
 interface MusicalFiltersProps {
   categoryFilter: FilterCategory;
   setCategoryFilter: (cat: FilterCategory) => void;
+  countryFilter: CountryFilter;
+  setCountryFilter: (country: CountryFilter) => void;
   cityFilter: string;
   setCityFilter: (city: string) => void;
   sortOption: SortOption;
@@ -33,6 +36,8 @@ interface MusicalFiltersProps {
 export default function MusicalFilters({
   categoryFilter,
   setCategoryFilter,
+  countryFilter,
+  setCountryFilter,
   cityFilter,
   setCityFilter,
   sortOption,
@@ -66,7 +71,25 @@ export default function MusicalFilters({
 
       {/* Filters Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {/* City Filter */}
+        {/* Country Filter */}
+        <div>
+          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
+            <Globe className="w-3 h-3 inline mr-1" />
+            Land
+          </label>
+          <select
+            value={countryFilter}
+            onChange={(e) => setCountryFilter(e.target.value as CountryFilter)}
+            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
+          >
+            <option value="alle">Alle Länder</option>
+            <option value="de">🇩🇪 Deutschland</option>
+            <option value="at">🇦🇹 Österreich</option>
+            <option value="ch">🇨🇭 Schweiz</option>
+          </select>
+        </div>
+
+        {/* Category Filter */}
         <div>
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
             <MapPin className="w-3 h-3 inline mr-1" />
@@ -161,11 +184,13 @@ export default function MusicalFilters({
           {resultCount === 1 ? "Ergebnis" : "Ergebnisse"}
         </p>
         {(categoryFilter !== "alle" ||
+          countryFilter !== "alle" ||
           cityFilter !== "alle" ||
           sortOption !== "featured") && (
           <button
             onClick={() => {
               setCategoryFilter("alle");
+              setCountryFilter("alle");
               setCityFilter("alle");
               setSortOption("featured");
             }}
