@@ -178,6 +178,8 @@ export default function MusicalDetail() {
               <MapPin className="w-4 h-4" style={{color: '#b8944a'}} />
               {musical.city ? (
                 <span>{musical.city} – {musical.venue}</span>
+              ) : musical.id === 'gloeckner-von-notre-dame' && musical.cities ? (
+                <span>{musical.cities.join(", ")}</span>
               ) : musical.headerCities && musical.cities ? (
                 <span>{musical.headerCities.join(", ")} <span style={{color: '#b8944a'}}>und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span></span>
               ) : (
@@ -209,15 +211,18 @@ export default function MusicalDetail() {
       <section className="py-12 md:py-16">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Keyvisual - Desktop linke Spalte für alle Musicals */}
+            {/* Keyvisual / YouTube - Desktop linke Spalte für alle Musicals */}
             <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame') ? 'ATG Tickets' : 'Eventim'} />
-
+                {musical.youtubeTrailerId ? (
+                  <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
+                ) : (
+                  <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame') ? 'ATG Tickets' : 'Eventim'} />
+                )}
               </motion.div>
             </div>
 
@@ -249,7 +254,7 @@ export default function MusicalDetail() {
                              - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
                              - Sister Act & Dracula: nach i=0
                              - FJG: nach i=1 */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'phantom-der-oper')) && musical.youtubeTrailerId && (
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'phantom-der-oper') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
@@ -259,7 +264,7 @@ export default function MusicalDetail() {
                              - Drei Haseelnüsse: nach i=0
                              - FJG: nach i=2
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 4 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}

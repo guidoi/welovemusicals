@@ -2212,7 +2212,6 @@ export const musicals: Musical[] = [
     id: "gloeckner-von-notre-dame",
     slug: "gloeckner-von-notre-dame",
     title: "Disney Der Glöckner von Notre-Dame",
-    subtitle: "Quasimodo. Esmeralda. Notre-Dame.",
     provider: "ATG Entertainment",
     category: "tournee",
     categories: ["tournee", "erwachsene", "familie"],
