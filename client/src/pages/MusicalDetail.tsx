@@ -255,8 +255,9 @@ export default function MusicalDetail() {
                         {/* Mobile Video:
                              - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
                              - Sister Act & Dracula: nach i=0
-                             - FJG: nach i=1 */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
+                             - FJG: nach i=1
+                             - Starlight Express: nach i=0 (vor "Rollschuh-Action" bei i=1) */}
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
                           </div>
@@ -266,8 +267,9 @@ export default function MusicalDetail() {
                              - Drei Haseelnüsse: nach i=0
                              - FJG: nach i=2
                              - Dracula: nach i=3 (vor "Atmosphäre und Inszenierung" bei i=4)
+                             - Starlight Express: nach i=4 (vor "Weltklasse-Technik" bei i=5)
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
