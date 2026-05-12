@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -13,26 +13,35 @@ import Datenschutz from "./pages/Datenschutz";
 
 function ScrollToTop() {
   const [location] = useLocation();
+  const prevLocation = useRef<string | null>(null);
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    // Only scroll if the location actually changed (not on first render)
+    if (prevLocation.current !== null && prevLocation.current !== location) {
+      // Use requestAnimationFrame to ensure scroll happens after paint
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+    }
+    prevLocation.current = location;
   }, [location]);
+
   return null;
 }
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <>
       <ScrollToTop />
       <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/musical/:slug"} component={MusicalDetail} />
-      <Route path={"/stadt/:slug"} component={CityDetail} />
-      <Route path={"/impressum"} component={Impressum} />
-      <Route path={"/datenschutz"} component={Datenschutz} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/musical/:slug"} component={MusicalDetail} />
+        <Route path={"/stadt/:slug"} component={CityDetail} />
+        <Route path={"/impressum"} component={Impressum} />
+        <Route path={"/datenschutz"} component={Datenschutz} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
     </>
   );
 }
