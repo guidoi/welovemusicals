@@ -823,7 +823,7 @@ export const musicals: Musical[] = [
     description: "Baz Luhrmanns oscarprämierter Filmklassiker als atemberaubendes Musical-Spektakel: Liebe, Leidenschaft und 75 unvergessliche Songs von Lady Gaga bis Beyoncé – ab Herbst 2026 im Theater am Großmarkt Hamburg.",
     detailHeadline: "10 TONY AWARDS. 12 MILLIONEN ZUSCHAUER. JETZT IN HAMBURG.",
     detailDescription: "Der meistausgezeichnete Broadway-Hit aller Zeiten kommt nach Deutschland – und macht Hamburg zu seiner deutschen Heimat: Ab Herbst 2026 bringt ATG Entertainment MOULIN ROUGE! DAS MUSICAL ins eigens umgebaute Theater am Großmarkt. Baz Luhrmanns oscarprämierter Filmklassiker wird damit zum spektakulärsten Live-Erlebnis der Hansestadt.\n\n**75 Songs. 160 Jahre Popmusik. Eine Liebesgeschichte für die Ewigkeit.**\n\nVon Offenbach bis Lady Gaga, von Édith Piaf bis Beyoncé: MOULIN ROUGE! DAS MUSICAL vereint 75 Songs aus 160 Jahren Musikgeschichte zu einem einzigartigen Klangerlebnis. Legendäre Hits wie \"Lady Marmalade\", \"Roxanne\", \"Your Song\" und das eigens für den Film komponierte \"Come What May\" werden ergänzt durch Ohrwürmer von Adele, Katy Perry und Rihanna – live gespielt von einer mitreißenden Band.\n\n**Das Theater, das sich verwandelt.**\n\nFür MOULIN ROUGE! wird das Theater am Großmarkt von Grund auf neu gestaltet: Üppige rote Vorhänge, funkelnde Kronleuchter und das ikonische Herzrahmen-Bühnenbild verwandeln den Saal in den legendären Nachtclub von Montmartre. Wer das Haus betritt, betritt Paris 1899 – und verlässt es als Fan fürs Leben.\n\nSeit der Weltpremiere 2018 haben über 12 Millionen Zuschauer weltweit diese Show erlebt. Mit 10 Tony Awards – darunter Bestes Musical – ist MOULIN ROUGE! DAS MUSICAL die meistprämierte Broadway-Produktion des Jahres 2020. Jetzt ist Hamburg dran.",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/moulin-rouge-header-gavin-turnbull_a43a3ff5.jpg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-keyvisual_24506562.png",
     priceFrom: "59,90",
     ticketCtaUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
@@ -850,6 +850,7 @@ export const musicals: Musical[] = [
       { text: "Eine phänomenale Hommage an die Popkultur.", source: "ntv" },
     ],
     gallery: [
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp", alt: "Moulin Rouge! – Showszene" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-02_0295db80.webp", alt: "Moulin Rouge! – Harold Zidler und die Tänzerinnen" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-03_0eaf80e9.webp", alt: "Moulin Rouge! – Der prächtige Theatersaal" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-04_7686dc38.webp", alt: "Moulin Rouge! – Die Bühne mit Neonschriftzug" },
