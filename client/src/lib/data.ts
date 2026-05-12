@@ -842,7 +842,7 @@ export const musicals: Musical[] = [
     ],
     tourDates: [
       { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.awin1.com/awclick.php?gid=508543&mid=111888&awinaffid=2865727&linkid=3824601&clickref=", badge: "Nur noch bis 18. Juli!" },
-      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://www.awin1.com/awclick.php?gid=508543&mid=111888&awinaffid=2865727&linkid=3824601&clickref=" },
+      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmoulin-rouge-das-musical%2Fmoulin-rouge-das-musical-in-hamburg-4053666%2F" },
     ],
     quotes: [
       { text: "Hereinspaziert, Platz nehmen, Welt vergessen.", source: "Süddeutsche Zeitung" },
