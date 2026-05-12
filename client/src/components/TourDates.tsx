@@ -199,7 +199,7 @@ export default function TourDates({
                       className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
                     >
                       <p className="text-sm font-semibold" style={{color: '#b8944a'}}>
-                        {formatDateRange(date.startDate, date.endDate)}
+                        {date.displayLabel || formatDateRange(date.startDate, date.endDate)}
                       </p>
                       <a
                         href={date.eventimUrl}

@@ -13,6 +13,7 @@ export interface MusicalTourDate {
   eventimUrl: string;
   oeticketUrl?: string;
   badge?: string; // z.B. "5 Wochen Gastspiel"
+  displayLabel?: string; // Optionaler Anzeigetext statt Datum, z.B. "Spielzeit 2026/2027"
 }
 
 export interface MusicalQuote {
@@ -2305,7 +2306,7 @@ export const musicals: Musical[] = [
       { icon: "Sparkles", title: "Rollschuh-Spektakel", text: "Darsteller rasen mit bis zu 50 km/h durch den Zuschauerraum" },
     ],
     tourDates: [
-      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "1988-06-12", endDate: "2099-12-31", eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=" },
+      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=" },
     ],
     quotes: [
       { text: "Das rasanteste Musical im Universum.", source: "Guinness World Records" },
