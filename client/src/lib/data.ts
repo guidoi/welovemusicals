@@ -2297,7 +2297,7 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
     featured: true,
     tags: ["Fester Standort", "Rekordshow", "Weltklasse"],
-    youtubeTrailerId: "Qd_3_VhHBbM",
+    youtubeTrailerId: "1BkIRRXWN8s",
     uspItems: [
       { icon: "Crown", title: "Musical der Rekorde", text: "Über 19 Mio. Besucher – Guinness-Weltrekord seit 2010" },
       { icon: "Star", title: "37 Jahre Bochum", text: "Das weltweit am längsten laufende Musical an einem Standort" },

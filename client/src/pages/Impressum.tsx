@@ -171,6 +171,18 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Starlight Express */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">STARLIGHT EXPRESS</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos (2025):</strong> © Starlight Express GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Bühnenfotos (2024):</strong> © Detlef Overmann / detlefoVermann.com – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Bühnenfotos (2014–2021):</strong> © Starlight Express GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Keyvisual 2026 (Rusty-Serienmotiv):</strong> ™ &amp; © LW Ent. Ltd / Starlight Express GmbH – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>YouTube-Trailer:</strong> © Starlight Express GmbH – alle Rechte vorbehalten.</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash + Pixabay */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
