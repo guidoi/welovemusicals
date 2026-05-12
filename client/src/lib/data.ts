@@ -841,8 +841,8 @@ export const musicals: Musical[] = [
       { icon: "Gift", title: "Perfektes Geschenk", text: "Das Highlight für einen unvergesslichen Abend in Hamburg" },
     ],
     tourDates: [
-      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge/", badge: "Nur noch bis 18. Juli!" },
-      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmoulin-rouge-das-musical%2Fmoulin-rouge-das-musical-in-hamburg-4053666%2F" },
+      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical/webticket/productiondetail?eventsView=calendar&productionId=3", badge: "Nur noch bis 18. Juli!" },
+      { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28" },
     ],
     quotes: [
       { text: "Hereinspaziert, Platz nehmen, Welt vergessen.", source: "Süddeutsche Zeitung" },
