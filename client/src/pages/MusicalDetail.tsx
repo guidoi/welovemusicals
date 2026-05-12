@@ -265,8 +265,9 @@ export default function MusicalDetail() {
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
                              - Drei Haseelnüsse: nach i=0
                              - FJG: nach i=2
+                             - Dracula: nach i=3 (vor "Atmosphäre und Inszenierung" bei i=4)
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 2 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
