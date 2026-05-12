@@ -841,7 +841,7 @@ export const musicals: Musical[] = [
       { icon: "Gift", title: "Perfektes Geschenk", text: "Das Highlight für einen unvergesslichen Abend in Hamburg" },
     ],
     tourDates: [
-      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical/webticket/productiondetail?eventsView=calendar&productionId=3", badge: "Nur noch bis 18. Juli!" },
+      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.awin1.com/awclick.php?gid=508543&mid=111888&awinaffid=2865727&linkid=3824601&clickref=", badge: "Nur noch bis 18. Juli!" },
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28" },
     ],
     quotes: [
