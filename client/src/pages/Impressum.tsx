@@ -132,7 +132,8 @@ export default function Impressum() {
                   <div>
                     <h4 className="font-semibold text-gold mb-2">MOULIN ROUGE! DAS MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
-                      <li><strong>Pressefotos:</strong> © Johan Persson &amp; © Nilz Boehme – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung von ATG Entertainment.</li>
+                      <li><strong>Headerbild (Harold Zidler / Gavin Turnbull):</strong> © Johan Persson / ATG Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung von ATG Entertainment.</li>
+                      <li><strong>Weitere Pressefotos:</strong> © Johan Persson &amp; © Nilz Boehme – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung von ATG Entertainment.</li>
                       <li><strong>Keyvisual &amp; Logo:</strong> © ATG Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
                     </ul>
                   </div>
