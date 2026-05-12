@@ -2282,7 +2282,7 @@ export const musicals: Musical[] = [
     title: "STARLIGHT EXPRESS",
     provider: "ATG Entertainment",
     category: "ensuite",
-    categories: ["fester-standort", "erwachsene"],
+    categories: ["fester-standort", "erwachsene", "familie"],
     city: "Bochum",
     venue: "STARLIGHT EXPRESS Theater Bochum",
     description: "Das Musical der Rekorde: Über 19 Millionen Besucher, mehr als 13.800 Vorstellungen – STARLIGHT EXPRESS ist das weltweit am längsten laufende Musical an einem Standort. Rollschuh-Action, Weltklasse-Musik von Andrew Lloyd Webber und 29 Drohnen live in Bochum.",
