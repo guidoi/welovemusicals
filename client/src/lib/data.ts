@@ -2322,6 +2322,81 @@ export const musicals: Musical[] = [
       { question: "Wer ist der Veranstalter?", answer: "Veranstalter ist ATG Entertainment, ein führender Tournee-Veranstalter im deutschsprachigen Raum." },
     ],
   },
+  {
+    id: "starlight-express",
+    slug: "starlight-express",
+    title: "STARLIGHT EXPRESS",
+    provider: "ATG Entertainment",
+    category: "ensuite",
+    categories: ["fester-standort", "erwachsene"],
+    city: "Bochum",
+    venue: "STARLIGHT EXPRESS Theater Bochum",
+    description: "Das Musical der Rekorde: Über 19 Millionen Besucher, mehr als 13.800 Vorstellungen – STARLIGHT EXPRESS ist das weltweit am längsten laufende Musical an einem Standort. Rollschuh-Action, Weltklasse-Musik von Andrew Lloyd Webber und 29 Drohnen live in Bochum.",
+    detailHeadline: "DAS RASANTESTE MUSICAL IM UNIVERSUM. LIVE IN BOCHUM.",
+    detailDescription: "Kein Musical der Welt läuft länger an einem einzigen Standort: Seit dem 12. Juni 1988 dreht STARLIGHT EXPRESS im eigens erbauten Theater am Stadionring in Bochum seine Runden – und hat dabei über 19 Millionen Besucher*innen aus aller Welt begeistert. Bereits 2010 zeichnete Guinness World Records die Show als erfolgreichstes Musical der Welt aus. Musik von Andrew Lloyd Webber, Text von Richard Stilgoe, Regie und Choreografie von Dame Arlene Phillips – ein Kreativteam, das Musical-Geschichte geschrieben hat.\n\n**Rollschuh-Action, die unter die Haut geht.**\n\nDie Bühne ist kein klassisches Podium, sondern ein Streckennetz, das sich durch den gesamten Zuschauerraum zieht. Mit bis zu 50 km/h rasen die Darsteller*innen auf Rollschuhen direkt am Publikum vorbei – der Fahrtwind ist spürbar, die Energie elektrisierend. 26 Ensemble-Mitglieder, 2 Stuntskater, eine siebenköpfige Live-Band und 29 Drohnen als fliegende Sterne sorgen für ein Spektakel, das kein anderes Musical bieten kann.\n\n**Die Geschichte von Rusty: Glaube an dich selbst.**\n\nEin kleiner Junge träumt von seiner Modelleisenbahn – und plötzlich werden Loks und Waggons lebendig. Rusty, die junge rostige Dampflok, verliebt sich in Pearl, den eleganten Erste-Klasse-Wagen. Doch um ihr Herz zu gewinnen, muss er sich gegen Greaseball, die coole Diesellok, und den exzentrischen Superstar Electra behaupten. Eine Geschichte über Mut, Selbstvertrauen und die Kraft des Glaubens – erzählt mit mitreißender Musik von Andrew Lloyd Webber.\n\n**Weltklasse-Technik auf 1.200 qm Bühnenfläche.**\n\n200 Moving Lights, 500 Scheinwerfer, 13 Projektoren, 10.000 Sterne und ein hochmodernes Sound-Scape-System machen STARLIGHT EXPRESS zu einem der technisch aufwendigsten Musicals der Welt. 2018 überarbeitete Andrew Lloyd Webber die Produktion grundlegend und stärkte dabei die Rolle der weiblichen Figuren – seitdem gehen auch Lokomotivinnen ins Rennen um den Weltmeistertitel.",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-header-pearl-rusty_5365eea2.webp",
+    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-keyvisual_7428962d.webp",
+    priceFrom: "59,99",
+    ticketCtaUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
+    awinHeroUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
+    awinStickyUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
+    awinBoxUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
+    eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
+    featured: true,
+    tags: ["Fester Standort", "Rekordshow", "Weltklasse"],
+    youtubeTrailerId: "Qd_3_VhHBbM",
+    uspItems: [
+      { icon: "Crown", title: "Musical der Rekorde", text: "Über 19 Mio. Besucher – Guinness-Weltrekord seit 2010" },
+      { icon: "Star", title: "37 Jahre Bochum", text: "Das weltweit am längsten laufende Musical an einem Standort" },
+      { icon: "Music", title: "Andrew Lloyd Webber", text: "Mitreißende Musik von Rock 'n' Roll bis Elektro-Pop, live gespielt" },
+      { icon: "Sparkles", title: "Rollschuh-Spektakel", text: "Darsteller rasen mit bis zu 50 km/h durch den Zuschauerraum" },
+    ],
+    tourDates: [
+      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "1988-06-12", endDate: "2099-12-31", eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=" },
+    ],
+    quotes: [
+      { text: "Das rasanteste Musical im Universum.", source: "Guinness World Records" },
+      { text: "Ein Spektakel, das kein anderes Musical bieten kann.", source: "Westdeutsche Allgemeine Zeitung" },
+      { text: "Starlight Express ist Bochum – und Bochum ist Starlight Express.", source: "Ruhr Nachrichten" },
+    ],
+    gallery: [
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-22_d95ea5c7.webp", alt: "Starlight Express – Das Ensemble 2025" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-189_dc71e601.webp", alt: "Starlight Express – Ensemble auf der Bühne" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-greaseball_1d3810bc.webp", alt: "Starlight Express – Greaseball, die Diesellok" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-carrie-dinah-pearl-belle_976d3cb1.webp", alt: "Starlight Express – Carrie, Dinah, Pearl und Belle" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-rusty-dinah-belle-carrie_02fb0b69.webp", alt: "Starlight Express – Rusty, Dinah, Belle und Carrie" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-rennen_dea3bdbf.webp", alt: "Starlight Express – Ensemble vor dem Rennen" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-rusty6_b4eb613a.webp", alt: "Starlight Express – Rusty auf der Rennstrecke" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-buehne-2024_5c3e57c4.webp", alt: "Starlight Express – Die Bühne von oben 2024" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-sternenhimmel_788fba5d.webp", alt: "Starlight Express – Sternenhimmel über der Bühne" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-buehne-2019_5ca36464.webp", alt: "Starlight Express – Bühnenansicht 2019" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-lichtshow_124c5b4c.webp", alt: "Starlight Express – Spektakuläre Lichtshow" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-foyer_a58cb61c.webp", alt: "Starlight Express – Das Foyer des Theaters" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-event-buehne_dc2fd149.jpg", alt: "Starlight Express – Die Rennstrecke von oben" },
+    ],
+    showFacts: [
+      { label: "Showdauer", value: "Ca. 2,5 Stunden (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Vorstellungen", value: "Mi–So (Wochenende: Nachmittags- & Abendvorstellung)" },
+      { label: "Spielort", value: "STARLIGHT EXPRESS Theater Bochum, Stadionring 24" },
+      { label: "Tickets ab", value: "59,99 EUR (Kinder bis 14 Jahre: 50% Ermäßigung)" },
+      { label: "Altersempfehlung", value: "Geeignet für alle Altersgruppen ab ca. 5 Jahren" },
+    ],
+    storyHeadline: "RUSTY UND DER TRAUM VOM SIEG",
+    storyText: "Ein kleiner Junge träumt von seiner Modelleisenbahn – und plötzlich erwacht die Welt der Züge zum Leben. Rusty, die junge rostige Dampflok, verliebt sich in Pearl, den eleganten Erste-Klasse-Wagen. Doch Pearl entscheidet sich zunächst für den glamourösen Superstar Electra.\n\nEnttäuscht und voller Zweifel steht Rusty vor der größten Herausforderung seines Lebens: der Weltmeisterschaft der Lokomotiven. Gegen Greaseball, die unschlagbare Diesellok, und den exzentrischen Electra scheint er keine Chance zu haben. Doch dann erscheint der legendäre Starlight Express – und zeigt Rusty, worauf es wirklich ankommt: der Glaube an sich selbst.\n\nMit neuem Mut und der Unterstützung von Mama, der alten Dampflok, geht Rusty ins Finale. Kann er die scheinbar übermächtigen Konkurrenten besiegen – und das Herz von Pearl für immer gewinnen?",
+    faqItems: [
+      { question: "Was ist Starlight Express?", answer: "Starlight Express ist das weltweit am längsten laufende Musical an einem Standort. Seit 1988 läuft die Rollschuh-Show ununterbrochen im eigens erbauten STARLIGHT EXPRESS Theater in Bochum. Musik von Andrew Lloyd Webber, Text von Richard Stilgoe, Regie von Dame Arlene Phillips." },
+      { question: "Wo wird Starlight Express gespielt?", answer: "Das Musical wird ausschließlich im STARLIGHT EXPRESS Theater Bochum, Stadionring 24, 44791 Bochum gespielt. Das Theater wurde speziell für die Show erbaut." },
+      { question: "Wann finden die Vorstellungen statt?", answer: "Dienstag 18:30 Uhr (in den NRW-Ferien), Mittwoch 18:30 Uhr, Donnerstag 19:30 Uhr, Freitag 19:30 Uhr, Samstag 14:30 & 19:30 Uhr, Sonntag 13:30 & 18:30 Uhr. Donnerstags gibt es außerdem ein Skate Warm-up um 18:00 Uhr (nur in Kombination mit einem Showticket buchbar)." },
+      { question: "Wie viel kosten Tickets?", answer: "Tickets gibt es ab 59,99 EUR zzgl. Versand-, Hinterlegungs- bzw. Onlinekosten. Kinder bis einschließlich 14 Jahren erhalten 50% Ermäßigung." },
+      { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
+      { question: "Ab welchem Alter ist das Musical geeignet?", answer: "Starlight Express ist für alle Altersgruppen geeignet, empfohlen ab ca. 5 Jahren. Die Rollschuh-Action und die mitreißende Musik begeistern Kinder und Erwachsene gleichermaßen." },
+      { question: "Was macht Starlight Express besonders?", answer: "Die Bühne führt als Rennstrecke direkt durch den Zuschauerraum – die Darsteller rasen mit bis zu 50 km/h am Publikum vorbei. 29 Drohnen als fliegende Sterne, 200 Moving Lights und eine siebenköpfige Live-Band machen die Show zu einem einzigartigen Spektakel." },
+      { question: "Wie viele Besucher hat Starlight Express?", answer: "Über 19 Millionen Besucher haben die Show seit 1988 erlebt. 2010 zeichnete Guinness World Records Starlight Express als erfolgreichstes Musical der Welt aus." },
+      { question: "Gibt es eine Pause?", answer: "Ja, die Vorstellung beinhaltet eine Pause." },
+      { question: "Wer hat die Musik komponiert?", answer: "Die Musik stammt von Andrew Lloyd Webber, dem Komponisten von Cats, Das Phantom der Oper und Evita. Den Text schrieb Richard Stilgoe. Regie und Choreografie verantwortet Dame Arlene Phillips." },
+    ],
+  },
 ];
 export const cities: City[] = [
   {
@@ -2331,6 +2406,14 @@ export const cities: City[] = [
     description: "Die Hauptstadt lockt mit dem Theater des Westens und zahlreichen Tournee-Gastspielen. Kultur und Musical vereint in einer Stadt.",
     musicalCount: 1,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-berlin&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252555133%26orderBy%3DRecommendations",
+  },
+  {
+    slug: "bochum",
+    name: "Bochum",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-buehne-2024_5c3e57c4.webp",
+    description: "Bochum ist die Heimat von STARLIGHT EXPRESS – dem weltweit am längsten laufenden Musical an einem Standort. Seit 1988 begeistert die Rollschuh-Show im eigens erbauten Theater am Stadionring Millionen von Besuchern.",
+    musicalCount: 1,
+    hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-bochum&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252510009%26orderBy%3DRecommendations",
   },
   {
     slug: "bremen",
@@ -2510,7 +2593,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
