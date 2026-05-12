@@ -224,7 +224,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame') ? 'ATG Tickets' : 'Eventim'} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
               </motion.div>
             </div>
 
@@ -273,7 +273,7 @@ export default function MusicalDetail() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame') ? 'ATG Tickets' : 'Eventim'} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
 
                             </motion.div>
                           </div>
@@ -430,7 +430,7 @@ export default function MusicalDetail() {
               </h2>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame')
+              {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express')
                 ? <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über ATG Tickets.</>
                 : <>Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über Eventim.</>
               }
@@ -448,14 +448,14 @@ export default function MusicalDetail() {
                 Tickets
                 <ExternalLink className="w-5 h-5" />
               </a>
-              {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge' || musical.slug === 'gloeckner-von-notre-dame') && (
+              {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') && (
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
                   alt="ATG Tickets"
                   className="h-8 w-auto ml-3 opacity-90"
                 />
               )}
-              {musical.slug !== 'moulin-rouge' && musical.slug !== 'phantom-der-oper' && musical.slug !== 'gloeckner-von-notre-dame' && (
+              {musical.slug !== 'moulin-rouge' && musical.slug !== 'phantom-der-oper' && musical.slug !== 'gloeckner-von-notre-dame' && musical.slug !== 'starlight-express' && (
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
                   alt="Eventim"
@@ -464,7 +464,7 @@ export default function MusicalDetail() {
               )}
             </div>
             <p className="text-xs text-muted-foreground/50 mt-4">
-              {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame')
+              {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express')
                 ? 'Weiterleitung zu atgtickets.de – Affiliate-Link'
                 : 'Weiterleitung zu eventim.de – Affiliate-Link'
               }
@@ -560,7 +560,7 @@ export default function MusicalDetail() {
               <Ticket className="w-4 h-4" />
               Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
             </a>
-            {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge' || musical.slug === 'gloeckner-von-notre-dame') ? (
+            {(musical.slug === 'phantom-der-oper' || musical.slug === 'moulin-rouge' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? (
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
                 alt="ATG Tickets"
