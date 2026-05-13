@@ -312,11 +312,65 @@ export default function Home() {
           </div>
 
           {/* Musical Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayedMusicals.map((musical, i) => (
-              <MusicalCard key={musical.id} musical={musical} index={i} />
-            ))}
-          </div>
+          {filteredMusicals.length === 0 ? (
+            <div className="text-center py-16 px-6 border border-gold/10 rounded-sm bg-card/30">
+              {plzSearch.active ? (
+                <>
+                  <MapPin className="w-12 h-12 text-gold/30 mx-auto mb-4" />
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                    Kein Musical in deiner Nähe
+                  </h3>
+                  <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                    Im Umkreis von <span className="text-gold font-semibold">{plzSearch.radius} km</span> um PLZ <span className="text-gold font-semibold">{plzSearch.plz}</span> wurde kein Musical gefunden.
+                    Versuche einen größeren Radius oder entferne andere Filter.
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {[150, 200, 300, 500].filter(r => r > plzSearch.radius).map(r => (
+                      <button
+                        key={r}
+                        onClick={() => setPlzSearch({ ...plzSearch, radius: r })}
+                        className="px-4 py-2 text-sm rounded-sm border border-gold/30 text-gold hover:bg-gold/10 transition-colors"
+                      >
+                        Radius auf {r} km erhöhen
+                      </button>
+                    ))}
+                    <button
+                      onClick={() => setPlzSearch({ active: false, plz: '', radius: 100, originCoords: null })}
+                      className="px-4 py-2 text-sm rounded-sm border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+                    >
+                      Umkreissuche aufheben
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Music className="w-12 h-12 text-gold/30 mx-auto mb-4" />
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                    Keine Musicals gefunden
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    Für diese Filterkombination gibt es aktuell keine Ergebnisse.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setCategoryFilter('alle');
+                      setCountryFilter('alle');
+                      setCityFilter('alle');
+                    }}
+                    className="px-4 py-2 text-sm rounded-sm border border-gold/30 text-gold hover:bg-gold/10 transition-colors"
+                  >
+                    Filter zurücksetzen
+                  </button>
+                </>
+              )}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {displayedMusicals.map((musical, i) => (
+                <MusicalCard key={musical.id} musical={musical} index={i} />
+              ))}
+            </div>
+          )}
 
           {/* Show More */}
           {!showAllMusicals && filteredMusicals.length > 9 && (
