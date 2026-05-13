@@ -21,6 +21,7 @@ import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
 import MusicalFilters, { type FilterCategory, type SortOption, type CountryFilter } from "@/components/MusicalFilters";
+import { musicalInRadius, type PlzSearchState } from "@/components/PlzSearch";
 import {
   musicals,
   cities,
@@ -44,6 +45,12 @@ export default function Home() {
   const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
   const [sortOption, setSortOption] = useState<SortOption>("featured");
+  const [plzSearch, setPlzSearch] = useState<PlzSearchState>({
+    active: false,
+    plz: "",
+    radius: 100,
+    originCoords: null,
+  });
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
 
@@ -131,8 +138,15 @@ export default function Home() {
       });
     }
 
+    // Filter nach PLZ-Umkreis
+    if (plzSearch.active && plzSearch.originCoords) {
+      result = result.filter((m) =>
+        musicalInRadius(m, plzSearch.originCoords!, plzSearch.radius)
+      );
+    }
+
     return result;
-  }, [categoryFilter, countryFilter, cityFilter, sortOption]);
+  }, [categoryFilter, countryFilter, cityFilter, sortOption, plzSearch]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 9);
 
@@ -269,6 +283,8 @@ export default function Home() {
               setCityFilter={setCityFilter}
               sortOption={sortOption}
               setSortOption={setSortOption}
+              plzSearch={plzSearch}
+              setPlzSearch={setPlzSearch}
               resultCount={filteredMusicals.length}
             />
           </div>

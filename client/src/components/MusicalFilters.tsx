@@ -5,6 +5,7 @@
 import { useState, useMemo } from "react";
 import { ChevronDown, MapPin, Calendar, Filter, Globe } from "lucide-react";
 import { musicals, ACTIVE_MUSICAL_IDS } from "@/lib/data";
+import PlzSearch, { type PlzSearchState } from "@/components/PlzSearch";
 
 // Österreichische Städte
 const AT_CITIES = new Set(["Graz", "Wien", "Innsbruck", "Linz", "Bad Ischl", "Dornbirn", "Ried im Innkreis", "Vöcklabruck", "Puch bei Salzburg", "Feldkirch", "Salzburg"]);
@@ -42,6 +43,8 @@ interface MusicalFiltersProps {
   setCityFilter: (city: string) => void;
   sortOption: SortOption;
   setSortOption: (sort: SortOption) => void;
+  plzSearch: PlzSearchState;
+  setPlzSearch: (state: PlzSearchState) => void;
   resultCount: number;
 }
 
@@ -54,6 +57,8 @@ export default function MusicalFilters({
   setCityFilter,
   sortOption,
   setSortOption,
+  plzSearch,
+  setPlzSearch,
   resultCount,
 }: MusicalFiltersProps) {
   const [showCityDropdown, setShowCityDropdown] = useState(false);
@@ -191,6 +196,9 @@ export default function MusicalFilters({
         </div>
       </div>
 
+      {/* PLZ-Umkreissuche */}
+      <PlzSearch state={plzSearch} onChange={setPlzSearch} />
+
       {/* Results Count */}
       <div className="flex items-center justify-between pt-2 border-t border-border/30">
         <p className="text-sm text-muted-foreground">
@@ -200,13 +208,15 @@ export default function MusicalFilters({
         {(categoryFilter !== "alle" ||
           countryFilter !== "alle" ||
           cityFilter !== "alle" ||
-          sortOption !== "featured") && (
+          sortOption !== "featured" ||
+          plzSearch.active) && (
           <button
             onClick={() => {
               setCategoryFilter("alle");
               setCountryFilter("alle");
               setCityFilter("alle");
               setSortOption("featured");
+              setPlzSearch({ active: false, plz: "", radius: 100, originCoords: null });
             }}
             className="text-xs text-gold hover:text-gold-light transition-colors underline"
           >
