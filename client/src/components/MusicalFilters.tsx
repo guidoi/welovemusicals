@@ -128,11 +128,11 @@ export default function MusicalFilters({
           </select>
         </div>
 
-        {/* City Filter */}
-        <div>
+        {/* City Filter + PLZ-Umkreissuche */}
+        <div className="md:col-span-2 lg:col-span-1">
           <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
             <MapPin className="w-3 h-3 inline mr-1" />
-            Stadt
+            Stadt / Umkreis
           </label>
           <div className="relative">
             <button
@@ -177,6 +177,40 @@ export default function MusicalFilters({
               </div>
             )}
           </div>
+
+          {/* PLZ-Umkreissuche – Akkordeon direkt unter Stadt */}
+          <div className="mt-2 border border-border/50 rounded-sm overflow-hidden">
+            <button
+              onClick={() => setShowPlzAccordion(!showPlzAccordion)}
+              className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors ${
+                plzSearch.active
+                  ? "bg-gold/10 text-gold border-b border-gold/20"
+                  : "bg-card text-gold/70 hover:text-gold hover:bg-gold/5"
+              }`}
+            >
+              <span className="flex items-center gap-1.5">
+                <MapPin className="w-3 h-3" />
+                <span className="font-medium">
+                  {plzSearch.active
+                    ? `Umkreis ${plzSearch.radius} km um ${plzSearch.plz}`
+                    : "oder per Umkreis suchen"}
+                </span>
+                {plzSearch.active && (
+                  <span className="text-xs bg-gold/20 text-gold px-1.5 py-0.5 rounded-full">aktiv</span>
+                )}
+              </span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                  showPlzAccordion ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {showPlzAccordion && (
+              <div className="p-3 bg-card/50 border-t border-border/30">
+                <PlzSearch state={plzSearch} onChange={setPlzSearch} compact />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Sort Option */}
@@ -195,40 +229,6 @@ export default function MusicalFilters({
             <option value="date">Nach Datum (früheste Vorstellung)</option>
           </select>
         </div>
-      </div>
-
-      {/* PLZ-Umkreissuche – Akkordeon */}
-      <div className="border border-border/50 rounded-sm overflow-hidden">
-        <button
-          onClick={() => setShowPlzAccordion(!showPlzAccordion)}
-          className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
-            plzSearch.active
-              ? "bg-gold/10 text-gold border-b border-gold/20"
-              : "bg-card text-gold/70 hover:text-gold hover:bg-gold/5"
-          }`}
-        >
-          <span className="flex items-center gap-2">
-            <MapPin className="w-3.5 h-3.5" />
-            <span className="font-medium">
-              {plzSearch.active
-                ? `Umkreis ${plzSearch.radius} km um ${plzSearch.plz}`
-                : "Umkreissuche nach PLZ"}
-            </span>
-            {plzSearch.active && (
-              <span className="text-xs bg-gold/20 text-gold px-1.5 py-0.5 rounded-full">aktiv</span>
-            )}
-          </span>
-          <ChevronDown
-            className={`w-4 h-4 transition-transform duration-200 ${
-              showPlzAccordion ? "rotate-180" : ""
-            }`}
-          />
-        </button>
-        {showPlzAccordion && (
-          <div className="p-4 bg-card/50 border-t border-border/30">
-            <PlzSearch state={plzSearch} onChange={setPlzSearch} compact />
-          </div>
-        )}
       </div>
 
       {/* Results Count */}
