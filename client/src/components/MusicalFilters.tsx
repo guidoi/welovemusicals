@@ -204,7 +204,7 @@ export default function MusicalFilters({
           className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
             plzSearch.active
               ? "bg-gold/10 text-gold border-b border-gold/20"
-              : "bg-card text-muted-foreground hover:text-foreground hover:bg-border/20"
+              : "bg-card text-gold/70 hover:text-gold hover:bg-gold/5"
           }`}
         >
           <span className="flex items-center gap-2">
