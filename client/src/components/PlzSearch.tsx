@@ -1,12 +1,13 @@
 /*
- * PLZ-Umkreissuche – Nutzer gibt PLZ + Radius ein, zeigt Musicals in der Nähe
- * Nutzt statische PLZ-Datenbank (8.298 Einträge, ~205 KB) + Haversine-Formel
+ * PLZ-Umkreissuche – DE (5-stellig), AT (4-stellig), CH (4-stellig)
+ * Lazy-lädt separate JSON-Datenbanken je nach PLZ-Länge
+ * Haversine-Formel für Luftlinienabstand
  */
 import { useState, useCallback } from "react";
 import { MapPin, Search, X, Loader2, Navigation } from "lucide-react";
 
-// Stadtkoordinaten für alle Musical-Spielorte
-const CITY_COORDS: Record<string, [number, number]> = {
+// Stadtkoordinaten für alle Musical-Spielorte (DACH)
+export const CITY_COORDS: Record<string, [number, number]> = {
   "Hamburg": [53.5753, 10.0153],
   "Stuttgart": [48.7758, 9.1829],
   "Berlin": [52.5200, 13.4050],
@@ -136,10 +137,11 @@ const CITY_COORDS: Record<string, [number, number]> = {
   "Basel": [47.5596, 7.5886],
   "Bern": [46.9480, 7.4474],
   "Genf": [46.2044, 6.1432],
+  "Feldkirch": [47.2333, 9.6000],
 };
 
 // Haversine-Formel: Luftlinienabstand in km
-function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+export function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
   const dLon = ((lon2 - lon1) * Math.PI) / 180;
@@ -152,23 +154,42 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-// PLZ-Datenbank (lazy-loaded)
-let plzDb: Record<string, [number, number]> | null = null;
-let plzDbLoading = false;
-let plzDbCallbacks: Array<(db: Record<string, [number, number]>) => void> = [];
+// PLZ-Datenbanken (lazy-loaded, getrennt für DE/AT/CH)
+type PlzDb = Record<string, [number, number]>;
+const dbCache: Record<string, PlzDb | null> = { de: null, at: null, ch: null };
+const dbLoading: Record<string, boolean> = { de: false, at: false, ch: false };
+const dbCallbacks: Record<string, Array<(db: PlzDb) => void>> = { de: [], at: [], ch: [] };
 
-async function loadPlzDb(): Promise<Record<string, [number, number]>> {
-  if (plzDb) return plzDb;
-  if (plzDbLoading) {
-    return new Promise((resolve) => plzDbCallbacks.push(resolve));
+async function loadDb(country: "de" | "at" | "ch"): Promise<PlzDb> {
+  if (dbCache[country]) return dbCache[country]!;
+  if (dbLoading[country]) {
+    return new Promise((resolve) => dbCallbacks[country].push(resolve));
   }
-  plzDbLoading = true;
-  const res = await fetch("/plz_de.json");
-  plzDb = await res.json();
-  plzDbLoading = false;
-  plzDbCallbacks.forEach((cb) => cb(plzDb!));
-  plzDbCallbacks = [];
-  return plzDb!;
+  dbLoading[country] = true;
+  const res = await fetch(`/plz_${country}.json`);
+  dbCache[country] = await res.json();
+  dbLoading[country] = false;
+  dbCallbacks[country].forEach((cb) => cb(dbCache[country]!));
+  dbCallbacks[country] = [];
+  return dbCache[country]!;
+}
+
+// PLZ-Länge bestimmt das Land: 5 Stellen = DE, 4 Stellen = AT oder CH
+async function lookupPlz(plz: string): Promise<{ coords: [number, number]; country: string } | null> {
+  const clean = plz.trim().replace(/\s/g, "");
+  if (clean.length === 5 && /^\d{5}$/.test(clean)) {
+    const db = await loadDb("de");
+    const coords = db[clean];
+    return coords ? { coords, country: "DE" } : null;
+  }
+  if (clean.length === 4 && /^\d{4}$/.test(clean)) {
+    // Parallel AT und CH laden und prüfen
+    const [atDb, chDb] = await Promise.all([loadDb("at"), loadDb("ch")]);
+    if (atDb[clean]) return { coords: atDb[clean], country: "AT" };
+    if (chDb[clean]) return { coords: chDb[clean], country: "CH" };
+    return null;
+  }
+  return null;
 }
 
 export interface PlzSearchState {
@@ -177,55 +198,67 @@ export interface PlzSearchState {
   radius: number;
   originCoords: [number, number] | null;
   originCity?: string;
+  country?: string;
 }
 
 interface PlzSearchProps {
   state: PlzSearchState;
   onChange: (state: PlzSearchState) => void;
+  compact?: boolean; // Kompakte Darstellung für Hero
 }
 
-const RADIUS_OPTIONS = [25, 50, 100, 150, 200, 300, 500];
+export const RADIUS_OPTIONS = [25, 50, 100, 150, 200, 300, 500];
 
-export default function PlzSearch({ state, onChange }: PlzSearchProps) {
+export async function searchByPlz(
+  plz: string,
+  radius: number,
+  onChange: (state: PlzSearchState) => void,
+  setLoading: (v: boolean) => void,
+  setError: (v: string | null) => void
+) {
+  const clean = plz.trim().replace(/\s/g, "");
+  if ((clean.length !== 5 && clean.length !== 4) || !/^\d+$/.test(clean)) {
+    setError("Bitte eine gültige PLZ eingeben (5-stellig DE, 4-stellig AT/CH)");
+    return;
+  }
+  setLoading(true);
+  setError(null);
+  try {
+    const result = await lookupPlz(clean);
+    if (!result) {
+      setError(`PLZ ${clean} nicht gefunden`);
+      setLoading(false);
+      return;
+    }
+    // Nächste bekannte Musical-Stadt ermitteln
+    let nearestCity = "";
+    let nearestDist = Infinity;
+    for (const [city, cityCoords] of Object.entries(CITY_COORDS)) {
+      const d = haversineKm(result.coords[0], result.coords[1], cityCoords[0], cityCoords[1]);
+      if (d < nearestDist) { nearestDist = d; nearestCity = city; }
+    }
+    onChange({
+      active: true,
+      plz: clean,
+      radius,
+      originCoords: result.coords,
+      originCity: nearestDist < 80 ? nearestCity : undefined,
+      country: result.country,
+    });
+  } catch {
+    setError("Fehler beim Laden der PLZ-Datenbank");
+  }
+  setLoading(false);
+}
+
+export default function PlzSearch({ state, onChange, compact = false }: PlzSearchProps) {
   const [inputPlz, setInputPlz] = useState(state.plz);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSearch = useCallback(async (plz: string, radius: number) => {
-    const cleanPlz = plz.trim().replace(/\s/g, "");
-    if (cleanPlz.length !== 5 || !/^\d{5}$/.test(cleanPlz)) {
-      setError("Bitte eine gültige 5-stellige PLZ eingeben");
-      return;
-    }
-    setLoading(true);
-    setError(null);
-    try {
-      const db = await loadPlzDb();
-      const coords = db[cleanPlz];
-      if (!coords) {
-        setError(`PLZ ${cleanPlz} nicht gefunden`);
-        setLoading(false);
-        return;
-      }
-      // Nächste bekannte Stadt für Anzeige ermitteln
-      let nearestCity = "";
-      let nearestDist = Infinity;
-      for (const [city, cityCoords] of Object.entries(CITY_COORDS)) {
-        const d = haversineKm(coords[0], coords[1], cityCoords[0], cityCoords[1]);
-        if (d < nearestDist) { nearestDist = d; nearestCity = city; }
-      }
-      onChange({
-        active: true,
-        plz: cleanPlz,
-        radius,
-        originCoords: coords,
-        originCity: nearestDist < 50 ? nearestCity : undefined,
-      });
-    } catch {
-      setError("Fehler beim Laden der PLZ-Datenbank");
-    }
-    setLoading(false);
-  }, [onChange]);
+  const handleSearch = useCallback(() => {
+    searchByPlz(inputPlz, state.radius, onChange, setLoading, setError);
+  }, [inputPlz, state.radius, onChange]);
 
   const handleClear = () => {
     setInputPlz("");
@@ -251,8 +284,8 @@ export default function PlzSearch({ state, onChange }: PlzSearchProps) {
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const { latitude, longitude } = pos.coords;
-        // Nächste PLZ aus Datenbank finden
-        const db = await loadPlzDb();
+        // Nächste DE-PLZ finden (Geolocation meist in DE)
+        const db = await loadDb("de");
         let nearestPlz = "";
         let nearestDist = Infinity;
         for (const [plz, coords] of Object.entries(db)) {
@@ -260,7 +293,7 @@ export default function PlzSearch({ state, onChange }: PlzSearchProps) {
           if (d < nearestDist) { nearestDist = d; nearestPlz = plz; }
         }
         setInputPlz(nearestPlz);
-        await handleSearch(nearestPlz, state.radius);
+        await searchByPlz(nearestPlz, state.radius, onChange, setLoading, setError);
       },
       () => {
         setError("Standort konnte nicht ermittelt werden");
@@ -270,48 +303,114 @@ export default function PlzSearch({ state, onChange }: PlzSearchProps) {
     );
   };
 
+  if (compact) {
+    // Kompakte Darstellung für Hero-Bereich
+    return (
+      <div className="space-y-2">
+        <div className="flex gap-2">
+          <div className="relative flex-1">
+            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gold/60" />
+            <input
+              type="text"
+              inputMode="numeric"
+              maxLength={5}
+              placeholder="PLZ eingeben (DE/AT/CH)…"
+              value={inputPlz}
+              onChange={(e) => {
+                setInputPlz(e.target.value.replace(/\D/g, "").slice(0, 5));
+                setError(null);
+                if (!e.target.value) handleClear();
+              }}
+              onKeyDown={(e) => { if (e.key === "Enter") handleSearch(); }}
+              className="w-full pl-9 pr-8 py-3 text-sm rounded-sm border border-gold/30 bg-black/40 text-foreground placeholder:text-muted-foreground/60 focus:border-gold outline-none transition-colors backdrop-blur-sm"
+            />
+            {(inputPlz || state.active) && (
+              <button onClick={handleClear} className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors">
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+          <button
+            onClick={handleSearch}
+            disabled={loading || inputPlz.length < 4}
+            className="px-4 py-3 rounded-sm text-sm font-semibold transition-all disabled:opacity-40 flex items-center gap-2"
+            style={{ backgroundColor: '#b8944a', color: '#0a0a0a' }}
+          >
+            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
+            <span className="hidden sm:inline">Suchen</span>
+          </button>
+          <button
+            onClick={handleGeolocate}
+            disabled={loading}
+            title="Meinen Standort verwenden"
+            className="px-3 py-3 rounded-sm text-sm transition-all disabled:opacity-40 border border-gold/20 text-gold/70 hover:text-gold hover:border-gold/40 backdrop-blur-sm bg-black/20"
+          >
+            <Navigation className="w-4 h-4" />
+          </button>
+        </div>
+        {/* Radius-Auswahl */}
+        <div className="flex flex-wrap gap-1.5">
+          {RADIUS_OPTIONS.map((r) => (
+            <button
+              key={r}
+              onClick={() => handleRadiusChange(r)}
+              className="px-2.5 py-1 text-xs rounded-sm border transition-all"
+              style={
+                state.radius === r
+                  ? { backgroundColor: 'rgba(184,148,74,0.25)', color: '#b8944a', borderColor: 'rgba(184,148,74,0.6)' }
+                  : { backgroundColor: 'rgba(0,0,0,0.3)', color: 'rgba(255,255,255,0.5)', borderColor: 'rgba(255,255,255,0.15)' }
+              }
+            >
+              {r} km
+            </button>
+          ))}
+        </div>
+        {error && <p className="text-xs text-red-400">{error}</p>}
+        {state.active && state.originCoords && (
+          <p className="text-xs text-gold/80">
+            <MapPin className="w-3 h-3 inline mr-1" />
+            {state.radius} km um PLZ {state.plz} {state.country && `(${state.country})`}
+            {state.originCity && ` · Nähe ${state.originCity}`}
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  // Standard-Darstellung für Filter-Bereich
   return (
     <div className="border border-border/50 rounded-sm p-3 bg-card/50 space-y-3">
       <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1">
         <MapPin className="w-3 h-3 inline mr-1 text-gold/70" />
-        Umkreissuche
+        Umkreissuche (DE · AT · CH)
       </label>
-
-      {/* PLZ Eingabe + Suche */}
       <div className="flex gap-2">
         <div className="relative flex-1">
           <input
             type="text"
             inputMode="numeric"
             maxLength={5}
-            placeholder="PLZ eingeben…"
+            placeholder="PLZ (5-stellig DE, 4-stellig AT/CH)…"
             value={inputPlz}
             onChange={(e) => {
               setInputPlz(e.target.value.replace(/\D/g, "").slice(0, 5));
               setError(null);
               if (!e.target.value) handleClear();
             }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") handleSearch(inputPlz, state.radius);
-            }}
+            onKeyDown={(e) => { if (e.key === "Enter") handleSearch(); }}
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-background text-foreground focus:border-gold outline-none transition-colors pr-8"
           />
           {(inputPlz || state.active) && (
-            <button
-              onClick={handleClear}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Zurücksetzen"
-            >
+            <button onClick={handleClear} className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors">
               <X className="w-3.5 h-3.5" />
             </button>
           )}
         </div>
         <button
-          onClick={() => handleSearch(inputPlz, state.radius)}
-          disabled={loading || inputPlz.length !== 5}
+          onClick={handleSearch}
+          disabled={loading || inputPlz.length < 4}
           className="px-3 py-2 rounded-sm text-sm font-medium transition-all disabled:opacity-40"
           style={{ backgroundColor: 'rgba(184,148,74,0.15)', color: '#b8944a', border: '1px solid rgba(184,148,74,0.3)' }}
-          aria-label="Suchen"
         >
           {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
         </button>
@@ -320,13 +419,10 @@ export default function PlzSearch({ state, onChange }: PlzSearchProps) {
           disabled={loading}
           title="Meinen Standort verwenden"
           className="px-3 py-2 rounded-sm text-sm transition-all disabled:opacity-40 border border-border/50 text-muted-foreground hover:text-foreground hover:border-gold/30"
-          aria-label="Standort ermitteln"
         >
           <Navigation className="w-4 h-4" />
         </button>
       </div>
-
-      {/* Radius-Auswahl */}
       <div className="flex flex-wrap gap-1.5">
         {RADIUS_OPTIONS.map((r) => (
           <button
@@ -343,16 +439,12 @@ export default function PlzSearch({ state, onChange }: PlzSearchProps) {
           </button>
         ))}
       </div>
-
-      {/* Fehlermeldung */}
       {error && <p className="text-xs text-red-400">{error}</p>}
-
-      {/* Aktiver Filter-Hinweis */}
       {state.active && state.originCoords && (
         <p className="text-xs" style={{ color: '#b8944a' }}>
           <MapPin className="w-3 h-3 inline mr-1" />
-          Umkreis {state.radius} km um PLZ {state.plz}
-          {state.originCity && ` (${state.originCity})`}
+          Umkreis {state.radius} km um PLZ {state.plz} {state.country && `(${state.country})`}
+          {state.originCity && ` · Nähe ${state.originCity}`}
         </p>
       )}
     </div>

@@ -21,7 +21,7 @@ import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
 import MusicalFilters, { type FilterCategory, type SortOption, type CountryFilter } from "@/components/MusicalFilters";
-import { musicalInRadius, type PlzSearchState } from "@/components/PlzSearch";
+import PlzSearch, { musicalInRadius, type PlzSearchState } from "@/components/PlzSearch";
 import {
   musicals,
   cities,
@@ -200,6 +200,28 @@ export default function Home() {
                 <span className="text-white/80 text-sm">{(() => { const s = new Set<string>(); musicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
               </div>
 
+            </div>
+
+            {/* PLZ-Umkreissuche im Hero */}
+            <div className="max-w-xl mx-auto mb-8">
+              <div className="rounded-sm border border-gold/20 bg-black/50 backdrop-blur-md p-4 shadow-2xl">
+                <p className="text-xs text-gold/70 uppercase tracking-widest mb-3 text-center">
+                  <MapPin className="w-3 h-3 inline mr-1" />
+                  Musicals in deiner Nähe finden
+                </p>
+                <PlzSearch
+                  state={plzSearch}
+                  onChange={(s) => {
+                    setPlzSearch(s);
+                    if (s.active) {
+                      setTimeout(() => {
+                        document.getElementById('musicals')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 300);
+                    }
+                  }}
+                  compact
+                />
+              </div>
             </div>
 
             {/* CTA Buttons */}
