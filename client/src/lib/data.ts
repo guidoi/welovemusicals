@@ -1062,6 +1062,8 @@ export const musicals: Musical[] = [
       { label: "Sprache", value: "Alle Dialoge und Songs in deutscher Sprache" },
       { label: "Auf Tour", value: "April bis Juni 2026" },
     ],
+    seoTitle: "Sister Act Musical Tickets 2026 | We Love Musicals",
+    seoDescription: "Tickets für Sister Act – Das himmlische Musical! Deloris van Cartier auf Tournee in Deutschland & Österreich. Ab 40,40 € – jetzt buchen!",
     storyHeadline: "SHOWTIME IM KLOSTER",
     storyText: "Die Nachtclubsängerin Deloris van Cartier wird nach ihrem Auftritt zufällig Zeugin eines Mordes – und findet sich plötzlich im Zeugenschutzprogramm wieder. Anstatt glamouröser Bühnenlichter erwartet sie ein konservatives Kloster, wo sie als bescheidene Nonne untertauchen soll – zum Leidwesen der strengen Mutter Oberin...\n\nIm Kirchenchor soll die Sängerin Teil der Gemeinde werden, doch die Nonnen treffen keinen Ton und so übernimmt Deloris die Leitung. Mit ihr wird jeder Gottesdienst zum Event und die Messen ziehen immer mehr Publikum an – als sie schließlich vor dem Papst auftreten sollen, kommen die Gangster Deloris auf die Spur und die Nonnen schweben unverhofft in großer Gefahr...",
     faqItems: [
@@ -1918,6 +1920,8 @@ export const musicals: Musical[] = [
       { label: "Sprache", value: "Alle Dialoge und Songs in deutscher Sprache" },
       { label: "Auf Tour", value: "Sept. 2026 bis Jan. 2027" },
     ],
+    seoTitle: "Fack ju Göhte Musical Tickets 2026/2027 | We Love Musicals",
+    seoDescription: "Tickets für Fack ju Göhte – Das Musical! Zeki, Chantal & die Chaosklasse 10b auf Tournee in Deutschland & Österreich. Ab 40,40 € – jetzt buchen!",
     storyHeadline: "HEULT LEISE – LACHT LAUT!",
     storyText: "Als Zeki Müller nach seiner Haftstrafe entlassen wird, denkt er nur an eins: die Beute seines letzten Überfalls. Dumm nur, dass seine Freundin das Geld genau da vergraben hat, wo heute die Turnhalle der Goethe-Gesamtschule steht. Also bewirbt sich Zeki als Hausmeister – und wird durch ein Missverständnis mit der Direktorin Frau Gerster zum Aushilfslehrer. Statt schnellem Geld heißt es nun: Nachsitzen mit der Chaosklasse 10b.\n\nMit rauem Ton und unkonventionellen Methoden versucht Zeki, die Klasse zu bändigen. Schafft er es, die Schüler für sich zu gewinnen – oder verzweifelt er an dem Chaos? Und was wird aus seiner Beute und dem eigenen Neuanfang?",
     faqItems: [
