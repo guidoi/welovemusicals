@@ -202,28 +202,6 @@ export default function Home() {
 
             </div>
 
-            {/* PLZ-Umkreissuche im Hero */}
-            <div className="max-w-xl mx-auto mb-8">
-              <div className="rounded-sm border border-gold/20 bg-black/50 backdrop-blur-md p-4 shadow-2xl">
-                <p className="text-xs text-gold/70 uppercase tracking-widest mb-3 text-center">
-                  <MapPin className="w-3 h-3 inline mr-1" />
-                  Musicals in deiner Nähe finden
-                </p>
-                <PlzSearch
-                  state={plzSearch}
-                  onChange={(s) => {
-                    setPlzSearch(s);
-                    if (s.active) {
-                      setTimeout(() => {
-                        document.getElementById('musicals')?.scrollIntoView({ behavior: 'smooth' });
-                      }, 300);
-                    }
-                  }}
-                  compact
-                />
-              </div>
-            </div>
-
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
