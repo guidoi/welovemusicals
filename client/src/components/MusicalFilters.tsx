@@ -62,6 +62,7 @@ export default function MusicalFilters({
   resultCount,
 }: MusicalFiltersProps) {
   const [showCityDropdown, setShowCityDropdown] = useState(false);
+  const [showPlzAccordion, setShowPlzAccordion] = useState(false);
 
   // Städte nach gewähltem Land filtern
   const filteredCities = useMemo(() => {
@@ -196,8 +197,39 @@ export default function MusicalFilters({
         </div>
       </div>
 
-      {/* PLZ-Umkreissuche */}
-      <PlzSearch state={plzSearch} onChange={setPlzSearch} />
+      {/* PLZ-Umkreissuche – Akkordeon */}
+      <div className="border border-border/50 rounded-sm overflow-hidden">
+        <button
+          onClick={() => setShowPlzAccordion(!showPlzAccordion)}
+          className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
+            plzSearch.active
+              ? "bg-gold/10 text-gold border-b border-gold/20"
+              : "bg-card text-muted-foreground hover:text-foreground hover:bg-border/20"
+          }`}
+        >
+          <span className="flex items-center gap-2">
+            <MapPin className="w-3.5 h-3.5" />
+            <span className="font-medium">
+              {plzSearch.active
+                ? `Umkreis ${plzSearch.radius} km um ${plzSearch.plz}`
+                : "Umkreissuche nach PLZ"}
+            </span>
+            {plzSearch.active && (
+              <span className="text-xs bg-gold/20 text-gold px-1.5 py-0.5 rounded-full">aktiv</span>
+            )}
+          </span>
+          <ChevronDown
+            className={`w-4 h-4 transition-transform duration-200 ${
+              showPlzAccordion ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {showPlzAccordion && (
+          <div className="p-4 bg-card/50 border-t border-border/30">
+            <PlzSearch state={plzSearch} onChange={setPlzSearch} compact />
+          </div>
+        )}
+      </div>
 
       {/* Results Count */}
       <div className="flex items-center justify-between pt-2 border-t border-border/30">
