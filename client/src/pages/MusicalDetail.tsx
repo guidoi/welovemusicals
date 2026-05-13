@@ -51,14 +51,15 @@ export default function MusicalDetail() {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  // Dynamische SEO-Meta-Tags
+  // Dynamische SEO-Meta-Tags – individuelle Felder aus data.ts haben Vorrang
   const seoTitle = musical
-    ? `${musical.title} – Tickets & Termine | We Love Musicals`
+    ? musical.seoTitle ?? `${musical.title} – Tickets & Termine | We Love Musicals`
     : "Musical nicht gefunden | We Love Musicals";
   const seoDescription = musical
-    ? musical.description.length > 155
-      ? musical.description.slice(0, 152) + "..."
-      : musical.description
+    ? musical.seoDescription ??
+      (musical.description.length > 155
+        ? musical.description.slice(0, 152) + "..."
+        : musical.description)
     : "";
   useSEO({
     title: seoTitle,

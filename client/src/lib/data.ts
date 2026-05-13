@@ -73,6 +73,8 @@ export interface Musical {
   storyText?: string; // Story-Text für Detail-Seite
   faqItems?: MusicalFAQ[];
   uspItems?: Array<{ icon: string; title: string; text: string }>;
+  seoTitle?: string; // Individueller <title> für die Detailseite
+  seoDescription?: string; // Individuelle <meta description> für die Detailseite
 }
 
 export interface City {
@@ -767,6 +769,8 @@ export const musicals: Musical[] = [
       { icon: "MapPin", title: "Deutschlandtournee 2026", text: "Live in Berlin, Bochum, Bremen und weiteren Städten" },
       { icon: "Star", title: "Spektakuläre Bühneneffekte", text: "Atemberaubende Licht- und Nebelshow" },
     ],
+    seoTitle: "Dracula – Das Musical Tickets 2026 | We Love Musicals",
+    seoDescription: "Dracula – Das Musical auf Deutschlandtournee 2026: Berlin, Bochum, Bremen, Wien, Graz und mehr. Jetzt Tickets kaufen und Grußkarten-Rabatte sichern!",
     tourDates: [
       { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-05-01", endDate: "2026-06-07", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-berlin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBerlin", badge: "5 Wochen Gastspiel" },
       { city: "Bochum", venue: "RuhrCongress", startDate: "2028-01-18", endDate: "2028-01-19", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBochum" },
@@ -842,8 +846,10 @@ export const musicals: Musical[] = [
       { icon: "Music2", title: "Über 70 Welthits", text: "u.a. von Adele, Lady Gaga, Elton John & Beyoncé" },
       { icon: "Sparkles", title: "Atemberaubende Ausstattung", text: "Kulissen, Kostüme & Choreografien auf Broadway-Niveau" },
       { icon: "Heart", title: "Gänsehautgarantie", text: "Emotionales Entertainment, das unter die Haut geht" },
-      { icon: "Gift", title: "Perfektes Geschenk", text: "Das Highlight für einen unvergesslichen Abend in Hamburg" },
+      { icon: "Gift", title: "Perfektes Geschenk", text: "Das Highlight für einen unvergeßlichen Abend in Hamburg" },
     ],
+    seoTitle: "Moulin Rouge! Das Musical Tickets – Hamburg & Köln | We Love Musicals",
+    seoDescription: "Moulin Rouge! Das Musical – jetzt im Musical Dome Köln (bis Juli 2026) und ab Oktober 2026 im Theater am Großmarkt Hamburg. Tickets ab 59,99 € über ATG Tickets!",
     tourDates: [
       { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.awin1.com/awclick.php?gid=508543&mid=111888&awinaffid=2865727&linkid=3824601&clickref=", badge: "Nur noch bis 18. Juli!" },
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", premiereDate: "2026-11-05", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28" },
@@ -919,6 +925,8 @@ export const musicals: Musical[] = [
       { icon: "Star", title: "40 Jahre Weltklasse", text: "Jubiläumsproduktion von Cameron Mackintosh & Andrew Lloyd Webber" },
       { icon: "CalendarDays", title: "Premiere: 15. November 2026", text: "Jetzt Tickets sichern – ab 59,99 € über ATG Tickets" },
     ],
+    seoTitle: "Das Phantom der Oper Tickets 2026 – Köln | We Love Musicals",
+    seoDescription: "Das Phantom der Oper – Jubiläumsproduktion 2026 im Musical Dome Köln. Premiere: 15. November 2026. Tickets ab 59,99 € über ATG Tickets sichern!",
     tourDates: [
       { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-11-05", premiereDate: "2026-11-15", eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/" },
     ],
@@ -1949,6 +1957,8 @@ export const musicals: Musical[] = [
       { icon: "MapPin", title: "60+ Tourneestädte", text: "Quer durch Deutschland und Österreich" },
       { icon: "Star", title: "Weihnachtliche Stimmung", text: "Das perfekte Highlight in der Adventszeit" },
     ],
+    seoTitle: "Drei Haselnüsse für Aschenbrödel – Das Musical Tickets | We Love Musicals",
+    seoDescription: "Drei Haselnüsse für Aschenbrödel – Das Musical auf Tournee durch Deutschland und Österreich. 60+ Städte, perfekt für die ganze Familie. Jetzt Tickets sichern!",
     tourDates: [
       { city: "Aschaffenburg", venue: "Stadthalle am Schloss", startDate: "2026-12-14", endDate: "2026-12-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAschaffenburg" },
       { city: "Aurich", venue: "Stadthalle", startDate: "2027-02-12", endDate: "2027-02-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aurich-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAurich" },
@@ -2075,6 +2085,8 @@ export const musicals: Musical[] = [
       { icon: "MapPin", title: "Deutschlandtournee 2027", text: "Live in Duisburg, München und weiteren Städten" },
       { icon: "Star", title: "Buntes Bühnenspektakel", text: "Farbenfroh, musikalisch und voller Magie" },
     ],
+    seoTitle: "Rapunzel – Das Märchenhafte Musical Tickets 2027 | We Love Musicals",
+    seoDescription: "Rapunzel – Das Märchenhafte Musical auf Deutschlandtournee 2027: Duisburg, München, Köln, Frankfurt und mehr. Jetzt Tickets für die ganze Familie sichern!",
     tourDates: [
       { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-03-12", endDate: "2027-03-14", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F%3Fcityname%3DDuisburg" },
       { city: "München", venue: "Deutsches Theater", startDate: "2027-03-23", endDate: "2027-04-04", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=rapunzel-muenchen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Frapunzel-das-maerchenhafte-musical%2F%3Fcityname%3DM%C3%BCnchen" },
@@ -2129,6 +2141,8 @@ export const musicals: Musical[] = [
       { icon: "Heart", title: "Für die ganze Familie", text: "Magisches Erlebnis für Groß und Klein" },
       { icon: "Star", title: "Ab Januar 2027", text: "Jetzt Tickets sichern und frühzeitig planen" },
     ],
+    seoTitle: "Die Schöne und das Biest – Das Musical Tickets 2027 | We Love Musicals",
+    seoDescription: "Die Schöne und das Biest – Das neue Musical auf Tournee durch 60+ Städte in Deutschland und Österreich ab Januar 2027. Jetzt Tickets für die ganze Familie sichern!",
     tourDates: [
       { city: "Magdeburg", venue: "AMO Kulturhaus", startDate: "2027-01-25", endDate: "2027-01-25", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMagdeburg" },
       { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-01-28", endDate: "2027-01-28", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDuisburg" },
@@ -2240,6 +2254,8 @@ export const musicals: Musical[] = [
       { icon: "Users", title: "Über 70 Mitwirkende", text: "Großes Ensemble auf der Bühne" },
       { icon: "Star", title: "14-köpfiges Live-Orchester", text: "Echte Musik, keine Konserve" },
     ],
+    seoTitle: "Disney Der Glöckner von Notre-Dame Musical Tickets | We Love Musicals",
+    seoDescription: "Disney Der Glöckner von Notre-Dame – Das Musical erstmals auf Tournee: München, Düsseldorf, Frankfurt, Zürich, Leipzig, Berlin und mehr. Jetzt Tickets sichern!",
     showFacts: [
       { label: "Dauer", value: "Ca. 150 Min. inkl. Pause" },
       { label: "Sprache", value: "Deutsch" },
@@ -2309,6 +2325,8 @@ export const musicals: Musical[] = [
       { icon: "Music", title: "Andrew Lloyd Webber", text: "Mitreißende Musik von Rock 'n' Roll bis Elektro-Pop, live gespielt" },
       { icon: "Sparkles", title: "Rollschuh-Spektakel", text: "Darsteller rasen mit bis zu 50 km/h durch den Zuschauerraum" },
     ],
+    seoTitle: "Starlight Express Tickets Bochum 2026/2027 | We Love Musicals",
+    seoDescription: "Starlight Express in Bochum – das Musical der Rekorde mit 19 Mio. Besuchern. Tickets ab 59,99 €, Kinder bis 14 Jahre 50% Ermäßigung. Jetzt buchen!",
     tourDates: [
       { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=" },
     ],
