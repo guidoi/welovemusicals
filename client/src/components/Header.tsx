@@ -1,21 +1,40 @@
 /*
  * Design: Theatrical Noir – Art Deco trifft Film Noir
- * Header: Dunkler, eleganter Header mit goldenem Logo, Art-Deco-Akzenten und Suchfunktion
+ * Header: Dunkler, eleganter Header mit goldenem Logo, Art-Deco-Akzenten,
+ *         Musical-Suche (Lupe) und PLZ-Umkreissuche (MapPin)
  */
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Heart, Search } from "lucide-react";
+import { Menu, X, Heart, Search, MapPin, Navigation, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getActiveMusicals, type Musical } from "@/lib/data";
+import { searchByPlz, RADIUS_OPTIONS, type PlzSearchState } from "@/components/PlzSearch";
+
+// Globaler PLZ-State – wird von Home.tsx über Context oder Props gesteuert.
+// Da Header keinen direkten Zugriff auf Home-State hat, verwenden wir ein
+// Custom Event um den PLZ-State nach unten zu propagieren.
+function dispatchPlzEvent(state: PlzSearchState) {
+  window.dispatchEvent(new CustomEvent("plz-search-update", { detail: state }));
+}
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [plzOpen, setPlzOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<Musical[]>([]);
   const [location, navigate] = useLocation();
   const [isNavigating, setIsNavigating] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const plzInputRef = useRef<HTMLInputElement>(null);
+
+  // PLZ-State lokal im Header (wird per Event an Home.tsx weitergegeben)
+  const [plzInput, setPlzInput] = useState("");
+  const [plzRadius, setPlzRadius] = useState(100);
+  const [plzLoading, setPlzLoading] = useState(false);
+  const [plzError, setPlzError] = useState<string | null>(null);
+  const [plzActive, setPlzActive] = useState(false);
+  const [plzLabel, setPlzLabel] = useState<string | null>(null);
 
   useEffect(() => {
     setIsNavigating(false);
@@ -25,22 +44,34 @@ export default function Header() {
   useEffect(() => {
     if (searchOpen) {
       setTimeout(() => searchInputRef.current?.focus(), 50);
+      setPlzOpen(false);
     } else {
       setSearchQuery("");
       setSearchResults([]);
     }
   }, [searchOpen]);
 
-  // Close search on ESC
+  // Focus PLZ input when PLZ overlay opens
+  useEffect(() => {
+    if (plzOpen) {
+      setTimeout(() => plzInputRef.current?.focus(), 50);
+      setSearchOpen(false);
+    }
+  }, [plzOpen]);
+
+  // Close overlays on ESC
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSearchOpen(false);
+      if (e.key === "Escape") {
+        setSearchOpen(false);
+        setPlzOpen(false);
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Search logic
+  // Musical-Suche
   const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
     if (query.trim().length < 2) {
@@ -67,6 +98,88 @@ export default function Header() {
     navigate(`/musical/${musical.slug || musical.id}`);
   };
 
+  // PLZ-Suche
+  const handlePlzSearch = useCallback(() => {
+    searchByPlz(
+      plzInput,
+      plzRadius,
+      (state) => {
+        setPlzActive(state.active);
+        setPlzLabel(state.active ? `${state.radius} km · PLZ ${state.plz}${state.country ? ` (${state.country})` : ""}` : null);
+        dispatchPlzEvent(state);
+        if (state.active) {
+          setPlzOpen(false);
+          // Zur Musical-Sektion scrollen wenn auf Startseite
+          if (location === "/") {
+            setTimeout(() => {
+              document.getElementById("musicals")?.scrollIntoView({ behavior: "smooth" });
+            }, 300);
+          }
+        }
+      },
+      setPlzLoading,
+      setPlzError
+    );
+  }, [plzInput, plzRadius, location]);
+
+  const handlePlzClear = () => {
+    setPlzInput("");
+    setPlzError(null);
+    setPlzActive(false);
+    setPlzLabel(null);
+    dispatchPlzEvent({ active: false, plz: "", radius: plzRadius, originCoords: null });
+  };
+
+  const handleGeolocate = () => {
+    if (!navigator.geolocation) {
+      setPlzError("Geolocation wird von diesem Browser nicht unterstützt");
+      return;
+    }
+    setPlzLoading(true);
+    setPlzError(null);
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        // Lazy-load DE-PLZ-Datenbank und nächste PLZ finden
+        const res = await fetch("/plz_de.json");
+        const db: Record<string, [number, number]> = await res.json();
+        const { latitude, longitude } = pos.coords;
+        let nearestPlz = "";
+        let nearestDist = Infinity;
+        for (const [plz, coords] of Object.entries(db)) {
+          const dLat = latitude - coords[0];
+          const dLon = longitude - coords[1];
+          const d = Math.sqrt(dLat * dLat + dLon * dLon);
+          if (d < nearestDist) { nearestDist = d; nearestPlz = plz; }
+        }
+        setPlzInput(nearestPlz);
+        searchByPlz(
+          nearestPlz,
+          plzRadius,
+          (state) => {
+            setPlzActive(state.active);
+            setPlzLabel(state.active ? `${state.radius} km · PLZ ${state.plz}${state.country ? ` (${state.country})` : ""}` : null);
+            dispatchPlzEvent(state);
+            if (state.active) {
+              setPlzOpen(false);
+              if (location === "/") {
+                setTimeout(() => {
+                  document.getElementById("musicals")?.scrollIntoView({ behavior: "smooth" });
+                }, 300);
+              }
+            }
+          },
+          setPlzLoading,
+          setPlzError
+        );
+      },
+      () => {
+        setPlzError("Standort konnte nicht ermittelt werden");
+        setPlzLoading(false);
+      },
+      { timeout: 8000 }
+    );
+  };
+
   const navItems = [
     { label: "Musicals", href: "/#musicals" },
     { label: "Städte", href: "/#staedte" },
@@ -75,10 +188,10 @@ export default function Header() {
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const anchor = href.split('#')[1];
-    if (location === '/') {
+    const anchor = href.split("#")[1];
+    if (location === "/") {
       const element = document.getElementById(anchor);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      element?.scrollIntoView({ behavior: "smooth" });
     } else {
       setIsNavigating(true);
       window.location.href = href;
@@ -91,12 +204,12 @@ export default function Header() {
       if (hash) {
         setTimeout(() => {
           const element = document.getElementById(hash);
-          element?.scrollIntoView({ behavior: 'smooth' });
+          element?.scrollIntoView({ behavior: "smooth" });
         }, 50);
       }
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   return (
@@ -104,9 +217,14 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
-          <span className="text-xl md:text-2xl font-extrabold tracking-[0.15em] flex items-center gap-1 uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <span className="text-xl md:text-2xl font-extrabold tracking-[0.15em] flex items-center gap-1 uppercase" style={{ fontFamily: "Montserrat, sans-serif" }}>
             <span className="text-gold">We</span>
-            <Heart className="w-6 h-6 md:w-7 md:h-7 transition-colors mr-1" style={{ fill: 'none', stroke: 'rgb(239, 68, 68)', strokeWidth: 2.5 }} onMouseEnter={(e) => (e.currentTarget.style.stroke = 'rgb(248, 113, 113)')} onMouseLeave={(e) => (e.currentTarget.style.stroke = 'rgb(239, 68, 68)')} />
+            <Heart
+              className="w-6 h-6 md:w-7 md:h-7 transition-colors mr-1"
+              style={{ fill: "none", stroke: "rgb(239, 68, 68)", strokeWidth: 2.5 }}
+              onMouseEnter={(e) => (e.currentTarget.style.stroke = "rgb(248, 113, 113)")}
+              onMouseLeave={(e) => (e.currentTarget.style.stroke = "rgb(239, 68, 68)")}
+            />
             <span className="text-foreground">Musicals</span>
           </span>
         </a>
@@ -123,7 +241,21 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          {/* Search Icon Desktop */}
+
+          {/* PLZ-Suche Icon Desktop */}
+          <button
+            onClick={() => setPlzOpen(!plzOpen)}
+            className={`relative transition-colors p-1 ${plzActive ? "text-gold" : "text-muted-foreground hover:text-gold"}`}
+            aria-label="Umkreissuche öffnen"
+            title="Musicals in meiner Nähe"
+          >
+            <MapPin className="w-5 h-5" />
+            {plzActive && (
+              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-gold" />
+            )}
+          </button>
+
+          {/* Musical-Suche Icon Desktop */}
           <button
             onClick={() => setSearchOpen(!searchOpen)}
             className="text-muted-foreground hover:text-gold transition-colors p-1"
@@ -131,6 +263,7 @@ export default function Header() {
           >
             {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
           </button>
+
           <a
             href="/#musicals"
             className="px-5 py-2 bg-gold text-background font-semibold text-sm rounded-sm hover:bg-gold-light transition-colors tracking-wide"
@@ -139,17 +272,27 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Mobile Right: Search + Hamburger */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* Mobile Right: PLZ + Search + Hamburger */}
+        <div className="md:hidden flex items-center gap-1">
           <button
-            onClick={() => { setSearchOpen(!searchOpen); setMobileOpen(false); }}
+            onClick={() => { setPlzOpen(!plzOpen); setSearchOpen(false); setMobileOpen(false); }}
+            className={`relative transition-colors p-2 ${plzActive ? "text-gold" : "text-muted-foreground hover:text-gold"}`}
+            aria-label="Umkreissuche"
+          >
+            <MapPin className="w-5 h-5" />
+            {plzActive && (
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-gold" />
+            )}
+          </button>
+          <button
+            onClick={() => { setSearchOpen(!searchOpen); setMobileOpen(false); setPlzOpen(false); }}
             className="text-muted-foreground hover:text-gold transition-colors p-2"
             aria-label="Suche"
           >
             {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
           </button>
           <button
-            onClick={() => { setMobileOpen(!mobileOpen); setSearchOpen(false); }}
+            onClick={() => { setMobileOpen(!mobileOpen); setSearchOpen(false); setPlzOpen(false); }}
             className="text-foreground p-2"
             aria-label="Menü"
           >
@@ -158,7 +301,118 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Search Overlay */}
+      {/* PLZ-Overlay */}
+      <AnimatePresence>
+        {plzOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="absolute left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-gold/20 shadow-2xl"
+          >
+            <div className="container py-5">
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-5 h-5 text-gold flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Musicals in deiner Nähe</p>
+                  <p className="text-xs text-muted-foreground">PLZ eingeben (5-stellig DE · 4-stellig AT/CH) oder Standort verwenden</p>
+                </div>
+                <button
+                  onClick={() => setPlzOpen(false)}
+                  className="ml-auto text-muted-foreground hover:text-gold transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Input Row */}
+              <div className="flex gap-2 mb-3">
+                <div className="relative flex-1">
+                  <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gold/50 pointer-events-none" />
+                  <input
+                    ref={plzInputRef}
+                    type="text"
+                    inputMode="numeric"
+                    maxLength={5}
+                    value={plzInput}
+                    onChange={(e) => {
+                      setPlzInput(e.target.value.replace(/\D/g, "").slice(0, 5));
+                      setPlzError(null);
+                    }}
+                    onKeyDown={(e) => { if (e.key === "Enter") handlePlzSearch(); }}
+                    placeholder="z.B. 20095 (Hamburg), 1010 (Wien), 8001 (Zürich)…"
+                    className="w-full pl-11 pr-10 py-3 bg-white/5 border border-gold/20 rounded-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 text-sm"
+                  />
+                  {plzInput && (
+                    <button
+                      onClick={() => { setPlzInput(""); setPlzError(null); }}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-gold transition-colors"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                </div>
+                <button
+                  onClick={handlePlzSearch}
+                  disabled={plzLoading || plzInput.length < 4}
+                  className="px-5 py-3 rounded-sm text-sm font-semibold transition-all disabled:opacity-40 flex items-center gap-2 bg-gold text-background hover:bg-gold-light"
+                >
+                  {plzLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
+                  <span className="hidden sm:inline">Suchen</span>
+                </button>
+                <button
+                  onClick={handleGeolocate}
+                  disabled={plzLoading}
+                  title="Meinen Standort verwenden"
+                  className="px-3 py-3 rounded-sm text-sm transition-all disabled:opacity-40 border border-gold/20 text-gold/70 hover:text-gold hover:border-gold/40 bg-white/5"
+                >
+                  <Navigation className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Radius-Chips */}
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                <span className="text-xs text-muted-foreground self-center mr-1">Umkreis:</span>
+                {RADIUS_OPTIONS.map((r) => (
+                  <button
+                    key={r}
+                    onClick={() => setPlzRadius(r)}
+                    className="px-2.5 py-1 text-xs rounded-sm border transition-all"
+                    style={
+                      plzRadius === r
+                        ? { backgroundColor: "rgba(184,148,74,0.2)", color: "#b8944a", borderColor: "rgba(184,148,74,0.5)" }
+                        : { backgroundColor: "transparent", color: "var(--muted-foreground)", borderColor: "var(--border)" }
+                    }
+                  >
+                    {r} km
+                  </button>
+                ))}
+              </div>
+
+              {/* Error */}
+              {plzError && <p className="text-xs text-red-400 mb-2">{plzError}</p>}
+
+              {/* Aktive Suche anzeigen */}
+              {plzActive && plzLabel && (
+                <div className="flex items-center gap-2 text-xs text-gold/80 bg-gold/5 border border-gold/15 rounded-sm px-3 py-2">
+                  <MapPin className="w-3 h-3 flex-shrink-0" />
+                  <span>Aktiv: {plzLabel}</span>
+                  <button
+                    onClick={handlePlzClear}
+                    className="ml-auto text-muted-foreground hover:text-gold transition-colors"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Musical-Suche Overlay */}
       <AnimatePresence>
         {searchOpen && (
           <motion.div
