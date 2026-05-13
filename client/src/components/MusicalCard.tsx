@@ -76,8 +76,10 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             {/* Location */}
             <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-3">
               <MapPin className="w-3.5 h-3.5 text-gold/70" />
-              {musical.city ? (
+              {musical.city && !musical.cities ? (
                 <span>{musical.city} – {musical.venue}</span>
+              ) : musical.city && musical.cities ? (
+                <span>{musical.city} – {musical.venue} &amp; {musical.cities.filter(c => c !== musical.city).join(", ")}</span>
               ) : (
                 <span>{musical.cities?.slice(0, 3).join(", ")}{musical.cities && musical.cities.length > 3 ? ` +${musical.cities.length - 3}` : ""}</span>
               )}

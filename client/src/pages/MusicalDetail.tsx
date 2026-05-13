@@ -116,7 +116,7 @@ export default function MusicalDetail() {
 
   // Get relevant cities
   const relevantCities = musical.city
-    ? cities.filter((c) => c.name === musical.city)
+    ? cities.filter((c) => c.name === musical.city || musical.cities?.includes(c.name))
     : cities.filter((c) => musical.cities?.includes(c.name));
 
   // Get provider info
@@ -182,8 +182,10 @@ export default function MusicalDetail() {
 
             <div className="flex items-center gap-2 text-white/70">
               <MapPin className="w-4 h-4" style={{color: '#b8944a'}} />
-              {musical.city ? (
+              {musical.city && !musical.cities ? (
                 <span>{musical.city} – {musical.venue}</span>
+              ) : musical.city && musical.cities ? (
+                <span>{musical.city} – {musical.venue} <span style={{color: '#b8944a'}}>&amp;</span> {musical.cities.filter(c => c !== musical.city).join(", ")}</span>
               ) : musical.id === 'gloeckner-von-notre-dame' && musical.cities ? (
                 <span>{musical.cities.join(", ")}</span>
               ) : musical.headerCities && musical.cities ? (
