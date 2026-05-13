@@ -48,6 +48,7 @@ export interface Musical {
   cities?: string[];
   headerCities?: string[]; // Die wichtigsten Städte für die Header-Anzeige (z.B. die 10 größten)
   venue?: string;
+  venuePerCity?: Record<string, string>; // Venue-Name pro Stadt, z.B. { "Hamburg": "Theater am Großmarkt", "Köln": "Musical Dome Köln" }
   description: string;
   detailHeadline?: string; // Headline auf der Detail-Seite (z.B. "DER GRAF KEHRT ZURÜCK")
   detailDescription?: string; // Ausführliche Beschreibung auf der Detail-Seite
@@ -819,9 +820,10 @@ export const musicals: Musical[] = [
     provider: "ATG Entertainment",
     category: "ensuite",
     categories: ["fester-standort", "erwachsene"],
-    city: "Köln",
-    venue: "Musical Dome Köln",
-    cities: ["Köln", "Hamburg"],
+    city: "Hamburg",
+    venue: "Theater am Großmarkt Hamburg",
+    cities: ["Hamburg", "Köln"],
+    venuePerCity: { "Hamburg": "Theater am Großmarkt", "Köln": "Musical Dome" },
     description: "Baz Luhrmanns oscarprämierter Filmklassiker als atemberaubendes Musical-Spektakel: Liebe, Leidenschaft und 75 unvergessliche Songs von Lady Gaga bis Beyoncé – ab Herbst 2026 im Theater am Großmarkt Hamburg.",
     detailHeadline: "10 TONY AWARDS. 12 MILLIONEN ZUSCHAUER. JETZT IN HAMBURG.",
     detailDescription: "Der meistausgezeichnete Broadway-Hit aller Zeiten kommt nach Deutschland – und macht Hamburg zu seiner deutschen Heimat: Ab Herbst 2026 bringt ATG Entertainment MOULIN ROUGE! DAS MUSICAL ins eigens umgebaute Theater am Großmarkt. Baz Luhrmanns oscarprämierter Filmklassiker wird damit zum spektakulärsten Live-Erlebnis der Hansestadt.\n\n**75 Songs. 160 Jahre Popmusik. Eine Liebesgeschichte für die Ewigkeit.**\n\nVon Offenbach bis Lady Gaga, von Édith Piaf bis Beyoncé: MOULIN ROUGE! DAS MUSICAL vereint 75 Songs aus 160 Jahren Musikgeschichte zu einem einzigartigen Klangerlebnis. Legendäre Hits wie \"Lady Marmalade\", \"Roxanne\", \"Your Song\" und das eigens für den Film komponierte \"Come What May\" werden ergänzt durch Ohrwürmer von Adele, Katy Perry und Rihanna – live gespielt von einer mitreißenden Band.\n\n**Das Theater, das sich verwandelt.**\n\nFür MOULIN ROUGE! wird das Theater am Großmarkt von Grund auf neu gestaltet: Üppige rote Vorhänge, funkelnde Kronleuchter und das ikonische Herzrahmen-Bühnenbild verwandeln den Saal in den legendären Nachtclub von Montmartre. Wer das Haus betritt, betritt Paris 1899 – und verlässt es als Fan fürs Leben.\n\nSeit der Weltpremiere 2018 haben über 12 Millionen Zuschauer weltweit diese Show erlebt. Mit 10 Tony Awards – darunter Bestes Musical – ist MOULIN ROUGE! DAS MUSICAL die meistprämierte Broadway-Produktion des Jahres 2020. Jetzt ist Hamburg dran.",

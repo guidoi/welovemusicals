@@ -182,10 +182,14 @@ export default function MusicalDetail() {
 
             <div className="flex items-center gap-2 text-white/70">
               <MapPin className="w-4 h-4" style={{color: '#b8944a'}} />
-              {musical.city && !musical.cities ? (
+              {musical.city && musical.venuePerCity ? (
+                <span>
+                  {musical.cities?.map((c, i) => (
+                    <span key={c}>{i > 0 && <span style={{color: '#b8944a'}}> &amp; </span>}{c} ({musical.venuePerCity![c]})</span>
+                  ))}
+                </span>
+              ) : musical.city && !musical.cities ? (
                 <span>{musical.city} – {musical.venue}</span>
-              ) : musical.city && musical.cities ? (
-                <span>{musical.city} – {musical.venue} <span style={{color: '#b8944a'}}>&amp;</span> {musical.cities.filter(c => c !== musical.city).join(", ")}</span>
               ) : musical.id === 'gloeckner-von-notre-dame' && musical.cities ? (
                 <span>{musical.cities.join(", ")}</span>
               ) : musical.headerCities && musical.cities ? (
