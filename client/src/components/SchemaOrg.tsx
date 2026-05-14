@@ -53,7 +53,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
             "@type": "Offer",
             url: date.eventimUrl || canonicalMusicalUrl,
             priceCurrency: "EUR",
-            ...(musical.priceFrom ? { price: musical.priceFrom } : {}),
+            ...(musical.priceFrom ? { price: musical.priceFrom.replace(',', '.') } : {}),
             availability: "https://schema.org/InStock",
             validFrom: new Date().toISOString().split("T")[0],
           },
@@ -102,6 +102,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         ...(theaterStartDate ? { startDate: theaterStartDate } : {}),
+        // endDate nur ausgeben wenn tatsächlich ein Enddatum bekannt ist
         ...(theaterEndDate ? { endDate: theaterEndDate } : {}),
         location: {
           "@type": "PerformingArtsTheater",
@@ -124,7 +125,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           "@type": "Offer",
           url: musical.ticketCtaUrl || canonicalMusicalUrl,
           priceCurrency: "EUR",
-          ...(musical.priceFrom ? { price: musical.priceFrom } : {}),
+          ...(musical.priceFrom ? { price: musical.priceFrom.replace(',', '.') } : {}),
           availability: "https://schema.org/InStock",
           validFrom: new Date().toISOString().split("T")[0],
         },
