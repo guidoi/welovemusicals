@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://welovemusicals.manus.space/sitemap.xml
+Sitemap: https://welovemusicals.com/sitemap.xml
