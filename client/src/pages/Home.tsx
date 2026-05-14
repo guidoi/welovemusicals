@@ -47,8 +47,7 @@ export default function Home() {
   const [sortOption, setSortOption] = useState<SortOption>("featured");
   const [plzSearch, setPlzSearch] = useState<PlzSearchState>({
     active: false,
-    plz: "",
-    radius: 50,
+    plz: "",    radius: 50,
     originCoords: null,
   });
 
