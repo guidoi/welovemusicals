@@ -236,7 +236,7 @@ export default function Header() {
           {/* PLZ-Suche Icon Desktop */}
           <button
             onClick={() => setPlzOpen(!plzOpen)}
-            className={`relative transition-colors p-1 ${plzActive ? "text-gold" : "text-muted-foreground hover:text-gold"}`}
+            className={`relative transition-colors p-1 ${plzActive ? "text-gold" : "text-foreground hover:text-gold"}`}
             aria-label="Umkreissuche öffnen"
             title="Musicals in meiner Nähe"
           >
@@ -249,7 +249,7 @@ export default function Header() {
           {/* Musical-Suche Icon Desktop */}
           <button
             onClick={() => setSearchOpen(!searchOpen)}
-            className="text-muted-foreground hover:text-gold transition-colors p-1"
+            className="text-foreground hover:text-gold transition-colors p-1"
             aria-label="Suche öffnen"
           >
             {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
@@ -267,7 +267,7 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-1">
           <button
             onClick={() => { setPlzOpen(!plzOpen); setSearchOpen(false); setMobileOpen(false); }}
-            className={`relative transition-colors p-2 ${plzActive ? "text-gold" : "text-muted-foreground hover:text-gold"}`}
+            className={`relative transition-colors p-2 ${plzActive ? "text-gold" : "text-foreground hover:text-gold"}`}
             aria-label="Umkreissuche"
           >
             <MapPin className="w-5 h-5" />
@@ -277,7 +277,7 @@ export default function Header() {
           </button>
           <button
             onClick={() => { setSearchOpen(!searchOpen); setMobileOpen(false); setPlzOpen(false); }}
-            className="text-muted-foreground hover:text-gold transition-colors p-2"
+            className="text-foreground hover:text-gold transition-colors p-2"
             aria-label="Suche"
           >
             {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
