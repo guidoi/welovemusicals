@@ -2,7 +2,7 @@
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * Home: Startseite mit Hero, Featured Musicals, alle Musicals mit erweiterten Filtern, Städte, Anbieter
  */
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import {
   Ticket,
@@ -53,6 +53,21 @@ export default function Home() {
   });
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
+  const firstResultRef = useRef<HTMLDivElement>(null);
+
+  const scrollToFirstResult = useCallback(() => {
+    requestAnimationFrame(() => {
+      firstResultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, []);
+
+  const handlePlzSearch = useCallback((state: PlzSearchState) => {
+    setPlzSearch(state);
+    if (state.active) {
+      // Kurz warten bis filteredMusicals neu berechnet wurde
+      setTimeout(scrollToFirstResult, 80);
+    }
+  }, [scrollToFirstResult]);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -284,12 +299,13 @@ export default function Home() {
               sortOption={sortOption}
               setSortOption={setSortOption}
               plzSearch={plzSearch}
-              setPlzSearch={setPlzSearch}
+              setPlzSearch={handlePlzSearch}
               resultCount={filteredMusicals.length}
             />
           </div>
 
           {/* Musical Grid */}
+          <div ref={firstResultRef} className="scroll-mt-28" />
           {filteredMusicals.length === 0 ? (
             <div className="text-center py-16 px-6 border border-gold/10 rounded-sm bg-card/30">
               {plzSearch.active ? (
@@ -303,7 +319,7 @@ export default function Home() {
                     Versuche einen größeren Radius oder entferne andere Filter.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {[150, 200, 300, 500].filter(r => r > plzSearch.radius).map(r => (
+                    {[100, 150, 200].filter(r => r > plzSearch.radius).map(r => (
                       <button
                         key={r}
                         onClick={() => setPlzSearch({ ...plzSearch, radius: r })}
