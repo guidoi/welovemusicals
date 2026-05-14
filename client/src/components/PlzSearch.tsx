@@ -343,7 +343,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
             onClick={handleGeolocate}
             disabled={loading}
             title="Meinen Standort verwenden"
-            className="px-3 py-3 rounded-sm text-sm transition-all disabled:opacity-40 border border-gold/20 text-gold/70 hover:text-gold hover:border-gold/40 backdrop-blur-sm bg-black/20"
+              className="px-3 py-3 rounded-sm text-sm transition-all disabled:opacity-40 border border-gold/40 text-gold/90 hover:text-gold hover:border-gold/60 backdrop-blur-sm bg-black/20"
           >
             <Navigation className="w-4 h-4" />
           </button>
@@ -357,8 +357,8 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
               className="px-2.5 py-1 text-xs rounded-sm border transition-all"
               style={
                 state.radius === r
-                  ? { backgroundColor: 'rgba(184,148,74,0.25)', color: '#b8944a', borderColor: 'rgba(184,148,74,0.6)' }
-                  : { backgroundColor: 'rgba(0,0,0,0.3)', color: 'rgba(255,255,255,0.5)', borderColor: 'rgba(255,255,255,0.15)' }
+                  ? { backgroundColor: 'rgba(184,148,74,0.30)', color: '#d4a85a', borderColor: 'rgba(184,148,74,0.75)' }
+                  : { backgroundColor: 'rgba(0,0,0,0.2)', color: 'rgba(255,255,255,0.70)', borderColor: 'rgba(255,255,255,0.30)' }
               }
             >
               {r} km
@@ -380,8 +380,8 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
   // Standard-Darstellung für Filter-Bereich
   return (
     <div className="border border-border/50 rounded-sm p-3 bg-card/50 space-y-3">
-      <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-1">
-        <MapPin className="w-3 h-3 inline mr-1 text-gold/70" />
+      <label className="block text-xs text-muted-foreground/90 uppercase tracking-wider mb-1">
+        <MapPin className="w-3 h-3 inline mr-1 text-gold/90" />
         Umkreissuche (DE · AT · CH)
       </label>
       <div className="flex gap-2">
@@ -418,7 +418,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
           onClick={handleGeolocate}
           disabled={loading}
           title="Meinen Standort verwenden"
-          className="px-3 py-2 rounded-sm text-sm transition-all disabled:opacity-40 border border-border/50 text-muted-foreground hover:text-foreground hover:border-gold/30"
+          className="px-3 py-2 rounded-sm text-sm transition-all disabled:opacity-40 border border-border/70 text-muted-foreground/90 hover:text-foreground hover:border-gold/50"
         >
           <Navigation className="w-4 h-4" />
         </button>
@@ -431,8 +431,8 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
             className="px-2.5 py-1 text-xs rounded-sm border transition-all"
             style={
               state.radius === r
-                ? { backgroundColor: 'rgba(184,148,74,0.2)', color: '#b8944a', borderColor: 'rgba(184,148,74,0.5)' }
-                : { backgroundColor: 'transparent', color: 'var(--muted-foreground)', borderColor: 'var(--border)' }
+                ? { backgroundColor: 'rgba(184,148,74,0.28)', color: '#d4a85a', borderColor: 'rgba(184,148,74,0.70)' }
+                : { backgroundColor: 'transparent', color: 'rgba(255,255,255,0.65)', borderColor: 'rgba(255,255,255,0.28)' }
             }
           >
             {r} km
