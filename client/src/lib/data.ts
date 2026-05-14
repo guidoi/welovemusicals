@@ -2250,7 +2250,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
     priceFrom: "40,49",
     youtubeTrailerId: "IWrg3s9gMsY",
-    featured: false,
+    featured: true,
     tags: ["Disney", "Familienmusical", "Tournee"],
     uspItems: [
       { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
