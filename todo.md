@@ -124,3 +124,11 @@
 - [x] Hamburg musicalCount auf 7 aktualisiert
 - [x] Sitemap.xml enthält moulin-rouge bereits
 - [x] Bildnachweise im Impressum ergänzt (© Johan Persson / Nilz Boehme, ATG Entertainment)
+
+## SEO-Optimierungen Phase 2 (Mai 2026)
+- [ ] Schema.org JSON-LD auf Musical-Detailseiten prüfen und vervollständigen
+- [ ] Canonical-Tags auf allen Seiten prüfen
+- [ ] OG-Image pro Musical-Detailseite (spezifisches Bild)
+- [ ] Radius-Chips auf 25/50/100/150/200 km reduziert (300/500 entfernt)
+- [ ] Scroll zu erstem Suchergebnis nach PLZ-Suche
+- [ ] robots.txt Sitemap-URL auf welovemusicals.manus.space korrigiert
