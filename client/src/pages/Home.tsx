@@ -329,7 +329,7 @@ export default function Home() {
                       ? "border-2 border-gold/70 shadow-[0_0_14px_rgba(184,148,74,0.30)]"
                       : filterPulsed
                         ? "border border-gold/40"
-                        : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse"
+                        : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once"
                   }`}
                   onClick={() => { setShowFilters((v) => !v); setFilterPulsed(true); }}
                 >
@@ -440,7 +440,7 @@ export default function Home() {
                 className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-gold ${
                   showMorePulsed
                     ? "border border-gold/40 hover:bg-gold/10"
-                    : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse hover:bg-gold/10"
+                    : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once hover:bg-gold/10"
                 }`}
               >
                 Alle {filteredMusicals.length} Musicals anzeigen
