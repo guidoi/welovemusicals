@@ -53,6 +53,7 @@ export default function Home() {
   });
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
+  const [showMorePulsed, setShowMorePulsed] = useState(false); // Puls-Effekt einmalig für "Alle anzeigen"-Button
   const [showFilters, setShowFilters] = useState(false); // Mobile: zugeklappt
   const [filterPulsed, setFilterPulsed] = useState(false); // Puls-Effekt einmalig
   const firstResultRef = useRef<HTMLDivElement>(null);
@@ -435,8 +436,12 @@ export default function Home() {
           {!showAllMusicals && filteredMusicals.length > 9 && (
             <div className="text-center mt-10">
               <button
-                onClick={() => setShowAllMusicals(true)}
-                className="px-8 py-3 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors inline-flex items-center gap-2"
+                onClick={() => { setShowAllMusicals(true); setShowMorePulsed(true); }}
+                className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-gold ${
+                  showMorePulsed
+                    ? "border border-gold/40 hover:bg-gold/10"
+                    : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse hover:bg-gold/10"
+                }`}
               >
                 Alle {filteredMusicals.length} Musicals anzeigen
                 <ChevronDown className="w-4 h-4" />
