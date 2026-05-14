@@ -328,8 +328,8 @@ export default function Home() {
                     showFilters
                       ? "border-2 border-gold/70 shadow-[0_0_14px_rgba(184,148,74,0.30)]"
                       : filterPulsed
-                        ? "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)]"
-                        : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once"
+                        ? "border border-gold/40"
+                        : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse"
                   }`}
                   onClick={() => { setShowFilters((v) => !v); setFilterPulsed(true); }}
                 >
