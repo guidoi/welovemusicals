@@ -325,14 +325,11 @@ export default function Home() {
                 <button
                   className={`md:hidden w-full flex items-center justify-between px-4 py-3.5 bg-card rounded-sm mb-0 transition-all duration-300 ${
                     showFilters
-                      ? "border-2 shadow-[0_0_14px_rgba(239,68,68,0.30)]"
+                      ? "border-2 border-gold/70 shadow-[0_0_14px_rgba(184,148,74,0.30)]"
                       : filterPulsed
-                        ? "border"
-                        : "border-2 shadow-[0_0_18px_rgba(239,68,68,0.40)] animate-pulse"
+                        ? "border border-gold/40"
+                        : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse"
                   }`}
-                  style={{
-                    borderColor: showFilters ? 'rgb(239,68,68)' : filterPulsed ? 'rgba(239,68,68,0.45)' : 'rgb(239,68,68)'
-                  }}
                   onClick={() => { setShowFilters((v) => !v); setFilterPulsed(true); }}
                 >
                   <span className="flex items-center gap-2.5 text-sm font-semibold text-gold">
