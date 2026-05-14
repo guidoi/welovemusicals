@@ -61,23 +61,19 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
         return event;
       });
 
-      const eventListSchema = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        name: `${musical.title} – Alle Tourtermine`,
-        itemListElement: events.map((event, idx) => ({
-          "@type": "ListItem",
-          position: idx + 1,
-          item: event,
-        })),
-      };
-
-      const scriptEl = document.createElement("script");
-      scriptEl.type = "application/ld+json";
-      scriptEl.setAttribute("data-schema-org", "music-events");
-      scriptEl.textContent = JSON.stringify(eventListSchema);
-      document.head.appendChild(scriptEl);
-      scripts.push(scriptEl);
+      // Jedes Tourtermin-Event als eigenständiges JSON-LD ausgeben (besser für Google Rich Results)
+      events.forEach((event, idx) => {
+        const eventSchema = {
+          "@context": "https://schema.org",
+          ...event,
+        };
+        const scriptEl = document.createElement("script");
+        scriptEl.type = "application/ld+json";
+        scriptEl.setAttribute("data-schema-org", `music-event-${idx}`);
+        scriptEl.textContent = JSON.stringify(eventSchema);
+        document.head.appendChild(scriptEl);
+        scripts.push(scriptEl);
+      });
     }
 
     // 1b. TheaterEvent für ensuite-Musicals mit festem Standort
