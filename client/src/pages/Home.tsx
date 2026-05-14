@@ -57,7 +57,10 @@ export default function Home() {
 
   const scrollToFirstResult = useCallback(() => {
     requestAnimationFrame(() => {
-      firstResultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const el = firstResultRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 24;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   }, []);
 
@@ -86,7 +89,10 @@ export default function Home() {
       setPlzSearch(state);
       if (state.active) {
         setTimeout(() => {
-          firstResultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const el = firstResultRef.current;
+          if (!el) return;
+          const top = el.getBoundingClientRect().top + window.scrollY - 24;
+          window.scrollTo({ top, behavior: 'smooth' });
         }, 150);
       }
     };
@@ -319,8 +325,8 @@ export default function Home() {
             />
           </div>
 
-          {/* Musical Grid */}
-          <div ref={firstResultRef} className="scroll-mt-28" />
+          {/* Musical Grid – Scroll-Anker direkt nach Filter-Section */}
+          <div ref={firstResultRef} className="scroll-mt-6" />
           {filteredMusicals.length === 0 ? (
             <div className="text-center py-16 px-6 border border-gold/10 rounded-sm bg-card/30">
               {plzSearch.active ? (
