@@ -227,7 +227,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={(e) => handleAnchorClick(e, item.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-gold transition-colors tracking-wide uppercase"
+              className="text-sm font-medium text-foreground hover:text-gold transition-colors tracking-wide uppercase"
             >
               {item.label}
             </a>
