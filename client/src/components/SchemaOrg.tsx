@@ -7,6 +7,26 @@ import type { Musical } from "@/lib/data";
 
 const BASE_URL = "https://welovemusicals.com";
 
+// Bekannte Anbieter-URLs für Schema.org organizer.url
+// Neue Provider hier eintragen – unbekannte Provider erhalten automatisch einen Fallback
+const PROVIDER_URLS: Record<string, string> = {
+  "ATG Entertainment": "https://www.atgtickets.de",
+  "ATG Touring": "https://www.atgtickets.de",
+  "Stage Entertainment": "https://www.stage-entertainment.de",
+  "ShowSlot": "https://www.showslot.de",
+  "Limelight Live Entertainment": "https://www.limelight-entertainment.de",
+  "Semmel Concerts": "https://www.semmel.de",
+  "Theater Liberi": "https://www.theater-liberi.de",
+  "Trinity Concerts": "https://www.trinityconcerts.de",
+  "Bavaria Live Promotion": "https://www.bavaria-live.de",
+  "Schmidts Tivoli": "https://www.schmidts-tivoli.de",
+};
+
+/** Gibt die URL eines Providers zurück – bekannte direkt, unbekannte als Google-Suche als Fallback */
+function getProviderUrl(provider: string): string {
+  return PROVIDER_URLS[provider] ?? `https://www.google.com/search?q=${encodeURIComponent(provider)}`;
+}
+
 interface SchemaOrgProps {
   musical: Musical;
 }
@@ -48,6 +68,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           organizer: {
             "@type": "Organization",
             name: musical.provider,
+            url: getProviderUrl(musical.provider),
           },
           offers: {
             "@type": "Offer",
@@ -120,6 +141,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
         organizer: {
           "@type": "Organization",
           name: musical.provider,
+          url: getProviderUrl(musical.provider),
         },
         offers: {
           "@type": "Offer",
