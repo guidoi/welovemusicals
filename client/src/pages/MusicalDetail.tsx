@@ -61,15 +61,11 @@ export default function MusicalDetail() {
         ? musical.description.slice(0, 152) + "..."
         : musical.description)
     : "";
-  const canonicalUrl = musical
-    ? `https://welovemusicals.manus.space/musical/${musical.slug}`
-    : undefined;
   useSEO({
     title: seoTitle,
     description: seoDescription,
     image: musical?.image,
-    url: canonicalUrl,
-    canonical: canonicalUrl,
+    url: typeof window !== "undefined" ? window.location.href : undefined,
   });
 
   // Sticky CTA: ausblenden wenn Tourtermine sichtbar

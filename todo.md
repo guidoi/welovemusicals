@@ -126,9 +126,9 @@
 - [x] Bildnachweise im Impressum ergänzt (© Johan Persson / Nilz Boehme, ATG Entertainment)
 
 ## SEO-Optimierungen Phase 2 (Mai 2026)
-- [x] Schema.org JSON-LD auf Musical-Detailseiten prüfen und vervollständigen
-- [x] Canonical-Tags auf allen Seiten prüfen und ergänzt (Musical, Stadt, Startseite)
+- [ ] Schema.org JSON-LD auf Musical-Detailseiten prüfen und vervollständigen
+- [ ] Canonical-Tags auf allen Seiten prüfen
 - [ ] OG-Image pro Musical-Detailseite (spezifisches Bild)
-- [x] Radius-Chips auf 25/50/100/150/200 km reduziert (300/500 entfernt)
-- [x] Scroll zu erstem Suchergebnis nach PLZ-Suche
-- [x] robots.txt Sitemap-URL auf welovemusicals.manus.space korrigiert
+- [ ] Radius-Chips auf 25/50/100/150/200 km reduziert (300/500 entfernt)
+- [ ] Scroll zu erstem Suchergebnis nach PLZ-Suche
+- [ ] robots.txt Sitemap-URL auf welovemusicals.manus.space korrigiert

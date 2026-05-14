@@ -30,7 +30,7 @@ export default function Header() {
 
   // PLZ-State lokal im Header (wird per Event an Home.tsx weitergegeben)
   const [plzInput, setPlzInput] = useState("");
-  const [plzRadius, setPlzRadius] = useState(50);
+  const [plzRadius, setPlzRadius] = useState(100);
   const [plzLoading, setPlzLoading] = useState(false);
   const [plzError, setPlzError] = useState<string | null>(null);
   const [plzActive, setPlzActive] = useState(false);

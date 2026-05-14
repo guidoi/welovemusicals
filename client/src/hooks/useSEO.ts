@@ -11,7 +11,6 @@ interface SEOProps {
   description: string;
   image?: string;
   url?: string;
-  canonical?: string;
 }
 
 function setMeta(selector: string, content: string) {
@@ -31,7 +30,7 @@ function setMeta(selector: string, content: string) {
   el.setAttribute("content", content);
 }
 
-export function useSEO({ title, description, image, url, canonical }: SEOProps) {
+export function useSEO({ title, description, image, url }: SEOProps) {
   useEffect(() => {
     const prevTitle = document.title;
     const prevDesc = document.querySelector('meta[name="description"]')?.getAttribute("content") ?? "";
@@ -42,7 +41,6 @@ export function useSEO({ title, description, image, url, canonical }: SEOProps) 
     const prevTwTitle = document.querySelector('meta[property="twitter:title"]')?.getAttribute("content") ?? "";
     const prevTwDesc = document.querySelector('meta[property="twitter:description"]')?.getAttribute("content") ?? "";
     const prevTwImage = document.querySelector('meta[property="twitter:image"]')?.getAttribute("content") ?? "";
-    const prevCanonical = document.querySelector('link[rel="canonical"]')?.getAttribute("href") ?? "";
 
     // Set new values
     document.title = title;
@@ -51,22 +49,9 @@ export function useSEO({ title, description, image, url, canonical }: SEOProps) 
     setMeta('meta[property="og:description"]', description);
     if (image) setMeta('meta[property="og:image"]', image);
     if (url) setMeta('meta[property="og:url"]', url);
-    if (url) setMeta('meta[property="twitter:url"]', url);
     setMeta('meta[property="twitter:title"]', title);
     setMeta('meta[property="twitter:description"]', description);
     if (image) setMeta('meta[property="twitter:image"]', image);
-
-    // Canonical-Tag setzen
-    const canonicalUrl = canonical ?? url;
-    let canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (canonicalUrl) {
-      if (!canonicalEl) {
-        canonicalEl = document.createElement("link");
-        canonicalEl.setAttribute("rel", "canonical");
-        document.head.appendChild(canonicalEl);
-      }
-      canonicalEl.setAttribute("href", canonicalUrl);
-    }
 
     return () => {
       document.title = prevTitle;
@@ -78,12 +63,6 @@ export function useSEO({ title, description, image, url, canonical }: SEOProps) 
       setMeta('meta[property="twitter:title"]', prevTwTitle);
       setMeta('meta[property="twitter:description"]', prevTwDesc);
       setMeta('meta[property="twitter:image"]', prevTwImage);
-      // Canonical zurücksetzen
-      const el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-      if (el) {
-        if (prevCanonical) el.setAttribute("href", prevCanonical);
-        else el.remove();
-      }
     };
-  }, [title, description, image, url, canonical]);
+  }, [title, description, image, url]);
 }
