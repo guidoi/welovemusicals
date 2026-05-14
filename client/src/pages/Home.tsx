@@ -15,6 +15,7 @@ import {
   Users,
   Hotel,
   ArrowRight,
+  SlidersHorizontal,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -53,6 +54,7 @@ export default function Home() {
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
   const [showFilters, setShowFilters] = useState(false); // Mobile: zugeklappt
+  const [filterPulsed, setFilterPulsed] = useState(false); // Puls-Effekt einmalig
   const firstResultRef = useRef<HTMLDivElement>(null);
 
   const scrollToFirstResult = useCallback(() => {
@@ -321,20 +323,27 @@ export default function Home() {
               ].filter(Boolean).length;
               return (
                 <button
-                  className="md:hidden w-full flex items-center justify-between px-4 py-3 bg-card border border-gold/10 rounded-sm mb-0 transition-colors hover:border-gold/30"
-                  onClick={() => setShowFilters((v) => !v)}
+                  className={`md:hidden w-full flex items-center justify-between px-4 py-3.5 bg-card rounded-sm mb-0 transition-all duration-300 ${
+                    showFilters
+                      ? "border-2 border-gold/70 shadow-[0_0_12px_rgba(184,148,74,0.25)]"
+                      : filterPulsed
+                        ? "border border-gold/40"
+                        : "border-2 border-gold/60 shadow-[0_0_16px_rgba(184,148,74,0.35)] animate-pulse"
+                  }`}
+                  onClick={() => { setShowFilters((v) => !v); setFilterPulsed(true); }}
                 >
-                  <span className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <ChevronDown className={`w-4 h-4 text-gold transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`} />
-                    Filter & Sortierung
+                  <span className="flex items-center gap-2.5 text-sm font-semibold text-gold">
+                    <SlidersHorizontal className="w-4 h-4" />
+                    Musicals filtern & sortieren
                     {activeCount > 0 && (
-                      <span className="text-xs bg-gold text-black px-2 py-0.5 rounded-full font-semibold">
+                      <span className="text-xs bg-gold text-black px-2 py-0.5 rounded-full font-bold">
                         {activeCount} aktiv
                       </span>
                     )}
                   </span>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <span className="text-gold font-semibold">{filteredMusicals.length}</span> Ergebnisse
+                    <ChevronDown className={`w-4 h-4 text-gold transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`} />
                   </span>
                 </button>
               );
