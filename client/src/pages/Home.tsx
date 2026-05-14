@@ -52,6 +52,7 @@ export default function Home() {
   });
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
+  const [showFilters, setShowFilters] = useState(false); // Mobile: zugeklappt
   const firstResultRef = useRef<HTMLDivElement>(null);
 
   const scrollToFirstResult = useCallback(() => {
@@ -307,21 +308,56 @@ export default function Home() {
             Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt.
           </p>
 
-          {/* Advanced Filters */}
-          <div className="mb-10 p-6 bg-card border border-gold/10 rounded-sm">
-            <MusicalFilters
-              categoryFilter={categoryFilter}
-              setCategoryFilter={setCategoryFilter}
-              countryFilter={countryFilter}
-              setCountryFilter={setCountryFilter}
-              cityFilter={cityFilter}
-              setCityFilter={setCityFilter}
-              sortOption={sortOption}
-              setSortOption={setSortOption}
-              plzSearch={plzSearch}
-              setPlzSearch={handlePlzSearch}
-              resultCount={filteredMusicals.length}
-            />
+          {/* Advanced Filters – Mobile Akkordeon, Desktop immer sichtbar */}
+          <div className="mb-10">
+            {/* Mobile Toggle Button */}
+            {(() => {
+              const activeCount = [
+                categoryFilter !== "alle",
+                countryFilter !== "alle",
+                cityFilter !== "alle",
+                sortOption !== "featured",
+                plzSearch.active,
+              ].filter(Boolean).length;
+              return (
+                <button
+                  className="md:hidden w-full flex items-center justify-between px-4 py-3 bg-card border border-gold/10 rounded-sm mb-0 transition-colors hover:border-gold/30"
+                  onClick={() => setShowFilters((v) => !v)}
+                >
+                  <span className="flex items-center gap-2 text-sm font-medium text-foreground">
+                    <ChevronDown className={`w-4 h-4 text-gold transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`} />
+                    Filter & Sortierung
+                    {activeCount > 0 && (
+                      <span className="text-xs bg-gold text-black px-2 py-0.5 rounded-full font-semibold">
+                        {activeCount} aktiv
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    <span className="text-gold font-semibold">{filteredMusicals.length}</span> Ergebnisse
+                  </span>
+                </button>
+              );
+            })()}
+
+            {/* Filter Panel: auf Mobile nur wenn showFilters, auf Desktop immer */}
+            <div className={`p-6 bg-card border border-gold/10 rounded-sm ${
+              showFilters ? "block" : "hidden md:block"
+            } ${showFilters ? "rounded-t-none border-t-0" : ""}`}>
+              <MusicalFilters
+                categoryFilter={categoryFilter}
+                setCategoryFilter={setCategoryFilter}
+                countryFilter={countryFilter}
+                setCountryFilter={setCountryFilter}
+                cityFilter={cityFilter}
+                setCityFilter={setCityFilter}
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+                plzSearch={plzSearch}
+                setPlzSearch={handlePlzSearch}
+                resultCount={filteredMusicals.length}
+              />
+            </div>
           </div>
 
           {/* Musical Grid – Scroll-Anker direkt nach Filter-Section */}
