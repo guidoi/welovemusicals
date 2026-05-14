@@ -432,20 +432,35 @@ export default function Home() {
             </div>
           )}
 
-          {/* Show More */}
-          {!showAllMusicals && filteredMusicals.length > 9 && (
+          {/* Show More / Show Less */}
+          {filteredMusicals.length > 9 && (
             <div className="text-center mt-10">
-              <button
-                onClick={() => { setShowAllMusicals(true); setShowMorePulsed(true); }}
-                className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-gold ${
-                  showMorePulsed
-                    ? "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] hover:bg-gold/10"
-                    : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once hover:bg-gold/10"
-                }`}
-              >
-                Alle {filteredMusicals.length} Musicals anzeigen
-                <ChevronDown className="w-4 h-4" />
-              </button>
+              {!showAllMusicals ? (
+                <button
+                  onClick={() => { setShowAllMusicals(true); setShowMorePulsed(true); }}
+                  className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-gold ${
+                    showMorePulsed
+                      ? "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] hover:bg-gold/10"
+                      : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once hover:bg-gold/10"
+                  }`}
+                >
+                  Alle {filteredMusicals.length} Musicals anzeigen
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowAllMusicals(false);
+                    setTimeout(() => {
+                      document.getElementById('musicals')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 50);
+                  }}
+                  className="px-8 py-3 font-semibold rounded-sm border border-gold/40 text-gold hover:bg-gold/10 transition-all duration-300 inline-flex items-center gap-2"
+                >
+                  Weniger anzeigen
+                  <ChevronDown className="w-4 h-4 rotate-180" />
+                </button>
+              )}
             </div>
           )}
         </div>
