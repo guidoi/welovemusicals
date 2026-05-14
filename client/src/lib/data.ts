@@ -917,7 +917,7 @@ export const musicals: Musical[] = [
     eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
     priceFrom: "59,99",
     youtubeTrailerId: "A02SZ71tgRI",
-    featured: true,
+    featured: false,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     uspItems: [
       { icon: "Crown", title: "Deutschlandpremiere 2026", text: "Erstmals in Deutschland – exklusiv im Musical Dome Köln" },
@@ -2250,7 +2250,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
     priceFrom: "40,49",
     youtubeTrailerId: "IWrg3s9gMsY",
-    featured: true,
+    featured: false,
     tags: ["Disney", "Familienmusical", "Tournee"],
     uspItems: [
       { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
@@ -2320,7 +2320,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
     awinBoxUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
     eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
-    featured: false,
+    featured: true,
     tags: ["Fester Standort", "Rekordshow", "Familie"],
     youtubeTrailerId: "fmbGACDjs0E",
     uspItems: [
