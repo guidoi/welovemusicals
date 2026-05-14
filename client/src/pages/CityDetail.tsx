@@ -36,11 +36,15 @@ export default function CityDetail() {
   const seoDescription = city
     ? `${musicalCount > 0 ? `${musicalCount} Musical${musicalCount !== 1 ? 's' : ''} in ${city.name}` : `Musicals in ${city.name}`} – ${city.description.length > 100 ? city.description.slice(0, 97) + '...' : city.description}`
     : "";
+  const canonicalUrl = city
+    ? `https://welovemusicals.manus.space/stadt/${city.slug}`
+    : undefined;
   useSEO({
     title: seoTitle,
     description: seoDescription,
     image: city?.image,
-    url: typeof window !== "undefined" ? window.location.href : undefined,
+    url: canonicalUrl,
+    canonical: canonicalUrl,
   });
 
   if (!city) {

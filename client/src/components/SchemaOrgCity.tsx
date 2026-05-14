@@ -5,6 +5,8 @@
 import { useEffect } from "react";
 import type { City, Musical } from "@/lib/data";
 
+const BASE_URL = "https://welovemusicals.manus.space";
+
 interface SchemaOrgCityProps {
   city: City;
   musicals: Musical[];
@@ -16,8 +18,7 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
     document.querySelectorAll('script[data-schema-org-city]').forEach((el) => el.remove());
 
     const scripts: HTMLScriptElement[] = [];
-    const origin = window.location.origin;
-    const pageUrl = window.location.href;
+    const pageUrl = `${BASE_URL}/stadt/${city.slug}`;
 
     // 1. TouristDestination für die Stadt
     const touristSchema = {
@@ -36,7 +37,7 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
         name: musical.title,
         description: musical.description,
         image: musical.image,
-        url: `${origin}/musical/${musical.slug}`,
+        url: `${BASE_URL}/musical/${musical.slug}`,
       })),
     };
 
@@ -110,13 +111,13 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
           "@type": "ListItem",
           position: 1,
           name: "We Love Musicals",
-          item: origin,
+          item: BASE_URL,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Musical-Städte",
-          item: `${origin}/#staedte`,
+          item: `${BASE_URL}/#staedte`,
         },
         {
           "@type": "ListItem",
