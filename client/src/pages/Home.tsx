@@ -92,7 +92,7 @@ export default function Home() {
           if (!el) return;
           const top = el.getBoundingClientRect().top + window.scrollY - 24;
           window.scrollTo({ top, behavior: 'smooth' });
-        }, 150);
+        }, 250);
       }
     };
     window.addEventListener('plz-search-update', handlePlzEvent);

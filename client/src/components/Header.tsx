@@ -109,18 +109,13 @@ export default function Header() {
         dispatchPlzEvent(state);
         if (state.active) {
           setPlzOpen(false);
-          // Zur Musical-Sektion scrollen wenn auf Startseite
-          if (location === "/") {
-            setTimeout(() => {
-              document.getElementById("musicals")?.scrollIntoView({ behavior: "smooth" });
-            }, 300);
-          }
+          // Scrollen wird von Home.tsx via plz-search-update Event übernommen
         }
       },
       setPlzLoading,
       setPlzError
     );
-  }, [plzInput, plzRadius, location]);
+  }, [plzInput, plzRadius]);
 
   const handlePlzClear = () => {
     setPlzInput("");
@@ -161,11 +156,7 @@ export default function Header() {
             dispatchPlzEvent(state);
             if (state.active) {
               setPlzOpen(false);
-              if (location === "/") {
-                setTimeout(() => {
-                  document.getElementById("musicals")?.scrollIntoView({ behavior: "smooth" });
-                }, 300);
-              }
+              // Scrollen wird von Home.tsx via plz-search-update Event übernommen
             }
           },
           setPlzLoading,
