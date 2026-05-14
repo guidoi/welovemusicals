@@ -79,6 +79,22 @@ export default function Home() {
     }
   }, []);
 
+  // PLZ-Suche aus Header-Overlay empfangen und zu erstem Ergebnis scrollen
+  useEffect(() => {
+    const handlePlzEvent = (e: Event) => {
+      const state = (e as CustomEvent<PlzSearchState>).detail;
+      setPlzSearch(state);
+      if (state.active) {
+        // Warten bis React den neuen State gerendert hat, dann scrollen
+        setTimeout(() => {
+          firstResultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
+    };
+    window.addEventListener('plz-search-update', handlePlzEvent);
+    return () => window.removeEventListener('plz-search-update', handlePlzEvent);
+  }, []);
+
   const featured = useMemo(() => getFeaturedMusicals(), []);
 
   const filteredMusicals = useMemo(() => {
