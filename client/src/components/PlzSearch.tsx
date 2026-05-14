@@ -334,7 +334,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
             onClick={handleSearch}
             disabled={loading || inputPlz.length < 4}
             className="px-4 py-3 rounded-sm text-sm font-semibold transition-all disabled:opacity-40 flex items-center gap-2"
-            style={{ backgroundColor: '#d4a85a', color: '#0a0a0a' }}
+            style={{ backgroundColor: '#c9952a', color: '#0a0a0a' }}
           >
             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
             <span className="hidden sm:inline">Suchen</span>
