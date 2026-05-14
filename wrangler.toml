@@ -6,7 +6,7 @@ command = "pnpm run build"
 cwd = "."
 
 [assets]
-directory = "dist/public"
+directory = "dist"
 
 [env.production]
 routes = [
