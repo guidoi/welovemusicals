@@ -28,8 +28,10 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           description: musical.description,
           image: musical.image,
           url: date.eventimUrl || canonicalMusicalUrl,
+          eventStatus: "https://schema.org/EventScheduled",
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
           startDate: date.startDate,
-          endDate: date.endDate,
+          ...(date.endDate ? { endDate: date.endDate } : {}),
           location: {
             "@type": "MusicVenue",
             name: date.venue,
@@ -84,6 +86,16 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
       musical.city &&
       musical.venue
     ) {
+      // startDate/endDate aus tourDates ableiten (frühestes/spätestes Datum)
+      let theaterStartDate: string | undefined;
+      let theaterEndDate: string | undefined;
+      if (musical.tourDates && musical.tourDates.length > 0) {
+        const starts = musical.tourDates.map((d) => d.startDate).filter(Boolean).sort();
+        const ends = musical.tourDates.map((d) => d.endDate).filter(Boolean).sort();
+        if (starts.length > 0) theaterStartDate = starts[0];
+        if (ends.length > 0) theaterEndDate = ends[ends.length - 1];
+      }
+
       const theaterEvent = {
         "@context": "https://schema.org",
         "@type": "TheaterEvent",
@@ -91,6 +103,10 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
         description: musical.description,
         image: musical.image,
         url: canonicalMusicalUrl,
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        ...(theaterStartDate ? { startDate: theaterStartDate } : {}),
+        ...(theaterEndDate ? { endDate: theaterEndDate } : {}),
         location: {
           "@type": "PerformingArtsTheater",
           name: musical.venue,
