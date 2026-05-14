@@ -48,7 +48,7 @@ export default function Home() {
   const [plzSearch, setPlzSearch] = useState<PlzSearchState>({
     active: false,
     plz: "",
-    radius: 100,
+    radius: 50,
     originCoords: null,
   });
 
@@ -313,7 +313,7 @@ export default function Home() {
                       </button>
                     ))}
                     <button
-                      onClick={() => setPlzSearch({ active: false, plz: '', radius: 100, originCoords: null })}
+                      onClick={() => setPlzSearch({ active: false, plz: '', radius: 50, originCoords: null })}
                       className="px-4 py-2 text-sm rounded-sm border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
                     >
                       Umkreissuche aufheben

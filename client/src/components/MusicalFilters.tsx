@@ -248,7 +248,7 @@ export default function MusicalFilters({
               setCountryFilter("alle");
               setCityFilter("alle");
               setSortOption("featured");
-              setPlzSearch({ active: false, plz: "", radius: 100, originCoords: null });
+              setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
             }}
             className="text-xs text-gold hover:text-gold-light transition-colors underline"
           >
