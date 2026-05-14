@@ -37,7 +37,7 @@ export default function CityDetail() {
     ? `${musicalCount > 0 ? `${musicalCount} Musical${musicalCount !== 1 ? 's' : ''} in ${city.name}` : `Musicals in ${city.name}`} – ${city.description.length > 100 ? city.description.slice(0, 97) + '...' : city.description}`
     : "";
   const canonicalUrl = city
-    ? `https://welovemusicals.manus.space/stadt/${params.slug}`
+    ? `https://welovemusicals.com/stadt/${params.slug}`
     : undefined;
   useSEO({
     title: seoTitle,

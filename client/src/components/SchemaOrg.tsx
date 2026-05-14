@@ -5,7 +5,7 @@
 import { useEffect } from "react";
 import type { Musical } from "@/lib/data";
 
-const BASE_URL = "https://welovemusicals.manus.space";
+const BASE_URL = "https://welovemusicals.com";
 
 interface SchemaOrgProps {
   musical: Musical;

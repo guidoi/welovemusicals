@@ -62,7 +62,7 @@ export default function MusicalDetail() {
         : musical.description)
     : "";
   const canonicalUrl = musical
-    ? `https://welovemusicals.manus.space/musical/${musical.slug || musical.id}`
+    ? `https://welovemusicals.com/musical/${musical.slug || musical.id}`
     : undefined;
   useSEO({
     title: seoTitle,

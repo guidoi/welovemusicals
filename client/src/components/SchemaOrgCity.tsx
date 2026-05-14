@@ -16,7 +16,7 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
     document.querySelectorAll('script[data-schema-org-city]').forEach((el) => el.remove());
 
     const scripts: HTMLScriptElement[] = [];
-    const BASE_URL = "https://welovemusicals.manus.space";
+    const BASE_URL = "https://welovemusicals.com";
     const pageUrl = `${BASE_URL}/stadt/${city.slug}`;
 
     // 1. TouristDestination für die Stadt
