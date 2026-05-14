@@ -276,7 +276,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
 
   const handleGeolocate = () => {
     if (!navigator.geolocation) {
-      setError("Geolocation wird von diesem Browser nicht unterstützt");
+      setError("Standortfreigabe nicht möglich – bitte PLZ manuell eingeben");
       return;
     }
     setLoading(true);
@@ -296,7 +296,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
         await searchByPlz(nearestPlz, state.radius, onChange, setLoading, setError);
       },
       () => {
-        setError("Standort konnte nicht ermittelt werden");
+        setError("Standort nicht verfügbar – bitte Standortfreigabe im Browser erlauben oder PLZ manuell eingeben");
         setLoading(false);
       },
       { timeout: 8000 }

@@ -127,7 +127,7 @@ export default function Header() {
 
   const handleGeolocate = () => {
     if (!navigator.geolocation) {
-      setPlzError("Geolocation wird von diesem Browser nicht unterstützt");
+      setPlzError("Standortfreigabe nicht möglich – bitte PLZ manuell eingeben");
       return;
     }
     setPlzLoading(true);
@@ -164,7 +164,7 @@ export default function Header() {
         );
       },
       () => {
-        setPlzError("Standort konnte nicht ermittelt werden");
+        setPlzError("Standort nicht verfügbar – bitte Standortfreigabe im Browser erlauben oder PLZ manuell eingeben");
         setPlzLoading(false);
       },
       { timeout: 8000 }
