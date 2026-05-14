@@ -212,12 +212,13 @@ html {
   background: oklch(0.78 0.12 85);
 }
 
-/* Einmaliger Puls-Effekt (1x, dann stoppt die Animation) */
+/* Einmaliger Puls-Effekt (1x), danach bleibt Glüheffekt erhalten */
 @keyframes pulse-once {
   0%   { box-shadow: 0 0 18px rgba(184,148,74,0.40); }
   50%  { box-shadow: 0 0 32px rgba(184,148,74,0.75); }
   100% { box-shadow: 0 0 18px rgba(184,148,74,0.40); }
 }
 .animate-pulse-once {
-  animation: pulse-once 0.9s ease-in-out 1;
+  animation: pulse-once 0.9s ease-in-out 1 forwards;
+  box-shadow: 0 0 18px rgba(184,148,74,0.40);
 }
