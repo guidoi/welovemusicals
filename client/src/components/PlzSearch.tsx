@@ -207,7 +207,7 @@ interface PlzSearchProps {
   compact?: boolean; // Kompakte Darstellung für Hero
 }
 
-export const RADIUS_OPTIONS = [25, 50, 100, 150, 200];
+export const RADIUS_OPTIONS = [25, 50, 100, 150];
 
 export async function searchByPlz(
   plz: string,

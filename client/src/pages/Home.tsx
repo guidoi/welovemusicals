@@ -339,7 +339,7 @@ export default function Home() {
                     Versuche einen größeren Radius oder entferne andere Filter.
                   </p>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {[100, 150, 200].filter(r => r > plzSearch.radius).map(r => (
+                    {[100, 150].filter(r => r > plzSearch.radius).map(r => (
                       <button
                         key={r}
                         onClick={() => setPlzSearch({ ...plzSearch, radius: r })}
