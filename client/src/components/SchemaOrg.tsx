@@ -1,9 +1,11 @@
 /**
  * SchemaOrg – Komponente zum Einbetten von JSON-LD strukturierten Daten
- * Unterstützt: MusicEvent (Tourtermine), BreadcrumbList
+ * Unterstützt: MusicEvent / TheaterEvent (Tourtermine + ensuite), BreadcrumbList
  */
 import { useEffect } from "react";
 import type { Musical } from "@/lib/data";
+
+const BASE_URL = "https://welovemusicals.manus.space";
 
 interface SchemaOrgProps {
   musical: Musical;
@@ -15,40 +17,47 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
     document.querySelectorAll('script[data-schema-org]').forEach((el) => el.remove());
 
     const scripts: HTMLScriptElement[] = [];
+    const canonicalMusicalUrl = `${BASE_URL}/musical/${musical.slug || musical.id}`;
 
-    // 1. MusicEvent JSON-LD für jeden Tourtermin
+    // 1a. MusicEvent JSON-LD für Tourtermine
     if (musical.tourDates && musical.tourDates.length > 0) {
-      const events = musical.tourDates.map((date) => ({
-        "@type": "MusicEvent",
-        name: musical.title,
-        description: musical.description,
-        image: musical.image,
-        url: date.eventimUrl,
-        startDate: date.startDate,
-        endDate: date.endDate,
-        location: {
-          "@type": "MusicVenue",
-          name: date.venue,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: date.city,
-          },
-        },
-        performer: {
-          "@type": "PerformingGroup",
+      const events = musical.tourDates.map((date) => {
+        const event: Record<string, unknown> = {
+          "@type": "MusicEvent",
           name: musical.title,
-        },
-        organizer: {
-          "@type": "Organization",
-          name: musical.provider,
-        },
-        offers: {
-          "@type": "Offer",
-          url: date.eventimUrl,
-          availability: "https://schema.org/InStock",
-          validFrom: new Date().toISOString().split("T")[0],
-        },
-      }));
+          description: musical.description,
+          image: musical.image,
+          url: date.eventimUrl || canonicalMusicalUrl,
+          startDate: date.startDate,
+          endDate: date.endDate,
+          location: {
+            "@type": "MusicVenue",
+            name: date.venue,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: date.city,
+              addressCountry: "DE",
+            },
+          },
+          performer: {
+            "@type": "PerformingGroup",
+            name: musical.title,
+          },
+          organizer: {
+            "@type": "Organization",
+            name: musical.provider,
+          },
+          offers: {
+            "@type": "Offer",
+            url: date.eventimUrl || canonicalMusicalUrl,
+            priceCurrency: "EUR",
+            ...(musical.priceFrom ? { price: musical.priceFrom } : {}),
+            availability: "https://schema.org/InStock",
+            validFrom: new Date().toISOString().split("T")[0],
+          },
+        };
+        return event;
+      });
 
       const eventListSchema = {
         "@context": "https://schema.org",
@@ -69,6 +78,54 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
       scripts.push(scriptEl);
     }
 
+    // 1b. TheaterEvent für ensuite-Musicals mit festem Standort
+    if (
+      (musical.category === "ensuite" || musical.categories?.includes("fester-standort")) &&
+      musical.city &&
+      musical.venue
+    ) {
+      const theaterEvent = {
+        "@context": "https://schema.org",
+        "@type": "TheaterEvent",
+        name: musical.title,
+        description: musical.description,
+        image: musical.image,
+        url: canonicalMusicalUrl,
+        location: {
+          "@type": "PerformingArtsTheater",
+          name: musical.venue,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: musical.city,
+            addressCountry: "DE",
+          },
+        },
+        performer: {
+          "@type": "PerformingGroup",
+          name: musical.title,
+        },
+        organizer: {
+          "@type": "Organization",
+          name: musical.provider,
+        },
+        offers: {
+          "@type": "Offer",
+          url: musical.ticketCtaUrl || canonicalMusicalUrl,
+          priceCurrency: "EUR",
+          ...(musical.priceFrom ? { price: musical.priceFrom } : {}),
+          availability: "https://schema.org/InStock",
+          validFrom: new Date().toISOString().split("T")[0],
+        },
+      };
+
+      const theaterEl = document.createElement("script");
+      theaterEl.type = "application/ld+json";
+      theaterEl.setAttribute("data-schema-org", "theater-event");
+      theaterEl.textContent = JSON.stringify(theaterEvent);
+      document.head.appendChild(theaterEl);
+      scripts.push(theaterEl);
+    }
+
     // 2. BreadcrumbList JSON-LD
     const breadcrumbSchema = {
       "@context": "https://schema.org",
@@ -78,19 +135,19 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           "@type": "ListItem",
           position: 1,
           name: "We Love Musicals",
-          item: window.location.origin,
+          item: BASE_URL,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Musicals",
-          item: `${window.location.origin}/#musicals`,
+          item: `${BASE_URL}/#musicals`,
         },
         {
           "@type": "ListItem",
           position: 3,
           name: musical.title,
-          item: window.location.href,
+          item: canonicalMusicalUrl,
         },
       ],
     };
