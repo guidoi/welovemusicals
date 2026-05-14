@@ -177,38 +177,15 @@ export default function MusicalDetail() {
               ))}
             </div>
 
-            {/* H1 Headline-Effekt:
-                 Dracula: Variante 1 – Word-by-Word Reveal von unten
-                 Moulin Rouge: Variante 2 – sanftes Fade + Y-Offset
-                 Alle anderen: kein Effekt */}
-            {musical.id === 'dracula' ? (
-              <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-2 leading-tight overflow-hidden">
-                {musical.title.split(' ').map((word, i) => (
-                  <motion.span
-                    key={i}
-                    className="inline-block mr-[0.25em]"
-                    initial={{ y: '110%', opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </h1>
-            ) : musical.id === 'moulinrouge' ? (
-              <motion.h1
-                className="font-display text-3xl md:text-5xl font-bold text-white mb-2 leading-tight"
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.08, ease: 'easeOut' }}
-              >
-                {musical.title}
-              </motion.h1>
-            ) : (
-              <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-2 leading-tight">
-                {musical.title}
-              </h1>
-            )}
+            {/* H1 Headline-Effekt: sanftes Fade-in mit Y-Offset – alle Musical-Seiten */}
+            <motion.h1
+              className="font-display text-3xl md:text-5xl font-bold text-white mb-2 leading-tight"
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
+            >
+              {musical.title}
+            </motion.h1>
             {musical.subtitle && (
               <p className="text-lg italic mb-4" style={{color: 'rgba(184,148,74,0.8)'}}>{musical.subtitle}</p>
             )}
