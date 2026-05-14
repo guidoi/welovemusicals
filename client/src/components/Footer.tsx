@@ -34,7 +34,7 @@ export default function Footer() {
               Top Musicals
             </h4>
             <ul className="space-y-2">
-              {getActiveMusicals().map((musical) => (
+              {getActiveMusicals().slice(0, 10).map((musical) => (
                 <li key={musical.slug}>
                   <Link href={`/musical/${musical.slug}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
                     {musical.title}
