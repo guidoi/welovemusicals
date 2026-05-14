@@ -365,7 +365,7 @@ export default function Header() {
 
               {/* Radius-Chips */}
               <div className="flex flex-wrap gap-1.5 mb-3">
-                <span className="text-xs text-muted-foreground self-center mr-1">Umkreis:</span>
+                <span className="text-xs text-muted-foreground/90 self-center mr-1">Umkreis:</span>
                 {RADIUS_OPTIONS.map((r) => (
                   <button
                     key={r}
@@ -373,8 +373,8 @@ export default function Header() {
                     className="px-2.5 py-1 text-xs rounded-sm border transition-all"
                     style={
                       plzRadius === r
-                        ? { backgroundColor: "rgba(184,148,74,0.2)", color: "#b8944a", borderColor: "rgba(184,148,74,0.5)" }
-                        : { backgroundColor: "transparent", color: "var(--muted-foreground)", borderColor: "var(--border)" }
+                        ? { backgroundColor: 'rgba(184,148,74,0.28)', color: '#d4a85a', borderColor: 'rgba(184,148,74,0.70)' }
+                        : { backgroundColor: 'transparent', color: 'rgba(255,255,255,0.65)', borderColor: 'rgba(255,255,255,0.28)' }
                     }
                   >
                     {r} km
