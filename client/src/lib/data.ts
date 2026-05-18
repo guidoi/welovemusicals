@@ -1682,10 +1682,10 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 
 export function getFeaturedMusicals(): Musical[] {
   const featured = musicals.filter((m) => m.featured === true);
-  // Dracula an erste Stelle
-  const dracula = featured.find((m) => m.id === 'dracula');
-  if (dracula) {
-    return [dracula, ...featured.filter((m) => m.id !== 'dracula')];
+  // Eiskönigin an erste Stelle
+  const eiskoenigin = featured.find((m) => m.id === 'die-eiskoenigin');
+  if (eiskoenigin) {
+    return [eiskoenigin, ...featured.filter((m) => m.id !== 'die-eiskoenigin')];
   }
   return featured;
 }
