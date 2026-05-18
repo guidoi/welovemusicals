@@ -205,7 +205,7 @@ export default function MusicalDetail() {
                   ))}
                 </span>
               ) : musical.city && !musical.cities ? (
-                <span>{musical.city} – {musical.venue}</span>
+                <span>{musical.city} ({musical.venue})</span>
               ) : musical.id === 'gloeckner-von-notre-dame' && musical.cities ? (
                 <span>{musical.cities.join(", ")}</span>
               ) : musical.headerCities && musical.cities ? (
