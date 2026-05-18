@@ -71,9 +71,10 @@ export default function MusicalDetail() {
     url: canonicalUrl,
   });
 
-  // Sticky CTA: ausblenden wenn Tourtermine sichtbar
+  // Sticky CTA: ausblenden wenn Tourtermine oder roter Ticket-Kasten sichtbar
   const tourDatesRef = useRef<HTMLDivElement>(null);
   const topCtaRef = useRef<HTMLDivElement>(null);
+  const ticketBoxRef = useRef<HTMLDivElement>(null);
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
@@ -87,7 +88,12 @@ export default function MusicalDetail() {
         ? tourDatesRef.current.getBoundingClientRect().top <= window.innerHeight &&
           tourDatesRef.current.getBoundingClientRect().bottom > 0
         : false;
-      setShowSticky(topCtaGone && !tourDatesVisible);
+      // Ausblenden wenn roter Ticket-Kasten sichtbar ist
+      const ticketBoxVisible = ticketBoxRef.current
+        ? ticketBoxRef.current.getBoundingClientRect().top <= window.innerHeight &&
+          ticketBoxRef.current.getBoundingClientRect().bottom > 0
+        : false;
+      setShowSticky(topCtaGone && !tourDatesVisible && !ticketBoxVisible);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -438,6 +444,7 @@ export default function MusicalDetail() {
       <section className="py-8 md:py-10 bg-background">
         <div className="container max-w-4xl">
           <motion.div
+            ref={ticketBoxRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
