@@ -2345,6 +2345,8 @@ export const musicals: Musical[] = [
     category: "fester-standort",
     categories: ["fester-standort", "familie", "kinder"],
     city: "Stuttgart",
+    venue: "Stage Apollo Theater",
+    venuePerCity: { "Stuttgart": "Stage Apollo Theater" },
     cities: ["Stuttgart"],
     description: "Elsas Eismagie, Annas Mut und Olafs Humor – Disneys DIE EISKÖNIGIN verzaubert als spektakuläres Bühnenmusical mit 21 Songs, 154 Kostümen und atemberaubender Bühnentechnik im Stage Apollo Theater Stuttgart.",
     detailHeadline: "LASS JETZT LOS – UND ERLEBE DIE MAGIE!",
