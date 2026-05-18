@@ -2,7 +2,7 @@
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * MusicalCard: Elegante Karte mit Spotlight-Hover-Effekt
  */
-import { MapPin, ExternalLink, Tag } from "lucide-react";
+import { MapPin, ExternalLink, Tag, Star } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import type { Musical } from "@/lib/data";
@@ -59,6 +59,16 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+            {/* Featured Badge */}
+            {musical.featured && (
+              <div className="absolute top-2.5 right-2.5 z-10">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-widest bg-gold text-black shadow-lg shadow-gold/30">
+                  <Star className="w-2.5 h-2.5 fill-black" />
+                  Top-Musical
+                </span>
+              </div>
+            )}
 
             {/* Title Overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-4">

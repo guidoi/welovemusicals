@@ -42,7 +42,7 @@ export interface Musical {
   title: string;
   subtitle?: string;
   provider: string;
-  category: "ensuite" | "tournee" | "kinder"; // Legacy, wird durch categories ersetzt
+  category: "ensuite" | "fester-standort" | "tournee" | "kinder"; // Legacy, wird durch categories ersetzt
   categories?: Array<"fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder">;
   city?: string;
   cities?: string[];
@@ -1027,7 +1027,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F",
-    featured: true,
+    featured: false,
     tags: ["Tournee", "Emotion", "Feel-Good Entertainment"],
     youtubeTrailerId: "9LJMaLj8Ino",
     uspItems: [
@@ -2382,6 +2382,77 @@ export const musicals: Musical[] = [
       { question: "Wie viele Besucher hat Starlight Express?", answer: "Über 19 Millionen Besucher haben die Show seit 1988 erlebt. 2010 zeichnete Guinness World Records Starlight Express als erfolgreichstes Musical der Welt aus." },
       { question: "Gibt es eine Pause?", answer: "Ja, die Vorstellung beinhaltet eine Pause." },
       { question: "Wer hat die Musik komponiert?", answer: "Die Musik stammt von Andrew Lloyd Webber, dem Komponisten von Cats, Das Phantom der Oper und Evita. Den Text schrieb Richard Stilgoe. Regie und Choreografie verantwortet Dame Arlene Phillips." },
+    ],
+  },
+  {
+    id: "eiskoenigin",
+    slug: "die-eiskoenigin",
+    title: "DISNEYS DIE EISKÖNIGIN",
+    subtitle: "Das Musical",
+    provider: "Stage Entertainment",
+    priceFrom: "66,99",
+    category: "fester-standort",
+    categories: ["fester-standort", "familie", "kinder"],
+    city: "Stuttgart",
+    cities: ["Stuttgart"],
+    description: "Elsas Eismagie, Annas Mut und Olafs Humor – Disneys DIE EISKÖNIGIN verzaubert als spektakuläres Bühnenmusical mit 21 Songs, 154 Kostümen und atemberaubender Bühnentechnik im Stage Apollo Theater Stuttgart.",
+    detailHeadline: "LASS JETZT LOS – UND ERLEBE DIE MAGIE!",
+    detailDescription: "Seit November 2024 verzaubert Disneys DIE EISKÖNIGIN das Publikum im Stage Apollo Theater Stuttgart – und die Spielzeit wurde bis Januar 2027 verlängert. Ein Zeichen dafür, wie sehr diese Show die Herzen der Menschen berührt.\n\n**Elsa, Anna und die Kraft der Liebe**\n\nElsa besitzt eine magische Kraft, die sie nicht kontrollieren kann: Mit einer Berührung verwandelt sie alles in Eis. Aus Angst, ihrer geliebten Schwester Anna zu schaden, zieht sie sich zurück – bis ein Missgeschick bei der Krönungsfeier ihr Geheimnis enthüllt und sie ins Exil flieht. Anna bricht mutig auf, um ihre Schwester zu finden und das Königreich Arendelle zu retten. Eine Geschichte über Mut, Selbstbestimmung und die besondere Stärke familiärer Bindungen – erzählt mit Herz, Humor und unvergesslicher Musik.\n\n**Spektakel für alle Sinne**\n\nDie Produktion setzt technische Maßstäbe: Eine drei Tonnen schwere LED-Wand mit 4,5 Millionen einzelnen LEDs, 30 Computer für Videoeffekte, 300 Scheinwerfer und 38 fahrbare Kulissenteile erschaffen die mystische Welt von Arendelle. Die 154 handgefertigten Kostüme – darunter Elsas ikonisches Eiskleid mit 18.000 handgenähten Perlen und Kristallen – sind Kunstwerke für sich. Schneemann Olaf und Rentier Sven erwachen durch virtuose Puppenspielkunst nach dem japanischen Bunraku-Stil zum Leben.\n\n**21 Songs – 7 Filmhits und 14 neue Musical-Songs**\n\nZu den bekannten Hits wie \"Lass jetzt los\" (Let It Go), \"Zum ersten Mal seit Ewigkeiten\" und \"Im Sommer\" kommen 14 neue, exklusiv für das Musical komponierte Songs hinzu – darunter das emotionale Duett \"Du bist alles\" und Elsas kraftvolles Solo \"Monster\". Die Musik stammt von Kristen Anderson-Lopez und Robert Lopez, den Oscar-Gewinnern des Welthits \"Let It Go\".",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_Elsa_LetItGo_(c)JohanPersson_a3fe492d.webp",
+    heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_ElsaUndAnna_Finale_HoldingHands_(c)JohanPersson_a2fb5b4c.webp",
+    keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/JPG72dpi(RGB)-EISHH&STU_Icon_200-400_ISOv2_06a10360.jpg",
+    eventimUrl: "https://www.eventim.de/artist/disneys-die-eiskoenigin-das-musical/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=eiskoenigin-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-die-eiskoenigin-das-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=eiskoenigin-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-die-eiskoenigin-das-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=eiskoenigin-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-die-eiskoenigin-das-musical%2F",
+    featured: true,
+    tags: ["Familie", "Disney", "Ensuite"],
+    youtubeTrailerId: "yk4lUuP29SU",
+    uspItems: [
+      { icon: "Sparkles", title: "Disney-Magie live erleben", text: "Elsa, Anna, Olaf und Sven auf der Bühne – mit atemberaubender Bühnentechnik" },
+      { icon: "Music", title: "21 unvergessliche Songs", text: "\"Lass jetzt los\" und 14 neue Musical-Songs von Oscar-Gewinnern" },
+      { icon: "Star", title: "Tony Award-nominiert", text: "Broadway-Welterfolg mit 8 internationalen Produktionen und Millionen Fans" },
+      { icon: "Users", title: "Perfekt für die ganze Familie", text: "Empfohlen ab 4 Jahren – ein Erlebnis für Kinder und Erwachsene" },
+    ],
+    tourDates: [
+      { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2024-11-08", endDate: "2027-01-31", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=eiskoenigin-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-die-eiskoenigin-das-musical%2F" },
+    ],
+    quotes: [
+      { text: "Die Magie dieser Show liegt nicht nur in ihren spektakulären Momenten, sondern vor allem in der emotionalen Reise, die Elsa und Anna antreten.", source: "Constanze Müller, Theaterleitung Stage Apollo Theater" },
+      { text: "Atemberaubende Effekte, wunderschöne Kostüme und eine Geschichte, die Generationen berührt.", source: "Stage Entertainment" },
+      { text: "Ein einzigartiges Musical für die ganze Familie – Magie pur!", source: "Publikumsstimme" },
+    ],
+    gallery: [
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_Elsa_LetItGo_(c)JohanPersson_a3fe492d.webp", alt: "Elsa – Let It Go (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_ElsaUndAnna_Finale_HoldingHands_(c)JohanPersson_a2fb5b4c.webp", alt: "Elsa und Anna im Finale (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_AnnaUndElsaUndOlaf_(c)JohanPersson_c8a101f3.webp", alt: "Anna, Elsa und Olaf (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_LoveIsAnOpenDoor_(c)JohanPersson_9ac6f2d3.webp", alt: "Anna und Hans – Love Is An Open Door (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/JPG72dpi(RGB)-EIS_STU_Prio1_KristoffUndSven_(c)JohanPersson_StageEntertainment_ba7f1dda.jpg", alt: "Kristoff und Sven (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/JPG72dpi(RGB)-EIS_STU_Olaf_Sommer_(c)JohanPersson_StageEntertainment_effe1b09.jpg", alt: "Olaf träumt vom Sommer (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/JPG72dpi(RGB)-EIS_STU_Anna_KimFoelmli_(c)JohanPersson_15ccc548.jpg", alt: "Anna – Kim Fölmli (c) Johan Persson / Stage Entertainment" },
+      { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_Elsa_Kroenung_94e5905c.webp", alt: "Elsa – Krönung (c) Johan Persson / Stage Entertainment" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Apollo Theater Stuttgart" },
+      { label: "Spielzeit", value: "November 2024 bis Januar 2027" },
+      { label: "Showdauer", value: "Ca. 2,5 Stunden inkl. Pause" },
+      { label: "Sprache", value: "Alle Dialoge und Songs auf Deutsch" },
+      { label: "Altersempfehlung", value: "Ab 4 Jahren" },
+      { label: "Tickets ab", value: "66,99 € (auf musicals.de)" },
+    ],
+    seoTitle: "Disneys Die Eiskönigin Musical Stuttgart 2026/2027 | Tickets & Infos",
+    seoDescription: "Disneys DIE EISKÖNIGIN – Das Musical im Stage Apollo Theater Stuttgart. Tickets ab 66,99 €. Elsa, Anna, Olaf live auf der Bühne – noch bis Januar 2027!",
+    storyHeadline: "EIN KÖNIGREICH AUS EIS – UND DIE LIEBE, DIE ES RETTET",
+    storyText: "Das Königreich Arendelle feiert die Krönung von Prinzessin Elsa – doch die Feierlichkeiten enden abrupt, als Elsas geheime Eismagie außer Kontrolle gerät. In einem Moment der Panik verwandelt sie das gesamte Königreich in eine eisige Winterlandschaft und flieht in die Berge, um niemanden mehr zu gefährden.\n\nIhre jüngere Schwester Anna lässt sich davon nicht aufhalten. Gemeinsam mit dem Eislieferanten Kristoff, seinem treuen Rentier Sven und dem lebensfrohen Schneemann Olaf bricht sie auf, um Elsa zu finden und den ewigen Winter zu beenden. Was sie dabei lernt: Wahre Liebe ist nicht das, was sie erwartet hat – und manchmal ist die stärkste Magie von allen die Kraft, die zwischen Schwestern besteht.",
+    faqItems: [
+      { question: "Wo wird Disneys Die Eiskönigin gespielt?", answer: "Das Musical läuft im Stage Apollo Theater im SI-Centrum Stuttgart, Plieninger Straße 100, 70567 Stuttgart." },
+      { question: "Wie lange läuft die Show noch?", answer: "Die Spielzeit wurde bis Januar 2027 verlängert. Es sind also noch rund 10 Monate Zeit, die Show zu erleben." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 66,99 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind über Eventim sowie direkt auf musicals.de erhältlich." },
+      { question: "Ist die Show für Kinder geeignet?", answer: "Ja, die Show ist ab 4 Jahren empfohlen und ein echtes Erlebnis für die ganze Familie." },
+      { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
+      { question: "Gibt es eine Live-Band?", answer: "Ja, das Musical wird von einem Live-Orchester unter der Leitung von Leif Klinkhardt begleitet." },
+      { question: "Wer hat die Musik komponiert?", answer: "Die Musik stammt von Kristen Anderson-Lopez und Robert Lopez, die für \"Let It Go\" den Oscar als bester Song gewannen." },
     ],
   },
 ];
