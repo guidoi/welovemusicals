@@ -1683,9 +1683,9 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 export function getFeaturedMusicals(): Musical[] {
   const featured = musicals.filter((m) => m.featured === true);
   // Eiskönigin an erste Stelle
-  const eiskoenigin = featured.find((m) => m.id === 'die-eiskoenigin');
+  const eiskoenigin = featured.find((m) => m.id === 'eiskoenigin');
   if (eiskoenigin) {
-    return [eiskoenigin, ...featured.filter((m) => m.id !== 'die-eiskoenigin')];
+    return [eiskoenigin, ...featured.filter((m) => m.id !== 'eiskoenigin')];
   }
   return featured;
 }
