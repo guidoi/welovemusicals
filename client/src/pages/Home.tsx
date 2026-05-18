@@ -111,6 +111,14 @@ export default function Home() {
     // Nur fertig eingerichtete Musicals anzeigen (gesteuert über ACTIVE_MUSICAL_IDS in data.ts)
     result = result.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
 
+    // Top-Musicals (featured) in der Hauptliste ausblenden – sie sind oben prominent dargestellt.
+    // Ausnahme: wenn ein spezifischer Filter aktiv ist (nicht "alle"), damit gefeatured Musicals
+    // trotzdem in gefilterten Ergebnissen erscheinen.
+    const hasActiveFilter = categoryFilter !== "alle" || countryFilter !== "alle" || cityFilter !== "alle" || plzSearch.active;
+    if (!hasActiveFilter) {
+      result = result.filter((m) => !m.featured);
+    }
+
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
       result = result.filter((m) => {
