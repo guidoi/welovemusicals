@@ -291,9 +291,9 @@ export default function MusicalDetail() {
                              - FJG: nach i=3 (vor "Ausgezeichnet" bei i=4)
                              - Dracula: nach i=3 (vor "Atmosphäre und Inszenierung" bei i=4)
                              - Starlight Express: nach i=4 (vor "Weltklasse-Technik" bei i=5)
-                             - Eiskönigin: nach i=1 (vor "Spektakel für alle Sinne" bei i=2)
+                             - Eiskönigin: nach i=2 (nach "...unvergeßlicher Musik.", vor Headline "Spektakel für alle Sinne" bei i=3)
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 1 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
