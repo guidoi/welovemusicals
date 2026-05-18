@@ -72,11 +72,11 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
 
             {/* Title Overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="text-lg md:text-xl font-semibold text-white leading-tight font-heading tracking-wide">
+              <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight font-heading tracking-wide">
                 {musical.title}
               </h3>
               {musical.subtitle && musical.id !== "starlight-express" && musical.id !== "phantom-der-oper" && (
-                <p className="text-[11px] text-white/70 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
+                <p className="text-[13px] md:text-[11px] text-white/70 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
               )}
             </div>
           </div>
