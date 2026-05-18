@@ -1215,7 +1215,7 @@ export const musicals: Musical[] = [
     priceFrom: "40,49",
     youtubeTrailerId: "IWrg3s9gMsY",
     featured: true,
-    tags: ["Disney", "Familienmusical", "Tournee"],
+    tags: ["Disney", "Familie", "Tournee"],
     uspItems: [
       { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
       { icon: "Music", title: "Musik von Alan Menken", text: "Oscar-Preisträger und Komponist von Weltrang" },
