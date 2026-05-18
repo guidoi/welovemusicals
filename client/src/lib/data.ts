@@ -1682,10 +1682,9 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 
 export function getFeaturedMusicals(): Musical[] {
   const featured = musicals.filter((m) => m.featured === true);
-  // Eiskönigin an erste Stelle
-  const eiskoenigin = featured.find((m) => m.id === 'eiskoenigin');
-  if (eiskoenigin) {
-    return [eiskoenigin, ...featured.filter((m) => m.id !== 'eiskoenigin')];
-  }
-  return featured;
+  // Feste Reihenfolge: Eiskönigin, Dracula, Moulin Rouge, dann Rest
+  const ORDER = ['eiskoenigin', 'dracula', 'moulinrouge'];
+  const ordered = ORDER.map((id) => featured.find((m) => m.id === id)).filter(Boolean) as Musical[];
+  const rest = featured.filter((m) => !ORDER.includes(m.id));
+  return [...ordered, ...rest];
 }
