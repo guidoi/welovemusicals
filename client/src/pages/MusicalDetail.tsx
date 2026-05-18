@@ -193,7 +193,7 @@ export default function MusicalDetail() {
               {musical.title}
             </motion.h1>
             {musical.subtitle && (
-              <p className="text-lg italic mb-4" style={{color: 'rgba(184,148,74,0.8)'}}>{musical.subtitle}</p>
+              <p className="hidden lg:block text-lg italic mb-4" style={{color: 'rgba(184,148,74,0.8)'}}>{musical.subtitle}</p>
             )}
 
             <div className="flex items-center gap-2 text-white/70">
