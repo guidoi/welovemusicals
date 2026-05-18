@@ -14,8 +14,8 @@ interface MusicalCardProps {
 }
 
 const categoryLabels: Record<string, string> = {
-  ensuite: "Fester Standort",
-  "fester-standort": "Fester Standort",
+  ensuite: "Das Original",
+  "fester-standort": "Das Original",
   tournee: "Tournee",
   erwachsene: "Erwachsene",
   familie: "Familie",
