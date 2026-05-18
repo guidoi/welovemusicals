@@ -2338,8 +2338,8 @@ export const musicals: Musical[] = [
   {
     id: "eiskoenigin",
     slug: "die-eiskoenigin",
-    title: "DISNEYS DIE EISKÖNIGIN",
-    subtitle: "Das Musical",
+    title: "DISNEYS DIE EISKÖNIGIN – DAS MUSICAL",
+    subtitle: "",
     provider: "Stage Entertainment",
     priceFrom: "66,99",
     category: "fester-standort",
