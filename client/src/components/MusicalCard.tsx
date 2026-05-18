@@ -56,7 +56,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
               src={musical.image}
               alt={musical.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              style={musical.id === 'eiskoenigin' ? { objectPosition: 'center 35%' } : undefined}
+              style={musical.id === 'eiskoenigin' ? { objectPosition: 'center 55%' } : undefined}
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
