@@ -75,6 +75,9 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
               <h3 className="text-lg md:text-xl font-semibold text-white leading-tight font-heading tracking-wide">
                 {musical.title}
               </h3>
+              {musical.subtitle && (
+                <p className="text-[11px] text-gold/80 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
+              )}
             </div>
           </div>
 
