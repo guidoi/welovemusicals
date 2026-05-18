@@ -1637,7 +1637,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "die-eiskoenigin"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
