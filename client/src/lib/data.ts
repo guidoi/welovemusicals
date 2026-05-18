@@ -1351,7 +1351,7 @@ export const musicals: Musical[] = [
     title: "DISNEYS DIE EISKÖNIGIN",
     subtitle: "Das Musical",
     provider: "Stage Entertainment",
-    priceFrom: "66,99",
+    priceFrom: "38,49",
     category: "fester-standort",
     categories: ["fester-standort", "familie", "kinder"],
     city: "Stuttgart",
