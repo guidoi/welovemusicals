@@ -63,8 +63,8 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             {/* Featured Badge */}
             {musical.featured && (
               <div className="absolute top-2.5 right-2.5 z-10">
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-widest bg-gold text-black shadow-lg shadow-gold/30">
-                  <Star className="w-2.5 h-2.5 fill-black" />
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-widest bg-transparent border border-gold text-gold shadow-lg shadow-gold/20">
+                  <Star className="w-2.5 h-2.5 fill-gold text-gold" />
                   Top-Musical
                 </span>
               </div>
