@@ -253,7 +253,7 @@ export const musicals: Musical[] = [
   {
     id: "moulinrouge",
     slug: "moulin-rouge",
-    title: "MOULIN ROUGE!",
+    title: "MOULIN ROUGE",
     subtitle: "Das Musical",
     provider: "ATG Entertainment",
     category: "ensuite",
