@@ -1214,7 +1214,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
     priceFrom: "40,49",
     youtubeTrailerId: "IWrg3s9gMsY",
-    featured: true,
+    featured: false,
     tags: ["Disney", "Familie", "Tournee"],
     uspItems: [
       { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
@@ -1342,6 +1342,80 @@ export const musicals: Musical[] = [
       { question: "Wie viele Besucher hat Starlight Express?", answer: "Über 19 Millionen Besucher haben die Show seit 1988 erlebt. 2010 zeichnete Guinness World Records Starlight Express als erfolgreichstes Musical der Welt aus." },
       { question: "Gibt es eine Pause?", answer: "Ja, die Vorstellung beinhaltet eine Pause." },
       { question: "Wer hat die Musik komponiert?", answer: "Die Musik stammt von Andrew Lloyd Webber, dem Komponisten von Cats, Das Phantom der Oper und Evita. Den Text schrieb Richard Stilgoe. Regie und Choreografie verantwortet Dame Arlene Phillips." },
+    ],
+  },
+
+  {
+    id: "koenig-der-loewen",
+    slug: "koenig-der-loewen",
+    title: "DISNEYS DER KÖNIG DER LÖWEN",
+    subtitle: "",
+    provider: "Stage Entertainment",
+    priceFrom: "79,49",
+    category: "ensuite",
+    categories: ["fester-standort", "familie"],
+    city: "Hamburg",
+    venue: "Stage Theater im Hafen",
+    venuePerCity: { "Hamburg": "Stage Theater im Hafen" },
+    cities: ["Hamburg"],
+    description: "Seit 25 Jahren in Hamburg: Disneys DER KÖNIG DER LÖWEN begeistert mit über 17 Millionen Besuchern im Stage Theater im Hafen. Atemberaubende Masken, fantastische Kostüme und die unvergessliche Musik von Elton John und Tim Rice. Tickets ab 79,49 €.",
+    detailHeadline: "SEIT 25 JAHREN HAMBURGS MUSICAL-LEGENDE.",
+    detailDescription: "Kein Musical in Deutschland hat mehr Menschen bewegt als Disneys DER KÖNIG DER LÖWEN. Seit dem Jahr 2001 begeistert die Inszenierung von Julie Taymor im Stage Theater im Hafen – über 17 Millionen Besucher haben die Show erlebt, mehr als 9.500 Vorstellungen wurden gespielt. Abend für Abend verwandelt sich das Theater in die afrikanische Savanne – und das Publikum erlebt ein kreatives Feuerwerk der Emotionen.\n\n**Julie Taymors visionäre Inszenierung**\n\nOscar-Preisträgerin Julie Taymor hat die Filmgeschichte in ein einzigartiges Bühnenkunstwerk verwandelt. Über 300 atemberaubende Masken, Puppets und Requisiten sowie mehr als 400 fantastische Kostüme verschmelzen Elemente des afrikanischen und asiatischen Masken- und Schattenspiels zu einer visuellen Sprache, die weltweit ihresgleichen sucht. 37 Darsteller:innen aus über 40 Nationen erwecken die Savanne zum Leben.\n\n**Die Musik: Elton John, Tim Rice und die Klänge Afrikas**\n\nSir Elton John und Tim Rice schufen unvergessliche Hits wie \"Der ewige Kreis\", \"Kann es wirklich Liebe sein\" und \"Hakuna Matata\". Ergänzt durch original afrikanische Rhythmen von Lebo M und die orchestralen Arrangements von Hans Zimmer entsteht ein einzigartiger Klangteppich, der Popmusik und afrikanische Tradition verbindet. 17 Songs in zwei Akten – von der Gänsehaut des Openings bis zum triumphalen Finale.\n\n**Die Geschichte: Simbas Weg zum König**\n\nDer junge Löwe Simba wächst als Sohn von König Mufasa im Geweihten Land auf. Als sein Onkel Scar den König verrät und Simba in die Verbannung treibt, muss der junge Löwe seinen eigenen Weg finden. Begleitet von seinen Freunden Timon und Pumbaa lernt er, Verantwortung zu übernehmen und seinen Platz im ewigen Kreislauf des Lebens einzunehmen. Eine zeitlose Fabel über Mut, Verlust und die Kraft der Liebe.",
+    image: "/manus-storage/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1_15631349.jpg",
+    heroImage: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne_fd8a3055.jpg",
+    keyvisual: "/manus-storage/kdl-logo-1080x1080_8f935a86.webp",
+    eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
+    awinHeroUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
+    awinStickyUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
+    awinBoxUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
+    featured: true,
+    tags: ["Familie", "Disney", "Das Original"],
+    youtubeTrailerId: "",
+    uspItems: [
+      { icon: "Crown", title: "25 Jahre Musical-Geschichte", text: "Über 17 Millionen Besucher und 9.500 Vorstellungen in Hamburg" },
+      { icon: "Music", title: "Musik von Elton John & Tim Rice", text: "Unvergessliche Hits wie \"Der ewige Kreis\" und \"Hakuna Matata\"" },
+      { icon: "Star", title: "6 Tony Awards", text: "Weltweit über 124 Millionen Zuschauer in über 100 Städten" },
+      { icon: "Users", title: "Für die ganze Familie", text: "Ein Erlebnis für alle Generationen – empfohlen ab 3 Jahren" },
+    ],
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Theater im Hafen", startDate: "2001-12-02", endDate: "2027-04-04", eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4" },
+    ],
+    quotes: [
+      { text: "Ein kreatives Feuerwerk der Emotionen – atemberaubende Masken, fantastische Kostüme, unvergessliche Klänge.", source: "Stage Entertainment" },
+      { text: "Julie Taymors Inszenierung ist ein Meisterwerk der Bühnenkunst, das Filmgeschichte in ein einzigartiges Theatererlebnis verwandelt.", source: "Pressemappe Stage Entertainment" },
+      { text: "Kein Musical der Welt hat mehr Menschen bewegt als Der König der Löwen.", source: "Disney Theatrical Group" },
+    ],
+    gallery: [
+      { url: "/manus-storage/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1_15631349.jpg", alt: "Rafiki – Der König der Löwen Hamburg (c) Stage Entertainment" },
+      { url: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne_fd8a3055.jpg", alt: "Die Savanne – Der König der Löwen Hamburg" },
+      { url: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Prio1_SimbaundNala_(c)LoisGreenfield_29e1c9c5.jpg", alt: "Simba und Nala (c) Lois Greenfield" },
+      { url: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Prio2_Grasslands_(c)DeenvanMeer_6ddf0e79.jpg", alt: "Grasslands (c) Deen van Meer" },
+      { url: "/manus-storage/JPG72dpi_RGB_-KDL_HH_Prio2_Lo_winnen__c_DeenvanMeer_ca62195d.jpg", alt: "Löwinnen (c) Deen van Meer" },
+      { url: "/manus-storage/JPG72dpi_RGB_-KDL_HH_Prio2_Lo_winnen__c_JohanPersson_c6978177.jpg", alt: "Löwinnen (c) Johan Persson" },
+      { url: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Prio2_Schattenland_(c)DewyntersPhotography_deeb466c.jpg", alt: "Schattenland (c) Dewynters Photography" },
+      { url: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Szenenmotiv_Prio4_EwigeKreis_a6346682.jpg", alt: "Der ewige Kreis – Szenenmotiv" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Theater im Hafen, Hamburg" },
+      { label: "Spielzeit", value: "Seit Dezember 2001 – mindestens bis April 2027" },
+      { label: "Showdauer", value: "Ca. 2,5 Stunden inkl. Pause" },
+      { label: "Sprache", value: "Alle Dialoge und Songs auf Deutsch" },
+      { label: "Altersempfehlung", value: "Ab 3 Jahren (kein Einlass unter 3)" },
+      { label: "Tickets ab", value: "79,49 € (auf Eventim)" },
+    ],
+    seoTitle: "Der König der Löwen Musical Hamburg 2026/2027 | Tickets & Infos",
+    seoDescription: "Disneys DER KÖNIG DER LÖWEN im Stage Theater im Hafen Hamburg. Tickets ab 79,49 €. Seit 25 Jahren Hamburgs Musical-Legende – über 17 Mio. Besucher!",
+    storyHeadline: "DER EWIGE KREIS DES LEBENS – SIMBAS WEG ZUM KÖNIG",
+    storyText: "Im Geweihten Land herrscht König Mufasa weise über alle Tiere der Savanne. Sein Sohn Simba kann es kaum erwarten, eines Tages in die Fußstapfen seines Vaters zu treten. Doch Mufasas Bruder Scar schmiedet einen tödlichen Plan: Er lockt Mufasa in eine Falle und überzeugt den jungen Simba, er sei am Tod seines Vaters schuld.\n\nVoller Schuldgefühle flieht Simba in die Wildnis, wo er auf das ungleiche Duo Timon und Pumbaa trifft. Unter dem Motto \"Hakuna Matata\" – keine Sorgen – lebt er unbeschwert, bis seine Jugendfreundin Nala ihn findet und ihm berichtet, wie Scar das Geweihte Land zugrunde richtet. Simba muss sich seiner Vergangenheit stellen, seinen rechtmäßigen Platz einnehmen und den ewigen Kreislauf des Lebens wiederherstellen.",
+    faqItems: [
+      { question: "Wo wird Der König der Löwen gespielt?", answer: "Das Musical läuft im Stage Theater im Hafen, Norderelbestraße 6, 20457 Hamburg. Die Anreise erfolgt per kostenlosem Shuttle-Schiff ab den Hamburger Landungsbrücken." },
+      { question: "Wie lange läuft die Show noch?", answer: "Die Show läuft mindestens bis April 2027. Ein festes Enddatum gibt es aktuell nicht – Der König der Löwen spielt seit 2001 durchgehend in Hamburg." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 79,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind über Eventim sowie direkt auf musicals.de erhältlich." },
+      { question: "Ist die Show für Kinder geeignet?", answer: "Ja, die Show ist für die ganze Familie geeignet. Kein Einlass für Kinder unter 3 Jahren." },
+      { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
+      { question: "Wie komme ich zum Theater?", answer: "Ab den Hamburger Landungsbrücken (Brücke 3) fahren kostenlose Shuttle-Schiffe direkt zum Stage Theater im Hafen. Die Überfahrt dauert wenige Minuten und ist bereits Teil des Erlebnisses." },
+      { question: "Wer hat die Musik komponiert?", answer: "Die Musik stammt von Sir Elton John (Musik) und Sir Tim Rice (Text), ergänzt durch afrikanische Rhythmen von Lebo M und Arrangements von Hans Zimmer." },
     ],
   },
 
@@ -1637,7 +1711,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
@@ -1682,8 +1756,8 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 
 export function getFeaturedMusicals(): Musical[] {
   const featured = musicals.filter((m) => m.featured === true);
-  // Feste Reihenfolge: Eiskönigin, Dracula, Moulin Rouge, dann Rest
-  const ORDER = ['eiskoenigin', 'dracula', 'moulinrouge'];
+  // Feste Reihenfolge: Eiskönigin, Dracula, Moulin Rouge, König der Löwen, dann Rest
+  const ORDER = ['eiskoenigin', 'dracula', 'moulinrouge', 'koenig-der-loewen'];
   const ordered = ORDER.map((id) => featured.find((m) => m.id === id)).filter(Boolean) as Musical[];
   const rest = featured.filter((m) => !ORDER.includes(m.id));
   return [...ordered, ...rest];

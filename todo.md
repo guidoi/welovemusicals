@@ -132,3 +132,12 @@
 - [ ] Radius-Chips auf 25/50/100/150/200 km reduziert (300/500 entfernt)
 - [ ] Scroll zu erstem Suchergebnis nach PLZ-Suche
 - [ ] robots.txt Sitemap-URL auf welovemusicals.manus.space korrigiert
+
+## König der Löwen – Neues Musical (Stage Entertainment)
+- [x] KDL Assets hochladen: Keyvisual (quadratisch), Teaserfoto (Rafiki), Headerfoto (Savanne), Galerie-Fotos
+- [x] SEO-Texte aus Pressemappe redaktionell aufbereiten
+- [x] Musical-Eintrag in data.ts erstellen (Preis ab 79,49 €, Laufzeit bis 04.04.2027)
+- [x] Eventim Affiliate-Link setzen: https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4
+- [x] KDL in Top-Musicals aufnehmen, Glöckner in allgemeine Übersicht verschieben
+- [x] Fotocredits im Impressum ergänzen
+- [x] Video + Keyvisual Positionierung analog Eiskönigin (kein YouTube-Trailer vorhanden, Keyvisual korrekt positioniert)

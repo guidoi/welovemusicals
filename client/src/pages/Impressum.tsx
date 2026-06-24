@@ -184,6 +184,21 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Disneys Der König der Löwen */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">DISNEYS DER KÖNIG DER LÖWEN</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Rafiki (Headerbild Kachel):</strong> © Stage Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Savanne (Headerbild Detailseite):</strong> © Stage Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Simba und Nala:</strong> © Lois Greenfield – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Grasslands:</strong> © Deen van Meer – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Löwinnen (2 Motive):</strong> © Deen van Meer &amp; © Johan Persson – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Schattenland:</strong> © Dewynters Photography – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Der ewige Kreis (Szenenmotiv):</strong> © Stage Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                      <li><strong>Keyvisual &amp; Logo:</strong> © Disney / Stage Entertainment – alle Rechte vorbehalten. Verwendung nur mit ausdrücklicher Genehmigung.</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash + Pixabay */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>
