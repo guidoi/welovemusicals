@@ -17,7 +17,7 @@ export default function MusicalQuotes({ quotes }: MusicalQuotesProps) {
     <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/30">
       <div className="container max-w-6xl">
         <h2 className="text-3xl font-bold mb-12 text-center text-foreground">
-          Pressestimmen
+          Stimmen zur Show
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
