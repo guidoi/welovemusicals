@@ -208,6 +208,14 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* MJ – Das Michael Jackson Musical */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">MJ – DAS MICHAEL JACKSON MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos &amp; Szenenbilder:</strong> © Matthew Murphy / Stage Entertainment</li>
+                    </ul>
+                  </div>
+
                   {/* Rapunzel */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>

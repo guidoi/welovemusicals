@@ -141,3 +141,13 @@
 - [x] KDL in Top-Musicals aufnehmen, Glöckner in allgemeine Übersicht verschieben
 - [x] Fotocredits im Impressum ergänzen
 - [x] Video + Keyvisual Positionierung analog Eiskönigin (kein YouTube-Trailer vorhanden, Keyvisual korrekt positioniert)
+
+## MJ – Das Michael Jackson Musical (Stage Entertainment)
+- [x] MJ Musical: Vollständiger Eintrag in data.ts mit SEO-Texten aus Pressetext
+- [x] MJ Musical: 10 Pressefotos als statische Assets in client/public/images/mj/
+- [x] MJ Musical: Alle CTAs mit eigenen Awin-Links (Publisher 2865727, clickref=mj-*)
+- [x] MJ Musical: Tickets ab 51,49 €, Laufzeit bis 29.08.2027
+- [x] MJ Musical: Nur in normaler Auflistung (featured: false), nicht in Top-Musicals
+- [x] MJ Musical: Fotocredits im Impressum ergänzt (Matthew Murphy / Stage Entertainment)
+- [x] MJ Musical: Keyvisual-Positionierung analog Eiskönigin (nach Absatz 2)
+- [x] MJ Musical: YouTube Video weggelassen (kein youtubeTrailerId)

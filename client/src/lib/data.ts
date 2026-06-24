@@ -1092,6 +1092,83 @@ export const musicals: Musical[] = [
   },
 
   {
+    id: "mj-musical",
+    slug: "mj-das-michael-jackson-musical",
+    title: "MJ – DAS MICHAEL JACKSON MUSICAL",
+    subtitle: "",
+    provider: "Stage Entertainment",
+    priceFrom: "51,49",
+    category: "ensuite",
+    categories: ["fester-standort", "erwachsene"],
+    city: "Hamburg",
+    venue: "Stage Theater an der Elbe",
+    venuePerCity: { "Hamburg": "Stage Theater an der Elbe" },
+    cities: ["Hamburg"],
+    description: "MJ – Das Michael Jackson Musical in Hamburg: Erlebe die legendären Moves und Welthits des King of Pop live auf der Bühne. Tony Award-prämierte Produktion im Stage Theater an der Elbe. Tickets ab 51,49 €.",
+    detailHeadline: "DER KING OF POP. LIVE AUF DER BÜHNE.",
+    detailDescription: "Seit der Premiere am 1. Dezember 2024 hat sich MJ – Das Michael Jackson Musical zu einem echten Publikumsmagneten entwickelt. In nur 17 Monaten erreichte die Show die Marke von 1 Million Zuschauer:innen in Hamburg – ein Rekord, den zuvor nur Disneys DER KÖNIG DER LÖWEN schaffte.\n\n**Die Geschichte hinter dem Genie**\n\nRund um die Entstehungsgeschichte der legendären \"Dangerous\"-Welttournee 1992 präsentiert MJ einige der beliebtesten und meistverkauften Songs der Musikgeschichte und geht über die einzigartigen Moves und den unverwechselbaren Sound des Stars weit hinaus. Das Bühnenspektakel bietet einen seltenen Einblick in den kreativen Geist und die Zusammenarbeit, die Michael Jackson in den Status einer Legende katapultiert haben.\n\n**Tony Award-prämierte Inszenierung**\n\nInszeniert vom Tony Award- und Olivier Award-ausgezeichneten Regisseur und Choreographen Christopher Wheeldon und der zweifachen Pulitzer-Preisträgerin Lynn Nottage, vereint MJ ein Kreativteam der Weltklasse: Bühnenbild von Derek McLane (\"Moulin Rouge!\"), Lichtdesign von Natasha Katz, Kostümdesign von Paul Tazewell (\"Hamilton\") und Sound Design von Gareth Owen.\n\n**Welterfolg mit über 7 Millionen Zuschauern**\n\nOb am Broadway, im Londoner West End oder auf Touren durch Nordamerika und Australien – weltweit haben bereits mehr als 7 Millionen Zuschauer die Show erlebt. In Hamburg begeistert Benét Monteiro in der Hauptrolle und bringt Michael Jacksons unvergleichliche Energie Abend für Abend auf die Bühne.",
+    image: "/images/mj/MJ_HH_Smooth_Criminal_Stage.jpg",
+    heroImage: "/images/mj/MJ_HH_Smooth_Criminal_Neon.webp",
+    keyvisual: "/images/mj/MJ_HH_Billie_Jean.webp",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    ticketCtaUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-cta&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    featured: false,
+    tags: ["Ensuite", "Stage Entertainment", "Welthit"],
+    uspItems: [
+      { icon: "Music", title: "Über 25 legendäre Hits", text: "Thriller, Billie Jean, Smooth Criminal, Beat It und viele mehr – live auf der Bühne" },
+      { icon: "Award", title: "Tony Award-prämiert", text: "Ausgezeichnet als beste Choreographie – inszeniert von Christopher Wheeldon" },
+      { icon: "Users", title: "1 Million Zuschauer in 17 Monaten", text: "Ein Rekord in Hamburg – zuvor nur vom König der Löwen erreicht" },
+      { icon: "Star", title: "Weltklasse-Kreativteam", text: "Bühnenbild, Kostüme und Licht von mehrfachen Tony Award-Gewinnern" },
+    ],
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2024-12-01", endDate: "2027-08-29", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F" },
+    ],
+    quotes: [
+      { text: "Wir sind überwältigt von der Resonanz des Publikums, das die überragende Qualität dieser Show und seiner Akteure Abend für Abend mit Standing Ovations und Bestnoten feiert.", source: "Uschi Neuss, Geschäftsführerin Stage Entertainment" },
+      { text: "Ein intensives Live-Gesamterlebnis, das generationenübergreifend begeistert – die höchste Weiterempfehlungsquote aller Stage Entertainment Shows.", source: "Stage Entertainment" },
+      { text: "Michael Jacksons künstlerisches Genie fasziniert bis heute – und diese Show macht es auf der Bühne erlebbar.", source: "Pressemitteilung Stage Entertainment" },
+    ],
+    gallery: [
+      { url: "/images/mj/MJ_HH_Smooth_Criminal_Stage.jpg", alt: "Smooth Criminal – MJ Musical Hamburg (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_Szenenmotiv_Broadway_MatthewMurphy.jpg", alt: "Szenenmotiv Broadway (c) Matthew Murphy" },
+      { url: "/images/mj/MJ_HH_Billie_Jean.webp", alt: "Billie Jean – MJ Musical Hamburg (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Handschuh.webp", alt: "Der ikonische Handschuh (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Pressekonferenz.webp", alt: "Ensemble-Szene (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Smooth_Criminal_Neon.webp", alt: "Smooth Criminal Neon-Kulisse (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Smooth_Criminal_2.webp", alt: "Smooth Criminal 2 (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Jackson5.webp", alt: "The Jackson 5 (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Katherine.webp", alt: "Katherine und der junge Michael (c) Matthew Murphy / Stage Entertainment" },
+      { url: "/images/mj/MJ_HH_Smooth_Criminal_4.webp", alt: "Smooth Criminal Ensemble (c) Matthew Murphy / Stage Entertainment" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Theater an der Elbe, Hamburg" },
+      { label: "Spielzeit", value: "Seit Dezember 2024 – mindestens bis August 2027" },
+      { label: "Showdauer", value: "Ca. 2,5 Stunden inkl. Pause" },
+      { label: "Sprache", value: "Songs auf Englisch, Dialoge auf Deutsch" },
+      { label: "Altersempfehlung", value: "Ab 6 Jahren" },
+      { label: "Tickets ab", value: "51,49 € (auf Eventim)" },
+    ],
+    seoTitle: "MJ – Das Michael Jackson Musical Hamburg 2026/2027 | Tickets & Infos",
+    seoDescription: "MJ – Das Michael Jackson Musical im Stage Theater an der Elbe Hamburg. Tickets ab 51,49 €. Über 25 Welthits live – Thriller, Billie Jean, Smooth Criminal. Tony Award-prämiert!",
+    storyHeadline: "DIE ENTSTEHUNG EINER LEGENDE – HINTER DEN KULISSEN DER DANGEROUS-TOUR",
+    storyText: "Das Jahr 1992: Michael Jackson steht vor der größten Herausforderung seiner Karriere. Die \"Dangerous\"-Welttournee soll alles Bisherige übertreffen – doch der Weg dorthin ist gepflastert mit kreativen Konflikten, persönlichen Opfern und dem unbändigen Willen zur Perfektion.\n\nMJ – Das Musical nimmt das Publikum mit hinter die Kulissen dieser legendären Tour-Vorbereitung. Wir erleben einen Künstler, der mit seinem Team ringt, der seine Choreographen an ihre Grenzen treibt und der selbst nie zufrieden ist – bis jeder Move, jeder Ton, jeder Lichtstrahl perfekt sitzt. Es ist die Geschichte eines Genies, das die Welt der Unterhaltung für immer verändert hat.",
+    faqItems: [
+      { question: "Wo wird MJ – Das Michael Jackson Musical gespielt?", answer: "Das Musical läuft im Stage Theater an der Elbe, Norderelbstraße 8, 20457 Hamburg." },
+      { question: "Wie lange läuft die Show noch?", answer: "Tickets sind aktuell bis August 2027 verfügbar. Die hohe Nachfrage spricht für eine weitere Verlängerung." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 51,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind über Eventim sowie direkt auf musicals.de erhältlich." },
+      { question: "Ist die Show für Kinder geeignet?", answer: "Die Show ist ab 6 Jahren empfohlen. Kinder unter 3 Jahren haben keinen Zutritt." },
+      { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
+      { question: "Wer spielt die Hauptrolle?", answer: "In Hamburg verkörpert Benét Monteiro die Rolle von Michael Jackson." },
+      { question: "Welche Songs werden gespielt?", answer: "Über 25 Hits, darunter Thriller, Billie Jean, Smooth Criminal, Beat It, Bad, Wanna Be Startin' Somethin', Don't Stop 'Til You Get Enough und viele mehr." },
+    ],
+  },
+
+  {
     id: "eiskoenigin",
     slug: "die-eiskoenigin",
     title: "DISNEYS DIE EISKÖNIGIN",
@@ -1384,7 +1461,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
