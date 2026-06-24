@@ -1364,10 +1364,10 @@ export const musicals: Musical[] = [
     image: "/manus-storage/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1_15631349.jpg",
     heroImage: "/manus-storage/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne_fd8a3055.jpg",
     keyvisual: "/manus-storage/kdl-logo-1080x1080_8f935a86.webp",
-    eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
-    awinHeroUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
-    awinStickyUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
-    awinBoxUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4",
+    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
     youtubeTrailerId: "",
@@ -1378,7 +1378,7 @@ export const musicals: Musical[] = [
       { icon: "Users", title: "Für die ganze Familie", text: "Ein Erlebnis für alle Generationen – empfohlen ab 3 Jahren" },
     ],
     tourDates: [
-      { city: "Hamburg", venue: "Stage Theater im Hafen", startDate: "2001-12-02", endDate: "2027-04-04", eventimUrl: "https://www.eventim.de/artist/disneys-der-koenig-der-loewen/?affiliate=SX4" },
+      { city: "Hamburg", venue: "Stage Theater im Hafen", startDate: "2001-12-02", endDate: "2027-04-04", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F" },
     ],
     quotes: [
       { text: "Ein kreatives Feuerwerk der Emotionen – atemberaubende Masken, fantastische Kostüme, unvergessliche Klänge.", source: "Stage Entertainment" },
@@ -1756,8 +1756,8 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 
 export function getFeaturedMusicals(): Musical[] {
   const featured = musicals.filter((m) => m.featured === true);
-  // Feste Reihenfolge: Eiskönigin, Dracula, Moulin Rouge, König der Löwen, dann Rest
-  const ORDER = ['eiskoenigin', 'dracula', 'moulinrouge', 'koenig-der-loewen'];
+  // Feste Reihenfolge: König der Löwen, Eiskönigin, Dracula, Moulin Rouge, dann Rest
+  const ORDER = ['koenig-der-loewen', 'eiskoenigin', 'dracula', 'moulinrouge'];
   const ordered = ORDER.map((id) => featured.find((m) => m.id === id)).filter(Boolean) as Musical[];
   const rest = featured.filter((m) => !ORDER.includes(m.id));
   return [...ordered, ...rest];
