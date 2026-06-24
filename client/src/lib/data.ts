@@ -1026,6 +1026,7 @@ export const musicals: Musical[] = [
     image: "/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg",
     heroImage: "/images/kdl/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne.jpg",
     keyvisual: "/images/kdl/kdl-logo-1080x1080.webp",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
