@@ -282,7 +282,7 @@ export default function MusicalDetail() {
                              - Eiskönigin: nach i=0 (nach "...Herzen der Menschen berührt.") */}
                         {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express' || musical.id === 'eiskoenigin' || musical.id === 'koenig-der-loewen')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
-                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
+                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
                           </div>
                         )}
                         {/* Mobile Keyvisual:
@@ -342,7 +342,7 @@ export default function MusicalDetail() {
       {musical.youtubeTrailerId && (
         <section className="hidden lg:block py-12 md:py-16 bg-background">
           <div className="container max-w-4xl">
-            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Tourtrailer`} />
+            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
           </div>
         </section>
       )}
