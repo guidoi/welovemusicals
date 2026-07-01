@@ -253,7 +253,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#musicals"
-                className="px-8 py-3.5 bg-gold text-background font-semibold rounded-sm hover:bg-gold-light transition-colors tracking-wide inline-flex items-center gap-2"
+                className="px-8 py-3.5 border border-[rgb(239,68,68)] text-[rgb(239,68,68)] font-semibold rounded-sm hover:bg-[rgb(239,68,68)]/10 transition-colors tracking-wide inline-flex items-center gap-2"
               >
                 <Ticket className="w-4 h-4" />
                 Alle Musicals entdecken
