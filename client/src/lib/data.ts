@@ -1043,7 +1043,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
-    trailerVideoUrl: "/manus-storage/kdl-trailer_81329595.mp4",
+    youtubeTrailerId: "xMvVna-sXdw",
     uspItems: [
       { icon: "Crown", title: "25 Jahre Musical-Geschichte", text: "Über 17 Millionen Besucher und 9.500 Vorstellungen in Hamburg" },
       { icon: "Music", title: "Musik von Elton John & Tim Rice", text: "Unvergessliche Hits wie \"Der ewige Kreis\" und \"Hakuna Matata\"" },
@@ -1195,7 +1195,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
-    trailerVideoUrl: "/manus-storage/tarzan-trailer_3a4b4592.mp4",
+    youtubeTrailerId: "wYVNWsdHj_I",
     featured: false,
     tags: ["Disney", "Familie", "Ensuite"],
     uspItems: [
