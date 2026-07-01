@@ -246,7 +246,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express' || musical.id === 'tarzan'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
               </motion.div>
             </div>
 
@@ -285,6 +285,21 @@ export default function MusicalDetail() {
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
                           </div>
                         )}
+                        {/* Mobile Self-hosted Video (MP4) */}
+                        {i === 0 && musical.trailerVideoUrl && !musical.youtubeTrailerId && (
+                          <div className="lg:hidden my-8">
+                            <div className="rounded-lg overflow-hidden shadow-lg">
+                              <video
+                                controls
+                                preload="metadata"
+                                className="w-full aspect-video bg-black"
+                                poster={musical.gallery?.[0]?.url}
+                              >
+                                <source src={musical.trailerVideoUrl} type="video/mp4" />
+                              </video>
+                            </div>
+                          </div>
+                        )}
                         {/* Mobile Keyvisual:
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
                              - Drei Haseelnüsse: nach i=0
@@ -293,14 +308,14 @@ export default function MusicalDetail() {
                              - Starlight Express: nach i=4 (vor "Weltklasse-Technik" bei i=5)
                              - Eiskönigin: nach i=2 (nach "...unvergeßlicher Musik.", vor Headline "Spektakel für alle Sinne" bei i=3)
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'tarzan' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express' || musical.id === 'tarzan'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
 
                             </motion.div>
                           </div>
@@ -343,6 +358,25 @@ export default function MusicalDetail() {
         <section className="hidden lg:block py-12 md:py-16 bg-background">
           <div className="container max-w-4xl">
             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
+          </div>
+        </section>
+      )}
+
+      {/* Self-hosted Trailer Video (MP4) */}
+      {musical.trailerVideoUrl && !musical.youtubeTrailerId && (
+        <section className="hidden lg:block py-12 md:py-16 bg-background">
+          <div className="container max-w-4xl">
+            <div className="rounded-lg overflow-hidden shadow-2xl">
+              <video
+                controls
+                preload="metadata"
+                className="w-full aspect-video bg-black"
+                poster={musical.gallery?.[0]?.url}
+              >
+                <source src={musical.trailerVideoUrl} type="video/mp4" />
+                Dein Browser unterstützt das Video-Format nicht.
+              </video>
+            </div>
           </div>
         </section>
       )}

@@ -62,6 +62,7 @@ export interface Musical {
   awinBoxUrl?: string; // Awin-Link für den roten CTA-Kasten (mit clickref=...-box)
   priceFrom?: string; // Mindestpreis z.B. "40,40"
   youtubeTrailerId?: string; // YouTube Video ID (z.B. "dQw4w9WgXcQ")
+  trailerVideoUrl?: string; // URL zu einem selbst-gehosteten Trailer-Video (MP4)
   eventimUrl: string;
   featured?: boolean;
   tags: string[];
@@ -1170,6 +1171,89 @@ export const musicals: Musical[] = [
   },
 
   {
+    id: "tarzan",
+    slug: "disneys-musical-tarzan",
+    title: "DISNEYS MUSICAL TARZAN",
+    subtitle: "",
+    provider: "Stage Entertainment",
+    priceFrom: "69,49",
+    category: "ensuite",
+    categories: ["fester-standort", "familie", "kinder"],
+    city: "Hamburg",
+    venue: "Stage Theater Neue Flora",
+    venuePerCity: { "Hamburg": "Stage Theater Neue Flora" },
+    cities: ["Hamburg"],
+    description: "Disneys Musical TARZAN in Hamburg: Erlebe das spektakulärste Musical unserer Zeit mit atemberaubender 360°-Luftakrobatik und der Oscar-prämierten Musik von Phil Collins. Nur noch bis Oktober im Stage Theater Neue Flora. Tickets ab 69,49 €.",
+    detailHeadline: "DAS SPEKTAKULÄRSTE MUSICAL UNSERER ZEIT.",
+    detailDescription: "Hamburg macht sich bereit für das Wiedersehen mit einem Publikumsliebling: Disneys Musical TARZAN ist zurück in der Stadt, in der 2008 alles begann. Im Stage Theater Neue Flora erleben Sie die einzigartige 360°-Inszenierung, die über 5 Millionen Gäste in Deutschland begeistert hat – nur noch bis Oktober 2026.\n\n**Luftakrobatik, die keine Grenzen kennt**\n\nDie Darsteller spielen nicht nur vor Ihnen auf der Bühne, sondern auch neben und über Ihnen. An Lianen schwingen sie sich über Ihren Köpfen von Wipfel zu Wipfel und legen dabei bis zu 30 Meter lange Flugbahnen zurück. Rund 300 Flugeinsätze hält die Show bereit – allein der Titelheld Tarzan verbringt 80 Prozent der Vorstellung in luftigen Höhen. Ein Mittendrin-Erlebnis, das es so kein zweites Mal gibt.\n\n**Oscar-prämierte Musik von Phil Collins**\n\nDie ergreifende Ballade \"Dir gehört mein Herz\" wurde mit einem Grammy und einem Oscar ausgezeichnet. Dazu kommen Hits wie \"Zwei Welten\", \"Du brauchst einen Freund\" und \"Fremde wie ich\" – Songs, die unter die Haut gehen. Phil Collins war maßgeblich an der deutschen Fassung beteiligt und nennt TARZAN sein \"Baby\".\n\n**Eine Geschichte, die seit über 100 Jahren begeistert**\n\nDie bezaubernde Geschichte vom Waisenkind, das im Dschungel von Affen aufgezogen wird und sich als junger Mann in die schöne Jane verliebt, berührt Alt und Jung gleichermaßen. Tarzan muss sich entscheiden: Bleibt er bei seiner Affenfamilie – oder folgt er seiner Liebe in die Welt der Menschen?",
+    image: "/images/tarzan/tarzan-terence.jpg",
+    heroImage: "/images/tarzan/tarzan-und-jane.jpg",
+    keyvisual: "/images/tarzan/tarzan-keyvisual.jpg",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
+    ticketCtaUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-cta&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
+    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
+    trailerVideoUrl: "/manus-storage/tarzan-trailer_3a4b4592.mp4",
+    featured: false,
+    tags: ["Disney", "Familie", "Ensuite"],
+    uspItems: [
+      { icon: "Wind", title: "Einzigartige 360°-Luftakrobatik", text: "300 Flugeinsätze, bis zu 30m Flugbahnen – Tarzan verbringt 80% der Show in der Luft" },
+      { icon: "Music", title: "Oscar-prämierte Musik von Phil Collins", text: "\"Dir gehört mein Herz\", \"Zwei Welten\" und weitere unvergessliche Hits" },
+      { icon: "Users", title: "Über 5 Millionen Gäste in Deutschland", text: "Seit der Europapremiere 2008 in Hamburg ein Publikumsmagnet" },
+      { icon: "Clock", title: "Nur noch bis Oktober 2026", text: "Das Comeback in Hamburg ist zeitlich begrenzt – jetzt Tickets sichern" },
+    ],
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Theater Neue Flora", startDate: "2025-10-01", endDate: "2026-10-31", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F" },
+    ],
+    quotes: [
+      { text: "Diese Luftakrobatik ist einzigartig!", source: "Freundin" },
+      { text: "Disney eröffnet mit Tarzan eine neue Theaterdimension.", source: "ZDF" },
+      { text: "Das spektakulärste Musical unserer Zeit – ein Mittendrin-Erlebnis für die ganze Familie.", source: "Stage Entertainment" },
+    ],
+    gallery: [
+      { url: "/images/tarzan/tarzan-terence.jpg", alt: "Tarzan – Terence van der Loo (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-und-jane.jpg", alt: "Tarzan und Jane (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-jane-fremde-wie-ich.jpg", alt: "Jane und Tarzan – Szene Fremde wie ich (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-apes.jpg", alt: "Die Affen (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-kala-kerchak.jpg", alt: "Kala und Kerchak (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-jane-dschungel.jpg", alt: "Jane im Dschungel – Vajen van den Bosch (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-wasserfall.jpg", alt: "Wasserfall-Szene (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-erste-begegnung.jpg", alt: "Erste Begegnung (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-apes-ensemble.jpg", alt: "Affen-Ensemble (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-jane-im-dschungel.jpg", alt: "Jane im Dschungel (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-jane-portrait.jpg", alt: "Jane Portrait (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-kala-jane.jpg", alt: "Kala und Jane (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-terk.jpg", alt: "Terk (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-2023.jpg", alt: "Tarzan 2023 (c) Johan Persson / Stage Entertainment" },
+      { url: "/images/tarzan/tarzan-neue-flora.webp", alt: "Stage Theater Neue Flora – Theaterbranding (c) Stage Entertainment" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Theater Neue Flora, Hamburg" },
+      { label: "Spielzeit", value: "Herbst 2025 – Oktober 2026" },
+      { label: "Showdauer", value: "Ca. 2 Stunden 50 Minuten inkl. Pause" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Altersempfehlung", value: "Ab 6 Jahren" },
+      { label: "Tickets ab", value: "69,49 € (auf Eventim)" },
+    ],
+    seoTitle: "Disneys Musical TARZAN Hamburg 2025/2026 | Tickets & Infos",
+    seoDescription: "Disneys Musical TARZAN im Stage Theater Neue Flora Hamburg. Tickets ab 69,49 €. Einzigartige 360°-Luftakrobatik und Oscar-prämierte Musik von Phil Collins. Nur noch bis Oktober 2026!",
+    storyHeadline: "ZWEI WELTEN – EINE LIEBE: DIE GESCHICHTE VON TARZAN",
+    storyText: "Tarzan wird als Waisenkind von der Gorilladame Kala im Dschungel aufgezogen. Obwohl er anders aussieht als seine Affenfamilie, wächst er zu einem starken jungen Mann heran, der sich im Urwald zuhause fühlt. Doch als eines Tages die Forscherin Jane mit ihrem Vater Professor Porter und dem zwielichtigen Jäger Clayton im Dschungel auftaucht, verändert sich Tarzans Welt für immer.\n\nZum ersten Mal begegnet er einem Menschen – und erkennt, dass er selbst einer ist. Zwischen Tarzan und Jane entsteht eine tiefe Verbindung, die beide Welten zusammenbringt. Doch Tarzan steht vor der schwersten Entscheidung seines Lebens: Soll er bei seiner Affenfamilie bleiben, die ihn großgezogen hat? Oder folgt er seiner Liebe zu Jane in die Welt der Menschen?\n\nEine zeitlose Geschichte über Zugehörigkeit, Identität und die Kraft der Liebe – erzählt mit atemberaubender Akrobatik und der unvergesslichen Musik von Phil Collins.",
+    faqItems: [
+      { question: "Wo wird Disneys Musical TARZAN gespielt?", answer: "Das Musical läuft im Stage Theater Neue Flora, Stresemannstraße 163, 20257 Hamburg." },
+      { question: "Wie lange läuft die Show noch?", answer: "Disneys Musical TARZAN ist nur noch bis Oktober 2026 in Hamburg zu sehen – ein zeitlich begrenztes Comeback." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 69,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind über Eventim sowie direkt auf stage-entertainment.de erhältlich." },
+      { question: "Ist die Show für Kinder geeignet?", answer: "Das Musical wird ab 6 Jahren empfohlen. Grundsätzlich ist der Einlass ab 3 Jahren gestattet." },
+      { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2 Stunden und 50 Minuten inklusive einer Pause." },
+      { question: "Was macht TARZAN so besonders?", answer: "Die einzigartige 360°-Inszenierung mit rund 300 Flugeinsätzen macht das ganze Theater zur Bühne. Tarzan verbringt 80% der Show in der Luft – ein Mittendrin-Erlebnis, das es so kein zweites Mal gibt." },
+      { question: "Auf welcher Sprache ist das Musical?", answer: "Das Musical wird auf Deutsch aufgeführt." },
+    ],
+  },
+
+  {
     id: "eiskoenigin",
     slug: "die-eiskoenigin",
     title: "DISNEYS DIE EISKÖNIGIN",
@@ -1462,7 +1546,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
