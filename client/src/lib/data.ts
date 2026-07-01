@@ -1278,7 +1278,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=ziz-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fzurueck-in-die-zukunft-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=ziz-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fzurueck-in-die-zukunft-das-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=ziz-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fzurueck-in-die-zukunft-das-musical%2F",
-    youtubeTrailerId: "fFBJlPMOm7I",
+    youtubeTrailerId: "d50qmFJD8zU",
     featured: false,
     tags: ["Film", "Familie", "Ensuite", "80er"],
     uspItems: [
