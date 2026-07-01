@@ -1116,6 +1116,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=mj-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fmj-das-michael-jackson-musical%2F",
+    youtubeTrailerId: "Bc98DyY_ypY",
     featured: false,
     tags: ["Ensuite", "Stage Entertainment", "Welthit"],
     uspItems: [
