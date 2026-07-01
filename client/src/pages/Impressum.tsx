@@ -253,6 +253,16 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Wir sind am Leben */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">WIR SIND AM LEBEN – DAS BERLIN MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos:</strong> © Dominic Ernst, © Joern Hartmann, © Michael Bidner</li>
+                      <li><strong>Pressefoto Peter Plate &amp; Ulf Leo Sommer:</strong> © Ferran Casanova</li>
+                      <li><strong>Keyvisual &amp; Theaterbild:</strong> © Stage Entertainment</li>
+                    </ul>
+                  </div>
+
                   {/* Rapunzel */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>

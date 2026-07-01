@@ -1477,7 +1477,7 @@ export const musicals: Musical[] = [
   {
     id: "die-amme",
     slug: "die-amme",
-    title: "Die Amme",
+    title: "DIE AMME",
     subtitle: "Das Musical",
     provider: "Stage Entertainment",
     city: "Berlin",
@@ -1490,7 +1490,7 @@ export const musicals: Musical[] = [
     detailHeadline: "DIE AMME PACKT AUS – DIE LUSTIGSTE SHOW DER STADT!",
     detailDescription: "Diese Show dürfen Sie nicht verpassen! Steffi Irmen, der Star des Theaters des Westens (Romeo & Julia / Ku'damm 59), schlüpft in ihre wohl kultigste Rolle: Die Amme. Und diesmal erfahren wir die wahre Geschichte von Romeo und Julia – und das mit einer gehörigen Portion Humor. Steffi Irmen deckt auf, was Shakespeare uns verschwiegen hat, und sorgt dafür, dass kein Auge trocken bleibt.\n\n**Musikalische Highlights inklusive!**\n\nMit den größten Hits aus 35 Jahren der Erfolgs-Komponisten Peter Plate und Ulf Leo Sommer – von \"Ich bin ich\" bis \"Vincent\". Und natürlich dürfen auch brandneue Songs aus der Feder der beiden nicht fehlen.\n\n**Showtime im Theater des Westens**\n\nJeden Freitag heißt es im Theater des Westens: Lachen, weinen und staunen. Die Amme nimmt das Publikum mit auf eine Reise durch die wahre Geschichte von Romeo und Julia – voller Überraschungen, Emotionen und unvergesslicher Musik-Momente.\n\nLustigster Abend des Jahres garantiert – Seien Sie dabei!",
     image: "/images/die-amme/die-amme-szene-03.webp",
-    heroImage: "/images/die-amme/die-amme-theater.webp",
+    heroImage: "/images/die-amme/die-amme-szene-08.webp",
     eventimUrl: "https://www.eventim.de/artist/die-amme-das-musical/",
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
@@ -1510,7 +1510,7 @@ export const musicals: Musical[] = [
     ],
     youtubeTrailerId: "HkAeCFClDFg",
     featured: false,
-    tags: ["Komödie", "Ensuite", "Peter Plate"],
+    tags: ["Komödie", "Comedy", "Peter Plate"],
     showFacts: [
       { label: "Spielort", value: "Stage Theater des Westens, Berlin" },
       { label: "Spielzeit", value: "Bis Juli 2026" },
@@ -1542,8 +1542,73 @@ export const musicals: Musical[] = [
       { question: "Auf welcher Sprache ist das Musical?", answer: "Das Musical wird auf Deutsch aufgeführt." },
     ],
   },
+  {
+    id: "wir-sind-am-leben",
+    slug: "wir-sind-am-leben",
+    title: "WIR SIND AM LEBEN",
+    subtitle: "Das Berlin Musical",
+    provider: "Stage Entertainment",
+    city: "Berlin",
+    venue: "Stage Theater des Westens",
+    priceFrom: "30,49",
+    category: "fester-standort",
+    categories: ["fester-standort", "erwachsene"],
+    cities: ["Berlin"],
+    description: "WIR SIND AM LEBEN – Das Berlin Musical von Peter Plate & Ulf Leo Sommer im Theater des Westens. Eine Geschichte über Familie, Freiheit und das Berlin der 90er. Tickets ab 30,49 €.",
+    detailHeadline: "DAS BERLIN MUSICAL VON PLATE × SOMMER × LANGE",
+    detailDescription: "Nach den Erfolgsmusicals \"Ku'damm 56\", \"Ku'damm 59\", \"Romeo & Julia – Liebe ist alles\" und \"DIE AMME\" wagen sich Peter Plate und Ulf Leo Sommer nun an ihr bislang persönlichstes Projekt: \"WIR SIND AM LEBEN\" ist ihr erstes vollständig selbst entwickeltes Musical – eine Geschichte über Familie, Freiheit und das Lebensgefühl im Berlin der frühen 90er-Jahre.\n\n**Berlin, 1990.**\n\nDas Jahr, das nicht nur eine Stadt, sondern auch das Leben der Geschwister Nina, Mario und ihrer Mutter Rosie komplett auf den Kopf stellt. Die Mauer ist gefallen, die Ordnung verschwunden – und das Chaos beginnt. Die Zeit ist geprägt von Euphorie – und von Angst. Von Aufbruch – und von der alles überschattenden Realität von AIDS.\n\n**Komisch, absurd, zärtlich verrückt**\n\nDoch \"WIR SIND AM LEBEN\" ist kein reines Drama. \"Es wird sehr, sehr komisch\", sagt Plate. \"Denn die 90er waren nicht nur traurig oder politisch – sie waren auch absurd, hemmungslos, zärtlich verrückt. Wir wollten das alles zeigen: die Traurigkeit und das Tanzen. Die Wut und die Wärme. Den Lärm und das Leise.\"\n\nDas Buch entstand in Zusammenarbeit mit Franziska Kuropka und Lukas Nimscheck (Regie). Die Musik stammt von Peter Plate, Ulf Leo Sommer und Joshua Lange. Mit Choreografien von Jonathan Huor (Eurovision Song Contest 2025) und Lichtdesign von Tim Deiling (Tony-Award-nominiert).",
+    image: "/images/wir-sind-am-leben/wsal-keyvisual.webp",
+    heroImage: "/images/wir-sind-am-leben/wsal-ensemble-party.webp",
+    eventimUrl: "https://www.eventim.de/artist/wir-sind-am-leben/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=wsal-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fwir-sind-am-leben%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=wsal-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fwir-sind-am-leben%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=wsal-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fwir-sind-am-leben%2F",
+    keyvisual: "/images/wir-sind-am-leben/wsal-keyvisual.webp",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=wsal-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fwir-sind-am-leben%2F",
+    gallery: [
+      { url: "/images/wir-sind-am-leben/wsal-szene-rot.webp", alt: "Ensemble-Szene in rotem Licht" },
+      { url: "/images/wir-sind-am-leben/wsal-ensemble-buehne.webp", alt: "Ensemble auf der Berliner Hinterhof-Bühne" },
+      { url: "/images/wir-sind-am-leben/wsal-ensemble-party.webp", alt: "Ensemble-Party mit Megafon" },
+      { url: "/images/wir-sind-am-leben/wsal-rosi-pelzmantel.webp", alt: "Rosi im Pelzmantel – Willkommensszene" },
+      { url: "/images/wir-sind-am-leben/wsal-taenzer-gelb.webp", alt: "Tänzer in gelber Hose mit Ensemble" },
+      { url: "/images/wir-sind-am-leben/wsal-buehne-gesamt.webp", alt: "Gesamtansicht der Berliner Hinterhof-Bühne" },
+      { url: "/images/wir-sind-am-leben/wsal-theater-des-westens.webp", alt: "Theater des Westens mit Wir sind am Leben Plakaten" },
+      { url: "/images/wir-sind-am-leben/wsal-peter-ulf.webp", alt: "Peter Plate und Ulf Leo Sommer" },
+    ],
+    youtubeTrailerId: "bKGqV1ovqbc",
+    featured: false,
+    tags: ["Drama", "90er", "Peter Plate"],
+    showFacts: [
+      { label: "Spielort", value: "Stage Theater des Westens, Berlin" },
+      { label: "Spielzeit", value: "01.07.2026 – 28.02.2027" },
+      { label: "Tickets ab", value: "30,49 € (auf Eventim)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Premiere", value: "21. März 2026" },
+    ],
+    storyHeadline: "Berlin 1990 – Familie, Freiheit und das Chaos nach dem Mauerfall",
+    storyText: "Nina und Mario fliehen aus Wittenberg in die Hauptstadt – auf der Suche nach sich selbst, nach Musik, nach einem anderen Leben. In einem besetzten Altbau, dem \"Konsum Hoffnung\", finden sie Anschluss an eine liebenswerte Gemeinschaft. Mario verliebt sich in den kubanischen Tänzer Nando, Nina träumt von einer Karriere als Popsängerin – in einer Stadt, die lieber Techno hört.\n\nUnd dann ist da plötzlich Rosie – gespielt von Steffi Irmen. Eine Mutter, die niemand erwartet hat. Übergriffig, ungebeten, zu spät – und doch entschlossen, ihre Kinder in einem Leben zurückzugewinnen, das längst ohne sie weiterging.",
+    quotes: [
+      { text: "Mit 'WIR SIND AM LEBEN' möchten wir erinnern. An die, die gegangen sind. An die, die zurückblieben. Und an das, was man nicht vergessen darf.", source: "Peter Plate & Ulf Leo Sommer" },
+      { text: "Es wird sehr, sehr komisch. Denn die 90er waren nicht nur traurig oder politisch – sie waren auch absurd, hemmungslos, zärtlich verrückt.", source: "Peter Plate" },
+    ],
+    uspItems: [
+      { icon: "Music", title: "Plate × Sommer × Lange", text: "Erstes komplett eigenes Musical des Erfolgstrios" },
+      { icon: "MapPin", title: "Theater des Westens", text: "Berlins legendäre Musical-Bühne" },
+      { icon: "Star", title: "Steffi Irmen als Rosie", text: "Der Star aus Ku'damm 59 und DIE AMME" },
+      { icon: "Users", title: "Jonathan Huor Choreografie", text: "Vom Eurovision Song Contest 2025" },
+    ],
+    faqItems: [
+      { question: "Worum geht es in WIR SIND AM LEBEN?", answer: "Das Musical erzählt die Geschichte der Geschwister Nina und Mario, die 1990 nach dem Mauerfall nach Berlin fliehen und dort auf der Suche nach Freiheit, Liebe und Identität sind." },
+      { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt von Peter Plate, Ulf Leo Sommer und Joshua Lange – dem Trio hinter Ku'damm 56, Ku'damm 59 und Romeo & Julia." },
+      { question: "Wo wird das Musical aufgeführt?", answer: "Im Stage Theater des Westens in Berlin." },
+      { question: "Wie lange läuft die Show?", answer: "Die Spielzeit ist vom 01.07.2026 bis 28.02.2027." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 30,49 € erhältlich." },
+      { question: "Ist das Musical für Kinder geeignet?", answer: "Das Musical richtet sich primär an ein erwachsenes Publikum. Es behandelt Themen wie AIDS, Mauerfall und Identitätssuche." },
+    ],
+    seoTitle: "WIR SIND AM LEBEN – Das Berlin Musical | Tickets ab 30,49 €",
+    seoDescription: "WIR SIND AM LEBEN – Das neue Musical von Peter Plate & Ulf Leo Sommer im Theater des Westens Berlin. Eine Geschichte über Familie, Freiheit und die 90er. Jetzt Tickets sichern!",
+  },
 ];
-
 export const cities: City[] = [
   {
     slug: "berlin",
@@ -1761,7 +1826,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "die-amme"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "die-amme", "wir-sind-am-leben"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
