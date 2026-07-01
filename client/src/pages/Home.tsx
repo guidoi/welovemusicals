@@ -195,7 +195,7 @@ export default function Home() {
     return result;
   }, [categoryFilter, countryFilter, cityFilter, sortOption, plzSearch]);
 
-  const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 6);
+  const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 16);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -441,7 +441,7 @@ export default function Home() {
           )}
 
           {/* Show More / Show Less */}
-          {filteredMusicals.length > 6 && (
+          {filteredMusicals.length > 16 && (
             <div className="text-center mt-10">
               {!showAllMusicals ? (
                 <button
