@@ -280,7 +280,7 @@ export default function MusicalDetail() {
                              - FJG: nach i=1
                              - Starlight Express: nach i=0 (vor "Rollschuh-Action" bei i=1)
                              - Eiskönigin: nach i=0 (nach "...Herzen der Menschen berührt.") */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express' || musical.id === 'eiskoenigin' || musical.id === 'koenig-der-loewen' || musical.id === 'mj-musical')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express' || musical.id === 'eiskoenigin' || musical.id === 'mj-musical')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
                           </div>

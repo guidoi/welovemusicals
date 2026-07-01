@@ -1035,7 +1035,7 @@ export const musicals: Musical[] = [
     detailDescription: "Kein Musical in Deutschland hat mehr Menschen bewegt als Disneys DER KÖNIG DER LÖWEN. Seit dem Jahr 2001 begeistert die Inszenierung von Julie Taymor im Stage Theater im Hafen – über 17 Millionen Besucher haben die Show erlebt, mehr als 9.500 Vorstellungen wurden gespielt. Abend für Abend verwandelt sich das Theater in die afrikanische Savanne – und das Publikum erlebt ein kreatives Feuerwerk der Emotionen.\n\n**Julie Taymors visionäre Inszenierung**\n\nOscar-Preisträgerin Julie Taymor hat die Filmgeschichte in ein einzigartiges Bühnenkunstwerk verwandelt. Über 300 atemberaubende Masken, Puppets und Requisiten sowie mehr als 400 fantastische Kostüme verschmelzen Elemente des afrikanischen und asiatischen Masken- und Schattenspiels zu einer visuellen Sprache, die weltweit ihresgleichen sucht. 37 Darsteller:innen aus über 40 Nationen erwecken die Savanne zum Leben.\n\n**Die Musik: Elton John, Tim Rice und die Klänge Afrikas**\n\nSir Elton John und Tim Rice schufen unvergessliche Hits wie \"Der ewige Kreis\", \"Kann es wirklich Liebe sein\" und \"Hakuna Matata\". Ergänzt durch original afrikanische Rhythmen von Lebo M und die orchestralen Arrangements von Hans Zimmer entsteht ein einzigartiger Klangteppich, der Popmusik und afrikanische Tradition verbindet. 17 Songs in zwei Akten – von der Gänsehaut des Openings bis zum triumphalen Finale.\n\n**Die Geschichte: Simbas Weg zum König**\n\nDer junge Löwe Simba wächst als Sohn von König Mufasa im Geweihten Land auf. Als sein Onkel Scar den König verrät und Simba in die Verbannung treibt, muss der junge Löwe seinen eigenen Weg finden. Begleitet von seinen Freunden Timon und Pumbaa lernt er, Verantwortung zu übernehmen und seinen Platz im ewigen Kreislauf des Lebens einzunehmen. Eine zeitlose Fabel über Mut, Verlust und die Kraft der Liebe.",
     image: "/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg",
     heroImage: "/images/kdl/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne.jpg",
-    keyvisual: "/images/kdl/kdl-logo-1080x1080.webp",
+    keyvisual: "/images/kdl/kdl-25jahre-keyvisual.jpg",
     keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
@@ -1043,7 +1043,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
-    youtubeTrailerId: "xMvVna-sXdw",
+    trailerVideoUrl: "/manus-storage/kdl-trailer_81329595.mp4",
     uspItems: [
       { icon: "Crown", title: "25 Jahre Musical-Geschichte", text: "Über 17 Millionen Besucher und 9.500 Vorstellungen in Hamburg" },
       { icon: "Music", title: "Musik von Elton John & Tim Rice", text: "Unvergessliche Hits wie \"Der ewige Kreis\" und \"Hakuna Matata\"" },
