@@ -1427,7 +1427,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
-    youtubeTrailerId: "",
+    youtubeTrailerId: "saissbQkgjA",
     featured: false,
     tags: ["Film", "Ensuite", "Elton John"],
     uspItems: [
