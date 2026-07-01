@@ -234,6 +234,15 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Der Teufel trägt Prada */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">DER TEUFEL TRÄGT PRADA – DAS MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Pressefotos &amp; Szenenbilder:</strong> © Matt Crockett</li>
+                      <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
+                    </ul>
+                  </div>
+
                   {/* Rapunzel */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>

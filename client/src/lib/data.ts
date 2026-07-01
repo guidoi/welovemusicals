@@ -1402,6 +1402,78 @@ export const musicals: Musical[] = [
       { question: "Auf welcher Sprache ist das Musical?", answer: "Das Musical wird auf Deutsch aufgeführt." },
     ],
   },
+  {
+    id: "teufel-traegt-prada",
+    slug: "der-teufel-traegt-prada-das-musical",
+    title: "DER TEUFEL TRÄGT PRADA",
+    subtitle: "",
+    provider: "Stage Entertainment",
+    priceFrom: "52,49",
+    category: "ensuite",
+    categories: ["fester-standort"],
+    city: "Hamburg",
+    venue: "Stage Theater an der Elbe",
+    venuePerCity: { "Hamburg": "Stage Theater an der Elbe" },
+    cities: ["Hamburg"],
+    description: "DER TEUFEL TRÄGT PRADA – Das Musical in Hamburg: Glamourös, scharf und überragend! Mit Songs von Elton John und opulentem Mode-Glamour ab Dezember 2026 im Stage Theater an der Elbe. Tickets ab 52,49 €.",
+    detailHeadline: "GLAMOURÖS. SCHARF. ÜBERRAGEND.",
+    detailDescription: "DER TEUFEL TRÄGT PRADA – Das Musical ist \"Eine atemberaubende Show!\" (Lily Collins). Glamourös. Scharf. Überragend. Das Musical kommt nach einem erfolgreichen Start am Londoner West End nach Hamburg. Mit mitreißenden Songs von Weltstar Elton John, scharfem Witz und purem Mode-Glamour erobert es ab Dezember 2026 die Musicalstadt.\n\n**Von der Redaktion auf den Laufsteg**\n\nBasierend auf dem legendären Film aus den 2000ern und dem Bestseller-Roman von Lauren Weisberger verspricht diese Show einen teuflisch guten Abend voller Mode, Macht und Emotionen. Die frischgebackene Journalistin Andy Sachs ergattert einen Job beim renommierten Modemagazin Runway – und arbeitet fortan für die gefürchtetste Ikone der Modewelt: Chefredakteurin Miranda Priestly.\n\n**Ein gnadenloser Balanceakt**\n\nUm deren unmögliche Forderungen zu erfüllen, opfert Andy ihr Privatleben und lässt sich zunehmend von einer glamourösen Welt verführen, die sie einst verachtet hat. Ihr Job beim Modemagazin wird zu einem gnadenlosen Balanceakt zwischen Selbstverwirklichung, Loyalität und persönlichem Glück. Doch wie weit ist sie bereit zu gehen, um erfolgreich zu sein?\n\n**Musical der Extraklasse**\n\nSpektakuläre Mode, pointierte Dialoge und mitreißende Choreografien machen DER TEUFEL TRÄGT PRADA zu einem Musical der Extraklasse. Die Songtexte stammen von Shaina Taub und Mark Sonnenblick, das Buch von Lauren Weisberger und Kate Wetherhead, und Regie & Choreografie verantwortet der dreifache Tony-Award-Gewinner Jerry Mitchell (Kinky Boots, Legally Blonde, Pretty Woman, Hairspray).",
+    image: "/images/prada/prada-fashionshow.webp",
+    heroImage: "/images/prada/prada-miranda-ensemble.webp",
+    keyvisual: "/images/prada/prada-keyvisual.webp",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
+    ticketCtaUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-cta&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
+    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
+    youtubeTrailerId: "",
+    featured: false,
+    tags: ["Film", "Ensuite", "Elton John"],
+    uspItems: [
+      { icon: "Music", title: "Songs von Elton John", text: "Mitreißende Musik vom legendären Weltstar – exklusiv für dieses Musical komponiert" },
+      { icon: "Sparkles", title: "Spektakuläre Mode auf der Bühne", text: "Opulente Kostüme und glamouröse Laufsteg-Szenen – ein Fest für die Augen" },
+      { icon: "Award", title: "West End-Erfolg", text: "Nach triumphaler Premiere in London jetzt endlich auf Deutsch in Hamburg" },
+      { icon: "Star", title: "Regie von Jerry Mitchell", text: "Dreifacher Tony-Award-Gewinner (Kinky Boots, Legally Blonde, Pretty Woman)" },
+    ],
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2026-12-12", endDate: "2027-08-29", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F" },
+    ],
+    quotes: [
+      { text: "Unterhaltung und ein Riesenspaß!", source: "Anna Wintour" },
+      { text: "Spektakuläre Mode", source: "Vogue" },
+      { text: "Ich war begeistert – Die Show ist faszinierend!", source: "Donatella Versace" },
+      { text: "Eine atemberaubende Show!", source: "Lily Collins" },
+    ],
+    gallery: [
+      { url: "/images/prada/prada-fashionshow.webp", alt: "Fashion Show Szene (c) Matt Crockett" },
+      { url: "/images/prada/prada-miranda-ensemble.webp", alt: "Miranda Priestly und Ensemble (c) Matt Crockett" },
+      { url: "/images/prada/prada-miranda-throne.webp", alt: "Miranda Priestly – dramatische Szene (c) Matt Crockett" },
+      { url: "/images/prada/prada-andy-ensemble.webp", alt: "Andy Sachs und Ensemble (c) Matt Crockett" },
+      { url: "/images/prada/prada-andy-office.webp", alt: "Andy im Runway-Büro (c) Matt Crockett" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Theater an der Elbe, Hamburg" },
+      { label: "Spielzeit", value: "12. Dezember 2026 – 29. August 2027" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Musik", value: "Elton John" },
+      { label: "Tickets ab", value: "52,49 € (auf Eventim)" },
+    ],
+    seoTitle: "DER TEUFEL TRÄGT PRADA – Das Musical Hamburg 2026 | Tickets & Infos",
+    seoDescription: "DER TEUFEL TRÄGT PRADA – Das Musical im Stage Theater an der Elbe Hamburg. Tickets ab 52,49 €. Mit Songs von Elton John, spektakulärer Mode und dem West End-Erfolg ab Dezember 2026.",
+    storyHeadline: "WILLKOMMEN BEI RUNWAY – DIE GESCHICHTE",
+    storyText: "Die frischgebackene Journalistin Andy Sachs ergattert einen Job beim renommierten Modemagazin Runway – und arbeitet fortan für die gefürchtetste Ikone der Modewelt: Chefredakteurin Miranda Priestly. Um deren unmögliche Forderungen zu erfüllen, opfert Andy ihr Privatleben und lässt sich zunehmend von einer glamourösen Welt verführen, die sie einst verachtet hat.\n\nIhr Job beim Modemagazin wird zu einem gnadenlosen Balanceakt zwischen Selbstverwirklichung, Loyalität und persönlichem Glück. Doch wie weit ist sie bereit zu gehen, um erfolgreich zu sein? Und lohnt es sich, dafür die eigene Seele zu verkaufen?\n\nEine Geschichte über Ambitionen, Selbstfindung und die Frage, was wirklich zählt im Leben – verpackt in ein glamouröses Musical-Spektakel mit der Musik von Elton John.",
+    faqItems: [
+      { question: "Wo wird DER TEUFEL TRÄGT PRADA – Das Musical gespielt?", answer: "Das Musical läuft im Stage Theater an der Elbe in Hamburg." },
+      { question: "Ab wann ist das Musical in Hamburg zu sehen?", answer: "Die Deutschlandpremiere ist am 12. Dezember 2026. Tickets sind bereits im Vorverkauf erhältlich." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 52,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind über Eventim sowie direkt auf stage-entertainment.de erhältlich." },
+      { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt von Weltstar Elton John. Die Songtexte schrieben Shaina Taub und Mark Sonnenblick." },
+      { question: "Worauf basiert das Musical?", answer: "Das Musical basiert auf dem gleichnamigen Bestseller-Roman von Lauren Weisberger und dem legendären Film mit Meryl Streep und Anne Hathaway." },
+      { question: "Wer führt Regie?", answer: "Regie und Choreografie verantwortet Jerry Mitchell, dreifacher Tony-Award-Gewinner (Kinky Boots, Legally Blonde, Pretty Woman, Hairspray)." },
+      { question: "Auf welcher Sprache ist das Musical?", answer: "Das Musical wird auf Deutsch aufgeführt." },
+    ],
+  },
 ];
 
 export const cities: City[] = [
@@ -1621,7 +1693,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
