@@ -253,7 +253,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#musicals"
-                className="px-8 py-3.5 border border-[rgb(239,68,68)] text-[rgb(239,68,68)] font-semibold rounded-sm hover:bg-[rgb(239,68,68)]/10 transition-colors tracking-wide inline-flex items-center gap-2"
+                className="px-8 py-3.5 bg-gold text-background font-semibold rounded-sm hover:bg-gold-light transition-colors tracking-wide inline-flex items-center gap-2"
               >
                 <Ticket className="w-4 h-4" />
                 Alle Musicals entdecken
@@ -446,10 +446,10 @@ export default function Home() {
               {!showAllMusicals ? (
                 <button
                   onClick={() => { setShowAllMusicals(true); setShowMorePulsed(true); }}
-                  className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-gold ${
+                  className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-[rgb(239,68,68)] ${
                     showMorePulsed
-                      ? "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] hover:bg-gold/10"
-                      : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once hover:bg-gold/10"
+                      ? "border-2 border-[rgb(239,68,68)]/60 shadow-[0_0_18px_rgba(239,68,68,0.30)] hover:bg-[rgb(239,68,68)]/10"
+                      : "border-2 border-[rgb(239,68,68)]/60 shadow-[0_0_18px_rgba(239,68,68,0.30)] animate-pulse-once hover:bg-[rgb(239,68,68)]/10"
                   }`}
                 >
                   Alle {filteredMusicals.length} Musicals anzeigen
