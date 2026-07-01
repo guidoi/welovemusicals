@@ -263,6 +263,15 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Tanz der Vampire */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">TANZ DER VAMPIRE – DAS MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Artwork &amp; Keyvisual:</strong> © Stage Entertainment</li>
+                      <li><strong>Theaterfoto:</strong> © Stage Entertainment</li>
+                    </ul>
+                  </div>
+
                   {/* Rapunzel */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>

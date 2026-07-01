@@ -1608,6 +1608,71 @@ export const musicals: Musical[] = [
     seoTitle: "WIR SIND AM LEBEN – Das Berlin Musical | Tickets ab 30,49 €",
     seoDescription: "WIR SIND AM LEBEN – Das neue Musical von Peter Plate & Ulf Leo Sommer im Theater des Westens Berlin. Eine Geschichte über Familie, Freiheit und die 90er. Jetzt Tickets sichern!",
   },
+  {
+    id: "tanz-der-vampire",
+    slug: "tanz-der-vampire",
+    title: "TANZ DER VAMPIRE",
+    subtitle: "Das Musical",
+    provider: "Stage Entertainment",
+    priceFrom: "45,49",
+    category: "ensuite",
+    categories: ["fester-standort", "erwachsene"],
+    city: "Stuttgart",
+    venue: "Stage Apollo Theater",
+    cities: ["Stuttgart"],
+    description: "TANZ DER VAMPIRE – Das Kult-Musical von Michael Kunze und Jim Steinman kehrt zum 30-jährigen Jubiläum in einer eindrucksvollen Neuproduktion zurück nach Stuttgart. Ab März 2027 im Stage Apollo Theater. Tickets ab 45,49 €.",
+    detailHeadline: "DIE EWIGKEIT BEGINNT 2027",
+    detailDescription: "Endlich kehrt eines der erfolgreichsten deutschsprachigen Musicals aller Zeiten zurück nach Stuttgart: Tanz der Vampire. Pünktlich zum 30-jährigen Jubiläum lädt das Kult-Musical von Michael Kunze und Jim Steinman in einer eindrucksvollen Neuproduktion des Originals erneut zum Mitternachtsball – mystischer, faszinierender und unheimlicher als je zuvor.\n\n**Große Emotion, schauriger Humor, mitreißende Musik**\n\nMit seiner einzigartigen Mischung aus großer Emotion, schaurig-schönem Humor und mitreißender Musik begeistert Tanz der Vampire seit fast drei Jahrzehnten ein Millionenpublikum weltweit. Rockig-gefühlvolle Balladen, spektakuläre Tanzszenen, opulente Bühnenbilder und detailreiche Kostüme machen jede Vorstellung zu einem unvergesslichen Erlebnis voller Gänsehautmomente.\n\n**Ein weltweites Phänomen**\n\nSeit der Uraufführung 1997 im Wiener Raimund Theater hat sich das Musical zu einem weltweiten Phänomen entwickelt. Über 11 Millionen Zuschauer in 15 Ländern und 13 Sprachen sowie mehr als 11.000 Vorstellungen sprechen für sich. Besonders Stuttgart zählt zu den erfolgreichsten Spielorten überhaupt: Mehr als 3,7 Millionen Besucher haben die Vampire hier bereits gefeiert – und immer wieder zurückverlangt.\n\nLassen Sie sich von Tanz der Vampire in eine faszinierende Welt zwischen Verführung und Ewigkeit entführen. Ab Frühjahr 2027 im Stage Apollo Theater Stuttgart.",
+    image: "/images/tanz-der-vampire/tdv-theater.webp",
+    heroImage: "/images/tanz-der-vampire/tdv-theater.webp",
+    keyvisual: "/images/tanz-der-vampire/tdv-keyvisual.webp",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F",
+    ticketCtaUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-cta&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F",
+    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F",
+    youtubeTrailerId: "9zPIQ43Iwwc",
+    featured: false,
+    tags: ["Kult-Musical", "Gothic", "Jim Steinman"],
+    uspItems: [
+      { icon: "Music", title: "Rockig-gefühlvolle Balladen", text: "Die epische Musik von Jim Steinman – unvergessliche Songs wie \"Totale Finsternis\" und \"Unstillbare Gier\"" },
+      { icon: "Star", title: "30 Jahre Kult-Musical", text: "Über 11 Millionen Zuschauer weltweit, mehr als 11.000 Vorstellungen in 15 Ländern" },
+      { icon: "Users", title: "3,7 Mio. Besucher in Stuttgart", text: "Stuttgart zählt zu den erfolgreichsten Spielorten – die Vampire kehren zurück!" },
+      { icon: "Sparkles", title: "Opulente Neuproduktion", text: "Spektakuläre Tanzszenen, prachtvolle Bühnenbilder und detailreiche Kostüme" },
+    ],
+    tourDates: [
+      { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2027-03-11", endDate: "2027-09-30", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tdv-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ftanz-der-vampire%2F" },
+    ],
+    quotes: [
+      { text: "Mystischer, faszinierender und unheimlicher als je zuvor – die Neuproduktion des Originals.", source: "Stage Entertainment" },
+      { text: "Ein unvergessliches Erlebnis voller Gänsehautmomente.", source: "Musical1" },
+      { text: "Tanz der Vampire begeistert seit fast drei Jahrzehnten ein Millionenpublikum weltweit.", source: "Musicalzentrale" },
+    ],
+    gallery: [
+      { url: "/images/tanz-der-vampire/tdv-keyvisual.webp", alt: "TANZ DER VAMPIRE Artwork 2027" },
+      { url: "/images/tanz-der-vampire/tdv-theater.webp", alt: "Stage Apollo Theater Stuttgart" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Apollo Theater, Stuttgart" },
+      { label: "Spielzeit", value: "11.03.2027 – 30.09.2027" },
+      { label: "Tickets ab", value: "45,49 € (auf Eventim)" },
+      { label: "Sprache", value: "Deutsch" },
+      { label: "Veranstalter", value: "Stage Entertainment" },
+    ],
+    storyHeadline: "WILLKOMMEN IN TRANSSILVANIEN – DIE GESCHICHTE",
+    storyText: "Auf der Suche nach Vampiren kommt der kauzige Forscher Professor Abronsius mitten in Transsilvanien dem Ziel seiner Reise gefährlich nahe. Sein junger Assistent Alfred verliebt sich in die Wirtstochter Sarah – doch auch der düstere Graf von Krolock hat ein Auge auf sie geworfen und lockt sie auf sein Schloss.\n\nVon Erfolgsautor Michael Kunze humorvoll erzählt und mit der epischen Musik von Jim Steinman eindrucksvoll in Szene gesetzt, entfaltet sich in diesem großen Musical-Klassiker eine schaurig-schöne Geschichte voller Gänsehaut und Leidenschaft. Seit der Uraufführung begeisterte Tanz der Vampire über 11 Millionen Zuschauer weltweit.\n\nFreuen Sie sich auf ein unvergessliches Erlebnis voller rockig-gefühlvoller Balladen, opulenter Bilder und mitreißender Momente – ab 2027 in Stuttgart.",
+    faqItems: [
+      { question: "Worum geht es in Tanz der Vampire?", answer: "Das Musical erzählt die Geschichte von Professor Abronsius und seinem Assistenten Alfred, die in Transsilvanien auf den Vampir-Grafen von Krolock treffen. Alfred verliebt sich in die Wirtstochter Sarah, doch auch der Graf hat es auf sie abgesehen." },
+      { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt von Jim Steinman (Bat Out of Hell), das Buch von Michael Kunze. Die Originalproduktion wurde von Roman Polanski inszeniert." },
+      { question: "Wo wird Tanz der Vampire aufgeführt?", answer: "Im Stage Apollo Theater in Stuttgart." },
+      { question: "Wann ist Spielzeit?", answer: "Vom 11. März 2027 bis 30. September 2027." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 45,49 € erhältlich." },
+      { question: "Warum ist Stuttgart besonders?", answer: "Stuttgart zählt mit über 3,7 Millionen Besuchern zu den erfolgreichsten Spielorten für Tanz der Vampire weltweit." },
+    ],
+    seoTitle: "TANZ DER VAMPIRE – Das Musical Stuttgart 2027 | Tickets ab 45,49 €",
+    seoDescription: "TANZ DER VAMPIRE kehrt zum 30-jährigen Jubiläum zurück nach Stuttgart! Das Kult-Musical von Michael Kunze & Jim Steinman ab 11.03.2027 im Stage Apollo Theater. Jetzt Tickets sichern!",
+  },
 ];
 export const cities: City[] = [
   {
@@ -1826,7 +1891,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "die-amme", "wir-sind-am-leben"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "die-amme", "wir-sind-am-leben", "tanz-der-vampire"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));

@@ -153,9 +153,9 @@
 - [x] MJ Musical: YouTube Video weggelassen (kein youtubeTrailerId)
 
 ## Tanz der Vampire – Neues Musical (Stage Entertainment)
-- [ ] TDV Bilder konvertieren (WebP) und in client/public/images/tanz-der-vampire/ ablegen
-- [ ] TDV Musical-Eintrag in data.ts erstellen (Preis ab 45,49 €, Spielzeit 11.03.2027–30.09.2027, Stuttgart)
-- [ ] TDV in ACTIVE_MUSICAL_IDS aufnehmen
-- [ ] TDV Fotocredits im Impressum ergänzen
-- [ ] TDV MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
-- [ ] TDV TypeScript-Check bestanden
+- [x] TDV Bilder konvertieren (WebP) und in client/public/images/tanz-der-vampire/ ablegen
+- [x] TDV Musical-Eintrag in data.ts erstellen (Preis ab 45,49 €, Spielzeit 11.03.2027–30.09.2027, Stuttgart)
+- [x] TDV in ACTIVE_MUSICAL_IDS aufnehmen
+- [x] TDV Fotocredits im Impressum ergänzen
+- [x] TDV MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
+- [x] TDV TypeScript-Check bestanden
