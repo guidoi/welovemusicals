@@ -1429,7 +1429,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=prada-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fder-teufel-traegt-prada-das-musical%2F",
     youtubeTrailerId: "saissbQkgjA",
     featured: false,
-    tags: ["Film", "Ensuite", "Elton John"],
+    tags: ["Film", "Komödie", "Elton John"],
     uspItems: [
       { icon: "Music", title: "Songs von Elton John", text: "Mitreißende Musik vom legendären Weltstar – exklusiv für dieses Musical komponiert" },
       { icon: "Sparkles", title: "Spektakuläre Mode auf der Bühne", text: "Opulente Kostüme und glamouröse Laufsteg-Szenen – ein Fest für die Augen" },
