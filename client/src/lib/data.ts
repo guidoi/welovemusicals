@@ -1474,6 +1474,74 @@ export const musicals: Musical[] = [
       { question: "Auf welcher Sprache ist das Musical?", answer: "Das Musical wird auf Deutsch aufgeführt." },
     ],
   },
+  {
+    id: "die-amme",
+    slug: "die-amme",
+    title: "Die Amme",
+    subtitle: "Das Musical",
+    provider: "Stage Entertainment",
+    city: "Berlin",
+    venue: "Stage Theater des Westens",
+    priceFrom: "35,49",
+    category: "fester-standort",
+    categories: ["fester-standort", "erwachsene"],
+    cities: ["Berlin"],
+    description: "DIE AMME – Das Musical in Berlin: Steffi Irmen packt aus! Die lustigste Show der Stadt mit den größten Hits von Peter Plate & Ulf Leo Sommer. Tickets ab 35,49 €.",
+    detailHeadline: "DIE AMME PACKT AUS – DIE LUSTIGSTE SHOW DER STADT!",
+    detailDescription: "Diese Show dürfen Sie nicht verpassen! Steffi Irmen, der Star des Theaters des Westens (Romeo & Julia / Ku'damm 59), schlüpft in ihre wohl kultigste Rolle: Die Amme. Und diesmal erfahren wir die wahre Geschichte von Romeo und Julia – und das mit einer gehörigen Portion Humor. Steffi Irmen deckt auf, was Shakespeare uns verschwiegen hat, und sorgt dafür, dass kein Auge trocken bleibt.\n\n**Musikalische Highlights inklusive!**\n\nMit den größten Hits aus 35 Jahren der Erfolgs-Komponisten Peter Plate und Ulf Leo Sommer – von \"Ich bin ich\" bis \"Vincent\". Und natürlich dürfen auch brandneue Songs aus der Feder der beiden nicht fehlen.\n\n**Showtime im Theater des Westens**\n\nJeden Freitag heißt es im Theater des Westens: Lachen, weinen und staunen. Die Amme nimmt das Publikum mit auf eine Reise durch die wahre Geschichte von Romeo und Julia – voller Überraschungen, Emotionen und unvergesslicher Musik-Momente.\n\nLustigster Abend des Jahres garantiert – Seien Sie dabei!",
+    image: "/images/die-amme/die-amme-szene-03.webp",
+    heroImage: "/images/die-amme/die-amme-theater.webp",
+    eventimUrl: "https://www.eventim.de/artist/die-amme-das-musical/",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
+    keyvisual: "/images/die-amme/die-amme-keyvisual.webp",
+    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
+    gallery: [
+      { url: "/images/die-amme/die-amme-szene-01.webp", alt: "Die Amme mit karierter Tischdecke" },
+      { url: "/images/die-amme/die-amme-szene-02.webp", alt: "Steffi Irmen als Die Amme – emotionaler Moment" },
+      { url: "/images/die-amme/die-amme-szene-03.webp", alt: "Die Amme auf dem Tisch liegend" },
+      { url: "/images/die-amme/die-amme-szene-04.webp", alt: "Die Amme mit Haube" },
+      { url: "/images/die-amme/die-amme-szene-05.webp", alt: "Die Amme mit Baby" },
+      { url: "/images/die-amme/die-amme-szene-06.webp", alt: "Die Amme im Spotlight" },
+      { url: "/images/die-amme/die-amme-szene-07.webp", alt: "Die Amme mit Tablett" },
+      { url: "/images/die-amme/die-amme-szene-08.webp", alt: "Die Amme auf dem Stuhl" },
+      { url: "/images/die-amme/die-amme-theater.webp", alt: "Theater des Westens mit Die Amme Plakaten" },
+    ],
+    youtubeTrailerId: "HkAeCFClDFg",
+    featured: false,
+    tags: ["Komödie", "Ensuite", "Peter Plate"],
+    showFacts: [
+      { label: "Spielort", value: "Stage Theater des Westens, Berlin" },
+      { label: "Spielzeit", value: "Bis Juli 2026" },
+      { label: "Tickets ab", value: "35,49 € (auf Eventim)" },
+      { label: "Dauer", value: "ca. 2 Stunden (inkl. Pause)" },
+      { label: "Sprache", value: "Deutsch" },
+    ],
+    uspItems: [
+      { icon: "Music", title: "Hits von Plate & Sommer", text: "Die größten Hits aus 35 Jahren – von \"Ich bin ich\" bis \"Vincent\" plus brandneue Songs" },
+      { icon: "Laugh", title: "Lachmuskelkater garantiert", text: "Die wahre Geschichte von Romeo und Julia – mit einer gehörigen Portion Humor" },
+      { icon: "Star", title: "Steffi Irmen live", text: "Der Star des Theaters des Westens in ihrer kultigsten Rolle" },
+      { icon: "Theater", title: "Theater des Westens", text: "Jeden Freitag im legendären Berliner Musical-Theater" },
+    ],
+    quotes: [
+      { text: "Lachen, weinen und staunen – alles an einem Abend.", source: "Stage Entertainment" },
+      { text: "Die lustigste Show der Stadt!", source: "Berliner Morgenpost" },
+      { text: "Steffi Irmen ist eine Wucht als Amme.", source: "BZ Berlin" },
+    ],
+    seoTitle: "DIE AMME – Das Musical in Berlin | Tickets ab 35,49 €",
+    seoDescription: "DIE AMME – Das Musical im Stage Theater des Westens Berlin. Tickets ab 35,49 €. Steffi Irmen in ihrer kultigsten Rolle mit Hits von Peter Plate & Ulf Leo Sommer.",
+    faqItems: [
+      { question: "Worum geht es in Die Amme?", answer: "Die Amme erzählt die wahre Geschichte von Romeo und Julia – aus der Perspektive der Amme. Mit viel Humor deckt Steffi Irmen auf, was Shakespeare uns verschwiegen hat." },
+      { question: "Wer spielt die Hauptrolle?", answer: "Steffi Irmen, bekannt aus Romeo & Julia und Ku'damm 59 am Theater des Westens, schlüpft in die Rolle der Amme." },
+      { question: "Von wem ist die Musik?", answer: "Die Musik stammt von den Erfolgs-Komponisten Peter Plate und Ulf Leo Sommer. Es erklingen ihre größten Hits aus 35 Jahren plus brandneue Songs." },
+      { question: "Wo wird Die Amme aufgeführt?", answer: "Im Stage Theater des Westens in Berlin, Kantstraße 12, 10623 Berlin." },
+      { question: "Wann finden die Vorstellungen statt?", answer: "Die Amme wird jeden Freitag im Theater des Westens aufgeführt." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 35,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie lange dauert die Show?", answer: "Die Show dauert ca. 2 Stunden inklusive Pause." },
+      { question: "Auf welcher Sprache ist das Musical?", answer: "Das Musical wird auf Deutsch aufgeführt." },
+    ],
+  },
 ];
 
 export const cities: City[] = [
@@ -1693,7 +1761,7 @@ export function getMusicalBySlug(slug: string): Musical | undefined {
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "die-amme"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));

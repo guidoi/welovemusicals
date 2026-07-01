@@ -280,7 +280,7 @@ export default function MusicalDetail() {
                              - FJG: nach i=1
                              - Starlight Express: nach i=0 (vor "Rollschuh-Action" bei i=1)
                              - Eiskönigin: nach i=0 (nach "...Herzen der Menschen berührt.") */}
-                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express' || musical.id === 'eiskoenigin' || musical.id === 'koenig-der-loewen' || musical.id === 'mj-musical' || musical.id === 'tarzan' || musical.id === 'ziz' || musical.id === 'teufel-traegt-prada')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
+                        {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express' || musical.id === 'eiskoenigin' || musical.id === 'koenig-der-loewen' || musical.id === 'mj-musical' || musical.id === 'tarzan' || musical.id === 'ziz' || musical.id === 'teufel-traegt-prada' || musical.id === 'die-amme')) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
                           </div>
@@ -293,7 +293,7 @@ export default function MusicalDetail() {
                              - Starlight Express: nach i=4 (vor "Weltklasse-Technik" bei i=5)
                              - Eiskönigin: nach i=2 (nach "...unvergeßlicher Musik.", vor Headline "Spektakel für alle Sinne" bei i=3)
                              - alle anderen: nach i=1 */}
-                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : musical.id === 'tarzan' ? i === 2 : musical.id === 'ziz' ? i === 2 : musical.id === 'teufel-traegt-prada' ? i === 2 : i === 1) && (
+                        {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : musical.id === 'tarzan' ? i === 2 : musical.id === 'ziz' ? i === 2 : musical.id === 'teufel-traegt-prada' ? i === 2 : musical.id === 'die-amme' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <motion.div
                               initial={{ opacity: 0, y: 20 }}
