@@ -246,7 +246,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express' || musical.id === 'tarzan'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
               </motion.div>
             </div>
 
@@ -315,7 +315,7 @@ export default function MusicalDetail() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express' || musical.id === 'tarzan'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'ATG Tickets' : 'Eventim'} />
 
                             </motion.div>
                           </div>

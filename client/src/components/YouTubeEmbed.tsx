@@ -3,6 +3,7 @@
  * Zeigt ein YouTube-Video mit Standbild und Play-Button
  * Video wird erst nach Klick geladen (Lazy Loading)
  * Fallback: maxresdefault → hqdefault → sddefault
+ * Erkennt YouTube-Placeholder-Bilder (120x90) und fällt automatisch zurück
  */
 import { useState } from "react";
 import { Play } from "lucide-react";
@@ -21,6 +22,15 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
   const handleThumbnailError = () => {
     if (thumbnailQuality === "maxresdefault") setThumbnailQuality("hqdefault");
     else if (thumbnailQuality === "hqdefault") setThumbnailQuality("sddefault");
+  };
+
+  // YouTube returns a small placeholder image (120x90) when maxresdefault doesn't exist
+  // instead of a proper 404. Detect this by checking naturalWidth.
+  const handleThumbnailLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    if (thumbnailQuality === "maxresdefault" && img.naturalWidth <= 120) {
+      setThumbnailQuality("hqdefault");
+    }
   };
 
   if (isPlaying) {
@@ -55,6 +65,7 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
           alt={title || "YouTube Video Thumbnail"}
           className="absolute top-0 left-0 w-full h-full object-cover"
           onError={handleThumbnailError}
+          onLoad={handleThumbnailLoad}
         />
 
         {/* Gradient Overlay */}
