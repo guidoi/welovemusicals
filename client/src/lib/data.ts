@@ -223,7 +223,7 @@ export const musicals: Musical[] = [
       { text: "Mitreißend und auch provokativ zugleich.", source: "Abendzeitung" },
       { text: "Daumen hoch für diesen Dracula!", source: "Münchner Merkur" },
     ],
-    keyvisual: "/manus-storage/dracula-keyvisual-2027_76087200.webp",
+    keyvisual: "/images/dracula/dracula-keyvisual-2027.webp",
     keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-03_54bd2660.jpg", alt: "Dracula Pressefoto 1" },
