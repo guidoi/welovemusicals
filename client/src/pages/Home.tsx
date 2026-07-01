@@ -446,10 +446,10 @@ export default function Home() {
               {!showAllMusicals ? (
                 <button
                   onClick={() => { setShowAllMusicals(true); setShowMorePulsed(true); }}
-                  className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-[rgb(239,68,68)] ${
+                  className={`px-8 py-3 font-semibold rounded-sm transition-all duration-300 inline-flex items-center gap-2 text-gold ${
                     showMorePulsed
-                      ? "border-2 border-[rgb(239,68,68)]/60 shadow-[0_0_18px_rgba(239,68,68,0.30)] hover:bg-[rgb(239,68,68)]/10"
-                      : "border-2 border-[rgb(239,68,68)]/60 shadow-[0_0_18px_rgba(239,68,68,0.30)] animate-pulse-once hover:bg-[rgb(239,68,68)]/10"
+                      ? "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] hover:bg-gold/10"
+                      : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once hover:bg-gold/10"
                   }`}
                 >
                   Alle {filteredMusicals.length} Musicals anzeigen
