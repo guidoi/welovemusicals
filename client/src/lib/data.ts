@@ -1042,7 +1042,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
-    youtubeTrailerId: "x7Hqc-_c_Gg",
+    youtubeTrailerId: "BqOiOukh3KQ",
     uspItems: [
       { icon: "Crown", title: "25 Jahre Musical-Geschichte", text: "Über 17 Millionen Besucher und 9.500 Vorstellungen in Hamburg" },
       { icon: "Music", title: "Musik von Elton John & Tim Rice", text: "Unvergessliche Hits wie \"Der ewige Kreis\" und \"Hakuna Matata\"" },
