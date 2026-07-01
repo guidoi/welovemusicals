@@ -1490,7 +1490,7 @@ export const musicals: Musical[] = [
     detailHeadline: "DIE AMME PACKT AUS – DIE LUSTIGSTE SHOW DER STADT!",
     detailDescription: "Diese Show dürfen Sie nicht verpassen! Steffi Irmen, der Star des Theaters des Westens (Romeo & Julia / Ku'damm 59), schlüpft in ihre wohl kultigste Rolle: Die Amme. Und diesmal erfahren wir die wahre Geschichte von Romeo und Julia – und das mit einer gehörigen Portion Humor. Steffi Irmen deckt auf, was Shakespeare uns verschwiegen hat, und sorgt dafür, dass kein Auge trocken bleibt.\n\n**Musikalische Highlights inklusive!**\n\nMit den größten Hits aus 35 Jahren der Erfolgs-Komponisten Peter Plate und Ulf Leo Sommer – von \"Ich bin ich\" bis \"Vincent\". Und natürlich dürfen auch brandneue Songs aus der Feder der beiden nicht fehlen.\n\n**Showtime im Theater des Westens**\n\nJeden Freitag heißt es im Theater des Westens: Lachen, weinen und staunen. Die Amme nimmt das Publikum mit auf eine Reise durch die wahre Geschichte von Romeo und Julia – voller Überraschungen, Emotionen und unvergesslicher Musik-Momente.\n\nLustigster Abend des Jahres garantiert – Seien Sie dabei!",
     image: "/images/die-amme/die-amme-szene-03.webp",
-    heroImage: "/images/die-amme/die-amme-szene-08.webp",
+    heroImage: "/images/die-amme/die-amme-szene-05.webp",
     eventimUrl: "https://www.eventim.de/artist/die-amme-das-musical/",
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=amme-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-amme-das-musical%2F",
@@ -1510,7 +1510,7 @@ export const musicals: Musical[] = [
     ],
     youtubeTrailerId: "HkAeCFClDFg",
     featured: false,
-    tags: ["Komödie", "Comedy", "Peter Plate"],
+    tags: ["Komödie", "Plate & Sommer", "Herz & Humor"],
     showFacts: [
       { label: "Spielort", value: "Stage Theater des Westens, Berlin" },
       { label: "Spielzeit", value: "Bis Juli 2026" },
@@ -1577,7 +1577,7 @@ export const musicals: Musical[] = [
     ],
     youtubeTrailerId: "bKGqV1ovqbc",
     featured: false,
-    tags: ["Drama", "90er", "Peter Plate"],
+    tags: ["Drama", "90er", "Plate & Sommer"],
     showFacts: [
       { label: "Spielort", value: "Stage Theater des Westens, Berlin" },
       { label: "Spielzeit", value: "01.07.2026 – 28.02.2027" },

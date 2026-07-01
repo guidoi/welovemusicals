@@ -1,0 +1,18 @@
+DIE AMME – Headerbild-Auswahlnotizen
+
+Quelle: client/public/images/die-amme/
+
+Bewertete Motive:
+- die-amme-szene-01.webp: gutes Querformat, starke Mimik, aber Tischdecke dominiert den Vordergrund.
+- die-amme-szene-03.webp: gutes Querformat, charmante Pose auf dem Tisch, aber etwas statisch für Hero.
+- die-amme-szene-05.webp: starkes Close-up mit guter emotionaler Wirkung und dunklem Freiraum rechts; gut für Text-Overlay.
+- die-amme-szene-06.webp: Hochformat, daher ungeeignet als Header-Hero.
+- die-amme-szene-07.webp: gutes Querformat, ganze Figur auf Bühne, viel Luft im Bild; ebenfalls gut für Hero.
+- die-amme-szene-08.webp: aktuelles Hero-Bild; funktional, aber schwächer als 05 und 07.
+
+Vorläufige Empfehlung:
+- Bevorzugt: die-amme-szene-05.webp
+- Alternative: die-amme-szene-07.webp
+
+Begründung:
+Für die Detailseiten-Hero-Darstellung ist ein emotional klares Querformat mit brauchbarem Negativraum für Overlay-Text am geeignetsten. Szene 05 wirkt fokussierter und hochwertiger als das bisherige Bild 08.

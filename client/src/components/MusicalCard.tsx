@@ -92,7 +92,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
                     <span key={c}>{i > 0 && " & "}{c} ({musical.venuePerCity![c]})</span>
                   ))}
                 </span>
-              ) : musical.city && !musical.cities ? (
+              ) : musical.city && musical.venue && !musical.venuePerCity && (!musical.cities || musical.cities.length === 1) ? (
                 <span>{musical.city} ({musical.venue})</span>
               ) : (
                 <span>{musical.cities?.slice(0, 3).join(", ")}{musical.cities && musical.cities.length > 3 ? ` +${musical.cities.length - 3}` : ""}</span>

@@ -204,7 +204,7 @@ export default function MusicalDetail() {
                     <span key={c}>{i > 0 && <span style={{color: '#b8944a'}}> &amp; </span>}{c} ({musical.venuePerCity![c]})</span>
                   ))}
                 </span>
-              ) : musical.city && !musical.cities ? (
+              ) : musical.city && musical.venue && !musical.venuePerCity && (!musical.cities || musical.cities.length === 1) ? (
                 <span>{musical.city} ({musical.venue})</span>
               ) : musical.id === 'gloeckner-von-notre-dame' && musical.cities ? (
                 <span>{musical.cities.join(", ")}</span>
