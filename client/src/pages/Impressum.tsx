@@ -216,24 +216,6 @@ export default function Impressum() {
                     </ul>
                   </div>
 
-                  {/* Tarzan */}
-                  <div>
-                    <h4 className="font-semibold text-gold mb-2">DISNEYS MUSICAL TARZAN</h4>
-                    <ul className="space-y-2 ml-4">
-                      <li><strong>Pressefotos &amp; Szenenbilder:</strong> © Johan Persson / Stage Entertainment</li>
-                      <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
-                    </ul>
-                  </div>
-
-                  {/* Zurück in die Zukunft */}
-                  <div>
-                    <h4 className="font-semibold text-gold mb-2">ZURÜCK IN DIE ZUKUNFT – Das Musical</h4>
-                    <ul className="space-y-2 ml-4">
-                      <li><strong>Pressefotos &amp; Szenenbilder:</strong> © Matt Crockett</li>
-                      <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
-                    </ul>
-                  </div>
-
                   {/* Rapunzel */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>

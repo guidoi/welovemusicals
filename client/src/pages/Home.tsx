@@ -506,7 +506,6 @@ export default function Home() {
             src={ATMOSPHERE_IMAGE}
             alt="Theater-Atmosphäre"
             className="w-full h-full object-cover opacity-20"
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-background/80" />
         </div>
