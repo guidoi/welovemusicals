@@ -1268,7 +1268,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=tarzan-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-musical-tarzan%2F",
-    youtubeTrailerId: "wYVNWsdHj_I",
+    youtubeTrailerId: "-N3CbbBAyMM",
     featured: false,
     tags: ["Disney", "Familie", "Ensuite"],
     uspItems: [
