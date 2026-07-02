@@ -272,6 +272,33 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* We Will Rock You */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">WE WILL ROCK YOU – DAS MUSICAL VON QUEEN UND BEN ELTON</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
+                      <li><strong>Szenenfotos:</strong> © Johan Persson / Stage Entertainment</li>
+                      <li><strong>Theaterfoto:</strong> © Stage Entertainment</li>
+                    </ul>
+                  </div>
+
+                  {/* Salon Rosie */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">SALON ROSIE</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
+                    </ul>
+                  </div>
+
+                  {/* & Julia */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">& JULIA – DAS POP-MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
+                      <li><strong>Szenenfotos:</strong> © Johan Persson / Morris Mac Matzen / Stage Entertainment</li>
+                    </ul>
+                  </div>
+
                   {/* Rapunzel */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>
