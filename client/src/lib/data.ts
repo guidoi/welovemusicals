@@ -288,7 +288,7 @@ export const musicals: Musical[] = [
     seoTitle: "Moulin Rouge! Das Musical Tickets – Hamburg & Köln | We Love Musicals",
     seoDescription: "Moulin Rouge! Das Musical – jetzt im Musical Dome Köln (bis Juli 2026) und ab Oktober 2026 im Theater am Großmarkt Hamburg. Tickets ab 59,99 € über ATG Tickets!",
     tourDates: [
-      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.awin1.com/awclick.php?gid=508543&mid=111888&awinaffid=2865727&linkid=3824601&clickref=", badge: "Nur noch bis 18. Juli!" },
+      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F", badge: "Nur noch bis 18. Juli!" },
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", endDate: "2027-12-31", premiereDate: "2026-11-05", eventimUrl: "https://www.awin1.com/cread.php?awinmid=15765&awinaffid=2865727&clickref=moulinrouge-atg-dates&ued=https%3A%2F%2Fshop.atgtickets.de%2Fmoulin-rouge-das-musical-hamburg%2Fwebticket%2Fproductiondetail%3FeventsView%3Dcalendar%26productionId%3D28" },
     ],
     quotes: [
@@ -953,11 +953,11 @@ export const musicals: Musical[] = [
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-keyvisual_7428962d.webp",
     keyvisualLink: "https://www.atgtickets.de/musicals-shows/starlight-express/landingpage/awin/?utm_term=stex-lp%2F&utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals%2Fwww.welovemusicals.com&sv1=affiliate&sv_campaign_id=2865727&utm_id=system:CM360.pid:443614331.cid:233231691&awc=111888_1782309103_4062ad0f9cb51e265a530c020d71471a",
     priceFrom: "59,99",
-    ticketCtaUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
-    awinHeroUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
-    awinStickyUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
-    awinBoxUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
-    eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=",
+    ticketCtaUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
+    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     featured: true,
     tags: ["Fester Standort", "Rekordshow", "Familie"],
     youtubeTrailerId: "fmbGACDjs0E",
@@ -970,7 +970,7 @@ export const musicals: Musical[] = [
     seoTitle: "Starlight Express Tickets Bochum 2026/2027 | We Love Musicals",
     seoDescription: "Starlight Express in Bochum – das Musical der Rekorde mit 19 Mio. Besuchern. Tickets ab 59,99 €, Kinder bis 14 Jahre 50% Ermäßigung. Jetzt buchen!",
     tourDates: [
-      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: "https://www.awin1.com/awclick.php?gid=508544&mid=111888&awinaffid=2865727&linkid=3861476&clickref=" },
+      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F" },
     ],
     quotes: [
       { text: "Das rasanteste Musical im Universum.", source: "Guinness World Records" },
