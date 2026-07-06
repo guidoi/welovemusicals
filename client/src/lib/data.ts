@@ -288,7 +288,7 @@ export const musicals: Musical[] = [
     seoTitle: "Moulin Rouge! Das Musical Tickets – Hamburg & Köln | We Love Musicals",
     seoDescription: "Moulin Rouge! Das Musical – jetzt im Musical Dome Köln (bis Juli 2026) und ab Oktober 2026 im Theater am Großmarkt Hamburg. Tickets ab 59,99 € über ATG Tickets!",
     tourDates: [
-      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical/webticket/productiondetail?eventsView=calendar&productionId=28&utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals&sv1=affiliate&sv_campaign_id=2865727", badge: "Nur noch bis 18. Juli!" },
+      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://www.awin1.com/awclick.php?gid=508543&mid=111888&awinaffid=2865727&linkid=3824601&clickref=", badge: "Nur noch bis 18. Juli!" },
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", endDate: "2027-12-31", premiereDate: "2026-11-05", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical-hamburg/webticket/productiondetail?eventsView=calendar&productionId=28&utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals&sv1=affiliate&sv_campaign_id=2865727" },
     ],
     quotes: [
