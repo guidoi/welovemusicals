@@ -182,3 +182,7 @@
 - [ ] Trade-Doubler-Partnerlinks für Stage-Entertainment-Produktionen je Musical zuordnen und übernehmen
 - [ ] Alle betroffenen Ticket-CTAs, Keyvisuals und Tourtermine verifizieren
 - [ ] TypeScript-Check ausführen und Checkpoint speichern
+
+## König der Löwen – Trade-Doubler Produktseite
+- [x] Alle KDL Ticket- und CTA-Links auf die direkte Stage-Entertainment-Produktseite umstellen
+- [ ] Trade-Doubler Link Converter für die KDL-Produktseite im Browser validieren

@@ -62,6 +62,14 @@ export default function TourDates({
   // Abgelaufene Termine herausfiltern
   const upcomingDates = tourDates.filter((d) => isUpcoming(d.endDate));
 
+  const usesStageProductPage = upcomingDates.some((date) => date.eventimUrl.includes("stage-entertainment.de"));
+  const usesAtgTickets = upcomingDates.some((date) => date.eventimUrl.includes("atgtickets.de"));
+  const ticketProviderDomain = usesStageProductPage
+    ? "stage-entertainment.de"
+    : usesAtgTickets
+      ? "atgtickets.de"
+      : "eventim.de";
+
   // Wenn alle Termine abgelaufen sind, Abschnitt komplett ausblenden
   if (upcomingDates.length === 0) return null;
 
@@ -234,10 +242,7 @@ export default function TourDates({
 
         <div className="mt-8">
           <p className="text-sm text-foreground/60 text-center">
-            {(musicalSlug === 'moulin-rouge' || musicalSlug === 'phantom-der-oper' || musicalSlug === 'gloeckner-von-notre-dame' || musicalSlug === 'starlight-express')
-              ? 'Weiterleitung zu atgtickets.de – Affiliate-Links'
-              : 'Weiterleitung zu eventim.de – Affiliate-Links'
-            }
+            Weiterleitung zu {ticketProviderDomain} – Affiliate-Links
           </p>
         </div>
       </div>
