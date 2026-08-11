@@ -186,3 +186,14 @@
 ## König der Löwen – Trade-Doubler Produktseite
 - [x] Alle KDL Ticket- und CTA-Links auf die direkte Stage-Entertainment-Produktseite umstellen
 - [ ] Trade-Doubler Link Converter für die KDL-Produktseite im Browser validieren
+
+## Stage Entertainment – Trade-Doubler Produktseiten
+- [x] MJ, Die Eiskönigin, Tarzan, Zurück in die Zukunft, Der Teufel trägt Prada und WIR SIND AM LEBEN auf direkte Stage-Produktseiten umstellen
+- [x] Tanz der Vampire, WE WILL ROCK YOU, & JULIA und SALON ROSIE auf direkte Stage-Produktseiten umstellen
+- [x] DIE AMME aus ACTIVE_MUSICAL_IDS entfernen
+- [x] Stage-Entertainment-Produktionen auf Teasern und Detailseiten als „via Stage Entertainment“ kennzeichnen
+- [x] Alle Stage-Produktseitenlinks und die Deaktivierung per Test validieren
+- [x] TypeScript-Check ausführen und Checkpoint speichern
+- [x] Anbietererkennung auf Teasern und Detailseiten auf echte Stage-Entertainment-Produktionen begrenzen
+- [x] Nicht-Stage-Shows in Übersicht und Detailseite erneut auf korrekte Anbieterkennzeichnung prüfen
+- [x] Nicht-Stage-Detailseite im Browser auf Eventim-Kennzeichnung prüfen
