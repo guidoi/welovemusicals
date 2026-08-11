@@ -183,6 +183,13 @@
 - [ ] Alle betroffenen Ticket-CTAs, Keyvisuals und Tourtermine verifizieren
 - [ ] TypeScript-Check ausführen und Checkpoint speichern
 
+## Trade Doubler – Link Converter Diagnose
+- [x] Trade-Doubler-Skriptantwort, Initialisierungsreihenfolge und Laufzeitfehler prüfen
+- [x] Zuverlässige Initialisierung des Link Converters implementieren
+- [x] König der Löwen und Die Eiskönigin in der lokalen Vorschau validieren
+- [ ] König der Löwen und Die Eiskönigin nach dem Cloudflare-Build auf welovemusicals.com validieren
+- [ ] TypeScript-Check, Test und Checkpoint durchführen
+
 ## König der Löwen – Trade-Doubler Produktseite
 - [x] Alle KDL Ticket- und CTA-Links auf die direkte Stage-Entertainment-Produktseite umstellen
 - [ ] Trade-Doubler Link Converter für die KDL-Produktseite im Browser validieren

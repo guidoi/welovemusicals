@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { ACTIVE_MUSICAL_IDS, musicals } from "../client/src/lib/data";
 
 const KDL_STAGE_PRODUCT_URL = "https://www.stage-entertainment.de/musicals-shows/b/disneys-der-koenig-der-loewen-hamburg";
@@ -46,5 +47,17 @@ describe("Affiliate-Link-Zuordnung", () => {
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {
     expect(ACTIVE_MUSICAL_IDS).not.toContain("die-amme");
+  });
+
+  it("initialisiert den Trade-Doubler Link Converter auch nach React-Renderzyklen erneut", () => {
+    const indexHtml = readFileSync(new URL("../client/index.html", import.meta.url), "utf8");
+
+    expect(indexHtml).toContain("https://clk.tradedoubler.com/lc?a(3492604)rand(");
+    expect(indexHtml).toContain("window.TDLinkConverter.init({});");
+    expect(indexHtml).toContain("new MutationObserver(convertEligibleLinks)");
+    expect(indexHtml).toContain("js.onload = window.tdlcAsyncInit;");
+    expect(indexHtml).toContain("https://visit.stage-entertainment.de/click?p=");
+    expect(indexHtml).toContain("destination.hostname !== \"www.stage-entertainment.de\"");
+    expect(indexHtml).toContain('d.addEventListener("DOMContentLoaded", window.tdlcAsyncInit');
   });
 });
