@@ -175,3 +175,10 @@
 - [ ] SR Fotocredits im Impressum ergänzen
 - [ ] SR MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
 - [ ] SR TypeScript-Check bestanden
+
+## Trade Doubler – Link Converter und Stage-Entertainment-Links
+- [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
+- [ ] Laden des Link Converters und Kompatibilität mit bestehendem Awin Publisher Master Tag prüfen
+- [ ] Trade-Doubler-Partnerlinks für Stage-Entertainment-Produktionen je Musical zuordnen und übernehmen
+- [ ] Alle betroffenen Ticket-CTAs, Keyvisuals und Tourtermine verifizieren
+- [ ] TypeScript-Check ausführen und Checkpoint speichern
