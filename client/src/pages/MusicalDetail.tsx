@@ -40,6 +40,7 @@ import TourDates from "@/components/TourDates";
 import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@/lib/data";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
+import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -139,10 +140,11 @@ export default function MusicalDetail() {
   const heroTicketLink = musical.awinHeroUrl ?? ctaTicketLink;
   const stickyTicketLink = musical.awinStickyUrl ?? ctaTicketLink;
   const boxTicketLink = musical.awinBoxUrl ?? ctaTicketLink;
-  const usesAtgTickets = musical.slug === "moulin-rouge" || musical.slug === "phantom-der-oper" || musical.slug === "gloeckner-von-notre-dame" || musical.slug === "starlight-express";
+  const usesAtgTickets = isAtgTicketMusical(musical.slug);
   const usesStageProductPage = musical.eventimUrl.includes("stage-entertainment.de");
   const ticketProviderName = usesStageProductPage ? "Stage Entertainment" : usesAtgTickets ? "ATG Tickets" : "Eventim";
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
+  const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -478,23 +480,12 @@ export default function MusicalDetail() {
                 Tickets
                 <ExternalLink className="w-5 h-5" />
               </a>
-              {usesAtgTickets && (
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
-                  alt="ATG Tickets"
-                  className="h-8 w-auto ml-3 opacity-90"
-                />
-              )}
-              {usesStageProductPage && (
-                <span className="ml-3 text-sm font-semibold text-muted-foreground">Stage Entertainment</span>
-              )}
-              {!usesAtgTickets && !usesStageProductPage && (
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
-                  alt="Eventim"
-                  className="h-7 w-auto opacity-80 ml-3"
-                />
-              )}
+              <img
+                data-testid="ticket-provider-logo"
+                src={ticketProviderBrand.logoSrc}
+                alt={ticketProviderBrand.name}
+                className="ml-3 h-7 max-w-36 w-auto object-contain object-left opacity-90"
+              />
             </div>
             <p className="text-xs text-muted-foreground/50 mt-4">
               Weiterleitung zu {ticketProviderDomain} – Affiliate-Link
@@ -590,21 +581,12 @@ export default function MusicalDetail() {
               <Ticket className="w-4 h-4" />
               Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
             </a>
-            {usesAtgTickets ? (
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/atg-tickets-logo_e0513ab0.png"
-                alt="ATG Tickets"
-                className="h-8 w-auto opacity-90 flex-shrink-0"
-              />
-            ) : usesStageProductPage ? (
-              <span className="text-xs font-semibold text-muted-foreground whitespace-nowrap">Stage Entertainment</span>
-            ) : (
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png"
-                alt="Eventim"
-                className="h-7 w-auto opacity-80 flex-shrink-0"
-              />
-            )}
+            <img
+              data-testid="sticky-ticket-provider-logo"
+              src={ticketProviderBrand.logoSrc}
+              alt={ticketProviderBrand.name}
+              className="h-5 max-w-[5.5rem] w-auto shrink-0 object-contain object-right opacity-90"
+            />
           </div>
         </div>
       )}

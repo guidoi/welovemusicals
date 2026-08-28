@@ -10,6 +10,7 @@ import type { Musical } from "@/lib/data";
 import { createAwinLink } from "@/lib/data";
 import { SALE_BADGE_LAYOUT } from "@/lib/sale-layout";
 import { isSaleActive } from "@/lib/sale";
+import { getTicketProviderBrand } from "@/lib/ticket-provider-brand";
 
 interface MusicalCardProps {
   musical: Musical;
@@ -45,11 +46,7 @@ const categoryIcons: Record<string, string> = {
 
 export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
-  const ticketProviderLabel = musical.eventimUrl.includes("stage-entertainment.de")
-    ? "via Stage Entertainment"
-    : (musical.slug === "moulin-rouge" || musical.slug === "phantom-der-oper" || musical.slug === "gloeckner-von-notre-dame" || musical.slug === "starlight-express")
-      ? "via ATG Tickets"
-      : "via Eventim";
+  const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
 
   return (
     <motion.div
@@ -152,10 +149,13 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             </div>
 
             {/* CTA */}
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground/60 uppercase tracking-wider">
-                {ticketProviderLabel}
-              </span>
+            <div className="flex items-center justify-between gap-3">
+              <img
+                data-testid="teaser-provider-logo"
+                src={ticketProviderBrand.logoSrc}
+                alt={ticketProviderBrand.name}
+                className="h-4 max-w-16 w-auto object-contain object-left opacity-75"
+              />
               <span className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
                 Tickets sichern
                 <ExternalLink className="w-3.5 h-3.5" />

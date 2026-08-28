@@ -79,4 +79,28 @@ describe("MusicalCard Sale-Störer", () => {
     expect(withoutSale).not.toContain("Bis 15 % sparen");
     expect(expiredSale).not.toContain("Abgelaufene Aktion");
   });
+
+  it("zeigt den Ticket-CTA ohne Anbieterzeile", () => {
+    const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
+
+    expect(markup).toContain("Tickets sichern");
+    expect(markup).not.toContain("via Eventim");
+    expect(markup).not.toContain("via Stage Entertainment");
+    expect(markup).not.toContain("via ATG Tickets");
+  });
+
+  it("zeigt das passende Anbieterlogo anstelle einer Anbieterzeile", () => {
+    const stageMarkup = renderToStaticMarkup(
+      <MusicalCard
+        musical={{
+          ...baseMusical,
+          eventimUrl: "https://www.stage-entertainment.de/musicals-shows/koenig-der-loewen",
+        }}
+      />,
+    );
+
+    expect(stageMarkup).toContain('data-testid="teaser-provider-logo"');
+    expect(stageMarkup).toContain('src="/images/branding/stage-entertainment-logo-on-dark.png"');
+    expect(stageMarkup).toContain('alt="Stage Entertainment"');
+  });
 });

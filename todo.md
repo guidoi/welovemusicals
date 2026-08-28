@@ -216,6 +216,23 @@
 - [x] Gleich große Sale-Zeilen auf Desktop und Mobil auf Lesbarkeit und Badge-Abstand prüfen
 - [x] Berechnete Schriftgrößen der Familien- und Rabattzeile auf Desktop und Mobil gleichheitsgenau messen
 
+## Startseiten-Teaser – Anbieterzeile
+- [x] Anbieterzeile „via Eventim“, „via Stage Entertainment“ und „via ATG Tickets“ aus MusicalCard entfernen
+- [x] Ticket-CTA, Ziel-URL und Affiliate-Tracking der Teaser nach dem Entfernen unverändert verifizieren
+- [x] Teaser-Höhe und visuelle Ausgewogenheit auf Desktop und Mobil prüfen
+
+## Ticketsektion – Stage-Entertainment-Logo
+- [x] Bereitgestelltes weißes Stage-Entertainment-SVG als statisches Web-Asset bereitstellen
+- [x] Fehlendes Stage-Entertainment-Logo in der mobilen Ticketsektion an der Anbieterlogo-Position integrieren
+- [x] Größe, Kontrast und Ausrichtung zu Eventim- und ATG-Logos auf Desktop und Mobil prüfen
+- [x] Browserfehler beim Rendern des bereitgestellten Stage-Entertainment-SVG beheben und eine zuverlässige PNG- oder WebP-Variante einbinden
+- [x] Schwarze Wortmarke des bereitgestellten Logos für dunkle Ticketflächen kontraststark in Weiß überführen
+
+## Anbieterlogos in Startseiten-Teasern
+- [x] Kleines Stage-, Eventim- oder ATG-Tickets-Logo in der Teaser-CTA-Zeile anstelle der entfernten Anbietertexte darstellen
+- [x] Logo-Auswahl für Stage-, ATG- und Eventim-Ticketziele zentral und testbar definieren
+- [x] Teaser-CTA, Ticketziel und Tracking mit Anbieterlogo auf Desktop und Mobil prüfen
+
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
 - [x] Laden des Link Converters und Kompatibilität mit bestehendem Awin Publisher Master Tag prüfen
