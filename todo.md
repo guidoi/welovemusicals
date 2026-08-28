@@ -184,6 +184,9 @@
 - [x] Vitest-Test für die Anzeige und Nichtanzeige des Sale-Störers ergänzen
 - [x] Sale-Störer auf der Startseite im Browser auf Desktop und Mobil sichtbar prüfen und visuellen Befund dokumentieren
 - [x] Rendering-Test für MusicalCard ergänzen: Sale-Störer wird bei aktivem sale angezeigt und ohne oder abgelaufenem sale nicht angezeigt
+- [x] Familientage-Sale-Störer schmaler gestalten und erklärende Subline ausblenden
+- [x] Größeres, auffälligeres Preisschild-Icon mit Prozentzeichen als Aktionsicon einsetzen
+- [x] Sicherheitsabstand zum Top-Musical-Badge auf Desktop und Mobil prüfen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

@@ -72,21 +72,23 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className="absolute top-2.5 left-2.5 z-10 max-w-[calc(100%-5rem)] rounded-sm border border-red-500/80 bg-black/85 px-2.5 py-2 shadow-lg shadow-black/40 backdrop-blur-sm"
+                className="absolute top-2.5 left-2.5 z-10 w-[10.75rem] max-w-[calc(100%-9rem)] rounded-sm border border-red-500/90 bg-black/90 px-2.5 py-1.5 shadow-lg shadow-black/50 backdrop-blur-sm"
                 aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
               >
-                <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.14em] text-red-400">
-                  <TicketPercent className="h-3 w-3 shrink-0" aria-hidden="true" />
-                  {musical.sale.label}
-                </span>
-                <span className="mt-0.5 block font-heading text-base font-semibold leading-none text-white sm:text-[17px]">
-                  {musical.sale.discount}
-                </span>
-                {musical.sale.note && (
-                  <span className="mt-1 block text-[10px] leading-snug text-white/70">
-                    {musical.sale.note}
+                <div className="flex items-center gap-2">
+                  <span className="relative grid h-6 w-6 shrink-0 place-items-center" aria-hidden="true">
+                    <Tag className="absolute h-6 w-6 fill-red-500/20 text-red-400 stroke-[2.5]" />
+                    <span className="relative -translate-x-px text-[10px] font-black leading-none text-red-100">%</span>
                   </span>
-                )}
+                  <span className="min-w-0">
+                    <span className="block truncate text-[9px] font-bold uppercase leading-none tracking-[0.12em] text-red-400">
+                      {musical.sale.label}
+                    </span>
+                    <span className="mt-1 block font-heading text-lg font-semibold leading-none text-white">
+                      {musical.sale.discount}
+                    </span>
+                  </span>
+                </div>
               </div>
             )}
 
