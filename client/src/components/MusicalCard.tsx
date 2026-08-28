@@ -47,6 +47,8 @@ const categoryIcons: Record<string, string> = {
 export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
+  const providerLogoWidthClass =
+    ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
 
   return (
     <motion.div
@@ -155,7 +157,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
                 data-provider-brand={ticketProviderBrand.id}
                 src={ticketProviderBrand.logoSrc}
                 alt={ticketProviderBrand.name}
-                className="h-8 max-w-32 w-auto object-contain object-left opacity-90 md:h-7 md:max-w-28"
+                className={`h-8 ${providerLogoWidthClass} w-auto object-contain object-left opacity-90 md:h-7`}
               />
               <span data-testid="teaser-ticket-cta" className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
                 Tickets sichern

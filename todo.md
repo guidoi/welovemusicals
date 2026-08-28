@@ -243,6 +243,8 @@
 - [x] Mobile DOM-Messung im expliziten Ziel-Viewport 375 × 812 durchführen und dokumentieren
 - [x] Kontrast der transparenten Eventim-Wortmarke auf den dunklen Teaserflächen nachvollziehbar validieren und dokumentieren
 - [x] Transparenz, Kontrast, CTA-Ausrichtung und Kartenhöhe im Desktop- und Mobil-Viewport verifizieren
+- [x] Eventim-Logo in den Teasern separat auf eine ausgewogenere Breite begrenzen
+- [x] Reduzierte Eventim-Breite sowie unveränderte Stage-/ATG-Größen und CTA-Ausrichtung auf Desktop und Mobil verifizieren
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
