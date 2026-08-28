@@ -152,9 +152,10 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             <div className="flex items-center justify-between gap-3">
               <img
                 data-testid="teaser-provider-logo"
+                data-provider-brand={ticketProviderBrand.id}
                 src={ticketProviderBrand.logoSrc}
                 alt={ticketProviderBrand.name}
-                className="h-6 max-w-24 w-auto object-contain object-left opacity-90 md:h-5 md:max-w-20"
+                className="h-8 max-w-32 w-auto object-contain object-left opacity-90 md:h-7 md:max-w-28"
               />
               <span data-testid="teaser-ticket-cta" className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
                 Tickets sichern

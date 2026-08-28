@@ -103,6 +103,14 @@ describe("MusicalCard Sale-Störer", () => {
     expect(stageMarkup).toContain('data-testid="teaser-ticket-cta"');
     expect(stageMarkup).toContain('src="/images/branding/stage-entertainment-logo-on-dark.png"');
     expect(stageMarkup).toContain('alt="Stage Entertainment"');
-    expect(stageMarkup).toContain('class="h-6 max-w-24 w-auto object-contain object-left opacity-90 md:h-5 md:max-w-20"');
+    expect(stageMarkup).toContain('data-provider-brand="stage"');
+    expect(stageMarkup).toContain('class="h-8 max-w-32 w-auto object-contain object-left opacity-90 md:h-7 md:max-w-28"');
+  });
+
+  it("verwendet in Eventim-Teasern das transparente Eventim-Asset", () => {
+    const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
+
+    expect(markup).toContain('data-provider-brand="eventim"');
+    expect(markup).toContain('src="/images/branding/eventim-logo-transparent.png"');
   });
 });

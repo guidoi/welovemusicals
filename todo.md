@@ -236,6 +236,13 @@
 - [x] Anbieterlogos auf Desktop maßvoll vergrößern und CTA-Ausrichtung per DOM-Messung bewahren
 - [x] Vergrößerte Anbieterlogos auf Desktop und Mobil mit gemessener Kartenhöhe und sichtbarer Logo-Lesbarkeit prüfen
 - [x] Logo- und Ticket-CTA-Position sowie Kartenhöhe im Desktop- und Mobil-Viewport reproduzierbar messen
+- [x] Eventim-Logoasset mit transparentem Hintergrund für die dunklen Startseiten-Teaser bereitstellen
+- [x] Stage-, Eventim- und ATG-Logos in den Teasern auf Desktop und Mobil weiter vergrößern
+- [x] Mobile DOM-Messung für Teaserlogos, CTA-Ausrichtung und Kartenhöhe durchführen und die konkreten Werte dokumentieren
+- [x] Desktop-DOM-Messung nach der finalen Logo-Vergrößerung um konkrete Kartenhöhe ergänzen und dokumentieren
+- [x] Mobile DOM-Messung im expliziten Ziel-Viewport 375 × 812 durchführen und dokumentieren
+- [x] Kontrast der transparenten Eventim-Wortmarke auf den dunklen Teaserflächen nachvollziehbar validieren und dokumentieren
+- [x] Transparenz, Kontrast, CTA-Ausrichtung und Kartenhöhe im Desktop- und Mobil-Viewport verifizieren
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

@@ -28,8 +28,7 @@ const BRANDS: Record<TicketProviderBrandId, TicketProviderBrand> = {
   eventim: {
     id: "eventim",
     name: "Eventim",
-    logoSrc:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/eventim-logo-white_a4f44345.png",
+    logoSrc: "/images/branding/eventim-logo-transparent.png",
   },
 };
 

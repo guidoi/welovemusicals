@@ -15,4 +15,11 @@ describe("Ticketanbieter-Logos", () => {
     expect(stageBrand.name).toBe("Stage Entertainment");
     expect(stageBrand.logoSrc).toBe("/images/branding/stage-entertainment-logo-on-dark.png");
   });
+
+  it("verwendet für Eventim ein transparentes Teaserlogo", () => {
+    const eventimBrand = getTicketProviderBrand("dracula", "https://www.eventim.de/artist/dracula");
+
+    expect(eventimBrand.name).toBe("Eventim");
+    expect(eventimBrand.logoSrc).toBe("/images/branding/eventim-logo-transparent.png");
+  });
 });
