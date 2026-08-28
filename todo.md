@@ -187,6 +187,12 @@
 - [x] Familientage-Sale-Störer schmaler gestalten und erklärende Subline ausblenden
 - [x] Größeres, auffälligeres Preisschild-Icon mit Prozentzeichen als Aktionsicon einsetzen
 - [x] Sicherheitsabstand zum Top-Musical-Badge auf Desktop und Mobil prüfen
+- [x] Aktionsname „Aktion Familientage“ auf Desktop und Mobil vollständig lesbar darstellen und per echten Browser-Layouttest absichern
+- [x] Schwarze Störerfläche durch einen transparenten Bordeaux-Hintergrund ersetzen
+- [x] Ecken des Sale-Störers passend zum Top-Musical-Badge abrunden, Abstand erneut prüfen und per echten Browser-Layouttest absichern
+- [x] Rendering-Test für ausgeschriebenen Aktionsnamen, Bordeaux-Stil, fehlende sichtbare Subline und reservierten Badge-Abstand ergänzen
+- [x] Responsive Abstandskonstanten für Desktop- und Mobilkarten als getestete Layout-Hilfsfunktion definieren
+- [x] Browser-Layouttest mit realen Bounding-Rects für Sale-Störer und Top-Musical-Badge auf Desktop und Mobil ergänzen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

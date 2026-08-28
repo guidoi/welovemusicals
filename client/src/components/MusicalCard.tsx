@@ -3,11 +3,12 @@
  * MusicalCard: Elegante Karte mit Spotlight-Hover-Effekt
  */
 import React from "react";
-import { MapPin, ExternalLink, Tag, Star, TicketPercent } from "lucide-react";
+import { MapPin, ExternalLink, Tag, Star } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import type { Musical } from "@/lib/data";
 import { createAwinLink } from "@/lib/data";
+import { SALE_BADGE_LAYOUT } from "@/lib/sale-layout";
 import { isSaleActive } from "@/lib/sale";
 
 interface MusicalCardProps {
@@ -72,16 +73,17 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className="absolute top-2.5 left-2.5 z-10 w-[10.75rem] max-w-[calc(100%-9rem)] rounded-sm border border-red-500/90 bg-black/90 px-2.5 py-1.5 shadow-lg shadow-black/50 backdrop-blur-sm"
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} border border-red-400/80 bg-[#5b0d1d]/90 px-2.5 py-1.5 shadow-lg shadow-black/40 backdrop-blur-sm`}
                 aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
+                data-testid="sale-badge"
               >
                 <div className="flex items-center gap-2">
                   <span className="relative grid h-6 w-6 shrink-0 place-items-center" aria-hidden="true">
-                    <Tag className="absolute h-6 w-6 fill-red-500/20 text-red-400 stroke-[2.5]" />
-                    <span className="relative -translate-x-px text-[10px] font-black leading-none text-red-100">%</span>
+                    <Tag className="absolute h-6 w-6 fill-red-950/40 text-red-200 stroke-[2.5]" />
+                    <span className="relative -translate-x-px text-[10px] font-black leading-none text-white">%</span>
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate text-[9px] font-bold uppercase leading-none tracking-[0.12em] text-red-400">
+                    <span data-testid="sale-label" className="block whitespace-nowrap text-[8px] font-bold uppercase leading-none tracking-[0.1em] text-red-100">
                       {musical.sale.label}
                     </span>
                     <span className="mt-1 block font-heading text-lg font-semibold leading-none text-white">
@@ -94,8 +96,8 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
 
             {/* Featured Badge */}
             {musical.featured && (
-              <div className="absolute top-2.5 right-2.5 z-10">
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-widest bg-transparent border border-gold text-gold shadow-lg shadow-gold/20">
+              <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
+                <span className={`inline-flex items-center gap-1 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold bg-transparent px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-gold shadow-lg shadow-gold/20`}>
                   <Star className="w-2.5 h-2.5 fill-gold text-gold" />
                   Top-Musical
                 </span>

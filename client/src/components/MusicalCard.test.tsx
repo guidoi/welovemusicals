@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import type { Musical } from "@/lib/data";
+import { SALE_BADGE_LAYOUT } from "@/lib/sale-layout";
 import MusicalCard from "./MusicalCard";
 
 vi.mock("wouter", () => ({
@@ -25,11 +26,12 @@ const baseMusical: Musical = {
 };
 
 describe("MusicalCard Sale-Störer", () => {
-  it("rendert Aktionsname, Rabatt und Hinweis bei einem aktiven sale", () => {
+  it("rendert die kompakte Bordeaux-Variante mit ausgeschriebenem Aktionsnamen", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
           ...baseMusical,
+          featured: true,
           sale: {
             label: "Aktion Familientage",
             discount: "Bis 15 % sparen",
@@ -41,7 +43,14 @@ describe("MusicalCard Sale-Störer", () => {
 
     expect(markup).toContain("Aktion Familientage");
     expect(markup).toContain("Bis 15 % sparen");
-    expect(markup).toContain("Familien-Tickets für ausgewählte Termine");
+    expect(markup).toContain('data-testid="sale-badge"');
+    expect(markup).toContain('data-testid="sale-label"');
+    expect(markup).toContain('data-testid="featured-badge"');
+    expect(markup).toContain("whitespace-nowrap");
+    expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
+    expect(markup).toContain("bg-[#5b0d1d]/90");
+    expect(markup.match(/rounded-md/g)).toHaveLength(2);
+    expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {
