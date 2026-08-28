@@ -99,6 +99,80 @@
     <!-- AWIN Mastertag: Affiliate-Tracking (Convert-a-Link + Bounceless Tracking) -->
     <script defer src="https://www.dwin2.com/pub.2865727.min.js"></script>
 
+    <!-- Trade Doubler Link Converter: wandelt auch nachgerenderte React-Links in Partnerlinks um -->
+    <script type="text/javascript">
+      (function (d, s, id) {
+        var converterObserver;
+        var conversionTimeout;
+        var stageProgramId = "394206";
+        var tradeDoublerSiteId = "3492604";
+        var tradeDoublerTrackingId = "18";
+
+        function convertStageLinksWithFallback() {
+          var links = d.querySelectorAll('a[href]');
+
+          for (var index = 0; index < links.length; index += 1) {
+            var link = links[index];
+            var destination;
+
+            try {
+              destination = new URL(link.href);
+            } catch (error) {
+              continue;
+            }
+
+            if (destination.hostname !== "www.stage-entertainment.de") continue;
+
+            link.href = "https://visit.stage-entertainment.de/click?p=" + stageProgramId
+              + "&a=" + tradeDoublerSiteId
+              + "&ttid=" + tradeDoublerTrackingId
+              + "&url=" + encodeURIComponent(destination.href);
+          }
+        }
+
+        function convertEligibleLinks() {
+          window.clearTimeout(conversionTimeout);
+          conversionTimeout = window.setTimeout(function () {
+            if (window.TDLinkConverter && typeof window.TDLinkConverter.init === "function") {
+              window.TDLinkConverter.init({});
+            } else {
+              convertStageLinksWithFallback();
+            }
+          }, 1500);
+        }
+
+        window.tdlcAsyncInit = function () {
+          convertEligibleLinks();
+
+          if (!converterObserver && window.MutationObserver && d.documentElement) {
+            converterObserver = new MutationObserver(convertEligibleLinks);
+            converterObserver.observe(d.documentElement, { childList: true, subtree: true });
+          }
+        };
+
+        var tdlc_1d43f5s_a = new Date();
+        tdlc_1d43f5s_a.setMinutes(0);
+        tdlc_1d43f5s_a.setSeconds(0);
+        var tdlc_1d43f5s_seconds = parseInt(tdlc_1d43f5s_a.getTime() / 1000, 10);
+        var fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+
+        var js = d.createElement(s);
+        js.id = id;
+        js.src = "https://clk.tradedoubler.com/lc?a(3492604)rand(" + tdlc_1d43f5s_seconds + ")";
+        js.onload = window.tdlcAsyncInit;
+        fjs.parentNode.insertBefore(js, fjs);
+
+        // Der Loader kann bei Adblockern oder restriktiven MIME-/CSP-Regeln zwar geladen,
+        // aber nicht ausgeführt werden. Der Tracking-Fallback muss trotzdem starten.
+        if (d.readyState === "loading") {
+          d.addEventListener("DOMContentLoaded", window.tdlcAsyncInit, { once: true });
+        } else {
+          window.tdlcAsyncInit();
+        }
+      })(document, "script", "tdlc-jssdk");
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

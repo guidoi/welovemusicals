@@ -184,3 +184,32 @@
 - [x] Vitest-Test für die Anzeige und Nichtanzeige des Sale-Störers ergänzen
 - [x] Sale-Störer auf der Startseite im Browser auf Desktop und Mobil sichtbar prüfen und visuellen Befund dokumentieren
 - [x] Rendering-Test für MusicalCard ergänzen: Sale-Störer wird bei aktivem sale angezeigt und ohne oder abgelaufenem sale nicht angezeigt
+
+## Trade Doubler – Link Converter und Stage-Entertainment-Links
+- [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
+- [ ] Laden des Link Converters und Kompatibilität mit bestehendem Awin Publisher Master Tag prüfen
+- [ ] Trade-Doubler-Partnerlinks für Stage-Entertainment-Produktionen je Musical zuordnen und übernehmen
+- [ ] Alle betroffenen Ticket-CTAs, Keyvisuals und Tourtermine verifizieren
+- [ ] TypeScript-Check ausführen und Checkpoint speichern
+
+## Trade Doubler – Link Converter Diagnose
+- [x] Trade-Doubler-Skriptantwort, Initialisierungsreihenfolge und Laufzeitfehler prüfen
+- [x] Zuverlässige Initialisierung des Link Converters implementieren
+- [x] König der Löwen und Die Eiskönigin in der lokalen Vorschau validieren
+- [ ] König der Löwen und Die Eiskönigin nach dem Cloudflare-Build auf welovemusicals.com validieren
+- [ ] TypeScript-Check, Test und Checkpoint durchführen
+
+## König der Löwen – Trade-Doubler Produktseite
+- [x] Alle KDL Ticket- und CTA-Links auf die direkte Stage-Entertainment-Produktseite umstellen
+- [ ] Trade-Doubler Link Converter für die KDL-Produktseite im Browser validieren
+
+## Stage Entertainment – Trade-Doubler Produktseiten
+- [x] MJ, Die Eiskönigin, Tarzan, Zurück in die Zukunft, Der Teufel trägt Prada und WIR SIND AM LEBEN auf direkte Stage-Produktseiten umstellen
+- [x] Tanz der Vampire, WE WILL ROCK YOU, & JULIA und SALON ROSIE auf direkte Stage-Produktseiten umstellen
+- [x] DIE AMME aus ACTIVE_MUSICAL_IDS entfernen
+- [x] Stage-Entertainment-Produktionen auf Teasern und Detailseiten als „via Stage Entertainment“ kennzeichnen
+- [x] Alle Stage-Produktseitenlinks und die Deaktivierung per Test validieren
+- [x] TypeScript-Check ausführen und Checkpoint speichern
+- [x] Anbietererkennung auf Teasern und Detailseiten auf echte Stage-Entertainment-Produktionen begrenzen
+- [x] Nicht-Stage-Shows in Übersicht und Detailseite erneut auf korrekte Anbieterkennzeichnung prüfen
+- [x] Nicht-Stage-Detailseite im Browser auf Eventim-Kennzeichnung prüfen

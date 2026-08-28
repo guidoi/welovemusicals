@@ -44,6 +44,11 @@ const categoryIcons: Record<string, string> = {
 
 export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
+  const ticketProviderLabel = musical.eventimUrl.includes("stage-entertainment.de")
+    ? "via Stage Entertainment"
+    : (musical.slug === "moulin-rouge" || musical.slug === "phantom-der-oper" || musical.slug === "gloeckner-von-notre-dame" || musical.slug === "starlight-express")
+      ? "via ATG Tickets"
+      : "via Eventim";
 
   return (
     <motion.div
@@ -145,7 +150,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             {/* CTA */}
             <div className="flex items-center justify-between">
               <span className="text-xs text-muted-foreground/60 uppercase tracking-wider">
-                {(musical.slug === 'moulin-rouge' || musical.slug === 'phantom-der-oper' || musical.slug === 'gloeckner-von-notre-dame' || musical.slug === 'starlight-express') ? 'via ATG Tickets' : 'via Eventim'}
+                {ticketProviderLabel}
               </span>
               <span className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
                 Tickets sichern
