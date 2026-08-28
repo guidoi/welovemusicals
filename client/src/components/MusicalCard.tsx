@@ -154,9 +154,9 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
                 data-testid="teaser-provider-logo"
                 src={ticketProviderBrand.logoSrc}
                 alt={ticketProviderBrand.name}
-                className="h-4 max-w-16 w-auto object-contain object-left opacity-75"
+                className="h-6 max-w-24 w-auto object-contain object-left opacity-90 md:h-5 md:max-w-20"
               />
-              <span className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
+              <span data-testid="teaser-ticket-cta" className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
                 Tickets sichern
                 <ExternalLink className="w-3.5 h-3.5" />
               </span>

@@ -232,6 +232,10 @@
 - [x] Kleines Stage-, Eventim- oder ATG-Tickets-Logo in der Teaser-CTA-Zeile anstelle der entfernten Anbietertexte darstellen
 - [x] Logo-Auswahl für Stage-, ATG- und Eventim-Ticketziele zentral und testbar definieren
 - [x] Teaser-CTA, Ticketziel und Tracking mit Anbieterlogo auf Desktop und Mobil prüfen
+- [x] Anbieterlogos in der mobilen Teaser-CTA-Zeile deutlich vergrößern
+- [x] Anbieterlogos auf Desktop maßvoll vergrößern und CTA-Ausrichtung per DOM-Messung bewahren
+- [x] Vergrößerte Anbieterlogos auf Desktop und Mobil mit gemessener Kartenhöhe und sichtbarer Logo-Lesbarkeit prüfen
+- [x] Logo- und Ticket-CTA-Position sowie Kartenhöhe im Desktop- und Mobil-Viewport reproduzierbar messen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
