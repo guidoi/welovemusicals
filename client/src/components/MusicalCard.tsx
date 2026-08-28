@@ -83,7 +83,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
                     <span className="relative -translate-x-px text-[20px] font-black leading-none text-white">%</span>
                   </span>
                   <span className="min-w-0">
-                    <span data-testid="sale-label" className="block whitespace-nowrap text-[8px] font-bold uppercase leading-none tracking-[0.1em] text-red-100">
+                    <span data-testid="sale-label" className="block whitespace-nowrap text-[10px] font-extrabold uppercase leading-none tracking-[0.07em] text-[#450a0a]">
                       {musical.sale.label}
                     </span>
                     <span className="mt-1 block font-heading text-lg font-semibold leading-none text-white">

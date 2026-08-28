@@ -201,6 +201,12 @@
 - [x] Großes Preisschild-Icon mit Prozentzeichen im Sale-Störer wiederherstellen
 - [x] Weißen Rand am Preisschild entfernen und eine dunklere Rotfläche zur Absetzung vom Logo-Rot verwenden
 - [x] Finale dunklerote Preisschild-Variante mit konkretem Desktop- und Mobilnachweis für Lesbarkeit und Badge-Abstand validieren
+- [x] Schriftfarbe der Aktionszeile auf ein dunkleres Rot umstellen
+- [x] Aktionszeile leicht vergrößern und auf Desktop sowie Mobil auf Lesbarkeit prüfen
+- [x] Sale-Aktionsname auf „FAMILIENTAGE“ reduzieren (durch finale Kurzfassung ersetzt)
+- [x] Rabattzeile auf „BIS ZU 15 % SPAREN“ umstellen (durch finale Kurzfassung ersetzt)
+- [x] Sale-Aktionsname auf „FAMILIEN:“ und Rabattzeile auf „BIS 15 %“ reduzieren
+- [x] Wort „sparen“ vollständig aus dem sichtbaren Sale-Störer entfernen und Darstellung prüfen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

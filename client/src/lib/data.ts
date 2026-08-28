@@ -1052,8 +1052,8 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
     sale: {
-      label: "Aktion Familientage",
-      discount: "Bis 15 % sparen",
+      label: "FAMILIEN:",
+      discount: "BIS 15 %",
       note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
     },
     youtubeTrailerId: "BqOiOukh3KQ",

@@ -44,6 +44,12 @@ Die fokussierte Mobilprüfung im 375 × 812-px-Viewport zeigt das Preisschild vo
 
 Ein gezielter Chromium-DOM-Test liefert den konkreten Nachweis für die finale Preisschild-Variante. Auf Desktop (1280 × 720 px) ist „Aktion Familientage“ vollständig lesbar, das dunklerote Preisschild hat berechnet `rgb(153, 27, 27)`, die SVG-Konturstärke beträgt `0` und die Badges haben 56,39 px Abstand. Auf Mobil (375 × 812 px) gelten dieselben Farb- und Randwerte; der Aktionsname passt vollständig, der Störer liegt vollständig in der Karte und bleibt 12,73 px vom Top-Musical-Badge entfernt. In keinem Viewport überlappen die Badges.
 
+## Finale Kurzfassung „FAMILIEN: BIS 15 %“
+
+Die Anzeige wurde auf Wunsch des Nutzers abschließend auf zwei knappe Zeilen reduziert: „FAMILIEN:“ und „BIS 15 %“. Das Wort „sparen“ ist in der sichtbaren Sale-Anzeige nicht mehr enthalten. Die erste Zeile nutzt ein dunkles, kontrastreiches Rot (`#450A0A`) und ist mit 10 px leicht größer als zuvor gesetzt; das dunklerote Preisschild bleibt ohne helle Kontur bestehen.
+
+Der finale Mobiltest im 375 × 812-px-Viewport misst eine vollständig sichtbare Aktionszeile, eine vollständig in der Karte liegende Sale-Fläche und 12,73 px Abstand zum Top-Musical-Badge. Eine Überschneidung liegt nicht vor. Die vollständige Test-Suite (7 Dateien / 17 Tests), TypeScript-Check und Produktionsbuild sind erfolgreich.
+
 Die finale Variante ist zusätzlich über zentrale Layoutkonstanten abgesichert. Der Störer hält bei Top-Musical-Karten 9 rem auf der rechten Kartenseite frei und kann höchstens 12,25 rem breit werden. Die Komponententests sichern den vollständigen, nicht gekürzten Aktionsnamen, den Bordeaux-Stil, die fehlende sichtbare Subline und die einheitlich abgerundeten Ecken. Ein separater Layouttest prüft diese Freiraumregel für eine Desktop-Kartenbreite von 17 rem sowie für die 343 px breite Mobilkarte.
 
 Nach dieser letzten Variante wurden alle Prüfungen erneut ausgeführt: 7 Testdateien / 17 Tests, TypeScript-Check und Produktionsbuild sind erfolgreich.

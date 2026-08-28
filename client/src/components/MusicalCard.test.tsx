@@ -33,16 +33,17 @@ describe("MusicalCard Sale-Störer", () => {
           ...baseMusical,
           featured: true,
           sale: {
-            label: "Aktion Familientage",
-            discount: "Bis 15 % sparen",
+            label: "FAMILIEN:",
+            discount: "BIS 15 %",
             note: "Familien-Tickets für ausgewählte Termine",
           },
         }}
       />
     );
 
-    expect(markup).toContain("Aktion Familientage");
-    expect(markup).toContain("Bis 15 % sparen");
+    expect(markup).toContain("FAMILIEN:");
+    expect(markup).toContain("BIS 15 %");
+    expect(markup).not.toContain("BIS 15 % SPAREN");
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
     expect(markup).toContain('data-testid="sale-icon"');
@@ -52,6 +53,9 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("text-[20px]");
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
+    expect(markup).toContain("text-[10px]");
+    expect(markup).toContain("tracking-[0.07em]");
+    expect(markup).toContain("text-[#450a0a]");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain("bg-[#ef4444]");
     expect(markup.match(/rounded-md/g)).toHaveLength(2);
