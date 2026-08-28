@@ -78,9 +78,8 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
                 data-testid="sale-badge"
               >
                 <div className="flex items-center gap-2">
-                  <span className="relative grid h-6 w-6 shrink-0 place-items-center" aria-hidden="true">
-                    <Tag className="absolute h-6 w-6 fill-red-950/40 text-red-200 stroke-[2.5]" />
-                    <span className="relative -translate-x-px text-[10px] font-black leading-none text-white">%</span>
+                  <span data-testid="sale-icon" className="grid h-7 w-7 shrink-0 place-items-center text-[22px] font-black leading-none text-white" aria-hidden="true">
+                    %
                   </span>
                   <span className="min-w-0">
                     <span data-testid="sale-label" className="block whitespace-nowrap text-[8px] font-bold uppercase leading-none tracking-[0.1em] text-red-100">

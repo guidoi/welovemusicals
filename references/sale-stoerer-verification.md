@@ -30,6 +30,12 @@ Der Rendering-Test sichert die strukturellen Regeln: nicht gekürzter Aktionsnam
 
 Die berechnete Hintergrundfarbe wurde direkt im Browser mit der Konturfarbe des Herz-Logos abgeglichen. Beide Werte sind `rgb(239, 68, 68)`. Die zusätzliche mobile Browsermessung (375 × 812 px) bestätigt dieselbe Farbe, die vollständige Lesbarkeit des Aktionsnamens, einen freien Abstand von 13 px zum Top-Musical-Badge und die vollständige Positionierung innerhalb der Karte.
 
+## Randlose Prozent-Variante
+
+Das zuvor umrandete Preisschild wurde auf Wunsch des Nutzers durch ein reines, randloses Prozentzeichen ersetzt. Das Zeichen wird mit 22 px dargestellt und ist damit mehr als doppelt so groß wie die vorherige 10-px-Prozentmarkierung innerhalb des Tag-Icons. Die Icon-Zelle bleibt bewusst kompakt und sorgt weiterhin für eine klare visuelle Zuordnung zu „Aktion Familientage“.
+
+Die Desktop- und Mobilvorschau bestätigen, dass das größere Prozentzeichen vollständig innerhalb des Sale-Störers liegt, gut lesbar bleibt und den reservierten Raum zum Top-Musical-Badge nicht beeinträchtigt.
+
 Die finale Variante ist zusätzlich über zentrale Layoutkonstanten abgesichert. Der Störer hält bei Top-Musical-Karten 9 rem auf der rechten Kartenseite frei und kann höchstens 12,25 rem breit werden. Die Komponententests sichern den vollständigen, nicht gekürzten Aktionsnamen, den Bordeaux-Stil, die fehlende sichtbare Subline und die einheitlich abgerundeten Ecken. Ein separater Layouttest prüft diese Freiraumregel für eine Desktop-Kartenbreite von 17 rem sowie für die 343 px breite Mobilkarte.
 
 Nach dieser letzten Variante wurden alle Prüfungen erneut ausgeführt: 7 Testdateien / 17 Tests, TypeScript-Check und Produktionsbuild sind erfolgreich.

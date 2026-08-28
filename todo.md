@@ -195,6 +195,9 @@
 - [x] Browser-Layouttest mit realen Bounding-Rects für Sale-Störer und Top-Musical-Badge auf Desktop und Mobil ergänzen
 - [x] Hintergrund des Familientage-Sale-Störers auf das exakte Logo-Rot #EF4444 umstellen
 - [x] Kontrast, Textlesbarkeit und Badge-Abstand der Logo-Rot-Variante auf Desktop und Mobil prüfen
+- [x] Zusätzliche Umrandung des bisherigen Preisschild-Icons entfernen
+- [x] Randloses Prozentzeichen in doppelter Größe darstellen
+- [x] Kompaktheit, Lesbarkeit und Abstand zum Top-Musical-Badge nach der Vergrößerung des Prozentzeichens prüfen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
