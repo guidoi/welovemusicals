@@ -53,8 +53,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("text-[20px]");
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).toContain("text-[11px]");
-    expect(markup).toContain("tracking-[0.07em]");
+    expect(markup).toContain('data-testid="sale-label" class="block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"');
     expect(markup).toContain("text-white");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain("bg-[#ef4444]");

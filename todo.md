@@ -212,6 +212,9 @@
 - [x] Sale-Störer nach rechts auf eine kompaktere feste Breite reduzieren
 - [x] Zusätzlichen Freiraum zum Top-Musical-Badge nach der Breitenreduktion auf Desktop und Mobil prüfen
 - [x] Finale weiße und schmalere Sale-Störer-Variante im Desktop-Viewport mit Messwerten für Textlesbarkeit und Badge-Abstand validieren
+- [x] Familienzeile „FAMILIEN:“ auf dieselbe Schriftgröße wie „BIS 15 %“ setzen
+- [x] Gleich große Sale-Zeilen auf Desktop und Mobil auf Lesbarkeit und Badge-Abstand prüfen
+- [x] Berechnete Schriftgrößen der Familien- und Rabattzeile auf Desktop und Mobil gleichheitsgenau messen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden
