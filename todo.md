@@ -193,6 +193,8 @@
 - [x] Rendering-Test für ausgeschriebenen Aktionsnamen, Bordeaux-Stil, fehlende sichtbare Subline und reservierten Badge-Abstand ergänzen
 - [x] Responsive Abstandskonstanten für Desktop- und Mobilkarten als getestete Layout-Hilfsfunktion definieren
 - [x] Browser-Layouttest mit realen Bounding-Rects für Sale-Störer und Top-Musical-Badge auf Desktop und Mobil ergänzen
+- [x] Hintergrund des Familientage-Sale-Störers auf das exakte Logo-Rot #EF4444 umstellen
+- [x] Kontrast, Textlesbarkeit und Badge-Abstand der Logo-Rot-Variante auf Desktop und Mobil prüfen
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

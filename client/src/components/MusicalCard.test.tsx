@@ -48,7 +48,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
-    expect(markup).toContain("bg-[#5b0d1d]/90");
+    expect(markup).toContain("bg-[#ef4444]");
     expect(markup.match(/rounded-md/g)).toHaveLength(2);
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });

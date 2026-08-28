@@ -73,7 +73,7 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} border border-red-400/80 bg-[#5b0d1d]/90 px-2.5 py-1.5 shadow-lg shadow-black/40 backdrop-blur-sm`}
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
                 aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
                 data-testid="sale-badge"
               >
