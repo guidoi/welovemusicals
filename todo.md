@@ -161,20 +161,20 @@
 - [x] TDV TypeScript-Check bestanden
 
 ## WE WILL ROCK YOU – Neues Musical (Stage Entertainment)
-- [ ] WWRY Bilder konvertieren (WebP) und in client/public/images/we-will-rock-you/ ablegen
-- [ ] WWRY Musical-Eintrag in data.ts erstellen (Preis ab 51,49 €, Spielzeit 02.07.2026–30.08.2026, Stuttgart)
-- [ ] WWRY in ACTIVE_MUSICAL_IDS aufnehmen
-- [ ] WWRY Fotocredits im Impressum ergänzen
-- [ ] WWRY MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
-- [ ] WWRY TypeScript-Check bestanden
+- [x] WWRY Bilder konvertieren (WebP) und in client/public/images/we-will-rock-you/ ablegen
+- [x] WWRY Musical-Eintrag in data.ts erstellen (Preis ab 48,49 €, Spielzeit 02.07.2026–30.08.2026, Stuttgart)
+- [x] WWRY in ACTIVE_MUSICAL_IDS aufnehmen
+- [x] WWRY Fotocredits im Impressum ergänzen
+- [x] WWRY MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
+- [x] WWRY TypeScript-Check bestanden
 
 ## SALON ROSIE – Neues Musical (Plate & Sommer)
-- [ ] SR Bild konvertieren (WebP) und in client/public/images/salon-rosie/ ablegen
-- [ ] SR Musical-Eintrag in data.ts erstellen (Preis ab 68,49 €, Spielzeit 30.10.2026–26.02.2027, Berlin)
-- [ ] SR in ACTIVE_MUSICAL_IDS aufnehmen
-- [ ] SR Fotocredits im Impressum ergänzen
-- [ ] SR MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
-- [ ] SR TypeScript-Check bestanden
+- [x] SR Bild konvertieren (WebP) und in client/public/images/salon-rosie/ ablegen
+- [x] SR Musical-Eintrag in data.ts erstellen (Preis ab 68,49 €, Spielzeit 30.10.2026–26.02.2027, Berlin)
+- [x] SR in ACTIVE_MUSICAL_IDS aufnehmen
+- [x] SR Fotocredits im Impressum ergänzen
+- [x] SR MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
+- [x] SR TypeScript-Check bestanden
 
 ## Sale-Störer auf Musical-Teasern
 - [x] Optionales sale-Feld im Musical-Datenmodell für Aktionsname, Rabattwert, Hinweissatz und optionales Ablaufdatum ergänzen
