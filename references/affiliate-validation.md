@@ -22,3 +22,15 @@ Nach dem ersten Fallback-Versuch blieben die Links unverändert. Die Ursache: De
 Die finale lokale Prüfung bestätigt den Fallback: Alle sechs König-der-Löwen-Links wurden nach dem React-Renderzyklus auf `https://visit.stage-entertainment.de/click?p=394206&a=3492604&ttid=18&url=...` umgeschrieben. Damit ist die Trade-Doubler-Partnerkennung `a=3492604` zuverlässig in den tatsächlichen Ziel-URLs enthalten, auch wenn der externe Loader keinen `TDLinkConverter`-Global exportiert.
 
 Die Detailroute von Die Eiskönigin lautet `/musical/die-eiskoenigin`; die zuvor getestete Variante mit dem Präfix `disneys-` führt erwartungsgemäß zur Nicht-gefunden-Seite. Die korrekte Seite lädt die Stage-Entertainment-Ticketbereiche.
+
+## Live-Validierung nach dem Cloudflare-Build
+
+Am 28.08.2026 wurde die veröffentlichte Seite `welovemusicals.com` geprüft. Auf der KÖNIG-DER-LÖWEN-Detailseite werden die Stage-Ticketbereiche über `visit.stage-entertainment.de/click?p=394206&a=3492604&ttid=18&url=...` ausgeliefert. Die Parameter enthalten damit die erwartete Programmkennung `394206`, die Publisherkennung `3492604` und die Tracking-ID `18`.
+
+Auf der veröffentlichten DIE-EISKÖNIGIN-Detailseite wurden alle sechs Stage-Ticketlinks ebenfalls auf dieselbe Trade-Doubler-Weiterleitung umgeschrieben. Parallel werden sowohl der Trade-Doubler-Loader (`clk.tradedoubler.com/lc?a(3492604)rand(...)`) als auch das Awin Publisher Master Tag (`www.dwin2.com/pub.2865727.min.js`) geladen. Die beiden Integrationen koexistieren auf der geprüften Seite ohne sichtbare Beeinträchtigung.
+
+## Vollständige Stage-Linkabdeckung im Test
+
+`server/affiliate-links.test.ts` validiert die Linkzuordnung systematisch für alle elf aktiven Stage-Entertainment-Produktionen: KÖNIG DER LÖWEN, MJ, DIE EISKÖNIGIN, TARZAN, ZURÜCK IN DIE ZUKUNFT, DER TEUFEL TRÄGT PRADA, WIR SIND AM LEBEN, TANZ DER VAMPIRE, WE WILL ROCK YOU, & JULIA und SALON ROSIE.
+
+Für jede dieser Produktionen wird geprüft, dass `keyvisualLink`, `ticketCtaUrl`, `eventimUrl`, `awinHeroUrl`, `awinStickyUrl` und `awinBoxUrl` auf die jeweils hinterlegte direkte Stage-Produktseite zeigen. Zusätzlich wird für alle vorhandenen Tourtermine geprüft, dass deren Ticket-URL mit der Produktseite der zugehörigen Show übereinstimmt. Dadurch sind Ticket-CTAs, Keyvisual-Links und Tourtermine in der Datenebene vollständig abgesichert; die Live-Prüfung von KÖNIG DER LÖWEN und DIE EISKÖNIGIN bestätigt zusätzlich die tatsächliche Trade-Doubler-Umschreibung im Browser.
