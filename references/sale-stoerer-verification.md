@@ -50,6 +50,14 @@ Die Anzeige wurde auf Wunsch des Nutzers abschließend auf zwei knappe Zeilen re
 
 Der finale Mobiltest im 375 × 812-px-Viewport misst eine vollständig sichtbare Aktionszeile, eine vollständig in der Karte liegende Sale-Fläche und 12,73 px Abstand zum Top-Musical-Badge. Eine Überschneidung liegt nicht vor. Die vollständige Test-Suite (7 Dateien / 17 Tests), TypeScript-Check und Produktionsbuild sind erfolgreich.
 
+## Weiße Familienzeile und kompaktere Breite
+
+Die finale Aktionszeile lautet „FAMILIEN:“ und ist in Weiß mit 11 px gesetzt. Der Sale-Störer wurde von 12,25 rem auf eine bevorzugte Breite von 10,75 rem verschmälert, damit er nach rechts sichtbar weniger Raum einnimmt. Das Preisschild bleibt groß, dunkelrot und ohne weiße Außenkontur; die Rabattzeile bleibt „BIS 15 %“.
+
+Im Desktop-Teaser ist die reduzierte Breite deutlich sichtbar und das Top-Musical-Badge bleibt separat rechts positioniert. Der finale Mobiltest im 375 × 812-px-Viewport misst eine Sale-Breite von 172 px, eine vollständig sichtbare Familienzeile und 36,73 px freien Raum zum Top-Musical-Badge. Die Badges überschneiden sich nicht und der Sale-Störer bleibt vollständig innerhalb der Karte.
+
+Der abschließende Desktop-DOM-Test im 1280 × 720-px-Viewport bestätigt dieselbe finale Variante mit weißer 11-px-Familienzeile: „FAMILIEN:“ passt vollständig, der Sale-Störer ist 172 px breit und liegt vollständig in der Karte. Bis zum Top-Musical-Badge bleiben 80,39 px freier Raum; die Badges überlappen nicht. Damit ist die schmalere Variante auf beiden Zielgrößen konkret geprüft.
+
 Die finale Variante ist zusätzlich über zentrale Layoutkonstanten abgesichert. Der Störer hält bei Top-Musical-Karten 9 rem auf der rechten Kartenseite frei und kann höchstens 12,25 rem breit werden. Die Komponententests sichern den vollständigen, nicht gekürzten Aktionsnamen, den Bordeaux-Stil, die fehlende sichtbare Subline und die einheitlich abgerundeten Ecken. Ein separater Layouttest prüft diese Freiraumregel für eine Desktop-Kartenbreite von 17 rem sowie für die 343 px breite Mobilkarte.
 
 Nach dieser letzten Variante wurden alle Prüfungen erneut ausgeführt: 7 Testdateien / 17 Tests, TypeScript-Check und Produktionsbuild sind erfolgreich.

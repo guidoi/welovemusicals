@@ -4,9 +4,9 @@
  * mit dem rechts positionierten Badge bei Desktop- und Mobilkarten.
  */
 export const SALE_BADGE_LAYOUT = {
-  preferredWidthRem: 12.25,
+  preferredWidthRem: 10.75,
   featuredBadgeReserveRem: 9,
-  widthClasses: "w-[12.25rem] max-w-[calc(100%-9rem)]",
+  widthClasses: "w-[10.75rem] max-w-[calc(100%-9rem)]",
   roundedClass: "rounded-md",
 } as const;
 

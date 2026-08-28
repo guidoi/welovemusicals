@@ -207,6 +207,11 @@
 - [x] Rabattzeile auf „BIS ZU 15 % SPAREN“ umstellen (durch finale Kurzfassung ersetzt)
 - [x] Sale-Aktionsname auf „FAMILIEN:“ und Rabattzeile auf „BIS 15 %“ reduzieren
 - [x] Wort „sparen“ vollständig aus dem sichtbaren Sale-Störer entfernen und Darstellung prüfen
+- [x] Familienzeile „FAMILIEN:“ wieder in Weiß darstellen
+- [x] Familienzeile leicht vergrößern und auf Desktop sowie Mobil auf Lesbarkeit und Badge-Abstand prüfen
+- [x] Sale-Störer nach rechts auf eine kompaktere feste Breite reduzieren
+- [x] Zusätzlichen Freiraum zum Top-Musical-Badge nach der Breitenreduktion auf Desktop und Mobil prüfen
+- [x] Finale weiße und schmalere Sale-Störer-Variante im Desktop-Viewport mit Messwerten für Textlesbarkeit und Badge-Abstand validieren
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

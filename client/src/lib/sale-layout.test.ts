@@ -6,6 +6,7 @@ import {
 
 describe("Sale-Störer-Layout", () => {
   it("reserviert für das Top-Musical-Badge in jeder Kartenbreite 9 rem rechts", () => {
+    expect(SALE_BADGE_LAYOUT.preferredWidthRem).toBe(10.75);
     expect(SALE_BADGE_LAYOUT.featuredBadgeReserveRem).toBe(9);
     expect(SALE_BADGE_LAYOUT.widthClasses).toContain("max-w-[calc(100%-9rem)]");
 
