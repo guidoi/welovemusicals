@@ -284,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}
-      <section className="py-16 md:py-24">
+      <section id="top-musicals" className="py-16 md:py-24 scroll-mt-24">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />

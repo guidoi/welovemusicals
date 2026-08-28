@@ -2,11 +2,13 @@
  * Design: Theatrical Noir – Art Deco trifft Film Noir
  * MusicalCard: Elegante Karte mit Spotlight-Hover-Effekt
  */
-import { MapPin, ExternalLink, Tag, Star } from "lucide-react";
+import React from "react";
+import { MapPin, ExternalLink, Tag, Star, TicketPercent } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import type { Musical } from "@/lib/data";
 import { createAwinLink } from "@/lib/data";
+import { isSaleActive } from "@/lib/sale";
 
 interface MusicalCardProps {
   musical: Musical;
@@ -41,6 +43,8 @@ const categoryIcons: Record<string, string> = {
 };
 
 export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
+  const hasActiveSale = isSaleActive(musical.sale);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -59,6 +63,27 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+            {/* Sale badge */}
+            {hasActiveSale && musical.sale && (
+              <div
+                className="absolute top-2.5 left-2.5 z-10 max-w-[calc(100%-5rem)] rounded-sm border border-red-500/80 bg-black/85 px-2.5 py-2 shadow-lg shadow-black/40 backdrop-blur-sm"
+                aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
+              >
+                <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.14em] text-red-400">
+                  <TicketPercent className="h-3 w-3 shrink-0" aria-hidden="true" />
+                  {musical.sale.label}
+                </span>
+                <span className="mt-0.5 block font-heading text-base font-semibold leading-none text-white sm:text-[17px]">
+                  {musical.sale.discount}
+                </span>
+                {musical.sale.note && (
+                  <span className="mt-1 block text-[10px] leading-snug text-white/70">
+                    {musical.sale.note}
+                  </span>
+                )}
+              </div>
+            )}
 
             {/* Featured Badge */}
             {musical.featured && (

@@ -36,6 +36,13 @@ export interface MusicalFAQ {
   answer: string;
 }
 
+export interface MusicalSale {
+  label: string;
+  discount: string;
+  note?: string;
+  validUntil?: string; // Format: "YYYY-MM-DD"; ohne Datum bleibt der Sale aktiv
+}
+
 export interface Musical {
   id: string;
   slug: string;
@@ -65,6 +72,7 @@ export interface Musical {
   eventimUrl: string;
   featured?: boolean;
   tags: string[];
+  sale?: MusicalSale; // Optionaler Angebots-Störer auf Teaser-Karten
   // Neue Felder für Detail-Seite
   tourDates?: MusicalTourDate[];
   quotes?: MusicalQuote[];
@@ -1042,6 +1050,11 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=kdl-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdisneys-der-koenig-der-loewen%2F",
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
+    sale: {
+      label: "Aktion Familientage",
+      discount: "Bis 15 % sparen",
+      note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
+    },
     youtubeTrailerId: "BqOiOukh3KQ",
     uspItems: [
       { icon: "Crown", title: "25 Jahre Musical-Geschichte", text: "Über 17 Millionen Besucher und 9.500 Vorstellungen in Hamburg" },

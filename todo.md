@@ -175,3 +175,12 @@
 - [ ] SR Fotocredits im Impressum ergänzen
 - [ ] SR MusicalDetail-Bedingungen (mobile Trailer + Keyvisual) ergänzen
 - [ ] SR TypeScript-Check bestanden
+
+## Sale-Störer auf Musical-Teasern
+- [x] Optionales sale-Feld im Musical-Datenmodell für Aktionsname, Rabattwert, Hinweissatz und optionales Ablaufdatum ergänzen
+- [x] Wiederverwendbaren, zugänglichen Sale-Störer in MusicalCard für Desktop und Mobil gestalten
+- [x] KÖNIG DER LÖWEN mit Aktion „Familientage“, „Bis 15 % sparen“ und Familienrabatt-Hinweis konfigurieren
+- [x] Darstellung im Desktop- und Mobil-Viewport prüfen
+- [x] Vitest-Test für die Anzeige und Nichtanzeige des Sale-Störers ergänzen
+- [x] Sale-Störer auf der Startseite im Browser auf Desktop und Mobil sichtbar prüfen und visuellen Befund dokumentieren
+- [x] Rendering-Test für MusicalCard ergänzen: Sale-Störer wird bei aktivem sale angezeigt und ohne oder abgelaufenem sale nicht angezeigt
