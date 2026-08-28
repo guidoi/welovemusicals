@@ -213,3 +213,10 @@
 - [x] Anbietererkennung auf Teasern und Detailseiten auf echte Stage-Entertainment-Produktionen begrenzen
 - [x] Nicht-Stage-Shows in Übersicht und Detailseite erneut auf korrekte Anbieterkennzeichnung prüfen
 - [x] Nicht-Stage-Detailseite im Browser auf Eventim-Kennzeichnung prüfen
+
+## Fehlerbehebung – React Invalid Hook Call
+- [x] React-, React-DOM- und tRPC-Abhängigkeitsauflösung sowie Vite-Deduplizierung analysieren
+- [x] React-Laufzeitstabilität durch Provider-Integrationstest sowie Cold-Start- und HMR-Prüfung absichern
+- [x] Startseite im Browser sowie Vitest, TypeScript und Produktionsbuild nach der reproduzierbaren Laufzeitprüfung verifizieren
+- [x] React-Hook-Fehler in einem frischen Vite-Optimierungscache und nach einer HMR-Aktualisierung gezielt auf Nichtauftreten prüfen
+- [x] tRPC- und React-Query-Provider als gemeinsame App-Hülle extrahieren und gegen Invalid-Hook-Calls testen
