@@ -198,6 +198,9 @@
 - [x] Zusätzliche Umrandung des bisherigen Preisschild-Icons entfernen
 - [x] Randloses Prozentzeichen in doppelter Größe darstellen
 - [x] Kompaktheit, Lesbarkeit und Abstand zum Top-Musical-Badge nach der Vergrößerung des Prozentzeichens prüfen
+- [x] Großes Preisschild-Icon mit Prozentzeichen im Sale-Störer wiederherstellen
+- [x] Weißen Rand am Preisschild entfernen und eine dunklere Rotfläche zur Absetzung vom Logo-Rot verwenden
+- [x] Finale dunklerote Preisschild-Variante mit konkretem Desktop- und Mobilnachweis für Lesbarkeit und Badge-Abstand validieren
 
 ## Trade Doubler – Link Converter und Stage-Entertainment-Links
 - [x] Trade-Doubler Link Converter mit Advertiser-ID 3492604 global im HTML-Head einbinden

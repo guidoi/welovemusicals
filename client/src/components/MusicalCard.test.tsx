@@ -26,7 +26,7 @@ const baseMusical: Musical = {
 };
 
 describe("MusicalCard Sale-Störer", () => {
-  it("rendert die kompakte Logo-Rot-Variante mit ausgeschriebenem Aktionsnamen und randlosem Prozentzeichen", () => {
+  it("rendert die kompakte Logo-Rot-Variante mit ausgeschriebenem Aktionsnamen und dunklerotem Preisschild", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -46,10 +46,12 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
     expect(markup).toContain('data-testid="sale-icon"');
-    expect(markup).toContain('data-testid="sale-icon" class="grid h-7 w-7 shrink-0 place-items-center text-[22px] font-black leading-none text-white" aria-hidden="true">%</span>');
+    expect(markup).toContain('data-testid="sale-icon" class="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">');
+    expect(markup).toContain("fill-[#991b1b] text-[#991b1b]");
+    expect(markup).toContain('stroke-width="0"');
+    expect(markup).toContain("text-[20px]");
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).toContain("text-[22px]");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain("bg-[#ef4444]");
     expect(markup.match(/rounded-md/g)).toHaveLength(2);

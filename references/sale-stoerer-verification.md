@@ -36,6 +36,14 @@ Das zuvor umrandete Preisschild wurde auf Wunsch des Nutzers durch ein reines, r
 
 Die Desktop- und Mobilvorschau bestätigen, dass das größere Prozentzeichen vollständig innerhalb des Sale-Störers liegt, gut lesbar bleibt und den reservierten Raum zum Top-Musical-Badge nicht beeinträchtigt.
 
+## Dunklerotes Preisschild ohne weiße Kontur
+
+Auf Wunsch des Nutzers wurde die reine Prozent-Variante durch ein deutlich größeres Preisschild ersetzt. Das Preisschild ist mit einem dunkleren Rot (`#991B1B`) gefüllt und besitzt bewusst keine helle oder weiße Außenkontur. Das Prozentzeichen liegt groß und kontrastreich innerhalb des Schilds; der Störer behält seinen äußeren Logo-Rot-Hintergrund (`#EF4444`).
+
+Die fokussierte Mobilprüfung im 375 × 812-px-Viewport zeigt das Preisschild vollständig im Sale-Störer. Aktionsname und Rabattwert bleiben lesbar; der freie Abstand zum Top-Musical-Badge bleibt erhalten. Die Desktopprüfung bestätigt die gleiche klare Trennung.
+
+Ein gezielter Chromium-DOM-Test liefert den konkreten Nachweis für die finale Preisschild-Variante. Auf Desktop (1280 × 720 px) ist „Aktion Familientage“ vollständig lesbar, das dunklerote Preisschild hat berechnet `rgb(153, 27, 27)`, die SVG-Konturstärke beträgt `0` und die Badges haben 56,39 px Abstand. Auf Mobil (375 × 812 px) gelten dieselben Farb- und Randwerte; der Aktionsname passt vollständig, der Störer liegt vollständig in der Karte und bleibt 12,73 px vom Top-Musical-Badge entfernt. In keinem Viewport überlappen die Badges.
+
 Die finale Variante ist zusätzlich über zentrale Layoutkonstanten abgesichert. Der Störer hält bei Top-Musical-Karten 9 rem auf der rechten Kartenseite frei und kann höchstens 12,25 rem breit werden. Die Komponententests sichern den vollständigen, nicht gekürzten Aktionsnamen, den Bordeaux-Stil, die fehlende sichtbare Subline und die einheitlich abgerundeten Ecken. Ein separater Layouttest prüft diese Freiraumregel für eine Desktop-Kartenbreite von 17 rem sowie für die 343 px breite Mobilkarte.
 
 Nach dieser letzten Variante wurden alle Prüfungen erneut ausgeführt: 7 Testdateien / 17 Tests, TypeScript-Check und Produktionsbuild sind erfolgreich.
