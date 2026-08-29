@@ -31,6 +31,10 @@
 - [x] Iconfreiheit, Lesbarkeit, Wischbarkeit und Hero-Layout nach der Typografieanpassung verifizieren
 - [x] Hero-Navigationstab „Musical-Städte“ in „Städte“ umbenennen
 - [x] Unteren Abstand zwischen Navigation und Scrollhinweis ausschließlich im mobilen Hero weiter reduzieren und prüfen
+- [x] Hero-Button „DISNEYS MUSICAL TARZAN“ auf „DISNEYS TARZAN“ kürzen
+- [x] Hero-Button „ZURÜCK IN DIE ZUKUNFT – Das Musical“ auf „ZURÜCK IN DIE ZUKUNFT“ kürzen
+- [x] Gekürzte Beschriftungen, alphabetische Reihenfolge und Zielanker auf Desktop sowie Mobil verifizieren
+- [x] Scrollpfeil unter der Hero-Schiebenavigation entfernen und Hero-Abschluss auf Desktop sowie Mobil prüfen
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)

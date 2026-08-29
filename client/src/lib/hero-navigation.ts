@@ -11,6 +11,11 @@ export type HeroNavigationItem = {
   kind: "overview" | "city" | "musical";
 };
 
+const HERO_NAVIGATION_LABEL_OVERRIDES: Record<string, string> = {
+  "disneys-musical-tarzan": "DISNEYS TARZAN",
+  "zurueck-in-die-zukunft-das-musical": "ZURÜCK IN DIE ZUKUNFT",
+};
+
 export function getHeroNavigationItems(
   musicals: readonly HeroNavigationMusical[],
   activeMusicalIds: readonly string[],
@@ -24,7 +29,7 @@ export function getHeroNavigationItems(
     { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
     ...activeMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
-      label: musical.title,
+      label: HERO_NAVIGATION_LABEL_OVERRIDES[musical.slug] ?? musical.title,
       href: `#musical-${musical.slug}`,
       kind: "musical" as const,
     })),

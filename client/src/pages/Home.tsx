@@ -278,18 +278,6 @@ export default function Home() {
               />
             </div>
 
-            {/* Scroll Indicator – bewusst kompakter Abstand unterhalb der Navigation */}
-            <motion.div
-              className="mt-2 inline-flex cursor-pointer justify-center md:mt-4"
-              animate={{ opacity: [0.45, 1, 0.45] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              onClick={() => {
-                const element = document.getElementById('musicals');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
-            </motion.div>
           </motion.div>
         </div>
       </section>
