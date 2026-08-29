@@ -17,6 +17,10 @@
 - [x] Logo-Spacing: Abstand zwischen WE, Herz und MUSICALS verringert (gap-2 zu gap-1)
 - [x] Impressum-Seite erstellt mit Headerfoto und Footer-Link
 - [ ] Letzte visuelle Optimierungen prüfen
+- [x] Die zwei Hero-CTA-Buttons durch eine weiße, abgerundete und horizontal schiebbare Anker-Navigation ersetzen
+- [x] Navigationseinträge für „Alle Musicals“, „Musical-Städte“ und alle Musicaltitel alphabetisch aus den zentralen Musicaldaten erzeugen
+- [x] Ankerpositionen, Tastaturbedienung sowie Desktop- und Mobil-Darstellung der Schiebe-Navigation verifizieren
+- [x] Für jedes aktive Musical einen eigenen alphabetisch einsortierten Navigationsbutton und eindeutigen Zielanker nachweisen
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)

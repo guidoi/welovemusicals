@@ -15,6 +15,7 @@ import { getTicketProviderBrand } from "@/lib/ticket-provider-brand";
 interface MusicalCardProps {
   musical: Musical;
   index?: number;
+  anchorId?: string;
 }
 
 const categoryLabels: Record<string, string> = {
@@ -44,7 +45,7 @@ const categoryIcons: Record<string, string> = {
   kinder: "⭐",
 };
 
-export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
+export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const providerLogoWidthClass =
@@ -52,6 +53,8 @@ export default function MusicalCard({ musical, index = 0 }: MusicalCardProps) {
 
   return (
     <motion.div
+      id={anchorId}
+      className="scroll-mt-24"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}

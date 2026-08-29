@@ -1,0 +1,15 @@
+# Hero-Schiebe-Navigation – Referenz und Prüfung
+
+Die vom Nutzer benannte Stage-Referenz nutzt eine inhaltliche Direktnavigation mit kurzen, abgerundeten Anker-Tabs, etwa für „Trailer“, „Die Eiswelt“ und „FAQs“. Für die Startseite von We Love Musicals wurde dieses Bedienprinzip eigenständig in die vorhandene Theatralik übersetzt: eine weiße, horizontal scrollbare Pillenleiste mit sichtbaren Vor- und Zurück-Steuerungen, statt der bisherigen zwei großen Hero-CTAs.
+
+Die Navigation beginnt mit „Alle Musicals“ und „Musical-Städte“. Anschließend folgen ausschließlich aktiv geschaltete Musicals anhand der zentralen Datenquelle in deutscher alphabetischer Reihenfolge. Jeder Musical-Tab verweist auf den eindeutigen Anker seiner Karte; bei zunächst ausgeblendeten Karten wird die Übersicht vor dem Scrollen vollständig geöffnet.
+
+Die Desktopprüfung bei 1280 × 900 Pixeln bestätigt eine vollständig sichtbare Leiste innerhalb des Hero-Bereichs. Die weißen, abgerundeten Tabs kontrastieren klar vor der abgedunkelten Bühnenfotografie; die sichtbaren Pfeile rahmen die horizontale Navigation ein, ohne Titel oder Scrollindikator zu überlagern.
+
+Die Mobilprüfung bei 375 × 812 Pixeln bestätigt eine kompakte einzelne Zeile mit horizontalem Überlauf statt mehrzeiliger Tabs. Der erste Tab „Alle Musicals“ bleibt lesbar; die danebenliegenden Einträge lassen sich über die zwei runden Pfeil-Steuerelemente oder durch horizontales Wischen erreichen.
+
+Im gerenderten DOM sind 21 individuelle Musical-Tabs vorhanden – genau ein Button für jedes aktiv geschaltete Musical. Ein exemplarischer Klick auf „WIR SIND AM LEBEN“ setzt die Ziel-URL auf `#musical-wir-sind-am-leben`, öffnet die zunächst gekürzte Musicalübersicht und findet den zugehörigen Kartenanker. Die abschließende Ausrichtung nach der Smooth-Scroll-Bewegung wird separat geprüft.
+
+Nach Abschluss der Smooth-Scroll-Bewegung liegt der Kartenanker „WIR SIND AM LEBEN“ bei 66 Pixeln von der oberen Viewportkante und damit sichtbar unterhalb des Headers. Der Zielbereich befindet sich im Viewport; URL-Hash, geöffnete Übersicht und Zielkarte stimmen überein.
+
+Die linke und rechte Steuerung der Schiebeleiste ist ebenfalls browserseitig geprüft. Bei 1.048 Pixeln sichtbarer Leistenbreite stehen 5.365 Pixel Navigationsinhalt zur Verfügung. Der rechte Pfeil verschiebt die Leiste nachvollziehbar von 0 auf 768 Pixel; der linke Pfeil führt sie wieder auf 10 Pixel zurück. Damit bleiben auch weiter rechts liegende Musicaltitel ohne Umbruch erreichbar.

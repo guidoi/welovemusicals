@@ -5,7 +5,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import {
-  Ticket,
   Star,
   MapPin,
   ChevronDown,
@@ -19,6 +18,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroAnchorNavigation from "@/components/HeroAnchorNavigation";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
 import MusicalFilters, { type FilterCategory, type SortOption, type CountryFilter } from "@/components/MusicalFilters";
@@ -32,6 +32,7 @@ import {
   createAwinLink,
   type Musical,
 } from "@/lib/data";
+import { getHeroNavigationItems } from "@/lib/hero-navigation";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
@@ -104,6 +105,27 @@ export default function Home() {
   }, []);
 
   const featured = useMemo(() => getFeaturedMusicals(), []);
+  const heroNavigationItems = useMemo(
+    () => getHeroNavigationItems(musicals, ACTIVE_MUSICAL_IDS),
+    [],
+  );
+
+  const handleHeroNavigation = useCallback((href: string, kind: "overview" | "city" | "musical") => {
+    const scrollToAnchor = () => {
+      const target = document.getElementById(href.slice(1));
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    window.history.pushState(null, "", href);
+
+    if (kind === "musical") {
+      setShowAllMusicals(true);
+      window.setTimeout(scrollToAnchor, 80);
+      return;
+    }
+
+    scrollToAnchor();
+  }, []);
 
   const filteredMusicals = useMemo(() => {
     let result = musicals;
@@ -249,22 +271,11 @@ export default function Home() {
 
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="#musicals"
-                className="px-8 py-3.5 bg-gold text-background font-semibold rounded-sm hover:bg-gold-light transition-colors tracking-wide inline-flex items-center gap-2"
-              >
-                <Ticket className="w-4 h-4" />
-                Alle Musicals entdecken
-              </a>
-              <a
-                href="#staedte"
-                className="px-8 py-3.5 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors tracking-wide inline-flex items-center gap-2"
-              >
-                <MapPin className="w-4 h-4" />
-                Musical-Städte
-              </a>
+            <div className="mt-2">
+              <HeroAnchorNavigation
+                items={heroNavigationItems}
+                onNavigate={(item) => handleHeroNavigation(item.href, item.kind)}
+              />
             </div>
           </motion.div>
         </div>
@@ -296,7 +307,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featured.map((musical, i) => (
-              <MusicalCard key={musical.id} musical={musical} index={i} />
+              <MusicalCard key={musical.id} musical={musical} index={i} anchorId={`musical-${musical.slug}`} />
             ))}
           </div>
         </div>
@@ -435,7 +446,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayedMusicals.map((musical, i) => (
-                <MusicalCard key={musical.id} musical={musical} index={i} />
+                <MusicalCard key={musical.id} musical={musical} index={i} anchorId={musical.featured ? undefined : `musical-${musical.slug}`} />
               ))}
             </div>
           )}
