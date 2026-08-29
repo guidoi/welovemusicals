@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import HeroAnchorNavigation from "./HeroAnchorNavigation";
 
 describe("HeroAnchorNavigation", () => {
-  it("rendert anklickbare Tabs sowie Bedienfelder zum horizontalen Verschieben", () => {
+  it("rendert transparente, weiß umrandete Anker-Tabs ohne Pfeilsteuerungen", () => {
     const markup = renderToStaticMarkup(
       <HeroAnchorNavigation
         items={[
@@ -16,8 +16,11 @@ describe("HeroAnchorNavigation", () => {
     );
 
     expect(markup).toContain('aria-label="Direktnavigation zu Musical-Inhalten"');
-    expect(markup).toContain('aria-label="Navigation nach links schieben"');
-    expect(markup).toContain('aria-label="Navigation nach rechts schieben"');
+    expect(markup).not.toContain('Navigation nach links schieben');
+    expect(markup).not.toContain('Navigation nach rechts schieben');
+    expect(markup).toContain('border-white/75');
+    expect(markup).toContain('bg-transparent');
+    expect(markup).toContain('text-white');
     expect(markup).toContain('href="#musicals"');
     expect(markup).toContain('href="#staedte"');
     expect(markup).toContain('href="#musical-alpha"');

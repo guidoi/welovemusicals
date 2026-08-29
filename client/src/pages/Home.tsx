@@ -259,7 +259,7 @@ export default function Home() {
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-10">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
               <div className="flex items-center gap-2">
                 <Music className="w-5 h-5 text-gold" />
                 <span className="text-white/80 text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
@@ -271,27 +271,27 @@ export default function Home() {
 
             </div>
 
-            <div className="mt-2">
+            <div className="mt-12">
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={(item) => handleHeroNavigation(item.href, item.kind)}
               />
             </div>
+
+            {/* Scroll Indicator – gleicht den sichtbaren Abstand oberhalb der Navigation aus */}
+            <motion.div
+              className="mt-10 inline-flex cursor-pointer justify-center"
+              animate={{ opacity: [0.45, 1, 0.45] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              onClick={() => {
+                const element = document.getElementById('musicals');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
+            </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          onClick={() => {
-            const element = document.getElementById('musicals');
-            element?.scrollIntoView({ behavior: 'smooth' });
-          }}
-        >
-          <ChevronDown className="w-6 h-6 text-gold/50 hover:text-gold transition-colors" />
-        </motion.div>
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}

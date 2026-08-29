@@ -21,6 +21,10 @@
 - [x] Navigationseinträge für „Alle Musicals“, „Musical-Städte“ und alle Musicaltitel alphabetisch aus den zentralen Musicaldaten erzeugen
 - [x] Ankerpositionen, Tastaturbedienung sowie Desktop- und Mobil-Darstellung der Schiebe-Navigation verifizieren
 - [x] Für jedes aktive Musical einen eigenen alphabetisch einsortierten Navigationsbutton und eindeutigen Zielanker nachweisen
+- [x] Schiebenavigation auf transparente Tabs mit weißer Kontur und weißer Schrift im Stage-inspirierten Stil umstellen
+- [x] Linke und rechte Pfeil-Steuerungen entfernen und horizontales Wischen beibehalten
+- [x] Vertikale Abstände oberhalb und unterhalb der Navigation im Hero-Bereich angleichen und auf Desktop sowie Mobil prüfen
+- [x] Finale Hero-Abstände nach der letzten mt-10-Korrektur im mobilen Ziel-Viewport prüfen und dokumentieren
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)
