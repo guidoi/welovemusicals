@@ -271,7 +271,7 @@ export default function Home() {
 
             </div>
 
-            <div className="mt-[15px]">
+            <div className="mt-[30px]">
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={(item) => handleHeroNavigation(item.href, item.kind)}
@@ -283,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}
-      <section id="top-musicals" className="pt-2 pb-16 md:pt-2 md:pb-24 scroll-mt-24">
+      <section id="top-musicals" className="pt-[30px] pb-16 md:pt-[30px] md:pb-24 scroll-mt-24">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />

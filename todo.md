@@ -36,10 +36,10 @@
 - [x] Gekürzte Beschriftungen, alphabetische Reihenfolge und Zielanker auf Desktop sowie Mobil verifizieren
 - [x] Scrollpfeil unter der Hero-Schiebenavigation entfernen und Hero-Abschluss auf Desktop sowie Mobil prüfen
 - [x] Oberen und unteren Abstand rund um die Hero-Schiebenavigation auf jeweils 15 px setzen und auf Desktop sowie Mobil prüfen
-- [ ] Finale Hero-Abstände nach den letzten Layout-Änderungen erneut auf der Live-Domain messen und in der Referenzdoku aktualisieren
+- [x] Finale Hero-Abstände nach den letzten Layout-Änderungen erneut auf der Live-Domain messen und in der Referenzdoku aktualisieren
 - [x] Sichtbaren unteren Hero-Leerraum unter der Schiebenavigation deutlich reduzieren und die 15 px oberhalb der Leiste beibehalten
 - [x] Oberen Abstand der Top-Musical-Sektion auf einen kompakten Wert reduzieren, damit der sichtbare Abstand unter der Hero-Navigation dem Ziel entspricht
-- [ ] Kompakten Hero-Abschluss im mobilen Ziel-Viewport nach der finalen Top-Musical-Abstandsanpassung per DOM-Messung quantifizieren und dokumentieren
+- [x] Finale mobile DOM-Messwerte des Hero-Abschlusses (375 × 812; sichtbarer Abstand oben/unten und relevante Bounding-Rects) in der Referenzdokumentation ergänzen
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)
@@ -304,3 +304,4 @@
 - [x] Startseite im Browser sowie Vitest, TypeScript und Produktionsbuild nach der reproduzierbaren Laufzeitprüfung verifizieren
 - [x] React-Hook-Fehler in einem frischen Vite-Optimierungscache und nach einer HMR-Aktualisierung gezielt auf Nichtauftreten prüfen
 - [x] tRPC- und React-Query-Provider als gemeinsame App-Hülle extrahieren und gegen Invalid-Hook-Calls testen
+- [x] Sichtbare Abstände oberhalb und unterhalb der Hero-Schiebenavigation auf etwa 30 px setzen und auf Desktop sowie Mobil prüfen
