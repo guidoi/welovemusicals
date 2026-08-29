@@ -224,7 +224,7 @@ export default function Home() {
       <Header />
 
       {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
           <img
@@ -271,7 +271,7 @@ export default function Home() {
 
             </div>
 
-            <div className="mt-[15px] mb-[15px]">
+            <div className="mt-[15px]">
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={(item) => handleHeroNavigation(item.href, item.kind)}
@@ -283,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}
-      <section id="top-musicals" className="py-16 md:py-24 scroll-mt-24">
+      <section id="top-musicals" className="pt-2 pb-16 md:pt-2 md:pb-24 scroll-mt-24">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />

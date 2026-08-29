@@ -36,6 +36,10 @@
 - [x] Gekürzte Beschriftungen, alphabetische Reihenfolge und Zielanker auf Desktop sowie Mobil verifizieren
 - [x] Scrollpfeil unter der Hero-Schiebenavigation entfernen und Hero-Abschluss auf Desktop sowie Mobil prüfen
 - [x] Oberen und unteren Abstand rund um die Hero-Schiebenavigation auf jeweils 15 px setzen und auf Desktop sowie Mobil prüfen
+- [ ] Finale Hero-Abstände nach den letzten Layout-Änderungen erneut auf der Live-Domain messen und in der Referenzdoku aktualisieren
+- [x] Sichtbaren unteren Hero-Leerraum unter der Schiebenavigation deutlich reduzieren und die 15 px oberhalb der Leiste beibehalten
+- [x] Oberen Abstand der Top-Musical-Sektion auf einen kompakten Wert reduzieren, damit der sichtbare Abstand unter der Hero-Navigation dem Ziel entspricht
+- [ ] Kompakten Hero-Abschluss im mobilen Ziel-Viewport nach der finalen Top-Musical-Abstandsanpassung per DOM-Messung quantifizieren und dokumentieren
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)
