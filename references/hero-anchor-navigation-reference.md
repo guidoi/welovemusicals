@@ -29,3 +29,5 @@ Die finale Tabverfeinerung entfernt die beiden vorangestellten Ticket- und Stand
 Der zweite feste Einstiegsbutton heißt nun kurz „Städte“, während sein unveränderter Anker `#staedte` weiter auf die Städteübersicht führt. Der Abstand zwischen Tab-Leiste und Scrollhinweis beträgt auf Mobil 8 Pixel (`mt-2`); ab Desktop bleibt er bei 16 Pixeln (`md:mt-4`). Die Sichtprüfungen bei 375 × 812 und 1280 × 900 Pixeln bestätigen die kürzere Beschriftung, den kompakteren mobilen Hero und die unveränderte Desktopgestaltung.
 
 Der Scrollpfeil unterhalb der Hero-Schiebenavigation wurde auf Nutzerwunsch vollständig entfernt. Die Sichtprüfungen bei 375 × 812 und 1280 × 900 Pixeln bestätigen einen ruhigen, klaren Abschluss des Hero-Bereichs ohne zusätzliche Steuerung; die Navigation bleibt vollständig horizontal erreichbar.
+
+Nach der finalen Präzisierung nutzt die Navigationsumhüllung ober- und unterhalb jeweils 15 Pixel Abstand (`mt-[15px] mb-[15px]`). Die Prüfung bei 375 × 812 und 1280 × 900 Pixeln bestätigt die identischen, bewusst kompakten Abstände zwischen Statistik, Tab-Leiste und Hero-Unterkante.

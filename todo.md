@@ -35,6 +35,7 @@
 - [x] Hero-Button „ZURÜCK IN DIE ZUKUNFT – Das Musical“ auf „ZURÜCK IN DIE ZUKUNFT“ kürzen
 - [x] Gekürzte Beschriftungen, alphabetische Reihenfolge und Zielanker auf Desktop sowie Mobil verifizieren
 - [x] Scrollpfeil unter der Hero-Schiebenavigation entfernen und Hero-Abschluss auf Desktop sowie Mobil prüfen
+- [x] Oberen und unteren Abstand rund um die Hero-Schiebenavigation auf jeweils 15 px setzen und auf Desktop sowie Mobil prüfen
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)

@@ -271,7 +271,7 @@ export default function Home() {
 
             </div>
 
-            <div className="mt-12">
+            <div className="mt-[15px] mb-[15px]">
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={(item) => handleHeroNavigation(item.href, item.kind)}
