@@ -278,9 +278,9 @@ export default function Home() {
               />
             </div>
 
-            {/* Scroll Indicator – gleicht den sichtbaren Abstand oberhalb der Navigation aus */}
+            {/* Scroll Indicator – bewusst kompakter Abstand unterhalb der Navigation */}
             <motion.div
-              className="mt-10 inline-flex cursor-pointer justify-center"
+              className="mt-4 inline-flex cursor-pointer justify-center"
               animate={{ opacity: [0.45, 1, 0.45] }}
               transition={{ duration: 2, repeat: Infinity }}
               onClick={() => {

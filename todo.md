@@ -25,6 +25,7 @@
 - [x] Linke und rechte Pfeil-Steuerungen entfernen und horizontales Wischen beibehalten
 - [x] Vertikale Abstände oberhalb und unterhalb der Navigation im Hero-Bereich angleichen und auf Desktop sowie Mobil prüfen
 - [x] Finale Hero-Abstände nach der letzten mt-10-Korrektur im mobilen Ziel-Viewport prüfen und dokumentieren
+- [x] Unteren Abstand zwischen Hero-Schiebenavigation und Scrollhinweis deutlich reduzieren und auf Desktop sowie Mobil prüfen
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)

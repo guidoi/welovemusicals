@@ -21,3 +21,5 @@ Die finale Sichtprüfung bei 1280 × 900 sowie 375 × 812 Pixeln bestätigt den 
 Eine DOM-Messung nach der finalen Korrektur bestätigt den sichtbaren Abstand jeweils mit 48 Pixeln oberhalb und unterhalb der Navigation. Im Navigationscontainer befinden sich keine Pfeil-Buttons mehr; sein horizontaler Überlauf bleibt auf `auto`, sodass die weiteren Musical-Tabs weiterhin durch Wischen erreichbar sind.
 
 Die abschließende Mobilprüfung im Ziel-Viewport 375 × 812 Pixel nach der `mt-10`-Korrektur zeigt die Leiste vollständig zwischen Statistik und Scrollhinweis. Sie bleibt als eine transparent umrandete, horizontal wischbare Zeile sichtbar. Die visuelle Luft ober- und unterhalb der Navigation ist gleichmäßig; weder die Tab-Leiste noch der Scrollhinweis überlagern den nachfolgenden Highlights-Bereich.
+
+Nach anschließendem Nutzerfeedback wurde der Abstand unter der Navigation bewusst stark reduziert. Der Scrollhinweis nutzt nun `mt-4` statt `mt-10` und rückt dadurch 24 Pixel näher an die Tab-Leiste. Die Sichtprüfung bei 375 × 812 sowie 1280 × 900 Pixeln bestätigt, dass die kompaktere Anordnung weder die Tabs noch den nachfolgenden Highlights-Bereich überlagert.
