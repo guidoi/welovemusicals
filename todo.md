@@ -29,6 +29,8 @@
 - [x] Ticket- und Standort-Icon aus den ersten beiden Hero-Navigationstabs entfernen
 - [x] Schriftgröße und Innenabstände sämtlicher Hero-Navigationstabs auf Desktop und Mobil sichtbar vergrößern
 - [x] Iconfreiheit, Lesbarkeit, Wischbarkeit und Hero-Layout nach der Typografieanpassung verifizieren
+- [x] Hero-Navigationstab „Musical-Städte“ in „Städte“ umbenennen
+- [x] Unteren Abstand zwischen Navigation und Scrollhinweis ausschließlich im mobilen Hero weiter reduzieren und prüfen
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)

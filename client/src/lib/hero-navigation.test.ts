@@ -15,7 +15,7 @@ describe("getHeroNavigationItems", () => {
 
     expect(items).toEqual([
       { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
-      { id: "musical-cities", label: "Musical-Städte", href: "#staedte", kind: "city" },
+      { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
       { id: "musical-alpha", label: "ALPHA", href: "#musical-alpha", kind: "musical" },
       { id: "musical-zeta", label: "ZETA", href: "#musical-zeta", kind: "musical" },
     ]);
