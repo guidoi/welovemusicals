@@ -26,6 +26,9 @@
 - [x] Vertikale Abstände oberhalb und unterhalb der Navigation im Hero-Bereich angleichen und auf Desktop sowie Mobil prüfen
 - [x] Finale Hero-Abstände nach der letzten mt-10-Korrektur im mobilen Ziel-Viewport prüfen und dokumentieren
 - [x] Unteren Abstand zwischen Hero-Schiebenavigation und Scrollhinweis deutlich reduzieren und auf Desktop sowie Mobil prüfen
+- [x] Ticket- und Standort-Icon aus den ersten beiden Hero-Navigationstabs entfernen
+- [x] Schriftgröße und Innenabstände sämtlicher Hero-Navigationstabs auf Desktop und Mobil sichtbar vergrößern
+- [x] Iconfreiheit, Lesbarkeit, Wischbarkeit und Hero-Layout nach der Typografieanpassung verifizieren
 
 ## Phase 5 – Webflow-Import-Paket
 - [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)
