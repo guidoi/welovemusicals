@@ -111,20 +111,11 @@ export default function Home() {
   );
 
   const handleHeroNavigation = useCallback((href: string, kind: "overview" | "city" | "musical") => {
-    const scrollToAnchor = () => {
-      const target = document.getElementById(href.slice(1));
-      target?.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
+    if (kind === "musical" || !href.startsWith("#")) return;
 
+    const target = document.getElementById(href.slice(1));
     window.history.pushState(null, "", href);
-
-    if (kind === "musical") {
-      setShowAllMusicals(true);
-      window.setTimeout(scrollToAnchor, 80);
-      return;
-    }
-
-    scrollToAnchor();
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   const filteredMusicals = useMemo(() => {

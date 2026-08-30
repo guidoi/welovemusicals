@@ -18,7 +18,7 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
             key={item.id}
             href={item.href}
             onClick={(event) => {
-              if (!onNavigate) return;
+              if (!onNavigate || item.kind === "musical") return;
               event.preventDefault();
               onNavigate(item);
             }}

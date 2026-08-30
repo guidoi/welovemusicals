@@ -8,9 +8,9 @@ describe("HeroAnchorNavigation", () => {
     const markup = renderToStaticMarkup(
       <HeroAnchorNavigation
         items={[
-          { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
-          { id: "musical-cities", label: "Musical-Städte", href: "#staedte", kind: "city" },
-          { id: "musical-alpha", label: "ALPHA", href: "#musical-alpha", kind: "musical" },
+          { id: "all-musicals", label: "Musicals", href: "#musicals", kind: "overview" },
+          { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
+          { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
         ]}
       />,
     );
@@ -29,7 +29,8 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('md:px-7');
     expect(markup).toContain('md:text-base');
     expect(markup).toContain('href="#musicals"');
+    expect(markup).toContain('>Musicals<');
     expect(markup).toContain('href="#staedte"');
-    expect(markup).toContain('href="#musical-alpha"');
+    expect(markup).toContain('href="/musical/alpha"');
   });
 });

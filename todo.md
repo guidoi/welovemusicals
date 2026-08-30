@@ -305,3 +305,11 @@
 - [x] React-Hook-Fehler in einem frischen Vite-Optimierungscache und nach einer HMR-Aktualisierung gezielt auf Nichtauftreten prüfen
 - [x] tRPC- und React-Query-Provider als gemeinsame App-Hülle extrahieren und gegen Invalid-Hook-Calls testen
 - [x] Sichtbare Abstände oberhalb und unterhalb der Hero-Schiebenavigation auf etwa 30 px setzen und auf Desktop sowie Mobil prüfen
+
+## Offene Restarbeiten – technischer Audit
+- [ ] SEO-Folgearbeiten gegen den aktuellen Codebestand prüfen und umsetzen
+- [ ] Webflow-Importpaket aus dem aktuellen Seitenstand erstellen und mit Design-/Asset-Dokumentation bündeln
+- [ ] Restarbeiten mit Tests und Build verifizieren sowie Checkpoint und Auslieferungsunterlagen aktualisieren
+- [x] Hero-Navigationstab „Alle Musicals“ in „Musicals“ umbenennen
+- [x] Einzelne Musical-Buttons direkt auf die jeweilige Musical-Landingpage verlinken statt auf Startseitenanker
+- [x] Direkte Musical-URLs, Städte-Anker und Navigation auf Desktop sowie Mobil verifizieren

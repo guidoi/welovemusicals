@@ -25,12 +25,12 @@ export function getHeroNavigationItems(
     .sort((left, right) => left.title.localeCompare(right.title, "de"));
 
   return [
-    { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
+    { id: "all-musicals", label: "Musicals", href: "#musicals", kind: "overview" },
     { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
     ...activeMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
       label: HERO_NAVIGATION_LABEL_OVERRIDES[musical.slug] ?? musical.title,
-      href: `#musical-${musical.slug}`,
+      href: `/musical/${musical.slug}`,
       kind: "musical" as const,
     })),
   ];
