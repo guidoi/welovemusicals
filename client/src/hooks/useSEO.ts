@@ -14,6 +14,14 @@ interface SEOProps {
   url?: string;
 }
 
+export function toAbsoluteUrl(value: string, baseUrl = "https://welovemusicals.com/"): string {
+  try {
+    return new URL(value, baseUrl).href;
+  } catch {
+    return value;
+  }
+}
+
 function setMeta(selector: string, content: string) {
   let el = document.querySelector<HTMLMetaElement>(selector);
   if (!el) {
@@ -69,12 +77,12 @@ export function useSEO({ title, description, image, url }: SEOProps) {
     setMeta('meta[name="description"]', description);
     setMeta('meta[property="og:title"]', title);
     setMeta('meta[property="og:description"]', description);
-    if (image) setMeta('meta[property="og:image"]', image);
-    if (url) setMeta('meta[property="og:url"]', url);
+    if (image) setMeta('meta[property="og:image"]', toAbsoluteUrl(image, window.location.origin));
+    if (url) setMeta('meta[property="og:url"]', toAbsoluteUrl(url, window.location.origin));
     setMeta('meta[property="twitter:title"]', title);
     setMeta('meta[property="twitter:description"]', description);
-    if (image) setMeta('meta[property="twitter:image"]', image);
-    if (url) setMeta('meta[property="twitter:url"]', url);
+    if (image) setMeta('meta[property="twitter:image"]', toAbsoluteUrl(image, window.location.origin));
+    if (url) setMeta('meta[property="twitter:url"]', toAbsoluteUrl(url, window.location.origin));
 
     // Canonical tag
     const removeCanonical = url ? setCanonical(url) : () => {};

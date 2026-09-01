@@ -27,6 +27,21 @@ function getProviderUrl(provider: string): string {
   return PROVIDER_URLS[provider] ?? `https://www.google.com/search?q=${encodeURIComponent(provider)}`;
 }
 
+function getAbsoluteAssetUrl(value: string): string {
+  return new URL(value, BASE_URL + "/").href;
+}
+
+export function getCountryForCity(city: string): "DE" | "AT" | "CH" {
+  const normalized = city.trim().toLocaleLowerCase("de-DE");
+  if (["wien", "graz", "innsbruck", "linz", "dornbirn", "puch bei salzburg", "ried im innkreis", "vöcklabruck", "bad ischl"].includes(normalized)) {
+    return "AT";
+  }
+  if (["zürich", "basel", "bern", "genf", "lausanne", "luzern", "st. gallen"].includes(normalized)) {
+    return "CH";
+  }
+  return "DE";
+}
+
 interface SchemaOrgProps {
   musical: Musical;
 }
@@ -46,7 +61,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           "@type": "MusicEvent",
           name: musical.title,
           description: musical.description,
-          image: musical.image,
+          image: getAbsoluteAssetUrl(musical.image),
           url: date.eventimUrl || canonicalMusicalUrl,
           eventStatus: "https://schema.org/EventScheduled",
           eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -58,7 +73,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
             address: {
               "@type": "PostalAddress",
               addressLocality: date.city,
-              addressCountry: "DE",
+              addressCountry: getCountryForCity(date.city),
             },
           },
           performer: {
@@ -118,7 +133,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
         "@type": "TheaterEvent",
         name: musical.title,
         description: musical.description,
-        image: musical.image,
+        image: getAbsoluteAssetUrl(musical.image),
         url: canonicalMusicalUrl,
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -130,8 +145,8 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           name: musical.venue,
           address: {
             "@type": "PostalAddress",
-            addressLocality: musical.city,
-            addressCountry: "DE",
+addressLocality: musical.city,
+              addressCountry: getCountryForCity(musical.city),
           },
         },
         performer: {

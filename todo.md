@@ -16,7 +16,7 @@
 - [x] Build-Konfiguration: outDir von dist/public zu dist geändert (für Cloudflare Pages)
 - [x] Logo-Spacing: Abstand zwischen WE, Herz und MUSICALS verringert (gap-2 zu gap-1)
 - [x] Impressum-Seite erstellt mit Headerfoto und Footer-Link
-- [ ] Letzte visuelle Optimierungen prüfen
+- [x] Letzte visuelle Optimierungen prüfen
 - [x] Die zwei Hero-CTA-Buttons durch eine weiße, abgerundete und horizontal schiebbare Anker-Navigation ersetzen
 - [x] Navigationseinträge für „Alle Musicals“, „Musical-Städte“ und alle Musicaltitel alphabetisch aus den zentralen Musicaldaten erzeugen
 - [x] Ankerpositionen, Tastaturbedienung sowie Desktop- und Mobil-Darstellung der Schiebe-Navigation verifizieren
@@ -42,16 +42,16 @@
 - [x] Finale mobile DOM-Messwerte des Hero-Abschlusses (375 × 812; sichtbarer Abstand oben/unten und relevante Bounding-Rects) in der Referenzdokumentation ergänzen
 
 ## Phase 5 – Webflow-Import-Paket
-- [ ] Statisches HTML/CSS der gesamten Seite generieren (ohne React)
-- [ ] Webflow CMS Collection-Struktur dokumentieren
-- [ ] Alle Design-Tokens und Klassen-Mapping dokumentieren
-- [ ] Asset-Liste mit allen Bild-URLs erstellen
-- [ ] Webflow-Bauanleitung als Markdown erstellen
-- [ ] Alles als ZIP-Paket bündeln
+- [x] Entfällt auf Nutzerwunsch: kein statisches Webflow-HTML/CSS-Paket erforderlich
+- [x] Entfällt auf Nutzerwunsch: keine Webflow-CMS-Dokumentation erforderlich
+- [x] Entfällt auf Nutzerwunsch: kein Webflow-Token-/Klassen-Mapping erforderlich
+- [x] Entfällt auf Nutzerwunsch: keine Webflow-Asset-Liste erforderlich
+- [x] Entfällt auf Nutzerwunsch: keine Webflow-Bauanleitung erforderlich
+- [x] Entfällt auf Nutzerwunsch: kein Webflow-ZIP-Paket erforderlich
 
 ## Phase 6 – Auslieferung
-- [ ] Checkpoint erstellen
-- [ ] Ergebnisse dem Nutzer präsentieren
+- [x] Checkpoint für den aktuellen Projektstand erstellt
+- [x] Ergebnisse dem Nutzer präsentieren
 
 ## Bugfixes – Weiße/schwarze Seite beim Laden
 - [x] Fix: sonner.tsx importiert useTheme von next-themes statt eigenem ThemeContext
@@ -124,7 +124,7 @@
 - [x] robots.txt Sitemap-URL auf welovemusicals.com aktualisiert
 
 ## SEO – Statische Sitemap für Cloudflare Pages
-- [x] sitemap.xml als statische Datei in client/public/sitemap.xml erstellt (44 URLs: 5 aktive + 37 weitere Musicals + 21 Städte + 3 statische Seiten)
+- [x] sitemap.xml als statische Datei in client/public/sitemap.xml erstellt (47 URLs: Startseite + 21 aktive Musicals + 23 Städte + 2 statische Seiten)
 
 ## SEO – Schema.org auf CityDetail-Seiten
 - [x] CityDetail-Seiten mit TouristDestination + MusicEvent-Liste + BreadcrumbList JSON-LD ausgestattet (SchemaOrgCity.tsx)
@@ -149,12 +149,12 @@
 - [x] Bildnachweise im Impressum ergänzt (© Johan Persson / Nilz Boehme, ATG Entertainment)
 
 ## SEO-Optimierungen Phase 2 (Mai 2026)
-- [ ] Schema.org JSON-LD auf Musical-Detailseiten prüfen und vervollständigen
-- [ ] Canonical-Tags auf allen Seiten prüfen
-- [ ] OG-Image pro Musical-Detailseite (spezifisches Bild)
-- [ ] Radius-Chips auf 25/50/100/150/200 km reduziert (300/500 entfernt)
-- [ ] Scroll zu erstem Suchergebnis nach PLZ-Suche
-- [ ] robots.txt Sitemap-URL auf welovemusicals.manus.space korrigiert
+- [x] Schema.org JSON-LD auf Musical-Detailseiten geprüft, einschließlich absoluter Bild-URLs, Events, Offers und Breadcrumbs
+- [x] Canonical-Tags auf Home-, Musical-, Stadt- und Rechteseiten geprüft und vervollständigt
+- [x] Spezifisches OG-Image pro Musical-Detailseite aus dem jeweiligen Musical-Bild gesetzt und absolute URLs normalisiert
+- [x] Radius-Chips auf 25/50/100/150/200 km reduziert (300/500 entfernt)
+- [x] Scroll zum ersten Suchergebnis nach erfolgreicher PLZ-Suche geprüft
+- [x] robots.txt Sitemap-URL auf die primäre Live-Domain welovemusicals.com geprüft und gesetzt
 
 ## König der Löwen – Neues Musical (Stage Entertainment)
 - [x] KDL Assets hochladen: Keyvisual (quadratisch), Teaserfoto (Rafiki), Headerfoto (Savanne), Galerie-Fotos
@@ -307,9 +307,9 @@
 - [x] Sichtbare Abstände oberhalb und unterhalb der Hero-Schiebenavigation auf etwa 30 px setzen und auf Desktop sowie Mobil prüfen
 
 ## Offene Restarbeiten – technischer Audit
-- [ ] SEO-Folgearbeiten gegen den aktuellen Codebestand prüfen und umsetzen
-- [ ] Webflow-Importpaket aus dem aktuellen Seitenstand erstellen und mit Design-/Asset-Dokumentation bündeln
-- [ ] Restarbeiten mit Tests und Build verifizieren sowie Checkpoint und Auslieferungsunterlagen aktualisieren
+- [x] SEO-Folgearbeiten gegen den aktuellen Codebestand prüfen und umsetzen
+- [x] Webflow-Importpaket auf Nutzerwunsch nicht erstellt; Umfang entsprechend angepasst
+- [x] Restarbeiten mit Tests und Build verifizieren sowie Checkpoint und Auslieferungsunterlagen aktualisieren
 - [x] Hero-Navigationstab „Alle Musicals“ in „Musicals“ umbenennen
 - [x] Einzelne Musical-Buttons direkt auf die jeweilige Musical-Landingpage verlinken statt auf Startseitenanker
 - [x] Direkte Musical-URLs, Städte-Anker und Navigation auf Desktop sowie Mobil verifizieren
@@ -320,3 +320,7 @@
 - [x] Kleine weiße Links-/Rechtspfeile ausschließlich in der Desktop-Hero-Schiebenavigation integrieren
 - [x] Desktop-Pfeilsteuerung, mobile Wischbedienung und linke/rechte Randzustände verifizieren
 - [x] Desktop-Pfeile außerhalb der äußersten Tabs platzieren, damit sie keine Tabbeschriftungen überlagern
+- [x] Webflow-Importpaket auf Nutzerwunsch aus dem aktuellen Arbeitsumfang herausnehmen und als nicht erforderlich dokumentieren
+- [x] Umfassende finale Sichtprüfung der aktuellen Start-, Musical-, Stadt-, Impressum- und Datenschutzseiten dokumentieren (Desktop und Mobil)
+- [x] Schema.org für Musical-Detailseiten mit korrektem addressCountry je Tourstadt (DE/AT/CH) absichern und testen
+- [x] Abschließende Ergebniszusammenfassung an den Nutzer senden: umgesetzte SEO-Änderungen, Sitemap-/Schema-/Canonical-Anpassungen, Test-/TypeScript-/Build-Status und finale visuelle Prüfung dokumentiert darstellen
