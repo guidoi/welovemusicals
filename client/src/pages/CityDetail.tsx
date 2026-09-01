@@ -3,7 +3,7 @@
  * CityDetail: Detailseite für eine Musical-Stadt mit Musicals und Hotels
  */
 import { useParams, Link } from "wouter";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -19,13 +19,23 @@ import MusicalCard from "@/components/MusicalCard";
 import { getCityBySlug, getMusicalsByCity, getActiveMusicalsByCity, getActiveMusicalCountByCity, cities } from "@/lib/data";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrgCity from "@/components/SchemaOrgCity";
+import { scheduleScrollToTop } from "@/lib/route-scroll";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
   const city = getCityBySlug(params.slug || "");
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
+  useLayoutEffect(() => {
+    // Repeat after the first frame and image/layout restoration to defeat scroll restoration from a deep home-page link.
+    return scheduleScrollToTop(
+      (options) => window.scrollTo(options),
+      {
+        requestFrame: (callback) => requestAnimationFrame(callback),
+        cancelFrame: (frameId) => cancelAnimationFrame(frameId),
+        setDelay: (callback, delay) => window.setTimeout(callback, delay),
+        clearDelay: (timeoutId) => window.clearTimeout(timeoutId),
+      },
+    );
   }, [params.slug]);
 
   // Dynamische SEO-Meta-Tags

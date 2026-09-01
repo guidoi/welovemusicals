@@ -341,3 +341,5 @@
 - [x] Graz-Link aus der Startseiten-Städte-Sektion korrigiert: Die Graz-Landingpage startet zuverlässig am Seitenanfang
 
 - [x] Reproduzierten Graz-Scrollfehler beim Klick aus der tief gescrollten Startseiten-Städte-Sektion analysiert und mit synchronem Karten-Klick-Reset sowie globaler Routen-Scrollhilfe behoben
+
+- [x] Alle Städte-Links aus der Startseiten-Städte-Sektion zentral gegen den Scrollfehler abgesichert: Stadtseiten starten am Hero, mit synchronem Zielseiten-Reset, Frame-/Layout-Nachkorrektur und deaktiviertem Scroll-Anchoring

@@ -98,6 +98,12 @@
   html.dark {
     color-scheme: dark;
   }
+
+  html,
+  body,
+  #root {
+    overflow-anchor: none;
+  }
   
   body {
     @apply bg-background text-foreground font-body;

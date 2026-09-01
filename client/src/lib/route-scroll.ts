@@ -9,3 +9,24 @@ export function getScrollToTopOptions(): ScrollToOptions {
 export function resetScrollToTop(scrollTo: (options: ScrollToOptions) => void): void {
   scrollTo(getScrollToTopOptions());
 }
+
+export interface ScrollResetScheduler {
+  requestFrame: (callback: () => void) => number;
+  cancelFrame: (frameId: number) => void;
+  setDelay: (callback: () => void, delay: number) => number;
+  clearDelay: (timeoutId: number) => void;
+}
+
+export function scheduleScrollToTop(
+  scrollTo: (options: ScrollToOptions) => void,
+  scheduler: ScrollResetScheduler,
+): () => void {
+  resetScrollToTop(scrollTo);
+  const frameId = scheduler.requestFrame(() => resetScrollToTop(scrollTo));
+  const timeoutId = scheduler.setDelay(() => resetScrollToTop(scrollTo), 120);
+
+  return () => {
+    scheduler.cancelFrame(frameId);
+    scheduler.clearDelay(timeoutId);
+  };
+}
