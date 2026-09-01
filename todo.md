@@ -353,3 +353,5 @@
 
 - [x] Tickets-und-Hotel-Sektion auf der Startseite vorerst vollständig ausgeblendet und den Hotel-Navigationseintrag entfernt
 - [x] Stadtdetailseiten: kombinierten Tickets-und-Hotel-Bereich auf einen schlanken HRS-Hotelbereich ohne gelben „Musicals & Tickets“-Button reduziert
+
+- [x] Hero-Schiebenavigation auf Desktop vollständig ausgeblendet und auf Mobil unverändert als Wisch-Navigation erhalten
