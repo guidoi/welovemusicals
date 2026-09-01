@@ -360,3 +360,7 @@
 - [x] Tanz der Vampire: bereitgestelltes Aovo-Reisen-Banner nach „Hotels in der Nähe“ responsiv mit TradeDoubler-Ziellink eingebunden
 
 - [x] Tanz der Vampire: breites Aovo-Banner durch das quadratische TradeDoubler-Banner 500 × 500 mit g=26137304 ersetzt und Tracking geprüft
+
+- [x] Tanz der Vampire: sichtbare Einbindung des bereitgestellten quadratischen Aovo-Banners am Hotelbereich erneut auf der veröffentlichten Seite geprüft
+
+- [x] Produktionsfehler behoben: quadratisches Aovo-Banner bei Tanz der Vampire über eine direkt erreichbare TradeDoubler-Bilddatei sichtbar ausgeliefert und verifiziert

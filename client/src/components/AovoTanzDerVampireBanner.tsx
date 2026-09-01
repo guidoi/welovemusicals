@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 export const AOVO_TDV_CLICK_URL = "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26137304";
-export const AOVO_TDV_BANNER_URL = "/manus-storage/tanz-der-vampire-ticket-hotel-square_6987ea6b.png";
+export const AOVO_TDV_BANNER_URL = "https://vht.tradedoubler.com/file/377032/common/g/18e275e4adec5f69c5e4d4cfba738098.png";
 
 export function getAovoTdVImpressionUrl(cacheBuster: string) {
   return `https://imp.tradedoubler.com/imp?type(img)g(26137304)a(3492604)${cacheBuster}`;

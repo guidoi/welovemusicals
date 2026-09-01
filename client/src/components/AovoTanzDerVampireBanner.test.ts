@@ -14,7 +14,7 @@ describe("Aovo Tanz der Vampire banner", () => {
 
   it("builds the provided cache-busted square-banner impression URL", () => {
     expect(AOVO_TDV_BANNER_URL).toBe(
-      "/manus-storage/tanz-der-vampire-ticket-hotel-square_6987ea6b.png"
+      "https://vht.tradedoubler.com/file/377032/common/g/18e275e4adec5f69c5e4d4cfba738098.png"
     );
     expect(getAovoTdVImpressionUrl("123456789")).toBe(
       "https://imp.tradedoubler.com/imp?type(img)g(26137304)a(3492604)123456789"
