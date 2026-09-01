@@ -350,3 +350,6 @@
 - [x] Startseite: lange Hotelkartenliste durch eine kuratierte Tickets-und-Hotel-Sektion für Berlin, Hamburg und Stuttgart ersetzt
 - [x] Stadtdetailseiten: kombinierten Tickets-und-Hotel-Bereich mit Programm-Anker und aktivem städtischen Hotel-Link ergänzt
 - [x] Partnerlogik für einen späteren Travelcircus-Paketlink vorbereitet, ohne vorliegende HRS-Links zu verändern
+
+- [x] Tickets-und-Hotel-Sektion auf der Startseite vorerst vollständig ausgeblendet und den Hotel-Navigationseintrag entfernt
+- [x] Stadtdetailseiten: kombinierten Tickets-und-Hotel-Bereich auf einen schlanken HRS-Hotelbereich ohne gelben „Musicals & Tickets“-Button reduziert

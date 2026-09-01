@@ -174,7 +174,6 @@ export default function Header() {
   const navItems = [
     { label: "Musicals", href: "/#musicals" },
     { label: "Städte", href: "/#staedte" },
-    { label: "Hotels", href: "/#hotels" },
   ];
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
