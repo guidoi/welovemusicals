@@ -33,6 +33,8 @@ import {
   type Musical,
 } from "@/lib/data";
 import { getHeroNavigationItems } from "@/lib/hero-navigation";
+import { CURATED_HOTEL_CITY_SLUGS, HOTEL_EXPERIENCE_PARTNERS } from "@/lib/hotel-experience";
+import { Link } from "wouter";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
@@ -503,46 +505,52 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
-            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Übernachtung</span>
+            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Musicalreise</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Hotels in Musical-Städten
+            Tickets &amp; Hotel – dein Musical-Wochenende
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Mach deinen Musical-Besuch zum perfekten Kurzurlaub. Finde passende Hotels in der Nähe der Theater.
+            Finde Musical-Inspiration und passende Hotels für einen Kurztrip, der lange in Erinnerung bleibt.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...cities]
-              .filter((city) => getActiveMusicalCountByCity(city.name) > 0)
-              .sort((a, b) => a.name.localeCompare(b.name, "de"))
-              .map((city, i) => (
-              <motion.a
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {CURATED_HOTEL_CITY_SLUGS.map((citySlug, i) => {
+              const city = cities.find((candidate) => candidate.slug === citySlug);
+              if (!city) return null;
+
+              return (
+              <motion.div
                 key={city.slug}
-                href={city.hotelSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="group bg-card border border-gold/10 rounded-sm p-6 hover:border-gold/40 transition-all"
+                className="group overflow-hidden rounded-sm border border-gold/15 bg-card/80 transition-all hover:border-gold/50"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-gold transition-colors">
+                <div className="relative h-36 overflow-hidden">
+                  <img src={city.image} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-4 left-5">
+                    <h3 className="font-display text-2xl font-bold text-white">
                       {city.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
-                    </p>
                   </div>
-                  <ExternalLink className="w-5 h-5 text-gold/50 group-hover:text-gold transition-colors" />
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Entdecke Hotels in {city.name} und buche deine Übernachtung für das Musical-Wochenende.
-                </p>
-              </motion.a>
-            ))}
+                <div className="p-5">
+                  <p className="text-sm text-muted-foreground">
+                    {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"} · Hotels nahe der Bühne
+                  </p>
+                  <div className="mt-5 flex gap-4 text-sm font-semibold">
+                    <Link href={`/stadt/${city.slug}`} className="text-gold transition-colors hover:text-gold-light">
+                      Tickets ansehen
+                    </Link>
+                    <a href={city.hotelSearchUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-gold">
+                      Hotel <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            )})}
           </div>
 
           <div className="text-center mt-10">
@@ -552,7 +560,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 border border-gold/40 text-gold font-semibold rounded-sm hover:bg-gold/10 transition-colors"
             >
-              Alle Hotels bei HRS durchsuchen
+              Alle Hotels bei {HOTEL_EXPERIENCE_PARTNERS.accommodation.name} entdecken
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

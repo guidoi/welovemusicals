@@ -20,6 +20,7 @@ import { getCityBySlug, getMusicalsByCity, getActiveMusicalsByCity, getActiveMus
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrgCity from "@/components/SchemaOrgCity";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
+import TicketsAndHotel from "@/components/TicketsAndHotel";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
@@ -148,7 +149,7 @@ export default function CityDetail() {
       </section>
 
       {/* Musicals in this City */}
-      <section className="py-12 md:py-16">
+      <section id="programm" className="py-12 md:py-16 scroll-mt-24">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
@@ -175,33 +176,7 @@ export default function CityDetail() {
         </div>
       </section>
 
-      {/* Hotel Section */}
-      <section className="py-12 md:py-16 bg-card/50">
-        <div className="container">
-          <div className="gold-line mb-10" />
-          <div className="flex items-center gap-4 mb-3">
-            <div className="w-8 h-px bg-gold" />
-            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Übernachtung</span>
-          </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Hotels in {city.name}
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mb-8">
-            Mach deinen Musical-Besuch in {city.name} zum perfekten Kurzurlaub. Finde passende Hotels in der Nähe der Theater.
-          </p>
-
-          <a
-            href={city.hotelSearchUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-background font-bold rounded-sm hover:bg-gold-light transition-colors"
-          >
-            <Hotel className="w-4 h-4" />
-            Hotels in {city.name} suchen
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
+      <TicketsAndHotel city={city} />
 
       {/* Other Cities */}
       <section className="py-12 md:py-16">

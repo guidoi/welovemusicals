@@ -343,3 +343,10 @@
 - [x] Reproduzierten Graz-Scrollfehler beim Klick aus der tief gescrollten Startseiten-Städte-Sektion analysiert und mit synchronem Karten-Klick-Reset sowie globaler Routen-Scrollhilfe behoben
 
 - [x] Alle Städte-Links aus der Startseiten-Städte-Sektion zentral gegen den Scrollfehler abgesichert: Stadtseiten starten am Hero, mit synchronem Zielseiten-Reset, Frame-/Layout-Nachkorrektur und deaktiviertem Scroll-Anchoring
+
+- [x] Hotelbereiche der Startseite zu einer kompakten, kuratierten und partnerneutralen Tickets-und-Hotel-Sektion verdichtet
+- [x] Auf Stadtdetailseiten eine kontextbezogene Section „Tickets & Hotel“ konzipiert und umgesetzt
+- [x] Travelcircus als potenziellen Hotel- und Erlebnispartner mit Status „pending“ in der zentralen Linkkonfiguration vorbereitet
+- [x] Startseite: lange Hotelkartenliste durch eine kuratierte Tickets-und-Hotel-Sektion für Berlin, Hamburg und Stuttgart ersetzt
+- [x] Stadtdetailseiten: kombinierten Tickets-und-Hotel-Bereich mit Programm-Anker und aktivem städtischen Hotel-Link ergänzt
+- [x] Partnerlogik für einen späteren Travelcircus-Paketlink vorbereitet, ohne vorliegende HRS-Links zu verändern
