@@ -41,7 +41,7 @@ import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
-import AovoCampaignBanner, { getAovoCampaign, isAovoStoryInsertionPoint } from "@/components/AovoCampaignBanner";
+import AovoCampaignBanner, { getAovoCampaign } from "@/components/AovoCampaignBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 
 export default function MusicalDetail() {
@@ -381,14 +381,9 @@ export default function MusicalDetail() {
               </h2>
               <div className="prose prose-invert max-w-none">
                 {musical.storyText.split('\n\n').map((paragraph, index) => (
-                  <div key={index}>
-                    {aovoCampaign?.placement === "before-usp" && isAovoStoryInsertionPoint(musical.id, paragraph) && (
-                      <AovoCampaignBanner campaign={aovoCampaign} />
-                    )}
-                    <p className="text-white/80 leading-relaxed mb-4 text-lg">
-                      {paragraph}
-                    </p>
-                  </div>
+                  <p key={index} className="text-white/80 leading-relaxed mb-4 text-lg">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             </motion.div>
@@ -417,6 +412,7 @@ export default function MusicalDetail() {
         };
         return (
           <>
+          {aovoCampaign?.placement === "before-usp" && <AovoCampaignBanner campaign={aovoCampaign} />}
           <section className="py-8 md:py-10 bg-background">
             <div className="container max-w-4xl">
               <motion.div
