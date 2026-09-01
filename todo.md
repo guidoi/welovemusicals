@@ -332,3 +332,6 @@
 - [x] Rapunzel: Berlin vom 14.05. bis 06.06.2027 im BlueMax Theater an allen relevanten Stellen ergänzt und verifiziert (Datenquelle, aktive Stadtseite, Tourdaten, SEO, FAQ, Awin-Eventim-Link, Tests, Build und mobile Sichtprüfung)
 - [x] Durch die finale responsive Hero-Lösung ersetzt: Mobil und Desktop 56 px oben, 48 px unten
 - [x] Hero-Schiebenavigation auf Mobil und Desktop mit etwas mehr Abstand oben als unten umgesetzt und responsive verifiziert (56 px oben, 48 px unten)
+- [x] Hero-Schiebenavigation: alle vom Nutzer vorgegebenen gekürzten Musicaltitel statt Versalien/Langversionen eingepflegt; Reihenfolge und Direktlinks unverändert geprüft
+- [x] Hero-Schiebenavigation: frühere Unter-U-Sortierung verworfen; „& Julia“ bleibt sichtbar an dritter Stelle mit unverändertem Direktlink
+- [x] Hero-Schiebenavigation: „& Julia“ sichtbar an dritter Stelle direkt nach „Musicals“ und „Städte“ belassen; Direktlink unverändert geprüft
