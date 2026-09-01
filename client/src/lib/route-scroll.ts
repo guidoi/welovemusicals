@@ -5,3 +5,7 @@ export function didRouteChange(previousLocation: string | null, nextLocation: st
 export function getScrollToTopOptions(): ScrollToOptions {
   return { top: 0, left: 0, behavior: "auto" };
 }
+
+export function resetScrollToTop(scrollTo: (options: ScrollToOptions) => void): void {
+  scrollTo(getScrollToTopOptions());
+}

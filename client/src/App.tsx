@@ -10,7 +10,7 @@ import MusicalDetail from "./pages/MusicalDetail";
 import CityDetail from "./pages/CityDetail";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
-import { didRouteChange, getScrollToTopOptions } from "./lib/route-scroll";
+import { didRouteChange, resetScrollToTop } from "./lib/route-scroll";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -28,7 +28,7 @@ function ScrollToTop() {
   useLayoutEffect(() => {
     // Reset synchronously before paint so city cards opened from a deep home-page anchor start at the city hero.
     if (didRouteChange(prevLocation.current, location)) {
-      window.scrollTo(getScrollToTopOptions());
+      resetScrollToTop((options) => window.scrollTo(options));
     }
     prevLocation.current = location;
   }, [location]);

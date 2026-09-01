@@ -6,6 +6,7 @@ import { MapPin, Music, Hotel } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { getActiveMusicalCountByCity } from "@/lib/data";
+import { resetScrollToTop } from "@/lib/route-scroll";
 import type { City } from "@/lib/data";
 
 interface CityCardProps {
@@ -14,6 +15,10 @@ interface CityCardProps {
 }
 
 export default function CityCard({ city, index = 0 }: CityCardProps) {
+  const handleCityNavigation = () => {
+    resetScrollToTop((options) => window.scrollTo(options));
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -21,7 +26,7 @@ export default function CityCard({ city, index = 0 }: CityCardProps) {
       viewport={{ once: true, margin: "-30px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Link href={`/stadt/${city.slug}`} className="block group">
+      <Link href={`/stadt/${city.slug}`} className="block group" onClick={handleCityNavigation}>
         <div className="relative aspect-[4/5] rounded-sm overflow-hidden card-spotlight border border-border/30 hover:border-gold/30 transition-all duration-400">
           {/* Background Image */}
           <img

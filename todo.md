@@ -339,3 +339,5 @@
 
 - [x] Berlin-Städteheader um den Satz „Berlin lockt mit dem Theater des Westens und dem BlueMax Theater“ ergänzt und geprüft
 - [x] Graz-Link aus der Startseiten-Städte-Sektion korrigiert: Die Graz-Landingpage startet zuverlässig am Seitenanfang
+
+- [x] Reproduzierten Graz-Scrollfehler beim Klick aus der tief gescrollten Startseiten-Städte-Sektion analysiert und mit synchronem Karten-Klick-Reset sowie globaler Routen-Scrollhilfe behoben
