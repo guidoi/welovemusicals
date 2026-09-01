@@ -355,3 +355,6 @@
 - [x] Stadtdetailseiten: kombinierten Tickets-und-Hotel-Bereich auf einen schlanken HRS-Hotelbereich ohne gelben „Musicals & Tickets“-Button reduziert
 
 - [x] Hero-Schiebenavigation auf Desktop vollständig ausgeblendet und auf Mobil unverändert als Wisch-Navigation erhalten
+
+- [x] Tanz der Vampire: doppelte Veranstalter-Sektion entfernt und die verbleibende Anbieterkennzeichnung geprüft
+- [x] Tanz der Vampire: bereitgestelltes Aovo-Reisen-Banner nach „Hotels in der Nähe“ responsiv mit TradeDoubler-Ziellink eingebunden

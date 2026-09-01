@@ -40,6 +40,7 @@ import TourDates from "@/components/TourDates";
 import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@/lib/data";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
+import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 
 export default function MusicalDetail() {
@@ -541,6 +542,7 @@ export default function MusicalDetail() {
                 </a>
               ))}
             </div>
+            {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
           </div>
         </section>
       )}

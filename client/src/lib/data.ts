@@ -1675,7 +1675,6 @@ export const musicals: Musical[] = [
       { label: "Spielzeit", value: "11.03.2027 – 30.09.2027" },
       { label: "Tickets ab", value: "42,49 € (bei Stage Entertainment)" },
       { label: "Sprache", value: "Deutsch" },
-      { label: "Veranstalter", value: "Stage Entertainment" },
     ],
     storyHeadline: "WILLKOMMEN IN TRANSSILVANIEN – DIE GESCHICHTE",
     storyText: "Auf der Suche nach Vampiren kommt der kauzige Forscher Professor Abronsius mitten in Transsilvanien dem Ziel seiner Reise gefährlich nahe. Sein junger Assistent Alfred verliebt sich in die Wirtstochter Sarah – doch auch der düstere Graf von Krolock hat ein Auge auf sie geworfen und lockt sie auf sein Schloss.\n\nVon Erfolgsautor Michael Kunze humorvoll erzählt und mit der epischen Musik von Jim Steinman eindrucksvoll in Szene gesetzt, entfaltet sich in diesem großen Musical-Klassiker eine schaurig-schöne Geschichte voller Gänsehaut und Leidenschaft. Seit der Uraufführung begeisterte Tanz der Vampire über 11 Millionen Zuschauer weltweit.\n\nFreuen Sie sich auf ein unvergessliches Erlebnis voller rockig-gefühlvoller Balladen, opulenter Bilder und mitreißender Momente – ab 2027 in Stuttgart.",
