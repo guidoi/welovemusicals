@@ -336,3 +336,6 @@
 - [x] Hero-Schiebenavigation: frühere Unter-U-Sortierung verworfen; „& Julia“ bleibt sichtbar an dritter Stelle mit unverändertem Direktlink
 - [x] Hero-Schiebenavigation: „& Julia“ sichtbar an dritter Stelle direkt nach „Musicals“ und „Städte“ belassen; Direktlink unverändert geprüft
 - [x] Hero-Schiebenavigation: nach dem festen dritten Button „& Julia“ alle weiteren Kurzlabels alphabetisch nach sichtbarer Bezeichnung sortiert
+
+- [x] Berlin-Städteheader um den Satz „Berlin lockt mit dem Theater des Westens und dem BlueMax Theater“ ergänzt und geprüft
+- [x] Graz-Link aus der Startseiten-Städte-Sektion korrigiert: Die Graz-Landingpage startet zuverlässig am Seitenanfang

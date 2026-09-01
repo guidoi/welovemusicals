@@ -1902,7 +1902,7 @@ export const cities: City[] = [
     slug: "berlin",
     name: "Berlin",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-berlin-isrpM3SJSsQbjuVy58kX5V.webp",
-    description: "Die Hauptstadt lockt mit dem Theater des Westens und zahlreichen Tournee-Gastspielen. Kultur und Musical vereint in einer Stadt.",
+    description: "Berlin lockt mit dem Theater des Westens und dem BlueMax Theater. Kultur, Musical und zahlreiche Tournee-Gastspiele vereint in einer Stadt.",
     musicalCount: 6,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-berlin&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252555133%26orderBy%3DRecommendations",
   },

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,18 +10,25 @@ import MusicalDetail from "./pages/MusicalDetail";
 import CityDetail from "./pages/CityDetail";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import { didRouteChange, getScrollToTopOptions } from "./lib/route-scroll";
 
 function ScrollToTop() {
   const [location] = useLocation();
   const prevLocation = useRef<string | null>(null);
 
   useEffect(() => {
-    // Only scroll if the location actually changed (not on first render)
-    if (prevLocation.current !== null && prevLocation.current !== location) {
-      // Use requestAnimationFrame to ensure scroll happens after paint
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    // Reset synchronously before paint so city cards opened from a deep home-page anchor start at the city hero.
+    if (didRouteChange(prevLocation.current, location)) {
+      window.scrollTo(getScrollToTopOptions());
     }
     prevLocation.current = location;
   }, [location]);
