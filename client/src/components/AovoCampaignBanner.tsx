@@ -153,7 +153,7 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
       <button
         type="button"
         onClick={() => window.open(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork), "_blank", "noopener,noreferrer")}
-        className="block w-full overflow-hidden rounded-sm border border-white/10 bg-transparent p-0 text-left transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        className="block w-full overflow-hidden rounded-sm bg-transparent p-0 text-left outline outline-1 outline-white/10 outline-offset-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         aria-label={`Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}
       >
         <span

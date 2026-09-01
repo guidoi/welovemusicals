@@ -386,7 +386,14 @@ export default function MusicalDetail() {
                       index === aovoCampaign.storyParagraphIndex && (
                         <AovoCampaignBanner campaign={aovoCampaign} />
                       )}
-                    <p className="text-white/80 leading-relaxed mb-4 text-lg">
+                    <p
+                      className={`text-white/80 leading-relaxed mb-4 text-lg ${
+                        aovoCampaign?.placement === "before-story-paragraph" &&
+                        index === aovoCampaign.storyParagraphIndex
+                          ? "mt-12"
+                          : ""
+                      }`}
+                    >
                       {paragraph}
                     </p>
                   </Fragment>

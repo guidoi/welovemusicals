@@ -17,6 +17,55 @@ const STAGE_PRODUCT_URLS = {
 } as const;
 
 describe("Affiliate-Link-Zuordnung", () => {
+  it("verwendet für alle direkt eingebundenen Eventim-Awin-Links die korrekte Merchant- und Publisher-ID", () => {
+    const eventimAwinUrls = musicals
+      .flatMap((musical) => [
+        musical.eventimUrl,
+        musical.ticketCtaUrl,
+        musical.awinHeroUrl,
+        musical.awinStickyUrl,
+        musical.awinBoxUrl,
+        musical.keyvisualLink,
+        ...(musical.tourDates ?? []).map((date) => date.eventimUrl),
+      ])
+      .filter((url): url is string => Boolean(url))
+      .filter((url) => new URL(url).hostname === "www.awin1.com");
+
+    expect(eventimAwinUrls.length).toBeGreaterThan(0);
+
+    for (const url of eventimAwinUrls) {
+      const trackingUrl = new URL(url);
+      expect(trackingUrl.pathname).toBe("/cread.php");
+      expect(trackingUrl.searchParams.get("awinmid")).toBe("11388");
+      expect(trackingUrl.searchParams.get("awinaffid")).toBe("2865727");
+      expect(decodeURIComponent(trackingUrl.searchParams.get("ued") ?? "")).toContain("eventim.de");
+    }
+  });
+
+  it("erhält auf allen direkt verlinkten ATG-Seiten die Awin-Tracking-Optimisation mit Publisher-ID", () => {
+    const atgUrls = musicals
+      .flatMap((musical) => [
+        musical.eventimUrl,
+        musical.ticketCtaUrl,
+        musical.awinHeroUrl,
+        musical.awinStickyUrl,
+        musical.awinBoxUrl,
+        musical.keyvisualLink,
+        ...(musical.tourDates ?? []).map((date) => date.eventimUrl),
+      ])
+      .filter((url): url is string => Boolean(url))
+      .filter((url) => new URL(url).hostname === "www.atgtickets.de");
+
+    expect(atgUrls.length).toBeGreaterThan(0);
+
+    for (const url of atgUrls) {
+      const trackingUrl = new URL(url);
+      expect(trackingUrl.searchParams.get("utm_source")).toBe("awin");
+      expect(trackingUrl.searchParams.get("utm_medium")).toBe("affiliate");
+      expect(trackingUrl.searchParams.get("sv_campaign_id")).toBe("2865727");
+    }
+  });
+
   it("verwendet für König der Löwen die direkte Stage-Entertainment-Produktseite an allen Ticket-CTAs", () => {
     const kdl = musicals.find((musical) => musical.id === "koenig-der-loewen");
 

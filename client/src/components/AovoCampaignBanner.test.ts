@@ -41,6 +41,19 @@ describe("Aovo campaign banners", () => {
     );
   });
 
+  it("keeps the supplied 300 × 250 creatives for Die Eiskönigin and Tarzan at native dimensions", () => {
+    expect(getAovoCampaign("eiskoenigin")).toMatchObject({
+      width: 300,
+      height: 250,
+      imageUrl: "/images/show-visuals/die-eiskoenigin-300x250.png",
+    });
+    expect(getAovoCampaign("tarzan")).toMatchObject({
+      width: 300,
+      height: 250,
+      imageUrl: "/images/show-visuals/tarzan-300x250.png",
+    });
+  });
+
   it("uses the supplied Stage Entertainment tracking and in-story placement for Wir sind am Leben and & Julia", () => {
     const undJulia = getAovoCampaign("und-julia");
     const wirSindAmLeben = getAovoCampaign("wir-sind-am-leben");

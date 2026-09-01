@@ -377,3 +377,7 @@
 - [x] Tarzan-Aovo-Banner auf native 300-×-250-Darstellung begrenzt und auf Mobil sowie Desktop auf ausreichende Schärfe geprüft
 - [x] Wir sind am Leben: Ticketsektion mit Berlin, Stage Theater des Westens, Spielzeit 01.07.2026–28.02.2027 und Stage-Logo rechts ergänzt
 - [x] &-Julia-Banner innerhalb des Story-Fließtexts direkt vor „Erlebe eine unbeschwerte, romantische Feel-Good-Show …“ eingefügt und bisherige Position entfernt
+
+- [x] &-Julia: Abstand oberhalb der Passage „Erlebe eine unbeschwerte, romantische Feel-Good-Show …“ passend zur Bannerintegration vergrößert und angeglichen
+- [x] Alle Aovo-Kampagnenbanner auf native Bildgröße, Schärfe und responsive Auslieferung geprüft; Eiskönigin- und Tarzan-Motiv ohne rahmenbedingte Skalierung auf nativen 300 × 250 px abgesichert
+- [x] Technischen Awin-Audit für Eventim- und ATG-Links inklusive Publisher-ID, Zielweiterleitung und nachvollziehbarer Trackingparameter durchgeführt
