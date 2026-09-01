@@ -335,3 +335,4 @@
 - [x] Hero-Schiebenavigation: alle vom Nutzer vorgegebenen gekürzten Musicaltitel statt Versalien/Langversionen eingepflegt; Reihenfolge und Direktlinks unverändert geprüft
 - [x] Hero-Schiebenavigation: frühere Unter-U-Sortierung verworfen; „& Julia“ bleibt sichtbar an dritter Stelle mit unverändertem Direktlink
 - [x] Hero-Schiebenavigation: „& Julia“ sichtbar an dritter Stelle direkt nach „Musicals“ und „Städte“ belassen; Direktlink unverändert geprüft
+- [x] Hero-Schiebenavigation: nach dem festen dritten Button „& Julia“ alle weiteren Kurzlabels alphabetisch nach sichtbarer Bezeichnung sortiert

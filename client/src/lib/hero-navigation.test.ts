@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ACTIVE_MUSICAL_IDS, musicals } from "./data";
-import { getHeroNavigationItems } from "./hero-navigation";
+import { getHeroNavigationItems, getHeroNavigationLabel } from "./hero-navigation";
 
 describe("getHeroNavigationItems", () => {
   it("stellt zuerst die Überblicksanker und danach alle aktiven Musicals alphabetisch bereit", () => {
@@ -25,7 +25,7 @@ describe("getHeroNavigationItems", () => {
     const items = getHeroNavigationItems(musicals, ACTIVE_MUSICAL_IDS);
     const activeMusicals = musicals
       .filter((musical) => ACTIVE_MUSICAL_IDS.includes(musical.id) || ACTIVE_MUSICAL_IDS.includes(musical.slug))
-      .sort((left, right) => left.title.localeCompare(right.title, "de"));
+      .sort((left, right) => getHeroNavigationLabel(left).localeCompare(getHeroNavigationLabel(right), "de"));
     const musicalItems = items.filter((item) => item.kind === "musical");
     const orderedActiveMusicals = [
       ...activeMusicals.filter((musical) => musical.slug === "und-julia"),

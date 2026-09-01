@@ -11,7 +11,7 @@ export type HeroNavigationItem = {
   kind: "overview" | "city" | "musical";
 };
 
-const HERO_NAVIGATION_LABEL_OVERRIDES: Record<string, string> = {
+export const HERO_NAVIGATION_LABEL_OVERRIDES: Record<string, string> = {
   "phantom-der-oper": "Phantom der Oper",
   "der-teufel-traegt-prada-das-musical": "Teufel trägt Prada",
   "schoene-und-das-biest": "Schöne und das Biest",
@@ -35,13 +35,17 @@ const HERO_NAVIGATION_LABEL_OVERRIDES: Record<string, string> = {
   "und-julia": "& Julia",
 };
 
+export function getHeroNavigationLabel(musical: HeroNavigationMusical): string {
+  return HERO_NAVIGATION_LABEL_OVERRIDES[musical.slug] ?? musical.title;
+}
+
 export function getHeroNavigationItems(
   musicals: readonly HeroNavigationMusical[],
   activeMusicalIds: readonly string[],
 ): HeroNavigationItem[] {
   const activeMusicals = musicals
     .filter((musical) => activeMusicalIds.includes(musical.id) || activeMusicalIds.includes(musical.slug))
-    .sort((left, right) => left.title.localeCompare(right.title, "de"));
+    .sort((left, right) => getHeroNavigationLabel(left).localeCompare(getHeroNavigationLabel(right), "de"));
   const undJulia = activeMusicals.find((musical) => musical.slug === "und-julia");
   const orderedActiveMusicals = undJulia
     ? [undJulia, ...activeMusicals.filter((musical) => musical.slug !== "und-julia")]
@@ -52,7 +56,7 @@ export function getHeroNavigationItems(
     { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
     ...orderedActiveMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
-      label: HERO_NAVIGATION_LABEL_OVERRIDES[musical.slug] ?? musical.title,
+      label: getHeroNavigationLabel(musical),
       href: `/musical/${musical.slug}`,
       kind: "musical" as const,
     })),
