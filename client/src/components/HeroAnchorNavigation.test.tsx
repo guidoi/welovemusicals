@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import HeroAnchorNavigation from "./HeroAnchorNavigation";
 
 describe("HeroAnchorNavigation", () => {
-  it("rendert iconfreie, transparente und großzügig gepolsterte Anker-Tabs ohne Pfeilsteuerungen", () => {
+  it("rendert transparente, großzügig gepolsterte Anker-Tabs mit Desktop-Pfeilsteuerungen", () => {
     const markup = renderToStaticMarkup(
       <HeroAnchorNavigation
         items={[
@@ -16,9 +16,10 @@ describe("HeroAnchorNavigation", () => {
     );
 
     expect(markup).toContain('aria-label="Direktnavigation zu Musical-Inhalten"');
-    expect(markup).not.toContain('Navigation nach links schieben');
-    expect(markup).not.toContain('Navigation nach rechts schieben');
-    expect(markup).not.toContain('<svg');
+    expect(markup).toContain('aria-label="Navigation nach links schieben"');
+    expect(markup).toContain('aria-label="Navigation nach rechts schieben"');
+    expect(markup).toContain('hidden md:inline-flex');
+    expect(markup).toContain('disabled');
     expect(markup).toContain('border-white/75');
     expect(markup).toContain('bg-transparent');
     expect(markup).toContain('text-white');

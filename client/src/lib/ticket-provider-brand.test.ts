@@ -13,7 +13,7 @@ describe("Ticketanbieter-Logos", () => {
     const stageBrand = getTicketProviderBrand("koenig-der-loewen", "https://www.stage-entertainment.de/musicals-shows/koenig-der-loewen");
 
     expect(stageBrand.name).toBe("Stage Entertainment");
-    expect(stageBrand.logoSrc).toBe("/images/branding/stage-entertainment-logo-on-dark.png");
+    expect(stageBrand.logoSrc).toBe("/images/branding/stage-entertainment-logo-white.png");
   });
 
   it("verwendet für Eventim ein transparentes Teaserlogo", () => {

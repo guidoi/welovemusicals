@@ -101,7 +101,7 @@ describe("MusicalCard Sale-Störer", () => {
 
     expect(stageMarkup).toContain('data-testid="teaser-provider-logo"');
     expect(stageMarkup).toContain('data-testid="teaser-ticket-cta"');
-    expect(stageMarkup).toContain('src="/images/branding/stage-entertainment-logo-on-dark.png"');
+    expect(stageMarkup).toContain('src="/images/branding/stage-entertainment-logo-white.png"');
     expect(stageMarkup).toContain('alt="Stage Entertainment"');
     expect(stageMarkup).toContain('data-provider-brand="stage"');
     expect(stageMarkup).toContain('class="h-8 max-w-32 md:max-w-28 w-auto object-contain object-left opacity-90 md:h-7"');

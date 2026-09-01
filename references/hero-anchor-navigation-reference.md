@@ -31,3 +31,11 @@ Der zweite feste Einstiegsbutton heißt nun kurz „Städte“, während sein un
 Der Scrollpfeil unterhalb der Hero-Schiebenavigation wurde auf Nutzerwunsch vollständig entfernt. Die Sichtprüfungen bei 375 × 812 und 1280 × 900 Pixeln bestätigen einen ruhigen, klaren Abschluss des Hero-Bereichs ohne zusätzliche Steuerung; die Navigation bleibt vollständig horizontal erreichbar.
 
 Nach der finalen Präzisierung nutzt die Navigationsumhüllung ober- und unterhalb jeweils 15 Pixel Abstand (`mt-[15px] mb-[15px]`). Die Prüfung bei 375 × 812 und 1280 × 900 Pixeln bestätigt die identischen, bewusst kompakten Abstände zwischen Statistik, Tab-Leiste und Hero-Unterkante.
+
+## Desktop-Pfeilsteuerung
+
+Die Desktop-Version zeigt kleine weiße Pfeilbuttons außerhalb des scrollbaren Tabbereichs. Sie verschieben die horizontale Leiste abschnittsweise nach links oder rechts; am jeweiligen Rand werden sie deaktiviert. Die Pfeile überlagern keine sichtbare Tabbeschriftung.
+
+## Mobile Darstellung
+
+Im mobilen Zielviewport 375 × 812 px bleiben die Pfeile verborgen. Die Tabs bleiben als einzeilige, horizontal wischbare Leiste erreichbar. Die Desktop-Pfeile ändern die mobile Bedienlogik nicht.

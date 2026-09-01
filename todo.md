@@ -313,3 +313,10 @@
 - [x] Hero-Navigationstab „Alle Musicals“ in „Musicals“ umbenennen
 - [x] Einzelne Musical-Buttons direkt auf die jeweilige Musical-Landingpage verlinken statt auf Startseitenanker
 - [x] Direkte Musical-URLs, Städte-Anker und Navigation auf Desktop sowie Mobil verifizieren
+
+## Stage-Logo – rein weiße Variante
+- [x] Vom Nutzer bereitgestelltes rein weißes Stage-Logo als aktive Quelle für Teaser und Ticketbereich integrieren
+- [x] Transparenz, Kontrast, Größe und Ausrichtung der weißen Stage-Variante in Teasern und Ticketbereich auf Desktop sowie Mobil verifizieren
+- [x] Kleine weiße Links-/Rechtspfeile ausschließlich in der Desktop-Hero-Schiebenavigation integrieren
+- [x] Desktop-Pfeilsteuerung, mobile Wischbedienung und linke/rechte Randzustände verifizieren
+- [x] Desktop-Pfeile außerhalb der äußersten Tabs platzieren, damit sie keine Tabbeschriftungen überlagern

@@ -17,7 +17,7 @@ const BRANDS: Record<TicketProviderBrandId, TicketProviderBrand> = {
   stage: {
     id: "stage",
     name: "Stage Entertainment",
-    logoSrc: "/images/branding/stage-entertainment-logo-on-dark.png",
+    logoSrc: "/images/branding/stage-entertainment-logo-white.png",
   },
   atg: {
     id: "atg",
