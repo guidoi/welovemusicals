@@ -324,3 +324,8 @@
 - [x] Umfassende finale Sichtprüfung der aktuellen Start-, Musical-, Stadt-, Impressum- und Datenschutzseiten dokumentieren (Desktop und Mobil)
 - [x] Schema.org für Musical-Detailseiten mit korrektem addressCountry je Tourstadt (DE/AT/CH) absichern und testen
 - [x] Abschließende Ergebniszusammenfassung an den Nutzer senden: umgesetzte SEO-Änderungen, Sitemap-/Schema-/Canonical-Anpassungen, Test-/TypeScript-/Build-Status und finale visuelle Prüfung dokumentiert darstellen
+- [x] Ersetzt durch die präzisierte obere Landingpage-Anforderung; keine Änderung an den späteren Städte-/Ticketsektionen vorgenommen
+- [x] Auf Nutzerkorrektur hin verworfen; die Hero-Schiebenavigation der Startseite bleibt unverändert
+- [x] Durch die präzisierte obere Landingpage-Anforderung ersetzt
+- [x] Obere Musical-Landingpage mobil verdichtet: Stadt/Venue bzw. Mehrstadtzeile → erster CTA und CTA → folgende Headline reduziert; Desktop unverändert
+- [x] Mehrstadt- und Tourneestadt-Header am Beispiel Drei Haselnüsse für Aschenbrödel mobil geprüft

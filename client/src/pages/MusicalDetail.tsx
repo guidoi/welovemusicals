@@ -171,7 +171,7 @@ export default function MusicalDetail() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
 
-        <div className="relative z-10 container pb-10 pt-40">
+        <div className="relative z-10 container pb-6 md:pb-10 pt-40">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export default function MusicalDetail() {
 
       {/* Mobile CTA – direkt nach Hero für alle Musicals */}
       {heroTicketLink && (
-        <div ref={topCtaRef} className="lg:hidden bg-background px-4 pt-6 pb-2">
+        <div ref={topCtaRef} className="lg:hidden bg-background px-4 pt-2 md:pt-6 pb-2">
           <a
             href={heroTicketLink}
             target="_blank"
@@ -242,7 +242,7 @@ export default function MusicalDetail() {
       )}
 
       {/* Content */}
-      <section className="py-12 md:py-16">
+      <section className="pt-6 md:pt-16 pb-12 md:pb-16">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Keyvisual / YouTube - Desktop linke Spalte für alle Musicals */}
