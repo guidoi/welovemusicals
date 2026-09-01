@@ -130,6 +130,10 @@ export function getAovoCampaignImpressionUrl(
   return `${baseUrl}?type(img)g(${groupId})a(3492604)${cacheBuster}`;
 }
 
+export function isAovoStoryInsertionPoint(musicalId: string, paragraph: string) {
+  return musicalId === "und-julia" && paragraph.startsWith("Erlebe eine unbeschwerte, romantische Feel-Good-Show");
+}
+
 export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaign }) {
   const impressionUrl = useMemo(
     () => getAovoCampaignImpressionUrl(campaign.groupId, String(Math.random()).slice(2, 11), campaign.trackingNetwork),

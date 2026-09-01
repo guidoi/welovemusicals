@@ -4,6 +4,7 @@ import {
   getAovoCampaign,
   getAovoCampaignClickUrl,
   getAovoCampaignImpressionUrl,
+  isAovoStoryInsertionPoint,
 } from "./AovoCampaignBanner";
 
 describe("Aovo campaign banners", () => {
@@ -53,5 +54,11 @@ describe("Aovo campaign banners", () => {
     expect(getAovoCampaignImpressionUrl("26185666", "123456789", "stage")).toBe(
       "https://visit.stage-entertainment.de/imp?type(img)g(26185666)a(3492604)123456789"
     );
+  });
+
+  it("places the &-Julia campaign directly before the requested closing story passage", () => {
+    expect(isAovoStoryInsertionPoint("und-julia", "Erlebe eine unbeschwerte, romantische Feel-Good-Show voller Energie.")).toBe(true);
+    expect(isAovoStoryInsertionPoint("und-julia", "Nach Romeos Tod lässt Julia das Drama von Verona hinter sich.")).toBe(false);
+    expect(isAovoStoryInsertionPoint("wir-sind-am-leben", "Erlebe eine unbeschwerte, romantische Feel-Good-Show voller Energie.")).toBe(false);
   });
 });

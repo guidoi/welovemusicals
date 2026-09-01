@@ -368,3 +368,5 @@
 - [x] Moulin Rouge!: Köln aus den Hotelvorschlägen entfernt und nur Hamburg im Hotelbereich angezeigt
 - [x] Alle neuen Bannerpositionen, Kampagnenlinks und den Moulin-Rouge-Hotelbereich auf Mobil und Desktop geprüft
 - [x] Sichtbare Aovo-Banner von Affiliate-Anchor-Filterung entkoppelt, damit externe Filter die Motive nicht ausblenden und die Click-Weiterleitung erhalten bleibt
+
+- [x] &-Julia-Aovo-Banner innerhalb der Einleitung direkt vor „Erlebe eine unbeschwerte, romantische Feel-Good-Show …“ verschoben und bisherige Position entfernt
