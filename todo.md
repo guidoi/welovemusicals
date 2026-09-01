@@ -362,3 +362,9 @@
 - [x] Aovo-Reisen-TradeDoubler-Banner für Moulin Rouge!, Salon Rosie, Der Teufel trägt Prada, Die Eiskönigin, König der Löwen und MJ mit den bereitgestellten Kampagnenparametern integriert
 - [x] Die sechs Banner jeweils nach „Hotels in der Nähe“ sichtbar und responsiv eingebunden sowie Impression- und Klicktracking kampagnenspezifisch geprüft
 - [x] Alle betroffenen Aovo-Kampagnenmotive als direkt auslieferbare Website-Assets bereitgestellt und sichtbare Banner von externen Bildblockern entkoppelt
+
+- [x] Aovo-Reisen-Banner für Zurück in die Zukunft, Tarzan, Starlight Express und Wir sind am Leben mit den bereitgestellten Trackingparametern integriert
+- [x] &-Julia-Stage-Banner direkt vor „Warum & Julia ein Erlebnis der Extraklasse ist“ eingebunden
+- [x] Moulin Rouge!: Köln aus den Hotelvorschlägen entfernt und nur Hamburg im Hotelbereich angezeigt
+- [x] Alle neuen Bannerpositionen, Kampagnenlinks und den Moulin-Rouge-Hotelbereich auf Mobil und Desktop geprüft
+- [x] Sichtbare Aovo-Banner von Affiliate-Anchor-Filterung entkoppelt, damit externe Filter die Motive nicht ausblenden und die Click-Weiterleitung erhalten bleibt

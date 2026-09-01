@@ -131,6 +131,9 @@ export default function MusicalDetail() {
   const relevantCities = musical.city
     ? cities.filter((c) => c.name === musical.city || musical.cities?.includes(c.name))
     : cities.filter((c) => musical.cities?.includes(c.name));
+  const hotelCities = musical.id === "moulinrouge"
+    ? relevantCities.filter((city) => city.name === "Hamburg")
+    : relevantCities;
 
   // Get provider info
   const providerInfo = providers.find((p) => p.name === musical.provider);
@@ -408,6 +411,8 @@ export default function MusicalDetail() {
           Snowflake: <Snowflake className="w-5 h-5" />,
         };
         return (
+          <>
+          {aovoCampaign?.placement === "before-usp" && <AovoCampaignBanner campaign={aovoCampaign} />}
           <section className="py-8 md:py-10 bg-background">
             <div className="container max-w-4xl">
               <motion.div
@@ -447,6 +452,7 @@ export default function MusicalDetail() {
               </motion.div>
             </div>
           </section>
+          </>
         );
       })()}
 
@@ -513,14 +519,14 @@ export default function MusicalDetail() {
       )}
 
       {/* Hotels Section */}
-      {relevantCities.length > 0 && (
+      {hotelCities.length > 0 && (
         <section className="py-12 md:py-16 bg-background">
           <div className="container max-w-4xl">
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">
               Hotels in der Nähe
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {relevantCities.map((city) => (
+              {hotelCities.map((city) => (
                 <a
                   key={city.slug}
                   href={city.hotelSearchUrl}
@@ -545,7 +551,7 @@ export default function MusicalDetail() {
               ))}
             </div>
             {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
-            {aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
+            {aovoCampaign?.placement !== "before-usp" && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
           </div>
         </section>
       )}

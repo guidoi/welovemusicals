@@ -1,7 +1,7 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 export const AOVO_TDV_CLICK_URL = "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26137318";
-export const AOVO_TDV_BANNER_URL = "/images/advertising/aovo/tanz-der-vampire-500x500.png";
+export const AOVO_TDV_BANNER_URL = "/images/show-visuals/tanz-der-vampire-500x500.png";
 
 export function getAovoTdVImpressionUrl(cacheBuster: string) {
   return `https://imp.tradedoubler.com/imp?type(img)g(26137318)a(3492604)${cacheBuster}`;
@@ -13,32 +13,30 @@ export default function AovoTanzDerVampireBanner() {
     []
   );
 
+  useEffect(() => {
+    const impressionPixel = new Image();
+    impressionPixel.src = impressionUrl;
+  }, [impressionUrl]);
+
   return (
-    <aside className="mt-8 border-t border-gold/15 pt-6" aria-label="Anzeige: Aovo Reisen">
+    <aside className="mt-8 border-t border-gold/15 pt-6" aria-label="Anzeige: Ticket und Hotel – Tanz der Vampire">
       <p className="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Anzeige</p>
-      <a
-        href={AOVO_TDV_CLICK_URL}
-        target="_blank"
-        rel="sponsored noopener noreferrer"
-        className="block overflow-hidden rounded-sm border border-white/10 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+      <button
+        type="button"
+        onClick={() => window.open(AOVO_TDV_CLICK_URL, "_blank", "noopener,noreferrer")}
+        className="block w-full overflow-hidden rounded-sm border border-white/10 bg-transparent p-0 text-left transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        aria-label="Ticket-und-Hotel-Angebot für Tanz der Vampire in neuem Tab öffnen"
       >
-        <img
-          src={impressionUrl}
-          alt=""
-          width={1}
-          height={1}
-          className="sr-only"
+        <span
           aria-hidden="true"
+          className="block w-full bg-center bg-no-repeat"
+          style={{
+            aspectRatio: "1 / 1",
+            backgroundImage: `url(${AOVO_TDV_BANNER_URL})`,
+            backgroundSize: "100% 100%",
+          }}
         />
-        <img
-          src={AOVO_TDV_BANNER_URL}
-          width={500}
-          height={500}
-          alt="Aovo Reisen: Tanz der Vampire – Ticket und Hotel"
-          className="h-auto w-full"
-          loading="eager"
-        />
-      </a>
+      </button>
     </aside>
   );
 }
