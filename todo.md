@@ -329,3 +329,4 @@
 - [x] Durch die präzisierte obere Landingpage-Anforderung ersetzt
 - [x] Obere Musical-Landingpage mobil verdichtet: Stadt/Venue bzw. Mehrstadtzeile → erster CTA und CTA → folgende Headline reduziert; Desktop unverändert
 - [x] Mehrstadt- und Tourneestadt-Header am Beispiel Drei Haselnüsse für Aschenbrödel mobil geprüft
+- [x] Rapunzel: Berlin vom 14.05. bis 06.06.2027 im BlueMax Theater an allen relevanten Stellen ergänzt und verifiziert (Datenquelle, aktive Stadtseite, Tourdaten, SEO, FAQ, Awin-Eventim-Link, Tests, Build und mobile Sichtprüfung)
