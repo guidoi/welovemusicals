@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 export const AOVO_TDV_CLICK_URL = "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26137318";
-export const AOVO_TDV_FALLBACK_BANNER_URL = "/manus-storage/tanz-der-vampire-ticket-hotel-banner_93366e33.png";
+export const AOVO_TDV_BANNER_URL = "/images/advertising/aovo/tanz-der-vampire-500x500.png";
 
 export function getAovoTdVImpressionUrl(cacheBuster: string) {
   return `https://imp.tradedoubler.com/imp?type(img)g(26137318)a(3492604)${cacheBuster}`;
@@ -24,15 +24,19 @@ export default function AovoTanzDerVampireBanner() {
       >
         <img
           src={impressionUrl}
-          onError={(event) => {
-            event.currentTarget.onerror = null;
-            event.currentTarget.src = AOVO_TDV_FALLBACK_BANNER_URL;
-          }}
-          width={750}
-          height={200}
+          alt=""
+          width={1}
+          height={1}
+          className="sr-only"
+          aria-hidden="true"
+        />
+        <img
+          src={AOVO_TDV_BANNER_URL}
+          width={500}
+          height={500}
           alt="Aovo Reisen: Tanz der Vampire – Ticket und Hotel"
           className="h-auto w-full"
-          loading="lazy"
+          loading="eager"
         />
       </a>
     </aside>

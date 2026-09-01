@@ -41,6 +41,7 @@ import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
+import AovoCampaignBanner, { getAovoCampaign } from "@/components/AovoCampaignBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 
 export default function MusicalDetail() {
@@ -146,6 +147,7 @@ export default function MusicalDetail() {
   const ticketProviderName = usesStageProductPage ? "Stage Entertainment" : usesAtgTickets ? "ATG Tickets" : "Eventim";
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
+  const aovoCampaign = getAovoCampaign(musical.id);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -543,6 +545,7 @@ export default function MusicalDetail() {
               ))}
             </div>
             {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
+            {aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
           </div>
         </section>
       )}

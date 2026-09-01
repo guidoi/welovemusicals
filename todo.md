@@ -358,3 +358,7 @@
 
 - [x] Tanz der Vampire: doppelte Veranstalter-Sektion entfernt und die verbleibende Anbieterkennzeichnung geprüft
 - [x] Tanz der Vampire: bereitgestelltes Aovo-Reisen-Banner nach „Hotels in der Nähe“ responsiv mit TradeDoubler-Ziellink eingebunden
+
+- [x] Aovo-Reisen-TradeDoubler-Banner für Moulin Rouge!, Salon Rosie, Der Teufel trägt Prada, Die Eiskönigin, König der Löwen und MJ mit den bereitgestellten Kampagnenparametern integriert
+- [x] Die sechs Banner jeweils nach „Hotels in der Nähe“ sichtbar und responsiv eingebunden sowie Impression- und Klicktracking kampagnenspezifisch geprüft
+- [x] Alle betroffenen Aovo-Kampagnenmotive als direkt auslieferbare Website-Assets bereitgestellt und sichtbare Banner von externen Bildblockern entkoppelt
