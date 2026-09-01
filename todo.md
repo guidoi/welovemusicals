@@ -372,3 +372,8 @@
 - [x] &-Julia-Landingpage nach der Rücksetzung lokal und live geprüft: vollständige Darstellung ohne blaue Fehleransicht oder Laufzeitfehler bestätigt; keine Codeänderung erforderlich
 
 - [x] Mobilen Fehler beim Wechsel zu & Julia über die Hero-Schiebenavigation reproduziert und behoben: Musicalbuttons nutzen nun relative Wouter-In-App-Routen; direkte Route und übrige Navigationseinträge geprüft
+
+- [x] &-Julia-Banner auf Desktop auf die native kampagnengerechte Breite begrenzt und mobil geprüft
+- [x] Tarzan-Aovo-Banner auf native 300-×-250-Darstellung begrenzt und auf Mobil sowie Desktop auf ausreichende Schärfe geprüft
+- [x] Wir sind am Leben: Ticketsektion mit Berlin, Stage Theater des Westens, Spielzeit 01.07.2026–28.02.2027 und Stage-Logo rechts ergänzt
+- [x] &-Julia-Banner innerhalb des Story-Fließtexts direkt vor „Erlebe eine unbeschwerte, romantische Feel-Good-Show …“ eingefügt und bisherige Position entfernt

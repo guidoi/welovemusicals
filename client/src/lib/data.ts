@@ -1595,6 +1595,15 @@ export const musicals: Musical[] = [
     youtubeTrailerId: "bKGqV1ovqbc",
     featured: false,
     tags: ["Drama", "90er", "Plate & Sommer"],
+    tourDates: [
+      {
+        city: "Berlin",
+        venue: "Stage Theater des Westens",
+        startDate: "2026-07-01",
+        endDate: "2027-02-28",
+        eventimUrl: "https://www.stage-entertainment.de/musicals-shows/wir-sind-am-leben-berlin",
+      },
+    ],
     showFacts: [
       { label: "Spielort", value: "Stage Theater des Westens, Berlin" },
       { label: "Spielzeit", value: "01.07.2026 – 28.02.2027" },

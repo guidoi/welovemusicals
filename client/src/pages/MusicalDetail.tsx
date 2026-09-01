@@ -3,7 +3,7 @@
  * MusicalDetail: Detailseite für einzelnes Musical mit erweiterten Komponenten
  */
 import { useParams, Link } from "wouter";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -381,9 +381,15 @@ export default function MusicalDetail() {
               </h2>
               <div className="prose prose-invert max-w-none">
                 {musical.storyText.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="text-white/80 leading-relaxed mb-4 text-lg">
-                    {paragraph}
-                  </p>
+                  <Fragment key={index}>
+                    {aovoCampaign?.placement === "before-story-paragraph" &&
+                      index === aovoCampaign.storyParagraphIndex && (
+                        <AovoCampaignBanner campaign={aovoCampaign} />
+                      )}
+                    <p className="text-white/80 leading-relaxed mb-4 text-lg">
+                      {paragraph}
+                    </p>
+                  </Fragment>
                 ))}
               </div>
             </motion.div>
@@ -412,7 +418,6 @@ export default function MusicalDetail() {
         };
         return (
           <>
-          {aovoCampaign?.placement === "before-usp" && <AovoCampaignBanner campaign={aovoCampaign} />}
           <section className="py-8 md:py-10 bg-background">
             <div className="container max-w-4xl">
               <motion.div

@@ -16,7 +16,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import React, { useState } from "react";
+import { getTicketProviderBrand } from "@/lib/ticket-provider-brand";
 
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
@@ -169,21 +170,30 @@ export default function TourDates({
         <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl mx-auto"}>
           {sortedCityEntries.map(([city, dates]) => {
             const firstDate = dates[0];
+            const ticketProviderBrand = getTicketProviderBrand(musicalSlug ?? "", firstDate.eventimUrl);
             return (
               <div
                 key={city}
                 className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Stadtname + optionales Badge */}
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-lg font-bold text-card-foreground uppercase tracking-widest font-heading">
-                    {city}
-                  </h3>
-                  {firstDate.badge && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider" style={{backgroundColor: 'rgba(184,148,74,0.2)', color: '#b8944a', border: '1px solid rgba(184,148,74,0.4)'}}>
-                      {firstDate.badge}
-                    </span>
-                  )}
+                <div className="mb-1 flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-card-foreground uppercase tracking-widest font-heading">
+                      {city}
+                    </h3>
+                    {firstDate.badge && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider" style={{backgroundColor: 'rgba(184,148,74,0.2)', color: '#b8944a', border: '1px solid rgba(184,148,74,0.4)'}}>
+                        {firstDate.badge}
+                      </span>
+                    )}
+                  </div>
+                  <img
+                    data-testid="tour-date-provider-logo"
+                    src={ticketProviderBrand.logoSrc}
+                    alt={ticketProviderBrand.name}
+                    className="h-6 max-w-28 w-auto object-contain object-right opacity-90"
+                  />
                 </div>
 
                 {/* Premiere-Badge wenn vorhanden */}

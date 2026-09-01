@@ -8,7 +8,8 @@ export type AovoCampaign = {
   height: number;
   imageUrl: string;
   trackingNetwork?: "tradedoubler" | "stage";
-  placement?: "after-hotel" | "before-usp";
+  placement?: "after-hotel" | "before-usp" | "before-story-paragraph";
+  storyParagraphIndex?: number;
 };
 
 export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
@@ -101,7 +102,8 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     height: 90,
     imageUrl: "/images/show-visuals/und-julia-728x90.jpg",
     trackingNetwork: "stage",
-    placement: "before-usp",
+    placement: "before-story-paragraph",
+    storyParagraphIndex: 2,
   },
 ];
 
@@ -142,7 +144,11 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
   }, [impressionUrl]);
 
   return (
-    <aside className="mt-8 border-t border-gold/15 pt-6" aria-label={`Anzeige: Ticket und Hotel – ${campaign.musicalTitle}`}>
+    <aside
+      className="mx-auto mt-8 w-full border-t border-gold/15 pt-6"
+      style={{ maxWidth: campaign.width }}
+      aria-label={`Anzeige: Ticket und Hotel – ${campaign.musicalTitle}`}
+    >
       <p className="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Anzeige</p>
       <button
         type="button"

@@ -41,11 +41,18 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("uses the supplied Stage Entertainment tracking for Wir sind am Leben and & Julia", () => {
+  it("uses the supplied Stage Entertainment tracking and in-story placement for Wir sind am Leben and & Julia", () => {
     const undJulia = getAovoCampaign("und-julia");
     const wirSindAmLeben = getAovoCampaign("wir-sind-am-leben");
 
-    expect(undJulia).toMatchObject({ groupId: "26185666", trackingNetwork: "stage", placement: "before-usp" });
+    expect(undJulia).toMatchObject({
+      groupId: "26185666",
+      width: 728,
+      height: 90,
+      trackingNetwork: "stage",
+      placement: "before-story-paragraph",
+      storyParagraphIndex: 2,
+    });
     expect(wirSindAmLeben).toMatchObject({ groupId: "26185700", trackingNetwork: "stage" });
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26185666"
