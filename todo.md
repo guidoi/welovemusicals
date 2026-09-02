@@ -395,3 +395,4 @@
 - [x] Anbieterlogos aus allen Karten unter „Spielorte & Termine“ entfernt und Ticketinformationen unverändert geprüft
 - [x] Fack ju Göhte im Startseiten-Teaser mit einem Sale-Störer analog König der Löwen und der sichtbaren Beschriftung „30 % Back to School Sale“ versehen
 - [x] Fack-ju-Göhte-Landingpage: bereitgestelltes Eventim-Awin-Banner nach der Einleitung sichtbar, responsiv und als gesponserte Ticketoption eingebunden
+- [x] Fack-ju-Göhte-Sale-Störer: „Back to School Sale“ innerhalb des roten Badges ohne Icon-, Text- oder Top-Musical-Überlappung dargestellt und auf Desktop sowie Mobil geprüft
