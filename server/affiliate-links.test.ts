@@ -42,7 +42,7 @@ describe("Affiliate-Link-Zuordnung", () => {
     }
   });
 
-  it("erhält auf allen direkt verlinkten ATG-Seiten die Awin-Tracking-Optimisation mit Publisher-ID", () => {
+  it("hinterlegt ATG-Zielseiten ohne manuelle Doppelparameter und überlässt die Dekoration dem zustimmungsbasierten MasterTag", () => {
     const atgUrls = musicals
       .flatMap((musical) => [
         musical.eventimUrl,
@@ -60,11 +60,20 @@ describe("Affiliate-Link-Zuordnung", () => {
 
     for (const url of atgUrls) {
       const trackingUrl = new URL(url);
-      expect(trackingUrl.searchParams.get("utm_source")).toBe("awin");
-      expect(trackingUrl.searchParams.get("utm_medium")).toBe("affiliate");
-      expect(trackingUrl.searchParams.get("sv_campaign_id")).toBe("2865727");
+      expect(trackingUrl.searchParams.has("utm_source")).toBe(false);
+      expect(trackingUrl.searchParams.has("utm_medium")).toBe(false);
+      expect(trackingUrl.searchParams.has("utm_campaign")).toBe(false);
+      expect(trackingUrl.searchParams.has("sv1")).toBe(false);
+      expect(trackingUrl.searchParams.has("sv_campaign_id")).toBe(false);
       expect(trackingUrl.searchParams.has("awc")).toBe(false);
     }
+
+    const moulinRougeHamburg = musicals
+      .find((musical) => musical.id === "moulinrouge")
+      ?.tourDates?.find((date) => date.city === "Hamburg");
+    const target = new URL(moulinRougeHamburg?.eventimUrl ?? "");
+    expect(target.searchParams.get("eventsView")).toBe("calendar");
+    expect(target.searchParams.get("productionId")).toBe("28");
   });
 
   it("verwendet für König der Löwen die direkte Stage-Entertainment-Produktseite an allen Ticket-CTAs", () => {

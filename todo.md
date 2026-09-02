@@ -389,3 +389,5 @@
 
 - [x] Affiliate-Zuordnung für Eventim/Awin, ATG/Awin und Stage/TradeDoubler technisch vollständig auditiert und für zustimmende Besucher maximal sauber optimiert
 - [x] Consent-Banner vor Veröffentlichung gegen die optimierten Partner- und Conversionpfade geprüft und die Attributionseffekte dokumentiert
+
+- [x] Doppelte manuelle UTM-/sv-Parameter aus allen ATG-Ticketlinks bereinigt und die dynamische Awin-Bounceless-Attribution danach geprüft
