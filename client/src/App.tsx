@@ -11,6 +11,9 @@ import CityDetail from "./pages/CityDetail";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import { didRouteChange, resetScrollToTop } from "./lib/route-scroll";
+import { ConsentProvider } from "./contexts/ConsentContext";
+import CookieConsent from "./components/CookieConsent";
+import OptionalConsentServices from "./components/OptionalConsentServices";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -56,12 +59,16 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
+      <ConsentProvider>
+        <ThemeProvider defaultTheme="dark">
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+            <OptionalConsentServices />
+            <CookieConsent />
+          </TooltipProvider>
+        </ThemeProvider>
+      </ConsentProvider>
     </ErrorBoundary>
   );
 }

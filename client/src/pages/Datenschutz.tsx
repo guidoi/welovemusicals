@@ -94,9 +94,18 @@ export default function Datenschutz() {
             <section>
               <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Cookies</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt. Teilweise können auch Cookies von Drittunternehmen auf Ihrem Endgerät gespeichert werden, wenn Sie unsere Seite betreten (Third-Party-Cookies).<br /><br />
-                Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Websitefunktionen ohne diese nicht funktionieren würden (z. B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies dienen dazu, das Nutzerverhalten auszuwerten oder Werbung anzuzeigen.
+                Wir speichern Ihre Auswahl zu den Datenschutzeinstellungen lokal in Ihrem Browser. Diese Speicherung ist erforderlich, um Ihre Entscheidung bei weiteren Seitenaufrufen zu berücksichtigen. Optionale Technologien werden erst aktiviert, nachdem Sie diese im Consent-Fenster ausgewählt haben. Sie können Ihre Auswahl jederzeit über „Datenschutz-Einstellungen“ im Footer ändern.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gold mb-4 tracking-wide">Optionale Dienste und Einwilligung</h2>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p><strong className="text-foreground">Reichweitenmessung:</strong> Mit Ihrer Einwilligung laden wir Umami, um aggregierte Nutzungsstatistiken auszuwerten und Inhalte zu verbessern.</p>
+                <p><strong className="text-foreground">Partner- und Affiliate-Messung:</strong> Mit Ihrer Einwilligung laden wir Awin- und TradeDoubler-Technologien für Convert-a-Link, Bounceless Tracking und Kampagnenimpressionen. Ticket- und Angebotslinks sind als Affiliate-Links gekennzeichnet; beim bewussten Klick werden Sie zum jeweiligen Partner weitergeleitet.</p>
+                <p><strong className="text-foreground">Externe Medien und Schriftarten:</strong> YouTube-Videos und externe Google-Schriftarten laden wir erst nach Ihrer Einwilligung. YouTube-Videos starten zusätzlich erst nach einem weiteren Klick. Dabei können Google bzw. YouTube technische Daten wie Ihre IP-Adresse und die aufgerufene Seite verarbeiten.</p>
+                <p>Ihre Einwilligung ist freiwillig und kann jederzeit mit Wirkung für die Zukunft über die Datenschutzeinstellungen widerrufen werden. Nach einem Widerruf laden wir die Seite neu, damit optionale Dienste nicht weiter aktiv sind.</p>
+              </div>
             </section>
 
             {/* Hosting */}

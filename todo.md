@@ -381,3 +381,11 @@
 - [x] &-Julia: Abstand oberhalb der Passage „Erlebe eine unbeschwerte, romantische Feel-Good-Show …“ passend zur Bannerintegration vergrößert und angeglichen
 - [x] Alle Aovo-Kampagnenbanner auf native Bildgröße, Schärfe und responsive Auslieferung geprüft; Eiskönigin- und Tarzan-Motiv ohne rahmenbedingte Skalierung auf nativen 300 × 250 px abgesichert
 - [x] Technischen Awin-Audit für Eventim- und ATG-Links inklusive Publisher-ID, Zielweiterleitung und nachvollziehbarer Trackingparameter durchgeführt
+- [x] Cookie- und Drittanbieter-Audit für YouTube, Awin, TradeDoubler, Analytics und externe Assets durchgeführt sowie Consent-Architektur festgelegt
+- [x] Externe Inhalte nach Freigabe erst nach Interaktion bzw. Zustimmung geladen und kompakten Cookie-Consent mit Ablehnungsoption implementiert
+- [x] Kompakten Consent-Banner mit „Alle akzeptieren“, „Nur notwendige“ und „Einstellungen“ im Theatrical-Noir-Stil implementiert
+- [x] Optionale Dienste (Umami, Awin MasterTag, TradeDoubler-Converter, Aovo-Impressions und YouTube) bis zur aktiven Zustimmung blockiert
+- [x] Datenschutz-Einstellungen über Footer erreichbar gemacht und die Datenschutzerklärung auf die Consent-Kategorien aktualisiert
+
+- [x] Affiliate-Zuordnung für Eventim/Awin, ATG/Awin und Stage/TradeDoubler technisch vollständig auditiert und für zustimmende Besucher maximal sauber optimiert
+- [x] Consent-Banner vor Veröffentlichung gegen die optimierten Partner- und Conversionpfade geprüft und die Attributionseffekte dokumentiert

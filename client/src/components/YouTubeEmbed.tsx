@@ -1,11 +1,11 @@
 /**
  * YouTubeEmbed-Komponente
  * Zeigt ein YouTube-Video mit Standbild und Play-Button
- * Video wird erst nach Klick geladen (Lazy Loading)
- * Fallback: maxresdefault → hqdefault → sddefault
+ * YouTube wird erst nach einer Einwilligung und einem zusätzlichen Klick geladen.
  */
 import { useState } from "react";
-import { Play } from "lucide-react";
+import { Play, ShieldCheck } from "lucide-react";
+import { useConsent } from "@/contexts/ConsentContext";
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -14,13 +14,15 @@ interface YouTubeEmbedProps {
 
 export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [thumbnailQuality, setThumbnailQuality] = useState<"maxresdefault" | "hqdefault" | "sddefault">("maxresdefault");
+  const { consent, openSettings } = useConsent();
+  const canLoadYouTube = consent?.externalMedia === true;
 
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/${thumbnailQuality}.jpg`;
-
-  const handleThumbnailError = () => {
-    if (thumbnailQuality === "maxresdefault") setThumbnailQuality("hqdefault");
-    else if (thumbnailQuality === "hqdefault") setThumbnailQuality("sddefault");
+  const startVideo = () => {
+    if (!canLoadYouTube) {
+      openSettings();
+      return;
+    }
+    setIsPlaying(true);
   };
 
   if (isPlaying) {
@@ -42,23 +44,15 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
   return (
     <div
       className="w-full rounded-lg overflow-hidden cursor-pointer group"
-      onClick={() => setIsPlaying(true)}
+      onClick={startVideo}
       role="button"
       tabIndex={0}
       aria-label={`Video abspielen: ${title || "YouTube Video"}`}
-      onKeyDown={(e) => e.key === "Enter" && setIsPlaying(true)}
+      onKeyDown={(e) => e.key === "Enter" && startVideo()}
     >
       <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-        {/* Thumbnail */}
-        <img
-          src={thumbnailUrl}
-          alt={title || "YouTube Video Thumbnail"}
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          onError={handleThumbnailError}
-        />
-
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/70 transition-all duration-300" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(212,175,55,0.28),transparent_34%),linear-gradient(135deg,#211215,#060506_72%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90" />
 
         {/* Play Button – YouTube-Stil mit Gold-Akzent */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -72,9 +66,16 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
           </div>
         </div>
 
+        {!canLoadYouTube && (
+          <div className="absolute inset-x-5 bottom-5 flex items-start gap-2 rounded-sm border border-white/15 bg-black/55 p-3 text-left text-xs leading-relaxed text-white/80 backdrop-blur-sm">
+            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+            <span>Mit „Externe Medien & Schriftarten“ lädst du YouTube und stimmst der Datenübertragung an YouTube zu.</span>
+          </div>
+        )}
+
         {/* Titel unten links */}
         {title && (
-          <div className="absolute bottom-0 left-0 right-0 p-4">
+          <div className={`absolute bottom-0 left-0 right-0 p-4 ${!canLoadYouTube ? "pb-20" : ""}`}>
             <p className="text-sm font-medium text-white/90 line-clamp-1 drop-shadow">{title}</p>
           </div>
         )}

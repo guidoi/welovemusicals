@@ -5,8 +5,11 @@
 import { Ticket, Heart } from "lucide-react";
 import { Link } from "wouter";
 import { cities, getActiveMusicals } from "@/lib/data";
+import { useConsent } from "@/contexts/ConsentContext";
 
 export default function Footer() {
+  const { openSettings } = useConsent();
+
   return (
     <footer className="bg-card border-t border-gold/10 mt-auto">
       {/* Gold Divider */}
@@ -102,6 +105,11 @@ export default function Footer() {
                   )}
                 </li>
               ))}
+              <li>
+                <button type="button" onClick={openSettings} className="text-left text-sm text-muted-foreground transition-colors hover:text-gold">
+                  Datenschutz-Einstellungen
+                </button>
+              </li>
             </ul>
           </div>
         </div>

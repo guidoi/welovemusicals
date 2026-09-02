@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from "react";
+import { useConsent } from "@/contexts/ConsentContext";
 
 export type AovoCampaign = {
   musicalId: string;
@@ -133,15 +134,17 @@ export function getAovoCampaignImpressionUrl(
 }
 
 export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaign }) {
+  const { consent } = useConsent();
   const impressionUrl = useMemo(
     () => getAovoCampaignImpressionUrl(campaign.groupId, String(Math.random()).slice(2, 11), campaign.trackingNetwork),
     [campaign.groupId, campaign.trackingNetwork]
   );
 
   useEffect(() => {
+    if (!consent?.affiliateTracking) return;
     const impressionPixel = new Image();
     impressionPixel.src = impressionUrl;
-  }, [impressionUrl]);
+  }, [consent?.affiliateTracking, impressionUrl]);
 
   return (
     <aside

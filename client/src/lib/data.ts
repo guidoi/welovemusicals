@@ -960,7 +960,7 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-header-pearl-rusty_5365eea2.webp",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-22_d95ea5c7.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-keyvisual_7428962d.webp",
-    keyvisualLink: "https://www.atgtickets.de/musicals-shows/starlight-express/landingpage/awin/?utm_term=stex-lp%2F&utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals%2Fwww.welovemusicals.com&sv1=affiliate&sv_campaign_id=2865727&utm_id=system:CM360.pid:443614331.cid:233231691&awc=111888_1782309103_4062ad0f9cb51e265a530c020d71471a",
+    keyvisualLink: "https://www.atgtickets.de/musicals-shows/starlight-express/landingpage/awin/?utm_term=stex-lp%2F&utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals%2Fwww.welovemusicals.com&sv1=affiliate&sv_campaign_id=2865727&utm_id=system:CM360.pid:443614331.cid:233231691",
     priceFrom: "59,99",
     ticketCtaUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/?utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals&sv1=affiliate&sv_campaign_id=2865727",
     awinHeroUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/?utm_source=awin&utm_medium=affiliate&utm_campaign=welovemusicals&sv1=affiliate&sv_campaign_id=2865727",

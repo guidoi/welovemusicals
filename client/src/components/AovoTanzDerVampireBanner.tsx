@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from "react";
+import { useConsent } from "@/contexts/ConsentContext";
 
 export const AOVO_TDV_CLICK_URL = "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26137318";
 export const AOVO_TDV_BANNER_URL = "/images/show-visuals/tanz-der-vampire-500x500.png";
@@ -8,15 +9,17 @@ export function getAovoTdVImpressionUrl(cacheBuster: string) {
 }
 
 export default function AovoTanzDerVampireBanner() {
+  const { consent } = useConsent();
   const impressionUrl = useMemo(
     () => getAovoTdVImpressionUrl(String(Math.random()).slice(2, 11)),
     []
   );
 
   useEffect(() => {
+    if (!consent?.affiliateTracking) return;
     const impressionPixel = new Image();
     impressionPixel.src = impressionUrl;
-  }, [impressionUrl]);
+  }, [consent?.affiliateTracking, impressionUrl]);
 
   return (
     <aside className="mt-8 border-t border-gold/15 pt-6" aria-label="Anzeige: Ticket und Hotel – Tanz der Vampire">

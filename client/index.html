@@ -96,104 +96,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#14090a" />
     
-    <!-- AWIN Mastertag: Affiliate-Tracking (Convert-a-Link + Bounceless Tracking) -->
-    <script defer src="https://www.dwin2.com/pub.2865727.min.js"></script>
-
-    <!-- Trade Doubler Link Converter: wandelt auch nachgerenderte React-Links in Partnerlinks um -->
-    <script type="text/javascript">
-      (function (d, s, id) {
-        var converterObserver;
-        var conversionTimeout;
-        var stageProgramId = "394206";
-        var tradeDoublerSiteId = "3492604";
-        var tradeDoublerTrackingId = "18";
-
-        function convertStageLinksWithFallback() {
-          var links = d.querySelectorAll('a[href]');
-
-          for (var index = 0; index < links.length; index += 1) {
-            var link = links[index];
-            var destination;
-
-            try {
-              destination = new URL(link.href);
-            } catch (error) {
-              continue;
-            }
-
-            if (destination.hostname !== "www.stage-entertainment.de") continue;
-
-            link.href = "https://visit.stage-entertainment.de/click?p=" + stageProgramId
-              + "&a=" + tradeDoublerSiteId
-              + "&ttid=" + tradeDoublerTrackingId
-              + "&url=" + encodeURIComponent(destination.href);
-          }
-        }
-
-        function convertEligibleLinks() {
-          window.clearTimeout(conversionTimeout);
-          conversionTimeout = window.setTimeout(function () {
-            if (window.TDLinkConverter && typeof window.TDLinkConverter.init === "function") {
-              window.TDLinkConverter.init({});
-            } else {
-              convertStageLinksWithFallback();
-            }
-          }, 1500);
-        }
-
-        window.tdlcAsyncInit = function () {
-          convertEligibleLinks();
-
-          if (!converterObserver && window.MutationObserver && d.documentElement) {
-            converterObserver = new MutationObserver(convertEligibleLinks);
-            converterObserver.observe(d.documentElement, { childList: true, subtree: true });
-          }
-        };
-
-        var tdlc_1d43f5s_a = new Date();
-        tdlc_1d43f5s_a.setMinutes(0);
-        tdlc_1d43f5s_a.setSeconds(0);
-        var tdlc_1d43f5s_seconds = parseInt(tdlc_1d43f5s_a.getTime() / 1000, 10);
-        var fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-
-        var js = d.createElement(s);
-        js.id = id;
-        js.src = "https://clk.tradedoubler.com/lc?a(3492604)rand(" + tdlc_1d43f5s_seconds + ")";
-        js.onload = window.tdlcAsyncInit;
-        fjs.parentNode.insertBefore(js, fjs);
-
-        // Der Loader kann bei Adblockern oder restriktiven MIME-/CSP-Regeln zwar geladen,
-        // aber nicht ausgeführt werden. Der Tracking-Fallback muss trotzdem starten.
-        if (d.readyState === "loading") {
-          d.addEventListener("DOMContentLoaded", window.tdlcAsyncInit, { once: true });
-        } else {
-          window.tdlcAsyncInit();
-        }
-      })(document, "script", "tdlc-jssdk");
-    </script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   </head>
 
   <body style="background-color:#1a1a2e;color:#e8dcc8;">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Analytics Script - Loaded via main.tsx to handle env vars -->
-    <script>
-      (function() {
-        if (window.__VITE_ANALYTICS_ENDPOINT__ && window.__VITE_ANALYTICS_WEBSITE_ID__) {
-          const script = document.createElement('script');
-          script.defer = true;
-          script.src = window.__VITE_ANALYTICS_ENDPOINT__ + '/umami';
-          script.setAttribute('data-website-id', window.__VITE_ANALYTICS_WEBSITE_ID__);
-          document.body.appendChild(script);
-        }
-      })();
-    </script>
   </body>
 
 </html>

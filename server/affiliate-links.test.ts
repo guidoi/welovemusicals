@@ -54,7 +54,7 @@ describe("Affiliate-Link-Zuordnung", () => {
         ...(musical.tourDates ?? []).map((date) => date.eventimUrl),
       ])
       .filter((url): url is string => Boolean(url))
-      .filter((url) => new URL(url).hostname === "www.atgtickets.de");
+      .filter((url) => new URL(url).hostname.endsWith("atgtickets.de"));
 
     expect(atgUrls.length).toBeGreaterThan(0);
 
@@ -63,6 +63,7 @@ describe("Affiliate-Link-Zuordnung", () => {
       expect(trackingUrl.searchParams.get("utm_source")).toBe("awin");
       expect(trackingUrl.searchParams.get("utm_medium")).toBe("affiliate");
       expect(trackingUrl.searchParams.get("sv_campaign_id")).toBe("2865727");
+      expect(trackingUrl.searchParams.has("awc")).toBe(false);
     }
   });
 
@@ -98,15 +99,18 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(ACTIVE_MUSICAL_IDS).not.toContain("die-amme");
   });
 
-  it("initialisiert den Trade-Doubler Link Converter auch nach React-Renderzyklen erneut", () => {
-    const indexHtml = readFileSync(new URL("../client/index.html", import.meta.url), "utf8");
+  it("initialisiert den TradeDoubler Link Converter erst nach Zustimmung und auch nach React-Renderzyklen", () => {
+    const consentServices = readFileSync(
+      new URL("../client/src/components/OptionalConsentServices.tsx", import.meta.url),
+      "utf8"
+    );
 
-    expect(indexHtml).toContain("https://clk.tradedoubler.com/lc?a(3492604)rand(");
-    expect(indexHtml).toContain("window.TDLinkConverter.init({});");
-    expect(indexHtml).toContain("new MutationObserver(convertEligibleLinks)");
-    expect(indexHtml).toContain("js.onload = window.tdlcAsyncInit;");
-    expect(indexHtml).toContain("https://visit.stage-entertainment.de/click?p=");
-    expect(indexHtml).toContain("destination.hostname !== \"www.stage-entertainment.de\"");
-    expect(indexHtml).toContain('d.addEventListener("DOMContentLoaded", window.tdlcAsyncInit');
+    expect(consentServices).toContain("if (!consent?.affiliateTracking) return;");
+    expect(consentServices).toContain("https://clk.tradedoubler.com/lc?a(3492604)rand(");
+    expect(consentServices).toContain("converter?.init");
+    expect(consentServices).toContain("new MutationObserver(convertEligibleLinks)");
+    expect(consentServices).toContain("https://visit.stage-entertainment.de/click?p=394206");
+    expect(consentServices).toContain('destination.hostname.endsWith(".stage-entertainment.de")');
+    expect(consentServices).toContain("convertStageLinksWithFallback();");
   });
 });
