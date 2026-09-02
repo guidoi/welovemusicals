@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import TourDates from "./TourDates";
 
 describe("TourDates", () => {
-  it("zeigt das Stage-Logo rechts in der Ticketkarte für eine Stage-Produktion", () => {
+  it("zeigt Ticketdaten ohne Anbieterlogo in der Ticketkarte", () => {
     const markup = renderToStaticMarkup(
       <TourDates
         musicalSlug="wir-sind-am-leben"
@@ -21,9 +21,8 @@ describe("TourDates", () => {
     );
 
     expect(markup).toContain("Stage Theater des Westens");
-    expect(markup).toContain("Stage Entertainment");
-    expect(markup).toContain('data-testid="tour-date-provider-logo"');
-    expect(markup).toContain("stage-entertainment-logo-white.png");
+    expect(markup).toContain("Tickets sichern");
+    expect(markup).not.toContain('data-testid="tour-date-provider-logo"');
+    expect(markup).not.toContain("stage-entertainment-logo-white.png");
   });
 });
-

@@ -17,7 +17,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import React, { useState } from "react";
-import { getTicketProviderBrand } from "@/lib/ticket-provider-brand";
 
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
@@ -170,7 +169,6 @@ export default function TourDates({
         <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl mx-auto"}>
           {sortedCityEntries.map(([city, dates]) => {
             const firstDate = dates[0];
-            const ticketProviderBrand = getTicketProviderBrand(musicalSlug ?? "", firstDate.eventimUrl);
             return (
               <div
                 key={city}
@@ -188,12 +186,6 @@ export default function TourDates({
                       </span>
                     )}
                   </div>
-                  <img
-                    data-testid="tour-date-provider-logo"
-                    src={ticketProviderBrand.logoSrc}
-                    alt={ticketProviderBrand.name}
-                    className="h-6 max-w-28 w-auto object-contain object-right opacity-90"
-                  />
                 </div>
 
                 {/* Premiere-Badge wenn vorhanden */}

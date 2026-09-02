@@ -42,6 +42,7 @@ import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
 import AovoCampaignBanner, { getAovoCampaign } from "@/components/AovoCampaignBanner";
+import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 
 export default function MusicalDetail() {
@@ -297,6 +298,9 @@ export default function MusicalDetail() {
                           <div className="lg:hidden my-8">
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
                           </div>
+                        )}
+                        {musical.id === "fackjugoehte" && i === 1 && (
+                          <EventimFackJuGoehteBanner />
                         )}
                         {/* Mobile Keyvisual:
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
