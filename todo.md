@@ -398,3 +398,5 @@
 - [x] Fack-ju-Göhte-Sale-Störer: „Back to School Sale“ innerhalb des roten Badges ohne Icon-, Text- oder Top-Musical-Überlappung dargestellt und auf Desktop sowie Mobil geprüft
 - [x] Fack-ju-Göhte-Sale-Störer: Back-to-School-Text deutlich kompakter gesetzt, damit die Badge-Höhe der Familien-Variante entspricht
 - [x] HRS-Hotelbereiche auf allen Musical-Landingpages vorerst einheitlich ausgeblendet, ohne bestehende Ticketabschnitte oder Kampagnenbanner zu verändern
+- [x] Fack-ju-Göhte-Eventim-Awin-Banner durch Kampagne 4568827 ersetzen: Nach mehreren fehlgeschlagenen Vorschauvarianten auf ausdrücklichen Wunsch nicht weiterverfolgt und durch die zuvor bewährte Kampagne ersetzt
+- [x] Fack-ju-Göhte-Eventim-Awin-Banner auf die zuvor verwendete Kampagne 4568823 mit dem bewährten sichtbaren Motiv und zugehörigem Klick- sowie Impression-Tracking zurückgestellt und auf Desktop sowie Mobil geprüft
