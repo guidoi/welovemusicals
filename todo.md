@@ -408,3 +408,6 @@
 - [x] Mobile Video-Vorschau: lokale echte Trailer-Thumbnails sichtbar ausgeliefert; funktionierende Desktop-Darstellung unverändert gelassen
 - [x] Desktop-Regression der Trailer-Vorschau nach mobiler Vorladeanpassung zurückgenommen und die fehlerfreie Desktop-Anzeige wiederhergestellt
 - [x] Trailer-Thumbnails: fehlerhaft dargestellte lokale Grafikquelle auf Desktop und Mobil durch stabil dekodierbare Vorschaubilder ersetzt
+- [x] Trailer-Thumbnails mit doppeltem Artwork oder Key Visual bei Fack ju Göhte, Glöckner von Notre-Dame, Tarzan, Tanz der Vampire und Sister Act durch lebendigere passende Szenenbilder ersetzt; Das Phantom der Oper bleibt auf Wunsch beim bisherigen Vorschaubild. Die YouTube-Consent-Sperre bleibt unverändert
+- [x] Standard für künftige Trailer festgehalten: immer ein lebendiges, klar erkennbares Bühnen- oder Szenenbild verwenden und Artwork nur einsetzen, wenn kein passendes Szenenmotiv verfügbar ist
+- [x] Das bisherige Trailer-Thumbnail von Das Phantom der Oper wiederhergestellt und das neue, checkpoint-blockierende Phantom-Szenenbild aus den lokalen Webassets entfernt

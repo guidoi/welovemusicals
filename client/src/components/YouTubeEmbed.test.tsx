@@ -13,7 +13,7 @@ describe("YouTubeEmbed", () => {
       <YouTubeEmbed videoId="B0vHUyLx2Ac" title="Fack Ju Göhte Trailer" eagerThumbnail />,
     );
 
-    expect(markup).toContain('src="/images/show-visuals/trailer-thumbnails/B0vHUyLx2Ac.jpg"');
+    expect(markup).toContain('src="/images/show-visuals/trailer-thumbnails/fack-ju-goehte-scene.jpg"');
     expect(markup).toContain('alt=""');
     expect(markup).toContain('loading="eager"');
     expect(markup).toContain("Mit „Externe Medien &amp; Schriftarten“");
