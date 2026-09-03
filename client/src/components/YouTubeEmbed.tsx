@@ -3,9 +3,10 @@
  * Zeigt ein YouTube-Video mit Standbild und Play-Button
  * YouTube wird erst nach einer Einwilligung und einem zusätzlichen Klick geladen.
  */
-import { useState } from "react";
+import React, { useState } from "react";
 import { Play, ShieldCheck } from "lucide-react";
 import { useConsent } from "@/contexts/ConsentContext";
+import { getTrailerThumbnail } from "@/lib/youtube-thumbnails";
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -16,6 +17,7 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const { consent, openSettings } = useConsent();
   const canLoadYouTube = consent?.externalMedia === true;
+  const thumbnailSrc = getTrailerThumbnail(videoId);
 
   const startVideo = () => {
     if (!canLoadYouTube) {
@@ -51,8 +53,18 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
       onKeyDown={(e) => e.key === "Enter" && startVideo()}
     >
       <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(212,175,55,0.28),transparent_34%),linear-gradient(135deg,#211215,#060506_72%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90" />
+        {thumbnailSrc ? (
+          <img
+            src={thumbnailSrc}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(212,175,55,0.28),transparent_34%),linear-gradient(135deg,#211215,#060506_72%)]" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10 transition-all duration-300 group-hover:from-black/90" />
 
         {/* Play Button – YouTube-Stil mit Gold-Akzent */}
         <div className="absolute inset-0 flex items-center justify-center">

@@ -401,3 +401,7 @@
 - [x] Fack-ju-Göhte-Eventim-Awin-Banner durch Kampagne 4568827 ersetzen: Nach mehreren fehlgeschlagenen Vorschauvarianten auf ausdrücklichen Wunsch nicht weiterverfolgt und durch die zuvor bewährte Kampagne ersetzt
 - [x] Fack-ju-Göhte-Eventim-Awin-Banner auf die zuvor verwendete Kampagne 4568823 mit dem bewährten sichtbaren Motiv und zugehörigem Klick- sowie Impression-Tracking zurückgestellt und auf Desktop sowie Mobil geprüft
 - [x] Fack-ju-Göhte-Sale-Störer: mobilen Überlauf am Kartenrand verhindert und Abstand zu weiteren Teaser-Badges auf 375 px Breite geprüft
+- [x] Video-Vorschau auf Musical-Landingpages auf die zuvor bevorzugte, zurückhaltende Darstellung zurückgestellt, ohne die YouTube-Consent-Sperre zu umgehen
+- [x] Video-Vorschau auf Musical-Landingpages: je Trailer das passende echte Thumbnail statt der abstrakten Platzhalterfläche angezeigt; YouTube selbst weiter erst nach Zustimmung und Klick laden
+- [x] Für alle hinterlegten Trailer-IDs echte, lokal auslieferbare YouTube-Thumbnails erfasst und als emotionale Vorschaubilder ohne Vorabkontakt zu YouTube eingebunden
+- [x] Bestätigte Umsetzung: Die aktuellen Video-Platzhalter auf allen Musical-Landingpages durch die zugehörigen lokalen Trailer-Thumbnails ersetzt, ohne die YouTube-Consent-Sperre zu verändern
