@@ -76,21 +76,21 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
+                className={`absolute top-2.5 left-2.5 z-10 ${hasLongSaleLabel ? SALE_BADGE_LAYOUT.longLabelWidthClasses : SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
                 aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
                 data-testid="sale-badge"
                 data-sale-layout={hasLongSaleLabel ? "long-label" : "compact"}
               >
-                <div className="flex items-center gap-2">
-                  <span data-testid="sale-icon" className="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">
-                    <Tag className="absolute h-10 w-10 fill-[#991b1b] text-[#991b1b]" strokeWidth={0} />
-                    <span className="relative -translate-x-px text-[20px] font-black leading-none text-white">%</span>
+                <div className={`flex items-center ${hasLongSaleLabel ? "gap-1" : "gap-2"}`}>
+                  <span data-testid="sale-icon" className={`relative grid shrink-0 place-items-center ${hasLongSaleLabel ? "h-8 w-8" : "h-10 w-10"}`} aria-hidden="true">
+                    <Tag className={`absolute fill-[#991b1b] text-[#991b1b] ${hasLongSaleLabel ? "h-8 w-8" : "h-10 w-10"}`} strokeWidth={0} />
+                    <span className={`relative -translate-x-px font-black leading-none text-white ${hasLongSaleLabel ? "text-[16px]" : "text-[20px]"}`}>%</span>
                   </span>
                   <span className="min-w-0">
                     <span
                       data-testid="sale-label"
                       className={hasLongSaleLabel
-                        ? "block whitespace-nowrap font-heading text-[10px] font-bold leading-none tracking-tight text-white"
+                        ? "block max-w-full whitespace-nowrap font-heading text-[8px] font-bold leading-none tracking-[-0.04em] text-white sm:text-[10px] sm:tracking-tight"
                         : "block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"}
                     >
                       {musical.sale.label}

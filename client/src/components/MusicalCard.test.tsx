@@ -47,7 +47,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
     expect(markup).toContain('data-testid="sale-icon"');
-    expect(markup).toContain('data-testid="sale-icon" class="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">');
+    expect(markup).toContain('data-testid="sale-icon" class="relative grid shrink-0 place-items-center h-10 w-10" aria-hidden="true">');
     expect(markup).toContain("fill-[#991b1b] text-[#991b1b]");
     expect(markup).toContain('stroke-width="0"');
     expect(markup).toContain("text-[20px]");
@@ -77,10 +77,13 @@ describe("MusicalCard Sale-Störer", () => {
     );
 
     expect(markup).toContain('data-sale-layout="long-label"');
-    expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
+    expect(markup).toContain(SALE_BADGE_LAYOUT.longLabelWidthClasses);
     expect(markup).toContain("BACK TO SCHOOL SALE");
     expect(markup).toContain("30 %");
-    expect(markup).toContain("text-[10px]");
+    expect(markup).toContain("overflow-hidden");
+    expect(markup).toContain("gap-1");
+    expect(markup).toContain("h-8 w-8");
+    expect(markup).toContain("text-[8px]");
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).not.toContain("[overflow-wrap:anywhere]");
   });

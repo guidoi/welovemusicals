@@ -400,3 +400,4 @@
 - [x] HRS-Hotelbereiche auf allen Musical-Landingpages vorerst einheitlich ausgeblendet, ohne bestehende Ticketabschnitte oder Kampagnenbanner zu verändern
 - [x] Fack-ju-Göhte-Eventim-Awin-Banner durch Kampagne 4568827 ersetzen: Nach mehreren fehlgeschlagenen Vorschauvarianten auf ausdrücklichen Wunsch nicht weiterverfolgt und durch die zuvor bewährte Kampagne ersetzt
 - [x] Fack-ju-Göhte-Eventim-Awin-Banner auf die zuvor verwendete Kampagne 4568823 mit dem bewährten sichtbaren Motiv und zugehörigem Klick- sowie Impression-Tracking zurückgestellt und auf Desktop sowie Mobil geprüft
+- [x] Fack-ju-Göhte-Sale-Störer: mobilen Überlauf am Kartenrand verhindert und Abstand zu weiteren Teaser-Badges auf 375 px Breite geprüft
