@@ -44,6 +44,7 @@ import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
 import AovoCampaignBanner, { getAovoCampaign } from "@/components/AovoCampaignBanner";
 import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
+import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -128,10 +129,9 @@ export default function MusicalDetail() {
     .filter((m) => m.id !== musical.id && (m.provider === musical.provider || m.category === musical.category))
     .slice(0, 3);
 
-  // Get relevant cities
   const relevantCities = musical.city
-    ? cities.filter((c) => c.name === musical.city || musical.cities?.includes(c.name))
-    : cities.filter((c) => musical.cities?.includes(c.name));
+    ? cities.filter((city) => city.name === musical.city || musical.cities?.includes(city.name))
+    : cities.filter((city) => musical.cities?.includes(city.name));
   const hotelCities = musical.id === "moulinrouge"
     ? relevantCities.filter((city) => city.name === "Hamburg")
     : relevantCities;
@@ -534,8 +534,8 @@ export default function MusicalDetail() {
         <MusicalShowFacts facts={musical.showFacts ?? []} provider={musical.provider} faqItems={musical.faqItems} />
       )}
 
-      {/* Hotels Section */}
-      {hotelCities.length > 0 && (
+      {/* HRS-Hotelbereich – bis zur neuen Reise- oder Hotelpartnerschaft vorerst ausgeblendet. */}
+      {SHOW_MUSICAL_HOTEL_SECTIONS && hotelCities.length > 0 && (
         <section className="py-12 md:py-16 bg-background">
           <div className="container max-w-4xl">
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">
@@ -559,13 +559,21 @@ export default function MusicalDetail() {
                   <p className="text-sm text-muted-foreground mb-4">
                     {city.description}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{color: '#b8944a'}}>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: "#b8944a" }}>
                     <Hotel className="w-4 h-4" />
                     Hotels durchsuchen
                   </span>
                 </a>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Kampagnenanzeigen bleiben unabhängig vom vorübergehend deaktivierten HRS-Bereich sichtbar. */}
+      {(musical.id === "tanz-der-vampire" || (aovoCampaign && aovoCampaign.placement !== "before-usp")) && (
+        <section className="py-12 md:py-16 bg-background" data-testid="musical-campaign-section">
+          <div className="container max-w-4xl">
             {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
             {aovoCampaign?.placement !== "before-usp" && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
           </div>

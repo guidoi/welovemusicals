@@ -61,7 +61,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });
 
-  it("bricht einen langen Back-to-School-Aktionsnamen innerhalb der breiteren Sale-Variante um", () => {
+  it("verdichtet einen langen Back-to-School-Aktionsnamen auf die kompakte Sale-Badge-Höhe", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -77,12 +77,12 @@ describe("MusicalCard Sale-Störer", () => {
     );
 
     expect(markup).toContain('data-sale-layout="long-label"');
-    expect(markup).toContain(SALE_BADGE_LAYOUT.longLabelWidthClasses);
+    expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain("BACK TO SCHOOL SALE");
     expect(markup).toContain("30 %");
-    expect(markup).toContain("text-[15px]");
-    expect(markup).toContain("[overflow-wrap:anywhere]");
-    expect(markup).not.toContain('data-testid="sale-label" class="block whitespace-nowrap');
+    expect(markup).toContain("text-[10px]");
+    expect(markup).toContain("whitespace-nowrap");
+    expect(markup).not.toContain("[overflow-wrap:anywhere]");
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {

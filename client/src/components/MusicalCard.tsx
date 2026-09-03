@@ -76,7 +76,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${hasLongSaleLabel ? SALE_BADGE_LAYOUT.longLabelWidthClasses : SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.roundedClass} border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
                 aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
                 data-testid="sale-badge"
                 data-sale-layout={hasLongSaleLabel ? "long-label" : "compact"}
@@ -90,7 +90,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                     <span
                       data-testid="sale-label"
                       className={hasLongSaleLabel
-                        ? "block font-heading text-[15px] font-semibold leading-[1.1] text-white [overflow-wrap:anywhere]"
+                        ? "block whitespace-nowrap font-heading text-[10px] font-bold leading-none tracking-tight text-white"
                         : "block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"}
                     >
                       {musical.sale.label}
