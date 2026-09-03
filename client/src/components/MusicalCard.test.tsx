@@ -47,7 +47,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
     expect(markup).toContain('data-testid="sale-icon"');
-    expect(markup).toContain('data-testid="sale-icon" class="relative grid shrink-0 place-items-center h-10 w-10" aria-hidden="true">');
+    expect(markup).toContain('data-testid="sale-icon" class="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">');
     expect(markup).toContain("fill-[#991b1b] text-[#991b1b]");
     expect(markup).toContain('stroke-width="0"');
     expect(markup).toContain("text-[20px]");
@@ -56,12 +56,14 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="sale-label" class="block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"');
     expect(markup).toContain("text-white");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
+    expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
+    expect(markup).toContain(SALE_BADGE_LAYOUT.mobileTextInsetClass);
     expect(markup).toContain("bg-[#ef4444]");
     expect(markup.match(/rounded-md/g)).toHaveLength(2);
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });
 
-  it("verdichtet einen langen Back-to-School-Aktionsnamen auf die kompakte Sale-Badge-Höhe", () => {
+  it("verwendet für Back to School dieselbe Badge-Geometrie wie für den König-der-Löwen-Sale", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -78,12 +80,15 @@ describe("MusicalCard Sale-Störer", () => {
 
     expect(markup).toContain('data-sale-layout="long-label"');
     expect(markup).toContain(SALE_BADGE_LAYOUT.longLabelWidthClasses);
+    expect(SALE_BADGE_LAYOUT.longLabelWidthClasses).toBe(SALE_BADGE_LAYOUT.widthClasses);
+    expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
+    expect(markup).toContain(SALE_BADGE_LAYOUT.mobileTextInsetClass);
     expect(markup).toContain("BACK TO SCHOOL SALE");
     expect(markup).toContain("30 %");
     expect(markup).toContain("overflow-hidden");
-    expect(markup).toContain("gap-1");
-    expect(markup).toContain("h-8 w-8");
-    expect(markup).toContain("text-[8px]");
+    expect(markup).toContain("gap-2");
+    expect(markup).toContain("h-10 w-10");
+    expect(markup).toContain("text-[9px]");
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).not.toContain("[overflow-wrap:anywhere]");
   });

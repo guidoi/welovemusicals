@@ -411,3 +411,4 @@
 - [x] Trailer-Thumbnails mit doppeltem Artwork oder Key Visual bei Fack ju Göhte, Glöckner von Notre-Dame, Tarzan, Tanz der Vampire und Sister Act durch lebendigere passende Szenenbilder ersetzt; Das Phantom der Oper bleibt auf Wunsch beim bisherigen Vorschaubild. Die YouTube-Consent-Sperre bleibt unverändert
 - [x] Standard für künftige Trailer festgehalten: immer ein lebendiges, klar erkennbares Bühnen- oder Szenenbild verwenden und Artwork nur einsetzen, wenn kein passendes Szenenmotiv verfügbar ist
 - [x] Das bisherige Trailer-Thumbnail von Das Phantom der Oper wiederhergestellt und das neue, checkpoint-blockierende Phantom-Szenenbild aus den lokalen Webassets entfernt
+- [x] Fack-ju-Göhte-Sale-Störer in Breite und Höhe an König der Löwen angeglichen und für künftige Rabattbuttons ein einheitliches, auf Mobilgeräten randfestes Format mit ausreichendem Textinnenabstand definiert
