@@ -407,3 +407,4 @@
 - [x] Bestätigte Umsetzung: Die aktuellen Video-Platzhalter auf allen Musical-Landingpages durch die zugehörigen lokalen Trailer-Thumbnails ersetzt, ohne die YouTube-Consent-Sperre zu verändern
 - [x] Mobile Video-Vorschau: lokale echte Trailer-Thumbnails sichtbar ausgeliefert; funktionierende Desktop-Darstellung unverändert gelassen
 - [x] Desktop-Regression der Trailer-Vorschau nach mobiler Vorladeanpassung zurückgenommen und die fehlerfreie Desktop-Anzeige wiederhergestellt
+- [x] Trailer-Thumbnails: fehlerhaft dargestellte lokale Grafikquelle auf Desktop und Mobil durch stabil dekodierbare Vorschaubilder ersetzt
