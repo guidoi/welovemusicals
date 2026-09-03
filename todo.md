@@ -412,3 +412,4 @@
 - [x] Standard für künftige Trailer festgehalten: immer ein lebendiges, klar erkennbares Bühnen- oder Szenenbild verwenden und Artwork nur einsetzen, wenn kein passendes Szenenmotiv verfügbar ist
 - [x] Das bisherige Trailer-Thumbnail von Das Phantom der Oper wiederhergestellt und das neue, checkpoint-blockierende Phantom-Szenenbild aus den lokalen Webassets entfernt
 - [x] Fack-ju-Göhte-Sale-Störer in Breite und Höhe an König der Löwen angeglichen und für künftige Rabattbuttons ein einheitliches, auf Mobilgeräten randfestes Format mit ausreichendem Textinnenabstand definiert
+- [x] Hero-Schiebenavi: Browser-Zurück-Navigation nach „Musicals“ und „Städte“ zur Startseite am Hero zurückgeführt statt fälschlich zum Impressum

@@ -34,9 +34,10 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('md:h-14');
     expect(markup).toContain('md:px-7');
     expect(markup).toContain('md:text-base');
-    expect(markup).toContain('href="#musicals"');
+    expect(markup).toContain('data-testid="hero-anchor-all-musicals"');
+    expect(markup).toContain('type="button"');
     expect(markup).toContain('>Musicals<');
-    expect(markup).toContain('href="#staedte"');
+    expect(markup).toContain('data-testid="hero-anchor-musical-cities"');
     expect(markup).toContain('href="/musical/alpha"');
   });
 

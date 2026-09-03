@@ -32,6 +32,12 @@ import {
   type Musical,
 } from "@/lib/data";
 import { getHeroNavigationItems } from "@/lib/hero-navigation";
+import {
+  createHeroAnchorHistoryState,
+  getHeroAnchorHistoryAction,
+  getHomeHeroScrollOptions,
+  shouldRestoreHomeHero,
+} from "@/lib/hero-anchor-history";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
@@ -113,8 +119,26 @@ export default function Home() {
     if (kind === "musical" || !href.startsWith("#")) return;
 
     const target = document.getElementById(href.slice(1));
-    window.history.pushState(null, "", href);
+    const nextHistoryState = createHeroAnchorHistoryState(window.history.state, href);
+    if (getHeroAnchorHistoryAction(window.history.state) === "replace") {
+      window.history.replaceState(nextHistoryState, "", href);
+    } else {
+      window.history.pushState(nextHistoryState, "", href);
+    }
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  useEffect(() => {
+    const restoreHomeHeroAfterBack = () => {
+      if (!shouldRestoreHomeHero(window.location.pathname, window.location.hash)) return;
+
+      requestAnimationFrame(() => {
+        window.scrollTo(getHomeHeroScrollOptions());
+      });
+    };
+
+    window.addEventListener("popstate", restoreHomeHeroAfterBack);
+    return () => window.removeEventListener("popstate", restoreHomeHeroAfterBack);
   }, []);
 
   const filteredMusicals = useMemo(() => {
