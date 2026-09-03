@@ -296,7 +296,7 @@ export default function MusicalDetail() {
                         {((i === 0 && (musical.id === 'sisteract' || musical.id === 'dracula' || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'starlight-express' || musical.id === 'eiskoenigin' || musical.id === 'koenig-der-loewen' || musical.id === 'mj-musical' || musical.id === 'tarzan' || musical.id === 'ziz' || musical.id === 'teufel-traegt-prada' || musical.id === 'die-amme' || musical.id === 'wir-sind-am-leben' || musical.id === 'tanz-der-vampire' || musical.id === 'we-will-rock-you' || musical.id === 'salon-rosie' || musical.id === 'und-julia'
 )) || (i === 1 && musical.id === 'fackjugoehte') || (i === 0 && musical.id === 'gloeckner-von-notre-dame')) && musical.youtubeTrailerId && (
                           <div className="lg:hidden my-8">
-                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} />
+                            <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} eagerThumbnail />
                           </div>
                         )}
                         {musical.id === "fackjugoehte" && i === 1 && (

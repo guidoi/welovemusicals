@@ -405,3 +405,5 @@
 - [x] Video-Vorschau auf Musical-Landingpages: je Trailer das passende echte Thumbnail statt der abstrakten Platzhalterfläche angezeigt; YouTube selbst weiter erst nach Zustimmung und Klick laden
 - [x] Für alle hinterlegten Trailer-IDs echte, lokal auslieferbare YouTube-Thumbnails erfasst und als emotionale Vorschaubilder ohne Vorabkontakt zu YouTube eingebunden
 - [x] Bestätigte Umsetzung: Die aktuellen Video-Platzhalter auf allen Musical-Landingpages durch die zugehörigen lokalen Trailer-Thumbnails ersetzt, ohne die YouTube-Consent-Sperre zu verändern
+- [x] Mobile Video-Vorschau: lokale echte Trailer-Thumbnails sichtbar ausgeliefert; funktionierende Desktop-Darstellung unverändert gelassen
+- [x] Desktop-Regression der Trailer-Vorschau nach mobiler Vorladeanpassung zurückgenommen und die fehlerfreie Desktop-Anzeige wiederhergestellt

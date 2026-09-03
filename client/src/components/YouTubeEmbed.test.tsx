@@ -10,12 +10,12 @@ vi.mock("@/contexts/ConsentContext", () => ({
 describe("YouTubeEmbed", () => {
   it("zeigt das lokale Trailer-Thumbnail an, ohne vor der Einwilligung YouTube zu laden", () => {
     const markup = renderToStaticMarkup(
-      <YouTubeEmbed videoId="B0vHUyLx2Ac" title="Fack Ju Göhte Trailer" />,
+      <YouTubeEmbed videoId="B0vHUyLx2Ac" title="Fack Ju Göhte Trailer" eagerThumbnail />,
     );
 
     expect(markup).toContain('src="/manus-storage/B0vHUyLx2Ac_adf8d183.jpg"');
     expect(markup).toContain('alt=""');
-    expect(markup).toContain('loading="lazy"');
+    expect(markup).toContain('loading="eager"');
     expect(markup).toContain("Mit „Externe Medien &amp; Schriftarten“");
     expect(markup).not.toContain("youtube.com/embed");
   });

@@ -11,9 +11,10 @@ import { getTrailerThumbnail } from "@/lib/youtube-thumbnails";
 interface YouTubeEmbedProps {
   videoId: string;
   title?: string;
+  eagerThumbnail?: boolean;
 }
 
-export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
+export default function YouTubeEmbed({ videoId, title, eagerThumbnail = false }: YouTubeEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const { consent, openSettings } = useConsent();
   const canLoadYouTube = consent?.externalMedia === true;
@@ -58,7 +59,7 @@ export default function YouTubeEmbed({ videoId, title }: YouTubeEmbedProps) {
             src={thumbnailSrc}
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
+            loading={eagerThumbnail ? "eager" : "lazy"}
             decoding="async"
           />
         ) : (
