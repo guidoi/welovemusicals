@@ -63,7 +63,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });
 
-  it("verwendet für Back to School dieselbe Badge-Geometrie wie für den König-der-Löwen-Sale", () => {
+  it("bricht Back to School Sale kontrolliert um und behält die Badge-Geometrie des König-der-Löwen-Sales", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -83,14 +83,18 @@ describe("MusicalCard Sale-Störer", () => {
     expect(SALE_BADGE_LAYOUT.longLabelWidthClasses).toBe(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
     expect(markup).toContain(SALE_BADGE_LAYOUT.mobileTextInsetClass);
-    expect(markup).toContain("BACK TO SCHOOL SALE");
+    expect(markup).toContain('data-testid="sale-label-line"');
+    expect((markup.match(/data-testid="sale-label-line"/g) ?? [])).toHaveLength(2);
+    expect(markup).toContain(">BACK TO SCHOOL<");
+    expect(markup).toContain(">SALE <span data-testid=\"sale-discount-inline\">· 30 %</span><");
     expect(markup).toContain("30 %");
     expect(markup).toContain("overflow-hidden");
     expect(markup).toContain("gap-2");
     expect(markup).toContain("h-10 w-10");
     expect(markup).toContain("text-[9px]");
+    expect(markup).toContain("leading-[0.85]");
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).not.toContain("[overflow-wrap:anywhere]");
+    expect(markup).not.toContain("BACK TO SCHOOL SALE</span>");
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {

@@ -45,9 +45,19 @@ const categoryIcons: Record<string, string> = {
   kinder: "⭐",
 };
 
+function getLongSaleLabelLines(label: string): readonly [string, string] {
+  const lastSeparatorIndex = label.lastIndexOf(" ");
+  if (lastSeparatorIndex <= 0) return [label, ""];
+
+  return [label.slice(0, lastSeparatorIndex), label.slice(lastSeparatorIndex + 1)];
+}
+
 export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const hasLongSaleLabel = Boolean(musical.sale && musical.sale.label.length > 13);
+  const longSaleLabelLines = hasLongSaleLabel && musical.sale
+    ? getLongSaleLabelLines(musical.sale.label)
+    : null;
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const providerLogoWidthClass =
     ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
@@ -90,14 +100,23 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                     <span
                       data-testid="sale-label"
                       className={hasLongSaleLabel
-                        ? "block max-w-full whitespace-nowrap font-heading text-[9px] font-bold leading-none tracking-[0.01em] text-white sm:text-[10px]"
+                        ? "block max-w-full font-heading text-[9px] font-bold leading-[0.85] tracking-[0.01em] text-white sm:text-[10px]"
                         : "block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"}
                     >
-                      {musical.sale.label}
+                      {longSaleLabelLines ? (
+                        <>
+                          <span data-testid="sale-label-line" className="block whitespace-nowrap">{longSaleLabelLines[0]}</span>
+                          <span data-testid="sale-label-line" className="block whitespace-nowrap">
+                            {longSaleLabelLines[1]} <span data-testid="sale-discount-inline">· {musical.sale.discount}</span>
+                          </span>
+                        </>
+                      ) : musical.sale.label}
                     </span>
-                    <span className="mt-0.5 block font-heading text-lg font-semibold leading-none text-white">
-                      {musical.sale.discount}
-                    </span>
+                    {!longSaleLabelLines && (
+                      <span className="mt-0.5 block font-heading text-lg font-semibold leading-none text-white">
+                        {musical.sale.discount}
+                      </span>
+                    )}
                   </span>
                 </div>
               </div>
