@@ -200,7 +200,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
-    featured: true,
+    featured: false,
     tags: ["Tournee", "Romantik", "Schaurigschön"],
     youtubeTrailerId: "9lJc0EM-jBo",
     uspItems: [
@@ -587,7 +587,7 @@ export const musicals: Musical[] = [
     awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
-    featured: true,
+    featured: false,
     tags: ["Tournee", "Familie", "Märchen"],
     uspItems: [
       { icon: "Snowflake", title: "Wintermärchen vom Feinsten", text: "Drei Haselnüsse für Aschenbrödel – das Original" },
@@ -894,7 +894,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
     priceFrom: "40,49",
     youtubeTrailerId: "IWrg3s9gMsY",
-    featured: false,
+    featured: true,
     tags: ["Disney", "Familie", "Tournee"],
     uspItems: [
       { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
@@ -1133,7 +1133,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
     awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
     youtubeTrailerId: "LXl2EgjktuE",
-    featured: false,
+    featured: true,
     tags: ["Ensuite", "Stage Entertainment", "Welthit"],
     uspItems: [
       { icon: "Music", title: "Über 25 legendäre Hits", text: "Thriller, Billie Jean, Smooth Criminal, Beat It und viele mehr – live auf der Bühne" },
@@ -1286,7 +1286,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg",
     awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg",
     youtubeTrailerId: "-N3CbbBAyMM",
-    featured: false,
+    featured: true,
     tags: ["Disney", "Familie", "Ensuite"],
     uspItems: [
       { icon: "Wind", title: "Einzigartige 360°-Luftakrobatik", text: "300 Flugeinsätze, bis zu 30m Flugbahnen – Tarzan verbringt 80% der Show in der Luft" },
@@ -1368,7 +1368,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: "https://www.stage-entertainment.de/musicals-shows/zurueck-in-die-zukunft-hamburg/ticketshop",
     awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/zurueck-in-die-zukunft-hamburg/ticketshop",
     youtubeTrailerId: "sTGDPyXsJRI",
-    featured: false,
+    featured: true,
     tags: ["Film", "Familie", "Ensuite", "80er"],
     uspItems: [
       { icon: "Zap", title: "Der legendäre DeLorean live auf der Bühne", text: "Erlebe die ikonische Zeitmaschine in Lebensgröße – mit 140 km/h durch das Gewitter!" },
@@ -1660,7 +1660,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: "https://www.stage-entertainment.de/musicals-shows/tanz-der-vampire-stuttgart",
     awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/tanz-der-vampire-stuttgart",
     youtubeTrailerId: "9zPIQ43Iwwc",
-    featured: false,
+    featured: true,
     tags: ["Kult-Musical", "Gothic", "Jim Steinman"],
     uspItems: [
       { icon: "Music", title: "Rockig-gefühlvolle Balladen", text: "Die epische Musik von Jim Steinman – unvergessliche Songs wie \"Totale Finsternis\" und \"Unstillbare Gier\"" },
@@ -2166,11 +2166,21 @@ export function getProviderBySlug(slug: string): Provider | undefined {
   return providers.find((p) => p.slug === slug);
 }
 
+export const FEATURED_MUSICAL_IDS = [
+  "koenig-der-loewen",
+  "eiskoenigin",
+  "tarzan",
+  "moulinrouge",
+  "gloeckner-von-notre-dame",
+  "mj-musical",
+  "ziz",
+  "tanz-der-vampire",
+  "starlight-express",
+] as const;
+
 export function getFeaturedMusicals(): Musical[] {
-  const featured = musicals.filter((m) => m.featured === true);
-  // Feste Reihenfolge: König der Löwen, Eiskönigin, Dracula, Moulin Rouge, dann Rest
-  const ORDER = ['koenig-der-loewen', 'eiskoenigin', 'dracula', 'moulinrouge'];
-  const ordered = ORDER.map((id) => featured.find((m) => m.id === id)).filter(Boolean) as Musical[];
-  const rest = featured.filter((m) => !ORDER.includes(m.id));
-  return [...ordered, ...rest];
+  const musicalsById = new Map(musicals.map((musical) => [musical.id, musical]));
+  return FEATURED_MUSICAL_IDS.map((id) => musicalsById.get(id)).filter(
+    (musical): musical is Musical => Boolean(musical),
+  );
 }
