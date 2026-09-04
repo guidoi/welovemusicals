@@ -106,7 +106,10 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                       {longSaleLabelLines ? (
                         <>
                           <span data-testid="sale-label-line" className="block whitespace-nowrap">{longSaleLabelLines[0]}</span>
-                          <span data-testid="sale-label-line" className="block whitespace-nowrap">
+                          <span
+                            data-testid="sale-label-line"
+                            className="block whitespace-nowrap font-black text-[15px] leading-[0.9] tracking-tight sm:text-base"
+                          >
                             {longSaleLabelLines[1]} <span data-testid="sale-discount-inline">· {musical.sale.discount}</span>
                           </span>
                         </>
