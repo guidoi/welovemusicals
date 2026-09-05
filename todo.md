@@ -417,3 +417,13 @@
 - [x] Fack-ju-Göhte-Sale-Störer: Rabattzeile „SALE · 30 %“ deutlich größer gestaltet, ohne die einheitliche Badge-Geometrie oder mobile Randabstände zu beeinträchtigen
 - [x] Startseiten-Highlights auf neun Top-Musicals gesetzt: König der Löwen, Eiskönigin, Tarzan; Moulin Rouge, Glöckner von Notre-Dame, MJ; Zurück in die Zukunft, Tanz der Vampire, Starlight Express. & Julia, Dracula und Drei Haselnüsse für Aschenbrödel nur unter „Alle Musicals“ geführt
 - [x] Fack-ju-Göhte-Sale-Störer: „BACK TO SCHOOL“ und „SALE · 30 %“ ausschließlich auf Mobilgeräten vergrößert; Desktopgröße und rechter Textinnenabstand bleiben unverändert
+- [x] Eventim- und ATG-Awin-Links auf fehlende Webkassierer-/Werbemittelparameter geprüft, mit Merchant-Vorgaben abgeglichen und nur eindeutig verifizierte Trackinganpassungen umgesetzt
+- [x] ATG-Awin-Banner `s=4882591`, `v=111888`, `q=614186` und `r=2865727` technisch eingeordnet und mit den derzeitigen ATG-Links verglichen
+- [x] Awin-Textlink-Werbemittel für Moulin Rouge (`gid=597568`, `linkid=4845203`), Starlight Express (`gid=508544`, `linkid=3861476`) und Fack ju Göhte (`gid=492097`, `linkid=4568988`) mit eindeutigen Clickrefs in die Ticketpfade integriert
+- [x] Vollständigen Audit aller ShowSlot/Eventim- und ATG-Ticketpfade erstellt: Werbemittel-IDs, Convert-a-Link-Abdeckung nach Einwilligung sowie fehlende Merchant-Textlinks je Show dokumentiert
+- [x] Konkrete Awin-Textlink-Anforderungsliste je Eventim- und ATG-Show erstellt, damit fehlende Werbemittel gezielt aus Awin kopiert werden können
+- [x] Die zwei vorhandenen ATG-Textlinks für Moulin Rouge und Starlight Express integriert; bei Phantom der Oper und Glöckner von Notre-Dame die direkten ATG-Ziele mit Convert-a-Link-Fallback nach Einwilligung beibehalten
+- [x] Awin-Textlinks nur an verifizierten Haupt-CTAs eingesetzt; stadtbezogene Tourtermin-Deep-Links mit eigenen Clickrefs beibehalten und getrennt geprüft
+- [x] Eventim-Textlinks für Die Schöne und das Biest (`gid=492097`, `linkid=3737237`) und Dracula (`gid=492097`, `linkid=3889201`) an den jeweiligen Haupt-CTAs integriert; Sister Act deaktiviert, Drei Haselnüsse und Rapunzel beim Deep-Link-Fallback belassen
+- [x] Ursachenanalyse für Stage/TradeDoubler-Transaktionen gegenüber bislang ausbleibenden Eventim-/ATG-Awin-Transaktionen erstellt: Klickvolumen, Linkformat, Consent, Checkout- und Attributionspfade getrennt bewertet
+- [x] Sister Act wegen des Endes der Berliner Spielzeit aus allen öffentlichen Musical-Listen, Navigationen und Routen deaktiviert, ohne den historischen Datensatz zu löschen

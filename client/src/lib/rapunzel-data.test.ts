@@ -17,10 +17,10 @@ describe("Rapunzel Berlin-Termin", () => {
     expect(berlinDate?.eventimUrl).toContain("clickref=rapunzel-berlin-dates");
   });
 
-  it("führt Berlin im Rapunzel-Header und zählt sechs aktive Musicals", () => {
+  it("führt Berlin im Rapunzel-Header und zählt nach der Sister-Act-Deaktivierung fünf aktive Musicals", () => {
     const rapunzel = getMusicalBySlug("rapunzel");
 
     expect(rapunzel?.cities).toContain("Berlin");
-    expect(getActiveMusicalCountByCity("Berlin")).toBe(6);
+    expect(getActiveMusicalCountByCity("Berlin")).toBe(5);
   });
 });

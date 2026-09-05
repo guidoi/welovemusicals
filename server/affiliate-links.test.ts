@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { ACTIVE_MUSICAL_IDS, musicals } from "../client/src/lib/data";
+import { ACTIVE_MUSICAL_IDS, AWIN_TEXT_LINKS, getActiveMusicals, getMusicalBySlug, musicals } from "../client/src/lib/data";
 
 const KDL_STAGE_PRODUCT_URL = "https://www.stage-entertainment.de/musicals-shows/b/disneys-der-koenig-der-loewen-hamburg";
 const STAGE_PRODUCT_URLS = {
@@ -29,7 +29,8 @@ describe("Affiliate-Link-Zuordnung", () => {
         ...(musical.tourDates ?? []).map((date) => date.eventimUrl),
       ])
       .filter((url): url is string => Boolean(url))
-      .filter((url) => new URL(url).hostname === "www.awin1.com");
+      .filter((url) => new URL(url).hostname === "www.awin1.com")
+      .filter((url) => new URL(url).pathname === "/cread.php");
 
     expect(eventimAwinUrls.length).toBeGreaterThan(0);
 
@@ -39,6 +40,41 @@ describe("Affiliate-Link-Zuordnung", () => {
       expect(trackingUrl.searchParams.get("awinmid")).toBe("11388");
       expect(trackingUrl.searchParams.get("awinaffid")).toBe("2865727");
       expect(decodeURIComponent(trackingUrl.searchParams.get("ued") ?? "")).toContain("eventim.de");
+    }
+  });
+
+  it("verwendet die bereitgestellten Awin-Textlink-Werbemittel an den Haupt-CTAs der freigegebenen Shows", () => {
+    const expectations = [
+      { id: "moulinrouge", creative: AWIN_TEXT_LINKS.moulinRouge, clickRefPrefix: "moulinrouge-" },
+      { id: "starlight-express", creative: AWIN_TEXT_LINKS.starlightExpress, clickRefPrefix: "starlight-express-" },
+      { id: "fackjugoehte", creative: AWIN_TEXT_LINKS.fackJuGoehte, clickRefPrefix: "fjg-" },
+      { id: "schoene-und-das-biest", creative: AWIN_TEXT_LINKS.schoeneUndDasBiest, clickRefPrefix: "dsudb-" },
+      { id: "dracula", creative: AWIN_TEXT_LINKS.dracula, clickRefPrefix: "dracula-" },
+    ] as const;
+
+    for (const { id, creative, clickRefPrefix } of expectations) {
+      const musical = musicals.find((entry) => entry.id === id);
+      expect(musical, `Musical ${id} muss vorhanden sein`).toBeDefined();
+
+      const mainCtas = [
+        musical?.keyvisualLink,
+        musical?.ticketCtaUrl,
+        musical?.eventimUrl,
+        musical?.awinHeroUrl,
+        musical?.awinStickyUrl,
+        musical?.awinBoxUrl,
+      ];
+
+      for (const url of mainCtas.filter((url): url is string => Boolean(url))) {
+        const trackingUrl = new URL(url);
+        expect(trackingUrl.hostname).toBe("www.awin1.com");
+        expect(trackingUrl.pathname, `${id} muss für Haupt-CTAs den bereitgestellten Awin-Textlink verwenden: ${url}`).toBe("/awclick.php");
+        expect(trackingUrl.searchParams.get("gid")).toBe(creative.gid);
+        expect(trackingUrl.searchParams.get("mid")).toBe(creative.merchantId);
+        expect(trackingUrl.searchParams.get("awinaffid")).toBe("2865727");
+        expect(trackingUrl.searchParams.get("linkid")).toBe(creative.linkId);
+        expect(trackingUrl.searchParams.get("clickref")?.startsWith(clickRefPrefix)).toBe(true);
+      }
     }
   });
 
@@ -106,6 +142,12 @@ describe("Affiliate-Link-Zuordnung", () => {
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {
     expect(ACTIVE_MUSICAL_IDS).not.toContain("die-amme");
+  });
+
+  it("deaktiviert Sister Act in öffentlichen Listen und auf der direkten Detailroute", () => {
+    expect(ACTIVE_MUSICAL_IDS).not.toContain("sister-act");
+    expect(getActiveMusicals().some((musical) => musical.id === "sisteract")).toBe(false);
+    expect(getMusicalBySlug("sister-act")).toBeUndefined();
   });
 
   it("initialisiert den TradeDoubler Link Converter erst nach Zustimmung und auch nach React-Renderzyklen", () => {

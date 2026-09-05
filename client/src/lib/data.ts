@@ -109,9 +109,24 @@ export interface Provider {
 export const AWIN_MERCHANT_ID = "11388";
 export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
 
+export const AWIN_TEXT_LINKS = {
+  moulinRouge: { gid: "597568", merchantId: "111888", linkId: "4845203" },
+  starlightExpress: { gid: "508544", merchantId: "111888", linkId: "3861476" },
+  fackJuGoehte: { gid: "492097", merchantId: AWIN_MERCHANT_ID, linkId: "4568988" },
+  schoeneUndDasBiest: { gid: "492097", merchantId: AWIN_MERCHANT_ID, linkId: "3737237" },
+  dracula: { gid: "492097", merchantId: AWIN_MERCHANT_ID, linkId: "3889201" },
+} as const;
+
 export function createAwinLink(destinationUrl: string): string {
   const encodedUrl = encodeURIComponent(destinationUrl);
   return `https://www.awin1.com/cread.php?awinmid=${AWIN_MERCHANT_ID}&awinaffid=${AWIN_PUBLISHER_ID}&ued=${encodedUrl}`;
+}
+
+export function createAwinTextLink(
+  creative: { gid: string; merchantId: string; linkId: string },
+  clickRef: string
+): string {
+  return `https://www.awin1.com/awclick.php?gid=${creative.gid}&mid=${creative.merchantId}&awinaffid=${AWIN_PUBLISHER_ID}&linkid=${creative.linkId}&clickref=${encodeURIComponent(clickRef)}`;
 }
 
 export const providers: Provider[] = [
@@ -196,10 +211,10 @@ export const musicals: Musical[] = [
     detailDescription: "Große Nachfrage, neue Tour: Aufgrund der sensationellen Nachfrage nach Tickets und zahlreicher ausverkaufter Shows, kehrt DRACULA – DAS MUSICAL zurück! Der legendäre Vampirmythos um die Macht von Liebe, Verführung und ewiger Nacht geht auch 2027 als packendes Broadway-Musical auf große Tournee durch Deutschland und Österreich.\n\n**Die unsterbliche Liebesgeschichte**\n\nDie unsterbliche Liebesgeschichte rund um Graf Dracula fasziniert seit Generationen und entfaltet live auf der Bühne eine ganz besondere Sogwirkung. Bram Stokers weltberühmter Vampirroman erwacht dabei mit einem epischen Soundtrack von Star-Komponist Frank Wildhorn zu neuem Leben. Seine Musik – geprägt von emotionalen Balladen und kraftvollen Rocksongs – verleiht der Geschichte eine moderne, dramatische Intensität.\n\nAuf der Tournee 2027 erwartet das Publikum ein erstklassig besetztes Ensemble, das die Titelrolle des Fürsten der Finsternis mit Leidenschaft und Intensität zum Leben erweckt – Herzklopfen und Gänsehaut pur garantiert!\n\n**Atmosphäre und Inszenierung**\n\nBegleitet von einer 8-köpfigen Live-Band taucht das Publikum ein in die romantisch-düstere Welt Transsilvaniens und Londons. Spektakuläre Bilder in viktorianischem Bühnenbild, ein atmosphärisches Lichtdesign sowie schaurig-schöne Kostüme schaffen eine eindrucksvolle Szenerie, die die ewige Jagd nach Blut und Liebe eindringlich erlebbar macht.\n\nUnter der Regie von Alex Balga wird DRACULA – DAS MUSICAL zu einem fesselnden Gesamterlebnis voller Emotion, Spannung und Gänsehaut.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-03_54bd2660.jpg",
-    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
-    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
-    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
-    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
+    eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.dracula, "dracula-ticket"),
+    awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.dracula, "dracula-hero"),
+    awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.dracula, "dracula-sticky"),
+    awinBoxUrl: createAwinTextLink(AWIN_TEXT_LINKS.dracula, "dracula-box"),
     featured: false,
     tags: ["Tournee", "Romantik", "Schaurigschön"],
     youtubeTrailerId: "9lJc0EM-jBo",
@@ -232,7 +247,7 @@ export const musicals: Musical[] = [
       { text: "Daumen hoch für diesen Dracula!", source: "Münchner Merkur" },
     ],
     keyvisual: "/images/dracula/dracula-keyvisual-2027.webp",
-    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F",
+    keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.dracula, "dracula-keyvisual"),
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-03_54bd2660.jpg", alt: "Dracula Pressefoto 1" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/Dracula-Pressefoto-04_9444c67a.jpg", alt: "Dracula Pressefoto 2" },
@@ -277,13 +292,13 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/moulin-rouge-header-gavin-turnbull_a43a3ff5.jpg",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-keyvisual_24506562.png",
-    keyvisualLink: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
+    keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-keyvisual"),
     priceFrom: "59,90",
-    ticketCtaUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
-    awinHeroUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
-    awinStickyUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
-    awinBoxUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
-    eventimUrl: "https://www.atgtickets.de/musicals-shows/moulin-rouge-musical/",
+    ticketCtaUrl: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-cta"),
+    awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-hero"),
+    awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-sticky"),
+    awinBoxUrl: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-box"),
+    eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-ticket"),
     featured: true,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     youtubeTrailerId: "BN8RYBCYPVM",
@@ -498,13 +513,13 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fjg-header-foto-01_91c5bd48.jpg",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/fack-ju-goehte-foto-02-credit-nico-moser_95516a9a.jpg",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/FJG_KV_10B_1080x1080_5da0f5ab.jpg",
-    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
-    ticketCtaUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-cta&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
+    keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.fackJuGoehte, "fjg-keyvisual"),
+    ticketCtaUrl: createAwinTextLink(AWIN_TEXT_LINKS.fackJuGoehte, "fjg-cta"),
     youtubeTrailerId: "B0vHUyLx2Ac",
-    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
-    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
-    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
-    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F",
+    eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.fackJuGoehte, "fjg-ticket"),
+    awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.fackJuGoehte, "fjg-hero"),
+    awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.fackJuGoehte, "fjg-sticky"),
+    awinBoxUrl: createAwinTextLink(AWIN_TEXT_LINKS.fackJuGoehte, "fjg-box"),
     featured: false,
     sale: { label: "BACK TO SCHOOL SALE", discount: "30 %" },
     tags: ["Tournee", "Komödie", "Filmhit"],
@@ -772,11 +787,11 @@ export const musicals: Musical[] = [
     detailDescription: "Ein Märchen so alt wie die Welt erwacht im Jahr 2027 zu neuem Leben: DIE SCHÖNE UND DAS BIEST – DAS NEUE MUSICAL bringt die berührende Geschichte von Belle und dem verwunschenen Biest ab Januar 2027 als zauberhaftes Live-Erlebnis auf die Bühnen Deutschlands und Österreichs. Präsentiert von Bavaria Live Promotion, dem erfahrenen Tournee-Veranstalter aus Würzburg, verbindet die Produktion die schönsten Momente des französischen Originals mit spannenden neuen Überraschungen – für ein Publikum jeden Alters.\n\nGroße Melodien, märchenhafte Bühnenbilder und atemberaubende Kostüme erschaffen eine magische Welt voller Romantik, Abenteuer und Wunder. Ein herzloser Prinz wird von einer mächtigen Zauberin in ein abscheuliches Biest verwandelt – und kann den Fluch nur brechen, wenn er die wahre Liebe findet. Als Belles mutiger Vater sich im Wald verirrt und im verwunschenen Schloss Zuflucht sucht, tauscht Belle ihre Freiheit gegen seine. Dem Biest ausgeliefert, lernt sie schon bald hinter sein Äußeres zu blicken – und begegnet einem Wesen voller Wut, aber auch Trauer und Herzlichkeit.\n\n**Ein Erlebnis für die ganze Familie**\n\nNach und nach ergründet Belle ein dunkles Geheimnis: Nichts ist so, wie es scheint, und hinter dem Fluch lauert eine verhängnisvolle Wahrheit, die nicht nur den Prinzen, sondern auch das Dorf und seine Bewohner bedroht. Wird es Belle gelingen, den Fluch zu brechen und mit der Kraft der wahren Liebe den Prinzen zu befreien? DIE SCHÖNE UND DAS BIEST – DAS NEUE MUSICAL ist ein verzauberndes Bühnenerlebnis, das Generationen verbindet und Herzen berührt.\n\n**60 Tourneestädte – ganz in Ihrer Nähe**\n\nMit über 60 Spielorten von Aachen bis Zwickau, von Innsbruck bis Kiel, macht die Tournee 2027 Halt in den größten deutschen Städten ebenso wie in kleineren Kulturzentren. Tickets sind über Eventim und oeticket.com sowie an allen bekannten Vorverkaufsstellen erhältlich.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/sch%C3%B6ne-biest-keyvisual_c2c2405d.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/sch%C3%B6ne-biest-keyvisual_c2c2405d.webp",
-    keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F",
-    eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=biest-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F",
-    awinHeroUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hero&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F",
-    awinStickyUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-sticky&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F",
-    awinBoxUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-box&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F",
+    keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.schoeneUndDasBiest, "dsudb-keyvisual"),
+    eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.schoeneUndDasBiest, "dsudb-ticket"),
+    awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.schoeneUndDasBiest, "dsudb-hero"),
+    awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.schoeneUndDasBiest, "dsudb-sticky"),
+    awinBoxUrl: createAwinTextLink(AWIN_TEXT_LINKS.schoeneUndDasBiest, "dsudb-box"),
     priceFrom: "54,00",
     featured: false,
     tags: ["Tournee", "Familie", "Märchen"],
@@ -961,13 +976,13 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-header-pearl-rusty_5365eea2.webp",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-22_d95ea5c7.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-keyvisual_7428962d.webp",
-    keyvisualLink: "https://www.atgtickets.de/musicals-shows/starlight-express/landingpage/awin/?utm_term=stex-lp%2F&utm_id=system%3ACM360.pid%3A443614331.cid%3A233231691",
+    keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-keyvisual"),
     priceFrom: "59,99",
-    ticketCtaUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/",
-    awinHeroUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/",
-    awinStickyUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/",
-    awinBoxUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/",
-    eventimUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/",
+    ticketCtaUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-cta"),
+    awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-hero"),
+    awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-sticky"),
+    awinBoxUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-box"),
+    eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-ticket"),
     featured: true,
     tags: ["Fester Standort", "Rekordshow", "Familie"],
     youtubeTrailerId: "fmbGACDjs0E",
@@ -2118,12 +2133,12 @@ export const cities: City[] = [
 // Hilfsfunktionen
 // Hilfsfunktionen
 export function getMusicalBySlug(slug: string): Musical | undefined {
-  return musicals.find((m) => m.slug === slug);
+  return getActiveMusicals().find((m) => m.slug === slug);
 }
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "sister-act", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "we-will-rock-you", "salon-rosie", "und-julia"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "we-will-rock-you", "salon-rosie", "und-julia"];
 
 export function getActiveMusicals(): Musical[] {
   return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));

@@ -21,7 +21,6 @@ const musicalSlugs = [
   "cher-show",
   "dracula",
   "da-vinci-code",
-  "sister-act",
   "drei-haselnuesse",
   "fitzek-einladung",
   "pretty-woman",
