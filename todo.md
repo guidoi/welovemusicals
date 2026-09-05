@@ -416,3 +416,4 @@
 - [x] Fack-ju-Göhte-Sale-Störer: „Back to School Sale“ kontrolliert umgebrochen, damit der Text auf Desktop und Mobil vollständig innerhalb des einheitlichen Buttons bleibt
 - [x] Fack-ju-Göhte-Sale-Störer: Rabattzeile „SALE · 30 %“ deutlich größer gestaltet, ohne die einheitliche Badge-Geometrie oder mobile Randabstände zu beeinträchtigen
 - [x] Startseiten-Highlights auf neun Top-Musicals gesetzt: König der Löwen, Eiskönigin, Tarzan; Moulin Rouge, Glöckner von Notre-Dame, MJ; Zurück in die Zukunft, Tanz der Vampire, Starlight Express. & Julia, Dracula und Drei Haselnüsse für Aschenbrödel nur unter „Alle Musicals“ geführt
+- [x] Fack-ju-Göhte-Sale-Störer: „BACK TO SCHOOL“ und „SALE · 30 %“ ausschließlich auf Mobilgeräten vergrößert; Desktopgröße und rechter Textinnenabstand bleiben unverändert

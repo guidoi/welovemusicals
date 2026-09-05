@@ -87,12 +87,12 @@ describe("MusicalCard Sale-Störer", () => {
     expect((markup.match(/data-testid="sale-label-line"/g) ?? [])).toHaveLength(2);
     expect(markup).toContain(">BACK TO SCHOOL<");
     expect(markup).toContain(">SALE <span data-testid=\"sale-discount-inline\">· 30 %</span><");
-    expect(markup).toContain('data-testid="sale-label-line" class="block whitespace-nowrap font-black text-[15px] leading-[0.9] tracking-tight sm:text-base"');
+    expect(markup).toContain('data-testid="sale-label-line" class="block whitespace-nowrap font-black text-[18px] leading-[0.9] tracking-tight sm:text-base"');
     expect(markup).toContain("30 %");
     expect(markup).toContain("overflow-hidden");
     expect(markup).toContain("gap-2");
     expect(markup).toContain("h-10 w-10");
-    expect(markup).toContain("text-[9px]");
+    expect(markup).toContain("text-[11px]");
     expect(markup).toContain("leading-[0.85]");
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).not.toContain("BACK TO SCHOOL SALE</span>");

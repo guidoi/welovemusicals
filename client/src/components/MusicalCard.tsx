@@ -100,7 +100,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                     <span
                       data-testid="sale-label"
                       className={hasLongSaleLabel
-                        ? "block max-w-full font-heading text-[9px] font-bold leading-[0.85] tracking-[0.01em] text-white sm:text-[10px]"
+                        ? "block max-w-full font-heading text-[11px] font-bold leading-[0.85] tracking-[0.01em] text-white sm:text-[10px]"
                         : "block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"}
                     >
                       {longSaleLabelLines ? (
@@ -108,7 +108,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                           <span data-testid="sale-label-line" className="block whitespace-nowrap">{longSaleLabelLines[0]}</span>
                           <span
                             data-testid="sale-label-line"
-                            className="block whitespace-nowrap font-black text-[15px] leading-[0.9] tracking-tight sm:text-base"
+                            className="block whitespace-nowrap font-black text-[18px] leading-[0.9] tracking-tight sm:text-base"
                           >
                             {longSaleLabelLines[1]} <span data-testid="sale-discount-inline">· {musical.sale.discount}</span>
                           </span>
