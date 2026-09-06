@@ -23,6 +23,11 @@ describe("HeroAnchorNavigation", () => {
 
     expect(markup).toContain('aria-label="Direktnavigation zu Musical-Inhalten"');
     expect(markup).toContain('data-testid="hero-orientation-navigation"');
+    expect(markup).toContain('data-testid="hero-navigation-overflow-cue"');
+    expect(markup).toContain('bg-gradient-to-l from-gold/35');
+    expect(markup).toContain('md:hidden');
+    expect(markup).toContain('pr-0');
+    expect(markup).toContain('opacity-0');
     expect(markup).toContain('aria-label="Navigation nach links schieben"');
     expect(markup).toContain('aria-label="Navigation nach rechts schieben"');
     expect(markup).toContain('hidden md:inline-flex');
@@ -45,6 +50,7 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('href="/musical/alpha"');
     expect(markup).toContain('>Weitere Musicals A–Z<');
     expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*border-gold bg-transparent/);
+    expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*h-12[^>]*px-6[^>]*text-sm[^>]*md:h-14[^>]*md:px-7[^>]*md:text-base/);
   });
 
   it("rendert Musical-Ziele als relative In-App-Routen", () => {

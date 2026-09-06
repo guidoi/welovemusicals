@@ -94,15 +94,21 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
       <div
         ref={scrollRef}
         tabIndex={0}
-        className="mx-0 flex min-w-0 snap-x snap-mandatory gap-2 overflow-x-auto scroll-smooth px-0.5 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:mx-12"
+        className={`mx-0 flex min-w-0 snap-x snap-mandatory gap-2 overflow-x-auto scroll-smooth px-0.5 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:mx-12 md:pr-0 ${canScrollRight ? "pr-7" : "pr-0"}`}
       >
         {musicalItems.map((item) => renderItem(
           item,
           item.id === "more-musicals"
-            ? "inline-flex h-10 shrink-0 snap-start items-center rounded-full border border-gold bg-transparent px-4 text-xs font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm"
+            ? "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-gold bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base"
             : "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-white/75 bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-white shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base",
         ))}
       </div>
+
+      <div
+        aria-hidden="true"
+        data-testid="hero-navigation-overflow-cue"
+        className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-11 bg-gradient-to-l from-gold/35 via-background/20 to-transparent transition-opacity duration-200 md:hidden ${canScrollRight ? "opacity-100" : "opacity-0"}`}
+      />
 
       <button
         type="button"
