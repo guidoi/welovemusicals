@@ -434,5 +434,6 @@
 - [x] Zurück in die Zukunft um die kleinere Versalien-Subline „DAS MUSICAL“ im Stil der übrigen Musicaltitel ergänzt
 - [x] Mobile Hero-Schiebenavigation auf eine kontextabhängige Sticky- und Active-State-Variante bewertet: beim Zurückscrollen sichtbar, beim Herunterscrollen zurückhaltend und mit goldener Hervorhebung des sichtbaren Musicals empfohlen
 - [x] Mobile Hero-Navigation: Abstand oberhalb der Orientierungstabs und unterhalb der abschließenden Musicalbutton-Gruppe gezielt reduziert, Gruppenabstände beibehalten
+- [x] Mobile Hero-Navigation: moderne, unaufdringliche Wischbarkeits-Signalisierung ohne Pfeile oder Autoscroll bewertet und eine empfohlene Variante festgelegt
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
