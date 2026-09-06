@@ -435,9 +435,9 @@
 - [x] Mobile Hero-Schiebenavigation auf eine kontextabhängige Sticky- und Active-State-Variante bewertet: beim Zurückscrollen sichtbar, beim Herunterscrollen zurückhaltend und mit goldener Hervorhebung des sichtbaren Musicals empfohlen
 - [x] Mobile Hero-Navigation: Abstand oberhalb der Orientierungstabs und unterhalb der abschließenden Musicalbutton-Gruppe gezielt reduziert, Gruppenabstände beibehalten
 - [x] Mobile Hero-Navigation: moderne, unaufdringliche Wischbarkeits-Signalisierung ohne Pfeile oder Autoscroll bewertet und eine empfohlene Variante festgelegt
-- [ ] Breadcrumb-Navigation einheitlich auf „Alle Musicals“ und „Städte & Termine“ umstellen
+- [x] Breadcrumb-Navigation einheitlich auf „Alle Musicals“ und „Städte & Termine“ umgestellt
 - [x] Mobile Hero-Navigation: angeschnittene nächste Tabkante und dynamischen Goldverlauf am rechten Überlauf ergänzt; Verlauf am Listenende ausblenden
-- [ ] König-der-Löwen-Hero gegen Bühnenbild, ruhigen Video-Loop und reduzierten bzw. textfreien Hero bewerten; bevorzugte conversion-starke Variante definieren
+- [x] König-der-Löwen-Hero gegen Bühnenbild, ruhigen Video-Loop und reduzierten bzw. textfreien Hero bewertet; statisches Rafiki-Motiv mit verkürzter Textebene als bevorzugte Variante definiert
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft

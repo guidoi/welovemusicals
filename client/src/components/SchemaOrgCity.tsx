@@ -10,6 +10,32 @@ interface SchemaOrgCityProps {
   musicals: Musical[];
 }
 
+export function getCityBreadcrumbItems(city: Pick<City, "name" | "slug">) {
+  const BASE_URL = "https://welovemusicals.com";
+  const pageUrl = `${BASE_URL}/stadt/${city.slug}`;
+
+  return [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "We Love Musicals",
+      item: BASE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Städte & Termine",
+      item: `${BASE_URL}/#staedte`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: city.name,
+      item: pageUrl,
+    },
+  ];
+}
+
 export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
   useEffect(() => {
     // Entferne vorherige JSON-LD Skripte dieser Seite
@@ -105,26 +131,7 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "We Love Musicals",
-          item: BASE_URL,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Musical-Städte",
-          item: `${BASE_URL}/#staedte`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: city.name,
-          item: pageUrl,
-        },
-      ],
+      itemListElement: getCityBreadcrumbItems(city),
     };
 
     const breadcrumbEl = document.createElement("script");

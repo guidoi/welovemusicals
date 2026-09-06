@@ -46,6 +46,31 @@ interface SchemaOrgProps {
   musical: Musical;
 }
 
+export function getMusicalBreadcrumbItems(musical: Pick<Musical, "title" | "slug" | "id">) {
+  const canonicalMusicalUrl = `${BASE_URL}/musical/${musical.slug || musical.id}`;
+
+  return [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "We Love Musicals",
+      item: BASE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Alle Musicals",
+      item: `${BASE_URL}/#musicals`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: musical.title,
+      item: canonicalMusicalUrl,
+    },
+  ];
+}
+
 export default function SchemaOrg({ musical }: SchemaOrgProps) {
   useEffect(() => {
     // Entferne vorherige JSON-LD Skripte dieser Seite
@@ -180,26 +205,7 @@ addressLocality: musical.city,
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "We Love Musicals",
-          item: BASE_URL,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Musicals",
-          item: `${BASE_URL}/#musicals`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: musical.title,
-          item: canonicalMusicalUrl,
-        },
-      ],
+      itemListElement: getMusicalBreadcrumbItems(musical),
     };
 
     const breadcrumbEl = document.createElement("script");
