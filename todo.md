@@ -438,6 +438,7 @@
 - [x] Breadcrumb-Navigation einheitlich auf „Alle Musicals“ und „Städte & Termine“ umgestellt
 - [x] Mobile Hero-Navigation: angeschnittene nächste Tabkante und dynamischen Goldverlauf am rechten Überlauf ergänzt; Verlauf am Listenende ausblenden
 - [x] König-der-Löwen-Hero gegen Bühnenbild, ruhigen Video-Loop und reduzierten bzw. textfreien Hero bewertet; statisches Rafiki-Motiv mit verkürzter Textebene als bevorzugte Variante definiert
+- [x] Goldenen Schatten am Tab „Weitere Musicals A–Z“ entfernt und die mobilen Burger-Menüeinträge auf „Alle Musicals“ sowie „Städte & Termine“ vereinheitlicht
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft

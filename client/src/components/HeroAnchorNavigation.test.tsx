@@ -51,6 +51,9 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('>Weitere Musicals A–Z<');
     expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*border-gold bg-transparent/);
     expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*h-12[^>]*px-6[^>]*text-sm[^>]*md:h-14[^>]*md:px-7[^>]*md:text-base/);
+    const moreMusicalsOpeningTag = markup.match(/<button[^>]*data-testid="hero-anchor-more-musicals"[^>]*>/)?.[0] ?? "";
+    expect(moreMusicalsOpeningTag).not.toContain("shadow-lg");
+    expect(moreMusicalsOpeningTag).not.toContain("shadow-black/20");
   });
 
   it("rendert Musical-Ziele als relative In-App-Routen", () => {

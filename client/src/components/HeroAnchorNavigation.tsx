@@ -99,7 +99,7 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
         {musicalItems.map((item) => renderItem(
           item,
           item.id === "more-musicals"
-            ? "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-gold bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base"
+            ? "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-gold bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-gold transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base"
             : "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-white/75 bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-white shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base",
         ))}
       </div>

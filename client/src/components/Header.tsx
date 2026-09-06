@@ -8,6 +8,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Heart, Search, MapPin, Navigation, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getActiveMusicals, type Musical } from "@/lib/data";
+import { primaryNavigationItems } from "@/lib/header-navigation";
 import { searchByPlz, RADIUS_OPTIONS, type PlzSearchState } from "@/components/PlzSearch";
 
 // Globaler PLZ-State – wird von Home.tsx über Context oder Props gesteuert.
@@ -171,11 +172,6 @@ export default function Header() {
     );
   };
 
-  const navItems = [
-    { label: "Musicals", href: "/#musicals" },
-    { label: "Städte", href: "/#staedte" },
-  ];
-
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const anchor = href.split("#")[1];
@@ -221,7 +217,7 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+          {primaryNavigationItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -493,7 +489,7 @@ export default function Header() {
             className="md:hidden bg-background/95 backdrop-blur-xl border-b border-gold/10 overflow-hidden"
           >
             <nav className="container py-6 flex flex-col gap-4">
-              {navItems.map((item) => (
+              {primaryNavigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
