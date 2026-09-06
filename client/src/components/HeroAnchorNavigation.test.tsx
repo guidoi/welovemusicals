@@ -23,11 +23,10 @@ describe("HeroAnchorNavigation", () => {
 
     expect(markup).toContain('aria-label="Direktnavigation zu Musical-Inhalten"');
     expect(markup).toContain('data-testid="hero-orientation-navigation"');
-    expect(markup).toContain('data-testid="hero-navigation-overflow-cue"');
-    expect(markup).toContain('bg-gradient-to-l from-gold/35');
-    expect(markup).toContain('md:hidden');
+    expect(markup).not.toContain('hero-navigation-overflow-cue');
+    expect(markup).not.toContain('bg-gradient-to-l');
+    expect(markup).not.toContain('from-gold/35');
     expect(markup).toContain('pr-0');
-    expect(markup).toContain('opacity-0');
     expect(markup).toContain('aria-label="Navigation nach links schieben"');
     expect(markup).toContain('aria-label="Navigation nach rechts schieben"');
     expect(markup).toContain('hidden md:inline-flex');

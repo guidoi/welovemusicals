@@ -104,12 +104,6 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
         ))}
       </div>
 
-      <div
-        aria-hidden="true"
-        data-testid="hero-navigation-overflow-cue"
-        className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-11 bg-gradient-to-l from-gold/35 via-background/20 to-transparent transition-opacity duration-200 md:hidden ${canScrollRight ? "opacity-100" : "opacity-0"}`}
-      />
-
       <button
         type="button"
         aria-label="Navigation nach rechts schieben"
