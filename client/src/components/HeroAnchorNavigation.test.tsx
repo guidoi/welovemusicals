@@ -12,15 +12,17 @@ describe("HeroAnchorNavigation", () => {
       <Router hook={staticLocationHook}>
         <HeroAnchorNavigation
           items={[
-            { id: "all-musicals", label: "Musicals", href: "#musicals", kind: "overview" },
-            { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
+            { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
+            { id: "musical-cities", label: "Städte & Termine", href: "#staedte", kind: "city" },
             { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
+            { id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" },
           ]}
         />
       </Router>,
     );
 
     expect(markup).toContain('aria-label="Direktnavigation zu Musical-Inhalten"');
+    expect(markup).toContain('data-testid="hero-orientation-navigation"');
     expect(markup).toContain('aria-label="Navigation nach links schieben"');
     expect(markup).toContain('aria-label="Navigation nach rechts schieben"');
     expect(markup).toContain('hidden md:inline-flex');
@@ -36,9 +38,10 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('md:text-base');
     expect(markup).toContain('data-testid="hero-anchor-all-musicals"');
     expect(markup).toContain('type="button"');
-    expect(markup).toContain('>Musicals<');
+    expect(markup).toContain('>Alle Musicals<');
     expect(markup).toContain('data-testid="hero-anchor-musical-cities"');
     expect(markup).toContain('href="/musical/alpha"');
+    expect(markup).toContain('>Weitere Musicals A–Z<');
   });
 
   it("rendert Musical-Ziele als relative In-App-Routen", () => {

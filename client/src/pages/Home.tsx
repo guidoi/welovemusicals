@@ -26,6 +26,7 @@ import {
   musicals,
   cities,
   ACTIVE_MUSICAL_IDS,
+  FEATURED_MUSICAL_IDS,
   getFeaturedMusicals,
   getActiveMusicalCountByCity,
   createAwinLink,
@@ -111,7 +112,7 @@ export default function Home() {
 
   const featured = useMemo(() => getFeaturedMusicals(), []);
   const heroNavigationItems = useMemo(
-    () => getHeroNavigationItems(musicals, ACTIVE_MUSICAL_IDS),
+    () => getHeroNavigationItems(musicals, ACTIVE_MUSICAL_IDS, FEATURED_MUSICAL_IDS),
     [],
   );
 

@@ -427,3 +427,5 @@
 - [x] Eventim-Textlinks für Die Schöne und das Biest (`gid=492097`, `linkid=3737237`) und Dracula (`gid=492097`, `linkid=3889201`) an den jeweiligen Haupt-CTAs integriert; Sister Act deaktiviert, Drei Haselnüsse und Rapunzel beim Deep-Link-Fallback belassen
 - [x] Ursachenanalyse für Stage/TradeDoubler-Transaktionen gegenüber bislang ausbleibenden Eventim-/ATG-Awin-Transaktionen erstellt: Klickvolumen, Linkformat, Consent, Checkout- und Attributionspfade getrennt bewertet
 - [x] Sister Act wegen des Endes der Berliner Spielzeit aus allen öffentlichen Musical-Listen, Navigationen und Routen deaktiviert, ohne den historischen Datensatz zu löschen
+- [x] Hero-Schiebenavigation aus Nutzer- und Conversion-Sicht bewertet: Orientierungstabs getrennt, neun kuratierte Top-Musicals priorisiert und vollständige A–Z-Auswahl als separaten Einstieg empfohlen
+- [x] Hero-Schiebenavigation nach Variante A umgesetzt: separate Orientierungstabs „Alle Musicals“ und „Städte & Termine“, neun Top-Musicals in Highlight-Reihenfolge sowie ein Tab „Weitere Musicals A–Z“ zur vollständigen Übersicht

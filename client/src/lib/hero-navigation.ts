@@ -42,23 +42,26 @@ export function getHeroNavigationLabel(musical: HeroNavigationMusical): string {
 export function getHeroNavigationItems(
   musicals: readonly HeroNavigationMusical[],
   activeMusicalIds: readonly string[],
+  featuredMusicalIds: readonly string[] = activeMusicalIds,
 ): HeroNavigationItem[] {
-  const activeMusicals = musicals
-    .filter((musical) => activeMusicalIds.includes(musical.id) || activeMusicalIds.includes(musical.slug))
-    .sort((left, right) => getHeroNavigationLabel(left).localeCompare(getHeroNavigationLabel(right), "de"));
-  const undJulia = activeMusicals.find((musical) => musical.slug === "und-julia");
-  const orderedActiveMusicals = undJulia
-    ? [undJulia, ...activeMusicals.filter((musical) => musical.slug !== "und-julia")]
-    : activeMusicals;
+  const activeMusicalsById = new Map(
+    musicals
+      .filter((musical) => activeMusicalIds.includes(musical.id) || activeMusicalIds.includes(musical.slug))
+      .map((musical) => [musical.id, musical]),
+  );
+  const featuredMusicals = featuredMusicalIds
+    .map((id) => activeMusicalsById.get(id))
+    .filter((musical): musical is HeroNavigationMusical => Boolean(musical));
 
   return [
-    { id: "all-musicals", label: "Musicals", href: "#musicals", kind: "overview" },
-    { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
-    ...orderedActiveMusicals.map((musical) => ({
+    { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
+    { id: "musical-cities", label: "Städte & Termine", href: "#staedte", kind: "city" },
+    ...featuredMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
       label: getHeroNavigationLabel(musical),
       href: `/musical/${musical.slug}`,
       kind: "musical" as const,
     })),
+    { id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" },
   ];
 }

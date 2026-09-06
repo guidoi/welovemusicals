@@ -3,7 +3,7 @@ import { ACTIVE_MUSICAL_IDS, musicals } from "./data";
 import { getHeroNavigationItems, getHeroNavigationLabel } from "./hero-navigation";
 
 describe("getHeroNavigationItems", () => {
-  it("stellt zuerst die Überblicksanker und danach alle aktiven Musicals alphabetisch bereit", () => {
+  it("stellt Orientierungstabs, kuratierte Top-Musicals und einen A–Z-Einstieg bereit", () => {
     const items = getHeroNavigationItems(
       [
         { id: "zeta", slug: "zeta", title: "ZETA" },
@@ -11,56 +11,35 @@ describe("getHeroNavigationItems", () => {
         { id: "inaktiv", slug: "inaktiv", title: "INAKTIV" },
       ],
       ["alpha", "zeta"],
+      ["zeta", "alpha"],
     );
 
     expect(items).toEqual([
-      { id: "all-musicals", label: "Musicals", href: "#musicals", kind: "overview" },
-      { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
-      { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
+      { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
+      { id: "musical-cities", label: "Städte & Termine", href: "#staedte", kind: "city" },
       { id: "musical-zeta", label: "ZETA", href: "/musical/zeta", kind: "musical" },
+      { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
+      { id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" },
     ]);
   });
 
-  it("verlinkt jedes aktive Musical direkt auf seine Landingpage", () => {
-    const items = getHeroNavigationItems(musicals, ACTIVE_MUSICAL_IDS);
-    const activeMusicals = musicals
-      .filter((musical) => ACTIVE_MUSICAL_IDS.includes(musical.id) || ACTIVE_MUSICAL_IDS.includes(musical.slug))
-      .sort((left, right) => getHeroNavigationLabel(left).localeCompare(getHeroNavigationLabel(right), "de"));
-    const musicalItems = items.filter((item) => item.kind === "musical");
-    const orderedActiveMusicals = [
-      ...activeMusicals.filter((musical) => musical.slug === "und-julia"),
-      ...activeMusicals.filter((musical) => musical.slug !== "und-julia"),
+  it("verlinkt ausschließlich die kuratierten Top-Musicals direkt auf ihre Landingpages", () => {
+    const featuredIds = ["zeta", "alpha"];
+    const activeMusicals = [
+      { id: "alpha", slug: "alpha", title: "ALPHA" },
+      { id: "zeta", slug: "zeta", title: "ZETA" },
+      { id: "weitere-show", slug: "weitere-show", title: "WEITERE SHOW" },
     ];
-    const expectedLabels = orderedActiveMusicals.map((musical) => ({
-      "phantom-der-oper": "Phantom der Oper",
-      "der-teufel-traegt-prada-das-musical": "Teufel trägt Prada",
-      "schoene-und-das-biest": "Schöne und das Biest",
-      "gloeckner-von-notre-dame": "Glöckner von Notre-Dame",
-      "koenig-der-loewen": "König der Löwen",
-      "die-eiskoenigin": "Die Eiskönigin",
-      "disneys-musical-tarzan": "Tarzan",
-      "dracula": "Dracula",
-      "drei-haselnuesse-fuer-aschenbroedel": "Drei Haselnüsse",
-      "fack-ju-goehte": "Fack ju Göhte",
-      "mj-das-michael-jackson-musical": "MJ",
-      "moulin-rouge": "Moulin Rouge!",
-      "rapunzel": "Rapunzel",
-      "salon-rosie": "Salon Rosie",
-      "sister-act": "Sister Act",
-      "starlight-express": "Starlight Express",
-      "tanz-der-vampire": "Tanz der Vampire",
-      "we-will-rock-you": "We Will Rock You",
-      "wir-sind-am-leben": "Wir sind am Leben",
-      "zurueck-in-die-zukunft-das-musical": "Zurück in die Zukunft",
-      "und-julia": "& Julia",
-    } as Record<string, string>)[musical.slug] ?? musical.title);
+    const items = getHeroNavigationItems(activeMusicals, activeMusicals.map((musical) => musical.id), featuredIds);
+    const musicalItems = items.filter((item) => item.kind === "musical");
+    const expectedMusicals = featuredIds.map((id) => activeMusicals.find((musical) => musical.id === id)!);
 
-    expect(musicalItems).toHaveLength(activeMusicals.length);
-    expect(musicalItems.map((item) => item.label)).toEqual(expectedLabels);
+    expect(musicalItems).toHaveLength(featuredIds.length);
+    expect(musicalItems.map((item) => item.label)).toEqual(expectedMusicals.map(getHeroNavigationLabel));
     expect(musicalItems.map((item) => item.href)).toEqual(
-      orderedActiveMusicals.map((musical) => `/musical/${musical.slug}`),
+      expectedMusicals.map((musical) => `/musical/${musical.slug}`),
     );
-    expect(new Set(musicalItems.map((item) => item.id)).size).toBe(activeMusicals.length);
+    expect(items).toContainEqual({ id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" });
   });
 
   it("verwendet auch für Tarzan und Zurück in die Zukunft die gekürzten, normal geschriebenen Labels", () => {
@@ -73,6 +52,7 @@ describe("getHeroNavigationItems", () => {
           title: "ZURÜCK IN DIE ZUKUNFT – DAS MUSICAL",
         },
       ],
+      ["tarzan", "zukunft"],
       ["tarzan", "zukunft"],
     );
 
@@ -90,7 +70,7 @@ describe("getHeroNavigationItems", () => {
     });
   });
 
-  it("setzt & Julia als dritten Button direkt hinter Musicals und Städte", () => {
+  it("verwendet keine nicht kuratierten Shows in der Top-Musical-Gruppe", () => {
     const items = getHeroNavigationItems(
       [
         { id: "tarzan", slug: "disneys-musical-tarzan", title: "DISNEYS MUSICAL TARZAN" },
@@ -98,12 +78,10 @@ describe("getHeroNavigationItems", () => {
         { id: "zukunft", slug: "zurueck-in-die-zukunft-das-musical", title: "ZURÜCK IN DIE ZUKUNFT – DAS MUSICAL" },
       ],
       ["tarzan", "und-julia", "zukunft"],
+      ["tarzan", "zukunft"],
     );
 
-    expect(items.slice(0, 3)).toEqual([
-      { id: "all-musicals", label: "Musicals", href: "#musicals", kind: "overview" },
-      { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
-      { id: "musical-und-julia", label: "& Julia", href: "/musical/und-julia", kind: "musical" },
-    ]);
+    expect(items).not.toContainEqual({ id: "musical-und-julia", label: "& Julia", href: "/musical/und-julia", kind: "musical" });
+    expect(items.filter((item) => item.kind === "musical").map((item) => item.label)).toEqual(["Tarzan", "Zurück in die Zukunft"]);
   });
 });

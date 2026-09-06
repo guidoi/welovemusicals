@@ -12,6 +12,8 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const orientationItems = items.filter((item) => item.id === "all-musicals" || item.id === "musical-cities");
+  const musicalItems = items.filter((item) => item.kind === "musical" || item.id === "more-musicals");
 
   const updateScrollState = useCallback(() => {
     const element = scrollRef.current;
@@ -47,8 +49,38 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
     });
   };
 
+  const renderItem = (item: HeroNavigationItem, className: string) => {
+    if (item.kind !== "musical") {
+      return (
+        <button
+          key={item.id}
+          type="button"
+          data-testid={`hero-anchor-${item.id}`}
+          onClick={() => onNavigate?.(item)}
+          className={className}
+        >
+          {item.label}
+        </button>
+      );
+    }
+
+    return (
+      <Link key={item.id} href={item.href} className={className}>
+        {item.label}
+      </Link>
+    );
+  };
+
   return (
-    <nav aria-label="Direktnavigation zu Musical-Inhalten" className="relative w-full max-w-6xl mx-auto" data-testid="hero-anchor-navigation">
+    <nav aria-label="Direktnavigation zu Musical-Inhalten" className="w-full max-w-6xl mx-auto" data-testid="hero-anchor-navigation">
+      <div className="mb-3 flex flex-wrap justify-center gap-2" data-testid="hero-orientation-navigation">
+        {orientationItems.map((item) => renderItem(
+          item,
+          "inline-flex h-10 items-center rounded-full border border-white/60 bg-black/15 px-4 text-xs font-bold tracking-[0.08em] text-white shadow-md shadow-black/15 transition hover:border-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        ))}
+      </div>
+
+      <div className="relative">
       <button
         type="button"
         aria-label="Navigation nach links schieben"
@@ -64,29 +96,10 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
         tabIndex={0}
         className="mx-0 flex min-w-0 snap-x snap-mandatory gap-2 overflow-x-auto scroll-smooth px-0.5 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:mx-12"
       >
-        {items.map((item) => {
-          const itemClassName = "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-white/75 bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-white shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base";
-
-          if (item.kind !== "musical") {
-            return (
-              <button
-                key={item.id}
-                type="button"
-                data-testid={`hero-anchor-${item.id}`}
-                onClick={() => onNavigate?.(item)}
-                className={itemClassName}
-              >
-                {item.label}
-              </button>
-            );
-          }
-
-          return (
-            <Link key={item.id} href={item.href} className={itemClassName}>
-              {item.label}
-            </Link>
-          );
-        })}
+        {musicalItems.map((item) => renderItem(
+          item,
+          "inline-flex h-12 shrink-0 snap-start items-center rounded-full border border-white/75 bg-transparent px-6 text-sm font-bold tracking-[0.08em] text-white shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-14 md:px-7 md:text-base",
+        ))}
       </div>
 
       <button
@@ -98,6 +111,7 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
       >
         <ChevronRight className="h-4 w-4" aria-hidden="true" />
       </button>
+      </div>
     </nav>
   );
 }
