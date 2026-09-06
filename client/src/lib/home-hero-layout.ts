@@ -1,0 +1,2 @@
+export const MOBILE_HERO_NAVIGATION_TOP_CLASS = "mt-10";
+export const MOBILE_HERO_NAVIGATION_BOTTOM_CLASS = "pt-8";
