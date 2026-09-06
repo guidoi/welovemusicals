@@ -36,12 +36,15 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('md:h-14');
     expect(markup).toContain('md:px-7');
     expect(markup).toContain('md:text-base');
+    expect(markup).toContain('border-gold bg-gold');
+    expect(markup).toContain('text-black');
     expect(markup).toContain('data-testid="hero-anchor-all-musicals"');
     expect(markup).toContain('type="button"');
     expect(markup).toContain('>Alle Musicals<');
     expect(markup).toContain('data-testid="hero-anchor-musical-cities"');
     expect(markup).toContain('href="/musical/alpha"');
     expect(markup).toContain('>Weitere Musicals A–Z<');
+    expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*border-gold bg-gold/);
   });
 
   it("rendert Musical-Ziele als relative In-App-Routen", () => {

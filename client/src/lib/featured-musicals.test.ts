@@ -23,4 +23,11 @@ describe("Top-Musicals auf der Startseite", () => {
       expect(musicals.find((musical) => musical.id === id)?.featured).toBe(false);
     }
   });
+
+  it("führt Zurück in die Zukunft mit einer separaten Versalien-Subline", () => {
+    const backToTheFuture = musicals.find((musical) => musical.id === "ziz");
+
+    expect(backToTheFuture?.title).toBe("ZURÜCK IN DIE ZUKUNFT");
+    expect(backToTheFuture?.subtitle).toBe("DAS MUSICAL");
+  });
 });

@@ -40,7 +40,7 @@ import {
   shouldRestoreHomeHero,
 } from "@/lib/hero-anchor-history";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
+const HERO_IMAGE = "/images/kdl/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne.jpg";
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
 // Österreichische Städte (für Länderfilter)
@@ -244,10 +244,10 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src={HERO_IMAGE}
-            alt="Theaterbühne"
+            alt="Bühnenszene aus Disneys Der König der Löwen vor einer Savannensonne"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-background" />
         </div>
 
         {/* Content */}

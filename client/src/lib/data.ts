@@ -1360,8 +1360,8 @@ export const musicals: Musical[] = [
   {
     id: "ziz",
     slug: "zurueck-in-die-zukunft-das-musical",
-    title: "ZURÜCK IN DIE ZUKUNFT – Das Musical",
-    subtitle: "",
+    title: "ZURÜCK IN DIE ZUKUNFT",
+    subtitle: "DAS MUSICAL",
     provider: "Stage Entertainment",
     priceFrom: "62,49",
     category: "ensuite",
