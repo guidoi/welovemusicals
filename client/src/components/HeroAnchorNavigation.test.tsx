@@ -7,7 +7,7 @@ import HeroAnchorNavigation from "./HeroAnchorNavigation";
 const staticLocationHook = (): [string, (path: string) => void] => ["/", () => undefined];
 
 describe("HeroAnchorNavigation", () => {
-  it("rendert transparente, großzügig gepolsterte Anker-Tabs mit Desktop-Pfeilsteuerungen", () => {
+  it("rendert kleine goldumrandete Orientierungstabs und weiße Musicalbuttons mit Desktop-Pfeilsteuerungen", () => {
     const markup = renderToStaticMarkup(
       <Router hook={staticLocationHook}>
         <HeroAnchorNavigation
@@ -30,21 +30,21 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('border-white/75');
     expect(markup).toContain('bg-transparent');
     expect(markup).toContain('text-white');
-    expect(markup).toContain('h-12');
-    expect(markup).toContain('px-6');
-    expect(markup).toContain('text-sm');
-    expect(markup).toContain('md:h-14');
-    expect(markup).toContain('md:px-7');
-    expect(markup).toContain('md:text-base');
-    expect(markup).toContain('border-gold bg-gold');
-    expect(markup).toContain('text-black');
+    expect(markup).toContain('h-10');
+    expect(markup).toContain('px-4');
+    expect(markup).toContain('text-xs');
+    expect(markup).toContain('md:h-12');
+    expect(markup).toContain('md:px-5');
+    expect(markup).toContain('md:text-sm');
+    expect(markup).toContain('border-gold bg-transparent');
+    expect(markup).toContain('text-gold');
     expect(markup).toContain('data-testid="hero-anchor-all-musicals"');
     expect(markup).toContain('type="button"');
     expect(markup).toContain('>Alle Musicals<');
     expect(markup).toContain('data-testid="hero-anchor-musical-cities"');
     expect(markup).toContain('href="/musical/alpha"');
     expect(markup).toContain('>Weitere Musicals A–Z<');
-    expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*border-gold bg-gold/);
+    expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*border-gold bg-transparent/);
   });
 
   it("rendert Musical-Ziele als relative In-App-Routen", () => {

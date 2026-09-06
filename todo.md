@@ -432,3 +432,6 @@
 - [x] Hero-Navigation verfeinert: Orientierungstabs in Gold und in derselben Größe wie Musicalbuttons gestaltet, Musicalbuttons weiß belassen und das vorhandene König-der-Löwen-Sonnenmotiv als kontraststarken Hero-Hintergrund eingesetzt
 - [x] Hero-Navigation: den Tab „Weitere Musicals A–Z“ ebenfalls als goldenen Orientierungstab gestaltet, während individuelle Musicalbuttons weiß bleiben
 - [x] Zurück in die Zukunft um die kleinere Versalien-Subline „DAS MUSICAL“ im Stil der übrigen Musicaltitel ergänzt
+- [ ] Mobile Hero-Schiebenavigation auf eine kontextabhängige Sticky- und Active-State-Variante bewerten: beim Zurückscrollen sichtbar, beim Herunterscrollen zurückhaltend und mit goldener Hervorhebung des sichtbaren Musicals
+- [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
+- [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
