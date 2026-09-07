@@ -445,6 +445,7 @@
 - [x] Durch Folgeanforderung ersetzt: Desktop-Navigation nicht isoliert umbenennen
 - [x] Hauptnavigation auf Desktop und im mobilen Burger-Menü einheitlich auf „Alle Musicals & Shows“ umbenannt
 - [x] Desktop-Abstand zwischen dem vergrößerten Hero und der Highlights-Sektion spürbar reduziert, ohne die mobile Ansicht zu verändern
+- [x] Desktop-Abstand zwischen Hero und Highlights-Sektion nochmals leicht reduziert, ohne die mobile Ansicht zu verändern
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
