@@ -2204,3 +2204,7 @@ export function getAdditionalMusicals(): Musical[] {
   const featuredMusicalIds = new Set<string>(FEATURED_MUSICAL_IDS);
   return getActiveMusicals().filter((musical) => !featuredMusicalIds.has(musical.id));
 }
+
+export function getEditorialOverviewMusicals(includeHighlights: boolean): Musical[] {
+  return includeHighlights ? getActiveMusicals() : getAdditionalMusicals();
+}

@@ -28,6 +28,7 @@ import {
   ACTIVE_MUSICAL_IDS,
   FEATURED_MUSICAL_IDS,
   getAdditionalMusicals,
+  getEditorialOverviewMusicals,
   getFeaturedMusicals,
   getActiveMusicalCountByCity,
   createAwinLink,
@@ -151,8 +152,15 @@ export default function Home() {
   }, []);
 
   const filteredMusicals = useMemo(() => {
-    // Die redaktionellen Highlights stehen oben; diese Liste zeigt bewusst nur weitere Produktionen.
-    let result = getAdditionalMusicals();
+    const hasActiveFilter =
+      categoryFilter !== "alle" ||
+      countryFilter !== "alle" ||
+      cityFilter !== "alle" ||
+      plzSearch.active;
+
+    // Ohne Auswahl bleibt die Übersicht doppelfrei. Sobald gefiltert wird,
+    // durchsucht sie das komplette aktive Angebot einschließlich der Highlights.
+    let result = getEditorialOverviewMusicals(hasActiveFilter);
 
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
@@ -321,7 +329,7 @@ export default function Home() {
             Weitere Musicals &amp; Shows
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Entdecke weitere Produktionen in Deutschland, Österreich und der Schweiz. Die Filter beziehen sich auf diese zusätzliche Auswahl; die redaktionellen Highlights stehen oben.
+            Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt.
           </p>
 
           {/* Advanced Filters – Mobile Akkordeon, Desktop immer sichtbar */}
@@ -348,7 +356,7 @@ export default function Home() {
                 >
                   <span className="flex items-center gap-2.5 text-sm font-semibold text-gold">
                     <SlidersHorizontal className="w-4 h-4" />
-                    Weitere Musicals filtern &amp; sortieren
+                    Alle Musicals &amp; Shows filtern
                     {activeCount > 0 && (
                       <span className="text-xs bg-gold text-black px-2 py-0.5 rounded-full font-bold">
                         {activeCount} aktiv

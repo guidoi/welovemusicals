@@ -454,6 +454,8 @@
 - [x] Desktop-Abstand zwischen Hero und Highlights-Sektion auf ein nahezu direktes, aber noch klar gegliedertes Maß reduziert; mobile Ansicht unverändert gelassen
 - [x] Desktop-Abstand zwischen Hero und Highlights auf den kleinsten klar gegliederten Wert reduziert; mobile Ansicht unverändert gelassen
 - [x] Hauptnavigation und mobile Hero-Navigation auf „Musicals & Shows“ sowie „Städte“ vereinheitlicht und die zugehörigen Breadcrumb-Bezeichnungen angepasst
+- [x] Beschreibungstext unter „Weitere Musicals & Shows“ auf die vorherige Fassung zurückgestellt; ausschließlich die Headline wurde geändert
+- [x] Filterbeschriftung auf „Alle Musicals & Shows filtern“ gesetzt und aktive Filter auch auf die neun Highlights angewendet
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft

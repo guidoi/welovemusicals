@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { ACTIVE_MUSICAL_IDS, FEATURED_MUSICAL_IDS, getAdditionalMusicals, getFeaturedMusicals, musicals } from "./data";
+import {
+  ACTIVE_MUSICAL_IDS,
+  FEATURED_MUSICAL_IDS,
+  getAdditionalMusicals,
+  getEditorialOverviewMusicals,
+  getFeaturedMusicals,
+  musicals,
+} from "./data";
 
 describe("Top-Musicals auf der Startseite", () => {
   it("liefert die final bestätigten neun Highlights in der gewünschten 3×3-Reihenfolge", () => {
@@ -34,6 +41,15 @@ describe("Top-Musicals auf der Startseite", () => {
         (musical) => ACTIVE_MUSICAL_IDS.includes(musical.id) || ACTIVE_MUSICAL_IDS.includes(musical.slug),
       ),
     ).toBe(true);
+  });
+
+  it("bezieht bei einer aktiven Filterauswahl auch die Highlights wieder ein", () => {
+    const filteredOverviewMusicals = getEditorialOverviewMusicals(true);
+
+    expect(filteredOverviewMusicals.map((musical) => musical.id)).toEqual(
+      expect.arrayContaining([...FEATURED_MUSICAL_IDS]),
+    );
+    expect(getEditorialOverviewMusicals(false)).toEqual(getAdditionalMusicals());
   });
 
   it("führt Zurück in die Zukunft mit einer separaten Versalien-Subline", () => {
