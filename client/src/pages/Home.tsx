@@ -35,6 +35,7 @@ import {
 import { getHeroNavigationItems } from "@/lib/hero-navigation";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
 import {
+  DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS,
   DESKTOP_HERO_IMAGE_POSITION_CLASS,
   DESKTOP_HERO_SECTION_CLASS,
   MOBILE_HERO_NAVIGATION_BOTTOM_CLASS,
@@ -304,7 +305,7 @@ export default function Home() {
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}
-      <section id="top-musicals" className={`${MOBILE_HERO_NAVIGATION_BOTTOM_CLASS} pb-16 md:pt-[48px] md:pb-24 scroll-mt-24`}>
+      <section id="top-musicals" className={`${MOBILE_HERO_NAVIGATION_BOTTOM_CLASS} ${DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS} pb-16 md:pb-24 scroll-mt-24`}>
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
