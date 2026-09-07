@@ -35,6 +35,8 @@ import {
 import { getHeroNavigationItems } from "@/lib/hero-navigation";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
 import {
+  DESKTOP_HERO_IMAGE_POSITION_CLASS,
+  DESKTOP_HERO_SECTION_CLASS,
   MOBILE_HERO_NAVIGATION_BOTTOM_CLASS,
   MOBILE_HERO_NAVIGATION_TOP_CLASS,
 } from "@/lib/home-hero-layout";
@@ -243,13 +245,13 @@ export default function Home() {
       <Header />
 
       {/* ===== HERO SECTION ===== */}
-      <section className="relative flex items-center justify-center overflow-hidden">
+      <section className={`relative flex items-center justify-center overflow-hidden ${DESKTOP_HERO_SECTION_CLASS}`}>
         {/* Background */}
         <div className="absolute inset-0">
           <img
             src={HOME_HERO_IMAGE}
             alt={HOME_HERO_ALT}
-            className="w-full h-full object-cover"
+            className={`w-full h-full object-cover ${DESKTOP_HERO_IMAGE_POSITION_CLASS}`}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-background" />
         </div>

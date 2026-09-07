@@ -1,4 +1,4 @@
 export const primaryNavigationItems = [
-  { label: "Alle Musicals", href: "/#musicals" },
+  { label: "Alle Musicals & Shows", href: "/#musicals" },
   { label: "Städte & Termine", href: "/#staedte" },
 ] as const;

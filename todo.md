@@ -441,6 +441,9 @@
 - [x] Goldenen Schatten am Tab „Weitere Musicals A–Z“ entfernt und die mobilen Burger-Menüeinträge auf „Alle Musicals“ sowie „Städte & Termine“ vereinheitlicht
 - [x] Goldenen Verlauf an der rechten Kante der mobilen Hero-Schiebenavigation entfernt; die natürliche angeschnittene nächste Tabkante bleibt als dezenter Wisch-Hinweis erhalten
 - [x] Sichtbare nächste Tabkante der mobilen Hero-Schiebenavigation durch behutsam reduzierte Tab-Innenabstände vergrößert und Hero-Teasertext um „und Shows“ ergänzt
+- [x] Desktop-Hero bei breiten Fenstern in Höhe und Bildposition so optimiert, dass Sonne und Rafiki rechts deutlich sichtbar bleiben
+- [x] Durch Folgeanforderung ersetzt: Desktop-Navigation nicht isoliert umbenennen
+- [x] Hauptnavigation auf Desktop und im mobilen Burger-Menü einheitlich auf „Alle Musicals & Shows“ umbenannt
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
