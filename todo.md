@@ -452,6 +452,7 @@
 - [x] Hauptnavigation und Hero-Tab „Alle Musicals & Shows“ auf den Highlights-Einstieg verlinkt sowie den Tab „Weitere Musicals & Shows“ auf die untere gleichnamige Liste ausgerichtet
 - [x] Bestätigte Ankerlogik umgesetzt: Desktop-Hauptnavigation „Alle Musicals & Shows“ führt zu den Highlights; mobiler Hero-Tab „Weitere Musicals & Shows“ führt zur unteren gleichnamigen Section
 - [x] Desktop-Abstand zwischen Hero und Highlights-Sektion auf ein nahezu direktes, aber noch klar gegliedertes Maß reduziert; mobile Ansicht unverändert gelassen
+- [x] Desktop-Abstand zwischen Hero und Highlights auf den kleinsten klar gegliederten Wert reduziert; mobile Ansicht unverändert gelassen
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
