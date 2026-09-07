@@ -54,8 +54,8 @@ export function getHeroNavigationItems(
     .filter((musical): musical is HeroNavigationMusical => Boolean(musical));
 
   return [
-    { id: "all-musicals", label: "Alle Musicals & Shows", href: "#musicals", kind: "overview" },
-    { id: "musical-cities", label: "Musical-Städte", href: "#staedte", kind: "city" },
+    { id: "all-musicals", label: "Musicals & Shows", href: "#musicals", kind: "overview" },
+    { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
     ...featuredMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
       label: getHeroNavigationLabel(musical),

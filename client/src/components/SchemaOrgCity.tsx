@@ -24,7 +24,7 @@ export function getCityBreadcrumbItems(city: Pick<City, "name" | "slug">) {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Musical-Städte",
+      name: "Städte",
       item: `${BASE_URL}/#staedte`,
     },
     {

@@ -3,7 +3,7 @@ import { getMusicalBreadcrumbItems } from "./SchemaOrg";
 import { getCityBreadcrumbItems } from "./SchemaOrgCity";
 
 describe("Schema.org Breadcrumb-Bezeichnungen", () => {
-  it("nennt die zentrale Musicalübersicht einheitlich Alle Musicals & Shows", () => {
+  it("nennt die zentrale Musicalübersicht einheitlich Musicals & Shows", () => {
     const breadcrumbs = getMusicalBreadcrumbItems({
       id: "tarzan",
       slug: "tarzan",
@@ -11,16 +11,16 @@ describe("Schema.org Breadcrumb-Bezeichnungen", () => {
     });
 
     expect(breadcrumbs[1]).toMatchObject({
-      name: "Alle Musicals & Shows",
+      name: "Musicals & Shows",
       item: "https://welovemusicals.com/#musicals",
     });
   });
 
-  it("nennt die zentrale Stadtübersicht einheitlich Musical-Städte", () => {
+  it("nennt die zentrale Stadtübersicht einheitlich Städte", () => {
     const breadcrumbs = getCityBreadcrumbItems({ name: "Hamburg", slug: "hamburg" });
 
     expect(breadcrumbs[1]).toMatchObject({
-      name: "Musical-Städte",
+      name: "Städte",
       item: "https://welovemusicals.com/#staedte",
     });
   });
