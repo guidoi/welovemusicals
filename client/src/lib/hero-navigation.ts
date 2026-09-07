@@ -54,14 +54,14 @@ export function getHeroNavigationItems(
     .filter((musical): musical is HeroNavigationMusical => Boolean(musical));
 
   return [
-    { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
-    { id: "musical-cities", label: "Städte & Termine", href: "#staedte", kind: "city" },
+    { id: "all-musicals", label: "Alle Musicals & Shows", href: "#musicals", kind: "overview" },
+    { id: "musical-cities", label: "Musical-Städte", href: "#staedte", kind: "city" },
     ...featuredMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
       label: getHeroNavigationLabel(musical),
       href: `/musical/${musical.slug}`,
       kind: "musical" as const,
     })),
-    { id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" },
+    { id: "more-musicals", label: "Weitere Musicals & Shows", href: "#more-musicals", kind: "overview" },
   ];
 }

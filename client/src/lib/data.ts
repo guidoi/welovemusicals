@@ -2199,3 +2199,8 @@ export function getFeaturedMusicals(): Musical[] {
     (musical): musical is Musical => Boolean(musical),
   );
 }
+
+export function getAdditionalMusicals(): Musical[] {
+  const featuredMusicalIds = new Set<string>(FEATURED_MUSICAL_IDS);
+  return getActiveMusicals().filter((musical) => !featuredMusicalIds.has(musical.id));
+}

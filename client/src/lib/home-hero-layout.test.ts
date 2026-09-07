@@ -19,7 +19,7 @@ describe("Mobile Hero-Navigationsabstände", () => {
   });
 
   it("rückt die Highlights am Desktop näher an den Hero, ohne den mobilen Abstand zu verändern", () => {
-    expect(DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS).toBe("md:pt-3");
+    expect(DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS).toBe("md:pt-1");
     expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-8");
   });
 });

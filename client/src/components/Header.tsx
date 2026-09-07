@@ -251,7 +251,7 @@ export default function Header() {
           </button>
 
           <a
-            href="/#musicals"
+            href="/#more-musicals"
             className="px-5 py-2 bg-gold text-background font-semibold text-sm rounded-sm hover:bg-gold-light transition-colors tracking-wide"
           >
             Tickets finden
@@ -503,7 +503,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="/#musicals"
+                href="/#more-musicals"
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 px-5 py-3 bg-gold text-background font-semibold text-center rounded-sm"
               >

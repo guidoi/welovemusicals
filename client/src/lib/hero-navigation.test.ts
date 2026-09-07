@@ -15,11 +15,11 @@ describe("getHeroNavigationItems", () => {
     );
 
     expect(items).toEqual([
-      { id: "all-musicals", label: "Alle Musicals", href: "#musicals", kind: "overview" },
-      { id: "musical-cities", label: "Städte & Termine", href: "#staedte", kind: "city" },
+      { id: "all-musicals", label: "Alle Musicals & Shows", href: "#musicals", kind: "overview" },
+      { id: "musical-cities", label: "Musical-Städte", href: "#staedte", kind: "city" },
       { id: "musical-zeta", label: "ZETA", href: "/musical/zeta", kind: "musical" },
       { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
-      { id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" },
+      { id: "more-musicals", label: "Weitere Musicals & Shows", href: "#more-musicals", kind: "overview" },
     ]);
   });
 
@@ -39,7 +39,7 @@ describe("getHeroNavigationItems", () => {
     expect(musicalItems.map((item) => item.href)).toEqual(
       expectedMusicals.map((musical) => `/musical/${musical.slug}`),
     );
-    expect(items).toContainEqual({ id: "more-musicals", label: "Weitere Musicals A–Z", href: "#musicals", kind: "overview" });
+    expect(items).toContainEqual({ id: "more-musicals", label: "Weitere Musicals & Shows", href: "#more-musicals", kind: "overview" });
   });
 
   it("verwendet auch für Tarzan und Zurück in die Zukunft die gekürzten, normal geschriebenen Labels", () => {

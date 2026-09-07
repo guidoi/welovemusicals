@@ -31,7 +31,7 @@ const allFilterCities = (() => {
 })();
 
 export type FilterCategory = "alle" | "fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder";
-export type SortOption = "name" | "featured" | "date";
+export type SortOption = "name" | "date";
 export type CountryFilter = "alle" | "de" | "at" | "ch";
 
 interface MusicalFiltersProps {
@@ -224,7 +224,6 @@ export default function MusicalFilters({
             onChange={(e) => setSortOption(e.target.value as SortOption)}
             className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
           >
-            <option value="featured">Empfehlungen zuerst</option>
             <option value="name">Nach Name (A–Z)</option>
             <option value="date">Nach Datum (früheste Vorstellung)</option>
           </select>
@@ -240,14 +239,14 @@ export default function MusicalFilters({
         {(categoryFilter !== "alle" ||
           countryFilter !== "alle" ||
           cityFilter !== "alle" ||
-          sortOption !== "featured" ||
+          sortOption !== "name" ||
           plzSearch.active) && (
           <button
             onClick={() => {
               setCategoryFilter("alle");
               setCountryFilter("alle");
               setCityFilter("alle");
-              setSortOption("featured");
+              setSortOption("name");
               setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
             }}
             className="text-xs text-gold hover:text-gold-light transition-colors underline"

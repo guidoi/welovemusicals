@@ -59,7 +59,7 @@ export function getMusicalBreadcrumbItems(musical: Pick<Musical, "title" | "slug
     {
       "@type": "ListItem",
       position: 2,
-      name: "Alle Musicals",
+      name: "Alle Musicals & Shows",
       item: `${BASE_URL}/#musicals`,
     },
     {

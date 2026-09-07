@@ -446,6 +446,12 @@
 - [x] Hauptnavigation auf Desktop und im mobilen Burger-Menü einheitlich auf „Alle Musicals & Shows“ umbenannt
 - [x] Desktop-Abstand zwischen dem vergrößerten Hero und der Highlights-Sektion spürbar reduziert, ohne die mobile Ansicht zu verändern
 - [x] Desktop-Abstand zwischen Hero und Highlights-Sektion nochmals leicht reduziert, ohne die mobile Ansicht zu verändern
+- [x] Startseite als doppelfreie redaktionelle Übersicht strukturiert: neun Highlights zuerst, darunter „Weitere Musicals & Shows“ ohne wiederholte Highlights; Filter klar auf diese zweite Liste bezogen und Hauptnavigation sowie Hero-Orientierung an den redaktionellen Einstieg verlinkt
+- [x] Hauptnavigation und mobile Hero-Orientierung zentral von „Städte & Termine“ auf „Musical-Städte“ umbenannt
+- [x] „Städte & Termine“ in sämtlichen Desktop-, Burger- und mobilen Hero-Navigationen konsistent durch „Musical-Städte“ ersetzt
+- [x] Hauptnavigation und Hero-Tab „Alle Musicals & Shows“ auf den Highlights-Einstieg verlinkt sowie den Tab „Weitere Musicals & Shows“ auf die untere gleichnamige Liste ausgerichtet
+- [x] Bestätigte Ankerlogik umgesetzt: Desktop-Hauptnavigation „Alle Musicals & Shows“ führt zu den Highlights; mobiler Hero-Tab „Weitere Musicals & Shows“ führt zur unteren gleichnamigen Section
+- [x] Desktop-Abstand zwischen Hero und Highlights-Sektion auf ein nahezu direktes, aber noch klar gegliedertes Maß reduziert; mobile Ansicht unverändert gelassen
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft

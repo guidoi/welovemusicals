@@ -27,6 +27,7 @@ import {
   cities,
   ACTIVE_MUSICAL_IDS,
   FEATURED_MUSICAL_IDS,
+  getAdditionalMusicals,
   getFeaturedMusicals,
   getActiveMusicalCountByCity,
   createAwinLink,
@@ -59,7 +60,7 @@ export default function Home() {
   const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("alle");
   const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
-  const [sortOption, setSortOption] = useState<SortOption>("featured");
+  const [sortOption, setSortOption] = useState<SortOption>("name");
   const [plzSearch, setPlzSearch] = useState<PlzSearchState>({
     active: false,
     plz: "",    radius: 50,
@@ -150,18 +151,8 @@ export default function Home() {
   }, []);
 
   const filteredMusicals = useMemo(() => {
-    let result = musicals;
-
-    // Nur fertig eingerichtete Musicals anzeigen (gesteuert über ACTIVE_MUSICAL_IDS in data.ts)
-    result = result.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
-
-    // Top-Musicals (featured) in der Hauptliste ausblenden – sie sind oben prominent dargestellt.
-    // Ausnahme: wenn ein spezifischer Filter aktiv ist (nicht "alle"), damit gefeatured Musicals
-    // trotzdem in gefilterten Ergebnissen erscheinen.
-    const hasActiveFilter = categoryFilter !== "alle" || countryFilter !== "alle" || cityFilter !== "alle" || plzSearch.active;
-    if (!hasActiveFilter) {
-      result = result.filter((m) => !m.featured);
-    }
+    // Die redaktionellen Highlights stehen oben; diese Liste zeigt bewusst nur weitere Produktionen.
+    let result = getAdditionalMusicals();
 
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
@@ -219,13 +210,6 @@ export default function Home() {
           return "9999-12-31";
         };
         return getEarliestDate(a).localeCompare(getEarliestDate(b));
-      });
-    } else if (sortOption === "featured") {
-      // Featured musicals first, then by name
-      result = result.sort((a, b) => {
-        if (a.featured && !b.featured) return -1;
-        if (!a.featured && b.featured) return 1;
-        return a.title.localeCompare(b.title, "de");
       });
     }
 
@@ -305,7 +289,7 @@ export default function Home() {
       </section>
 
       {/* ===== FEATURED MUSICALS ===== */}
-      <section id="top-musicals" className={`${MOBILE_HERO_NAVIGATION_BOTTOM_CLASS} ${DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS} pb-16 md:pb-24 scroll-mt-24`}>
+      <section id="musicals" className={`${MOBILE_HERO_NAVIGATION_BOTTOM_CLASS} ${DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS} pb-16 md:pb-24 scroll-mt-24`}>
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
@@ -327,17 +311,17 @@ export default function Home() {
       <div className="container"><div className="gold-line" /></div>
 
       {/* ===== ALL MUSICALS ===== */}
-      <section id="musicals" className="py-16 md:py-24 scroll-mt-24">
+      <section id="more-musicals" className="py-16 md:py-24 scroll-mt-24">
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">VORHANG AUF</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Alle Musicals und Shows – wo Träume lebendig werden
+            Weitere Musicals &amp; Shows
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt.
+            Entdecke weitere Produktionen in Deutschland, Österreich und der Schweiz. Die Filter beziehen sich auf diese zusätzliche Auswahl; die redaktionellen Highlights stehen oben.
           </p>
 
           {/* Advanced Filters – Mobile Akkordeon, Desktop immer sichtbar */}
@@ -348,7 +332,7 @@ export default function Home() {
                 categoryFilter !== "alle",
                 countryFilter !== "alle",
                 cityFilter !== "alle",
-                sortOption !== "featured",
+                sortOption !== "name",
                 plzSearch.active,
               ].filter(Boolean).length;
               return (
@@ -364,7 +348,7 @@ export default function Home() {
                 >
                   <span className="flex items-center gap-2.5 text-sm font-semibold text-gold">
                     <SlidersHorizontal className="w-4 h-4" />
-                    Musicals filtern & sortieren
+                    Weitere Musicals filtern &amp; sortieren
                     {activeCount > 0 && (
                       <span className="text-xs bg-gold text-black px-2 py-0.5 rounded-full font-bold">
                         {activeCount} aktiv
@@ -456,7 +440,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayedMusicals.map((musical, i) => (
-                <MusicalCard key={musical.id} musical={musical} index={i} anchorId={musical.featured ? undefined : `musical-${musical.slug}`} />
+                <MusicalCard key={musical.id} musical={musical} index={i} anchorId={`musical-${musical.slug}`} />
               ))}
             </div>
           )}
@@ -473,7 +457,7 @@ export default function Home() {
                       : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse-once hover:bg-gold/10"
                   }`}
                 >
-                  Alle {filteredMusicals.length} Musicals anzeigen
+                  Alle {filteredMusicals.length} weiteren Musicals anzeigen
                   <ChevronDown className="w-4 h-4" />
                 </button>
               ) : (
@@ -481,7 +465,7 @@ export default function Home() {
                   onClick={() => {
                     setShowAllMusicals(false);
                     setTimeout(() => {
-                      document.getElementById('musicals')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      document.getElementById('more-musicals')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 50);
                   }}
                   className="px-8 py-3 font-semibold rounded-sm border border-gold/40 text-gold hover:bg-gold/10 transition-all duration-300 inline-flex items-center gap-2"
