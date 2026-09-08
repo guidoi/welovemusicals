@@ -466,6 +466,7 @@
 - [x] Überschrift der Geo-Suche auf „Musicals & Shows in deiner Nähe“ aktualisiert und auf Desktop sowie Mobil geprüft
 - [x] Sale-Störer „SALE · BIS 15 %“ so angepasst, dass das Prozentzeichen auf Desktop und Mobil vollständig sichtbar bleibt
 - [x] Alle Sale-Störer auf dieselbe ausreichend breite Geometrie vereinheitlicht und den Sicherheitsabstand zum Top-Musical-Badge beibehalten
+- [x] Sale-Störer auf Desktop und Mobil typografisch kompakter gestaltet und für „SALE · BIS 15 %“ einen verlässlichen rechten Innenabstand sichergestellt
 - [x] Bestehende Eventim-/Awin-Deep-Links und neue ShowSlot-Textlinks geprüft; nutzerfreundliche Einbindung für Haupt-CTAs, Tourtermine und Stadtteaser festgelegt
 - [x] Bestehenden Awin-Deep-Link für Fack Ju Göhte in Berlin technisch geprüft und seinen Aufbau dokumentiert, ohne Website-Links zu ändern
 - [x] Geografischen Zusatz „in Deutschland, Österreich und der Schweiz“ aus dem Startseiten-Hero-Teaser entfernt

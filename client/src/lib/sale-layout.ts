@@ -8,7 +8,7 @@ export const SALE_BADGE_LAYOUT = {
   featuredBadgeReserveRem: 9,
   widthClasses: "w-[11.5rem] max-w-[calc(100%-9rem)]",
   longLabelWidthClasses: "w-[11.5rem] max-w-[calc(100%-9rem)]",
-  heightClass: "h-[3.25rem]",
+  heightClass: "h-12",
   mobileTextInsetClass: "pr-1",
   roundedClass: "rounded-md",
 } as const;

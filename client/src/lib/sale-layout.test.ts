@@ -12,6 +12,7 @@ describe("Sale-Störer-Layout", () => {
     expect(SALE_BADGE_LAYOUT.longLabelWidthClasses).toBe(
       SALE_BADGE_LAYOUT.widthClasses,
     );
+    expect(SALE_BADGE_LAYOUT.heightClass).toBe("h-12");
 
     const desktopCardWidthRem = 17;
     const desktopSaleWidthRem = getFeaturedSaleBadgeWidthRem(desktopCardWidthRem);

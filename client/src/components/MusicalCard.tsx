@@ -75,19 +75,19 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2 py-1.5 shadow-lg shadow-red-950/40`}
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2.5 py-1 shadow-lg shadow-red-950/40`}
                 aria-label={`Sale: ${musical.sale.discount}`}
                 data-testid="sale-badge"
                 data-sale-layout="compact"
               >
-                <div className="flex h-full items-center justify-center gap-2">
-                  <span data-testid="sale-icon" className="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">
-                    <Tag className="absolute h-10 w-10 fill-[#991b1b] text-[#991b1b]" strokeWidth={0} />
-                    <span className="relative -translate-x-px font-black text-[20px] leading-none text-white">%</span>
+                <div className="flex h-full items-center justify-center gap-1.5">
+                  <span data-testid="sale-icon" className="relative grid h-8 w-8 shrink-0 place-items-center" aria-hidden="true">
+                    <Tag className="absolute h-8 w-8 fill-[#991b1b] text-[#991b1b]" strokeWidth={0} />
+                    <span className="relative -translate-x-px font-black text-[16px] leading-none text-white">%</span>
                   </span>
                   <span
                     data-testid="sale-label"
-                    className="whitespace-nowrap font-heading text-base font-semibold leading-none text-white md:text-lg"
+                    className="whitespace-nowrap font-heading text-sm font-semibold leading-none text-white md:text-base"
                   >
                     SALE · {musical.sale.discount}
                   </span>
