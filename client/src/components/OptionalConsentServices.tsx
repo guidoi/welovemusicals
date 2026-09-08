@@ -1,10 +1,16 @@
 import { useEffect } from "react";
+import { useLocation } from "wouter";
 import { useConsent } from "@/contexts/ConsentContext";
 
 const AWIN_SCRIPT_ID = "awin-mastertag";
 const TRADEDOUBLER_SCRIPT_ID = "tradedoubler-link-converter";
 const GOOGLE_FONTS_ID = "welovemusicals-google-fonts";
 const UMAMI_SCRIPT_ID = "welovemusicals-umami";
+const AFFILIATE_EXCLUDED_PATHS = new Set(["/impressum", "/datenschutz"]);
+
+export function shouldLoadAffiliateTrackingForPath(pathname: string) {
+  return !AFFILIATE_EXCLUDED_PATHS.has(pathname);
+}
 
 function loadAwinMasterTag() {
   if (document.getElementById(AWIN_SCRIPT_ID)) return;
@@ -86,6 +92,7 @@ function loadUmami() {
 
 export default function OptionalConsentServices() {
   const { consent } = useConsent();
+  const [location] = useLocation();
 
   useEffect(() => {
     if (!consent?.analytics) return;
@@ -93,10 +100,10 @@ export default function OptionalConsentServices() {
   }, [consent?.analytics]);
 
   useEffect(() => {
-    if (!consent?.affiliateTracking) return;
+    if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location)) return;
     loadAwinMasterTag();
     return startTradeDoublerConverter();
-  }, [consent?.affiliateTracking]);
+  }, [consent?.affiliateTracking, location]);
 
   useEffect(() => {
     if (!consent?.externalMedia) return;

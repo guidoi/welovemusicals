@@ -22,6 +22,11 @@ describe("Footer-Linkkonfiguration", () => {
       "München",
       "Wien",
       "Zürich",
+      "Bremen",
+      "Bochum",
+      "Duisburg",
+      "Köln",
+      "Frankfurt",
     ]);
   });
 

@@ -156,7 +156,10 @@ describe("Affiliate-Link-Zuordnung", () => {
       "utf8"
     );
 
-    expect(consentServices).toContain("if (!consent?.affiliateTracking) return;");
+    expect(consentServices).toContain(
+      "if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location)) return;"
+    );
+    expect(consentServices).toContain("shouldLoadAffiliateTrackingForPath");
     expect(consentServices).toContain("https://clk.tradedoubler.com/lc?a(3492604)rand(");
     expect(consentServices).toContain("converter?.init");
     expect(consentServices).toContain("new MutationObserver(convertEligibleLinks)");

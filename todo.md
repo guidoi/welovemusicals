@@ -479,3 +479,5 @@
 - [x] Hero-Navigation: „Weitere Musicals A–Z“ in Breite und Höhe exakt an die weißen individuellen Musicalbuttons angeglichen, Goldkontur und Goldschrift beibehalten
 - [x] Hero-Navigation: Alle Musicals, Städte & Termine und Weitere Musicals A–Z kleiner sowie transparent mit goldener Kontur und goldener Schrift gestaltet; individuelle Musicalbuttons weiß belassen
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
+- [x] Allgemeinen „Script error.“ auf der Impressumsseite auf externe Affiliate-Skripte eingegrenzt und durch deren Ausschluss auf Rechtsseiten sicher behoben
+- [x] Footer-Stadtliste um Bremen, Bochum, Duisburg, Köln und Frankfurt erweitert und alle Stadtlinks geprüft

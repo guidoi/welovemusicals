@@ -2217,6 +2217,11 @@ export const FOOTER_DACH_CITY_SLUGS = [
   "muenchen",
   "wien",
   "zuerich",
+  "bremen",
+  "bochum",
+  "duisburg",
+  "koeln",
+  "frankfurt",
 ] as const;
 
 export function getFooterDachCities(): City[] {
