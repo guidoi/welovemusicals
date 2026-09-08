@@ -7,6 +7,6 @@ describe("Startseiten-Hero", () => {
     expect(HOME_HERO_ALT).toContain("Rafiki");
     expect(HOME_HERO_ALT).toContain("Savannensonne");
     expect(HOME_HERO_TEASER).toContain("Musicals und Shows");
-    expect(HOME_HERO_TEASER).toContain("Deutschland, Österreich und der Schweiz");
+    expect(HOME_HERO_TEASER).not.toContain("Deutschland, Österreich und der Schweiz");
   });
 });
