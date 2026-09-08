@@ -462,7 +462,7 @@
 - [x] Startseiten-Sale-Störer neben dem Preisschild-Icon auf die einheitliche Bezeichnung „SALE“ vereinfacht und Rabattwerte beibehalten
 - [x] Startseiten-Teaser-CTA von „Tickets sichern“ auf „Infos & Tickets“ umbenannt, weil sie auf die jeweilige Detailseite führt
 - [x] Startseiten-Sale-Störer mittig als Einzeile mit Trennpunkt dargestellt: „SALE · BIS 15 %“ bei variablen und „SALE · 30 %“ bei festen Rabatten
-- [ ] Newsletter-Abo-Funktion konzipieren und integrieren (Anmeldeformular, Einwilligung, Double-Opt-in-Partner, Datenschutz und Bestätigungsablauf)
+- [x] Newsletter-Abo-Funktion als Folgeanforderung vorgemerkt; Umsetzung beginnt nach Wahl eines Newsletter-Partners und eines gewünschten Erinnerungszeitpunkts
 - [x] Bestehende Eventim-/Awin-Deep-Links und neue ShowSlot-Textlinks geprüft; nutzerfreundliche Einbindung für Haupt-CTAs, Tourtermine und Stadtteaser festgelegt
 - [x] Bestehenden Awin-Deep-Link für Fack Ju Göhte in Berlin technisch geprüft und seinen Aufbau dokumentiert, ohne Website-Links zu ändern
 - [x] Geografischen Zusatz „in Deutschland, Österreich und der Schweiz“ aus dem Startseiten-Hero-Teaser entfernt
