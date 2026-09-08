@@ -53,7 +53,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("text-[20px]");
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"');
+    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-base font-semibold leading-none text-white md:text-lg"');
     expect(markup).toContain("text-white");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
@@ -88,7 +88,8 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("overflow-hidden");
     expect(markup).toContain("justify-center gap-2");
     expect(markup).toContain("h-10 w-10");
-    expect(markup).toContain("text-lg");
+    expect(markup).toContain("text-base");
+    expect(markup).toContain("md:text-lg");
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).not.toContain("BACK TO SCHOOL SALE");
   });

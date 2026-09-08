@@ -75,7 +75,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2 py-1.5 shadow-lg shadow-red-950/40`}
                 aria-label={`Sale: ${musical.sale.discount}`}
                 data-testid="sale-badge"
                 data-sale-layout="compact"
@@ -87,7 +87,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                   </span>
                   <span
                     data-testid="sale-label"
-                    className="whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"
+                    className="whitespace-nowrap font-heading text-base font-semibold leading-none text-white md:text-lg"
                   >
                     SALE · {musical.sale.discount}
                   </span>

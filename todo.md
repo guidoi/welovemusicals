@@ -463,6 +463,9 @@
 - [x] Startseiten-Teaser-CTA von „Tickets sichern“ auf „Infos & Tickets“ umbenannt, weil sie auf die jeweilige Detailseite führt
 - [x] Startseiten-Sale-Störer mittig als Einzeile mit Trennpunkt dargestellt: „SALE · BIS 15 %“ bei variablen und „SALE · 30 %“ bei festen Rabatten
 - [x] Newsletter-Abo-Funktion als Folgeanforderung vorgemerkt; Umsetzung beginnt nach Wahl eines Newsletter-Partners und eines gewünschten Erinnerungszeitpunkts
+- [x] Überschrift der Geo-Suche auf „Musicals & Shows in deiner Nähe“ aktualisiert und auf Desktop sowie Mobil geprüft
+- [x] Sale-Störer „SALE · BIS 15 %“ so angepasst, dass das Prozentzeichen auf Desktop und Mobil vollständig sichtbar bleibt
+- [x] Alle Sale-Störer auf dieselbe ausreichend breite Geometrie vereinheitlicht und den Sicherheitsabstand zum Top-Musical-Badge beibehalten
 - [x] Bestehende Eventim-/Awin-Deep-Links und neue ShowSlot-Textlinks geprüft; nutzerfreundliche Einbindung für Haupt-CTAs, Tourtermine und Stadtteaser festgelegt
 - [x] Bestehenden Awin-Deep-Link für Fack Ju Göhte in Berlin technisch geprüft und seinen Aufbau dokumentiert, ohne Website-Links zu ändern
 - [x] Geografischen Zusatz „in Deutschland, Österreich und der Schweiz“ aus dem Startseiten-Hero-Teaser entfernt

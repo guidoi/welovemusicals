@@ -302,7 +302,7 @@ export default function Header() {
               <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-5 h-5 text-gold flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Musicals in deiner Nähe</p>
+                  <p className="text-sm font-semibold text-foreground">Musicals &amp; Shows in deiner Nähe</p>
                   <p className="text-xs text-muted-foreground">PLZ eingeben (5-stellig DE · 4-stellig AT/CH) oder Standort verwenden</p>
                 </div>
                 <button
