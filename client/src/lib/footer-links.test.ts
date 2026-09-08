@@ -5,6 +5,7 @@ import {
   getFeaturedMusicals,
   getFooterDachCities,
 } from "./data";
+import { FOOTER_INFORMATION_LINKS, FOOTER_LINK_GROUP_LABELS } from "./footer-content";
 
 describe("Footer-Linkkonfiguration", () => {
   it("verwendet die aktuelle zentrale Highlight-Reihenfolge für Top-Musicals", () => {
@@ -22,5 +23,18 @@ describe("Footer-Linkkonfiguration", () => {
       "Wien",
       "Zürich",
     ]);
+  });
+
+  it("verwendet kurze Top-Bezeichnungen und führt Kontakt nicht doppelt im Informationsbereich", () => {
+    expect(FOOTER_LINK_GROUP_LABELS).toEqual({
+      topMusicals: "TOP MUSICALS & SHOWS",
+      topCities: "TOP MUSICAL STÄDTE",
+    });
+    expect(FOOTER_INFORMATION_LINKS.map((item) => item.label)).toEqual([
+      "Über uns",
+      "Datenschutz",
+      "Impressum",
+    ]);
+    expect(FOOTER_INFORMATION_LINKS.map((item) => item.label)).not.toContain("Kontakt");
   });
 });

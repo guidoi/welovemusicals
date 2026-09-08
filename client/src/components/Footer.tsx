@@ -5,6 +5,7 @@
 import { Ticket, Heart } from "lucide-react";
 import { Link } from "wouter";
 import { getFeaturedMusicals, getFooterDachCities } from "@/lib/data";
+import { FOOTER_INFORMATION_LINKS, FOOTER_LINK_GROUP_LABELS } from "@/lib/footer-content";
 import { useConsent } from "@/contexts/ConsentContext";
 
 export default function Footer() {
@@ -36,7 +37,7 @@ export default function Footer() {
           {/* Musicals */}
           <div>
             <h4 className="font-display text-sm font-semibold text-gold mb-4 uppercase tracking-wider">
-              Top Musicals
+              {FOOTER_LINK_GROUP_LABELS.topMusicals}
             </h4>
             <ul className="space-y-2">
               {topMusicals.map((musical) => (
@@ -52,7 +53,7 @@ export default function Footer() {
           {/* Städte */}
           <div>
             <h4 className="font-display text-sm font-semibold text-gold mb-4 uppercase tracking-wider">
-              Wichtige Musical-Städte
+              {FOOTER_LINK_GROUP_LABELS.topCities}
             </h4>
             <ul className="space-y-2">
               {footerCities.map((city) => (
@@ -71,12 +72,7 @@ export default function Footer() {
               Information
             </h4>
             <ul className="space-y-2">
-              {[
-                { label: "Über uns", href: "#" },
-                { label: "Datenschutz", href: "/datenschutz" },
-                { label: "Impressum", href: "/impressum" },
-                { label: "Kontakt", href: "#" },
-              ].map((item) => (
+              {FOOTER_INFORMATION_LINKS.map((item) => (
                 <li key={item.label}>
                   {item.href.startsWith("/") ? (
                     <Link href={item.href} className="text-sm text-muted-foreground hover:text-gold transition-colors">
