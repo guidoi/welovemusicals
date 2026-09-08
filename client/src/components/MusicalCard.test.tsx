@@ -47,13 +47,13 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
     expect(markup).toContain('data-testid="sale-icon"');
-    expect(markup).toContain('data-testid="sale-icon" class="relative grid h-8 w-8 shrink-0 place-items-center" aria-hidden="true">');
+    expect(markup).toContain('data-testid="sale-icon" class="relative grid h-7 w-7 shrink-0 place-items-center" aria-hidden="true">');
     expect(markup).toContain("fill-[#991b1b] text-[#991b1b]");
     expect(markup).toContain('stroke-width="0"');
-    expect(markup).toContain("text-[16px]");
+    expect(markup).toContain("text-[14px]");
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-sm font-semibold leading-none text-white md:text-base"');
+    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-xs font-semibold leading-none text-white md:text-sm"');
     expect(markup).toContain("text-white");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
@@ -86,12 +86,36 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("data-testid=\"sale-label-line\"");
     expect(markup).toContain("30 %");
     expect(markup).toContain("overflow-hidden");
-    expect(markup).toContain("justify-center gap-1.5");
-    expect(markup).toContain("h-8 w-8");
-    expect(markup).toContain("text-sm");
-    expect(markup).toContain("md:text-base");
+    expect(markup).toContain("justify-center gap-1");
+    expect(markup).toContain("h-7 w-7");
+    expect(markup).toContain("text-xs");
+    expect(markup).toContain("md:text-sm");
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).not.toContain("BACK TO SCHOOL SALE");
+  });
+
+  it("zeigt kurze, frei pflegbare Sale-Vorteiltexte ohne feste Rabattlogik", () => {
+    const twoForOneMarkup = renderToStaticMarkup(
+      <MusicalCard
+        musical={{
+          ...baseMusical,
+          sale: { label: "Partnerangebot", discount: "2 FÜR 1" },
+        }}
+      />,
+    );
+    const secondTicketMarkup = renderToStaticMarkup(
+      <MusicalCard
+        musical={{
+          ...baseMusical,
+          sale: { label: "Partnerangebot", discount: "2. TICKET 35 €" },
+        }}
+      />,
+    );
+
+    expect(twoForOneMarkup).toContain(">SALE · 2 FÜR 1<");
+    expect(secondTicketMarkup).toContain(">SALE · 2. TICKET 35 €<");
+    expect(twoForOneMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
+    expect(secondTicketMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {

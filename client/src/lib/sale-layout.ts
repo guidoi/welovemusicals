@@ -1,25 +1,16 @@
 /**
  * Bewahrt auf Karten mit Top-Musical-Badge rechts stets 9 rem freien Raum.
- * Das entspricht `max-width: calc(100% - 9rem)` und verhindert eine Kollision
- * mit dem rechts positionierten Badge bei Desktop- und Mobilkarten.
+ * Die Sale-Badge passt ihre Breite ihrem Inhalt an und darf diesen verfügbaren
+ * Raum nie überschreiten.
  */
 export const SALE_BADGE_LAYOUT = {
-  preferredWidthRem: 11.5,
   featuredBadgeReserveRem: 9,
-  widthClasses: "w-[11.5rem] max-w-[calc(100%-9rem)]",
-  longLabelWidthClasses: "w-[11.5rem] max-w-[calc(100%-9rem)]",
-  heightClass: "h-12",
-  mobileTextInsetClass: "pr-1",
+  widthClasses: "inline-flex w-fit max-w-[calc(100%-9rem)]",
+  heightClass: "h-10",
   roundedClass: "rounded-md",
 } as const;
 
-/** Liefert die maximal verfügbare Breite für den Sale-Störer in rem. */
-export function getFeaturedSaleBadgeWidthRem(cardWidthRem: number): number {
-  return Math.max(
-    0,
-    Math.min(
-      SALE_BADGE_LAYOUT.preferredWidthRem,
-      cardWidthRem - SALE_BADGE_LAYOUT.featuredBadgeReserveRem,
-    ),
-  );
+/** Liefert die verfügbare Maximalbreite vor dem reservierten Top-Musical-Badge. */
+export function getFeaturedSaleBadgeMaxWidthRem(cardWidthRem: number): number {
+  return Math.max(0, cardWidthRem - SALE_BADGE_LAYOUT.featuredBadgeReserveRem);
 }

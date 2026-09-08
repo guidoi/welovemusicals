@@ -1,30 +1,26 @@
 import { describe, expect, it } from "vitest";
 import {
-  getFeaturedSaleBadgeWidthRem,
+  getFeaturedSaleBadgeMaxWidthRem,
   SALE_BADGE_LAYOUT,
 } from "./sale-layout";
 
 describe("Sale-Störer-Layout", () => {
-  it("reserviert für das Top-Musical-Badge in jeder Kartenbreite 9 rem rechts", () => {
-    expect(SALE_BADGE_LAYOUT.preferredWidthRem).toBe(11.5);
+  it("nutzt eine inhaltsbasierte Breite und reserviert für das Top-Musical-Badge 9 rem rechts", () => {
     expect(SALE_BADGE_LAYOUT.featuredBadgeReserveRem).toBe(9);
+    expect(SALE_BADGE_LAYOUT.widthClasses).toContain("inline-flex");
+    expect(SALE_BADGE_LAYOUT.widthClasses).toContain("w-fit");
     expect(SALE_BADGE_LAYOUT.widthClasses).toContain("max-w-[calc(100%-9rem)]");
-    expect(SALE_BADGE_LAYOUT.longLabelWidthClasses).toBe(
-      SALE_BADGE_LAYOUT.widthClasses,
-    );
-    expect(SALE_BADGE_LAYOUT.heightClass).toBe("h-12");
+    expect(SALE_BADGE_LAYOUT.heightClass).toBe("h-10");
 
     const desktopCardWidthRem = 17;
-    const desktopSaleWidthRem = getFeaturedSaleBadgeWidthRem(desktopCardWidthRem);
-    expect(desktopCardWidthRem - desktopSaleWidthRem).toBe(
+    const desktopSaleMaxWidthRem = getFeaturedSaleBadgeMaxWidthRem(desktopCardWidthRem);
+    expect(desktopCardWidthRem - desktopSaleMaxWidthRem).toBe(
       SALE_BADGE_LAYOUT.featuredBadgeReserveRem,
     );
 
     const mobileCardWidthRem = 343 / 16;
-    const mobileSaleWidthRem = getFeaturedSaleBadgeWidthRem(mobileCardWidthRem);
-    expect(mobileSaleWidthRem).toBe(SALE_BADGE_LAYOUT.preferredWidthRem);
-    expect(mobileCardWidthRem - mobileSaleWidthRem).toBeGreaterThanOrEqual(
-      SALE_BADGE_LAYOUT.featuredBadgeReserveRem,
-    );
+    const mobileSaleMaxWidthRem = getFeaturedSaleBadgeMaxWidthRem(mobileCardWidthRem);
+    expect(mobileSaleMaxWidthRem).toBeGreaterThan(0);
+    expect(mobileCardWidthRem - mobileSaleMaxWidthRem).toBe(SALE_BADGE_LAYOUT.featuredBadgeReserveRem);
   });
 });
