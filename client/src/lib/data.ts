@@ -112,9 +112,28 @@ export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
 export const AWIN_TEXT_LINKS = {
   moulinRouge: { gid: "597568", merchantId: "111888", linkId: "4845203" },
   starlightExpress: { gid: "508544", merchantId: "111888", linkId: "3861476" },
+  phantomDerOper: { gid: "602812", merchantId: "111888", linkId: "4890799" },
+  gloecknerTourDates: {
+    "München": { gid: "614926", merchantId: "111888", linkId: "4890803" },
+    "Düsseldorf": { gid: "614926", merchantId: "111888", linkId: "4890804" },
+    "Frankfurt": { gid: "614926", merchantId: "111888", linkId: "4890805" },
+    "Leipzig": { gid: "614926", merchantId: "111888", linkId: "4890806" },
+    "Bremen": { gid: "614926", merchantId: "111888", linkId: "4890807" },
+    "Duisburg": { gid: "614926", merchantId: "111888", linkId: "4890808" },
+    "Berlin": { gid: "614926", merchantId: "111888", linkId: "4890809" },
+  },
   fackJuGoehte: { gid: "492097", merchantId: AWIN_MERCHANT_ID, linkId: "4568988" },
   schoeneUndDasBiest: { gid: "492097", merchantId: AWIN_MERCHANT_ID, linkId: "3737237" },
   dracula: { gid: "492097", merchantId: AWIN_MERCHANT_ID, linkId: "3889201" },
+} as const;
+
+// Von ATG bereitgestellt; erst verwenden, wenn Romeo & Julia mit bestätigten Terminen angelegt wird.
+export const ATG_PENDING_TOUR_TEXT_LINK_IDS = {
+  "romeo-und-julia": {
+    "München": "4890800",
+    "Düsseldorf": "4890801",
+    "Frankfurt": "4890802",
+  },
 } as const;
 
 export function createAwinLink(destinationUrl: string): string {
@@ -372,12 +391,12 @@ export const musicals: Musical[] = [
     detailDescription: "Cameron Mackintoshs umjubelte Neuinszenierung von Andrew Lloyd Webbers Das Phantom der Oper kommt erstmals nach Deutschland – und feiert im November 2026 seine Deutschlandpremiere im Musical Dome Köln. Seit seiner Uraufführung 2012 begeisterte diese spektakuläre Produktion bereits in Großbritannien, Nordamerika und Australien, wo sie im legendären Sydney Opera House Premiere feierte. Es folgte die Europapremiere in Wien, wo das Musical bald eine ausverkaufte dreijährige Spielzeit abschließen wird.\n\n**Die Musik der Nacht: Andrew Lloyd Webbers unsterbliche Partitur**\n\nDie Musik der Nacht, Denk an mich, Mehr will ich nicht von dir, Maskenball und der ikonische Titelsong zählen zu den bekanntesten und beliebtesten Musicalhits aller Zeiten. Andrew Lloyd Webbers romantische und mitreißende Musik hat seit der Uraufführung 1986 Generationen von Zuschauer*innen in ihren Bann gezogen. Mit über 160 Millionen Besucher*innen in 217 Städten auf 23 Sprachen und mehr als 70 internationalen Theaterpreisen – darunter Olivier Awards, Tony Awards und Drama Desk Awards – gilt Das Phantom der Oper als einer der größten Bühnenerfolge aller Zeiten.\n\n**Eine Neuproduktion, die Maßstäbe setzt**\n\nUnter der Regie von Seth Sklar-Heyn, basierend auf der Originalinszenierung von Laurence Connor, unter der künstlerischen Leitung von Matthew Bourne und Cameron Mackintosh, haucht diese Inszenierung Andrew Lloyd Webbers phänomenaler Partitur berauschendes neues Leben ein. Paul Browns schillerndes Bühnenbild lässt einen brandneuen Kronleuchter eindrucksvoll zum Leben erwachen, während die gefeierten Kostümentwürfe der verstorbenen Maria Björnson erhalten bleiben. Mit Choreografie von Scott Ambler und dem Sounddesign des herausragenden Mick Potter ist diese Produktion ein Fest für alle Sinne.\n\nAnlässlich des 40-jährigen Jubiläums der Londoner Originalproduktion kehrt dieses fabelhafte Musical erstmals seit über zehn Jahren auf eine deutsche Bühne zurück. 2026 feiert der Musical Dome außerdem sein 30-jähriges Bestehen – ein doppelter Grund zum Feiern.",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/foto-treppe_a010547a.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/keyvisual_994fa3c5.jpg",
-    keyvisualLink: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
-    ticketCtaUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
-    awinHeroUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
-    awinStickyUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
-    awinBoxUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
-    eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/",
+    keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-keyvisual"),
+    ticketCtaUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-cta"),
+    awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-hero"),
+    awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-sticky"),
+    awinBoxUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-box"),
+    eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-ticket"),
     priceFrom: "59,99",
     youtubeTrailerId: "A02SZ71tgRI",
     featured: false,
@@ -391,7 +410,7 @@ export const musicals: Musical[] = [
     seoTitle: "Das Phantom der Oper Tickets 2026 – Köln | We Love Musicals",
     seoDescription: "Das Phantom der Oper – Jubiläumsproduktion 2026 im Musical Dome Köln. Premiere: 15. November 2026. Tickets ab 59,99 € über ATG Tickets sichern!",
     tourDates: [
-      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-11-05", premiereDate: "2026-11-15", eventimUrl: "https://www.atgtickets.de/musicals-shows/phantom-der-oper/" },
+      { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-11-05", premiereDate: "2026-11-15", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-koeln-dates") },
     ],
     // quotes: [] – vorübergehend ausgeblendet, bis Pressestimmen vorliegen
     gallery: [
@@ -938,14 +957,14 @@ export const musicals: Musical[] = [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/gloeckner-foto14_0bfe42a1.webp", alt: "Quasimodo und Esmeralda – Begegnung" },
     ],
     tourDates: [
-      { city: "München", venue: "Deutsches Theater", startDate: "2026-10-07", endDate: "2026-11-08", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=187&production=262" },
-      { city: "Düsseldorf", venue: "Capitol Theater", startDate: "2026-11-12", endDate: "2027-01-03", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=438&production=262" },
-      { city: "Frankfurt", venue: "Alte Oper", startDate: "2027-01-06", endDate: "2027-01-16", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=114&production=262" },
+      { city: "München", venue: "Deutsches Theater", startDate: "2026-10-07", endDate: "2026-11-08", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["München"], "gloeckner-muenchen-dates") },
+      { city: "Düsseldorf", venue: "Capitol Theater", startDate: "2026-11-12", endDate: "2027-01-03", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["Düsseldorf"], "gloeckner-duesseldorf-dates") },
+      { city: "Frankfurt", venue: "Alte Oper", startDate: "2027-01-06", endDate: "2027-01-16", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["Frankfurt"], "gloeckner-frankfurt-dates") },
       { city: "Zürich", venue: "Theater 11", startDate: "2027-01-19", endDate: "2027-01-31", eventimUrl: "https://www.ticketcorner.ch/artist/disney-der-gloeckner-von-notre-dame-das-musical/?affiliate=FBM" },
-      { city: "Leipzig", venue: "Oper Leipzig", startDate: "2027-02-09", endDate: "2027-02-14", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=178&production=262" },
-      { city: "Bremen", venue: "Metropol Theater", startDate: "2027-02-16", endDate: "2027-02-21", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=195&production=262" },
-      { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-02-23", endDate: "2027-02-28", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=274&production=262" },
-      { city: "Berlin", venue: "Admiralspalast", startDate: "2027-03-03", endDate: "2027-03-20", eventimUrl: "https://shop.atgtickets.de/gloeckner-musical/webticket/eventlist?venue=59&production=262" },
+      { city: "Leipzig", venue: "Oper Leipzig", startDate: "2027-02-09", endDate: "2027-02-14", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["Leipzig"], "gloeckner-leipzig-dates") },
+      { city: "Bremen", venue: "Metropol Theater", startDate: "2027-02-16", endDate: "2027-02-21", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["Bremen"], "gloeckner-bremen-dates") },
+      { city: "Duisburg", venue: "Theater am Marientor", startDate: "2027-02-23", endDate: "2027-02-28", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["Duisburg"], "gloeckner-duisburg-dates") },
+      { city: "Berlin", venue: "Admiralspalast", startDate: "2027-03-03", endDate: "2027-03-20", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.gloecknerTourDates["Berlin"], "gloeckner-berlin-dates") },
     ],
     faqItems: [
       { question: "Was ist Disney Der Glöckner von Notre-Dame?", answer: "Disney Der Glöckner von Notre-Dame ist ein emotionales Musical basierend auf Victor Hugos weltbekanntem Roman und dem Disney-Zeichentrickfilm von 1996. Es erzählt die Geschichte des entstellten Glöckners Quasimodo, seiner Liebe zur schönen Esmeralda und des fanatischen Erzdiakons Frollo." },
@@ -995,7 +1014,7 @@ export const musicals: Musical[] = [
     seoTitle: "Starlight Express Tickets Bochum 2026/2027 | We Love Musicals",
     seoDescription: "Starlight Express in Bochum – das Musical der Rekorde mit 19 Mio. Besuchern. Tickets ab 59,99 €, Kinder bis 14 Jahre 50% Ermäßigung. Jetzt buchen!",
     tourDates: [
-      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: "https://www.atgtickets.de/musicals-shows/starlight-express/" },
+      { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-bochum-dates") },
     ],
     quotes: [
       { text: "Das rasanteste Musical im Universum.", source: "Guinness World Records" },

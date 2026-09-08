@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { ACTIVE_MUSICAL_IDS, AWIN_TEXT_LINKS, getActiveMusicals, getMusicalBySlug, musicals } from "../client/src/lib/data";
+import { ACTIVE_MUSICAL_IDS, ATG_PENDING_TOUR_TEXT_LINK_IDS, AWIN_TEXT_LINKS, getActiveMusicals, getMusicalBySlug, musicals } from "../client/src/lib/data";
 
 const KDL_STAGE_PRODUCT_URL = "https://www.stage-entertainment.de/musicals-shows/b/disneys-der-koenig-der-loewen-hamburg";
 const STAGE_PRODUCT_URLS = {
@@ -47,6 +47,7 @@ describe("Affiliate-Link-Zuordnung", () => {
     const expectations = [
       { id: "moulinrouge", creative: AWIN_TEXT_LINKS.moulinRouge, clickRefPrefix: "moulinrouge-" },
       { id: "starlight-express", creative: AWIN_TEXT_LINKS.starlightExpress, clickRefPrefix: "starlight-express-" },
+      { id: "phantom-der-oper", creative: AWIN_TEXT_LINKS.phantomDerOper, clickRefPrefix: "phantom-der-oper-" },
       { id: "fackjugoehte", creative: AWIN_TEXT_LINKS.fackJuGoehte, clickRefPrefix: "fjg-" },
       { id: "schoene-und-das-biest", creative: AWIN_TEXT_LINKS.schoeneUndDasBiest, clickRefPrefix: "dsudb-" },
       { id: "dracula", creative: AWIN_TEXT_LINKS.dracula, clickRefPrefix: "dracula-" },
@@ -76,6 +77,41 @@ describe("Affiliate-Link-Zuordnung", () => {
         expect(trackingUrl.searchParams.get("clickref")?.startsWith(clickRefPrefix)).toBe(true);
       }
     }
+  });
+
+  it("verwendet die bereitgestellten ATG-Textlinks für alle verfügbaren Glöckner-Tourtermine", () => {
+    const gloeckner = musicals.find((musical) => musical.id === "gloeckner-von-notre-dame");
+    const expectedClickRefs = {
+      "München": "gloeckner-muenchen-dates",
+      "Düsseldorf": "gloeckner-duesseldorf-dates",
+      "Frankfurt": "gloeckner-frankfurt-dates",
+      "Leipzig": "gloeckner-leipzig-dates",
+      "Bremen": "gloeckner-bremen-dates",
+      "Duisburg": "gloeckner-duisburg-dates",
+      "Berlin": "gloeckner-berlin-dates",
+    } as const;
+
+    for (const [city, clickRef] of Object.entries(expectedClickRefs)) {
+      const tourDate = gloeckner?.tourDates?.find((date) => date.city === city);
+      const creative = AWIN_TEXT_LINKS.gloecknerTourDates[city as keyof typeof AWIN_TEXT_LINKS.gloecknerTourDates];
+      const trackingUrl = new URL(tourDate?.eventimUrl ?? "");
+
+      expect(trackingUrl.hostname).toBe("www.awin1.com");
+      expect(trackingUrl.pathname).toBe("/awclick.php");
+      expect(trackingUrl.searchParams.get("gid")).toBe(creative.gid);
+      expect(trackingUrl.searchParams.get("mid")).toBe(creative.merchantId);
+      expect(trackingUrl.searchParams.get("awinaffid")).toBe("2865727");
+      expect(trackingUrl.searchParams.get("linkid")).toBe(creative.linkId);
+      expect(trackingUrl.searchParams.get("clickref")).toBe(clickRef);
+    }
+  });
+
+  it("merkt die bereitgestellten Romeo-&-Julia-Tour-Textlinks bis zur Anlage der Veranstaltung vor", () => {
+    expect(ATG_PENDING_TOUR_TEXT_LINK_IDS["romeo-und-julia"]).toEqual({
+      "München": "4890800",
+      "Düsseldorf": "4890801",
+      "Frankfurt": "4890802",
+    });
   });
 
   it("hinterlegt ATG-Zielseiten ohne manuelle Doppelparameter und überlässt die Dekoration dem zustimmungsbasierten MasterTag", () => {

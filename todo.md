@@ -483,4 +483,5 @@
 - [x] Footer-Stadtliste um Bremen, Bochum, Duisburg, Köln und Frankfurt erweitert und alle Stadtlinks geprüft
 - [x] Footer-Stadtlinks alphabetisch sortiert und die sichtbare Reihenfolge auf Desktop sowie Mobil geprüft
 - [x] Im Impressum einen transparenten Affiliate-Hinweis für Stage-Entertainment-Links über TradeDoubler mit Publisher-ID 2475512 ergänzt
+- [x] Bereitgestellte ATG-Awin-Textlinks für Phantom, Moulin Rouge, Starlight Express und alle Glöckner-von-Notre-Dame-Termine (München, Düsseldorf, Frankfurt, Leipzig, Bremen, Duisburg, Berlin) mit eindeutigen Clickrefs integriert; Romeo-&-Julia-Link-IDs für spätere Termine vorgemerkt
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben
