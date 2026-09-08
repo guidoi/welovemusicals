@@ -4,11 +4,13 @@
  */
 import { Ticket, Heart } from "lucide-react";
 import { Link } from "wouter";
-import { cities, getActiveMusicals } from "@/lib/data";
+import { getFeaturedMusicals, getFooterDachCities } from "@/lib/data";
 import { useConsent } from "@/contexts/ConsentContext";
 
 export default function Footer() {
   const { openSettings } = useConsent();
+  const topMusicals = getFeaturedMusicals();
+  const footerCities = getFooterDachCities();
 
   return (
     <footer className="bg-card border-t border-gold/10 mt-auto">
@@ -37,7 +39,7 @@ export default function Footer() {
               Top Musicals
             </h4>
             <ul className="space-y-2">
-              {getActiveMusicals().slice(0, 10).map((musical) => (
+              {topMusicals.map((musical) => (
                 <li key={musical.slug}>
                   <Link href={`/musical/${musical.slug}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
                     {musical.title}
@@ -50,34 +52,16 @@ export default function Footer() {
           {/* Städte */}
           <div>
             <h4 className="font-display text-sm font-semibold text-gold mb-4 uppercase tracking-wider">
-              Musical-Städte
+              Wichtige Musical-Städte
             </h4>
             <ul className="space-y-2">
-              <li>
-                <Link href="/stadt/hamburg" className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                  Hamburg
-                </Link>
-              </li>
-              <li>
-                <Link href="/stadt/stuttgart" className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                  Stuttgart
-                </Link>
-              </li>
-              <li>
-                <Link href="/stadt/berlin" className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                  Berlin
-                </Link>
-              </li>
-              <li>
-                <Link href="/stadt/muenchen" className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                  München
-                </Link>
-              </li>
-              <li>
-                <Link href="/stadt/koeln" className="text-sm text-muted-foreground hover:text-gold transition-colors">
-                  Köln
-                </Link>
-              </li>
+              {footerCities.map((city) => (
+                <li key={city.slug}>
+                  <Link href={`/stadt/${city.slug}`} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    {city.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

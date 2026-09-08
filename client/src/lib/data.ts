@@ -2208,3 +2208,20 @@ export function getAdditionalMusicals(): Musical[] {
 export function getEditorialOverviewMusicals(includeHighlights: boolean): Musical[] {
   return includeHighlights ? getActiveMusicals() : getAdditionalMusicals();
 }
+
+/** Die wichtigsten verlinkbaren Musical-Städte im deutschsprachigen Raum für den Footer. */
+export const FOOTER_DACH_CITY_SLUGS = [
+  "hamburg",
+  "berlin",
+  "stuttgart",
+  "muenchen",
+  "wien",
+  "zuerich",
+] as const;
+
+export function getFooterDachCities(): City[] {
+  const citiesBySlug = new Map(cities.map((city) => [city.slug, city]));
+  return FOOTER_DACH_CITY_SLUGS.map((slug) => citiesBySlug.get(slug)).filter(
+    (city): city is City => Boolean(city),
+  );
+}

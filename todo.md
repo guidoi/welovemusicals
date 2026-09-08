@@ -458,6 +458,7 @@
 - [x] Filterbeschriftung auf „Alle Musicals & Shows filtern“ gesetzt und aktive Filter auch auf die neun Highlights angewendet
 - [x] Filteroberfläche und mobile Filtersteuerung mit der abgerundeten Formensprache der Hero-Schiebe-Buttons vereinheitlicht
 - [x] Im mobilen Startseiten-Hero einen Zeilenumbruch direkt vor „Licht aus, Magie an!“ gesetzt; Desktop unverändert gelassen
+- [x] Footer um dynamische Links zu den aktuellen Top-Musicals und zu wichtigen Musical-Städten im DACH-Raum erweitert
 - [x] Bestehende Eventim-/Awin-Deep-Links und neue ShowSlot-Textlinks geprüft; nutzerfreundliche Einbindung für Haupt-CTAs, Tourtermine und Stadtteaser festgelegt
 - [x] Bestehenden Awin-Deep-Link für Fack Ju Göhte in Berlin technisch geprüft und seinen Aufbau dokumentiert, ohne Website-Links zu ändern
 - [x] Geografischen Zusatz „in Deutschland, Österreich und der Schweiz“ aus dem Startseiten-Hero-Teaser entfernt
