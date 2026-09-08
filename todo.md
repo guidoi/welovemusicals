@@ -470,6 +470,7 @@
 - [x] Startseiten-Sale-Störer auf inhaltsbasierte Breiten umgestellt und mobile Innenabstände sichtbar verdichtet
 - [x] Flexible Sale-Vorteiltexte „2 FÜR 1“ und „2. TICKET 35 €“ für die Zuordnung zu konkreten Musicals vorbereitet
 - [x] Technischen Format-Hinweis „5-stellig DE · 4-stellig AT/CH“ aus der Geo-Suche entfernt
+- [x] Stadt- und Terminteaser auf Desktop mit einem dezenten goldenen Hover- und Fokusrahmen versehen; Mobil unverändert gelassen
 - [x] Bestehende Eventim-/Awin-Deep-Links und neue ShowSlot-Textlinks geprüft; nutzerfreundliche Einbindung für Haupt-CTAs, Tourtermine und Stadtteaser festgelegt
 - [x] Bestehenden Awin-Deep-Link für Fack Ju Göhte in Berlin technisch geprüft und seinen Aufbau dokumentiert, ohne Website-Links zu ändern
 - [x] Geografischen Zusatz „in Deutschland, Österreich und der Schweiz“ aus dem Startseiten-Hero-Teaser entfernt

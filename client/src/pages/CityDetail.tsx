@@ -189,7 +189,7 @@ export default function CityDetail() {
               <Link
                 key={otherCity.slug}
                 href={`/stadt/${otherCity.slug}`}
-                className="group relative aspect-[4/3] rounded-sm overflow-hidden border border-border/30 hover:border-gold/30 transition-all"
+                className="group relative aspect-[4/3] rounded-sm overflow-hidden border border-border/30 transition-all md:hover:border-gold md:hover:shadow-[0_0_0_1px_rgba(218,185,99,0.3)] focus-visible:outline-none focus-visible:border-gold focus-visible:ring-2 focus-visible:ring-gold/40"
               >
                 <img
                   src={otherCity.image}

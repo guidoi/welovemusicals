@@ -26,8 +26,12 @@ export default function CityCard({ city, index = 0 }: CityCardProps) {
       viewport={{ once: true, margin: "-30px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Link href={`/stadt/${city.slug}`} className="block group" onClick={handleCityNavigation}>
-        <div className="relative aspect-[4/5] rounded-sm overflow-hidden card-spotlight border border-border/30 hover:border-gold/30 transition-all duration-400">
+      <Link
+        href={`/stadt/${city.slug}`}
+        className="block group focus-visible:outline-none focus-visible:[&>div]:border-gold focus-visible:[&>div]:ring-2 focus-visible:[&>div]:ring-gold/40"
+        onClick={handleCityNavigation}
+      >
+        <div className="relative aspect-[4/5] rounded-sm overflow-hidden card-spotlight border border-border/30 transition-all duration-400 md:hover:border-gold md:hover:shadow-[0_0_0_1px_rgba(218,185,99,0.3)]">
           {/* Background Image */}
           <img
             src={city.image}

@@ -172,7 +172,7 @@ export default function TourDates({
             return (
               <div
                 key={city}
-                className="bg-card border border-border rounded-lg p-5 hover:shadow-lg transition-shadow duration-300"
+                className="bg-card border border-border rounded-lg p-5 transition-all duration-300 md:hover:border-gold md:hover:shadow-[0_0_0_1px_rgba(218,185,99,0.3)] focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/40"
               >
                 {/* Stadtname + optionales Badge */}
                 <div className="mb-1 flex items-start justify-between gap-4">

@@ -24,5 +24,7 @@ describe("TourDates", () => {
     expect(markup).toContain("Tickets sichern");
     expect(markup).not.toContain('data-testid="tour-date-provider-logo"');
     expect(markup).not.toContain("stage-entertainment-logo-white.png");
+    expect(markup).toContain("md:hover:border-gold");
+    expect(markup).toContain("focus-within:border-gold");
   });
 });
