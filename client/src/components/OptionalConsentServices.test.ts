@@ -12,4 +12,9 @@ describe("Affiliate-Dienste auf Rechtsseiten", () => {
     expect(shouldLoadAffiliateTrackingForPath("/musical/fack-ju-goehte")).toBe(true);
     expect(shouldLoadAffiliateTrackingForPath("/stadt/berlin")).toBe(true);
   });
+
+  it("unterbindet externe Affiliate-Skripte in der Webdev-Vorschau", () => {
+    expect(shouldLoadAffiliateTrackingForPath("/", "?from_webdev=1")).toBe(false);
+    expect(shouldLoadAffiliateTrackingForPath("/", "?from_webdev=0")).toBe(true);
+  });
 });

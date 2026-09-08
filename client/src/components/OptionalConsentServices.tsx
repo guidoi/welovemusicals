@@ -8,8 +8,9 @@ const GOOGLE_FONTS_ID = "welovemusicals-google-fonts";
 const UMAMI_SCRIPT_ID = "welovemusicals-umami";
 const AFFILIATE_EXCLUDED_PATHS = new Set(["/impressum", "/datenschutz"]);
 
-export function shouldLoadAffiliateTrackingForPath(pathname: string) {
-  return !AFFILIATE_EXCLUDED_PATHS.has(pathname);
+export function shouldLoadAffiliateTrackingForPath(pathname: string, search = "") {
+  const isWebdevPreview = new URLSearchParams(search).get("from_webdev") === "1";
+  return !AFFILIATE_EXCLUDED_PATHS.has(pathname) && !isWebdevPreview;
 }
 
 function loadAwinMasterTag() {
@@ -100,7 +101,7 @@ export default function OptionalConsentServices() {
   }, [consent?.analytics]);
 
   useEffect(() => {
-    if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location)) return;
+    if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location, window.location.search)) return;
     loadAwinMasterTag();
     return startTradeDoublerConverter();
   }, [consent?.affiliateTracking, location]);
