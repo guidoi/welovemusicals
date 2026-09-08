@@ -269,7 +269,8 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
-              {HOME_HERO_TEASER} <span className="text-gold font-semibold">Licht aus, Magie an!</span>
+              {HOME_HERO_TEASER}{" "}
+              <span className="block md:inline text-gold font-semibold">Licht aus, Magie an!</span>
             </p>
 
             {/* Stats */}
