@@ -45,19 +45,8 @@ const categoryIcons: Record<string, string> = {
   kinder: "⭐",
 };
 
-function getLongSaleLabelLines(label: string): readonly [string, string] {
-  const lastSeparatorIndex = label.lastIndexOf(" ");
-  if (lastSeparatorIndex <= 0) return [label, ""];
-
-  return [label.slice(0, lastSeparatorIndex), label.slice(lastSeparatorIndex + 1)];
-}
-
 export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
-  const hasLongSaleLabel = Boolean(musical.sale && musical.sale.label.length > 13);
-  const longSaleLabelLines = hasLongSaleLabel && musical.sale
-    ? getLongSaleLabelLines(musical.sale.label)
-    : null;
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const providerLogoWidthClass =
     ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
@@ -86,10 +75,10 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${hasLongSaleLabel ? SALE_BADGE_LAYOUT.longLabelWidthClasses : SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
-                aria-label={`${musical.sale.label}: ${musical.sale.discount}${musical.sale.note ? `. ${musical.sale.note}` : ""}`}
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2.5 py-1.5 shadow-lg shadow-red-950/40`}
+                aria-label={`Sale: ${musical.sale.discount}`}
                 data-testid="sale-badge"
-                data-sale-layout={hasLongSaleLabel ? "long-label" : "compact"}
+                data-sale-layout="compact"
               >
                 <div className="flex h-full items-center gap-2">
                   <span data-testid="sale-icon" className="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">
@@ -99,27 +88,13 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                   <span className={`min-w-0 ${SALE_BADGE_LAYOUT.mobileTextInsetClass}`}>
                     <span
                       data-testid="sale-label"
-                      className={hasLongSaleLabel
-                        ? "block max-w-full font-heading text-[11px] font-bold leading-[0.85] tracking-[0.01em] text-white sm:text-[10px]"
-                        : "block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"}
+                      className="block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"
                     >
-                      {longSaleLabelLines ? (
-                        <>
-                          <span data-testid="sale-label-line" className="block whitespace-nowrap">{longSaleLabelLines[0]}</span>
-                          <span
-                            data-testid="sale-label-line"
-                            className="block whitespace-nowrap font-black text-[18px] leading-[0.9] tracking-tight sm:text-base"
-                          >
-                            {longSaleLabelLines[1]} <span data-testid="sale-discount-inline">· {musical.sale.discount}</span>
-                          </span>
-                        </>
-                      ) : musical.sale.label}
+                      SALE
                     </span>
-                    {!longSaleLabelLines && (
-                      <span className="mt-0.5 block font-heading text-lg font-semibold leading-none text-white">
-                        {musical.sale.discount}
-                      </span>
-                    )}
+                    <span className="mt-0.5 block font-heading text-lg font-semibold leading-none text-white">
+                      {musical.sale.discount}
+                    </span>
                   </span>
                 </div>
               </div>
@@ -192,7 +167,7 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                 className={`h-8 ${providerLogoWidthClass} w-auto object-contain object-left opacity-90 md:h-7`}
               />
               <span data-testid="teaser-ticket-cta" className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
-                Tickets sichern
+                Infos &amp; Tickets
                 <ExternalLink className="w-3.5 h-3.5" />
               </span>
             </div>

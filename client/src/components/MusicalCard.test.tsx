@@ -26,7 +26,7 @@ const baseMusical: Musical = {
 };
 
 describe("MusicalCard Sale-Störer", () => {
-  it("rendert die kompakte Logo-Rot-Variante mit ausgeschriebenem Aktionsnamen und dunklerotem Preisschild", () => {
+  it("rendert die kompakte Logo-Rot-Variante mit einheitlicher Sale-Bezeichnung und dunklerotem Preisschild", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -41,8 +41,9 @@ describe("MusicalCard Sale-Störer", () => {
       />
     );
 
-    expect(markup).toContain("FAMILIEN:");
+    expect(markup).toContain(">SALE<");
     expect(markup).toContain("BIS 15 %");
+    expect(markup).not.toContain("FAMILIEN:");
     expect(markup).not.toContain("BIS 15 % SPAREN");
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
@@ -63,7 +64,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });
 
-  it("bricht Back to School Sale kontrolliert um und behält die Badge-Geometrie des König-der-Löwen-Sales", () => {
+  it("behält die Badge-Geometrie bei langen Aktionsnamen bei und zeigt nur die einheitliche Sale-Bezeichnung", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -78,24 +79,20 @@ describe("MusicalCard Sale-Störer", () => {
       />,
     );
 
-    expect(markup).toContain('data-sale-layout="long-label"');
-    expect(markup).toContain(SALE_BADGE_LAYOUT.longLabelWidthClasses);
-    expect(SALE_BADGE_LAYOUT.longLabelWidthClasses).toBe(SALE_BADGE_LAYOUT.widthClasses);
+    expect(markup).toContain('data-sale-layout="compact"');
+    expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
     expect(markup).toContain(SALE_BADGE_LAYOUT.mobileTextInsetClass);
-    expect(markup).toContain('data-testid="sale-label-line"');
-    expect((markup.match(/data-testid="sale-label-line"/g) ?? [])).toHaveLength(2);
-    expect(markup).toContain(">BACK TO SCHOOL<");
-    expect(markup).toContain(">SALE <span data-testid=\"sale-discount-inline\">· 30 %</span><");
-    expect(markup).toContain('data-testid="sale-label-line" class="block whitespace-nowrap font-black text-[18px] leading-[0.9] tracking-tight sm:text-base"');
+    expect(markup).toContain(">SALE<");
+    expect(markup).not.toContain("BACK TO SCHOOL");
+    expect(markup).not.toContain("data-testid=\"sale-label-line\"");
     expect(markup).toContain("30 %");
     expect(markup).toContain("overflow-hidden");
     expect(markup).toContain("gap-2");
     expect(markup).toContain("h-10 w-10");
-    expect(markup).toContain("text-[11px]");
-    expect(markup).toContain("leading-[0.85]");
+    expect(markup).toContain("text-lg");
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).not.toContain("BACK TO SCHOOL SALE</span>");
+    expect(markup).not.toContain("BACK TO SCHOOL SALE");
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {
@@ -117,10 +114,11 @@ describe("MusicalCard Sale-Störer", () => {
     expect(expiredSale).not.toContain("Abgelaufene Aktion");
   });
 
-  it("zeigt den Ticket-CTA ohne Anbieterzeile", () => {
+  it("zeigt einen zur Musical-Detailseite passenden Informations- und Ticket-CTA ohne Anbieterzeile", () => {
     const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
 
-    expect(markup).toContain("Tickets sichern");
+    expect(markup).toContain("Infos &amp; Tickets");
+    expect(markup).not.toContain("Tickets sichern");
     expect(markup).not.toContain("via Eventim");
     expect(markup).not.toContain("via Stage Entertainment");
     expect(markup).not.toContain("via ATG Tickets");
