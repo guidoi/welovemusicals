@@ -2211,17 +2211,17 @@ export function getEditorialOverviewMusicals(includeHighlights: boolean): Musica
 
 /** Die wichtigsten verlinkbaren Musical-Städte im deutschsprachigen Raum für den Footer. */
 export const FOOTER_DACH_CITY_SLUGS = [
-  "hamburg",
   "berlin",
-  "stuttgart",
+  "bochum",
+  "bremen",
+  "duisburg",
+  "frankfurt",
+  "hamburg",
+  "koeln",
   "muenchen",
+  "stuttgart",
   "wien",
   "zuerich",
-  "bremen",
-  "bochum",
-  "duisburg",
-  "koeln",
-  "frankfurt",
 ] as const;
 
 export function getFooterDachCities(): City[] {

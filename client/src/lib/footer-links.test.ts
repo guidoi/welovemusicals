@@ -16,17 +16,17 @@ describe("Footer-Linkkonfiguration", () => {
   it("verlinkt wichtige Musical-Städte aus Deutschland, Österreich und der Schweiz", () => {
     expect(getFooterDachCities().map((city) => city.slug)).toEqual(FOOTER_DACH_CITY_SLUGS);
     expect(getFooterDachCities().map((city) => city.name)).toEqual([
-      "Hamburg",
       "Berlin",
-      "Stuttgart",
+      "Bochum",
+      "Bremen",
+      "Duisburg",
+      "Frankfurt",
+      "Hamburg",
+      "Köln",
       "München",
+      "Stuttgart",
       "Wien",
       "Zürich",
-      "Bremen",
-      "Bochum",
-      "Duisburg",
-      "Köln",
-      "Frankfurt",
     ]);
   });
 

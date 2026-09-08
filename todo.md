@@ -481,3 +481,5 @@
 - [x] Hero-Hintergrund auf das vorhandene König-der-Löwen-Sonnenmotiv mit der Person rechts umgestellt und die Textlesbarkeit auf Desktop sowie Mobil geprüft
 - [x] Allgemeinen „Script error.“ auf der Impressumsseite auf externe Affiliate-Skripte eingegrenzt und durch deren Ausschluss auf Rechtsseiten sicher behoben
 - [x] Footer-Stadtliste um Bremen, Bochum, Duisburg, Köln und Frankfurt erweitert und alle Stadtlinks geprüft
+- [x] Footer-Stadtlinks alphabetisch sortiert und die sichtbare Reihenfolge auf Desktop sowie Mobil geprüft
+- [x] Im Impressum einen transparenten Affiliate-Hinweis für Stage-Entertainment-Links über TradeDoubler mit Publisher-ID 2475512 ergänzt
