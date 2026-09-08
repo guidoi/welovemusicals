@@ -80,21 +80,16 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                 data-testid="sale-badge"
                 data-sale-layout="compact"
               >
-                <div className="flex h-full items-center gap-2">
+                <div className="flex h-full items-center justify-center gap-2">
                   <span data-testid="sale-icon" className="relative grid h-10 w-10 shrink-0 place-items-center" aria-hidden="true">
                     <Tag className="absolute h-10 w-10 fill-[#991b1b] text-[#991b1b]" strokeWidth={0} />
                     <span className="relative -translate-x-px font-black text-[20px] leading-none text-white">%</span>
                   </span>
-                  <span className={`min-w-0 ${SALE_BADGE_LAYOUT.mobileTextInsetClass}`}>
-                    <span
-                      data-testid="sale-label"
-                      className="block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"
-                    >
-                      SALE
-                    </span>
-                    <span className="mt-0.5 block font-heading text-lg font-semibold leading-none text-white">
-                      {musical.sale.discount}
-                    </span>
+                  <span
+                    data-testid="sale-label"
+                    className="whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"
+                  >
+                    SALE · {musical.sale.discount}
                   </span>
                 </div>
               </div>

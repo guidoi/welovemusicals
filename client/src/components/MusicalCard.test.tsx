@@ -41,8 +41,7 @@ describe("MusicalCard Sale-Störer", () => {
       />
     );
 
-    expect(markup).toContain(">SALE<");
-    expect(markup).toContain("BIS 15 %");
+    expect(markup).toContain(">SALE · BIS 15 %<");
     expect(markup).not.toContain("FAMILIEN:");
     expect(markup).not.toContain("BIS 15 % SPAREN");
     expect(markup).toContain('data-testid="sale-badge"');
@@ -54,11 +53,11 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("text-[20px]");
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).toContain('data-testid="sale-label" class="block whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"');
+    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-lg font-semibold leading-none text-white"');
     expect(markup).toContain("text-white");
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
-    expect(markup).toContain(SALE_BADGE_LAYOUT.mobileTextInsetClass);
+    expect(markup).toContain("justify-center");
     expect(markup).toContain("bg-[#ef4444]");
     expect(markup.match(/rounded-md/g)).toHaveLength(2);
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
@@ -82,13 +81,12 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-sale-layout="compact"');
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
-    expect(markup).toContain(SALE_BADGE_LAYOUT.mobileTextInsetClass);
-    expect(markup).toContain(">SALE<");
+    expect(markup).toContain(">SALE · 30 %<");
     expect(markup).not.toContain("BACK TO SCHOOL");
     expect(markup).not.toContain("data-testid=\"sale-label-line\"");
     expect(markup).toContain("30 %");
     expect(markup).toContain("overflow-hidden");
-    expect(markup).toContain("gap-2");
+    expect(markup).toContain("justify-center gap-2");
     expect(markup).toContain("h-10 w-10");
     expect(markup).toContain("text-lg");
     expect(markup).toContain("whitespace-nowrap");
