@@ -303,7 +303,7 @@ export default function Header() {
                 <MapPin className="w-5 h-5 text-gold flex-shrink-0" />
                 <div>
                   <p className="text-sm font-semibold text-foreground">Musicals &amp; Shows in deiner Nähe</p>
-                  <p className="text-xs text-muted-foreground">PLZ eingeben (5-stellig DE · 4-stellig AT/CH) oder Standort verwenden</p>
+                  <p className="text-xs text-muted-foreground">PLZ eingeben oder Standort verwenden</p>
                 </div>
                 <button
                   onClick={() => setPlzOpen(false)}

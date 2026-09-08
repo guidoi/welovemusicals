@@ -17,5 +17,7 @@ describe("Header-Hauptnavigation", () => {
     );
 
     expect(headerSource).toContain("Musicals &amp; Shows in deiner Nähe");
+    expect(headerSource).toContain("PLZ eingeben oder Standort verwenden");
+    expect(headerSource).not.toContain("5-stellig DE · 4-stellig AT/CH");
   });
 });
