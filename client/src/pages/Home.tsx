@@ -345,7 +345,9 @@ export default function Home() {
               ].filter(Boolean).length;
               return (
                 <button
-                  className={`md:hidden w-full flex items-center justify-between px-4 py-3.5 bg-card rounded-sm mb-0 transition-all duration-300 ${
+                  className={`md:hidden w-full flex items-center justify-between px-4 py-3.5 bg-card mb-0 transition-all duration-300 ${
+                    showFilters ? "rounded-t-2xl rounded-b-none" : "rounded-2xl"
+                  } ${
                     showFilters
                       ? "border-2 border-gold/70 shadow-[0_0_14px_rgba(184,148,74,0.30)]"
                       : filterPulsed
@@ -372,9 +374,9 @@ export default function Home() {
             })()}
 
             {/* Filter Panel: auf Mobile nur wenn showFilters, auf Desktop immer */}
-            <div className={`p-6 bg-card border border-gold/10 rounded-sm ${
+            <div className={`p-6 bg-card border border-gold/10 ${
               showFilters ? "block" : "hidden md:block"
-            } ${showFilters ? "rounded-t-none border-t-0" : ""}`}>
+            } ${showFilters ? "rounded-t-none rounded-b-2xl border-t-0" : "rounded-2xl"}`}>
               <MusicalFilters
                 categoryFilter={categoryFilter}
                 setCategoryFilter={setCategoryFilter}
