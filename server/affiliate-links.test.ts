@@ -114,6 +114,20 @@ describe("Affiliate-Link-Zuordnung", () => {
     });
   });
 
+  it("verwendet den bereitgestellten Hamburger Moulin-Rouge-Textlink mit eigenem Termin-Clickref", () => {
+    const moulinRougeHamburg = musicals
+      .find((musical) => musical.id === "moulinrouge")
+      ?.tourDates?.find((date) => date.city === "Hamburg");
+    const trackingUrl = new URL(moulinRougeHamburg?.eventimUrl ?? "");
+
+    expect(trackingUrl.hostname).toBe("www.awin1.com");
+    expect(trackingUrl.pathname).toBe("/awclick.php");
+    expect(trackingUrl.searchParams.get("gid")).toBe(AWIN_TEXT_LINKS.moulinRouge.gid);
+    expect(trackingUrl.searchParams.get("mid")).toBe(AWIN_TEXT_LINKS.moulinRouge.merchantId);
+    expect(trackingUrl.searchParams.get("linkid")).toBe(AWIN_TEXT_LINKS.moulinRouge.linkId);
+    expect(trackingUrl.searchParams.get("clickref")).toBe("moulinrouge-hamburg-dates");
+  });
+
   it("hinterlegt ATG-Zielseiten ohne manuelle Doppelparameter und überlässt die Dekoration dem zustimmungsbasierten MasterTag", () => {
     const atgUrls = musicals
       .flatMap((musical) => [
@@ -140,12 +154,6 @@ describe("Affiliate-Link-Zuordnung", () => {
       expect(trackingUrl.searchParams.has("awc")).toBe(false);
     }
 
-    const moulinRougeHamburg = musicals
-      .find((musical) => musical.id === "moulinrouge")
-      ?.tourDates?.find((date) => date.city === "Hamburg");
-    const target = new URL(moulinRougeHamburg?.eventimUrl ?? "");
-    expect(target.searchParams.get("eventsView")).toBe("calendar");
-    expect(target.searchParams.get("productionId")).toBe("28");
   });
 
   it("verwendet für König der Löwen die direkte Stage-Entertainment-Produktseite an allen Ticket-CTAs", () => {
