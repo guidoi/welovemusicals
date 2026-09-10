@@ -111,5 +111,7 @@ describe("Aovo campaign banners", () => {
 
     expect(banner300.size).toBeGreaterThan(0);
     expect(banner728.size).toBeGreaterThan(0);
+    expect(banner300.mode & 0o444).toBeGreaterThan(0);
+    expect(banner728.mode & 0o444).toBeGreaterThan(0);
   });
 });
