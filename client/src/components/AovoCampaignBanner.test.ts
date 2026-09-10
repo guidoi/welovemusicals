@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { statSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   AOVO_CAMPAIGNS,
@@ -105,11 +105,11 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("übernimmt die bereitgestellten MJ-Originalgrafiken in den Produktionsbuild", () => {
-    const packageJson = readFileSync(new URL("../../../package.json", import.meta.url), "utf8");
+  it("liefert die bereitgestellten MJ-Originalgrafiken als öffentliche Produktionsassets aus", () => {
+    const banner300 = statSync(new URL("../../public/images/show-visuals/mj-stage-salesweek-26180466-300x250.jpg", import.meta.url));
+    const banner728 = statSync(new URL("../../public/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg", import.meta.url));
 
-    expect(packageJson).toContain("/home/ubuntu/webdev-static-assets/mj-stage-salesweek-26180466-300x250.jpg");
-    expect(packageJson).toContain("/home/ubuntu/webdev-static-assets/mj-stage-salesweek-26180462-728x90.jpg");
-    expect(packageJson).toContain("dist/images/show-visuals");
+    expect(banner300.size).toBeGreaterThan(0);
+    expect(banner728.size).toBeGreaterThan(0);
   });
 });
