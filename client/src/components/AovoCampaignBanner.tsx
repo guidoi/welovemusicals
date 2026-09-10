@@ -11,6 +11,8 @@ export type AovoCampaign = {
   trackingNetwork?: "tradedoubler" | "stage";
   placement?: "after-hotel" | "before-usp" | "before-story-paragraph";
   storyParagraphIndex?: number;
+  adLabel?: string;
+  clickAriaLabel?: string;
 };
 
 export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
@@ -57,10 +59,13 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
   {
     musicalId: "mj-musical",
     musicalTitle: "MJ – Das Michael Jackson Musical",
-    groupId: "26068474",
-    width: 970,
-    height: 90,
-    imageUrl: "/images/show-visuals/mj-970x90.png",
+    groupId: "26180466",
+    width: 300,
+    height: 250,
+    imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_c494b3a1.jpg",
+    trackingNetwork: "stage",
+    adLabel: "MJ-Ticketangebot",
+    clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
   },
   {
     musicalId: "ziz",
@@ -150,14 +155,15 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
     <aside
       className="mx-auto mt-8 w-full border-t border-gold/15 pt-6"
       style={{ maxWidth: campaign.width }}
-      aria-label={`Anzeige: Ticket und Hotel – ${campaign.musicalTitle}`}
+      aria-label={`Anzeige: ${campaign.adLabel ?? `Ticket und Hotel – ${campaign.musicalTitle}`}`}
+      data-campaign-id={campaign.groupId}
     >
       <p className="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Anzeige</p>
       <button
         type="button"
         onClick={() => window.open(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork), "_blank", "noopener,noreferrer")}
         className="block w-full overflow-hidden rounded-sm bg-transparent p-0 text-left outline outline-1 outline-white/10 outline-offset-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-        aria-label={`Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}
+        aria-label={campaign.clickAriaLabel ?? `Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}
       >
         <span
           aria-hidden="true"

@@ -111,11 +111,21 @@ describe("MusicalCard Sale-Störer", () => {
         }}
       />,
     );
+    const priceFromMarkup = renderToStaticMarkup(
+      <MusicalCard
+        musical={{
+          ...baseMusical,
+          sale: { label: "Sales Week", discount: "AB 35 €" },
+        }}
+      />,
+    );
 
     expect(twoForOneMarkup).toContain(">SALE · 2 FÜR 1<");
     expect(secondTicketMarkup).toContain(">SALE · 2. TICKET 35 €<");
+    expect(priceFromMarkup).toContain(">SALE · AB 35 €<");
     expect(twoForOneMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(secondTicketMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
+    expect(priceFromMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {

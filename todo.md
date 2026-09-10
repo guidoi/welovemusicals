@@ -485,4 +485,6 @@
 - [x] Im Impressum einen transparenten Affiliate-Hinweis für Stage-Entertainment-Links über TradeDoubler mit Publisher-ID 2475512 ergänzt
 - [x] Bereitgestellte ATG-Awin-Textlinks für Phantom, Moulin Rouge, Starlight Express und alle Glöckner-von-Notre-Dame-Termine (München, Düsseldorf, Frankfurt, Leipzig, Bremen, Duisburg, Berlin) mit eindeutigen Clickrefs integriert; Romeo-&-Julia-Link-IDs für spätere Termine vorgemerkt
 - [x] Hamburger Moulin-Rouge-Termin-Teaser auf den bereitgestellten Awin-Textlink mit eigenem Clickref umgestellt
+- [x] MJ-TradeDoubler-Banner Creative 26180466 consent-konform auf der Detailseite integriert
+- [x] MJ-Startseiten-Sale-Störer auf „SALE · AB 35 €“ aktualisiert
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben

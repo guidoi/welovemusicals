@@ -41,7 +41,7 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("keeps the supplied 300 × 250 creatives for Die Eiskönigin and Tarzan at native dimensions", () => {
+  it("keeps the supplied 300 × 250 creatives at native dimensions", () => {
     expect(getAovoCampaign("eiskoenigin")).toMatchObject({
       width: 300,
       height: 250,
@@ -52,11 +52,21 @@ describe("Aovo campaign banners", () => {
       height: 250,
       imageUrl: "/images/show-visuals/tarzan-300x250.png",
     });
+    expect(getAovoCampaign("mj-musical")).toMatchObject({
+      groupId: "26180466",
+      width: 300,
+      height: 250,
+      imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_c494b3a1.jpg",
+      trackingNetwork: "stage",
+      adLabel: "MJ-Ticketangebot",
+      clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
+    });
   });
 
   it("uses the supplied Stage Entertainment tracking and in-story placement for Wir sind am Leben and & Julia", () => {
     const undJulia = getAovoCampaign("und-julia");
     const wirSindAmLeben = getAovoCampaign("wir-sind-am-leben");
+    const mj = getAovoCampaign("mj-musical");
 
     expect(undJulia).toMatchObject({
       groupId: "26185666",
@@ -67,6 +77,7 @@ describe("Aovo campaign banners", () => {
       storyParagraphIndex: 2,
     });
     expect(wirSindAmLeben).toMatchObject({ groupId: "26185700", trackingNetwork: "stage" });
+    expect(mj).toMatchObject({ groupId: "26180466", trackingNetwork: "stage" });
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26185666"
     );

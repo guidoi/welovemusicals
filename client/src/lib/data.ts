@@ -1169,6 +1169,7 @@ export const musicals: Musical[] = [
     youtubeTrailerId: "LXl2EgjktuE",
     featured: true,
     tags: ["Ensuite", "Stage Entertainment", "Welthit"],
+    sale: { label: "Sales Week", discount: "AB 35 €" },
     uspItems: [
       { icon: "Music", title: "Über 25 legendäre Hits", text: "Thriller, Billie Jean, Smooth Criminal, Beat It und viele mehr – live auf der Bühne" },
       { icon: "Award", title: "Tony Award-prämiert", text: "Ausgezeichnet als beste Choreographie – inszeniert von Christopher Wheeldon" },
