@@ -11,13 +11,15 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(12);
+    expect(AOVO_CAMPAIGNS).toHaveLength(14);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
       "teufel-traegt-prada",
       "eiskoenigin",
       "koenig-der-loewen",
+      "koenig-der-loewen",
+      "mj-musical",
       "mj-musical",
       "mj-musical",
       "ziz",
@@ -26,7 +28,7 @@ describe("Aovo campaign banners", () => {
       "wir-sind-am-leben",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(12);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(14);
   });
 
   it("keeps the provided Moulin Rouge campaign dimensions and tracking URLs", () => {
@@ -103,6 +105,43 @@ describe("Aovo campaign banners", () => {
     );
     expect(getAovoCampaignImpressionUrl("26185666", "123456789", "stage")).toBe(
       "https://visit.stage-entertainment.de/imp?type(img)g(26185666)a(3492604)123456789"
+    );
+  });
+
+  it("ordnet die bereitgestellten KDL- und MJ-Aovo-Creatives der gewünschten Bannerhierarchie zu", () => {
+    expect(getAovoCampaigns("koenig-der-loewen")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26180470",
+        width: 728,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xFcqGUobMzNazpmJ.jpg",
+      }),
+      expect.objectContaining({
+        groupId: "26180460",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-ticket-box",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/flIDVltwpwOIvdKZ.jpg",
+      }),
+    ]));
+    expect(getAovoCampaigns("mj-musical")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26068482",
+        width: 750,
+        height: 200,
+        placement: "after-faq",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
+      }),
+    ]));
+    expect(getAovoCampaignClickUrl("26180470", "stage")).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26180470"
+    );
+    expect(getAovoCampaignClickUrl("26068482")).toBe(
+      "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26068482"
     );
   });
 

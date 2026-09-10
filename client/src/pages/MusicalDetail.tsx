@@ -152,8 +152,15 @@ export default function MusicalDetail() {
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const aovoCampaign = getAovoCampaign(musical.id);
+  const aovoCampaigns = getAovoCampaigns(musical.id);
   const inlineDescriptionCampaign = getAovoCampaigns(musical.id).find(
     (campaign) => campaign.placement === "within-detail-description"
+  );
+  const afterTicketBoxCampaigns = aovoCampaigns.filter(
+    (campaign) => campaign.placement === "after-ticket-box"
+  );
+  const afterFaqCampaigns = aovoCampaigns.filter(
+    (campaign) => campaign.placement === "after-faq"
   );
 
   return (
@@ -534,10 +541,12 @@ export default function MusicalDetail() {
         </div>
       </section>
 
-      {aovoCampaign?.placement === "after-ticket-box" && (
+      {afterTicketBoxCampaigns.length > 0 && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-ticket-box-campaign-section">
           <div className="container max-w-4xl">
-            <AovoCampaignBanner campaign={aovoCampaign} />
+            {afterTicketBoxCampaigns.map((campaign) => (
+              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
+            ))}
           </div>
         </section>
       )}
@@ -593,12 +602,22 @@ export default function MusicalDetail() {
         </section>
       )}
 
+      {afterFaqCampaigns.length > 0 && (
+        <section className="py-12 md:py-16 bg-background" data-testid="after-faq-campaign-section">
+          <div className="container max-w-4xl">
+            {afterFaqCampaigns.map((campaign) => (
+              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Kampagnenanzeigen bleiben unabhängig vom vorübergehend deaktivierten HRS-Bereich sichtbar. */}
-      {(musical.id === "tanz-der-vampire" || (aovoCampaign && aovoCampaign.placement !== "before-usp" && aovoCampaign.placement !== "after-ticket-box")) && (
+      {(musical.id === "tanz-der-vampire" || (aovoCampaign && !aovoCampaign.placement)) && (
         <section className="py-12 md:py-16 bg-background" data-testid="musical-campaign-section">
           <div className="container max-w-4xl">
             {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
-            {aovoCampaign?.placement !== "before-usp" && aovoCampaign?.placement !== "after-ticket-box" && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
+            {!aovoCampaign?.placement && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
           </div>
         </section>
       )}

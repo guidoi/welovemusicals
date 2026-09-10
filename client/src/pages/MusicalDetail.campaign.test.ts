@@ -17,7 +17,7 @@ describe("MJ-Kampagnenplatzierung", () => {
   });
 
   it("platziert nach der Ticketbox konfigurierte Kampagnen sichtbar vor Presse und Galerie", () => {
-    const campaignPlacement = musicalDetailSource.indexOf('aovoCampaign?.placement === "after-ticket-box"');
+    const campaignPlacement = musicalDetailSource.indexOf('afterTicketBoxCampaigns.length > 0');
     const pressQuotes = musicalDetailSource.indexOf("{/* Pressequotes */}");
 
     expect(campaignPlacement).toBeGreaterThan(-1);
@@ -25,7 +25,17 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(musicalDetailSource).toContain('data-testid="after-ticket-box-campaign-section"');
   });
 
-  it("rendert die Kampagne nach der Ticketbox nicht ein zweites Mal im unteren Kampagnenbereich", () => {
-    expect(musicalDetailSource).toContain('aovoCampaign.placement !== "after-ticket-box"');
+  it("platziert die Aovo-Reisekampagne getrennt nach FAQ und Hotelbereich", () => {
+    const faqCampaign = musicalDetailSource.indexOf('afterFaqCampaigns.length > 0');
+    const hotelSection = musicalDetailSource.indexOf('{/* HRS-Hotelbereich');
+    const lowerCampaignSection = musicalDetailSource.indexOf('{/* Kampagnenanzeigen bleiben unabhängig');
+
+    expect(faqCampaign).toBeGreaterThan(hotelSection);
+    expect(lowerCampaignSection).toBeGreaterThan(faqCampaign);
+    expect(musicalDetailSource).toContain('data-testid="after-faq-campaign-section"');
+  });
+
+  it("rendert platzierte Kampagnen nicht ein zweites Mal im unteren Kampagnenbereich", () => {
+    expect(musicalDetailSource).toContain('aovoCampaign && !aovoCampaign.placement');
   });
 });

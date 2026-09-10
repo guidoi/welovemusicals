@@ -9,7 +9,7 @@ export type AovoCampaign = {
   height: number;
   imageUrl: string;
   trackingNetwork?: "tradedoubler" | "stage";
-  placement?: "after-hotel" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-ticket-box";
+  placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-ticket-box";
   storyParagraphIndex?: number;
   detailParagraphIndex?: number;
   adLabel?: string;
@@ -52,10 +52,27 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
   {
     musicalId: "koenig-der-loewen",
     musicalTitle: "König der Löwen",
-    groupId: "26068528",
-    width: 750,
-    height: 200,
-    imageUrl: "/images/show-visuals/koenig-der-loewen-750x200.png",
+    groupId: "26180470",
+    width: 728,
+    height: 90,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xFcqGUobMzNazpmJ.jpg",
+    trackingNetwork: "stage",
+    placement: "within-detail-description",
+    detailParagraphIndex: 2,
+    adLabel: "König der Löwen Ticketangebot",
+    clickAriaLabel: "König-der-Löwen-Ticketangebot in neuem Tab öffnen",
+  },
+  {
+    musicalId: "koenig-der-loewen",
+    musicalTitle: "König der Löwen",
+    groupId: "26180460",
+    width: 300,
+    height: 250,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/flIDVltwpwOIvdKZ.jpg",
+    trackingNetwork: "stage",
+    placement: "after-ticket-box",
+    adLabel: "König der Löwen Ticketangebot",
+    clickAriaLabel: "König-der-Löwen-Ticketangebot in neuem Tab öffnen",
   },
   {
     musicalId: "mj-musical",
@@ -81,6 +98,17 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     detailParagraphIndex: 2,
     adLabel: "MJ-Ticketangebot",
     clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
+  },
+  {
+    musicalId: "mj-musical",
+    musicalTitle: "MJ – Das Michael Jackson Musical",
+    groupId: "26068482",
+    width: 750,
+    height: 200,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
+    placement: "after-faq",
+    adLabel: "MJ Ticket & Hotel",
+    clickAriaLabel: "MJ Ticket-und-Hotel-Angebot in neuem Tab öffnen",
   },
   {
     musicalId: "ziz",
