@@ -11,6 +11,9 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(inlineCampaign).toBeGreaterThan(-1);
     expect(tourDates).toBeGreaterThan(inlineCampaign);
     expect(musicalDetailSource).toContain('data-testid="within-detail-description-campaign"');
+    expect(musicalDetailSource).toContain('data-testid="within-detail-description-campaign-mobile"');
+    expect(musicalDetailSource).toContain('className="my-8 hidden lg:block"');
+    expect(musicalDetailSource).toContain('className="my-8 lg:hidden"');
   });
 
   it("platziert nach der Ticketbox konfigurierte Kampagnen sichtbar vor Presse und Galerie", () => {

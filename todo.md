@@ -494,4 +494,7 @@
 - [ ] MJ-Stage-Banner 728×90 vor „Spielorte & Termine“ integrieren und das 300×250-Banner nach „Tickets sichern“ belassen
 - [ ] Einheitliche Detailseiten-Hierarchie umsetzen: schmale Banner im oberen Fließtext, große Banner nach dem Ticketbereich und Hotel-/Reisebanner am Seitenende
 - [ ] MJ-Stage-Banner 728×90 in die Mitte des oberen Fließtexts verschieben, ohne Spielorte oder Ticketkasten zu unterbrechen
+- [ ] MJ-Stage-Banner 728×90 erst nach dem Fließtext unter der zweiten Zwischenüberschrift „Die Geschichte hinter dem Genie“ anzeigen
+- [ ] Mobil das MJ-Stage-Banner 728×90 erst nach dem Keyvisual der zweiten Zwischenüberschrift anzeigen
+- [ ] MJ-Originalgrafiken aus dem externen Projekt-Assetbereich direkt in den Produktionsbuild übernehmen, damit sie auf der Custom-Domain sichtbar laden
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben

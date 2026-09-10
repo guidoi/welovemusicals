@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   AOVO_CAMPAIGNS,
@@ -58,7 +59,7 @@ describe("Aovo campaign banners", () => {
       groupId: "26180466",
       width: 300,
       height: 250,
-      imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_5c11a628.jpg",
+      imageUrl: "/images/show-visuals/mj-stage-salesweek-26180466-300x250.jpg",
       trackingNetwork: "stage",
       placement: "after-ticket-box",
       adLabel: "MJ-Ticketangebot",
@@ -92,8 +93,8 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 1,
-        imageUrl: "/manus-storage/mj-stage-salesweek-26180462-728x90_708e96c4.jpg",
+        detailParagraphIndex: 2,
+        imageUrl: "/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
@@ -102,5 +103,13 @@ describe("Aovo campaign banners", () => {
     expect(getAovoCampaignImpressionUrl("26185666", "123456789", "stage")).toBe(
       "https://visit.stage-entertainment.de/imp?type(img)g(26185666)a(3492604)123456789"
     );
+  });
+
+  it("übernimmt die bereitgestellten MJ-Originalgrafiken in den Produktionsbuild", () => {
+    const packageJson = readFileSync(new URL("../../../package.json", import.meta.url), "utf8");
+
+    expect(packageJson).toContain("/home/ubuntu/webdev-static-assets/mj-stage-salesweek-26180466-300x250.jpg");
+    expect(packageJson).toContain("/home/ubuntu/webdev-static-assets/mj-stage-salesweek-26180462-728x90.jpg");
+    expect(packageJson).toContain("dist/images/show-visuals");
   });
 });
