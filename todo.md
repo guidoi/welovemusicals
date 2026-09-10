@@ -500,4 +500,5 @@
 - [ ] Nach Abschluss der MJ-Sichtbarkeitskorrektur die bereitgestellten König-der-Löwen-Stage-Banner 728×90 und 300×250 nach der Bannerhierarchie integrieren
 - [ ] Nach Abschluss der MJ-Sichtbarkeitskorrektur das bereitgestellte MJ-Aovo-Reisebanner 750×200 getrennt nach den FAQ einbinden
 - [ ] Letzte gezielte Korrektur: zwischengespeicherte fehlerhafte 728×90-MJ-Bildantwort zuverlässig umgehen und anschließend einmalig auf Desktop sowie Mobil abnehmen
+- [ ] HTML-App-Shell ohne Langzeit-Cache ausliefern, damit neue Detailseiten- und Bannerstände unmittelbar nach Veröffentlichung laden
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben

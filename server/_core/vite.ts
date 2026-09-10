@@ -6,6 +6,8 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
 
+export const HTML_DOCUMENT_CACHE_CONTROL = "no-store, max-age=0, must-revalidate";
+
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
     middlewareMode: true,
@@ -41,9 +43,9 @@ export async function setupVite(app: Express, server: Server) {
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ 
         "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "public, max-age=3600, must-revalidate",
-        "Pragma": "cache",
-        "Expires": new Date(Date.now() + 3600000).toUTCString(),
+        "Cache-Control": HTML_DOCUMENT_CACHE_CONTROL,
+        "Pragma": "no-cache",
+        "Expires": "0",
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -69,15 +71,22 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath, {
     maxAge: '1d',
-    etag: false
+    etag: false,
+    setHeaders: (res, filePath) => {
+      if (path.basename(filePath) === "index.html") {
+        res.setHeader("Cache-Control", HTML_DOCUMENT_CACHE_CONTROL);
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
+      }
+    },
   }));
 
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
     res.set({
-      "Cache-Control": "public, max-age=3600, must-revalidate",
-      "Pragma": "cache",
-      "Expires": new Date(Date.now() + 3600000).toUTCString(),
+      "Cache-Control": HTML_DOCUMENT_CACHE_CONTROL,
+      "Pragma": "no-cache",
+      "Expires": "0",
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "SAMEORIGIN",
       "X-XSS-Protection": "1; mode=block",
