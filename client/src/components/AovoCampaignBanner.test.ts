@@ -1,4 +1,5 @@
 import { statSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   AOVO_CAMPAIGNS,
@@ -113,5 +114,14 @@ describe("Aovo campaign banners", () => {
     expect(banner728.size).toBeGreaterThan(0);
     expect(banner300.mode & 0o444).toBeGreaterThan(0);
     expect(banner728.mode & 0o444).toBeGreaterThan(0);
+  });
+
+  it("rendert Kampagnencreatives als native Bilder mit ihren vorgegebenen Abmessungen", () => {
+    const componentSource = readFileSync(new URL("./AovoCampaignBanner.tsx", import.meta.url), "utf8");
+
+    expect(componentSource).toContain("<img");
+    expect(componentSource).toContain("src={campaign.imageUrl}");
+    expect(componentSource).toContain("width={campaign.width}");
+    expect(componentSource).toContain("height={campaign.height}");
   });
 });

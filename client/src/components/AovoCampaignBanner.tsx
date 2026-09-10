@@ -184,14 +184,12 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
         className="block w-full overflow-hidden rounded-sm bg-transparent p-0 text-left outline outline-1 outline-white/10 outline-offset-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         aria-label={campaign.clickAriaLabel ?? `Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}
       >
-        <span
-          aria-hidden="true"
-          className="block w-full bg-center bg-no-repeat"
-          style={{
-            aspectRatio: `${campaign.width} / ${campaign.height}`,
-            backgroundImage: `url(${campaign.imageUrl})`,
-            backgroundSize: "100% 100%",
-          }}
+        <img
+          src={campaign.imageUrl}
+          alt=""
+          width={campaign.width}
+          height={campaign.height}
+          className="block h-auto w-full"
         />
       </button>
     </aside>
