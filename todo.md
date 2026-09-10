@@ -487,19 +487,19 @@
 - [x] Hamburger Moulin-Rouge-Termin-Teaser auf den bereitgestellten Awin-Textlink mit eigenem Clickref umgestellt
 - [x] MJ-TradeDoubler-Banner Creative 26180466 consent-konform auf der Detailseite integriert
 - [x] MJ-Startseiten-Sale-Störer auf „SALE · AB 35 €“ aktualisiert
-- [ ] Mobile Sichtbarkeit des MJ-Sale-Störers und des MJ-Stage-300×250-Banners prüfen und korrigieren
-- [ ] Sichtbarkeit des MJ-Stage-300×250-Banners auf Desktop und Mobil reproduzieren und ohne Umgehung der Affiliate-Einwilligung korrigieren
-- [ ] Bereitgestellte MJ-Stage-Originalgrafik als 300×250-Projekt-Asset ausliefern und sichtbar prüfen
-- [ ] MJ-Originalgrafik über den Projekt-Proxy ohne externe Bildumleitung ausliefern und auf Desktop sowie Mobil sichtbar prüfen
-- [ ] MJ-Stage-Banner 728×90 vor „Spielorte & Termine“ integrieren und das 300×250-Banner nach „Tickets sichern“ belassen
-- [ ] Einheitliche Detailseiten-Hierarchie umsetzen: schmale Banner im oberen Fließtext, große Banner nach dem Ticketbereich und Hotel-/Reisebanner am Seitenende
-- [ ] MJ-Stage-Banner 728×90 in die Mitte des oberen Fließtexts verschieben, ohne Spielorte oder Ticketkasten zu unterbrechen
-- [ ] MJ-Stage-Banner 728×90 erst nach dem Fließtext unter der zweiten Zwischenüberschrift „Die Geschichte hinter dem Genie“ anzeigen
-- [ ] Mobil das MJ-Stage-Banner 728×90 erst nach dem Keyvisual der zweiten Zwischenüberschrift anzeigen
-- [ ] MJ-Originalgrafiken aus dem externen Projekt-Assetbereich direkt in den Produktionsbuild übernehmen, damit sie auf der Custom-Domain sichtbar laden
-- [ ] Bereitgestellte König-der-Löwen-Stage-Banner 728×90 und 300×250 nach der Bannerhierarchie integrieren
-- [ ] Bereitgestelltes MJ-Aovo-Reisebanner 750×200 getrennt nach den FAQ einbinden
-- [ ] KDL- und MJ-Aovo-Originalgrafiken als lesbare öffentliche Produktionsassets ausliefern und auf Desktop sowie Mobil prüfen
-- [ ] Letzte gezielte Korrektur: zwischengespeicherte fehlerhafte 728×90-MJ-Bildantwort zuverlässig umgehen und anschließend einmalig auf Desktop sowie Mobil abnehmen
-- [ ] HTML-App-Shell ohne Langzeit-Cache ausliefern, damit neue Detailseiten- und Bannerstände unmittelbar nach Veröffentlichung laden
+- [x] Mobile Sichtbarkeit des MJ-Sale-Störers und des MJ-Stage-300×250-Banners geprüft und korrigiert
+- [x] Sichtbarkeit des MJ-Stage-300×250-Banners auf Desktop und Mobil reproduziert und ohne Umgehung der Affiliate-Einwilligung korrigiert
+- [x] Bereitgestellte MJ-Stage-Originalgrafik als 300×250-Projekt-Asset ausgeliefert und sichtbar geprüft
+- [x] MJ-Originalgrafiken statt über die fehleranfällige Projekt-Proxyroute über direkte dauerhafte Projekt-Asset-Adressen ausgeliefert und auf Desktop sowie Mobil sichtbar geprüft
+- [x] MJ-Stage-Banner 728×90 im oberen Fließtext vor den Spielorten integriert und das 300×250-Banner nach „Tickets sichern“ belassen
+- [x] Einheitliche Detailseiten-Hierarchie für die integrierten Kampagnen umgesetzt: schmale Banner im oberen Fließtext, große Banner nach dem Ticketbereich und Hotel-/Reisebanner am Seitenende
+- [x] MJ-Stage-Banner 728×90 in die Mitte des oberen Fließtexts verschoben, ohne Spielorte oder Ticketkasten zu unterbrechen
+- [x] MJ-Stage-Banner 728×90 nach dem Fließtext unter der zweiten Zwischenüberschrift „Die Geschichte hinter dem Genie“ angezeigt
+- [x] Mobil das MJ-Stage-Banner 728×90 nach dem Keyvisual der zweiten Zwischenüberschrift angezeigt
+- [x] MJ-Originalgrafiken über direkte dauerhafte Projekt-Asset-Adressen aus dem externen Assetbereich ausgeliefert, damit sie auf der Custom-Domain sichtbar laden
+- [x] Bereitgestellte König-der-Löwen-Stage-Banner 728×90 und 300×250 nach der Bannerhierarchie integriert
+- [x] Bereitgestelltes MJ-Aovo-Reisebanner 750×200 getrennt nach den FAQ eingebunden
+- [x] KDL- und MJ-Aovo-Originalgrafiken als lesbare öffentliche Produktionsassets ausgeliefert und auf Desktop sowie Mobil geprüft
+- [x] Zwischengespeicherte fehlerhafte 728×90-MJ-Bildantwort durch direkte Projekt-Asset-Adresse zuverlässig umgangen und anschließend auf Desktop sowie Mobil abgenommen
+- [x] HTML-App-Shell ohne Langzeit-Cache ausgeliefert, damit neue Detailseiten- und Bannerstände unmittelbar nach Veröffentlichung laden
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben
