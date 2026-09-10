@@ -497,4 +497,7 @@
 - [ ] MJ-Stage-Banner 728×90 erst nach dem Fließtext unter der zweiten Zwischenüberschrift „Die Geschichte hinter dem Genie“ anzeigen
 - [ ] Mobil das MJ-Stage-Banner 728×90 erst nach dem Keyvisual der zweiten Zwischenüberschrift anzeigen
 - [ ] MJ-Originalgrafiken aus dem externen Projekt-Assetbereich direkt in den Produktionsbuild übernehmen, damit sie auf der Custom-Domain sichtbar laden
+- [ ] Nach Abschluss der MJ-Sichtbarkeitskorrektur die bereitgestellten König-der-Löwen-Stage-Banner 728×90 und 300×250 nach der Bannerhierarchie integrieren
+- [ ] Nach Abschluss der MJ-Sichtbarkeitskorrektur das bereitgestellte MJ-Aovo-Reisebanner 750×200 getrennt nach den FAQ einbinden
+- [ ] Letzte gezielte Korrektur: zwischengespeicherte fehlerhafte 728×90-MJ-Bildantwort zuverlässig umgehen und anschließend einmalig auf Desktop sowie Mobil abnehmen
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben

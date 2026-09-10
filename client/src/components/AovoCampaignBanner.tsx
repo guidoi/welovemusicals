@@ -75,7 +75,7 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     groupId: "26180462",
     width: 728,
     height: 90,
-    imageUrl: "/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg?v=20260910",
+    imageUrl: "/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg?v=20260910-2",
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 2,
