@@ -60,7 +60,7 @@ describe("Aovo campaign banners", () => {
       groupId: "26180466",
       width: 300,
       height: 250,
-      imageUrl: "/images/show-visuals/mj-stage-salesweek-26180466-300x250.jpg",
+      imageUrl: "/images/show-visuals/mj-stage-salesweek-26180466-300x250.jpg?v=20260910",
       trackingNetwork: "stage",
       placement: "after-ticket-box",
       adLabel: "MJ-Ticketangebot",
@@ -95,7 +95,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg",
+        imageUrl: "/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg?v=20260910",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
