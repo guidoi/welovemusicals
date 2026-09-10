@@ -1,4 +1,3 @@
-import { statSync } from "node:fs";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
@@ -62,7 +61,7 @@ describe("Aovo campaign banners", () => {
       groupId: "26180466",
       width: 300,
       height: 250,
-      imageUrl: "/images/show-visuals/mj-stage-salesweek-26180466-300x250.jpg?v=20260910",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NSpbtNWBfODnfNlF.jpg",
       trackingNetwork: "stage",
       placement: "after-ticket-box",
       adLabel: "MJ-Ticketangebot",
@@ -97,7 +96,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg?v=20260910-2",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NaetGqhtkugkzHPN.jpg",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
@@ -145,14 +144,15 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("liefert die bereitgestellten MJ-Originalgrafiken als öffentliche Produktionsassets aus", () => {
-    const banner300 = statSync(new URL("../../public/images/show-visuals/mj-stage-salesweek-26180466-300x250.jpg", import.meta.url));
-    const banner728 = statSync(new URL("../../public/images/show-visuals/mj-stage-salesweek-26180462-728x90.jpg", import.meta.url));
+  it("referenziert beide MJ-Originalgrafiken über direkte öffentliche Projekt-Asset-Adressen", () => {
+    const mjCampaigns = getAovoCampaigns("mj-musical");
 
-    expect(banner300.size).toBeGreaterThan(0);
-    expect(banner728.size).toBeGreaterThan(0);
-    expect(banner300.mode & 0o444).toBeGreaterThan(0);
-    expect(banner728.mode & 0o444).toBeGreaterThan(0);
+    expect(mjCampaigns.find((campaign) => campaign.groupId === "26180466")?.imageUrl).toBe(
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NSpbtNWBfODnfNlF.jpg"
+    );
+    expect(mjCampaigns.find((campaign) => campaign.groupId === "26180462")?.imageUrl).toBe(
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NaetGqhtkugkzHPN.jpg"
+    );
   });
 
   it("rendert Kampagnencreatives als native Bilder mit ihren vorgegebenen Abmessungen", () => {
