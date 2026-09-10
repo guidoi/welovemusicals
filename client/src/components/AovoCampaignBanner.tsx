@@ -9,8 +9,9 @@ export type AovoCampaign = {
   height: number;
   imageUrl: string;
   trackingNetwork?: "tradedoubler" | "stage";
-  placement?: "after-hotel" | "before-usp" | "before-story-paragraph";
+  placement?: "after-hotel" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-ticket-box";
   storyParagraphIndex?: number;
+  detailParagraphIndex?: number;
   adLabel?: string;
   clickAriaLabel?: string;
 };
@@ -62,8 +63,22 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     groupId: "26180466",
     width: 300,
     height: 250,
-    imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_c494b3a1.jpg",
+    imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_5c11a628.jpg",
     trackingNetwork: "stage",
+    placement: "after-ticket-box",
+    adLabel: "MJ-Ticketangebot",
+    clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
+  },
+  {
+    musicalId: "mj-musical",
+    musicalTitle: "MJ – Das Michael Jackson Musical",
+    groupId: "26180462",
+    width: 728,
+    height: 90,
+    imageUrl: "/manus-storage/mj-stage-salesweek-26180462-728x90_708e96c4.jpg",
+    trackingNetwork: "stage",
+    placement: "within-detail-description",
+    detailParagraphIndex: 1,
     adLabel: "MJ-Ticketangebot",
     clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
   },
@@ -115,6 +130,10 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
 
 export function getAovoCampaign(musicalId: string) {
   return AOVO_CAMPAIGNS.find((campaign) => campaign.musicalId === musicalId);
+}
+
+export function getAovoCampaigns(musicalId: string) {
+  return AOVO_CAMPAIGNS.filter((campaign) => campaign.musicalId === musicalId);
 }
 
 export function getAovoCampaignClickUrl(

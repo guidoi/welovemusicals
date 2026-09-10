@@ -41,7 +41,7 @@ import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
-import AovoCampaignBanner, { getAovoCampaign } from "@/components/AovoCampaignBanner";
+import AovoCampaignBanner, { getAovoCampaign, getAovoCampaigns } from "@/components/AovoCampaignBanner";
 import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
@@ -152,6 +152,9 @@ export default function MusicalDetail() {
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const aovoCampaign = getAovoCampaign(musical.id);
+  const inlineDescriptionCampaign = getAovoCampaigns(musical.id).find(
+    (campaign) => campaign.placement === "within-detail-description"
+  );
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -287,6 +290,12 @@ export default function MusicalDetail() {
                         ) : (
                           <p>{paragraph}</p>
                         )}
+                        {inlineDescriptionCampaign?.placement === "within-detail-description" &&
+                          i === inlineDescriptionCampaign.detailParagraphIndex && (
+                            <div className="my-8" data-testid="within-detail-description-campaign">
+                              <AovoCampaignBanner campaign={inlineDescriptionCampaign} />
+                            </div>
+                          )}
                         {/* Mobile Video:
                              - Moulin Rouge!: nach i=0 (Ende "...Hansestadt.")
                              - Sister Act & Dracula: nach i=0
@@ -519,6 +528,14 @@ export default function MusicalDetail() {
         </div>
       </section>
 
+      {aovoCampaign?.placement === "after-ticket-box" && (
+        <section className="bg-background pb-12 md:pb-16" data-testid="after-ticket-box-campaign-section">
+          <div className="container max-w-4xl">
+            <AovoCampaignBanner campaign={aovoCampaign} />
+          </div>
+        </section>
+      )}
+
       {/* Pressequotes */}
       {musical.quotes && musical.quotes.length > 0 && (
         <MusicalQuotes quotes={musical.quotes} />
@@ -571,11 +588,11 @@ export default function MusicalDetail() {
       )}
 
       {/* Kampagnenanzeigen bleiben unabhängig vom vorübergehend deaktivierten HRS-Bereich sichtbar. */}
-      {(musical.id === "tanz-der-vampire" || (aovoCampaign && aovoCampaign.placement !== "before-usp")) && (
+      {(musical.id === "tanz-der-vampire" || (aovoCampaign && aovoCampaign.placement !== "before-usp" && aovoCampaign.placement !== "after-ticket-box")) && (
         <section className="py-12 md:py-16 bg-background" data-testid="musical-campaign-section">
           <div className="container max-w-4xl">
             {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
-            {aovoCampaign?.placement !== "before-usp" && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
+            {aovoCampaign?.placement !== "before-usp" && aovoCampaign?.placement !== "after-ticket-box" && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
           </div>
         </section>
       )}

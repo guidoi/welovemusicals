@@ -487,4 +487,11 @@
 - [x] Hamburger Moulin-Rouge-Termin-Teaser auf den bereitgestellten Awin-Textlink mit eigenem Clickref umgestellt
 - [x] MJ-TradeDoubler-Banner Creative 26180466 consent-konform auf der Detailseite integriert
 - [x] MJ-Startseiten-Sale-Störer auf „SALE · AB 35 €“ aktualisiert
+- [ ] Mobile Sichtbarkeit des MJ-Sale-Störers und des MJ-Stage-300×250-Banners prüfen und korrigieren
+- [ ] Sichtbarkeit des MJ-Stage-300×250-Banners auf Desktop und Mobil reproduzieren und ohne Umgehung der Affiliate-Einwilligung korrigieren
+- [ ] Bereitgestellte MJ-Stage-Originalgrafik als 300×250-Projekt-Asset ausliefern und sichtbar prüfen
+- [ ] MJ-Originalgrafik über den Projekt-Proxy ohne externe Bildumleitung ausliefern und auf Desktop sowie Mobil sichtbar prüfen
+- [ ] MJ-Stage-Banner 728×90 vor „Spielorte & Termine“ integrieren und das 300×250-Banner nach „Tickets sichern“ belassen
+- [ ] Einheitliche Detailseiten-Hierarchie umsetzen: schmale Banner im oberen Fließtext, große Banner nach dem Ticketbereich und Hotel-/Reisebanner am Seitenende
+- [ ] MJ-Stage-Banner 728×90 in die Mitte des oberen Fließtexts verschieben, ohne Spielorte oder Ticketkasten zu unterbrechen
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben

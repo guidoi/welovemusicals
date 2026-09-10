@@ -2,13 +2,14 @@ import { describe, expect, it } from "vitest";
 import {
   AOVO_CAMPAIGNS,
   getAovoCampaign,
+  getAovoCampaigns,
   getAovoCampaignClickUrl,
   getAovoCampaignImpressionUrl,
 } from "./AovoCampaignBanner";
 
 describe("Aovo campaign banners", () => {
-  it("maps all eleven provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(11);
+  it("maps all provided musical campaigns to unique tracking group IDs", () => {
+    expect(AOVO_CAMPAIGNS).toHaveLength(12);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
@@ -16,13 +17,14 @@ describe("Aovo campaign banners", () => {
       "eiskoenigin",
       "koenig-der-loewen",
       "mj-musical",
+      "mj-musical",
       "ziz",
       "tarzan",
       "starlight-express",
       "wir-sind-am-leben",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(11);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(12);
   });
 
   it("keeps the provided Moulin Rouge campaign dimensions and tracking URLs", () => {
@@ -56,8 +58,9 @@ describe("Aovo campaign banners", () => {
       groupId: "26180466",
       width: 300,
       height: 250,
-      imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_c494b3a1.jpg",
+      imageUrl: "/manus-storage/mj-stage-salesweek-26180466-300x250_5c11a628.jpg",
       trackingNetwork: "stage",
+      placement: "after-ticket-box",
       adLabel: "MJ-Ticketangebot",
       clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
     });
@@ -77,7 +80,22 @@ describe("Aovo campaign banners", () => {
       storyParagraphIndex: 2,
     });
     expect(wirSindAmLeben).toMatchObject({ groupId: "26185700", trackingNetwork: "stage" });
-    expect(mj).toMatchObject({ groupId: "26180466", trackingNetwork: "stage" });
+    expect(mj).toMatchObject({
+      groupId: "26180466",
+      trackingNetwork: "stage",
+      placement: "after-ticket-box",
+    });
+    expect(getAovoCampaigns("mj-musical")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26180462",
+        width: 728,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 1,
+        imageUrl: "/manus-storage/mj-stage-salesweek-26180462-728x90_708e96c4.jpg",
+      }),
+    ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26185666"
     );
