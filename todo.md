@@ -509,3 +509,4 @@
 - [x] Zweites MJ-Aovo-Angebot 26068476 im Format 300×250 am Seitenende nach dem bestehenden breiten Aovo-Banner eingebunden und auf Desktop sowie Mobil geprüft
 - [x] Quadratisches MJ-Aovo-Banner 26068476 vom Seitenende entfernt und das bereitgestellte KDL-Aovo-Banner 26068528 im Format 750×200 nach den FAQ integriert sowie auf Desktop und Mobil geprüft
 - [x] Oberen Abstand der Aovo-Endseitenbanner nochmals deutlich auf Mobil und Desktop reduziert sowie die engere Einbindung geprüft
+- [x] Trennlinien bei allen Kampagnenbannern entfernt und die Kennzeichnung ausschließlich über „Anzeige“ auf Desktop sowie Mobil geprüft

@@ -4,6 +4,7 @@ import {
   AOVO_TDV_BANNER_URL,
   getAovoTdVImpressionUrl,
 } from "./AovoTanzDerVampireBanner";
+import { readFileSync } from "node:fs";
 
 describe("Aovo Tanz der Vampire banner", () => {
   it("keeps the provided TradeDoubler click destination", () => {
@@ -19,5 +20,12 @@ describe("Aovo Tanz der Vampire banner", () => {
     expect(getAovoTdVImpressionUrl("123456789")).toBe(
       "https://imp.tradedoubler.com/imp?type(img)g(26137318)a(3492604)123456789"
     );
+  });
+
+  it("uses the Anzeige label without a visual separator line", () => {
+    const componentSource = readFileSync(new URL("./AovoTanzDerVampireBanner.tsx", import.meta.url), "utf8");
+
+    expect(componentSource).not.toContain("border-t border-gold/15");
+    expect(componentSource).toContain(">Anzeige</p>");
   });
 });

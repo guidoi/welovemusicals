@@ -215,8 +215,8 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
   return (
     <aside
       className={campaign.compactTopSpacing
-        ? "mx-auto mt-2 w-full border-t border-gold/15 pt-2 md:mt-3 md:pt-3"
-        : "mx-auto mt-8 w-full border-t border-gold/15 pt-6"}
+        ? "mx-auto mt-2 w-full pt-2 md:mt-3 md:pt-3"
+        : "mx-auto mt-8 w-full pt-6"}
       style={{ maxWidth: campaign.width }}
       aria-label={`Anzeige: ${campaign.adLabel ?? `Ticket und Hotel – ${campaign.musicalTitle}`}`}
       data-campaign-id={campaign.groupId}

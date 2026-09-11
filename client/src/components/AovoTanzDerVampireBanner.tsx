@@ -22,7 +22,7 @@ export default function AovoTanzDerVampireBanner() {
   }, [consent?.affiliateTracking, impressionUrl]);
 
   return (
-    <aside className="mt-8 border-t border-gold/15 pt-6" aria-label="Anzeige: Ticket und Hotel – Tanz der Vampire">
+    <aside className="mt-8 pt-6" aria-label="Anzeige: Ticket und Hotel – Tanz der Vampire">
       <p className="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Anzeige</p>
       <button
         type="button"
