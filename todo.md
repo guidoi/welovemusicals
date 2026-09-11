@@ -507,3 +507,4 @@
 - [x] Oberen Abstand des MJ-Aovo-Reisebanners am Seitenende deutlich reduziert, auf Mobil um rund 45 %, und auf Desktop sowie Mobil geprüft
 - [x] Alle MJ-Ticket-CTAs außerhalb von Banneranzeigen sicher auf die neue Stage-/TradeDoubler-Textlink-Kampagne 26149402 umgestellt und Bannerziele unverändert gelassen
 - [x] Zweites MJ-Aovo-Angebot 26068476 im Format 300×250 am Seitenende nach dem bestehenden breiten Aovo-Banner eingebunden und auf Desktop sowie Mobil geprüft
+- [x] Quadratisches MJ-Aovo-Banner 26068476 vom Seitenende entfernt und das bereitgestellte KDL-Aovo-Banner 26068528 im Format 750×200 nach den FAQ integriert sowie auf Desktop und Mobil geprüft

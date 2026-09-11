@@ -18,7 +18,7 @@ describe("Aovo campaign banners", () => {
       "eiskoenigin",
       "koenig-der-loewen",
       "koenig-der-loewen",
-      "mj-musical",
+      "koenig-der-loewen",
       "mj-musical",
       "mj-musical",
       "mj-musical",
@@ -127,6 +127,14 @@ describe("Aovo campaign banners", () => {
         placement: "after-gallery",
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/flIDVltwpwOIvdKZ.jpg",
       }),
+      expect.objectContaining({
+        groupId: "26068528",
+        width: 750,
+        height: 200,
+        placement: "after-faq",
+        compactTopSpacing: true,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/fSsmgKqWQourDufP.png",
+      }),
     ]));
     expect(getAovoCampaigns("mj-musical")).toEqual(expect.arrayContaining([
       expect.objectContaining({
@@ -137,23 +145,16 @@ describe("Aovo campaign banners", () => {
         compactTopSpacing: true,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
       }),
-      expect.objectContaining({
-        groupId: "26068476",
-        width: 300,
-        height: 250,
-        placement: "after-faq",
-        compactTopSpacing: true,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BjFHApBaIcYLqmvz.png",
-      }),
     ]));
+    expect(getAovoCampaigns("mj-musical").some((campaign) => campaign.groupId === "26068476")).toBe(false);
     expect(getAovoCampaignClickUrl("26180470", "stage")).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26180470"
     );
     expect(getAovoCampaignClickUrl("26068482")).toBe(
       "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26068482"
     );
-    expect(getAovoCampaignClickUrl("26068476")).toBe(
-      "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26068476"
+    expect(getAovoCampaignClickUrl("26068528")).toBe(
+      "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26068528"
     );
   });
 
