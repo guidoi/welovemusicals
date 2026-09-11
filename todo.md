@@ -502,4 +502,5 @@
 - [x] KDL- und MJ-Aovo-Originalgrafiken als lesbare öffentliche Produktionsassets ausgeliefert und auf Desktop sowie Mobil geprüft
 - [x] Zwischengespeicherte fehlerhafte 728×90-MJ-Bildantwort durch direkte Projekt-Asset-Adresse zuverlässig umgangen und anschließend auf Desktop sowie Mobil abgenommen
 - [x] HTML-App-Shell ohne Langzeit-Cache ausgeliefert, damit neue Detailseiten- und Bannerstände unmittelbar nach Veröffentlichung laden
+- [x] Große Kampagnenbanner auf allen Detailseiten direkt nach der Bildergalerie und vor „Alles, was du wissen musst“ platziert sowie auf Desktop und Mobil geprüft
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben

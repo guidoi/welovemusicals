@@ -63,7 +63,7 @@ describe("Aovo campaign banners", () => {
       height: 250,
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NSpbtNWBfODnfNlF.jpg",
       trackingNetwork: "stage",
-      placement: "after-ticket-box",
+      placement: "after-gallery",
       adLabel: "MJ-Ticketangebot",
       clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
     });
@@ -86,7 +86,7 @@ describe("Aovo campaign banners", () => {
     expect(mj).toMatchObject({
       groupId: "26180466",
       trackingNetwork: "stage",
-      placement: "after-ticket-box",
+      placement: "after-gallery",
     });
     expect(getAovoCampaigns("mj-musical")).toEqual(expect.arrayContaining([
       expect.objectContaining({
@@ -123,7 +123,7 @@ describe("Aovo campaign banners", () => {
         width: 300,
         height: 250,
         trackingNetwork: "stage",
-        placement: "after-ticket-box",
+        placement: "after-gallery",
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/flIDVltwpwOIvdKZ.jpg",
       }),
     ]));

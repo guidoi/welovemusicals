@@ -16,13 +16,15 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(musicalDetailSource).toContain('className="my-8 lg:hidden"');
   });
 
-  it("platziert nach der Ticketbox konfigurierte Kampagnen sichtbar vor Presse und Galerie", () => {
-    const campaignPlacement = musicalDetailSource.indexOf('afterTicketBoxCampaigns.length > 0');
-    const pressQuotes = musicalDetailSource.indexOf("{/* Pressequotes */}");
+  it("platziert große Kampagnen nach der Bildergalerie und vor dem Wissensbereich", () => {
+    const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
+    const campaignPlacement = musicalDetailSource.indexOf('afterGalleryCampaigns.length > 0');
+    const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
 
     expect(campaignPlacement).toBeGreaterThan(-1);
-    expect(pressQuotes).toBeGreaterThan(campaignPlacement);
-    expect(musicalDetailSource).toContain('data-testid="after-ticket-box-campaign-section"');
+    expect(campaignPlacement).toBeGreaterThan(gallery);
+    expect(showFacts).toBeGreaterThan(campaignPlacement);
+    expect(musicalDetailSource).toContain('data-testid="after-gallery-campaign-section"');
   });
 
   it("platziert die Aovo-Reisekampagne getrennt nach FAQ und Hotelbereich", () => {

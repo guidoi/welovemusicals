@@ -9,7 +9,7 @@ export type AovoCampaign = {
   height: number;
   imageUrl: string;
   trackingNetwork?: "tradedoubler" | "stage";
-  placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-ticket-box";
+  placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-gallery";
   storyParagraphIndex?: number;
   detailParagraphIndex?: number;
   adLabel?: string;
@@ -70,7 +70,7 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/flIDVltwpwOIvdKZ.jpg",
     trackingNetwork: "stage",
-    placement: "after-ticket-box",
+    placement: "after-gallery",
     adLabel: "König der Löwen Ticketangebot",
     clickAriaLabel: "König-der-Löwen-Ticketangebot in neuem Tab öffnen",
   },
@@ -82,7 +82,7 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NSpbtNWBfODnfNlF.jpg",
     trackingNetwork: "stage",
-    placement: "after-ticket-box",
+    placement: "after-gallery",
     adLabel: "MJ-Ticketangebot",
     clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
   },

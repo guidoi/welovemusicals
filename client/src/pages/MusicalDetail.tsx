@@ -156,8 +156,8 @@ export default function MusicalDetail() {
   const inlineDescriptionCampaign = getAovoCampaigns(musical.id).find(
     (campaign) => campaign.placement === "within-detail-description"
   );
-  const afterTicketBoxCampaigns = aovoCampaigns.filter(
-    (campaign) => campaign.placement === "after-ticket-box"
+  const afterGalleryCampaigns = aovoCampaigns.filter(
+    (campaign) => campaign.placement === "after-gallery"
   );
   const afterFaqCampaigns = aovoCampaigns.filter(
     (campaign) => campaign.placement === "after-faq"
@@ -541,16 +541,6 @@ export default function MusicalDetail() {
         </div>
       </section>
 
-      {afterTicketBoxCampaigns.length > 0 && (
-        <section className="bg-background pb-12 md:pb-16" data-testid="after-ticket-box-campaign-section">
-          <div className="container max-w-4xl">
-            {afterTicketBoxCampaigns.map((campaign) => (
-              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* Pressequotes */}
       {musical.quotes && musical.quotes.length > 0 && (
         <MusicalQuotes quotes={musical.quotes} />
@@ -559,6 +549,16 @@ export default function MusicalDetail() {
       {/* Gallery */}
       {musical.gallery && musical.gallery.length > 0 && (
         <MusicalGallery images={musical.gallery} />
+      )}
+
+      {afterGalleryCampaigns.length > 0 && (
+        <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
+          <div className="container max-w-4xl">
+            {afterGalleryCampaigns.map((campaign) => (
+              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
+            ))}
+          </div>
+        </section>
       )}
 
       {/* Show Facts + FAQ */}
