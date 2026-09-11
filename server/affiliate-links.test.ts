@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { ACTIVE_MUSICAL_IDS, ATG_PENDING_TOUR_TEXT_LINK_IDS, AWIN_TEXT_LINKS, getActiveMusicals, getMusicalBySlug, musicals } from "../client/src/lib/data";
+import { ACTIVE_MUSICAL_IDS, ATG_PENDING_TOUR_TEXT_LINK_IDS, AWIN_TEXT_LINKS, getActiveMusicals, getMusicalBySlug, MJ_STAGE_TEXT_LINK_URL, musicals } from "../client/src/lib/data";
 
 const KDL_STAGE_PRODUCT_URL = "https://www.stage-entertainment.de/musicals-shows/b/disneys-der-koenig-der-loewen-hamburg";
 const STAGE_PRODUCT_URLS = {
-  "mj-musical": "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
   eiskoenigin: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
   tarzan: "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg",
   ziz: "https://www.stage-entertainment.de/musicals-shows/zurueck-in-die-zukunft-hamburg/ticketshop",
@@ -182,6 +181,24 @@ describe("Affiliate-Link-Zuordnung", () => {
       expect(musical?.awinBoxUrl).toBe(productUrl);
       expect((musical?.tourDates ?? []).every((date) => date.eventimUrl === productUrl)).toBe(true);
     }
+  });
+
+  it("verwendet die neue Stage-TradeDoubler-Textlink-Kampagne an allen MJ-CTAs außerhalb der Banner", () => {
+    const mj = musicals.find((musical) => musical.id === "mj-musical");
+
+    expect(mj).toBeDefined();
+    expect(MJ_STAGE_TEXT_LINK_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402"
+    );
+    expect([
+      mj?.keyvisualLink,
+      mj?.ticketCtaUrl,
+      mj?.eventimUrl,
+      mj?.awinHeroUrl,
+      mj?.awinStickyUrl,
+      mj?.awinBoxUrl,
+      ...(mj?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(MJ_STAGE_TEXT_LINK_URL));
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {

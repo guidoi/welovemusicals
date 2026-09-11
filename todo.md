@@ -504,3 +504,6 @@
 - [x] HTML-App-Shell ohne Langzeit-Cache ausgeliefert, damit neue Detailseiten- und Bannerstände unmittelbar nach Veröffentlichung laden
 - [x] Große Kampagnenbanner auf allen Detailseiten direkt nach der Bildergalerie und vor „Alles, was du wissen musst“ platziert sowie auf Desktop und Mobil geprüft
 - [x] Allgemeinen „Script error.“ auf der Startseite reproduziert, auf externen Awin-Mastertag in der Webdev-Vorschau eingegrenzt und sicher behoben
+- [x] Oberen Abstand des MJ-Aovo-Reisebanners am Seitenende deutlich reduziert, auf Mobil um rund 45 %, und auf Desktop sowie Mobil geprüft
+- [x] Alle MJ-Ticket-CTAs außerhalb von Banneranzeigen sicher auf die neue Stage-/TradeDoubler-Textlink-Kampagne 26149402 umgestellt und Bannerziele unverändert gelassen
+- [x] Zweites MJ-Aovo-Angebot 26068476 im Format 300×250 am Seitenende nach dem bestehenden breiten Aovo-Banner eingebunden und auf Desktop sowie Mobil geprüft

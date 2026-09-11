@@ -162,6 +162,9 @@ export default function MusicalDetail() {
   const afterFaqCampaigns = aovoCampaigns.filter(
     (campaign) => campaign.placement === "after-faq"
   );
+  const hasCompactAfterFaqCampaign = afterFaqCampaigns.some(
+    (campaign) => campaign.compactTopSpacing
+  );
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -603,7 +606,10 @@ export default function MusicalDetail() {
       )}
 
       {afterFaqCampaigns.length > 0 && (
-        <section className="py-12 md:py-16 bg-background" data-testid="after-faq-campaign-section">
+        <section
+          className={hasCompactAfterFaqCampaign ? "bg-background pt-6 pb-10 md:pt-8 md:pb-12" : "py-12 md:py-16 bg-background"}
+          data-testid="after-faq-campaign-section"
+        >
           <div className="container max-w-4xl">
             {afterFaqCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />

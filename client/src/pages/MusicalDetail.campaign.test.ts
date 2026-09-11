@@ -35,6 +35,8 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(faqCampaign).toBeGreaterThan(hotelSection);
     expect(lowerCampaignSection).toBeGreaterThan(faqCampaign);
     expect(musicalDetailSource).toContain('data-testid="after-faq-campaign-section"');
+    expect(musicalDetailSource).toContain("hasCompactAfterFaqCampaign");
+    expect(musicalDetailSource).toContain('"bg-background pt-6 pb-10 md:pt-8 md:pb-12"');
   });
 
   it("rendert platzierte Kampagnen nicht ein zweites Mal im unteren Kampagnenbereich", () => {

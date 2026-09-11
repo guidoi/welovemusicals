@@ -12,6 +12,7 @@ export type AovoCampaign = {
   placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-gallery";
   storyParagraphIndex?: number;
   detailParagraphIndex?: number;
+  compactTopSpacing?: boolean;
   adLabel?: string;
   clickAriaLabel?: string;
 };
@@ -107,6 +108,19 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     height: 200,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
     placement: "after-faq",
+    compactTopSpacing: true,
+    adLabel: "MJ Ticket & Hotel",
+    clickAriaLabel: "MJ Ticket-und-Hotel-Angebot in neuem Tab öffnen",
+  },
+  {
+    musicalId: "mj-musical",
+    musicalTitle: "MJ – Das Michael Jackson Musical",
+    groupId: "26068476",
+    width: 300,
+    height: 250,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BjFHApBaIcYLqmvz.png",
+    placement: "after-faq",
+    compactTopSpacing: true,
     adLabel: "MJ Ticket & Hotel",
     clickAriaLabel: "MJ Ticket-und-Hotel-Angebot in neuem Tab öffnen",
   },
@@ -200,7 +214,9 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
 
   return (
     <aside
-      className="mx-auto mt-8 w-full border-t border-gold/15 pt-6"
+      className={campaign.compactTopSpacing
+        ? "mx-auto mt-4 w-full border-t border-gold/15 pt-4 md:mt-5 md:pt-5"
+        : "mx-auto mt-8 w-full border-t border-gold/15 pt-6"}
       style={{ maxWidth: campaign.width }}
       aria-label={`Anzeige: ${campaign.adLabel ?? `Ticket und Hotel – ${campaign.musicalTitle}`}`}
       data-campaign-id={campaign.groupId}

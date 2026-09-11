@@ -108,6 +108,7 @@ export interface Provider {
 // Hinweis: Publisher-ID muss nach AWIN-Registrierung eingesetzt werden
 export const AWIN_MERCHANT_ID = "11388";
 export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
+export const MJ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402";
 
 export const AWIN_TEXT_LINKS = {
   moulinRouge: { gid: "597568", merchantId: "111888", linkId: "4845203" },
@@ -1160,12 +1161,12 @@ export const musicals: Musical[] = [
     image: "/images/mj/MJ_HH_Smooth_Criminal_Stage.jpg",
     heroImage: "/images/mj/MJ_Szenenmotiv_Broadway_MatthewMurphy.jpg",
     keyvisual: "/images/mj/mj-keyvisual.png",
-    keyvisualLink: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
-    ticketCtaUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
-    eventimUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
-    awinHeroUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
-    awinStickyUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
-    awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg",
+    keyvisualLink: MJ_STAGE_TEXT_LINK_URL,
+    ticketCtaUrl: MJ_STAGE_TEXT_LINK_URL,
+    eventimUrl: MJ_STAGE_TEXT_LINK_URL,
+    awinHeroUrl: MJ_STAGE_TEXT_LINK_URL,
+    awinStickyUrl: MJ_STAGE_TEXT_LINK_URL,
+    awinBoxUrl: MJ_STAGE_TEXT_LINK_URL,
     youtubeTrailerId: "LXl2EgjktuE",
     featured: true,
     tags: ["Ensuite", "Stage Entertainment", "Welthit"],
@@ -1177,7 +1178,7 @@ export const musicals: Musical[] = [
       { icon: "Star", title: "Weltklasse-Kreativteam", text: "Bühnenbild, Kostüme und Licht von mehrfachen Tony Award-Gewinnern" },
     ],
     tourDates: [
-      { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2024-12-01", endDate: "2027-08-29", eventimUrl: "https://www.stage-entertainment.de/musicals-shows/b/mj-das-michael-jackson-musical-hamburg" },
+      { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2024-12-01", endDate: "2027-08-29", eventimUrl: MJ_STAGE_TEXT_LINK_URL },
     ],
     quotes: [
       { text: "Wir sind überwältigt von der Resonanz des Publikums, das die überragende Qualität dieser Show und seiner Akteure Abend für Abend mit Standing Ovations und Bestnoten feiert.", source: "Uschi Neuss, Geschäftsführerin Stage Entertainment" },
