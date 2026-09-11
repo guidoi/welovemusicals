@@ -607,7 +607,7 @@ export default function MusicalDetail() {
 
       {afterFaqCampaigns.length > 0 && (
         <section
-          className={hasCompactAfterFaqCampaign ? "bg-background pt-6 pb-10 md:pt-8 md:pb-12" : "py-12 md:py-16 bg-background"}
+          className={hasCompactAfterFaqCampaign ? "bg-background pt-2 pb-10 md:pt-3 md:pb-12" : "py-12 md:py-16 bg-background"}
           data-testid="after-faq-campaign-section"
         >
           <div className="container max-w-4xl">
