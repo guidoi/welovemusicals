@@ -34,6 +34,7 @@ import {
   createAwinLink,
   type Musical,
 } from "@/lib/data";
+import { useManagedMusicals } from "@/contexts/PricingContext";
 import { getHeroNavigationItems } from "@/lib/hero-navigation";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
 import {
@@ -58,6 +59,7 @@ const AT_CITIES = new Set(["Graz", "Wien", "Innsbruck", "Linz", "Bad Ischl", "Do
 const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "Luzern", "St. Gallen"]);
 
 export default function Home() {
+  const { musicals: managedMusicals } = useManagedMusicals();
   const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("alle");
   const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
@@ -119,10 +121,10 @@ export default function Home() {
     return () => window.removeEventListener('plz-search-update', handlePlzEvent);
   }, []);
 
-  const featured = useMemo(() => getFeaturedMusicals(), []);
+  const featured = useMemo(() => getFeaturedMusicals(managedMusicals), [managedMusicals]);
   const heroNavigationItems = useMemo(
-    () => getHeroNavigationItems(musicals, ACTIVE_MUSICAL_IDS, FEATURED_MUSICAL_IDS),
-    [],
+    () => getHeroNavigationItems(managedMusicals, ACTIVE_MUSICAL_IDS, FEATURED_MUSICAL_IDS),
+    [managedMusicals],
   );
 
   const handleHeroNavigation = useCallback((href: string, kind: "overview" | "city" | "musical") => {
@@ -160,7 +162,7 @@ export default function Home() {
 
     // Ohne Auswahl bleibt die Übersicht doppelfrei. Sobald gefiltert wird,
     // durchsucht sie das komplette aktive Angebot einschließlich der Highlights.
-    let result = getEditorialOverviewMusicals(hasActiveFilter);
+    let result = getEditorialOverviewMusicals(hasActiveFilter, managedMusicals);
 
     // Filter nach Kategorie
     if (categoryFilter !== "alle") {
@@ -229,7 +231,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, countryFilter, cityFilter, sortOption, plzSearch]);
+  }, [categoryFilter, countryFilter, cityFilter, sortOption, plzSearch, managedMusicals]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 16);
 
@@ -281,7 +283,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{(() => { const s = new Set<string>(); musicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
+                <span className="text-white/80 text-sm">{(() => { const s = new Set<string>(); managedMusicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
               </div>
 
             </div>

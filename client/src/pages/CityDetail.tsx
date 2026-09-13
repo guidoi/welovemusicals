@@ -21,9 +21,12 @@ import { useSEO } from "@/hooks/useSEO";
 import SchemaOrgCity from "@/components/SchemaOrgCity";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import TicketsAndHotel from "@/components/TicketsAndHotel";
+import { CITY_PROGRAM_SUBLINE, getCityProgramHeading } from "@/lib/city-program-heading";
+import { useManagedMusicals } from "@/contexts/PricingContext";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
+  const { musicals: managedMusicals } = useManagedMusicals();
   const city = getCityBySlug(params.slug || "");
 
   useLayoutEffect(() => {
@@ -40,7 +43,7 @@ export default function CityDetail() {
   }, [params.slug]);
 
   // Dynamische SEO-Meta-Tags
-  const musicalCount = city ? getActiveMusicalCountByCity(city.name) : 0;
+  const musicalCount = city ? getActiveMusicalCountByCity(city.name, managedMusicals) : 0;
   const seoTitle = city
     ? `Musicals in ${city.name} – Tickets & Spielorte | We Love Musicals`
     : "Stadt nicht gefunden | We Love Musicals";
@@ -76,7 +79,7 @@ export default function CityDetail() {
     );
   }
 
-  const cityMusicals = getActiveMusicalsByCity(city.name);
+  const cityMusicals = getActiveMusicalsByCity(city.name, managedMusicals);
   const otherCities = [...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).filter((c) => c.slug !== city.slug).slice(0, 5);
 
   return (
@@ -151,13 +154,14 @@ export default function CityDetail() {
       {/* Musicals in this City */}
       <section id="programm" className="py-12 md:py-16 scroll-mt-24">
         <div className="container">
-          <div className="flex items-center gap-4 mb-3">
-            <div className="w-8 h-px bg-gold" />
-            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Programm</span>
+          <div className="mb-8">
+            <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-foreground">
+              {getCityProgramHeading(city.name)}
+            </h2>
+            <p className="mt-2 text-sm uppercase tracking-[0.16em] text-gold">
+              {CITY_PROGRAM_SUBLINE}
+            </p>
           </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
-            Aktuelle Musicals in {city.name}
-          </h2>
 
           {cityMusicals.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

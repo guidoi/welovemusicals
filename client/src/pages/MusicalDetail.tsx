@@ -3,7 +3,7 @@
  * MusicalDetail: Detailseite für einzelnes Musical mit erweiterten Komponenten
  */
 import { useParams, Link } from "wouter";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -37,7 +37,8 @@ import MusicalQuotes from "@/components/MusicalQuotes";
 import MusicalGallery from "@/components/MusicalGallery";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
 import TourDates from "@/components/TourDates";
-import { getMusicalBySlug, musicals, cities, createAwinLink, providers } from "@/lib/data";
+import { cities, createAwinLink, providers } from "@/lib/data";
+import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
@@ -45,15 +46,25 @@ import AovoCampaignBanner, { getAovoCampaign, getAovoCampaigns } from "@/compone
 import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
+import { scheduleScrollToTop } from "@/lib/route-scroll";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug || "";
-  const musical = getMusicalBySlug(slug);
+  const { musicals: managedMusicals } = useManagedMusicals();
+  const musical = managedMusicals.find((candidate) => candidate.slug === slug);
 
-  // Force re-render when slug changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  // Reset after route, frame and layout restoration so cards from a scrolled overview always open at the page start.
+  useLayoutEffect(() => {
+    return scheduleScrollToTop(
+      (options) => window.scrollTo(options),
+      {
+        requestFrame: (callback) => requestAnimationFrame(callback),
+        cancelFrame: (frameId) => cancelAnimationFrame(frameId),
+        setDelay: (callback, delay) => window.setTimeout(callback, delay),
+        clearDelay: (timeoutId) => window.clearTimeout(timeoutId),
+      },
+    );
   }, [slug]);
 
   // Dynamische SEO-Meta-Tags – individuelle Felder aus data.ts haben Vorrang
@@ -125,7 +136,7 @@ export default function MusicalDetail() {
   }
 
   // Get related musicals (same provider or category, excluding current)
-  const related = musicals
+  const related = managedMusicals
     .filter((m) => m.id !== musical.id && (m.provider === musical.provider || m.category === musical.category))
     .slice(0, 3);
 

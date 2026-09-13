@@ -1,0 +1,1 @@
+ALTER TABLE `musical_price_overrides` ADD `saleEnabled` boolean DEFAULT false NOT NULL;

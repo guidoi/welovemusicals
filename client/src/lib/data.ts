@@ -997,7 +997,7 @@ export const musicals: Musical[] = [
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-22_d95ea5c7.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-keyvisual_7428962d.webp",
     keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-keyvisual"),
-    priceFrom: "59,99",
+    priceFrom: "31",
     ticketCtaUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-cta"),
     awinHeroUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-hero"),
     awinStickyUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-sticky"),
@@ -1013,7 +1013,7 @@ export const musicals: Musical[] = [
       { icon: "Sparkles", title: "Rollschuh-Spektakel", text: "Darsteller rasen mit bis zu 50 km/h durch den Zuschauerraum" },
     ],
     seoTitle: "Starlight Express Tickets Bochum 2026/2027 | We Love Musicals",
-    seoDescription: "Starlight Express in Bochum – das Musical der Rekorde mit 19 Mio. Besuchern. Tickets ab 59,99 €, Kinder bis 14 Jahre 50% Ermäßigung. Jetzt buchen!",
+    seoDescription: "Starlight Express in Bochum – das Musical der Rekorde mit 19 Mio. Besuchern. Tickets ab 31 €, Kinder bis 14 Jahre 50% Ermäßigung. Jetzt buchen!",
     tourDates: [
       { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-bochum-dates") },
     ],
@@ -1042,7 +1042,7 @@ export const musicals: Musical[] = [
       { label: "Sprache", value: "Deutsch" },
       { label: "Vorstellungen", value: "Mi–So (Wochenende: Nachmittags- & Abendvorstellung)" },
       { label: "Spielort", value: "STARLIGHT EXPRESS Theater Bochum, Stadionring 24" },
-      { label: "Tickets ab", value: "59,99 EUR (Kinder bis 14 Jahre: 50% Ermäßigung)" },
+      { label: "Tickets ab", value: "31 EUR (Kinder bis 14 Jahre: 50% Ermäßigung)" },
       { label: "Altersempfehlung", value: "Geeignet für alle Altersgruppen ab ca. 5 Jahren" },
     ],
     storyHeadline: "RUSTY UND DER TRAUM VOM SIEG",
@@ -1051,7 +1051,7 @@ export const musicals: Musical[] = [
       { question: "Was ist Starlight Express?", answer: "Starlight Express ist das weltweit am längsten laufende Musical an einem Standort. Seit 1988 läuft die Rollschuh-Show ununterbrochen im eigens erbauten STARLIGHT EXPRESS Theater in Bochum. Musik von Andrew Lloyd Webber, Text von Richard Stilgoe, Regie von Dame Arlene Phillips." },
       { question: "Wo wird Starlight Express gespielt?", answer: "Das Musical wird ausschließlich im STARLIGHT EXPRESS Theater Bochum, Stadionring 24, 44791 Bochum gespielt. Das Theater wurde speziell für die Show erbaut." },
       { question: "Wann finden die Vorstellungen statt?", answer: "Dienstag 18:30 Uhr (in den NRW-Ferien), Mittwoch 18:30 Uhr, Donnerstag 19:30 Uhr, Freitag 19:30 Uhr, Samstag 14:30 & 19:30 Uhr, Sonntag 13:30 & 18:30 Uhr. Donnerstags gibt es außerdem ein Skate Warm-up um 18:00 Uhr (nur in Kombination mit einem Showticket buchbar)." },
-      { question: "Wie viel kosten Tickets?", answer: "Tickets gibt es ab 59,99 EUR zzgl. Versand-, Hinterlegungs- bzw. Onlinekosten. Kinder bis einschließlich 14 Jahren erhalten 50% Ermäßigung." },
+      { question: "Wie viel kosten Tickets?", answer: "Tickets gibt es ab 31 EUR zzgl. Versand-, Hinterlegungs- bzw. Onlinekosten. Kinder bis einschließlich 14 Jahren erhalten 50% Ermäßigung." },
       { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
       { question: "Ab welchem Alter ist das Musical geeignet?", answer: "Starlight Express ist für alle Altersgruppen geeignet, empfohlen ab ca. 5 Jahren. Die Rollschuh-Action und die mitreißende Musik begeistern Kinder und Erwachsene gleichermaßen." },
       { question: "Was macht Starlight Express besonders?", answer: "Die Bühne führt als Rennstrecke direkt durch den Zuschauerraum – die Darsteller rasen mit bis zu 50 km/h am Publikum vorbei. 29 Drohnen als fliegende Sterne, 200 Moving Lights und eine siebenköpfige Live-Band machen die Show zu einem einzigartigen Spektakel." },
@@ -1067,14 +1067,14 @@ export const musicals: Musical[] = [
     title: "DISNEYS DER KÖNIG DER LÖWEN",
     subtitle: "",
     provider: "Stage Entertainment",
-    priceFrom: "42,49",
+    priceFrom: "63,99",
     category: "ensuite",
     categories: ["fester-standort", "familie"],
     city: "Hamburg",
     venue: "Stage Theater im Hafen",
     venuePerCity: { "Hamburg": "Stage Theater im Hafen" },
     cities: ["Hamburg"],
-    description: "Seit 25 Jahren in Hamburg: Disneys DER KÖNIG DER LÖWEN begeistert mit über 17 Millionen Besuchern im Stage Theater im Hafen. Atemberaubende Masken, fantastische Kostüme und die unvergessliche Musik von Elton John und Tim Rice. Tickets ab 42,49 €.",
+    description: "Seit 25 Jahren in Hamburg: Disneys DER KÖNIG DER LÖWEN begeistert mit über 17 Millionen Besuchern im Stage Theater im Hafen. Atemberaubende Masken, fantastische Kostüme und die unvergessliche Musik von Elton John und Tim Rice. Tickets ab 63,99 €.",
     detailHeadline: "SEIT 25 JAHREN HAMBURGS MUSICAL-LEGENDE.",
     detailDescription: "Kein Musical in Deutschland hat mehr Menschen bewegt als Disneys DER KÖNIG DER LÖWEN. Seit dem Jahr 2001 begeistert die Inszenierung von Julie Taymor im Stage Theater im Hafen – über 17 Millionen Besucher haben die Show erlebt, mehr als 9.500 Vorstellungen wurden gespielt. Abend für Abend verwandelt sich das Theater in die afrikanische Savanne – und das Publikum erlebt ein kreatives Feuerwerk der Emotionen.\n\n**Julie Taymors visionäre Inszenierung**\n\nOscar-Preisträgerin Julie Taymor hat die Filmgeschichte in ein einzigartiges Bühnenkunstwerk verwandelt. Über 300 atemberaubende Masken, Puppets und Requisiten sowie mehr als 400 fantastische Kostüme verschmelzen Elemente des afrikanischen und asiatischen Masken- und Schattenspiels zu einer visuellen Sprache, die weltweit ihresgleichen sucht. 37 Darsteller:innen aus über 40 Nationen erwecken die Savanne zum Leben.\n\n**Die Musik: Elton John, Tim Rice und die Klänge Afrikas**\n\nSir Elton John und Tim Rice schufen unvergessliche Hits wie \"Der ewige Kreis\", \"Kann es wirklich Liebe sein\" und \"Hakuna Matata\". Ergänzt durch original afrikanische Rhythmen von Lebo M und die orchestralen Arrangements von Hans Zimmer entsteht ein einzigartiger Klangteppich, der Popmusik und afrikanische Tradition verbindet. 17 Songs in zwei Akten – von der Gänsehaut des Openings bis zum triumphalen Finale.\n\n**Die Geschichte: Simbas Weg zum König**\n\nDer junge Löwe Simba wächst als Sohn von König Mufasa im Geweihten Land auf. Als sein Onkel Scar den König verrät und Simba in die Verbannung treibt, muss der junge Löwe seinen eigenen Weg finden. Begleitet von seinen Freunden Timon und Pumbaa lernt er, Verantwortung zu übernehmen und seinen Platz im ewigen Kreislauf des Lebens einzunehmen. Eine zeitlose Fabel über Mut, Verlust und die Kraft der Liebe.",
     image: "/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg",
@@ -1124,16 +1124,16 @@ export const musicals: Musical[] = [
       { label: "Showdauer", value: "Ca. 2,5 Stunden inkl. Pause" },
       { label: "Sprache", value: "Alle Dialoge und Songs auf Deutsch" },
       { label: "Altersempfehlung", value: "Ab 3 Jahren (kein Einlass unter 3)" },
-      { label: "Tickets ab", value: "42,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "63,99 € (bei Stage Entertainment)" },
     ],
     seoTitle: "Der König der Löwen Musical Hamburg 2026/2027 | Tickets & Infos",
-    seoDescription: "Disneys DER KÖNIG DER LÖWEN im Stage Theater im Hafen Hamburg. Tickets ab 42,49 €. Seit 25 Jahren Hamburgs Musical-Legende – über 17 Mio. Besucher!",
+    seoDescription: "Disneys DER KÖNIG DER LÖWEN im Stage Theater im Hafen Hamburg. Tickets ab 63,99 €. Seit 25 Jahren Hamburgs Musical-Legende – über 17 Mio. Besucher!",
     storyHeadline: "DER EWIGE KREIS DES LEBENS – SIMBAS WEG ZUM KÖNIG",
     storyText: "Im Geweihten Land herrscht König Mufasa weise über alle Tiere der Savanne. Sein Sohn Simba kann es kaum erwarten, eines Tages in die Fußstapfen seines Vaters zu treten. Doch Mufasas Bruder Scar schmiedet einen tödlichen Plan: Er lockt Mufasa in eine Falle und überzeugt den jungen Simba, er sei am Tod seines Vaters schuld.\n\nVoller Schuldgefühle flieht Simba in die Wildnis, wo er auf das ungleiche Duo Timon und Pumbaa trifft. Unter dem Motto \"Hakuna Matata\" – keine Sorgen – lebt er unbeschwert, bis seine Jugendfreundin Nala ihn findet und ihm berichtet, wie Scar das Geweihte Land zugrunde richtet. Simba muss sich seiner Vergangenheit stellen, seinen rechtmäßigen Platz einnehmen und den ewigen Kreislauf des Lebens wiederherstellen.",
     faqItems: [
       { question: "Wo wird Der König der Löwen gespielt?", answer: "Das Musical läuft im Stage Theater im Hafen, Norderelbestraße 6, 20457 Hamburg. Die Anreise erfolgt per kostenlosem Shuttle-Schiff ab den Hamburger Landungsbrücken." },
       { question: "Wie lange läuft die Show noch?", answer: "Die Show läuft mindestens bis April 2027. Ein festes Enddatum gibt es aktuell nicht – Der König der Löwen spielt seit 2001 durchgehend in Hamburg." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 42,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 63,99 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über die offizielle Produktseite von Stage Entertainment erhältlich." },
       { question: "Ist die Show für Kinder geeignet?", answer: "Ja, die Show ist für die ganze Familie geeignet. Kein Einlass für Kinder unter 3 Jahren." },
       { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
@@ -1148,14 +1148,14 @@ export const musicals: Musical[] = [
     title: "MJ – DAS MICHAEL JACKSON MUSICAL",
     subtitle: "",
     provider: "Stage Entertainment",
-    priceFrom: "48,49",
+    priceFrom: "35",
     category: "ensuite",
     categories: ["fester-standort", "erwachsene"],
     city: "Hamburg",
     venue: "Stage Theater an der Elbe",
     venuePerCity: { "Hamburg": "Stage Theater an der Elbe" },
     cities: ["Hamburg"],
-    description: "MJ – Das Michael Jackson Musical in Hamburg: Erlebe die legendären Moves und Welthits des King of Pop live auf der Bühne. Tony Award-prämierte Produktion im Stage Theater an der Elbe. Tickets ab 48,49 €.",
+    description: "MJ – Das Michael Jackson Musical in Hamburg: Erlebe die legendären Moves und Welthits des King of Pop live auf der Bühne. Tony Award-prämierte Produktion im Stage Theater an der Elbe. Tickets ab 35 €.",
     detailHeadline: "DER KING OF POP. LIVE AUF DER BÜHNE.",
     detailDescription: "Seit der Premiere am 1. Dezember 2024 hat sich MJ – Das Michael Jackson Musical zu einem echten Publikumsmagneten entwickelt. In nur 17 Monaten erreichte die Show die Marke von 1 Million Zuschauer:innen in Hamburg – ein Rekord, den zuvor nur Disneys DER KÖNIG DER LÖWEN schaffte.\n\n**Die Geschichte hinter dem Genie**\n\nRund um die Entstehungsgeschichte der legendären \"Dangerous\"-Welttournee 1992 präsentiert MJ einige der beliebtesten und meistverkauften Songs der Musikgeschichte und geht über die einzigartigen Moves und den unverwechselbaren Sound des Stars weit hinaus. Das Bühnenspektakel bietet einen seltenen Einblick in den kreativen Geist und die Zusammenarbeit, die Michael Jackson in den Status einer Legende katapultiert haben.\n\n**Tony Award-prämierte Inszenierung**\n\nInszeniert vom Tony Award- und Olivier Award-ausgezeichneten Regisseur und Choreographen Christopher Wheeldon und der zweifachen Pulitzer-Preisträgerin Lynn Nottage, vereint MJ ein Kreativteam der Weltklasse: Bühnenbild von Derek McLane (\"Moulin Rouge!\"), Lichtdesign von Natasha Katz, Kostümdesign von Paul Tazewell (\"Hamilton\") und Sound Design von Gareth Owen.\n\n**Welterfolg mit über 7 Millionen Zuschauern**\n\nOb am Broadway, im Londoner West End oder auf Touren durch Nordamerika und Australien – weltweit haben bereits mehr als 7 Millionen Zuschauer die Show erlebt. In Hamburg begeistert Benét Monteiro in der Hauptrolle und bringt Michael Jacksons unvergleichliche Energie Abend für Abend auf die Bühne.",
     image: "/images/mj/MJ_HH_Smooth_Criminal_Stage.jpg",
@@ -1203,16 +1203,16 @@ export const musicals: Musical[] = [
       { label: "Showdauer", value: "Ca. 2,5 Stunden inkl. Pause" },
       { label: "Sprache", value: "Songs auf Englisch, Dialoge auf Deutsch" },
       { label: "Altersempfehlung", value: "Ab 6 Jahren" },
-      { label: "Tickets ab", value: "48,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "35 € (bei Stage Entertainment)" },
     ],
     seoTitle: "MJ – Das Michael Jackson Musical Hamburg 2026/2027 | Tickets & Infos",
-    seoDescription: "MJ – Das Michael Jackson Musical im Stage Theater an der Elbe Hamburg. Tickets ab 48,49 €. Über 25 Welthits live – Thriller, Billie Jean, Smooth Criminal. Tony Award-prämiert!",
+    seoDescription: "MJ – Das Michael Jackson Musical im Stage Theater an der Elbe Hamburg. Tickets ab 35 €. Über 25 Welthits live – Thriller, Billie Jean, Smooth Criminal. Tony Award-prämiert!",
     storyHeadline: "DIE ENTSTEHUNG EINER LEGENDE – HINTER DEN KULISSEN DER DANGEROUS-TOUR",
     storyText: "Das Jahr 1992: Michael Jackson steht vor der größten Herausforderung seiner Karriere. Die \"Dangerous\"-Welttournee soll alles Bisherige übertreffen – doch der Weg dorthin ist gepflastert mit kreativen Konflikten, persönlichen Opfern und dem unbändigen Willen zur Perfektion.\n\nMJ – Das Musical nimmt das Publikum mit hinter die Kulissen dieser legendären Tour-Vorbereitung. Wir erleben einen Künstler, der mit seinem Team ringt, der seine Choreographen an ihre Grenzen treibt und der selbst nie zufrieden ist – bis jeder Move, jeder Ton, jeder Lichtstrahl perfekt sitzt. Es ist die Geschichte eines Genies, das die Welt der Unterhaltung für immer verändert hat.",
     faqItems: [
       { question: "Wo wird MJ – Das Michael Jackson Musical gespielt?", answer: "Das Musical läuft im Stage Theater an der Elbe, Norderelbstraße 8, 20457 Hamburg." },
       { question: "Wie lange läuft die Show noch?", answer: "Tickets sind aktuell bis August 2027 verfügbar. Die hohe Nachfrage spricht für eine weitere Verlängerung." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 48,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 35 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über Stage Entertainment sowie direkt auf musicals.de erhältlich." },
       { question: "Ist die Show für Kinder geeignet?", answer: "Die Show ist ab 6 Jahren empfohlen. Kinder unter 3 Jahren haben keinen Zutritt." },
       { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
@@ -1227,7 +1227,7 @@ export const musicals: Musical[] = [
     title: "DISNEYS DIE EISKÖNIGIN",
     subtitle: "Das Musical",
     provider: "Stage Entertainment",
-    priceFrom: "38,49",
+    priceFrom: "39,99",
     category: "fester-standort",
     categories: ["fester-standort", "familie", "kinder"],
     city: "Stuttgart",
@@ -1284,16 +1284,16 @@ export const musicals: Musical[] = [
       { label: "Showdauer", value: "Ca. 2,5 Stunden inkl. Pause" },
       { label: "Sprache", value: "Alle Dialoge und Songs auf Deutsch" },
       { label: "Altersempfehlung", value: "Ab 4 Jahren" },
-      { label: "Tickets ab", value: "38,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "39,99 € (bei Stage Entertainment)" },
     ],
     seoTitle: "Disneys Die Eiskönigin Musical Stuttgart 2026/2027 | Tickets & Infos",
-    seoDescription: "Disneys DIE EISKÖNIGIN – Das Musical im Stage Apollo Theater Stuttgart. Tickets ab 38,49 €. Elsa, Anna, Olaf live auf der Bühne – noch bis Januar 2027!",
+    seoDescription: "Disneys DIE EISKÖNIGIN – Das Musical im Stage Apollo Theater Stuttgart. Tickets ab 39,99 €. Elsa, Anna, Olaf live auf der Bühne – noch bis Januar 2027!",
     storyHeadline: "EIN KÖNIGREICH AUS EIS – UND DIE LIEBE, DIE ES RETTET",
     storyText: "Das Königreich Arendelle feiert die Krönung von Prinzessin Elsa – doch die Feierlichkeiten enden abrupt, als Elsas geheime Eismagie außer Kontrolle gerät. In einem Moment der Panik verwandelt sie das gesamte Königreich in eine eisige Winterlandschaft und flieht in die Berge, um niemanden mehr zu gefährden.\n\nIhre jüngere Schwester Anna lässt sich davon nicht aufhalten. Gemeinsam mit dem Eislieferanten Kristoff, seinem treuen Rentier Sven und dem lebensfrohen Schneemann Olaf bricht sie auf, um Elsa zu finden und den ewigen Winter zu beenden. Was sie dabei lernt: Wahre Liebe ist nicht das, was sie erwartet hat – und manchmal ist die stärkste Magie von allen die Kraft, die zwischen Schwestern besteht.",
     faqItems: [
       { question: "Wo wird Disneys Die Eiskönigin gespielt?", answer: "Das Musical läuft im Stage Apollo Theater im SI-Centrum Stuttgart, Plieninger Straße 100, 70567 Stuttgart." },
       { question: "Wie lange läuft die Show noch?", answer: "Die Spielzeit wurde bis Januar 2027 verlängert. Es sind also noch rund 10 Monate Zeit, die Show zu erleben." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 38,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 39,99 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über Stage Entertainment sowie direkt auf musicals.de erhältlich." },
       { question: "Ist die Show für Kinder geeignet?", answer: "Ja, die Show ist ab 4 Jahren empfohlen und ein echtes Erlebnis für die ganze Familie." },
       { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2,5 Stunden inklusive einer Pause." },
@@ -1307,14 +1307,14 @@ export const musicals: Musical[] = [
     title: "DISNEYS MUSICAL TARZAN",
     subtitle: "",
     provider: "Stage Entertainment",
-    priceFrom: "69,49",
+    priceFrom: "66,99",
     category: "ensuite",
     categories: ["fester-standort", "familie", "kinder"],
     city: "Hamburg",
     venue: "Stage Theater Neue Flora",
     venuePerCity: { "Hamburg": "Stage Theater Neue Flora" },
     cities: ["Hamburg"],
-    description: "Disneys Musical TARZAN in Hamburg: Erlebe das spektakulärste Musical unserer Zeit mit atemberaubender 360°-Luftakrobatik und der Oscar-prämierten Musik von Phil Collins. Nur noch bis Oktober im Stage Theater Neue Flora. Tickets ab 69,49 €.",
+    description: "Disneys Musical TARZAN in Hamburg: Erlebe das spektakulärste Musical unserer Zeit mit atemberaubender 360°-Luftakrobatik und der Oscar-prämierten Musik von Phil Collins. Nur noch bis Oktober im Stage Theater Neue Flora. Tickets ab 66,99 €.",
     detailHeadline: "DAS SPEKTAKULÄRSTE MUSICAL UNSERER ZEIT.",
     detailDescription: "Hamburg macht sich bereit für das Wiedersehen mit einem Publikumsliebling: Disneys Musical TARZAN ist zurück in der Stadt, in der 2008 alles begann. Im Stage Theater Neue Flora erleben Sie die einzigartige 360°-Inszenierung, die über 5 Millionen Gäste in Deutschland begeistert hat – nur noch bis Oktober 2026.\n\n**Luftakrobatik, die keine Grenzen kennt**\n\nDie Darsteller spielen nicht nur vor Ihnen auf der Bühne, sondern auch neben und über Ihnen. An Lianen schwingen sie sich über Ihren Köpfen von Wipfel zu Wipfel und legen dabei bis zu 30 Meter lange Flugbahnen zurück. Rund 300 Flugeinsätze hält die Show bereit – allein der Titelheld Tarzan verbringt 80 Prozent der Vorstellung in luftigen Höhen. Ein Mittendrin-Erlebnis, das es so kein zweites Mal gibt.\n\n**Oscar-prämierte Musik von Phil Collins**\n\nDie ergreifende Ballade \"Dir gehört mein Herz\" wurde mit einem Grammy und einem Oscar ausgezeichnet. Dazu kommen Hits wie \"Zwei Welten\", \"Du brauchst einen Freund\" und \"Fremde wie ich\" – Songs, die unter die Haut gehen. Phil Collins war maßgeblich an der deutschen Fassung beteiligt und nennt TARZAN sein \"Baby\".\n\n**Eine Geschichte, die seit über 100 Jahren begeistert**\n\nDie bezaubernde Geschichte vom Waisenkind, das im Dschungel von Affen aufgezogen wird und sich als junger Mann in die schöne Jane verliebt, berührt Alt und Jung gleichermaßen. Tarzan muss sich entscheiden: Bleibt er bei seiner Affenfamilie – oder folgt er seiner Liebe in die Welt der Menschen?",
     image: "/images/tarzan/tarzan-terence.jpg",
@@ -1329,6 +1329,11 @@ export const musicals: Musical[] = [
     youtubeTrailerId: "-N3CbbBAyMM",
     featured: true,
     tags: ["Disney", "Familie", "Ensuite"],
+    sale: {
+      label: "FAMILIEN:",
+      discount: "BIS 15 %",
+      note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
+    },
     uspItems: [
       { icon: "Wind", title: "Einzigartige 360°-Luftakrobatik", text: "300 Flugeinsätze, bis zu 30m Flugbahnen – Tarzan verbringt 80% der Show in der Luft" },
       { icon: "Music", title: "Oscar-prämierte Musik von Phil Collins", text: "\"Dir gehört mein Herz\", \"Zwei Welten\" und weitere unvergessliche Hits" },
@@ -1366,16 +1371,16 @@ export const musicals: Musical[] = [
       { label: "Showdauer", value: "Ca. 2 Stunden 50 Minuten inkl. Pause" },
       { label: "Sprache", value: "Deutsch" },
       { label: "Altersempfehlung", value: "Ab 6 Jahren" },
-      { label: "Tickets ab", value: "69,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "66,99 € (bei Stage Entertainment)" },
     ],
     seoTitle: "Disneys Musical TARZAN Hamburg 2025/2026 | Tickets & Infos",
-    seoDescription: "Disneys Musical TARZAN im Stage Theater Neue Flora Hamburg. Tickets ab 69,49 €. Einzigartige 360°-Luftakrobatik und Oscar-prämierte Musik von Phil Collins. Nur noch bis Oktober 2026!",
+    seoDescription: "Disneys Musical TARZAN im Stage Theater Neue Flora Hamburg. Tickets ab 66,99 €. Einzigartige 360°-Luftakrobatik und Oscar-prämierte Musik von Phil Collins. Nur noch bis Oktober 2026!",
     storyHeadline: "ZWEI WELTEN – EINE LIEBE: DIE GESCHICHTE VON TARZAN",
     storyText: "Tarzan wird als Waisenkind von der Gorilladame Kala im Dschungel aufgezogen. Obwohl er anders aussieht als seine Affenfamilie, wächst er zu einem starken jungen Mann heran, der sich im Urwald zuhause fühlt. Doch als eines Tages die Forscherin Jane mit ihrem Vater Professor Porter und dem zwielichtigen Jäger Clayton im Dschungel auftaucht, verändert sich Tarzans Welt für immer.\n\nZum ersten Mal begegnet er einem Menschen – und erkennt, dass er selbst einer ist. Zwischen Tarzan und Jane entsteht eine tiefe Verbindung, die beide Welten zusammenbringt. Doch Tarzan steht vor der schwersten Entscheidung seines Lebens: Soll er bei seiner Affenfamilie bleiben, die ihn großgezogen hat? Oder folgt er seiner Liebe zu Jane in die Welt der Menschen?\n\nEine zeitlose Geschichte über Zugehörigkeit, Identität und die Kraft der Liebe – erzählt mit atemberaubender Akrobatik und der unvergesslichen Musik von Phil Collins.",
     faqItems: [
       { question: "Wo wird Disneys Musical TARZAN gespielt?", answer: "Das Musical läuft im Stage Theater Neue Flora, Stresemannstraße 163, 20257 Hamburg." },
       { question: "Wie lange läuft die Show noch?", answer: "Disneys Musical TARZAN ist nur noch bis Oktober 2026 in Hamburg zu sehen – ein zeitlich begrenztes Comeback." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 69,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 66,99 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über Stage Entertainment sowie direkt auf stage-entertainment.de erhältlich." },
       { question: "Ist die Show für Kinder geeignet?", answer: "Das Musical wird ab 6 Jahren empfohlen. Grundsätzlich ist der Einlass ab 3 Jahren gestattet." },
       { question: "Wie lange dauert die Vorstellung?", answer: "Die Vorstellung dauert ca. 2 Stunden und 50 Minuten inklusive einer Pause." },
@@ -1389,14 +1394,14 @@ export const musicals: Musical[] = [
     title: "ZURÜCK IN DIE ZUKUNFT",
     subtitle: "DAS MUSICAL",
     provider: "Stage Entertainment",
-    priceFrom: "62,49",
+    priceFrom: "44,79",
     category: "ensuite",
     categories: ["fester-standort", "familie"],
     city: "Hamburg",
     venue: "Stage Operettenhaus",
     venuePerCity: { "Hamburg": "Stage Operettenhaus" },
     cities: ["Hamburg"],
-    description: "ZURÜCK IN DIE ZUKUNFT – Das Musical in Hamburg: Erlebe den Kult-Film der 80er als preisgekröntes Musical-Spektakel mit dem legendären DeLorean live auf der Bühne. Deutschlandpremiere im Stage Operettenhaus. Tickets ab 62,49 €.",
+    description: "ZURÜCK IN DIE ZUKUNFT – Das Musical in Hamburg: Erlebe den Kult-Film der 80er als preisgekröntes Musical-Spektakel mit dem legendären DeLorean live auf der Bühne. Deutschlandpremiere im Stage Operettenhaus. Tickets ab 44,79 €.",
     detailHeadline: "DER FLUXKOMPENSATOR IST AKTIVIERT!",
     detailDescription: "Synchronisiert Eure Uhren und reist mit Marty McFly, Doc Brown und dem kultigen DeLorean in ZURÜCK IN DIE ZUKUNFT – Das Musical zurück ins Jahr 1985. Die preisgekrönte Musical-Sensation feiert ihre Deutschlandpremiere im Hamburger Stage Operettenhaus – und bringt den Kult-Film der 80er Jahre als elektrisierendes Bühnenerlebnis nach Deutschland.\n\n**Nah am Original – mit Musical-Power**\n\nAls Marty McFly sich in einer Zeitmaschine ins Jahr 1955 zurückversetzt, ändert er versehentlich den Lauf der Geschichte. Er befindet sich in einem Wettlauf gegen die Zeit, um die Gegenwart in Ordnung zu bringen, der Vergangenheit zu entkommen und sich selbst… Zurück in die Zukunft zu schicken. Das mehrfach ausgezeichnete Musical bleibt mit seinen witzigen Dialogen nah am Original und präsentiert die Hits des Blockbusters, darunter The Power of Love (Huey Lewis & The News), Earth Angel (Marvin Berry & The Starlighters) und Johnny B. Goode (Chuck Berry).\n\n**Bühneneffekte der Extraklasse**\n\nGroßartiges Grafik- und Lichtdesign mit Bühneneffekten der Extraklasse machen diese Show zu einem atemberaubenden Musicalereignis. Das Publikum ist live dabei, wenn Marty und Doc mit 140 km/h durch das Gewitter über die Bühne rasen, knapp entkommen und das Zeit-Raum-Kontinuum durchbrechen. Besonders beeindruckend: Der lebensgroße DeLorean!\n\n**Ein Musical für die ganze Familie**\n\nSpätestens, wenn das spektakuläre Musical 140 km/h erreicht, wird nach unseren Berechnungen die ganze Familie begeistert sein. Legt Eure Zielzeit für Hamburg fest und macht Euch bereit für das elektrisierende Musical-Spektakel!",
     image: "/images/ziz/marty-und-company-1.jpg",
@@ -1443,16 +1448,16 @@ export const musicals: Musical[] = [
       { label: "Spielzeit", value: "Ab Frühjahr 2026 (Deutschlandpremiere)" },
       { label: "Sprache", value: "Deutsch" },
       { label: "Altersempfehlung", value: "Ab 6 Jahren" },
-      { label: "Tickets ab", value: "62,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "44,79 € (bei Stage Entertainment)" },
     ],
     seoTitle: "ZURÜCK IN DIE ZUKUNFT – Das Musical Hamburg 2026 | Tickets & Infos",
-    seoDescription: "ZURÜCK IN DIE ZUKUNFT – Das Musical im Stage Operettenhaus Hamburg. Tickets ab 62,49 €. Deutschlandpremiere 2026 mit dem legendären DeLorean, Hits aus dem Kult-Film und Bühneneffekten der Extraklasse.",
+    seoDescription: "ZURÜCK IN DIE ZUKUNFT – Das Musical im Stage Operettenhaus Hamburg. Tickets ab 44,79 €. Deutschlandpremiere 2026 mit dem legendären DeLorean, Hits aus dem Kult-Film und Bühneneffekten der Extraklasse.",
     storyHeadline: "WILLKOMMEN IN HILL VALLEY – DIE GESCHICHTE",
     storyText: "Als der Teenager Marty McFly in einer von dem exzentrischen Wissenschaftler Doc Brown gebauten Zeitmaschine – einem umgebauten DeLorean – versehentlich ins Jahr 1955 zurückversetzt wird, verändert er den Lauf der Geschichte. Seine Eltern lernen sich nicht kennen, und Marty droht aus der Existenz zu verschwinden.\n\nNun beginnt ein Wettlauf mit der Zeit: Marty muss seine Eltern zusammenbringen, den Lauf der Geschichte korrigieren und einen Weg finden, sich selbst zurück in die Zukunft zu schicken – bevor es zu spät ist. Dabei hilft ihm der junge Doc Brown, der von Martys Zeitreise-Geschichte zunächst nichts wissen will.\n\nEine Geschichte über Freundschaft, Familie und den Mut, sein Schicksal selbst in die Hand zu nehmen – verpackt in ein elektrisierendes Musical-Spektakel mit legendärer Filmmusik.",
     faqItems: [
       { question: "Wo wird ZURÜCK IN DIE ZUKUNFT – Das Musical gespielt?", answer: "Das Musical läuft im Stage Operettenhaus, Spielbudenplatz 1, 20359 Hamburg – mitten auf der Reeperbahn." },
       { question: "Ab wann ist das Musical in Hamburg zu sehen?", answer: "Die Deutschlandpremiere findet im Frühjahr 2026 statt. Tickets sind bereits im Vorverkauf erhältlich." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 62,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 44,79 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über Stage Entertainment sowie direkt auf stage-entertainment.de erhältlich." },
       { question: "Ist die Show für Kinder geeignet?", answer: "Das Musical wird ab 6 Jahren empfohlen und ist ein Spaß für die ganze Familie." },
       { question: "Welche Songs sind im Musical zu hören?", answer: "Das Musical enthält die Hits des Films wie The Power of Love (Huey Lewis & The News), Earth Angel und Johnny B. Goode sowie neue Musical-Songs." },
@@ -1466,14 +1471,14 @@ export const musicals: Musical[] = [
     title: "DER TEUFEL TRÄGT PRADA",
     subtitle: "",
     provider: "Stage Entertainment",
-    priceFrom: "49,49",
+    priceFrom: "46,99",
     category: "ensuite",
     categories: ["fester-standort"],
     city: "Hamburg",
     venue: "Stage Theater an der Elbe",
     venuePerCity: { "Hamburg": "Stage Theater an der Elbe" },
     cities: ["Hamburg"],
-    description: "DER TEUFEL TRÄGT PRADA – Das Musical in Hamburg: Glamourös, scharf und überragend! Mit Songs von Elton John und opulentem Mode-Glamour ab Dezember 2026 im Stage Theater an der Elbe. Tickets ab 49,49 €.",
+    description: "DER TEUFEL TRÄGT PRADA – Das Musical in Hamburg: Glamourös, scharf und überragend! Mit Songs von Elton John und opulentem Mode-Glamour ab Dezember 2026 im Stage Theater an der Elbe. Tickets ab 46,99 €.",
     detailHeadline: "GLAMOURÖS. SCHARF. ÜBERRAGEND.",
     detailDescription: "DER TEUFEL TRÄGT PRADA – Das Musical ist \"Eine atemberaubende Show!\" (Lily Collins). Glamourös. Scharf. Überragend. Das Musical kommt nach einem erfolgreichen Start am Londoner West End nach Hamburg. Mit mitreißenden Songs von Weltstar Elton John, scharfem Witz und purem Mode-Glamour erobert es ab Dezember 2026 die Musicalstadt.\n\n**Von der Redaktion auf den Laufsteg**\n\nBasierend auf dem legendären Film aus den 2000ern und dem Bestseller-Roman von Lauren Weisberger verspricht diese Show einen teuflisch guten Abend voller Mode, Macht und Emotionen. Die frischgebackene Journalistin Andy Sachs ergattert einen Job beim renommierten Modemagazin Runway – und arbeitet fortan für die gefürchtetste Ikone der Modewelt: Chefredakteurin Miranda Priestly.\n\n**Ein gnadenloser Balanceakt**\n\nUm deren unmögliche Forderungen zu erfüllen, opfert Andy ihr Privatleben und lässt sich zunehmend von einer glamourösen Welt verführen, die sie einst verachtet hat. Ihr Job beim Modemagazin wird zu einem gnadenlosen Balanceakt zwischen Selbstverwirklichung, Loyalität und persönlichem Glück. Doch wie weit ist sie bereit zu gehen, um erfolgreich zu sein?\n\n**Musical der Extraklasse**\n\nSpektakuläre Mode, pointierte Dialoge und mitreißende Choreografien machen DER TEUFEL TRÄGT PRADA zu einem Musical der Extraklasse. Die Songtexte stammen von Shaina Taub und Mark Sonnenblick, das Buch von Lauren Weisberger und Kate Wetherhead, und Regie & Choreografie verantwortet der dreifache Tony-Award-Gewinner Jerry Mitchell (Kinky Boots, Legally Blonde, Pretty Woman, Hairspray).",
     image: "/images/prada/prada-fashionshow.webp",
@@ -1515,16 +1520,16 @@ export const musicals: Musical[] = [
       { label: "Spielzeit", value: "12. Dezember 2026 – 29. August 2027" },
       { label: "Sprache", value: "Deutsch" },
       { label: "Musik", value: "Elton John" },
-      { label: "Tickets ab", value: "49,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "46,99 € (bei Stage Entertainment)" },
     ],
     seoTitle: "DER TEUFEL TRÄGT PRADA – Das Musical Hamburg 2026 | Tickets & Infos",
-    seoDescription: "DER TEUFEL TRÄGT PRADA – Das Musical im Stage Theater an der Elbe Hamburg. Tickets ab 49,49 €. Mit Songs von Elton John, spektakulärer Mode und dem West End-Erfolg ab Dezember 2026.",
+    seoDescription: "DER TEUFEL TRÄGT PRADA – Das Musical im Stage Theater an der Elbe Hamburg. Tickets ab 46,99 €. Mit Songs von Elton John, spektakulärer Mode und dem West End-Erfolg ab Dezember 2026.",
     storyHeadline: "WILLKOMMEN BEI RUNWAY – DIE GESCHICHTE",
     storyText: "Die frischgebackene Journalistin Andy Sachs ergattert einen Job beim renommierten Modemagazin Runway – und arbeitet fortan für die gefürchtetste Ikone der Modewelt: Chefredakteurin Miranda Priestly. Um deren unmögliche Forderungen zu erfüllen, opfert Andy ihr Privatleben und lässt sich zunehmend von einer glamourösen Welt verführen, die sie einst verachtet hat.\n\nIhr Job beim Modemagazin wird zu einem gnadenlosen Balanceakt zwischen Selbstverwirklichung, Loyalität und persönlichem Glück. Doch wie weit ist sie bereit zu gehen, um erfolgreich zu sein? Und lohnt es sich, dafür die eigene Seele zu verkaufen?\n\nEine Geschichte über Ambitionen, Selbstfindung und die Frage, was wirklich zählt im Leben – verpackt in ein glamouröses Musical-Spektakel mit der Musik von Elton John.",
     faqItems: [
       { question: "Wo wird DER TEUFEL TRÄGT PRADA – Das Musical gespielt?", answer: "Das Musical läuft im Stage Theater an der Elbe in Hamburg." },
       { question: "Ab wann ist das Musical in Hamburg zu sehen?", answer: "Die Deutschlandpremiere ist am 12. Dezember 2026. Tickets sind bereits im Vorverkauf erhältlich." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 49,49 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 46,99 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über Stage Entertainment sowie direkt auf stage-entertainment.de erhältlich." },
       { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt von Weltstar Elton John. Die Songtexte schrieben Shaina Taub und Mark Sonnenblick." },
       { question: "Worauf basiert das Musical?", answer: "Das Musical basiert auf dem gleichnamigen Bestseller-Roman von Lauren Weisberger und dem legendären Film mit Meryl Streep und Anne Hathaway." },
@@ -1682,13 +1687,13 @@ export const musicals: Musical[] = [
     title: "TANZ DER VAMPIRE",
     subtitle: "Das Musical",
     provider: "Stage Entertainment",
-    priceFrom: "42,49",
+    priceFrom: "49,99",
     category: "ensuite",
     categories: ["fester-standort", "erwachsene"],
     city: "Stuttgart",
     venue: "Stage Apollo Theater",
     cities: ["Stuttgart"],
-    description: "TANZ DER VAMPIRE – Das Kult-Musical von Michael Kunze und Jim Steinman kehrt zum 30-jährigen Jubiläum in einer eindrucksvollen Neuproduktion zurück nach Stuttgart. Ab März 2027 im Stage Apollo Theater. Tickets ab 42,49 €.",
+    description: "TANZ DER VAMPIRE – Das Kult-Musical von Michael Kunze und Jim Steinman kehrt zum 30-jährigen Jubiläum in einer eindrucksvollen Neuproduktion zurück nach Stuttgart. Ab März 2027 im Stage Apollo Theater. Tickets ab 49,99 €.",
     detailHeadline: "DIE EWIGKEIT BEGINNT 2027",
     detailDescription: "Endlich kehrt eines der erfolgreichsten deutschsprachigen Musicals aller Zeiten zurück nach Stuttgart: Tanz der Vampire. Pünktlich zum 30-jährigen Jubiläum lädt das Kult-Musical von Michael Kunze und Jim Steinman in einer eindrucksvollen Neuproduktion des Originals erneut zum Mitternachtsball – mystischer, faszinierender und unheimlicher als je zuvor.\n\n**Große Emotion, schauriger Humor, mitreißende Musik**\n\nMit seiner einzigartigen Mischung aus großer Emotion, schaurig-schönem Humor und mitreißender Musik begeistert Tanz der Vampire seit fast drei Jahrzehnten ein Millionenpublikum weltweit. Rockig-gefühlvolle Balladen, spektakuläre Tanzszenen, opulente Bühnenbilder und detailreiche Kostüme machen jede Vorstellung zu einem unvergesslichen Erlebnis voller Gänsehautmomente.\n\n**Ein weltweites Phänomen**\n\nSeit der Uraufführung 1997 im Wiener Raimund Theater hat sich das Musical zu einem weltweiten Phänomen entwickelt. Über 11 Millionen Zuschauer in 15 Ländern und 13 Sprachen sowie mehr als 11.000 Vorstellungen sprechen für sich. Besonders Stuttgart zählt zu den erfolgreichsten Spielorten überhaupt: Mehr als 3,7 Millionen Besucher haben die Vampire hier bereits gefeiert – und immer wieder zurückverlangt.\n\nLassen Sie sich von Tanz der Vampire in eine faszinierende Welt zwischen Verführung und Ewigkeit entführen. Ab Frühjahr 2027 im Stage Apollo Theater Stuttgart.",
     image: "/images/tanz-der-vampire/tdv-theater.webp",
@@ -1724,7 +1729,7 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Spielort", value: "Stage Apollo Theater, Stuttgart" },
       { label: "Spielzeit", value: "11.03.2027 – 30.09.2027" },
-      { label: "Tickets ab", value: "42,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "49,99 € (bei Stage Entertainment)" },
       { label: "Sprache", value: "Deutsch" },
     ],
     storyHeadline: "WILLKOMMEN IN TRANSSILVANIEN – DIE GESCHICHTE",
@@ -1734,10 +1739,10 @@ export const musicals: Musical[] = [
       { question: "Wer hat die Musik geschrieben?", answer: "Die Musik stammt von Jim Steinman (Bat Out of Hell), das Buch von Michael Kunze. Die Originalproduktion wurde von Roman Polanski inszeniert." },
       { question: "Wo wird Tanz der Vampire aufgeführt?", answer: "Im Stage Apollo Theater in Stuttgart." },
       { question: "Wann ist Spielzeit?", answer: "Vom 11. März 2027 bis 30. September 2027." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 42,49 € erhältlich." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 49,99 € erhältlich." },
       { question: "Warum ist Stuttgart besonders?", answer: "Stuttgart zählt mit über 3,7 Millionen Besuchern zu den erfolgreichsten Spielorten für Tanz der Vampire weltweit." },
     ],
-    seoTitle: "TANZ DER VAMPIRE – Das Musical Stuttgart 2027 | Tickets ab 42,49 €",
+    seoTitle: "TANZ DER VAMPIRE – Das Musical Stuttgart 2027 | Tickets ab 49,99 €",
     seoDescription: "TANZ DER VAMPIRE kehrt zum 30-jährigen Jubiläum zurück nach Stuttgart! Das Kult-Musical von Michael Kunze & Jim Steinman ab 11.03.2027 im Stage Apollo Theater. Jetzt Tickets sichern!",
   },
   {
@@ -1837,6 +1842,11 @@ export const musicals: Musical[] = [
     youtubeTrailerId: "o7OjpWsGkbY",
     featured: false,
     tags: ["Komödie", "Plate & Sommer", "Steffi Irmen"],
+    sale: {
+      label: "AKTION:",
+      discount: "2 FÜR 1",
+      note: "Zwei Tickets zum Preis von einem",
+    },
     uspItems: [
       { icon: "Star", title: "Steffi Irmen & Kathi Damerow", text: "Berlins größter Musicalstar und eine gefeierte Musicaldarstellerin gemeinsam auf der Bühne" },
       { icon: "Music", title: "Hits von Plate & Sommer", text: "Die größten Hits und brandneue Songs von Peter Plate, Ulf Leo Sommer und Joshua Lange" },
@@ -1880,13 +1890,13 @@ export const musicals: Musical[] = [
     title: "& JULIA",
     subtitle: "Das Pop-Musical",
     provider: "Stage Entertainment",
-    priceFrom: "42,49",
+    priceFrom: "49,99",
     category: "ensuite",
     categories: ["fester-standort", "erwachsene", "familie"],
     city: "Stuttgart",
     venue: "Stage Palladium Theater",
     cities: ["Stuttgart"],
-    description: "& JULIA – Das Pop-Musical mit 24 Nummer-1-Hits im Stage Palladium Theater Stuttgart. Roar, Can't Stop The Feeling, Perfect und viele mehr. Tickets ab 42,49 €.",
+    description: "& JULIA – Das Pop-Musical mit 24 Nummer-1-Hits im Stage Palladium Theater Stuttgart. Roar, Can't Stop The Feeling, Perfect und viele mehr. Tickets ab 49,99 €.",
     detailHeadline: "WE CAN'T STOP THE FEELING! DAS MUSICAL MIT PARTY-GARANTIE.",
     detailDescription: "Was wäre, wenn Julia nach Romeos Tod nicht sterben würde – sondern eine zweite Chance auf das Leben und die Liebe bekäme?\n\nGenau davon erzählt & JULIA – Das Pop-Musical: eine freche, turbulente und überraschend moderne Neuerzählung von Shakespeares berühmtester Liebesgeschichte. Nach dem gefeierten Erfolg in Hamburg feiert das Feel-Good-Musical ab Herbst 2026 seine Stuttgart-Premiere im Stage Palladium Theater.\n\n**Aus dem tragischen Ende wird ein euphorischer Neuanfang**\n\nNach Romeos Tod lässt Julia das Drama von Verona hinter sich und bricht nach Paris auf. Dort warten neue Abenteuer, große Gefühle und Herausforderungen – und die Chance, ihr Schicksal selbst in die Hand zu nehmen.\n\n& JULIA verbindet Humor, Herz und Empowerment zu einer mitreißenden Komödie, in der das 16. Jahrhundert auf die Popkultur der 90er- und 2000er-Jahre trifft. Mit Welthits wie \"Roar\" von Katy Perry, \"Can't Stop The Feeling!\" von Justin Timberlake, \"Perfect\" von P!nk und insgesamt 24 Nummer-1-Pop-Hits in englischer Originalfassung.",
     image: "/images/und-julia/und-julia-szene-04.webp",
@@ -1929,7 +1939,7 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Spielort", value: "Stage Palladium Theater, Stuttgart" },
       { label: "Spielzeit", value: "30.09.2026 – 02.05.2027" },
-      { label: "Tickets ab", value: "42,49 € (bei Stage Entertainment)" },
+      { label: "Tickets ab", value: "49,99 € (bei Stage Entertainment)" },
       { label: "Songs", value: "24 Nummer-1-Pop-Hits in englischer Originalfassung" },
       { label: "Veranstalter", value: "Stage Entertainment" },
     ],
@@ -1941,9 +1951,9 @@ export const musicals: Musical[] = [
       { question: "Ist & JULIA für Kinder geeignet?", answer: "& JULIA ist für alle ab ca. 10 Jahren geeignet – eine bunte, energiegeladene Feel-Good-Show für die ganze Familie." },
       { question: "Wo wird & JULIA aufgeführt?", answer: "Im Stage Palladium Theater in Stuttgart." },
       { question: "Wann ist Spielzeit?", answer: "Vom 30. September 2026 bis 02. Mai 2027." },
-      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 42,49 € erhältlich." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 49,99 € erhältlich." },
     ],
-    seoTitle: "& JULIA – Das Pop-Musical Stuttgart 2026 | Tickets ab 42,49 €",
+    seoTitle: "& JULIA – Das Pop-Musical Stuttgart 2026 | Tickets ab 49,99 €",
     seoDescription: "& JULIA – Das Pop-Musical mit 24 Nummer-1-Hits im Stage Palladium Theater Stuttgart. Roar, Can't Stop The Feeling, Perfect & mehr. Ab Herbst 2026. Jetzt Tickets sichern!",
   },
 ];
@@ -2158,20 +2168,20 @@ export const cities: City[] = [
 
 // Hilfsfunktionen
 // Hilfsfunktionen
-export function getMusicalBySlug(slug: string): Musical | undefined {
-  return getActiveMusicals().find((m) => m.slug === slug);
+export function getMusicalBySlug(slug: string, catalog: Musical[] = musicals): Musical | undefined {
+  return getActiveMusicals(catalog).find((m) => m.slug === slug);
 }
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
 export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "we-will-rock-you", "salon-rosie", "und-julia"];
 
-export function getActiveMusicals(): Musical[] {
-  return musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
+export function getActiveMusicals(catalog: Musical[] = musicals): Musical[] {
+  return catalog.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
 }
 
-export function getMusicalsByCity(cityName: string): Musical[] {
-  return musicals.filter((m) => m.city === cityName || m.cities?.includes(cityName));
+export function getMusicalsByCity(cityName: string, catalog: Musical[] = musicals): Musical[] {
+  return catalog.filter((m) => m.city === cityName || m.cities?.includes(cityName));
 }
 
 export function hasActiveTourDateForCity(musical: Musical, cityName: string): boolean {
@@ -2187,16 +2197,16 @@ export function hasActiveTourDateForCity(musical: Musical, cityName: string): bo
   return musical.city === cityName || (musical.cities?.includes(cityName) ?? false);
 }
 
-export function getActiveMusicalsByCity(cityName: string): Musical[] {
-  return getActiveMusicals().filter((m) => {
+export function getActiveMusicalsByCity(cityName: string, catalog: Musical[] = musicals): Musical[] {
+  return getActiveMusicals(catalog).filter((m) => {
     const matchesCity = m.city === cityName || m.cities?.includes(cityName);
     if (!matchesCity) return false;
     return hasActiveTourDateForCity(m, cityName);
   });
 }
 
-export function getActiveMusicalCountByCity(cityName: string): number {
-  return getActiveMusicalsByCity(cityName).length;
+export function getActiveMusicalCountByCity(cityName: string, catalog: Musical[] = musicals): number {
+  return getActiveMusicalsByCity(cityName, catalog).length;
 }
 
 export function getCityBySlug(slug: string): City | undefined {
@@ -2219,20 +2229,20 @@ export const FEATURED_MUSICAL_IDS = [
   "starlight-express",
 ] as const;
 
-export function getFeaturedMusicals(): Musical[] {
-  const musicalsById = new Map(musicals.map((musical) => [musical.id, musical]));
+export function getFeaturedMusicals(catalog: Musical[] = musicals): Musical[] {
+  const musicalsById = new Map(catalog.map((musical) => [musical.id, musical]));
   return FEATURED_MUSICAL_IDS.map((id) => musicalsById.get(id)).filter(
     (musical): musical is Musical => Boolean(musical),
   );
 }
 
-export function getAdditionalMusicals(): Musical[] {
+export function getAdditionalMusicals(catalog: Musical[] = musicals): Musical[] {
   const featuredMusicalIds = new Set<string>(FEATURED_MUSICAL_IDS);
-  return getActiveMusicals().filter((musical) => !featuredMusicalIds.has(musical.id));
+  return getActiveMusicals(catalog).filter((musical) => !featuredMusicalIds.has(musical.id));
 }
 
-export function getEditorialOverviewMusicals(includeHighlights: boolean): Musical[] {
-  return includeHighlights ? getActiveMusicals() : getAdditionalMusicals();
+export function getEditorialOverviewMusicals(includeHighlights: boolean, catalog: Musical[] = musicals): Musical[] {
+  return includeHighlights ? getActiveMusicals(catalog) : getAdditionalMusicals(catalog);
 }
 
 /** Die wichtigsten verlinkbaren Musical-Städte im deutschsprachigen Raum für den Footer. */

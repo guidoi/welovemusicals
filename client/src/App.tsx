@@ -10,10 +10,12 @@ import MusicalDetail from "./pages/MusicalDetail";
 import CityDetail from "./pages/CityDetail";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import PriceSalesAdmin from "./pages/PriceSalesAdmin";
 import { didRouteChange, resetScrollToTop } from "./lib/route-scroll";
 import { ConsentProvider } from "./contexts/ConsentContext";
 import CookieConsent from "./components/CookieConsent";
 import OptionalConsentServices from "./components/OptionalConsentServices";
+import { PricingProvider } from "./contexts/PricingContext";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -49,6 +51,7 @@ function Router() {
         <Route path={"/stadt/:slug"} component={CityDetail} />
         <Route path={"/impressum"} component={Impressum} />
         <Route path={"/datenschutz"} component={Datenschutz} />
+        <Route path={"/verwaltung/preise"} component={PriceSalesAdmin} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>
@@ -60,14 +63,16 @@ function App() {
   return (
     <ErrorBoundary>
       <ConsentProvider>
-        <ThemeProvider defaultTheme="dark">
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-            <OptionalConsentServices />
-            <CookieConsent />
-          </TooltipProvider>
-        </ThemeProvider>
+        <PricingProvider>
+          <ThemeProvider defaultTheme="dark">
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+              <OptionalConsentServices />
+              <CookieConsent />
+            </TooltipProvider>
+          </ThemeProvider>
+        </PricingProvider>
       </ConsentProvider>
     </ErrorBoundary>
   );

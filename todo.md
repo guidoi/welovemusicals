@@ -512,3 +512,8 @@
 - [x] Trennlinien bei allen Kampagnenbannern entfernt und die Kennzeichnung ausschließlich über „Anzeige“ auf Desktop sowie Mobil geprüft
 - [x] Eiskönigin-Teaser mit dem Sale-Störer „SALE · BIS 15 %“ analog zu König der Löwen ergänzt und auf Desktop sowie Mobil geprüft
 - [x] Auf ausdrücklichen Nutzerwunsch zurückgestellt: Stadtseiten für Hamburg, Stuttgart, Berlin, Köln, München, Bochum und Düsseldorf als eigenständige Musical-Money-Pages bewerten und ein umsetzbares SEO-, Content- und Conversion-Konzept ausarbeiten
+- [x] Auf allen Stadtseiten die Programmüberschrift auf „AKTUELL IN [STADTNAME]“ und die Subline auf „Musicals & Shows 2026/2027“ umgestellt sowie diese Formulierung als künftigen Stadtseitenstandard dokumentiert
+- [x] Einstiegspreise für Die Eiskönigin, König der Löwen, Tarzan, MJ, Zurück in die Zukunft, Tanz der Vampire, Starlight Express, & Julia, Der Teufel trägt Prada und Salon Rosie gemäß Vorgabe zentral aktualisiert
+- [x] Tarzan mit „SALE · BIS 15 %“ und Salon Rosie mit „SALE · 2 FÜR 1“ als kompakte Startseiten-Sale-Störer ergänzt und geprüft
+- [x] Salon-Rosie-Detailseite nach Klick von der Startseite zuverlässig oben am Seitenbeginn geöffnet und Scroll-/Ankerverhalten auf Desktop sowie Mobil geprüft
+- [x] Geschützte Preis- und Sale-Verwaltung mit dauerhafter Datenbankspeicherung und Browser-Redaktionsansicht für den Projektinhaber eingerichtet
