@@ -1248,6 +1248,11 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
     featured: true,
     tags: ["Familie", "Disney", "Ensuite"],
+    sale: {
+      label: "FAMILIEN:",
+      discount: "BIS 15 %",
+      note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
+    },
     youtubeTrailerId: "cwLZ_5EML5U",
     uspItems: [
       { icon: "Sparkles", title: "Disney-Magie live erleben", text: "Elsa, Anna, Olaf und Sven auf der Bühne – mit atemberaubender Bühnentechnik" },
