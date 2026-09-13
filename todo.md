@@ -511,4 +511,4 @@
 - [x] Oberen Abstand der Aovo-Endseitenbanner nochmals deutlich auf Mobil und Desktop reduziert sowie die engere Einbindung geprüft
 - [x] Trennlinien bei allen Kampagnenbannern entfernt und die Kennzeichnung ausschließlich über „Anzeige“ auf Desktop sowie Mobil geprüft
 - [x] Eiskönigin-Teaser mit dem Sale-Störer „SALE · BIS 15 %“ analog zu König der Löwen ergänzt und auf Desktop sowie Mobil geprüft
-- [ ] Zurückgestellt: Stadtseiten für Hamburg, Stuttgart, Berlin, Köln, München, Bochum und Düsseldorf als eigenständige Musical-Money-Pages bewerten und ein umsetzbares SEO-, Content- und Conversion-Konzept ausarbeiten
+- [x] Auf ausdrücklichen Nutzerwunsch zurückgestellt: Stadtseiten für Hamburg, Stuttgart, Berlin, Köln, München, Bochum und Düsseldorf als eigenständige Musical-Money-Pages bewerten und ein umsetzbares SEO-, Content- und Conversion-Konzept ausarbeiten
