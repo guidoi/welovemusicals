@@ -40,6 +40,7 @@ export interface MusicalSale {
   label: string;
   discount: string;
   note?: string;
+  validFrom?: string; // Format: "YYYY-MM-DD"; ohne Datum ist der Sale sofort aktiv
   validUntil?: string; // Format: "YYYY-MM-DD"; ohne Datum bleibt der Sale aktiv
 }
 
@@ -109,6 +110,7 @@ export interface Provider {
 export const AWIN_MERCHANT_ID = "11388";
 export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
 export const MJ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402";
+export const EISKOENIGIN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418";
 
 export const AWIN_TEXT_LINKS = {
   moulinRouge: { gid: "597568", merchantId: "111888", linkId: "4845203" },
@@ -1240,18 +1242,20 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_Elsa_LetItGo_(c)JohanPersson_a3fe492d.webp",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_ElsaUndAnna_Finale_HoldingHands_(c)JohanPersson_a2fb5b4c.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/JPG72dpi(RGB)-EISHH&STU_Icon_200-400_ISOv2_06a10360.jpg",
-    keyvisualLink: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
-    eventimUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
-    ticketCtaUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
-    awinHeroUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
-    awinStickyUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
-    awinBoxUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
+    keyvisualLink: EISKOENIGIN_STAGE_TEXT_LINK_URL,
+    eventimUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
+    ticketCtaUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
+    awinHeroUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
+    awinStickyUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
+    awinBoxUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
     featured: true,
     tags: ["Familie", "Disney", "Ensuite"],
     sale: {
-      label: "FAMILIEN:",
-      discount: "BIS 15 %",
-      note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
+      label: "SALE",
+      discount: "BIS 40 %",
+      note: "Bis 21.09.2026 bis zu 40 % Rabatt auf ausgewählte Vorstellungen sichern.*",
+      validFrom: "2026-09-14",
+      validUntil: "2026-09-21",
     },
     youtubeTrailerId: "cwLZ_5EML5U",
     uspItems: [
@@ -1261,7 +1265,7 @@ export const musicals: Musical[] = [
       { icon: "Users", title: "Perfekt für die ganze Familie", text: "Empfohlen ab 4 Jahren – ein Erlebnis für Kinder und Erwachsene" },
     ],
     tourDates: [
-      { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2024-11-08", endDate: "2027-01-31", eventimUrl: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart" },
+      { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2024-11-08", endDate: "2027-01-31", eventimUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL },
     ],
     quotes: [
       { text: "Die Magie dieser Show liegt nicht nur in ihren spektakulären Momenten, sondern vor allem in der emotionalen Reise, die Elsa und Anna antreten.", source: "Constanze Müller, Theaterleitung Stage Apollo Theater" },

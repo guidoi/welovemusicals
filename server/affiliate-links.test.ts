@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { ACTIVE_MUSICAL_IDS, ATG_PENDING_TOUR_TEXT_LINK_IDS, AWIN_TEXT_LINKS, getActiveMusicals, getMusicalBySlug, MJ_STAGE_TEXT_LINK_URL, musicals } from "../client/src/lib/data";
+import { ACTIVE_MUSICAL_IDS, ATG_PENDING_TOUR_TEXT_LINK_IDS, AWIN_TEXT_LINKS, EISKOENIGIN_STAGE_TEXT_LINK_URL, getActiveMusicals, getMusicalBySlug, MJ_STAGE_TEXT_LINK_URL, musicals } from "../client/src/lib/data";
 
 const KDL_STAGE_PRODUCT_URL = "https://www.stage-entertainment.de/musicals-shows/b/disneys-der-koenig-der-loewen-hamburg";
 const STAGE_PRODUCT_URLS = {
-  eiskoenigin: "https://www.stage-entertainment.de/musicals-shows/die-eiskoenigin-stuttgart",
   tarzan: "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg",
   ziz: "https://www.stage-entertainment.de/musicals-shows/zurueck-in-die-zukunft-hamburg/ticketshop",
   "teufel-traegt-prada": "https://www.stage-entertainment.de/musicals-shows/der-teufel-traegt-prada-hamburg",
@@ -199,6 +198,24 @@ describe("Affiliate-Link-Zuordnung", () => {
       mj?.awinBoxUrl,
       ...(mj?.tourDates ?? []).map((date) => date.eventimUrl),
     ]).toEqual(Array(7).fill(MJ_STAGE_TEXT_LINK_URL));
+  });
+
+  it("verwendet die neue Stage-TradeDoubler-Textlink-Kampagne an allen Eiskönigin-CTAs außerhalb der Banner", () => {
+    const eiskoenigin = musicals.find((musical) => musical.id === "eiskoenigin");
+
+    expect(eiskoenigin).toBeDefined();
+    expect(EISKOENIGIN_STAGE_TEXT_LINK_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418"
+    );
+    expect([
+      eiskoenigin?.keyvisualLink,
+      eiskoenigin?.ticketCtaUrl,
+      eiskoenigin?.eventimUrl,
+      eiskoenigin?.awinHeroUrl,
+      eiskoenigin?.awinStickyUrl,
+      eiskoenigin?.awinBoxUrl,
+      ...(eiskoenigin?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(EISKOENIGIN_STAGE_TEXT_LINK_URL));
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {

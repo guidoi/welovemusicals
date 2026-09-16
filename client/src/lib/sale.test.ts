@@ -17,6 +17,15 @@ describe("isSaleActive", () => {
     ).toBe(true);
   });
 
+  it("blendet ein Angebot vor seinem Startdatum aus", () => {
+    expect(
+      isSaleActive(
+        { label: "Aktionswoche", discount: "Bis 40 % sparen", validFrom: "2026-08-29", validUntil: "2026-09-04" },
+        now
+      )
+    ).toBe(false);
+  });
+
   it("blendet ein abgelaufenes oder ungültig datiertes Angebot aus", () => {
     expect(
       isSaleActive(

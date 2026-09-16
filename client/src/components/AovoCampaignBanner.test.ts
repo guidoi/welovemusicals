@@ -10,11 +10,12 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(15);
+    expect(AOVO_CAMPAIGNS).toHaveLength(16);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
       "teufel-traegt-prada",
+      "eiskoenigin",
       "eiskoenigin",
       "koenig-der-loewen",
       "koenig-der-loewen",
@@ -28,7 +29,7 @@ describe("Aovo campaign banners", () => {
       "wir-sind-am-leben",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(15);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(16);
   });
 
   it("keeps the provided Moulin Rouge campaign dimensions and tracking URLs", () => {
@@ -48,11 +49,25 @@ describe("Aovo campaign banners", () => {
   });
 
   it("keeps the supplied 300 × 250 creatives at native dimensions", () => {
-    expect(getAovoCampaign("eiskoenigin")).toMatchObject({
-      width: 300,
-      height: 250,
-      imageUrl: "/images/show-visuals/die-eiskoenigin-300x250.png",
-    });
+    expect(getAovoCampaigns("eiskoenigin")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26185658",
+        width: 729,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/veOrHsDBhQmRcVOq.jpg",
+      }),
+      expect.objectContaining({
+        groupId: "26185656",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-gallery",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gtbhoCIZurpGlnvU.jpg",
+      }),
+    ]));
     expect(getAovoCampaign("tarzan")).toMatchObject({
       width: 300,
       height: 250,

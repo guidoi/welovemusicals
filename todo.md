@@ -518,3 +518,6 @@
 - [x] Salon-Rosie-Detailseite nach Klick von der Startseite zuverlässig oben am Seitenbeginn geöffnet und Scroll-/Ankerverhalten auf Desktop sowie Mobil geprüft
 - [x] Geschützte Preis- und Sale-Verwaltung mit dauerhafter Datenbankspeicherung und Browser-Redaktionsansicht für den Projektinhaber eingerichtet
 - [ ] Fehler beim Aufruf von /verwaltung/preise auf der Live-Domain reproduzieren, Projektinhaber-Zugang korrigieren und den Verwaltungszugriff prüfen
+- [x] Eiskönigin-Stage-Banner 26185658 (729×90 oben) und 26185656 (300×250 nach der Bildergalerie) mit bereitgestellten Motiven sicher integriert und die nativen Größen geprüft
+- [x] Eiskönigin-Sale auf „SALE · BIS 40 %“ mit Laufzeit 14.–21.09.2026 aktualisiert und alle Ticket-CTAs außerhalb der Banner auf die TradeDoubler-Textlink-Kampagne 26149418 umgestellt
+- [x] Eiskönigin-Sale ausschließlich vom 14. bis einschließlich 21.09.2026 aktiv anzeigen lassen
