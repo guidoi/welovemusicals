@@ -12,6 +12,19 @@ function getQueryParam(req: Request, key: string): string | undefined {
 
 const AUTH_PORTAL_ORIGIN = "https://manus.im";
 
+function firstForwardedValue(value: string | string[] | undefined): string | undefined {
+  const raw = Array.isArray(value) ? value[0] : value;
+  return raw?.split(",")[0]?.trim() || undefined;
+}
+
+export function getPublicRequestOrigin(req: Request): string | undefined {
+  const host = firstForwardedValue(req.headers["x-forwarded-host"]) ?? req.get("host");
+  if (!host) return undefined;
+
+  const protocol = firstForwardedValue(req.headers["x-forwarded-proto"]) ?? req.protocol;
+  return `${protocol}://${host}`;
+}
+
 function getSafeReturnPath(value: string | undefined): string {
   return value?.startsWith("/verwaltung/") ? value : "/";
 }
@@ -28,14 +41,14 @@ export function createOAuthLoginUrl(origin: string, returnPath: string): string 
 
 export function registerOAuthRoutes(app: Express) {
   app.get("/api/oauth/login", (req: Request, res: Response) => {
-    const host = req.get("host");
-    if (!host) {
+    const origin = getPublicRequestOrigin(req);
+    if (!origin) {
       res.status(400).json({ error: "host is required" });
       return;
     }
 
     const returnPath = getSafeReturnPath(getQueryParam(req, "returnTo"));
-    res.redirect(302, createOAuthLoginUrl(`${req.protocol}://${host}`, returnPath));
+    res.redirect(302, createOAuthLoginUrl(origin, returnPath));
   });
 
   app.get("/api/oauth/callback", async (req: Request, res: Response) => {

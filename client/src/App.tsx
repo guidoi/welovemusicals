@@ -16,6 +16,7 @@ import { ConsentProvider } from "./contexts/ConsentContext";
 import CookieConsent from "./components/CookieConsent";
 import OptionalConsentServices from "./components/OptionalConsentServices";
 import { PricingProvider } from "./contexts/PricingContext";
+import { getAdminAccessRedirect } from "./lib/admin-access-domain";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -41,6 +42,24 @@ function ScrollToTop() {
   return null;
 }
 
+function PriceSalesAdminRoute() {
+  const redirectUrl = getAdminAccessRedirect(window.location);
+
+  useEffect(() => {
+    if (redirectUrl) window.location.replace(redirectUrl);
+  }, [redirectUrl]);
+
+  if (redirectUrl) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#111018] px-6 text-center text-sm text-white/70">
+        Verwaltung wird geöffnet …
+      </main>
+    );
+  }
+
+  return <PriceSalesAdmin />;
+}
+
 function Router() {
   return (
     <>
@@ -51,7 +70,7 @@ function Router() {
         <Route path={"/stadt/:slug"} component={CityDetail} />
         <Route path={"/impressum"} component={Impressum} />
         <Route path={"/datenschutz"} component={Datenschutz} />
-        <Route path={"/verwaltung/preise"} component={PriceSalesAdmin} />
+        <Route path={"/verwaltung/preise"} component={PriceSalesAdminRoute} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>
