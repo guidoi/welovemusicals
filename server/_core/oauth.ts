@@ -11,6 +11,7 @@ function getQueryParam(req: Request, key: string): string | undefined {
 }
 
 const AUTH_PORTAL_ORIGIN = "https://manus.im";
+const ADMIN_PROJECT_ORIGIN = "https://welovemusicals.manus.space";
 
 function firstForwardedValue(value: string | string[] | undefined): string | undefined {
   const raw = Array.isArray(value) ? value[0] : value;
@@ -37,6 +38,10 @@ export function createOAuthLoginUrl(origin: string, returnPath: string): string 
   url.searchParams.set("state", Buffer.from(redirectUri).toString("base64"));
   url.searchParams.set("type", "signIn");
   return url.toString();
+}
+
+export function getAdminReturnUrl(returnPath: string): string {
+  return new URL(getSafeReturnPath(returnPath), ADMIN_PROJECT_ORIGIN).toString();
 }
 
 export function registerOAuthRoutes(app: Express) {
@@ -85,7 +90,7 @@ export function registerOAuthRoutes(app: Express) {
       const cookieOptions = getSessionCookieOptions(req);
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
 
-      res.redirect(302, getSafeReturnPath(getQueryParam(req, "returnTo")));
+      res.redirect(302, getAdminReturnUrl(getQueryParam(req, "returnTo") ?? "/"));
     } catch (error) {
       console.error("[OAuth] Callback failed", error);
       res.status(500).json({ error: "OAuth callback failed" });

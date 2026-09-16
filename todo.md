@@ -520,6 +520,7 @@
 - [ ] Fehler beim Aufruf von /verwaltung/preise auf der Live-Domain reproduzieren, Projektinhaber-Zugang korrigieren und den Verwaltungszugriff prüfen
 - [ ] 404-Rücksprung nach der Anmeldung an /verwaltung/preise auf der Live-Domain korrigieren und den vollständigen OAuth-Zugriffsfluss prüfen
 - [ ] Verwaltungsroute auf der Custom-Domain sicher auf die serverfähige Projekt-Domain weiterleiten, damit OAuth-Anmeldung und Preisverwaltung nicht auf 404 enden
+- [ ] OAuth-Callback nach der Verwaltungsanmeldung auf eine fest definierte serverfähige Preisverwaltungsadresse zurückführen und den 404-Rücksprung beseitigen
 - [x] Eiskönigin-Stage-Banner 26185658 (729×90 oben) und 26185656 (300×250 nach der Bildergalerie) mit bereitgestellten Motiven sicher integriert und die nativen Größen geprüft
 - [x] Eiskönigin-Sale auf „SALE · BIS 40 %“ mit Laufzeit 14.–21.09.2026 aktualisiert und alle Ticket-CTAs außerhalb der Banner auf die TradeDoubler-Textlink-Kampagne 26149418 umgestellt
 - [x] Eiskönigin-Sale ausschließlich vom 14. bis einschließlich 21.09.2026 aktiv anzeigen lassen

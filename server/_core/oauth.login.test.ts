@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Request } from "express";
-import { createOAuthLoginUrl, getPublicRequestOrigin } from "./oauth";
+import { createOAuthLoginUrl, getAdminReturnUrl, getPublicRequestOrigin } from "./oauth";
 
 describe("createOAuthLoginUrl", () => {
   it("erzeugt eine vollständige Manus-Anmeldeadresse mit Rückkehr zur Preisverwaltung", () => {
@@ -26,5 +26,13 @@ describe("getPublicRequestOrigin", () => {
     } as unknown as Request;
 
     expect(getPublicRequestOrigin(req)).toBe("https://welovemusicals.manus.space");
+  });
+});
+
+describe("getAdminReturnUrl", () => {
+  it("führt den Verwaltungs-Callback immer auf die serverfähige Projekt-Domain zurück", () => {
+    expect(getAdminReturnUrl("/verwaltung/preise")).toBe(
+      "https://welovemusicals.manus.space/verwaltung/preise",
+    );
   });
 });
