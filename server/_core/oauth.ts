@@ -2,6 +2,7 @@ import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import type { Express, Request, Response } from "express";
 import * as db from "../db";
 import { getSessionCookieOptions } from "./cookies";
+import { ENV } from "./env";
 import { sdk } from "./sdk";
 
 function getQueryParam(req: Request, key: string): string | undefined {
@@ -9,7 +10,34 @@ function getQueryParam(req: Request, key: string): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
 
+const AUTH_PORTAL_ORIGIN = "https://manus.im";
+
+function getSafeReturnPath(value: string | undefined): string {
+  return value?.startsWith("/verwaltung/") ? value : "/";
+}
+
+export function createOAuthLoginUrl(origin: string, returnPath: string): string {
+  const redirectUri = `${origin}/api/oauth/callback?returnTo=${encodeURIComponent(returnPath)}`;
+  const url = new URL("/app-auth", AUTH_PORTAL_ORIGIN);
+  url.searchParams.set("appId", ENV.appId);
+  url.searchParams.set("redirectUri", redirectUri);
+  url.searchParams.set("state", Buffer.from(redirectUri).toString("base64"));
+  url.searchParams.set("type", "signIn");
+  return url.toString();
+}
+
 export function registerOAuthRoutes(app: Express) {
+  app.get("/api/oauth/login", (req: Request, res: Response) => {
+    const host = req.get("host");
+    if (!host) {
+      res.status(400).json({ error: "host is required" });
+      return;
+    }
+
+    const returnPath = getSafeReturnPath(getQueryParam(req, "returnTo"));
+    res.redirect(302, createOAuthLoginUrl(`${req.protocol}://${host}`, returnPath));
+  });
+
   app.get("/api/oauth/callback", async (req: Request, res: Response) => {
     const code = getQueryParam(req, "code");
     const state = getQueryParam(req, "state");
@@ -44,7 +72,7 @@ export function registerOAuthRoutes(app: Express) {
       const cookieOptions = getSessionCookieOptions(req);
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
 
-      res.redirect(302, "/");
+      res.redirect(302, getSafeReturnPath(getQueryParam(req, "returnTo")));
     } catch (error) {
       console.error("[OAuth] Callback failed", error);
       res.status(500).json({ error: "OAuth callback failed" });

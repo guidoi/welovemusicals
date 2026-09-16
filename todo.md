@@ -517,3 +517,4 @@
 - [x] Tarzan mit „SALE · BIS 15 %“ und Salon Rosie mit „SALE · 2 FÜR 1“ als kompakte Startseiten-Sale-Störer ergänzt und geprüft
 - [x] Salon-Rosie-Detailseite nach Klick von der Startseite zuverlässig oben am Seitenbeginn geöffnet und Scroll-/Ankerverhalten auf Desktop sowie Mobil geprüft
 - [x] Geschützte Preis- und Sale-Verwaltung mit dauerhafter Datenbankspeicherung und Browser-Redaktionsansicht für den Projektinhaber eingerichtet
+- [ ] Fehler beim Aufruf von /verwaltung/preise auf der Live-Domain reproduzieren, Projektinhaber-Zugang korrigieren und den Verwaltungszugriff prüfen
