@@ -12,6 +12,7 @@ describe("applyPriceSaleOverrides", () => {
         saleLabel: "SALE",
         saleDiscount: "2 FÜR 1",
         saleNote: "Nur für kurze Zeit",
+        saleStartsAt: "2026-12-01",
         saleEndsAt: "2026-12-31",
       },
     ]);
@@ -20,9 +21,10 @@ describe("applyPriceSaleOverrides", () => {
     expect(mj?.priceFrom).toBe("39,99");
     expect(mj?.sale).toEqual({
       label: "SALE",
-      discount: "2 FÜR 1",
-      note: "Nur für kurze Zeit",
-      validUntil: "2026-12-31",
+        discount: "2 FÜR 1",
+        note: "Nur für kurze Zeit",
+        validFrom: "2026-12-01",
+        validUntil: "2026-12-31",
     });
     expect(mj?.showFacts?.find((fact) => fact.label === "Tickets ab")?.value).toContain("39,99 €");
     expect(mj?.faqItems?.find((item) => item.question.includes("Wie viel"))?.answer).toContain("39,99 €");
@@ -38,6 +40,7 @@ describe("applyPriceSaleOverrides", () => {
         saleLabel: null,
         saleDiscount: null,
         saleNote: null,
+        saleStartsAt: null,
         saleEndsAt: null,
       },
     ]);

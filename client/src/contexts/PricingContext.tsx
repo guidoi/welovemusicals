@@ -9,6 +9,7 @@ export type PriceSaleOverride = {
   saleLabel: string | null;
   saleDiscount: string | null;
   saleNote: string | null;
+  saleStartsAt: Date | string | null;
   saleEndsAt: Date | string | null;
 };
 
@@ -38,6 +39,7 @@ function createSale(override: PriceSaleOverride): MusicalSale | undefined {
     label: override.saleLabel?.trim() || "SALE",
     discount: override.saleDiscount.trim(),
     note: override.saleNote?.trim() || undefined,
+    validFrom: toDateString(override.saleStartsAt),
     validUntil: toDateString(override.saleEndsAt),
   };
 }

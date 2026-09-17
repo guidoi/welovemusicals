@@ -2,7 +2,12 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, router } from "./_core/trpc";
-import { deletePriceSaleOverride, listPriceSaleOverrides, upsertPriceSaleOverride } from "./priceSales";
+import {
+  deletePriceSaleOverride,
+  listPriceSaleOverrides,
+  listPublicPriceSaleOverrides,
+  upsertPriceSaleOverride,
+} from "./priceSales";
 import { z } from "zod";
 
 export const appRouter = router({
@@ -20,18 +25,7 @@ export const appRouter = router({
   }),
 
   priceSales: router({
-    listPublic: publicProcedure.query(async () => {
-      const overrides = await listPriceSaleOverrides();
-      return overrides.map(({ musicalId, priceFrom, saleEnabled, saleLabel, saleDiscount, saleNote, saleEndsAt }) => ({
-        musicalId,
-        priceFrom,
-        saleEnabled,
-        saleLabel,
-        saleDiscount,
-        saleNote,
-        saleEndsAt,
-      }));
-    }),
+    listPublic: publicProcedure.query(() => listPublicPriceSaleOverrides()),
     listForAdmin: adminProcedure.query(() => listPriceSaleOverrides()),
     save: adminProcedure
       .input(
