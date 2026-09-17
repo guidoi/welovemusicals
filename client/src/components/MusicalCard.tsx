@@ -146,9 +146,9 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
               <div className="mb-4">
                 <span
                   data-testid="teaser-experience-category"
-                  className="inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold"
+                  className="inline-flex h-8 items-center gap-1.5 rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold md:h-10 md:px-4 md:text-xs"
                 >
-                  <Tag className="h-3.5 w-3.5" />
+                  <Tag className="h-3 w-3" />
                   {experienceCategory.label}
                 </span>
               </div>

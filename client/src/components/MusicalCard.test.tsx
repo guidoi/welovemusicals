@@ -168,7 +168,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="teaser-experience-category"');
     expect(markup).toContain("Blockbuster &amp; Spektakel");
     expect(markup).not.toContain("Legacy-Tag");
-    expect(markup).toContain('data-testid="teaser-experience-category" class="inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold"');
+    expect(markup).toContain('data-testid="teaser-experience-category" class="inline-flex h-8 items-center gap-1.5 rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold md:h-10 md:px-4 md:text-xs"');
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).toContain("px-2.5 py-1 text-xs");
     expect(markup).not.toContain("shadow-gold");
