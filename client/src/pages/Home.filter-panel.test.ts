@@ -80,7 +80,7 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("const scrollToUpdatedResults = useCallback(() => {");
     expect(homeSource).toContain("window.setTimeout(scrollToFirstResult, 80);");
     expect(homeSource).toContain("const stickyFilterAllowance = 48;");
-    expect(homeSource).toContain("const safetyGap = 16;");
+    expect(homeSource).toContain("const safetyGap = isDesktop ? 16 : 26;");
     expect(homeSource).toContain("- headerHeight - stickyFilterAllowance - safetyGap");
     expect(homeSource).toContain("scrollToUpdatedResults();");
     expect(homeSource).toContain('"Deine passenden Shows – Highlights zuerst."');
@@ -89,9 +89,20 @@ describe("Startseiten-Erlebnisfilter", () => {
   it("hält eine kompakte Filterleiste unter dem Header erreichbar", () => {
     expect(homeSource).toContain('data-testid="sticky-filter-bar"');
     expect(homeSource).toContain("const scrollToFilterPanel = useCallback(() => {");
-    expect(homeSource).toContain("setShowStickyFilterBar(panel.getBoundingClientRect().bottom <= headerHeight);");
+    expect(homeSource).toContain("Array.from(resultGrid.children).filter(");
+    expect(homeSource).toContain('child.id.startsWith("musical-")');
+    expect(homeSource).toContain("const secondRowCard = resultCards.find((card) => (");
+    expect(homeSource).toContain("const secondRowRevealOffset = headerHeight + 24;");
+    expect(homeSource).toContain("secondRowCard.getBoundingClientRect().top <= secondRowRevealOffset");
     expect(homeSource).toContain("Filter anpassen");
     expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
+  });
+
+  it("kennzeichnet die genaue Trefferzahl direkt über dem Ergebnisgrid", () => {
+    expect(homeSource).toContain('data-testid="results-count-label"');
+    expect(homeSource).toContain('"Show gefunden"');
+    expect(homeSource).toContain('"Shows gefunden"');
+    expect(homeSource).toContain("{filteredMusicals.length}");
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {

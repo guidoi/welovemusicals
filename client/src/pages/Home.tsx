@@ -81,6 +81,7 @@ export default function Home() {
   const [showStickyFilterBar, setShowStickyFilterBar] = useState(false);
   const [isResetTouchFeedbackActive, setIsResetTouchFeedbackActive] = useState(false);
   const firstResultRef = useRef<HTMLDivElement>(null);
+  const resultGridRef = useRef<HTMLDivElement>(null);
   const filterPanelRef = useRef<HTMLDivElement>(null);
   const resetTouchFeedbackTimeoutRef = useRef<number | undefined>(undefined);
   const lastResetInteractionWasTouchRef = useRef(false);
@@ -92,9 +93,10 @@ export default function Home() {
       if (!el) return;
 
       // Das erste Ergebnis bleibt vollständig unter Header und kompakter Filterleiste sichtbar.
-      const headerHeight = window.matchMedia("(min-width: 768px)").matches ? 80 : 64;
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+      const headerHeight = isDesktop ? 80 : 64;
       const stickyFilterAllowance = 48;
-      const safetyGap = 16;
+      const safetyGap = isDesktop ? 16 : 26;
       const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - stickyFilterAllowance - safetyGap;
       window.scrollTo({ top, behavior: 'smooth' });
     });
@@ -194,11 +196,23 @@ export default function Home() {
 
   useEffect(() => {
     const updateStickyFilterVisibility = () => {
-      const panel = filterPanelRef.current;
-      if (!panel) return;
+      const resultGrid = resultGridRef.current;
+      if (!resultGrid) {
+        setShowStickyFilterBar(false);
+        return;
+      }
 
       const headerHeight = window.matchMedia("(min-width: 768px)").matches ? 80 : 64;
-      setShowStickyFilterBar(panel.getBoundingClientRect().bottom <= headerHeight);
+      const resultCards = Array.from(resultGrid.children).filter(
+        (child): child is HTMLElement => child instanceof HTMLElement && child.id.startsWith("musical-"),
+      );
+      const firstResultTop = resultCards[0]?.getBoundingClientRect().top;
+      const secondRowCard = resultCards.find((card) => (
+        firstResultTop !== undefined && card.getBoundingClientRect().top > firstResultTop + 4
+      ));
+      const secondRowRevealOffset = headerHeight + 24;
+
+      setShowStickyFilterBar(Boolean(secondRowCard && secondRowCard.getBoundingClientRect().top <= secondRowRevealOffset));
     };
 
     updateStickyFilterVisibility();
@@ -223,17 +237,12 @@ export default function Home() {
       setPlzSearch(state);
       if (state.active) {
         setResultAnimationKey((currentKey) => currentKey + 1);
-        setTimeout(() => {
-          const el = firstResultRef.current;
-          if (!el) return;
-          const top = el.getBoundingClientRect().top + window.scrollY - 24;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }, 250);
+        setTimeout(scrollToFirstResult, 250);
       }
     };
     window.addEventListener('plz-search-update', handlePlzEvent);
     return () => window.removeEventListener('plz-search-update', handlePlzEvent);
-  }, []);
+  }, [scrollToFirstResult]);
 
   const featured = useMemo(() => getFeaturedMusicals(managedMusicals), [managedMusicals]);
   const heroNavigationItems = useMemo(
@@ -625,7 +634,12 @@ export default function Home() {
               )}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <>
+              <p data-testid="results-count-label" className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-white/65" aria-live="polite">
+                <span className="h-px w-5 bg-gold/65" aria-hidden="true" />
+                <span><span className="font-semibold text-gold">{filteredMusicals.length}</span> {filteredMusicals.length === 1 ? "Show gefunden" : "Shows gefunden"}</span>
+              </p>
+              <div ref={resultGridRef} className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {displayedMusicals.map((musical, i) => (
                 <MusicalCard
                   key={musical.id}
@@ -635,7 +649,8 @@ export default function Home() {
                   filterAnimationKey={resultAnimationKey || undefined}
                 />
               ))}
-            </div>
+              </div>
+            </>
           )}
 
           {/* Show More / Show Less */}
