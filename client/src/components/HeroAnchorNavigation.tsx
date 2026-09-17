@@ -94,7 +94,7 @@ export default function HeroAnchorNavigation({
         <div className="mb-3 flex flex-wrap justify-center gap-1.5" data-testid="hero-category-navigation" aria-label="Musicals nach Erlebniswelt entdecken">
           {categoryItems.map((item) => renderItem(
             item,
-            "inline-flex h-8 items-center rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold transition-all duration-150 hover:border-gold hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-10 md:px-4 md:text-xs",
+            "inline-flex h-8 items-center rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold transition-all duration-150 hover:border-gold hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm",
           ))}
         </div>
       )}

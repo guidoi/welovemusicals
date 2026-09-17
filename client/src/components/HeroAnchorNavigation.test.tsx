@@ -92,7 +92,8 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('data-testid="hero-anchor-category-blockbuster-spektakel"');
     expect(markup).not.toContain('data-testid="hero-orientation-navigation"');
     expect(markup).not.toContain('href="/musical/alpha"');
-    expect(markup).toContain('md:h-10');
-    expect(markup).toContain('md:px-4');
+    expect(markup).toContain('md:h-12');
+    expect(markup).toContain('md:px-5');
+    expect(markup).toContain('md:text-sm');
   });
 });
