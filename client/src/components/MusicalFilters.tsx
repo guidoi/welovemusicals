@@ -44,6 +44,7 @@ interface MusicalFiltersProps {
   plzSearch: PlzSearchState;
   setPlzSearch: (state: PlzSearchState) => void;
   resultCount: number;
+  onFiltersReset?: () => void;
 }
 
 const basePillClass = "rounded-full border px-3.5 py-2 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.97]";
@@ -58,6 +59,7 @@ export default function MusicalFilters({
   plzSearch,
   setPlzSearch,
   resultCount,
+  onFiltersReset,
 }: MusicalFiltersProps) {
   const [cityPanelOpen, setCityPanelOpen] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
@@ -90,6 +92,7 @@ export default function MusicalFilters({
     setCityFilter("alle");
     setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
     setCityQuery("");
+    onFiltersReset?.();
   };
 
   const hasActiveFilter = categoryFilter !== "alle" || countryFilter !== "alle" || cityFilter !== "alle" || plzSearch.active;

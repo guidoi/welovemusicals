@@ -566,3 +566,6 @@
 
 ## Einheitliche Familien-Kategorie
 - [x] „Familie, Märchen & Magie“ in allen Kategorie-Einstiegen, Filtern, Teasern und Detailseiten vereinheitlichen
+
+## Konsistente Musicalübersicht
+- [x] Ohne Auswahl nur weitere Shows zeigen; bei „Alle Shows“ oder einer aktiven Auswahl vollständige Ergebnisse mit passenden Top-Musicals zuerst ausgeben

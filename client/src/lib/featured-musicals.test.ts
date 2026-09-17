@@ -46,9 +46,7 @@ describe("Top-Musicals auf der Startseite", () => {
   it("bezieht bei einer aktiven Filterauswahl auch die Highlights wieder ein", () => {
     const filteredOverviewMusicals = getEditorialOverviewMusicals(true);
 
-    expect(filteredOverviewMusicals.map((musical) => musical.id)).toEqual(
-      expect.arrayContaining([...FEATURED_MUSICAL_IDS]),
-    );
+    expect(filteredOverviewMusicals.slice(0, FEATURED_MUSICAL_IDS.length).map((musical) => musical.id)).toEqual(FEATURED_MUSICAL_IDS);
     expect(getEditorialOverviewMusicals(false)).toEqual(getAdditionalMusicals());
   });
 

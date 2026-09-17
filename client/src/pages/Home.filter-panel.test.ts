@@ -28,4 +28,13 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).toContain("In meiner Nähe");
     expect(filterSource).toContain('data-testid="city-finder-panel"');
   });
+
+  it("unterscheidet eine doppelfreie Fortsetzung von einer vollständigen Ergebnisansicht", () => {
+    expect(homeSource).toContain("const [showCompleteCatalog, setShowCompleteCatalog] = useState(false);");
+    expect(homeSource).toContain("const includeHighlightsInOverview = showCompleteCatalog || hasNarrowingFilter;");
+    expect(homeSource).toContain('"Alle Musicals & Shows"');
+    expect(homeSource).toContain('"Weitere Musicals & Shows"');
+    expect(homeSource).toContain("onFiltersReset={() => {");
+    expect(homeSource).toContain("setShowCompleteCatalog(false);");
+  });
 });

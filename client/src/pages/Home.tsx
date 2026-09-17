@@ -29,7 +29,7 @@ import {
 } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useConsent } from "@/contexts/ConsentContext";
-import { type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
+import { getExperienceCategory, type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
 import { getHeroNavigationItems, type HeroNavigationItem } from "@/lib/hero-navigation";
 import { trackExperienceCategorySelection } from "@/lib/category-analytics";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
@@ -67,6 +67,7 @@ export default function Home() {
   });
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
+  const [showCompleteCatalog, setShowCompleteCatalog] = useState(false);
   const [showMorePulsed, setShowMorePulsed] = useState(false); // Puls-Effekt einmalig für "Alle anzeigen"-Button
   const firstResultRef = useRef<HTMLDivElement>(null);
 
@@ -125,6 +126,15 @@ export default function Home() {
     const { href, kind } = item;
     if (kind === "musical" || !href.startsWith("#")) return;
 
+    if (kind === "overview" && item.id === "all-musicals") {
+      setCategoryFilter("alle");
+      setCountryFilter("alle");
+      setCityFilter("alle");
+      setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
+      setShowCompleteCatalog(true);
+      setShowAllMusicals(true);
+    }
+
     if (kind === "category" && item.categoryId) {
       trackExperienceCategorySelection({
         categoryId: item.categoryId,
@@ -135,6 +145,7 @@ export default function Home() {
       setCountryFilter("alle");
       setCityFilter("alle");
       setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
+      setShowCompleteCatalog(true);
       setShowAllMusicals(true);
     }
 
@@ -161,16 +172,18 @@ export default function Home() {
     return () => window.removeEventListener("popstate", restoreHomeHeroAfterBack);
   }, []);
 
-  const filteredMusicals = useMemo(() => {
-    const hasActiveFilter =
-      categoryFilter !== "alle" ||
-      countryFilter !== "alle" ||
-      cityFilter !== "alle" ||
-      plzSearch.active;
+  const hasNarrowingFilter =
+    categoryFilter !== "alle" ||
+    countryFilter !== "alle" ||
+    cityFilter !== "alle" ||
+    plzSearch.active;
+  const includeHighlightsInOverview = showCompleteCatalog || hasNarrowingFilter;
+  const selectedExperienceCategory = getExperienceCategory(categoryFilter === "alle" ? undefined : categoryFilter);
 
+  const filteredMusicals = useMemo(() => {
     // Ohne Auswahl bleibt die Übersicht doppelfrei. Sobald gefiltert wird,
     // durchsucht sie das komplette aktive Angebot einschließlich der Highlights.
-    let result = getEditorialOverviewMusicals(hasActiveFilter, managedMusicals);
+    let result = getEditorialOverviewMusicals(includeHighlightsInOverview, managedMusicals);
 
     // Redaktionelle Erlebniswelten statt technischer Datenkategorien.
     if (categoryFilter !== "alle") {
@@ -213,7 +226,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, countryFilter, cityFilter, plzSearch, managedMusicals]);
+  }, [categoryFilter, countryFilter, cityFilter, plzSearch, managedMusicals, includeHighlightsInOverview]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 16);
 
@@ -322,23 +335,53 @@ export default function Home() {
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">VORHANG AUF</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Weitere Musicals &amp; Shows
+            {selectedExperienceCategory
+              ? `Musicals & Shows: ${selectedExperienceCategory.label}`
+              : includeHighlightsInOverview
+                ? "Alle Musicals & Shows"
+                : "Weitere Musicals & Shows"}
           </h2>
           <p className="text-white max-w-2xl mb-10">
-            Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt.
+            {selectedExperienceCategory
+              ? `Entdecke alle ${selectedExperienceCategory.label}: passende Highlights zuerst, danach weitere Shows aus dieser Erlebniswelt.`
+              : includeHighlightsInOverview
+                ? "Alle aktuellen Musicals & Shows auf einen Blick – unsere Top-Musicals zuerst, danach weitere Empfehlungen."
+                : "Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt."}
           </p>
 
           <div className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">
             <MusicalFilters
               categoryFilter={categoryFilter}
-              setCategoryFilter={setCategoryFilter}
+              setCategoryFilter={(category) => {
+                setCategoryFilter(category);
+                setShowCompleteCatalog(true);
+                setShowAllMusicals(true);
+              }}
               countryFilter={countryFilter}
-              setCountryFilter={setCountryFilter}
+              setCountryFilter={(country) => {
+                setCountryFilter(country);
+                setShowCompleteCatalog(true);
+                setShowAllMusicals(true);
+              }}
               cityFilter={cityFilter}
-              setCityFilter={setCityFilter}
+              setCityFilter={(city) => {
+                setCityFilter(city);
+                setShowCompleteCatalog(true);
+                setShowAllMusicals(true);
+              }}
               plzSearch={plzSearch}
-              setPlzSearch={handlePlzSearch}
+              setPlzSearch={(state) => {
+                handlePlzSearch(state);
+                if (state.active) {
+                  setShowCompleteCatalog(true);
+                  setShowAllMusicals(true);
+                }
+              }}
               resultCount={filteredMusicals.length}
+              onFiltersReset={() => {
+                setShowCompleteCatalog(false);
+                setShowAllMusicals(false);
+              }}
             />
           </div>
 
@@ -388,6 +431,8 @@ export default function Home() {
                       setCategoryFilter('alle');
                       setCountryFilter('alle');
                       setCityFilter('alle');
+                      setShowCompleteCatalog(false);
+                      setShowAllMusicals(false);
                     }}
                     className="px-4 py-2 text-sm rounded-sm border border-gold/30 text-gold hover:bg-gold/10 transition-colors"
                   >

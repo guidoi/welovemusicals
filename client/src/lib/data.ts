@@ -2268,7 +2268,16 @@ export function getAdditionalMusicals(catalog: Musical[] = musicals): Musical[] 
 }
 
 export function getEditorialOverviewMusicals(includeHighlights: boolean, catalog: Musical[] = musicals): Musical[] {
-  return includeHighlights ? getActiveMusicals(catalog) : getAdditionalMusicals(catalog);
+  if (!includeHighlights) return getAdditionalMusicals(catalog);
+
+  const activeMusicals = getActiveMusicals(catalog);
+  const activeIds = new Set(activeMusicals.map((musical) => musical.id));
+  const featuredMusicals = getFeaturedMusicals(catalog).filter((musical) => activeIds.has(musical.id));
+  const featuredIds = new Set(featuredMusicals.map((musical) => musical.id));
+
+  // Bei einer bewussten Auswahl folgen die stärksten, passenden Top-Musicals zuerst.
+  // Ohne Auswahl bleibt die Übersicht darunter doppelfrei.
+  return [...featuredMusicals, ...activeMusicals.filter((musical) => !featuredIds.has(musical.id))];
 }
 
 /** Die wichtigsten verlinkbaren Musical-Städte im deutschsprachigen Raum für den Footer. */

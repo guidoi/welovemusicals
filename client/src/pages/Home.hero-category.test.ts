@@ -6,6 +6,8 @@ const homeSource = readFileSync(new URL("./Home.tsx", import.meta.url), "utf8");
 describe("Hero-Kategorie-Einstiege", () => {
   it("übernimmt eine gewählte Erlebniswelt und zeigt alle passenden Shows an", () => {
     expect(homeSource).toContain('if (kind === "category" && item.categoryId)');
+    expect(homeSource).toContain('if (kind === "overview" && item.id === "all-musicals")');
+    expect(homeSource).toContain('setShowCompleteCatalog(true);');
     expect(homeSource).toContain("setCategoryFilter(item.categoryId);");
     expect(homeSource).toContain('setCountryFilter("alle");');
     expect(homeSource).toContain('setCityFilter("alle");');
