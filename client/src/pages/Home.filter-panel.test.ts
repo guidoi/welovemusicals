@@ -2,10 +2,30 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 
 const homeSource = readFileSync(new URL("./Home.tsx", import.meta.url), "utf8");
+const filterSource = readFileSync(new URL("../components/MusicalFilters.tsx", import.meta.url), "utf8");
 
-describe("Startseiten-Filteroberfläche", () => {
-  it("verbindet den mobilen Filterauslöser und das geöffnete Panel als abgerundete Einheit", () => {
-    expect(homeSource).toContain('showFilters ? "rounded-t-2xl rounded-b-none" : "rounded-2xl"');
-    expect(homeSource).toContain('showFilters ? "rounded-t-none rounded-b-2xl border-t-0" : "rounded-2xl"');
+describe("Startseiten-Erlebnisfilter", () => {
+  it("nutzt durchgehend sichtbare Erlebniswelten statt technischer Kategorie-Dropdowns", () => {
+    expect(homeSource).toContain('rounded-2xl border border-gold/20 bg-card/60');
+    expect(filterSource).toContain("Welche Show passt zu dir?");
+    expect(filterSource).toContain("EXPERIENCE_CATEGORIES");
+    expect(filterSource).toContain("category.label");
+    expect(filterSource).not.toContain("Alle Kategorien");
+  });
+
+  it("setzt Länder als Buttons um und entfernt die Sortierung", () => {
+    expect(filterSource).toContain("COUNTRY_FILTERS");
+    expect(filterSource).toContain("country.label");
+    expect(filterSource).not.toContain("Sortierung");
+    expect(homeSource).not.toContain("sortOption");
+    expect(homeSource).not.toContain("setSortOption");
+  });
+
+  it("stellt eine moderne Ortsauswahl mit Suche, Schnellwahl und Umkreissuche bereit", () => {
+    expect(filterSource).toContain("Ort finden");
+    expect(filterSource).toContain("Stadt eingeben");
+    expect(filterSource).toContain("Beliebte Musical-Städte");
+    expect(filterSource).toContain("In meiner Nähe");
+    expect(filterSource).toContain('data-testid="city-finder-panel"');
   });
 });

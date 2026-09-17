@@ -1,52 +1,52 @@
 /*
- * Design: Theatrical Noir – Art Deco trifft Film Noir
- * MusicalFilters: Erweiterte Filter-Komponente für Musicals nach Land, Kategorie, Stadt und Sortierung
+ * Experience-led discovery controls for the musical catalogue.
  */
-import { useState, useMemo } from "react";
-import { ChevronDown, MapPin, Calendar, Filter, Globe } from "lucide-react";
-import { musicals, ACTIVE_MUSICAL_IDS } from "@/lib/data";
+import { useMemo, useState } from "react";
+import { Check, ChevronDown, MapPin, Search, SlidersHorizontal, X } from "lucide-react";
+import { ACTIVE_MUSICAL_IDS, musicals } from "@/lib/data";
+import {
+  COUNTRY_FILTERS,
+  EXPERIENCE_CATEGORIES,
+  QUICK_CITY_NAMES,
+  type CountryFilter,
+  type ExperienceFilterId,
+} from "@/lib/experience-categories";
 import PlzSearch, { type PlzSearchState } from "@/components/PlzSearch";
 
-// Österreichische Städte
 const AT_CITIES = new Set(["Graz", "Wien", "Innsbruck", "Linz", "Bad Ischl", "Dornbirn", "Ried im Innkreis", "Vöcklabruck", "Puch bei Salzburg", "Feldkirch", "Salzburg"]);
-// Schweizer Städte
 const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "Luzern", "St. Gallen"]);
 
-function getCityCountry(city: string): "at" | "ch" | "de" {
+function getCityCountry(city: string): Exclude<CountryFilter, "alle"> {
   if (AT_CITIES.has(city)) return "at";
   if (CH_CITIES.has(city)) return "ch";
   return "de";
 }
 
-// Alle Städte aus aktiven Musicals (m.city + tourDates), alphabetisch sortiert
 const allFilterCities = (() => {
-  const activeMusicals = musicals.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id));
   const citySet = new Set<string>();
-  activeMusicals.forEach((m) => {
-    if (m.city) citySet.add(m.city);
-    if (m.cities) m.cities.forEach((c) => citySet.add(c));
-    if (m.tourDates) m.tourDates.forEach((t) => citySet.add(t.city));
-  });
+  musicals
+    .filter((musical) => ACTIVE_MUSICAL_IDS.includes(musical.id))
+    .forEach((musical) => {
+      if (musical.city) citySet.add(musical.city);
+      musical.cities?.forEach((city) => citySet.add(city));
+      musical.tourDates?.forEach((tourDate) => citySet.add(tourDate.city));
+    });
   return Array.from(citySet).sort((a, b) => a.localeCompare(b, "de"));
 })();
 
-export type FilterCategory = "alle" | "fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder";
-export type SortOption = "name" | "date";
-export type CountryFilter = "alle" | "de" | "at" | "ch";
-
 interface MusicalFiltersProps {
-  categoryFilter: FilterCategory;
-  setCategoryFilter: (cat: FilterCategory) => void;
+  categoryFilter: ExperienceFilterId;
+  setCategoryFilter: (category: ExperienceFilterId) => void;
   countryFilter: CountryFilter;
   setCountryFilter: (country: CountryFilter) => void;
   cityFilter: string;
   setCityFilter: (city: string) => void;
-  sortOption: SortOption;
-  setSortOption: (sort: SortOption) => void;
   plzSearch: PlzSearchState;
   setPlzSearch: (state: PlzSearchState) => void;
   resultCount: number;
 }
+
+const basePillClass = "rounded-full border px-3.5 py-2 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.97]";
 
 export default function MusicalFilters({
   categoryFilter,
@@ -55,206 +55,191 @@ export default function MusicalFilters({
   setCountryFilter,
   cityFilter,
   setCityFilter,
-  sortOption,
-  setSortOption,
   plzSearch,
   setPlzSearch,
   resultCount,
 }: MusicalFiltersProps) {
-  const [showCityDropdown, setShowCityDropdown] = useState(false);
-  const [showPlzAccordion, setShowPlzAccordion] = useState(false);
+  const [cityPanelOpen, setCityPanelOpen] = useState(false);
+  const [cityQuery, setCityQuery] = useState("");
+  const [plzPanelOpen, setPlzPanelOpen] = useState(false);
 
-  // Städte nach gewähltem Land filtern
   const filteredCities = useMemo(() => {
-    if (countryFilter === "alle") return allFilterCities;
-    return allFilterCities.filter((city) => getCityCountry(city) === countryFilter);
-  }, [countryFilter]);
+    const normalizedQuery = cityQuery.trim().toLocaleLowerCase("de");
+    return allFilterCities.filter((city) => {
+      const countryMatches = countryFilter === "alle" || getCityCountry(city) === countryFilter;
+      return countryMatches && (!normalizedQuery || city.toLocaleLowerCase("de").includes(normalizedQuery));
+    });
+  }, [cityQuery, countryFilter]);
 
-  // Wenn das gewählte Land wechselt und die aktuelle Stadt nicht mehr passt → zurücksetzen
-  const handleCountryChange = (newCountry: CountryFilter) => {
-    setCountryFilter(newCountry);
-    if (cityFilter !== "alle" && newCountry !== "alle") {
-      const cityCountry = getCityCountry(cityFilter);
-      if (cityCountry !== newCountry) {
-        setCityFilter("alle");
-      }
+  const selectCity = (city: string) => {
+    setCityFilter(city);
+    setCityPanelOpen(false);
+    setCityQuery("");
+  };
+
+  const handleCountryChange = (country: CountryFilter) => {
+    setCountryFilter(country);
+    if (cityFilter !== "alle" && country !== "alle" && getCityCountry(cityFilter) !== country) {
+      setCityFilter("alle");
     }
   };
 
+  const resetFilters = () => {
+    setCategoryFilter("alle");
+    setCountryFilter("alle");
+    setCityFilter("alle");
+    setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
+    setCityQuery("");
+  };
+
+  const hasActiveFilter = categoryFilter !== "alle" || countryFilter !== "alle" || cityFilter !== "alle" || plzSearch.active;
+  const visibleQuickCities = QUICK_CITY_NAMES.filter((city) => countryFilter === "alle" || getCityCountry(city) === countryFilter);
+
   return (
-    <div className="space-y-4">
-      {/* Filter Header */}
-      <div className="flex items-center gap-2 mb-4">
-        <Filter className="w-5 h-5 text-gold" />
-        <h3 className="font-display text-lg font-semibold text-foreground">Filter & Sortierung</h3>
+    <section aria-labelledby="discover-filter-heading" className="space-y-5" data-testid="experience-filters">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <div className="flex items-center gap-2 text-gold">
+            <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
+            <p className="text-xs font-semibold uppercase tracking-[0.18em]">Entdecke nach deinem Geschmack</p>
+          </div>
+          <h3 id="discover-filter-heading" className="mt-1 font-display text-xl font-semibold text-foreground">
+            Welche Show passt zu dir?
+          </h3>
+        </div>
+        <p aria-live="polite" className="text-sm text-muted-foreground">
+          <span className="font-semibold text-gold">{resultCount}</span> {resultCount === 1 ? "Show" : "Shows"} gefunden
+        </p>
       </div>
 
-      {/* Filters Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-        {/* Country Filter */}
-        <div>
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            <Globe className="w-3 h-3 inline mr-1" />
-            Land
-          </label>
-          <select
-            value={countryFilter}
-            onChange={(e) => handleCountryChange(e.target.value as CountryFilter)}
-            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
+      <div>
+        <p className="mb-2 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Musical-Kategorie">
+          <button
+            type="button"
+            onClick={() => setCategoryFilter("alle")}
+            className={`${basePillClass} ${categoryFilter === "alle" ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+            aria-pressed={categoryFilter === "alle"}
           >
-            <option value="alle">Alle Länder</option>
-            <option value="de">🇩🇪 Deutschland</option>
-            <option value="at">🇦🇹 Österreich</option>
-            <option value="ch">🇨🇭 Schweiz</option>
-          </select>
-        </div>
-
-        {/* Category Filter */}
-        <div>
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            Kategorie
-          </label>
-          <select
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value as FilterCategory)}
-            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
-          >
-            <option value="alle">Alle Kategorien</option>
-            <option value="fester-standort">Fester Standort</option>
-            <option value="tournee">Tournee</option>
-            <option value="erwachsene">Erwachsene</option>
-            <option value="familie">Familie</option>
-            <option value="kinder">Kinder</option>
-          </select>
-        </div>
-
-        {/* City Filter + PLZ-Umkreissuche */}
-        <div className="md:col-span-2 lg:col-span-1">
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            <MapPin className="w-3 h-3 inline mr-1" />
-            Stadt / Umkreis
-          </label>
-          <div className="relative">
+            Alle Shows
+          </button>
+          {EXPERIENCE_CATEGORIES.map((category) => (
             <button
-              onClick={() => setShowCityDropdown(!showCityDropdown)}
-              className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground hover:border-gold/40 transition-colors flex items-center justify-between"
+              key={category.id}
+              type="button"
+              onClick={() => setCategoryFilter(category.id)}
+              title={category.description}
+              className={`${basePillClass} ${categoryFilter === category.id ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+              aria-pressed={categoryFilter === category.id}
             >
-              <span className="truncate">
-                {cityFilter === "alle" ? "Alle Städte" : cityFilter}
-              </span>
-              <ChevronDown
-                className={`w-4 h-4 transition-transform ${showCityDropdown ? "rotate-180" : ""}`}
-              />
+              <span className="sm:hidden">{category.shortLabel}</span>
+              <span className="hidden sm:inline">{category.label}</span>
             </button>
+          ))}
+        </div>
+      </div>
 
-            {/* Dropdown Menu */}
-            {showCityDropdown && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-sm shadow-lg z-50 max-h-64 overflow-y-auto">
-                <button
-                  onClick={() => {
-                    setCityFilter("alle");
-                    setShowCityDropdown(false);
-                  }}
-                  className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors ${cityFilter === "alle" ? "font-semibold" : "text-foreground"}`}
-                  style={cityFilter === "alle" ? {backgroundColor: 'rgba(184,148,74,0.12)', color: '#b8944a'} : {}}
-                >
-                  Alle Städte {countryFilter !== "alle" && <span className="text-xs opacity-60">({filteredCities.length})</span>}
+      <div className="grid gap-4 border-t border-gold/15 pt-5 lg:grid-cols-[auto,minmax(0,1fr)] lg:items-start">
+        <div>
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Land</p>
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Land auswählen">
+            {COUNTRY_FILTERS.map((country) => (
+              <button
+                key={country.id}
+                type="button"
+                onClick={() => handleCountryChange(country.id)}
+                className={`${basePillClass} px-3 py-1.5 text-xs ${countryFilter === country.id ? "border-gold bg-gold/15 text-gold" : "border-border bg-card/40 text-muted-foreground hover:border-gold/50 hover:text-gold"}`}
+                aria-pressed={countryFilter === country.id}
+              >
+                {country.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative lg:justify-self-end">
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Ort</p>
+          <button
+            type="button"
+            onClick={() => setCityPanelOpen((open) => !open)}
+            className="inline-flex min-h-10 w-full items-center justify-between gap-3 rounded-full border border-gold/45 bg-card/70 px-4 text-sm text-foreground transition-all duration-150 hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:min-w-72 lg:w-80"
+            aria-expanded={cityPanelOpen}
+            aria-controls="city-finder-panel"
+          >
+            <span className="flex min-w-0 items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+              <span className="truncate">{cityFilter === "alle" ? "Ort finden" : cityFilter}</span>
+            </span>
+            <ChevronDown className={`h-4 w-4 shrink-0 text-gold transition-transform duration-150 ${cityPanelOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+          </button>
+
+          {cityPanelOpen && (
+            <div id="city-finder-panel" className="absolute right-0 z-50 mt-2 w-full min-w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-gold/35 bg-card p-4 shadow-2xl shadow-black/45 sm:w-[26rem]" data-testid="city-finder-panel">
+              <label className="sr-only" htmlFor="city-finder-search">Stadt eingeben</label>
+              <div className="flex items-center gap-2 rounded-xl border border-border bg-background/60 px-3 focus-within:border-gold">
+                <Search className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+                <input
+                  id="city-finder-search"
+                  autoFocus
+                  value={cityQuery}
+                  onChange={(event) => setCityQuery(event.target.value)}
+                  placeholder="Stadt eingeben"
+                  className="h-10 w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+                />
+                {cityQuery && (
+                  <button type="button" onClick={() => setCityQuery("")} aria-label="Stadtsuche leeren" className="text-muted-foreground hover:text-gold">
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+
+              {!cityQuery && (
+                <>
+                  <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Beliebte Musical-Städte</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {visibleQuickCities.map((city) => (
+                      <button key={city} type="button" onClick={() => selectCity(city)} className="rounded-full border border-gold/35 px-3 py-1.5 text-xs font-medium text-gold transition-colors hover:border-gold hover:bg-gold hover:text-background">
+                        {city}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              <div className="mt-4 max-h-48 overflow-y-auto border-t border-border/60 pt-2" role="listbox" aria-label="Gefundene Städte">
+                <button type="button" onClick={() => selectCity("alle")} className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-sm text-foreground transition-colors hover:bg-gold/10">
+                  {cityFilter === "alle" ? <Check className="h-4 w-4 text-gold" /> : <span className="h-4 w-4" />}
+                  Alle Städte
                 </button>
-                {filteredCities.map((cityName) => (
-                  <button
-                    key={cityName}
-                    onClick={() => {
-                      setCityFilter(cityName);
-                      setShowCityDropdown(false);
-                    }}
-                    className={`w-full text-left px-3 py-2 text-sm hover:bg-border/50 transition-colors flex items-center gap-2 ${cityFilter === cityName ? "font-semibold" : "text-foreground"}`}
-                    style={cityFilter === cityName ? {backgroundColor: 'rgba(184,148,74,0.12)', color: '#b8944a'} : {}}
-                  >
-                    <MapPin className="w-3 h-3" />
-                    {cityName}
+                {filteredCities.map((city) => (
+                  <button key={city} type="button" onClick={() => selectCity(city)} className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-sm text-foreground transition-colors hover:bg-gold/10" role="option" aria-selected={cityFilter === city}>
+                    {cityFilter === city ? <Check className="h-4 w-4 text-gold" /> : <MapPin className="h-4 w-4 text-gold/70" />}
+                    {city}
                   </button>
                 ))}
+                {filteredCities.length === 0 && <p className="px-2 py-3 text-sm text-muted-foreground">Keine Stadt gefunden.</p>}
               </div>
-            )}
-          </div>
 
-          {/* PLZ-Umkreissuche – Akkordeon direkt unter Stadt */}
-          <div className="mt-2 border border-border/50 rounded-sm overflow-hidden">
-            <button
-              onClick={() => setShowPlzAccordion(!showPlzAccordion)}
-              className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors ${
-                plzSearch.active
-                  ? "bg-gold/10 text-gold border-b border-gold/20"
-                  : "bg-card text-gold/70 hover:text-gold hover:bg-gold/5"
-              }`}
-            >
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3 h-3" />
-                <span className="font-medium">
-                  {plzSearch.active
-                    ? `Umkreis ${plzSearch.radius} km um ${plzSearch.plz}`
-                    : "oder per Umkreis suchen"}
-                </span>
-                {plzSearch.active && (
-                  <span className="text-xs bg-gold/20 text-gold px-1.5 py-0.5 rounded-full">aktiv</span>
-                )}
-              </span>
-              <ChevronDown
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  showPlzAccordion ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            {showPlzAccordion && (
-              <div className="p-3 bg-card/50 border-t border-border/30">
-                <PlzSearch state={plzSearch} onChange={setPlzSearch} compact />
+              <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5">
+                <button type="button" onClick={() => setPlzPanelOpen((open) => !open)} className="flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-sm font-medium text-gold">
+                  <span className="flex items-center gap-2"><MapPin className="h-4 w-4" />{plzSearch.active ? `Im Umkreis von ${plzSearch.radius} km` : "In meiner Nähe"}</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-150 ${plzPanelOpen ? "rotate-180" : ""}`} />
+                </button>
+                {plzPanelOpen && <div className="border-t border-gold/20 p-3"><PlzSearch state={plzSearch} onChange={setPlzSearch} compact /></div>}
               </div>
-            )}
-          </div>
-        </div>
-
-        {/* Sort Option */}
-        <div>
-          <label className="block text-xs text-muted-foreground uppercase tracking-wider mb-2">
-            <Calendar className="w-3 h-3 inline mr-1" />
-            Sortierung
-          </label>
-          <select
-            value={sortOption}
-            onChange={(e) => setSortOption(e.target.value as SortOption)}
-            className="w-full px-3 py-2 text-sm rounded-sm border border-border bg-card text-foreground focus:border-gold outline-none transition-colors"
-          >
-            <option value="name">Nach Name (A–Z)</option>
-            <option value="date">Nach Datum (früheste Vorstellung)</option>
-          </select>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Results Count */}
-      <div className="flex items-center justify-between pt-2 border-t border-border/30">
-        <p className="text-sm text-muted-foreground">
-          <span className="text-gold font-semibold">{resultCount}</span>{" "}
-          {resultCount === 1 ? "Ergebnis" : "Ergebnisse"}
-        </p>
-        {(categoryFilter !== "alle" ||
-          countryFilter !== "alle" ||
-          cityFilter !== "alle" ||
-          sortOption !== "name" ||
-          plzSearch.active) && (
-          <button
-            onClick={() => {
-              setCategoryFilter("alle");
-              setCountryFilter("alle");
-              setCityFilter("alle");
-              setSortOption("name");
-              setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
-            }}
-            className="text-xs text-gold hover:text-gold-light transition-colors underline"
-          >
+      {hasActiveFilter && (
+        <div className="flex items-center justify-between border-t border-border/50 pt-4">
+          <p className="text-sm text-muted-foreground">Deine Auswahl ist aktiv.</p>
+          <button type="button" onClick={resetFilters} className="text-sm font-medium text-gold underline-offset-4 transition-colors hover:text-gold-light hover:underline">
             Filter zurücksetzen
           </button>
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </section>
   );
 }

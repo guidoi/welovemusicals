@@ -3,6 +3,7 @@
  * Zentrale Datendatei für alle Musical-Produktionen, Anbieter und Tourneestädte
  * AWIN Merchant 11388 = Eventim (Deeplink-Format)
  */
+import type { ExperienceCategoryId } from "./experience-categories";
 
 export interface MusicalTourDate {
   city: string;
@@ -52,6 +53,7 @@ export interface Musical {
   provider: string;
   category: "ensuite" | "fester-standort" | "tournee" | "kinder"; // Legacy, wird durch categories ersetzt
   categories?: Array<"fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder">;
+  experienceCategory?: ExperienceCategoryId;
   city?: string;
   cities?: string[];
   headerCities?: string[]; // Die wichtigsten Städte für die Header-Anzeige (z.B. die 10 größten)
@@ -220,6 +222,7 @@ export const providers: Provider[] = [
 export const musicals: Musical[] = [
   {
     id: "dracula",
+    experienceCategory: "kult-klassiker",
     slug: "dracula",
     title: "DRACULA",
     subtitle: "Das Musical",
@@ -298,6 +301,7 @@ export const musicals: Musical[] = [
 
   {
     id: "moulinrouge",
+    experienceCategory: "blockbuster-spektakel",
     slug: "moulin-rouge",
     title: "MOULIN ROUGE!",
     subtitle: "Das Musical",
@@ -381,6 +385,7 @@ export const musicals: Musical[] = [
 
   {
     id: "phantom-der-oper",
+    experienceCategory: "blockbuster-spektakel",
     slug: "phantom-der-oper",
     title: "DAS PHANTOM DER OPER",
     subtitle: "Das Musical",
@@ -521,6 +526,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "fackjugoehte",
+    experienceCategory: "pop-rock-filmhits",
     slug: "fack-ju-goehte",
     title: "FACK JU GÖHTE",
     subtitle: "Das Musical",
@@ -605,6 +611,7 @@ export const musicals: Musical[] = [
 
   {
     id: "dreihaselnuesse",
+    experienceCategory: "familie-maerchen-magie",
     slug: "drei-haselnuesse-fuer-aschenbroedel",
     title: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL",
     subtitle: "Das Musical",
@@ -737,6 +744,7 @@ export const musicals: Musical[] = [
 
   {
     id: "rapunzel",
+    experienceCategory: "familie-maerchen-magie",
     slug: "rapunzel",
     title: "RAPUNZEL",
     subtitle: "Das märchenhafte Musical",
@@ -796,6 +804,7 @@ export const musicals: Musical[] = [
 
   {
     id: "schoene-und-das-biest",
+    experienceCategory: "familie-maerchen-magie",
     slug: "schoene-und-das-biest",
     title: "DIE SCHÖNE UND DAS BIEST",
     subtitle: "Das neue Musical",
@@ -908,6 +917,7 @@ export const musicals: Musical[] = [
 
   {
     id: "gloeckner-von-notre-dame",
+    experienceCategory: "blockbuster-spektakel",
     slug: "gloeckner-von-notre-dame",
     title: "DISNEY DER GLÖCKNER VON NOTRE-DAME",
     subtitle: "Das Musical",
@@ -984,6 +994,7 @@ export const musicals: Musical[] = [
 
   {
     id: "starlight-express",
+    experienceCategory: "kult-klassiker",
     slug: "starlight-express",
     title: "STARLIGHT EXPRESS",
     subtitle: "Das Musical",
@@ -1065,6 +1076,7 @@ export const musicals: Musical[] = [
 
   {
     id: "koenig-der-loewen",
+    experienceCategory: "blockbuster-spektakel",
     slug: "koenig-der-loewen",
     title: "DISNEYS DER KÖNIG DER LÖWEN",
     subtitle: "",
@@ -1146,6 +1158,7 @@ export const musicals: Musical[] = [
 
   {
     id: "mj-musical",
+    experienceCategory: "pop-rock-filmhits",
     slug: "mj-das-michael-jackson-musical",
     title: "MJ – DAS MICHAEL JACKSON MUSICAL",
     subtitle: "",
@@ -1225,6 +1238,7 @@ export const musicals: Musical[] = [
 
   {
     id: "eiskoenigin",
+    experienceCategory: "blockbuster-spektakel",
     slug: "die-eiskoenigin",
     title: "DISNEYS DIE EISKÖNIGIN",
     subtitle: "Das Musical",
@@ -1307,6 +1321,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "tarzan",
+    experienceCategory: "familie-maerchen-magie",
     slug: "disneys-musical-tarzan",
     title: "DISNEYS MUSICAL TARZAN",
     subtitle: "",
@@ -1394,6 +1409,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "ziz",
+    experienceCategory: "pop-rock-filmhits",
     slug: "zurueck-in-die-zukunft-das-musical",
     title: "ZURÜCK IN DIE ZUKUNFT",
     subtitle: "DAS MUSICAL",
@@ -1471,6 +1487,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "teufel-traegt-prada",
+    experienceCategory: "besondere-geschichten",
     slug: "der-teufel-traegt-prada-das-musical",
     title: "DER TEUFEL TRÄGT PRADA",
     subtitle: "",
@@ -1611,6 +1628,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "wir-sind-am-leben",
+    experienceCategory: "besondere-geschichten",
     slug: "wir-sind-am-leben",
     title: "WIR SIND AM LEBEN",
     subtitle: "Das Berlin Musical",
@@ -1687,6 +1705,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "tanz-der-vampire",
+    experienceCategory: "kult-klassiker",
     slug: "tanz-der-vampire",
     title: "TANZ DER VAMPIRE",
     subtitle: "Das Musical",
@@ -1751,6 +1770,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "we-will-rock-you",
+    experienceCategory: "pop-rock-filmhits",
     slug: "we-will-rock-you",
     title: "WE WILL ROCK YOU",
     subtitle: "Das Rock-Musical",
@@ -1821,6 +1841,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "salon-rosie",
+    experienceCategory: "besondere-geschichten",
     slug: "salon-rosie",
     title: "SALON ROSIE",
     subtitle: "Zwei Frauen an der Kippe",
@@ -1890,6 +1911,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "und-julia",
+    experienceCategory: "pop-rock-filmhits",
     slug: "und-julia",
     title: "& JULIA",
     subtitle: "Das Pop-Musical",

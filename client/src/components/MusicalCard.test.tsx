@@ -160,6 +160,16 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("via ATG Tickets");
   });
 
+  it("zeigt die kuratierte Erlebniswelt anstelle beliebiger Teaser-Schlagwörter", () => {
+    const markup = renderToStaticMarkup(
+      <MusicalCard musical={{ ...baseMusical, experienceCategory: "blockbuster-spektakel", tags: ["Legacy-Tag"] }} />,
+    );
+
+    expect(markup).toContain('data-testid="teaser-experience-category"');
+    expect(markup).toContain("Blockbuster &amp; Spektakel");
+    expect(markup).not.toContain("Legacy-Tag");
+  });
+
   it("zeigt das passende Anbieterlogo anstelle einer Anbieterzeile", () => {
     const stageMarkup = renderToStaticMarkup(
       <MusicalCard

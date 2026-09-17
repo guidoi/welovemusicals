@@ -8,19 +8,14 @@ import {
   Star,
   MapPin,
   ChevronDown,
-  ExternalLink,
   Music,
-  Building2,
-  Users,
-  ArrowRight,
-  SlidersHorizontal,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroAnchorNavigation from "@/components/HeroAnchorNavigation";
 import MusicalCard from "@/components/MusicalCard";
 import CityCard from "@/components/CityCard";
-import MusicalFilters, { type FilterCategory, type SortOption, type CountryFilter } from "@/components/MusicalFilters";
+import MusicalFilters from "@/components/MusicalFilters";
 import PlzSearch, { musicalInRadius, type PlzSearchState } from "@/components/PlzSearch";
 import {
   musicals,
@@ -31,10 +26,9 @@ import {
   getEditorialOverviewMusicals,
   getFeaturedMusicals,
   getActiveMusicalCountByCity,
-  createAwinLink,
-  type Musical,
 } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
+import { type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
 import { getHeroNavigationItems } from "@/lib/hero-navigation";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
 import {
@@ -60,10 +54,9 @@ const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "L
 
 export default function Home() {
   const { musicals: managedMusicals } = useManagedMusicals();
-  const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("alle");
+  const [categoryFilter, setCategoryFilter] = useState<ExperienceFilterId>("alle");
   const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
-  const [sortOption, setSortOption] = useState<SortOption>("name");
   const [plzSearch, setPlzSearch] = useState<PlzSearchState>({
     active: false,
     plz: "",    radius: 50,
@@ -72,8 +65,6 @@ export default function Home() {
 
   const [showAllMusicals, setShowAllMusicals] = useState(false);
   const [showMorePulsed, setShowMorePulsed] = useState(false); // Puls-Effekt einmalig für "Alle anzeigen"-Button
-  const [showFilters, setShowFilters] = useState(false); // Mobile: zugeklappt
-  const [filterPulsed, setFilterPulsed] = useState(false); // Puls-Effekt einmalig
   const firstResultRef = useRef<HTMLDivElement>(null);
 
   const scrollToFirstResult = useCallback(() => {
@@ -164,19 +155,9 @@ export default function Home() {
     // durchsucht sie das komplette aktive Angebot einschließlich der Highlights.
     let result = getEditorialOverviewMusicals(hasActiveFilter, managedMusicals);
 
-    // Filter nach Kategorie
+    // Redaktionelle Erlebniswelten statt technischer Datenkategorien.
     if (categoryFilter !== "alle") {
-      result = result.filter((m) => {
-        // Neue categories-Array-Logik
-        if (m.categories && m.categories.length > 0) {
-          return m.categories.includes(categoryFilter as any);
-        }
-        // Fallback auf altes category-Feld
-        if (categoryFilter === "fester-standort") return m.category === "ensuite";
-        if (categoryFilter === "kinder") return m.category === "kinder";
-        if (categoryFilter === "tournee") return m.category === "tournee";
-        return false;
-      });
+      result = result.filter((musical) => musical.experienceCategory === categoryFilter);
     }
 
     // Filter nach Land
@@ -207,22 +188,6 @@ export default function Home() {
       });
     }
 
-    // Sortierung
-    if (sortOption === "name") {
-      result = result.sort((a, b) => a.title.localeCompare(b.title, "de"));
-    } else if (sortOption === "date") {
-      // Früheste Vorstellung zuerst (aus tourDates oder startDate)
-      result = result.sort((a, b) => {
-        const getEarliestDate = (m: Musical): string => {
-          if (m.tourDates && m.tourDates.length > 0) {
-            return m.tourDates.map((t) => t.startDate).sort()[0];
-          }
-          return "9999-12-31";
-        };
-        return getEarliestDate(a).localeCompare(getEarliestDate(b));
-      });
-    }
-
     // Filter nach PLZ-Umkreis
     if (plzSearch.active && plzSearch.originCoords) {
       result = result.filter((m) =>
@@ -231,7 +196,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, countryFilter, cityFilter, sortOption, plzSearch, managedMusicals]);
+  }, [categoryFilter, countryFilter, cityFilter, plzSearch, managedMusicals]);
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 16);
 
@@ -335,65 +300,18 @@ export default function Home() {
             Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt.
           </p>
 
-          {/* Advanced Filters – Mobile Akkordeon, Desktop immer sichtbar */}
-          <div className="mb-10">
-            {/* Mobile Toggle Button */}
-            {(() => {
-              const activeCount = [
-                categoryFilter !== "alle",
-                countryFilter !== "alle",
-                cityFilter !== "alle",
-                sortOption !== "name",
-                plzSearch.active,
-              ].filter(Boolean).length;
-              return (
-                <button
-                  className={`md:hidden w-full flex items-center justify-between px-4 py-3.5 bg-card mb-0 transition-all duration-300 ${
-                    showFilters ? "rounded-t-2xl rounded-b-none" : "rounded-2xl"
-                  } ${
-                    showFilters
-                      ? "border-2 border-gold/70 shadow-[0_0_14px_rgba(184,148,74,0.30)]"
-                      : filterPulsed
-                        ? "border border-gold/40"
-                        : "border-2 border-gold/60 shadow-[0_0_18px_rgba(184,148,74,0.40)] animate-pulse"
-                  }`}
-                  onClick={() => { setShowFilters((v) => !v); setFilterPulsed(true); }}
-                >
-                  <span className="flex items-center gap-2.5 text-sm font-semibold text-gold">
-                    <SlidersHorizontal className="w-4 h-4" />
-                    Alle Musicals &amp; Shows filtern
-                    {activeCount > 0 && (
-                      <span className="text-xs bg-gold text-black px-2 py-0.5 rounded-full font-bold">
-                        {activeCount} aktiv
-                      </span>
-                    )}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <span className="text-gold font-semibold">{filteredMusicals.length}</span> Ergebnisse
-                    <ChevronDown className={`w-4 h-4 text-gold transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`} />
-                  </span>
-                </button>
-              );
-            })()}
-
-            {/* Filter Panel: auf Mobile nur wenn showFilters, auf Desktop immer */}
-            <div className={`p-6 bg-card border border-gold/10 ${
-              showFilters ? "block" : "hidden md:block"
-            } ${showFilters ? "rounded-t-none rounded-b-2xl border-t-0" : "rounded-2xl"}`}>
-              <MusicalFilters
-                categoryFilter={categoryFilter}
-                setCategoryFilter={setCategoryFilter}
-                countryFilter={countryFilter}
-                setCountryFilter={setCountryFilter}
-                cityFilter={cityFilter}
-                setCityFilter={setCityFilter}
-                sortOption={sortOption}
-                setSortOption={setSortOption}
-                plzSearch={plzSearch}
-                setPlzSearch={handlePlzSearch}
-                resultCount={filteredMusicals.length}
-              />
-            </div>
+          <div className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">
+            <MusicalFilters
+              categoryFilter={categoryFilter}
+              setCategoryFilter={setCategoryFilter}
+              countryFilter={countryFilter}
+              setCountryFilter={setCountryFilter}
+              cityFilter={cityFilter}
+              setCityFilter={setCityFilter}
+              plzSearch={plzSearch}
+              setPlzSearch={handlePlzSearch}
+              resultCount={filteredMusicals.length}
+            />
           </div>
 
           {/* Musical Grid – Scroll-Anker direkt nach Filter-Section */}

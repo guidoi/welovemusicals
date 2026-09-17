@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import type { Musical } from "@/lib/data";
 import { createAwinLink } from "@/lib/data";
+import { getExperienceCategory } from "@/lib/experience-categories";
 import { SALE_BADGE_LAYOUT } from "@/lib/sale-layout";
 import { isSaleActive } from "@/lib/sale";
 import { getTicketProviderBrand } from "@/lib/ticket-provider-brand";
@@ -48,6 +49,7 @@ const categoryIcons: Record<string, string> = {
 export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
+  const experienceCategory = getExperienceCategory(musical.experienceCategory);
   const providerLogoWidthClass =
     ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
 
@@ -139,18 +141,18 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
               {musical.description}
             </p>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-1.5 mb-4">
-              {musical.tags.map((tag) => (
+            {/* Curated experience category */}
+            {experienceCategory && (
+              <div className="mb-4">
                 <span
-                  key={tag}
-                  className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
+                  data-testid="teaser-experience-category"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-2.5 py-1 text-xs font-medium text-gold"
                 >
                   <Tag className="w-3 h-3" />
-                  {tag}
+                  {experienceCategory.label}
                 </span>
-              ))}
-            </div>
+              </div>
+            )}
 
             {/* CTA */}
             <div className="flex items-center justify-between gap-3">
