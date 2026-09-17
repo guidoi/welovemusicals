@@ -100,8 +100,8 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
             {/* Featured Badge */}
             {musical.featured && (
               <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
-                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold bg-transparent px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-gold shadow-lg shadow-gold/20 md:gap-1 md:px-2 md:py-0.5 md:text-[10px]`}>
-                  <Star className="h-3 w-3 fill-gold text-gold md:h-2.5 md:w-2.5" />
+                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold bg-transparent px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-gold`}>
+                  <Star className="h-3 w-3 fill-gold text-gold" />
                   Top-Musical
                 </span>
               </div>
@@ -146,9 +146,9 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
               <div className="mb-4">
                 <span
                   data-testid="teaser-experience-category"
-                  className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-[#2b2010] px-3 py-1.5 text-sm font-medium text-gold md:gap-1.5 md:px-2.5 md:py-1 md:text-xs"
+                  className="inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold"
                 >
-                  <Tag className="h-3.5 w-3.5 md:h-3 md:w-3" />
+                  <Tag className="h-3.5 w-3.5" />
                   {experienceCategory.label}
                 </span>
               </div>

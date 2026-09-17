@@ -548,3 +548,6 @@
 
 ## Mobile Teaser-Badges
 - [x] Top-Musical- und Erlebnis-Kategorie-Badges mobil vergrößern sowie Kategorie-Badges deckend gestalten und prüfen
+
+## Teaser-Badges ohne Goldglanz
+- [x] Kategorie-Badge dem transparenten Top-Musical-Stil angleichen und beide Teaser-Badges auf Desktop vergrößern
