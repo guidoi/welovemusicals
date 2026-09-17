@@ -44,4 +44,9 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('data-testid="overview-reset-button"');
     expect(homeSource).toContain("Zurück zur Übersicht");
   });
+
+  it("zeigt bei einer aktiven Erlebniswelt nur den Kategorienamen als Überschrift", () => {
+    expect(homeSource).toContain("? selectedExperienceCategory.label");
+    expect(homeSource).not.toContain("? `Musicals & Shows: ${selectedExperienceCategory.label}`");
+  });
 });

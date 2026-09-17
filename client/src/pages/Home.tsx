@@ -376,7 +376,7 @@ export default function Home() {
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             {selectedExperienceCategory
-              ? `Musicals & Shows: ${selectedExperienceCategory.label}`
+              ? selectedExperienceCategory.label
               : includeHighlightsInOverview
                 ? "Alle Musicals & Shows"
                 : "Weitere Musicals & Shows"}
