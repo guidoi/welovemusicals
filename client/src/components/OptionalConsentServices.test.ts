@@ -1,5 +1,8 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { shouldLoadAffiliateTrackingForPath } from "./OptionalConsentServices";
+
+const source = readFileSync(new URL("./OptionalConsentServices.tsx", import.meta.url), "utf8");
 
 describe("Affiliate-Dienste auf Rechtsseiten", () => {
   it("unterbindet Affiliate-Skripte auf Impressum und Datenschutzerklärung", () => {
@@ -16,5 +19,14 @@ describe("Affiliate-Dienste auf Rechtsseiten", () => {
   it("unterbindet externe Affiliate-Skripte in der Webdev-Vorschau", () => {
     expect(shouldLoadAffiliateTrackingForPath("/", "?from_webdev=1")).toBe(false);
     expect(shouldLoadAffiliateTrackingForPath("/", "?from_webdev=0")).toBe(true);
+  });
+
+  it("initialisiert den TradeDoubler-Converter nur einmal und fängt externe Fehler sicher ab", () => {
+    expect(source).toContain("const initialiseConverterOnce");
+    expect(source).toContain("try {");
+    expect(source).toContain("converter.init({});");
+    expect(source).toContain("catch {");
+    expect(source).toContain("new MutationObserver(convertStageLinksWithFallback)");
+    expect(source).not.toContain("new MutationObserver(convertEligibleLinks)");
   });
 });

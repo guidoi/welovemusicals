@@ -569,3 +569,6 @@
 
 ## Konsistente Musicalübersicht
 - [x] Ohne Auswahl nur weitere Shows zeigen; bei „Alle Shows“ oder einer aktiven Auswahl vollständige Ergebnisse mit passenden Top-Musicals zuerst ausgeben
+
+## Drittanbieter-Skripte stabilisieren
+- [x] TradeDoubler-Link-Converter nur einmal initialisieren, spätere DOM-Änderungen über den sicheren Fallback verarbeiten und Startseite prüfen

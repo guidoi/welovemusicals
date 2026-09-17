@@ -228,7 +228,7 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(getMusicalBySlug("sister-act")).toBeUndefined();
   });
 
-  it("initialisiert den TradeDoubler Link Converter erst nach Zustimmung und auch nach React-Renderzyklen", () => {
+  it("initialisiert den TradeDoubler Link Converter erst nach Zustimmung und nur einmal", () => {
     const consentServices = readFileSync(
       new URL("../client/src/components/OptionalConsentServices.tsx", import.meta.url),
       "utf8"
@@ -241,7 +241,9 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(consentServices).toContain('new URLSearchParams(search).get("from_webdev") === "1"');
     expect(consentServices).toContain("https://clk.tradedoubler.com/lc?a(3492604)rand(");
     expect(consentServices).toContain("converter?.init");
-    expect(consentServices).toContain("new MutationObserver(convertEligibleLinks)");
+    expect(consentServices).toContain("const initialiseConverterOnce");
+    expect(consentServices).toContain("new MutationObserver(convertStageLinksWithFallback)");
+    expect(consentServices).not.toContain("new MutationObserver(convertEligibleLinks)");
     expect(consentServices).toContain("https://visit.stage-entertainment.de/click?p=394206");
     expect(consentServices).toContain('destination.hostname.endsWith(".stage-entertainment.de")');
     expect(consentServices).toContain("convertStageLinksWithFallback();");

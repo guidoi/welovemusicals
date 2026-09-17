@@ -44,18 +44,29 @@ function startTradeDoublerConverter() {
     }
   };
 
-  const convertEligibleLinks = () => {
+  const initialiseConverterOnce = () => {
     const converter = (window as Window & { TDLinkConverter?: { init: (options: object) => void } }).TDLinkConverter;
-    if (converter?.init) converter.init({});
-    else convertStageLinksWithFallback();
+    if (!converter?.init) return false;
+
+    try {
+      converter.init({});
+      return true;
+    } catch {
+      // Fremdskripte liefern bei Cross-Origin-Fehlern oft nur „Script error.“.
+      // Die eigenen Stage-Ziele bleiben über den lokalen, getesteten Fallback nutzbar.
+      return false;
+    }
   };
 
   const script = document.createElement("script");
   script.id = TRADEDOUBLER_SCRIPT_ID;
   script.src = `https://clk.tradedoubler.com/lc?a(3492604)rand(${Math.floor(Date.now() / 3_600_000)})`;
   script.onload = () => {
-    convertEligibleLinks();
-    observer = new MutationObserver(convertEligibleLinks);
+    initialiseConverterOnce();
+    convertStageLinksWithFallback();
+    // React kann später weitere Ticketlinks rendern. Diese werden nur noch durch
+    // den eigenen Fallback ergänzt; das Fremdskript wird nie erneut initialisiert.
+    observer = new MutationObserver(convertStageLinksWithFallback);
     observer.observe(document.documentElement, { childList: true, subtree: true });
   };
   script.onerror = convertStageLinksWithFallback;
