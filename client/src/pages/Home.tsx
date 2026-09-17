@@ -90,7 +90,12 @@ export default function Home() {
     requestAnimationFrame(() => {
       const el = firstResultRef.current;
       if (!el) return;
-      const top = el.getBoundingClientRect().top + window.scrollY - 24;
+
+      // Das erste Ergebnis bleibt vollständig unter Header und kompakter Filterleiste sichtbar.
+      const headerHeight = window.matchMedia("(min-width: 768px)").matches ? 80 : 64;
+      const stickyFilterAllowance = 48;
+      const safetyGap = 16;
+      const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - stickyFilterAllowance - safetyGap;
       window.scrollTo({ top, behavior: 'smooth' });
     });
   }, []);

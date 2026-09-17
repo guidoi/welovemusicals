@@ -79,6 +79,9 @@ describe("Startseiten-Erlebnisfilter", () => {
   it("führt Filterklicks nach der Aktualisierung sanft zum Ergebnisbereich", () => {
     expect(homeSource).toContain("const scrollToUpdatedResults = useCallback(() => {");
     expect(homeSource).toContain("window.setTimeout(scrollToFirstResult, 80);");
+    expect(homeSource).toContain("const stickyFilterAllowance = 48;");
+    expect(homeSource).toContain("const safetyGap = 16;");
+    expect(homeSource).toContain("- headerHeight - stickyFilterAllowance - safetyGap");
     expect(homeSource).toContain("scrollToUpdatedResults();");
     expect(homeSource).toContain('"Deine passenden Shows – Highlights zuerst."');
   });
