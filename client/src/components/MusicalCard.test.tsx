@@ -151,6 +151,9 @@ describe("MusicalCard Sale-Störer", () => {
     const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
 
     expect(markup).toContain("Infos &amp; Tickets");
+    expect(markup).toContain('data-testid="teaser-ticket-cta-icon"');
+    expect(markup).toContain("h-7 w-7 shrink-0 items-center justify-center rounded-full");
+    expect(markup).toContain('stroke-width="2.25"');
     expect(markup).not.toContain("Tickets sichern");
     expect(markup).not.toContain("via Eventim");
     expect(markup).not.toContain("via Stage Entertainment");

@@ -530,4 +530,7 @@
 - [x] Eiskönigin-Sale ausschließlich vom 14. bis einschließlich 21.09.2026 aktiv anzeigen lassen
 
 ## Runde Icon-Steuerung
-- [ ] Rechteckige Header-Werkzeuge durch kompakte runde Icon-Buttons im Stil der Referenz ersetzen und auf Desktop sowie Mobil prüfen
+- [x] Rechteckige Header-Werkzeuge durch kompakte runde Icon-Buttons im Stil der Referenz ersetzen und auf Desktop sowie Mobil prüfen
+
+## Teaser-CTA-Icon
+- [x] Das viereckige External-Link-Piktogramm neben „Infos & Tickets“ in allen Startseiten-Teasern durch ein rundes Pfeil-Icon ersetzen und prüfen

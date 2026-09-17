@@ -3,7 +3,7 @@
  * MusicalCard: Elegante Karte mit Spotlight-Hover-Effekt
  */
 import React from "react";
-import { MapPin, ExternalLink, Tag, Star } from "lucide-react";
+import { ArrowUpRight, MapPin, Tag, Star } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import type { Musical } from "@/lib/data";
@@ -161,9 +161,15 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
                 alt={ticketProviderBrand.name}
                 className={`h-8 ${providerLogoWidthClass} w-auto object-contain object-left opacity-90 md:h-7`}
               />
-              <span data-testid="teaser-ticket-cta" className="flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
+              <span data-testid="teaser-ticket-cta" className="flex items-center gap-2 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
                 Infos &amp; Tickets
-                <ExternalLink className="w-3.5 h-3.5" />
+                <span
+                  data-testid="teaser-ticket-cta-icon"
+                  className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/55 bg-gold/10 text-gold transition-all duration-150 group-hover:-translate-y-0.5 group-hover:border-gold-light group-hover:bg-gold group-hover:text-background"
+                  aria-hidden="true"
+                >
+                  <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.25} />
+                </span>
               </span>
             </div>
           </div>
