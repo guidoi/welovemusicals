@@ -60,6 +60,17 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("hover:bg-gold/15");
   });
 
+  it("gibt auf Touch-Geräten eine kurze Rückmeldung und vereinheitlicht das Filter-Reset-Icon", () => {
+    expect(homeSource).toContain("const triggerResetTouchFeedback = useCallback((pointerType: string) => {");
+    expect(homeSource).toContain('if (pointerType !== "touch") return;');
+    expect(homeSource).toContain("}, 220);");
+    expect(homeSource).toContain("const delay = lastResetInteractionWasTouchRef.current ? 120 : 0;");
+    expect(homeSource).toContain("onClick={resetToAdditionalOverviewWithFeedback}");
+    expect(homeSource).toContain("onPointerDown={(event) => triggerResetTouchFeedback(event.pointerType)}");
+    expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
+    expect(homeSource).toContain("group-hover:-translate-x-0.5");
+  });
+
   it("zeigt bei einer aktiven Erlebniswelt nur den Kategorienamen als Überschrift", () => {
     expect(homeSource).toContain("? selectedExperienceCategory.label");
     expect(homeSource).not.toContain("? `Musicals & Shows: ${selectedExperienceCategory.label}`");
