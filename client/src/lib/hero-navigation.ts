@@ -1,3 +1,5 @@
+import { EXPERIENCE_CATEGORIES, type ExperienceCategoryId } from "./experience-categories";
+
 export type HeroNavigationMusical = {
   id: string;
   slug: string;
@@ -8,7 +10,8 @@ export type HeroNavigationItem = {
   id: string;
   label: string;
   href: string;
-  kind: "overview" | "city" | "musical";
+  kind: "overview" | "city" | "musical" | "category";
+  categoryId?: ExperienceCategoryId;
 };
 
 export const HERO_NAVIGATION_LABEL_OVERRIDES: Record<string, string> = {
@@ -56,6 +59,13 @@ export function getHeroNavigationItems(
   return [
     { id: "all-musicals", label: "Musicals & Shows", href: "#musicals", kind: "overview" },
     { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
+    ...EXPERIENCE_CATEGORIES.map((category) => ({
+      id: `category-${category.id}`,
+      label: category.shortLabel,
+      href: "#more-musicals",
+      kind: "category" as const,
+      categoryId: category.id,
+    })),
     ...featuredMusicals.map((musical) => ({
       id: `musical-${musical.slug}`,
       label: getHeroNavigationLabel(musical),

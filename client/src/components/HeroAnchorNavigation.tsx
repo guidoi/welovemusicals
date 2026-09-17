@@ -13,6 +13,7 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const orientationItems = items.filter((item) => item.id === "all-musicals" || item.id === "musical-cities");
+  const categoryItems = items.filter((item) => item.kind === "category");
   const musicalItems = items.filter((item) => item.kind === "musical" || item.id === "more-musicals");
 
   const updateScrollState = useCallback(() => {
@@ -79,6 +80,15 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
           "inline-flex h-10 items-center rounded-full border border-gold bg-transparent px-4 text-xs font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm",
         ))}
       </div>
+
+      {categoryItems.length > 0 && (
+        <div className="mb-3 flex flex-wrap justify-center gap-1.5" data-testid="hero-category-navigation" aria-label="Musicals nach Erlebniswelt entdecken">
+          {categoryItems.map((item) => renderItem(
+            item,
+            "inline-flex h-8 items-center rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold transition-all duration-150 hover:border-gold hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+          ))}
+        </div>
+      )}
 
       <div className="relative">
       <button

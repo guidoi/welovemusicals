@@ -29,7 +29,7 @@ import {
 } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
-import { getHeroNavigationItems } from "@/lib/hero-navigation";
+import { getHeroNavigationItems, type HeroNavigationItem } from "@/lib/hero-navigation";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
 import {
   DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS,
@@ -118,8 +118,17 @@ export default function Home() {
     [managedMusicals],
   );
 
-  const handleHeroNavigation = useCallback((href: string, kind: "overview" | "city" | "musical") => {
+  const handleHeroNavigation = useCallback((item: HeroNavigationItem) => {
+    const { href, kind } = item;
     if (kind === "musical" || !href.startsWith("#")) return;
+
+    if (kind === "category" && item.categoryId) {
+      setCategoryFilter(item.categoryId);
+      setCountryFilter("alle");
+      setCityFilter("alle");
+      setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
+      setShowAllMusicals(true);
+    }
 
     const target = document.getElementById(href.slice(1));
     const nextHistoryState = createHeroAnchorHistoryState(window.history.state, href);
@@ -256,7 +265,7 @@ export default function Home() {
             <div className={`${MOBILE_HERO_NAVIGATION_TOP_CLASS} md:hidden`}>
               <HeroAnchorNavigation
                 items={heroNavigationItems}
-                onNavigate={(item) => handleHeroNavigation(item.href, item.kind)}
+                onNavigate={handleHeroNavigation}
               />
             </div>
 

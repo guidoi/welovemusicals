@@ -16,4 +16,13 @@ describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
     expect(musicalDetailSource).not.toContain("musical.tags.map");
     expect(musicalDetailSource).not.toContain("{/* Tags */}");
   });
+
+  it("zeigt auf jeder aktiven Detailseite passende Shows, die nach Erlebniswelt priorisiert sind", () => {
+    expect(musicalDetailSource).toContain('import { getRelatedMusicals } from "@/lib/related-musicals";');
+    expect(musicalDetailSource).toContain("const related = getRelatedMusicals(");
+    expect(musicalDetailSource).toContain("ACTIVE_MUSICAL_IDS.includes(candidate.id)");
+    expect(musicalDetailSource).not.toContain("{false && related.length > 0");
+    expect(musicalDetailSource).toContain("{related.length > 0 && (");
+    expect(musicalDetailSource).toContain("Mehr aus");
+  });
 });

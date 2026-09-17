@@ -557,3 +557,6 @@
 
 ## Detailseiten ohne Zusatz-Tags
 - [x] Bisherige Detailseiten-Tags wie Familie, Disney und Romantik entfernen; nur die Erlebnis-Kategorie beibehalten und prüfen
+
+## Kategorie-Einstiege und Empfehlungen
+- [x] Erlebnis-Kategorien als Hero-Einstieg ergänzen, verwandte Shows danach priorisieren und die Pflichtkategorie für neue Musicals dokumentieren

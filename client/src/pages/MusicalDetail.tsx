@@ -37,7 +37,7 @@ import MusicalQuotes from "@/components/MusicalQuotes";
 import MusicalGallery from "@/components/MusicalGallery";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
 import TourDates from "@/components/TourDates";
-import { cities, createAwinLink, providers } from "@/lib/data";
+import { ACTIVE_MUSICAL_IDS, cities, createAwinLink, providers } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -48,6 +48,7 @@ import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provide
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import { getExperienceCategory } from "@/lib/experience-categories";
+import { getRelatedMusicals } from "@/lib/related-musicals";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -138,10 +139,11 @@ export default function MusicalDetail() {
 
   const experienceCategory = getExperienceCategory(musical.experienceCategory);
 
-  // Get related musicals (same provider or category, excluding current)
-  const related = managedMusicals
-    .filter((m) => m.id !== musical.id && (m.provider === musical.provider || m.category === musical.category))
-    .slice(0, 3);
+  // Shows from the same Erlebniswelt come first; provider and production type fill remaining slots.
+  const related = getRelatedMusicals(
+    managedMusicals.filter((candidate) => ACTIVE_MUSICAL_IDS.includes(candidate.id)),
+    musical,
+  );
 
   const relevantCities = musical.city
     ? cities.filter((city) => city.name === musical.city || musical.cities?.includes(city.name))
@@ -628,14 +630,19 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {/* Related Musicals - Hidden until final release */}
-      {false && related.length > 0 && (
+      {/* Related Musicals – available on every active musical detail page. */}
+      {related.length > 0 && (
         <section className="py-12 md:py-16 bg-card/50">
           <div className="container">
             <div className="border-t border-border mb-10" />
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">
               Ähnliche Musicals
             </h2>
+            {experienceCategory && (
+              <p className="-mt-5 mb-6 text-sm text-muted-foreground">
+                Mehr aus <span className="font-medium text-gold">{experienceCategory.label}</span>
+              </p>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((m, i) => (
                 <MusicalCard key={m.id} musical={m} index={i} />

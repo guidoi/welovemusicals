@@ -14,6 +14,7 @@ describe("HeroAnchorNavigation", () => {
           items={[
             { id: "all-musicals", label: "Musicals & Shows", href: "#musicals", kind: "overview" },
             { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
+            { id: "category-kult-klassiker", label: "Kult & Klassiker", href: "#more-musicals", kind: "category", categoryId: "kult-klassiker" },
             { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
             { id: "more-musicals", label: "Weitere Musicals & Shows", href: "#more-musicals", kind: "overview" },
           ]}
@@ -23,6 +24,10 @@ describe("HeroAnchorNavigation", () => {
 
     expect(markup).toContain('aria-label="Direktnavigation zu Musical-Inhalten"');
     expect(markup).toContain('data-testid="hero-orientation-navigation"');
+    expect(markup).toContain('data-testid="hero-category-navigation"');
+    expect(markup).toContain('aria-label="Musicals nach Erlebniswelt entdecken"');
+    expect(markup).toContain('data-testid="hero-anchor-category-kult-klassiker"');
+    expect(markup).toContain('>Kult &amp; Klassiker<');
     expect(markup).not.toContain('hero-navigation-overflow-cue');
     expect(markup).not.toContain('bg-gradient-to-l');
     expect(markup).not.toContain('from-gold/35');
