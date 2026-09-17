@@ -554,3 +554,6 @@
 
 ## Erlebnis-Kategorie auf Detailseiten
 - [x] Erlebnis-Kategorie auf Musical-Detailseiten sichtbar ergänzen und die Filterreihenfolge nach Conversion-Priorität ausrichten
+
+## Detailseiten ohne Zusatz-Tags
+- [x] Bisherige Detailseiten-Tags wie Familie, Disney und Romantik entfernen; nur die Erlebnis-Kategorie beibehalten und prüfen

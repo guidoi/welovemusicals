@@ -11,4 +11,9 @@ describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
     expect(musicalDetailSource).toContain('rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold');
     expect(musicalDetailSource).toContain("{experienceCategory.label}");
   });
+
+  it("zeigt keine früheren Detailseiten-Zusatz-Tags neben der Erlebniswelt", () => {
+    expect(musicalDetailSource).not.toContain("musical.tags.map");
+    expect(musicalDetailSource).not.toContain("{/* Tags */}");
+  });
 });

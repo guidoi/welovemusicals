@@ -211,7 +211,7 @@ export default function MusicalDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="mb-4">
               {experienceCategory && (
                 <span
                   data-testid="detail-experience-category"
@@ -221,15 +221,6 @@ export default function MusicalDetail() {
                   {experienceCategory.label}
                 </span>
               )}
-              {musical.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-sm bg-secondary text-secondary-foreground"
-                >
-                  <Tag className="w-3 h-3" />
-                  {tag}
-                </span>
-              ))}
             </div>
 
             {/* H1 Headline-Effekt: sanftes Fade-in mit Y-Offset – alle Musical-Seiten */}
@@ -379,20 +370,6 @@ export default function MusicalDetail() {
                     {musical.description}
                   </p>
                 )}
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {musical.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-sm bg-secondary text-secondary-foreground"
-                    >
-                      <Tag className="w-3 h-3" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
 
               </motion.div>
             </div>
