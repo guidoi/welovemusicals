@@ -1238,7 +1238,7 @@ export const musicals: Musical[] = [
 
   {
     id: "eiskoenigin",
-    experienceCategory: "blockbuster-spektakel",
+    experienceCategory: "familie-maerchen-magie",
     slug: "die-eiskoenigin",
     title: "DISNEYS DIE EISKÖNIGIN",
     subtitle: "Das Musical",
@@ -1321,7 +1321,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "tarzan",
-    experienceCategory: "familie-maerchen-magie",
+    experienceCategory: "blockbuster-spektakel",
     slug: "disneys-musical-tarzan",
     title: "DISNEYS MUSICAL TARZAN",
     subtitle: "",

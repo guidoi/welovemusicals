@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { trackExperienceCategorySelection } from "./category-analytics";
+import { trackExperienceCategorySelection, trackPartnerScriptStatus } from "./category-analytics";
 
 describe("Kategorie-Analyse", () => {
   afterEach(() => {
@@ -36,5 +36,27 @@ describe("Kategorie-Analyse", () => {
       placement: "hero-mobile",
       analyticsConsent: true,
     })).toBe(false);
+  });
+
+  it("erfasst Partner-Skriptstatus ausschließlich nach Reichweitenmessungs-Einwilligung", () => {
+    const track = vi.fn();
+    vi.stubGlobal("window", { umami: { track } });
+
+    expect(trackPartnerScriptStatus({
+      partner: "awin",
+      status: "failed",
+      analyticsConsent: false,
+    })).toBe(false);
+    expect(track).not.toHaveBeenCalled();
+
+    expect(trackPartnerScriptStatus({
+      partner: "tradedoubler",
+      status: "loaded",
+      analyticsConsent: true,
+    })).toBe(true);
+    expect(track).toHaveBeenCalledWith("affiliate_partner_script", {
+      partner: "tradedoubler",
+      status: "loaded",
+    });
   });
 });

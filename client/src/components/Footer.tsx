@@ -75,18 +75,18 @@ export default function Footer() {
               {FOOTER_INFORMATION_LINKS.map((item) => (
                 <li key={item.label}>
                   {item.href.startsWith("/") ? (
-                    <Link href={item.href} className="text-sm text-muted-foreground hover:text-gold transition-colors">
+                    <Link href={item.href} className="text-sm text-white/90 hover:text-gold transition-colors">
                       {item.label}
                     </Link>
                   ) : (
-                    <span className="text-sm text-muted-foreground hover:text-gold transition-colors cursor-default">
+                    <span className="text-sm text-white/90 hover:text-gold transition-colors cursor-default">
                       {item.label}
                     </span>
                   )}
                 </li>
               ))}
               <li>
-                <button type="button" onClick={openSettings} className="text-left text-sm text-muted-foreground transition-colors hover:text-gold">
+                <button type="button" onClick={openSettings} className="text-left text-sm text-white/90 transition-colors hover:text-gold">
                   Datenschutz-Einstellungen
                 </button>
               </li>
@@ -112,10 +112,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/50">
+          <p className="text-xs text-white/90">
             &copy; {new Date().getFullYear()} WE LOVE MUSICALS – Alle Rechte vorbehalten.
           </p>
-          <p className="text-xs text-muted-foreground/50 flex items-center gap-1">
+          <p className="text-xs text-white/90 flex items-center gap-1">
             Gemacht mit <Heart className="w-3 h-3" style={{ color: 'rgb(239, 68, 68)', fill: 'rgb(239, 68, 68)' }} /> für Musical-Fans
           </p>
         </div>

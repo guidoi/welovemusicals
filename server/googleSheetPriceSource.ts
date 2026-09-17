@@ -33,6 +33,26 @@ type SourceCache = {
 const DEFAULT_CACHE_TTL_MS = 10 * 60_000;
 const DEFAULT_TIMEOUT_MS = 4_500;
 
+export function getGoogleSheetPriceSourceConfiguration(
+  environment: Record<string, string | undefined> = process.env,
+): { configured: boolean } {
+  const value = environment.GOOGLE_SHEETS_PRICE_CSV_URL;
+  if (!value) return { configured: false };
+
+  try {
+    const url = new URL(value);
+    return {
+      configured:
+        url.protocol === "https:" &&
+        url.hostname === "docs.google.com" &&
+        url.pathname.includes("/spreadsheets/") &&
+        url.searchParams.get("output") === "csv",
+    };
+  } catch {
+    return { configured: false };
+  }
+}
+
 /** Known canonical IDs. Unknown spreadsheet rows are ignored rather than exposed publicly. */
 const KNOWN_MUSICAL_IDS = new Set([
   "dracula",
@@ -266,7 +286,10 @@ export function createGoogleSheetPriceSource(options: SourceOptions = {}) {
 
       try {
         const response = await fetcher(url, {
-          headers: { Accept: "text/csv" },
+          headers: {
+            Accept: "text/csv",
+            "User-Agent": "WeLoveMusicalsPriceSync/1.0",
+          },
           signal: controller.signal,
         });
         if (!response.ok) throw new Error(`Google-Sheets-Abruf lieferte HTTP ${response.status}.`);

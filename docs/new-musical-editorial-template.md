@@ -4,10 +4,10 @@ Jede neue Show erhält bei der Anlage in `client/src/lib/data.ts` **verbindlich 
 
 | Erlebnis-Kategorie | Geeignet für | Beispiele |
 |---|---|---|
-| `blockbuster-spektakel` | Große Produktionen mit imposanter Inszenierung, bekannten Marken oder starkem visuellen Ereignischarakter. | König der Löwen, Die Eiskönigin, Moulin Rouge! |
+| `blockbuster-spektakel` | Große Produktionen mit imposanter Inszenierung, bekannten Marken oder starkem visuellen Ereignischarakter. | König der Löwen, Tarzan, Moulin Rouge! |
 | `kult-klassiker` | Langjährig bekannte, generationenübergreifende Musical-Klassiker. | Das Phantom der Oper, Starlight Express, Tanz der Vampire, Dracula |
 | `pop-rock-filmhits` | Pop-, Rock- oder filmbezogene Produktionen, deren Songs oder Vorlage direkt wiedererkannt werden. | MJ, & Julia, We Will Rock You, Fack ju Göhte |
-| `familie-maerchen-magie` | Familienangebote, Märchenstoffe und magisch-fantastische Geschichten. | Tarzan, Rapunzel, Die Schöne und das Biest |
+| `familie-maerchen-magie` | Familienangebote, Märchenstoffe und magisch-fantastische Geschichten. | Die Eiskönigin, Rapunzel, Die Schöne und das Biest |
 | `besondere-geschichten` | Charakterstarke neue Stoffe, ungewöhnliche Perspektiven oder anspruchsvollere Erzählformen. | Der Teufel trägt Prada, Wir sind am Leben, Salon Rosie |
 
 ## Pflichtfeld im Datensatz

@@ -69,7 +69,7 @@ export type CountryFilter = (typeof COUNTRY_FILTERS)[number]["id"];
 
 export const EXPERIENCE_CATEGORY_BY_MUSICAL_ID: Record<string, ExperienceCategoryId> = {
   "koenig-der-loewen": "blockbuster-spektakel",
-  eiskoenigin: "blockbuster-spektakel",
+  eiskoenigin: "familie-maerchen-magie",
   moulinrouge: "blockbuster-spektakel",
   "phantom-der-oper": "kult-klassiker",
   "gloeckner-von-notre-dame": "blockbuster-spektakel",
@@ -81,7 +81,7 @@ export const EXPERIENCE_CATEGORY_BY_MUSICAL_ID: Record<string, ExperienceCategor
   "und-julia": "pop-rock-filmhits",
   "we-will-rock-you": "pop-rock-filmhits",
   fackjugoehte: "pop-rock-filmhits",
-  tarzan: "familie-maerchen-magie",
+  tarzan: "blockbuster-spektakel",
   "schoene-und-das-biest": "familie-maerchen-magie",
   dreihaselnuesse: "familie-maerchen-magie",
   rapunzel: "familie-maerchen-magie",

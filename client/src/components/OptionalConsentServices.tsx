@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { useConsent } from "@/contexts/ConsentContext";
+import { trackPartnerScriptStatus } from "@/lib/category-analytics";
 
 const AWIN_SCRIPT_ID = "awin-mastertag";
 const TRADEDOUBLER_SCRIPT_ID = "tradedoubler-link-converter";
@@ -13,16 +14,18 @@ export function shouldLoadAffiliateTrackingForPath(pathname: string, search = ""
   return !AFFILIATE_EXCLUDED_PATHS.has(pathname) && !isWebdevPreview;
 }
 
-function loadAwinMasterTag() {
+function loadAwinMasterTag(analyticsConsent: boolean) {
   if (document.getElementById(AWIN_SCRIPT_ID)) return;
   const script = document.createElement("script");
   script.id = AWIN_SCRIPT_ID;
   script.defer = true;
   script.src = "https://www.dwin2.com/pub.2865727.min.js";
+  script.onload = () => trackPartnerScriptStatus({ partner: "awin", status: "loaded", analyticsConsent });
+  script.onerror = () => trackPartnerScriptStatus({ partner: "awin", status: "failed", analyticsConsent });
   document.head.appendChild(script);
 }
 
-function startTradeDoublerConverter() {
+function startTradeDoublerConverter(analyticsConsent: boolean) {
   if (document.getElementById(TRADEDOUBLER_SCRIPT_ID)) return () => undefined;
 
   let observer: MutationObserver | undefined;
@@ -62,6 +65,7 @@ function startTradeDoublerConverter() {
   script.id = TRADEDOUBLER_SCRIPT_ID;
   script.src = `https://clk.tradedoubler.com/lc?a(3492604)rand(${Math.floor(Date.now() / 3_600_000)})`;
   script.onload = () => {
+    trackPartnerScriptStatus({ partner: "tradedoubler", status: "loaded", analyticsConsent });
     initialiseConverterOnce();
     convertStageLinksWithFallback();
     // React kann später weitere Ticketlinks rendern. Diese werden nur noch durch
@@ -69,7 +73,10 @@ function startTradeDoublerConverter() {
     observer = new MutationObserver(convertStageLinksWithFallback);
     observer.observe(document.documentElement, { childList: true, subtree: true });
   };
-  script.onerror = convertStageLinksWithFallback;
+  script.onerror = () => {
+    trackPartnerScriptStatus({ partner: "tradedoubler", status: "failed", analyticsConsent });
+    convertStageLinksWithFallback();
+  };
   document.head.appendChild(script);
   // Der Fallback konvertiert vorhandene Stage-Ziele sofort nach Zustimmung,
   // sodass ein schneller Ticketklick nicht auf das externe Skript warten muss.
@@ -113,9 +120,10 @@ export default function OptionalConsentServices() {
 
   useEffect(() => {
     if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location, window.location.search)) return;
-    loadAwinMasterTag();
-    return startTradeDoublerConverter();
-  }, [consent?.affiliateTracking, location]);
+    const analyticsConsent = consent.analytics === true;
+    loadAwinMasterTag(analyticsConsent);
+    return startTradeDoublerConverter(analyticsConsent);
+  }, [consent?.affiliateTracking, consent?.analytics, location]);
 
   useEffect(() => {
     if (!consent?.externalMedia) return;

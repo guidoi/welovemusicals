@@ -572,3 +572,6 @@
 
 ## Drittanbieter-Skripte stabilisieren
 - [x] TradeDoubler-Link-Converter nur einmal initialisieren, spätere DOM-Änderungen über den sicheren Fallback verarbeiten und Startseite prüfen
+
+## Footer-Kontrast
+- [x] Copyright, Informationslinks und „Gemacht mit …“-Text im Footer in weißer Schrift ausgeben und prüfen

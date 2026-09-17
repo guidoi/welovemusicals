@@ -29,4 +29,12 @@ describe("Affiliate-Dienste auf Rechtsseiten", () => {
     expect(source).toContain("new MutationObserver(convertStageLinksWithFallback)");
     expect(source).not.toContain("new MutationObserver(convertEligibleLinks)");
   });
+
+  it("misst die Verfügbarkeit optionaler Partner-Skripte nur über die consent-gebundene Analysehilfe", () => {
+    expect(source).toContain('import { trackPartnerScriptStatus } from "@/lib/category-analytics"');
+    expect(source).toContain('partner: "awin", status: "loaded", analyticsConsent');
+    expect(source).toContain('partner: "awin", status: "failed", analyticsConsent');
+    expect(source).toContain('partner: "tradedoubler", status: "loaded", analyticsConsent');
+    expect(source).toContain('partner: "tradedoubler", status: "failed", analyticsConsent');
+  });
 });

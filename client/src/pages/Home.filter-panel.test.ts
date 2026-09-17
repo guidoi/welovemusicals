@@ -34,7 +34,14 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("const includeHighlightsInOverview = showCompleteCatalog || hasNarrowingFilter;");
     expect(homeSource).toContain('"Alle Musicals & Shows"');
     expect(homeSource).toContain('"Weitere Musicals & Shows"');
-    expect(homeSource).toContain("onFiltersReset={() => {");
-    expect(homeSource).toContain("setShowCompleteCatalog(false);");
+    expect(homeSource).toContain("onFiltersReset={resetToAdditionalOverview}");
+    expect(homeSource).toContain("const resetToAdditionalOverview = useCallback(() => {");
+  });
+
+  it("stellt aus einer geteilten Erlebniswelt-URL die vollständige Übersicht wieder her", () => {
+    expect(homeSource).toContain("getExperienceCategoryFromSearch(window.location.search)");
+    expect(homeSource).toContain("createExperienceCategoryHref(category)");
+    expect(homeSource).toContain('data-testid="overview-reset-button"');
+    expect(homeSource).toContain("Zurück zur Übersicht");
   });
 });

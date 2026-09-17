@@ -46,6 +46,11 @@ import {
   getHomeHeroScrollOptions,
   shouldRestoreHomeHero,
 } from "@/lib/hero-anchor-history";
+import {
+  createExperienceCategoryHref,
+  createMusicalOverviewHref,
+  getExperienceCategoryFromSearch,
+} from "@/lib/experience-category-url";
 
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
@@ -88,6 +93,16 @@ export default function Home() {
     }
   }, [scrollToFirstResult]);
 
+  const resetToAdditionalOverview = useCallback(() => {
+    setCategoryFilter("alle");
+    setCountryFilter("alle");
+    setCityFilter("alle");
+    setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
+    setShowCompleteCatalog(false);
+    setShowAllMusicals(false);
+    window.history.replaceState(window.history.state, "", createMusicalOverviewHref());
+  }, []);
+
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (hash) {
@@ -96,6 +111,30 @@ export default function Home() {
         element?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
+  }, []);
+
+  useEffect(() => {
+    const restoreCategoryFromSharedUrl = () => {
+      const categoryFromUrl = getExperienceCategoryFromSearch(window.location.search);
+
+      if (categoryFromUrl) {
+        setCategoryFilter(categoryFromUrl);
+        setCountryFilter("alle");
+        setCityFilter("alle");
+        setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
+        setShowCompleteCatalog(true);
+        setShowAllMusicals(true);
+        return;
+      }
+
+      if (window.location.pathname === "/" && window.location.hash === "#more-musicals") {
+        setCategoryFilter("alle");
+      }
+    };
+
+    restoreCategoryFromSharedUrl();
+    window.addEventListener("popstate", restoreCategoryFromSharedUrl);
+    return () => window.removeEventListener("popstate", restoreCategoryFromSharedUrl);
   }, []);
 
   // PLZ-Suche aus Header-Overlay empfangen und zu erstem Ergebnis scrollen
@@ -124,7 +163,7 @@ export default function Home() {
 
   const handleHeroNavigation = useCallback((item: HeroNavigationItem, placement: "hero-mobile" | "hero-desktop") => {
     const { href, kind } = item;
-    if (kind === "musical" || !href.startsWith("#")) return;
+    if (kind === "musical") return;
 
     if (kind === "overview" && item.id === "all-musicals") {
       setCategoryFilter("alle");
@@ -149,7 +188,8 @@ export default function Home() {
       setShowAllMusicals(true);
     }
 
-    const target = document.getElementById(href.slice(1));
+    const targetHash = new URL(href, window.location.origin).hash.slice(1);
+    const target = targetHash ? document.getElementById(targetHash) : null;
     const nextHistoryState = createHeroAnchorHistoryState(window.history.state, href);
     if (getHeroAnchorHistoryAction(window.history.state) === "replace") {
       window.history.replaceState(nextHistoryState, "", href);
@@ -341,6 +381,16 @@ export default function Home() {
                 ? "Alle Musicals & Shows"
                 : "Weitere Musicals & Shows"}
           </h2>
+          {includeHighlightsInOverview && (
+            <button
+              type="button"
+              data-testid="overview-reset-button"
+              onClick={resetToAdditionalOverview}
+              className="mb-5 inline-flex items-center rounded-full border border-gold/50 px-3 py-1.5 text-xs font-semibold text-gold transition-colors hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            >
+              Zurück zur Übersicht
+            </button>
+          )}
           <p className="text-white max-w-2xl mb-10">
             {selectedExperienceCategory
               ? `Entdecke alle ${selectedExperienceCategory.label}: passende Highlights zuerst, danach weitere Shows aus dieser Erlebniswelt.`
@@ -356,6 +406,10 @@ export default function Home() {
                 setCategoryFilter(category);
                 setShowCompleteCatalog(true);
                 setShowAllMusicals(true);
+                const href = category === "alle"
+                  ? createMusicalOverviewHref()
+                  : createExperienceCategoryHref(category);
+                window.history.replaceState(window.history.state, "", href);
               }}
               countryFilter={countryFilter}
               setCountryFilter={(country) => {
@@ -378,10 +432,7 @@ export default function Home() {
                 }
               }}
               resultCount={filteredMusicals.length}
-              onFiltersReset={() => {
-                setShowCompleteCatalog(false);
-                setShowAllMusicals(false);
-              }}
+              onFiltersReset={resetToAdditionalOverview}
             />
           </div>
 

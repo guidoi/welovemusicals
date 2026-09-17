@@ -1,4 +1,5 @@
 import { EXPERIENCE_CATEGORIES, type ExperienceCategoryId } from "./experience-categories";
+import { createExperienceCategoryHref } from "./experience-category-url";
 
 export type HeroNavigationMusical = {
   id: string;
@@ -62,7 +63,7 @@ export function getHeroNavigationItems(
     ...EXPERIENCE_CATEGORIES.map((category) => ({
       id: `category-${category.id}`,
       label: category.shortLabel,
-      href: "#more-musicals",
+      href: createExperienceCategoryHref(category.id),
       kind: "category" as const,
       categoryId: category.id,
     })),

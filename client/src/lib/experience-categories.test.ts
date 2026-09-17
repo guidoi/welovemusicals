@@ -51,4 +51,11 @@ describe("Erlebnis-Kategorien", () => {
     expect(EXPERIENCE_CATEGORY_BY_MUSICAL_ID["phantom-der-oper"]).toBe("kult-klassiker");
     expect(getActiveMusicals().find((musical) => musical.id === "phantom-der-oper")?.experienceCategory).toBe("kult-klassiker");
   });
+
+  it("ordnet die Disney-Highlights nach ihrer primären Erlebniswelt ein", () => {
+    const activeMusicals = getActiveMusicals();
+    expect(activeMusicals.find((musical) => musical.id === "eiskoenigin")?.experienceCategory).toBe("familie-maerchen-magie");
+    expect(activeMusicals.find((musical) => musical.id === "koenig-der-loewen")?.experienceCategory).toBe("blockbuster-spektakel");
+    expect(activeMusicals.find((musical) => musical.id === "tarzan")?.experienceCategory).toBe("blockbuster-spektakel");
+  });
 });
