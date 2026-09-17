@@ -234,7 +234,7 @@ export default function Header() {
           {/* PLZ-Suche Icon Desktop */}
           <button
             onClick={() => setPlzOpen(!plzOpen)}
-            className={`relative ${roundUtilityButtonClass} ${plzActive ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
+            className={`relative ${roundUtilityButtonClass} ${plzActive || plzOpen ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
             aria-label="Umkreissuche öffnen"
             title="Musicals in meiner Nähe"
             data-testid="header-location-control"
@@ -267,7 +267,7 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-1">
           <button
             onClick={() => { setPlzOpen(!plzOpen); setSearchOpen(false); setMobileOpen(false); }}
-            className={`relative ${roundUtilityButtonClass} ${plzActive ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
+            className={`relative ${roundUtilityButtonClass} ${plzActive || plzOpen ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
             aria-label="Umkreissuche"
             data-testid="header-location-control-mobile"
           >

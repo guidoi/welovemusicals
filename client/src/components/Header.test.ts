@@ -34,5 +34,6 @@ describe("Header-Hauptnavigation", () => {
     expect(headerSource).toContain('data-testid="header-location-control-mobile"');
     expect(headerSource).toContain('data-testid="header-search-control-mobile"');
     expect(headerSource).toContain('data-testid="header-menu-control-mobile"');
+    expect(headerSource).toContain('plzActive || plzOpen ? "border-gold bg-gold text-background hover:bg-gold-light"');
   });
 });

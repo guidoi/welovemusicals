@@ -534,3 +534,6 @@
 
 ## Teaser-CTA-Icon
 - [x] Das viereckige External-Link-Piktogramm neben „Infos & Tickets“ in allen Startseiten-Teasern durch ein rundes Pfeil-Icon ersetzen und prüfen
+
+## Header-Icon-Zustand
+- [x] Aktiven Zustand der Standortsuche an die Suche angleichen, damit beide runden Icons beim Öffnen identisch reagieren
