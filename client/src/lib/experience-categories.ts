@@ -26,7 +26,7 @@ export const EXPERIENCE_CATEGORIES = [
   {
     id: "familie-maerchen-magie",
     label: "Familie, Märchen & Magie",
-    shortLabel: "Familie & Magie",
+    shortLabel: "Familie, Märchen & Magie",
     description: "Gemeinsame Lieblingsmomente für große und kleine Musicalfans.",
     recommendationHeadline: "Gemeinsam staunen, lachen und träumen",
     recommendationIntro: "Weitere magische Musicalmomente für die ganze Familie.",

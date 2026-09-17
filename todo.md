@@ -563,3 +563,6 @@
 
 ## Kategorie-Optimierung für Desktop und Analytics
 - [x] Erlebnis-Kategorie-Einstiege auf Desktop ergänzen, Empfehlungstexte emotionalisieren und consent-konformes Kategorie-Tracking einführen
+
+## Einheitliche Familien-Kategorie
+- [x] „Familie, Märchen & Magie“ in allen Kategorie-Einstiegen, Filtern, Teasern und Detailseiten vereinheitlichen

@@ -26,6 +26,8 @@ describe("Erlebnis-Kategorien", () => {
       "Familie, Märchen & Magie",
       "Besondere Geschichten",
     ]);
+    const familyCategory = EXPERIENCE_CATEGORIES.find((category) => category.id === "familie-maerchen-magie");
+    expect(familyCategory?.shortLabel).toBe("Familie, Märchen & Magie");
   });
 
   it("liefert für jede Erlebniswelt eine emotionale Empfehlungseinleitung", () => {

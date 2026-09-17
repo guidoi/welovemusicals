@@ -20,7 +20,7 @@ describe("getHeroNavigationItems", () => {
       { id: "category-blockbuster-spektakel", label: "Blockbuster", href: "#more-musicals", kind: "category", categoryId: "blockbuster-spektakel" },
       { id: "category-kult-klassiker", label: "Kult & Klassiker", href: "#more-musicals", kind: "category", categoryId: "kult-klassiker" },
       { id: "category-pop-rock-filmhits", label: "Pop, Rock & Film", href: "#more-musicals", kind: "category", categoryId: "pop-rock-filmhits" },
-      { id: "category-familie-maerchen-magie", label: "Familie & Magie", href: "#more-musicals", kind: "category", categoryId: "familie-maerchen-magie" },
+      { id: "category-familie-maerchen-magie", label: "Familie, Märchen & Magie", href: "#more-musicals", kind: "category", categoryId: "familie-maerchen-magie" },
       { id: "category-besondere-geschichten", label: "Besondere Geschichten", href: "#more-musicals", kind: "category", categoryId: "besondere-geschichten" },
       { id: "musical-zeta", label: "ZETA", href: "/musical/zeta", kind: "musical" },
       { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
