@@ -57,4 +57,19 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("scrollToUpdatedResults();");
     expect(homeSource).toContain('"Deine passenden Shows – Highlights zuerst."');
   });
+
+  it("hält eine kompakte Filterleiste unter dem Header erreichbar", () => {
+    expect(homeSource).toContain('data-testid="sticky-filter-bar"');
+    expect(homeSource).toContain("const scrollToFilterPanel = useCallback(() => {");
+    expect(homeSource).toContain("setShowStickyFilterBar(panel.getBoundingClientRect().bottom <= headerHeight);");
+    expect(homeSource).toContain("Filter anpassen");
+    expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
+  });
+
+  it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {
+    expect(homeSource).toContain("const [resultAnimationKey, setResultAnimationKey] = useState(0);");
+    expect(homeSource).toContain("const animateUpdatedResults = useCallback(() => {");
+    expect(homeSource).toContain("filterAnimationKey={resultAnimationKey || undefined}");
+    expect(homeSource).toContain("useReducedMotion");
+  });
 });

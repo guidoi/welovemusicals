@@ -175,6 +175,14 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("md:text-[10px]");
   });
 
+  it("spielt nach einer Filteraktualisierung nur eine dezente Teaseranimation ab", () => {
+    const markup = renderToStaticMarkup(
+      <MusicalCard musical={baseMusical} anchorId="musical-test" filterAnimationKey={2} />,
+    );
+
+    expect(markup).toContain('id="musical-test"');
+  });
+
   it("zeigt das passende Anbieterlogo anstelle einer Anbieterzeile", () => {
     const stageMarkup = renderToStaticMarkup(
       <MusicalCard

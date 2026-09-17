@@ -5,7 +5,7 @@
 import React from "react";
 import { ArrowUpRight, MapPin, Tag, Star } from "lucide-react";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { Musical } from "@/lib/data";
 import { createAwinLink } from "@/lib/data";
 import { getExperienceCategory } from "@/lib/experience-categories";
@@ -17,6 +17,8 @@ interface MusicalCardProps {
   musical: Musical;
   index?: number;
   anchorId?: string;
+  /** Increments after a filter update to replay one subtle result reveal. */
+  filterAnimationKey?: number;
 }
 
 const categoryLabels: Record<string, string> = {
@@ -46,8 +48,9 @@ const categoryIcons: Record<string, string> = {
   kinder: "⭐",
 };
 
-export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCardProps) {
+export default function MusicalCard({ musical, index = 0, anchorId, filterAnimationKey }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
+  const reduceMotion = useReducedMotion();
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const experienceCategory = getExperienceCategory(musical.experienceCategory);
   const providerLogoWidthClass =
@@ -55,12 +58,17 @@ export default function MusicalCard({ musical, index = 0, anchorId }: MusicalCar
 
   return (
     <motion.div
+      key={filterAnimationKey === undefined ? undefined : `${filterAnimationKey}-${musical.id}`}
       id={anchorId}
       className="scroll-mt-24"
-      initial={{ opacity: 0, y: 30 }}
+      initial={reduceMotion ? false : { opacity: 0, y: filterAnimationKey === undefined ? 30 : 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      transition={{
+        duration: reduceMotion ? 0 : filterAnimationKey === undefined ? 0.5 : 0.22,
+        delay: reduceMotion ? 0 : filterAnimationKey === undefined ? index * 0.08 : Math.min(index, 6) * 0.045,
+        ease: "easeOut",
+      }}
     >
       <Link href={`/musical/${musical.slug}`} className="block group">
         <div className="card-spotlight bg-card border border-border/50 rounded-sm overflow-hidden hover:border-gold/30 transition-all duration-400">
