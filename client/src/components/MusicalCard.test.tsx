@@ -162,12 +162,15 @@ describe("MusicalCard Sale-Störer", () => {
 
   it("zeigt die kuratierte Erlebniswelt anstelle beliebiger Teaser-Schlagwörter", () => {
     const markup = renderToStaticMarkup(
-      <MusicalCard musical={{ ...baseMusical, experienceCategory: "blockbuster-spektakel", tags: ["Legacy-Tag"] }} />,
+      <MusicalCard musical={{ ...baseMusical, featured: true, experienceCategory: "blockbuster-spektakel", tags: ["Legacy-Tag"] }} />,
     );
 
     expect(markup).toContain('data-testid="teaser-experience-category"');
     expect(markup).toContain("Blockbuster &amp; Spektakel");
     expect(markup).not.toContain("Legacy-Tag");
+    expect(markup).toContain('data-testid="teaser-experience-category" class="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-[#2b2010] px-3 py-1.5 text-sm font-medium text-gold md:gap-1.5 md:px-2.5 md:py-1 md:text-xs"');
+    expect(markup).toContain('data-testid="featured-badge"');
+    expect(markup).toContain("px-2.5 py-1 text-xs");
   });
 
   it("zeigt das passende Anbieterlogo anstelle einer Anbieterzeile", () => {

@@ -545,3 +545,6 @@
 
 ## Phantom-Kategorie
 - [x] Das Phantom der Oper von „Blockbuster & Spektakel“ in „Kult & Klassiker“ einordnen und die Filterzuordnung prüfen
+
+## Mobile Teaser-Badges
+- [x] Top-Musical- und Erlebnis-Kategorie-Badges mobil vergrößern sowie Kategorie-Badges deckend gestalten und prüfen
