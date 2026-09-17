@@ -484,9 +484,9 @@ export default function Home() {
               onClick={resetToAdditionalOverview}
               aria-label="Zurück zur Übersicht"
               title="Zurück zur Übersicht"
-              className="mb-8 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 text-gold transition-colors hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              className="group mb-8 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 text-gold transition-all duration-150 hover:-translate-x-0.5 hover:border-gold hover:bg-gold/15 hover:shadow-[0_0_14px_rgba(184,148,74,0.28)] active:translate-x-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              <ArrowLeft className="h-4 w-4 transition-transform duration-150 group-hover:-translate-x-0.5" aria-hidden="true" />
             </button>
           )}
 

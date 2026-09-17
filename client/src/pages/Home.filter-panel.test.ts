@@ -54,6 +54,12 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('includeHighlightsInOverview ? "mb-3" : "mb-10"');
   });
 
+  it("gibt dem Rücksprung-Icon eine dezente Hover-Rückmeldung", () => {
+    expect(homeSource).toContain("group-hover:-translate-x-0.5");
+    expect(homeSource).toContain("hover:shadow-[0_0_14px_rgba(184,148,74,0.28)]");
+    expect(homeSource).toContain("hover:bg-gold/15");
+  });
+
   it("zeigt bei einer aktiven Erlebniswelt nur den Kategorienamen als Überschrift", () => {
     expect(homeSource).toContain("? selectedExperienceCategory.label");
     expect(homeSource).not.toContain("? `Musicals & Shows: ${selectedExperienceCategory.label}`");
