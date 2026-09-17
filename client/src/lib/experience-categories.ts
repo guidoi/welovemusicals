@@ -61,7 +61,7 @@ export const EXPERIENCE_CATEGORY_BY_MUSICAL_ID: Record<string, ExperienceCategor
   "koenig-der-loewen": "blockbuster-spektakel",
   eiskoenigin: "blockbuster-spektakel",
   moulinrouge: "blockbuster-spektakel",
-  "phantom-der-oper": "blockbuster-spektakel",
+  "phantom-der-oper": "kult-klassiker",
   "gloeckner-von-notre-dame": "blockbuster-spektakel",
   "starlight-express": "kult-klassiker",
   "tanz-der-vampire": "kult-klassiker",

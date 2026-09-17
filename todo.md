@@ -542,3 +542,6 @@
 - [x] Alle aktiven Musicals einer eindeutigen redaktionellen Erlebniswelt zuordnen und diese statt beliebiger Tags in den Teasern zeigen
 - [x] Starre Kategorie-, Länder- und Sortier-Dropdowns durch responsive Erlebnis- und Länderbuttons ersetzen; Sortierung entfernen
 - [x] Stadtfilter als moderne Ortssuche mit Schnellauswahl, vollständiger Suche und Umkreissuche umsetzen und auf Desktop sowie Mobil prüfen
+
+## Phantom-Kategorie
+- [x] Das Phantom der Oper von „Blockbuster & Spektakel“ in „Kult & Klassiker“ einordnen und die Filterzuordnung prüfen

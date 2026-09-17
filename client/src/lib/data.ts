@@ -385,7 +385,7 @@ export const musicals: Musical[] = [
 
   {
     id: "phantom-der-oper",
-    experienceCategory: "blockbuster-spektakel",
+    experienceCategory: "kult-klassiker",
     slug: "phantom-der-oper",
     title: "DAS PHANTOM DER OPER",
     subtitle: "Das Musical",

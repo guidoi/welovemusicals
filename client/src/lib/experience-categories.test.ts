@@ -29,4 +29,9 @@ describe("Erlebnis-Kategorien", () => {
     expect(getExperienceCategory("blockbuster-spektakel")?.label).toBe("Blockbuster & Spektakel");
     expect(QUICK_CITY_NAMES).toEqual(["Hamburg", "Stuttgart", "Berlin", "Köln", "Bochum", "München", "Düsseldorf"]);
   });
+
+  it("ordnet Das Phantom der Oper als Kultklassiker ein", () => {
+    expect(EXPERIENCE_CATEGORY_BY_MUSICAL_ID["phantom-der-oper"]).toBe("kult-klassiker");
+    expect(getActiveMusicals().find((musical) => musical.id === "phantom-der-oper")?.experienceCategory).toBe("kult-klassiker");
+  });
 });
