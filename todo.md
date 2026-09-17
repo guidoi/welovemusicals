@@ -551,3 +551,6 @@
 
 ## Teaser-Badges ohne Goldglanz
 - [x] Kategorie-Badge dem transparenten Top-Musical-Stil angleichen und beide Teaser-Badges auf Desktop vergrößern
+
+## Erlebnis-Kategorie auf Detailseiten
+- [x] Erlebnis-Kategorie auf Musical-Detailseiten sichtbar ergänzen und die Filterreihenfolge nach Conversion-Priorität ausrichten

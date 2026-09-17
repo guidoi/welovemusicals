@@ -9,6 +9,16 @@ import {
 
 describe("Erlebnis-Kategorien", () => {
   it("definiert die fünf kuratierten Erlebniswelten", () => {
+    expect(EXPERIENCE_CATEGORIES.map((category) => category.id)).toEqual([
+      "blockbuster-spektakel",
+      "kult-klassiker",
+      "pop-rock-filmhits",
+      "familie-maerchen-magie",
+      "besondere-geschichten",
+    ]);
+  });
+
+  it("ordnet die Filter nach Conversion-Priorität von Breitenwirkung bis Nische", () => {
     expect(EXPERIENCE_CATEGORIES.map((category) => category.label)).toEqual([
       "Blockbuster & Spektakel",
       "Kult & Klassiker",

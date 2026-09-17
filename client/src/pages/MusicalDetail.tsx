@@ -47,6 +47,7 @@ import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
+import { getExperienceCategory } from "@/lib/experience-categories";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -135,6 +136,8 @@ export default function MusicalDetail() {
     );
   }
 
+  const experienceCategory = getExperienceCategory(musical.experienceCategory);
+
   // Get related musicals (same provider or category, excluding current)
   const related = managedMusicals
     .filter((m) => m.id !== musical.id && (m.provider === musical.provider || m.category === musical.category))
@@ -209,6 +212,15 @@ export default function MusicalDetail() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex flex-wrap gap-2 mb-4">
+              {experienceCategory && (
+                <span
+                  data-testid="detail-experience-category"
+                  className="inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold"
+                >
+                  <Tag className="h-3.5 w-3.5" />
+                  {experienceCategory.label}
+                </span>
+              )}
               {musical.tags.map((tag) => (
                 <span
                   key={tag}
