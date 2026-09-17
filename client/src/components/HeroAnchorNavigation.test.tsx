@@ -72,4 +72,27 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('href="/musical/und-julia"');
     expect(markup).toContain('&amp; Julia');
   });
+
+  it("rendert als Desktop-Variante ausschließlich die Erlebnis-Kategorie-Einstiege", () => {
+    const markup = renderToStaticMarkup(
+      <Router hook={staticLocationHook}>
+        <HeroAnchorNavigation
+          items={[
+            { id: "all-musicals", label: "Musicals & Shows", href: "#musicals", kind: "overview" },
+            { id: "category-blockbuster-spektakel", label: "Blockbuster", href: "#more-musicals", kind: "category", categoryId: "blockbuster-spektakel" },
+            { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
+          ]}
+          variant="categories"
+          placement="hero-desktop"
+        />
+      </Router>,
+    );
+
+    expect(markup).toContain('data-testid="hero-category-navigation"');
+    expect(markup).toContain('data-testid="hero-anchor-category-blockbuster-spektakel"');
+    expect(markup).not.toContain('data-testid="hero-orientation-navigation"');
+    expect(markup).not.toContain('href="/musical/alpha"');
+    expect(markup).toContain('md:h-10');
+    expect(markup).toContain('md:px-4');
+  });
 });

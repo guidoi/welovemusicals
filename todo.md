@@ -560,3 +560,6 @@
 
 ## Kategorie-Einstiege und Empfehlungen
 - [x] Erlebnis-Kategorien als Hero-Einstieg ergänzen, verwandte Shows danach priorisieren und die Pflichtkategorie für neue Musicals dokumentieren
+
+## Kategorie-Optimierung für Desktop und Analytics
+- [x] Erlebnis-Kategorie-Einstiege auf Desktop ergänzen, Empfehlungstexte emotionalisieren und consent-konformes Kategorie-Tracking einführen

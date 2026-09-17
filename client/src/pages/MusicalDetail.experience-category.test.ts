@@ -23,6 +23,7 @@ describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
     expect(musicalDetailSource).toContain("ACTIVE_MUSICAL_IDS.includes(candidate.id)");
     expect(musicalDetailSource).not.toContain("{false && related.length > 0");
     expect(musicalDetailSource).toContain("{related.length > 0 && (");
-    expect(musicalDetailSource).toContain("Mehr aus");
+    expect(musicalDetailSource).toContain("experienceCategory?.recommendationHeadline");
+    expect(musicalDetailSource).toContain("experienceCategory.recommendationIntro");
   });
 });

@@ -5,10 +5,17 @@ import type { HeroNavigationItem } from "@/lib/hero-navigation";
 
 interface HeroAnchorNavigationProps {
   items: readonly HeroNavigationItem[];
-  onNavigate?: (item: HeroNavigationItem) => void;
+  onNavigate?: (item: HeroNavigationItem, placement: "hero-mobile" | "hero-desktop") => void;
+  placement?: "hero-mobile" | "hero-desktop";
+  variant?: "full" | "categories";
 }
 
-export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNavigationProps) {
+export default function HeroAnchorNavigation({
+  items,
+  onNavigate,
+  placement = "hero-mobile",
+  variant = "full",
+}: HeroAnchorNavigationProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -57,7 +64,7 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
           key={item.id}
           type="button"
           data-testid={`hero-anchor-${item.id}`}
-          onClick={() => onNavigate?.(item)}
+          onClick={() => onNavigate?.(item, placement)}
           className={className}
         >
           {item.label}
@@ -74,23 +81,25 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
 
   return (
     <nav aria-label="Direktnavigation zu Musical-Inhalten" className="w-full max-w-6xl mx-auto" data-testid="hero-anchor-navigation">
-      <div className="mb-3 flex flex-wrap justify-center gap-2" data-testid="hero-orientation-navigation">
-        {orientationItems.map((item) => renderItem(
-          item,
-          "inline-flex h-10 items-center rounded-full border border-gold bg-transparent px-4 text-xs font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm",
-        ))}
-      </div>
+      {variant === "full" && (
+        <div className="mb-3 flex flex-wrap justify-center gap-2" data-testid="hero-orientation-navigation">
+          {orientationItems.map((item) => renderItem(
+            item,
+            "inline-flex h-10 items-center rounded-full border border-gold bg-transparent px-4 text-xs font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm",
+          ))}
+        </div>
+      )}
 
       {categoryItems.length > 0 && (
         <div className="mb-3 flex flex-wrap justify-center gap-1.5" data-testid="hero-category-navigation" aria-label="Musicals nach Erlebniswelt entdecken">
           {categoryItems.map((item) => renderItem(
             item,
-            "inline-flex h-8 items-center rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold transition-all duration-150 hover:border-gold hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+            "inline-flex h-8 items-center rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold transition-all duration-150 hover:border-gold hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-10 md:px-4 md:text-xs",
           ))}
         </div>
       )}
 
-      <div className="relative">
+      {variant === "full" && <div className="relative">
       <button
         type="button"
         aria-label="Navigation nach links schieben"
@@ -123,7 +132,7 @@ export default function HeroAnchorNavigation({ items, onNavigate }: HeroAnchorNa
       >
         <ChevronRight className="h-4 w-4" aria-hidden="true" />
       </button>
-      </div>
+      </div>}
     </nav>
   );
 }

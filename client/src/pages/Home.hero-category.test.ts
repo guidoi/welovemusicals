@@ -10,6 +10,10 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain('setCountryFilter("alle");');
     expect(homeSource).toContain('setCityFilter("alle");');
     expect(homeSource).toContain("setShowAllMusicals(true);");
-    expect(homeSource).toContain('onNavigate={handleHeroNavigation}');
+    expect(homeSource).toContain("trackExperienceCategorySelection({");
+    expect(homeSource).toContain("analyticsConsent: consent?.analytics === true");
+    expect(homeSource).toContain('placement="hero-mobile"');
+    expect(homeSource).toContain('placement="hero-desktop"');
+    expect(homeSource).toContain('variant="categories"');
   });
 });

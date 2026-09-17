@@ -636,11 +636,11 @@ export default function MusicalDetail() {
           <div className="container">
             <div className="border-t border-border mb-10" />
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">
-              Ähnliche Musicals
+              {experienceCategory?.recommendationHeadline ?? "Ähnliche Musicals"}
             </h2>
             {experienceCategory && (
               <p className="-mt-5 mb-6 text-sm text-muted-foreground">
-                Mehr aus <span className="font-medium text-gold">{experienceCategory.label}</span>
+                <span className="font-medium text-gold">{experienceCategory.label}</span> · {experienceCategory.recommendationIntro}
               </p>
             )}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

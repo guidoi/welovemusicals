@@ -28,6 +28,11 @@ describe("Erlebnis-Kategorien", () => {
     ]);
   });
 
+  it("liefert für jede Erlebniswelt eine emotionale Empfehlungseinleitung", () => {
+    expect(EXPERIENCE_CATEGORIES.every((category) => category.recommendationHeadline.length > 12)).toBe(true);
+    expect(EXPERIENCE_CATEGORIES.every((category) => category.recommendationIntro.length > 24)).toBe(true);
+  });
+
   it("ordnet jedes aktive Musical genau einer Erlebniswelt zu", () => {
     const activeMusicals = getActiveMusicals();
     expect(activeMusicals).toHaveLength(ACTIVE_MUSICAL_IDS.length);

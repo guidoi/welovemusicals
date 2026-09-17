@@ -28,8 +28,10 @@ import {
   getActiveMusicalCountByCity,
 } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
+import { useConsent } from "@/contexts/ConsentContext";
 import { type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
 import { getHeroNavigationItems, type HeroNavigationItem } from "@/lib/hero-navigation";
+import { trackExperienceCategorySelection } from "@/lib/category-analytics";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
 import {
   DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS,
@@ -54,6 +56,7 @@ const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "L
 
 export default function Home() {
   const { musicals: managedMusicals } = useManagedMusicals();
+  const { consent } = useConsent();
   const [categoryFilter, setCategoryFilter] = useState<ExperienceFilterId>("alle");
   const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
@@ -118,11 +121,16 @@ export default function Home() {
     [managedMusicals],
   );
 
-  const handleHeroNavigation = useCallback((item: HeroNavigationItem) => {
+  const handleHeroNavigation = useCallback((item: HeroNavigationItem, placement: "hero-mobile" | "hero-desktop") => {
     const { href, kind } = item;
     if (kind === "musical" || !href.startsWith("#")) return;
 
     if (kind === "category" && item.categoryId) {
+      trackExperienceCategorySelection({
+        categoryId: item.categoryId,
+        placement,
+        analyticsConsent: consent?.analytics === true,
+      });
       setCategoryFilter(item.categoryId);
       setCountryFilter("alle");
       setCityFilter("alle");
@@ -138,7 +146,7 @@ export default function Home() {
       window.history.pushState(nextHistoryState, "", href);
     }
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
+  }, [consent?.analytics]);
 
   useEffect(() => {
     const restoreHomeHeroAfterBack = () => {
@@ -266,6 +274,17 @@ export default function Home() {
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={handleHeroNavigation}
+                placement="hero-mobile"
+              />
+            </div>
+
+            <div className="mt-7 hidden md:block">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/65">Entdecke nach Erlebniswelt</p>
+              <HeroAnchorNavigation
+                items={heroNavigationItems}
+                onNavigate={handleHeroNavigation}
+                placement="hero-desktop"
+                variant="categories"
               />
             </div>
 
