@@ -37,6 +37,9 @@ export default function Header() {
   const [plzActive, setPlzActive] = useState(false);
   const [plzLabel, setPlzLabel] = useState<string | null>(null);
 
+  const roundUtilityButtonClass =
+    "inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/45 bg-background/65 text-gold shadow-sm shadow-black/30 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
   useEffect(() => {
     setIsNavigating(false);
   }, [location]);
@@ -231,23 +234,25 @@ export default function Header() {
           {/* PLZ-Suche Icon Desktop */}
           <button
             onClick={() => setPlzOpen(!plzOpen)}
-            className={`relative transition-colors p-1 ${plzActive ? "text-gold" : "text-foreground hover:text-gold"}`}
+            className={`relative ${roundUtilityButtonClass} ${plzActive ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
             aria-label="Umkreissuche öffnen"
             title="Musicals in meiner Nähe"
+            data-testid="header-location-control"
           >
-            <MapPin className="w-5 h-5" />
+            <MapPin className="w-4 h-4" />
             {plzActive && (
-              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-gold" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full border border-gold bg-background" />
             )}
           </button>
 
           {/* Musical-Suche Icon Desktop */}
           <button
             onClick={() => setSearchOpen(!searchOpen)}
-            className="text-foreground hover:text-gold transition-colors p-1"
+            className={`${roundUtilityButtonClass} ${searchOpen ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
             aria-label="Suche öffnen"
+            data-testid="header-search-control"
           >
-            {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
+            {searchOpen ? <X className="w-4 h-4" /> : <Search className="w-4 h-4" />}
           </button>
 
           <a
@@ -262,27 +267,30 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-1">
           <button
             onClick={() => { setPlzOpen(!plzOpen); setSearchOpen(false); setMobileOpen(false); }}
-            className={`relative transition-colors p-2 ${plzActive ? "text-gold" : "text-foreground hover:text-gold"}`}
+            className={`relative ${roundUtilityButtonClass} ${plzActive ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
             aria-label="Umkreissuche"
+            data-testid="header-location-control-mobile"
           >
-            <MapPin className="w-5 h-5" />
+            <MapPin className="w-4 h-4" />
             {plzActive && (
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-gold" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full border border-gold bg-background" />
             )}
           </button>
           <button
             onClick={() => { setSearchOpen(!searchOpen); setMobileOpen(false); setPlzOpen(false); }}
-            className="text-foreground hover:text-gold transition-colors p-2"
+            className={`${roundUtilityButtonClass} ${searchOpen ? "border-gold bg-gold text-background hover:bg-gold-light" : ""}`}
             aria-label="Suche"
+            data-testid="header-search-control-mobile"
           >
-            {searchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
+            {searchOpen ? <X className="w-4 h-4" /> : <Search className="w-4 h-4" />}
           </button>
           <button
             onClick={() => { setMobileOpen(!mobileOpen); setSearchOpen(false); setPlzOpen(false); }}
-            className="text-foreground p-2"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-background/65 text-foreground shadow-sm shadow-black/30 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="Menü"
+            data-testid="header-menu-control-mobile"
           >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>

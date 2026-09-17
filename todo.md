@@ -521,6 +521,13 @@
 - [ ] 404-Rücksprung nach der Anmeldung an /verwaltung/preise auf der Live-Domain korrigieren und den vollständigen OAuth-Zugriffsfluss prüfen
 - [ ] Verwaltungsroute auf der Custom-Domain sicher auf die serverfähige Projekt-Domain weiterleiten, damit OAuth-Anmeldung und Preisverwaltung nicht auf 404 enden
 - [ ] OAuth-Callback nach der Verwaltungsanmeldung auf eine fest definierte serverfähige Preisverwaltungsadresse zurückführen und den 404-Rücksprung beseitigen
+- [ ] Anmeldebutton der Preisverwaltung auf der Custom-Domain direkt zur serverfähigen Projekt-Domain führen und den API-404 vermeiden
+- [ ] Extern gepflegte Google-Sheets-Preis- und Sale-Quelle mit automatischer, ausfallsicherer Übernahme in die öffentliche Website einrichten
+- [ ] Private Google-Sheets-Synchronisation ohne öffentliche Tabellenfreigabe als Alternative zur veröffentlichten CSV-Quelle einrichten
+- [ ] Freigegebenen Google-Sheets-Website-Export als CSV-Quelle auslesen, validieren und ausfallsicher in die öffentliche Preis- und Sale-Anzeige übernehmen
 - [x] Eiskönigin-Stage-Banner 26185658 (729×90 oben) und 26185656 (300×250 nach der Bildergalerie) mit bereitgestellten Motiven sicher integriert und die nativen Größen geprüft
 - [x] Eiskönigin-Sale auf „SALE · BIS 40 %“ mit Laufzeit 14.–21.09.2026 aktualisiert und alle Ticket-CTAs außerhalb der Banner auf die TradeDoubler-Textlink-Kampagne 26149418 umgestellt
 - [x] Eiskönigin-Sale ausschließlich vom 14. bis einschließlich 21.09.2026 aktiv anzeigen lassen
+
+## Runde Icon-Steuerung
+- [ ] Rechteckige Header-Werkzeuge durch kompakte runde Icon-Buttons im Stil der Referenz ersetzen und auf Desktop sowie Mobil prüfen
