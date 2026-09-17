@@ -42,11 +42,19 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("getExperienceCategoryFromSearch(window.location.search)");
     expect(homeSource).toContain("createExperienceCategoryHref(category)");
     expect(homeSource).toContain('data-testid="overview-reset-button"');
-    expect(homeSource).toContain("Zurück zur Übersicht");
+    expect(homeSource).toContain('aria-label="Zurück zur Übersicht"');
+    expect(homeSource).toContain("<ArrowLeft");
   });
 
   it("zeigt bei einer aktiven Erlebniswelt nur den Kategorienamen als Überschrift", () => {
     expect(homeSource).toContain("? selectedExperienceCategory.label");
     expect(homeSource).not.toContain("? `Musicals & Shows: ${selectedExperienceCategory.label}`");
+  });
+
+  it("führt Filterklicks nach der Aktualisierung sanft zum Ergebnisbereich", () => {
+    expect(homeSource).toContain("const scrollToUpdatedResults = useCallback(() => {");
+    expect(homeSource).toContain("window.setTimeout(scrollToFirstResult, 80);");
+    expect(homeSource).toContain("scrollToUpdatedResults();");
+    expect(homeSource).toContain('"Deine passenden Shows – Highlights zuerst."');
   });
 });

@@ -5,6 +5,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import {
+  ArrowLeft,
   Star,
   MapPin,
   ChevronDown,
@@ -91,6 +92,10 @@ export default function Home() {
       // Kurz warten bis filteredMusicals neu berechnet wurde
       setTimeout(scrollToFirstResult, 80);
     }
+  }, [scrollToFirstResult]);
+
+  const scrollToUpdatedResults = useCallback(() => {
+    window.setTimeout(scrollToFirstResult, 80);
   }, [scrollToFirstResult]);
 
   const resetToAdditionalOverview = useCallback(() => {
@@ -386,14 +391,16 @@ export default function Home() {
               type="button"
               data-testid="overview-reset-button"
               onClick={resetToAdditionalOverview}
-              className="mb-5 inline-flex items-center rounded-full border border-gold/50 px-3 py-1.5 text-xs font-semibold text-gold transition-colors hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              aria-label="Zurück zur Übersicht"
+              title="Zurück zur Übersicht"
+              className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 text-gold transition-colors hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             >
-              Zurück zur Übersicht
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             </button>
           )}
           <p className="text-white max-w-2xl mb-10">
             {selectedExperienceCategory
-              ? `Entdecke alle ${selectedExperienceCategory.label}: passende Highlights zuerst, danach weitere Shows aus dieser Erlebniswelt.`
+              ? "Deine passenden Shows – Highlights zuerst."
               : includeHighlightsInOverview
                 ? "Alle aktuellen Musicals & Shows auf einen Blick – unsere Top-Musicals zuerst, danach weitere Empfehlungen."
                 : "Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt."}
@@ -406,6 +413,7 @@ export default function Home() {
                 setCategoryFilter(category);
                 setShowCompleteCatalog(true);
                 setShowAllMusicals(true);
+                scrollToUpdatedResults();
                 const href = category === "alle"
                   ? createMusicalOverviewHref()
                   : createExperienceCategoryHref(category);
@@ -416,12 +424,14 @@ export default function Home() {
                 setCountryFilter(country);
                 setShowCompleteCatalog(true);
                 setShowAllMusicals(true);
+                scrollToUpdatedResults();
               }}
               cityFilter={cityFilter}
               setCityFilter={(city) => {
                 setCityFilter(city);
                 setShowCompleteCatalog(true);
                 setShowAllMusicals(true);
+                scrollToUpdatedResults();
               }}
               plzSearch={plzSearch}
               setPlzSearch={(state) => {
