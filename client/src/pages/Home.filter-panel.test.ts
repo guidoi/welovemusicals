@@ -46,6 +46,14 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("<ArrowLeft");
   });
 
+  it("ordnet das Rücksprung-Icon unter der Ergebnis-Subline an", () => {
+    const sublinePosition = homeSource.indexOf('"Deine passenden Shows – Highlights zuerst."');
+    const resetIconPosition = homeSource.indexOf('data-testid="overview-reset-button"');
+
+    expect(resetIconPosition).toBeGreaterThan(sublinePosition);
+    expect(homeSource).toContain('includeHighlightsInOverview ? "mb-3" : "mb-10"');
+  });
+
   it("zeigt bei einer aktiven Erlebniswelt nur den Kategorienamen als Überschrift", () => {
     expect(homeSource).toContain("? selectedExperienceCategory.label");
     expect(homeSource).not.toContain("? `Musicals & Shows: ${selectedExperienceCategory.label}`");

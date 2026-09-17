@@ -470,6 +470,13 @@ export default function Home() {
                 ? "Alle Musicals & Shows"
                 : "Weitere Musicals & Shows"}
           </h2>
+          <p className={`max-w-2xl text-white ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
+            {selectedExperienceCategory
+              ? "Deine passenden Shows – Highlights zuerst."
+              : includeHighlightsInOverview
+                ? "Alle aktuellen Musicals & Shows auf einen Blick – unsere Top-Musicals zuerst, danach weitere Empfehlungen."
+                : "Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt."}
+          </p>
           {includeHighlightsInOverview && (
             <button
               type="button"
@@ -477,18 +484,11 @@ export default function Home() {
               onClick={resetToAdditionalOverview}
               aria-label="Zurück zur Übersicht"
               title="Zurück zur Übersicht"
-              className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 text-gold transition-colors hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              className="mb-8 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/50 text-gold transition-colors hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             </button>
           )}
-          <p className="text-white max-w-2xl mb-10">
-            {selectedExperienceCategory
-              ? "Deine passenden Shows – Highlights zuerst."
-              : includeHighlightsInOverview
-                ? "Alle aktuellen Musicals & Shows auf einen Blick – unsere Top-Musicals zuerst, danach weitere Empfehlungen."
-                : "Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt."}
-          </p>
 
           <div ref={filterPanelRef} className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">
             <MusicalFilters
