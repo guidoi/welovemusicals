@@ -9,5 +9,7 @@ describe("theater light shine", () => {
     expect(styles).toContain("@keyframes theater-light-shine");
     expect(styles).toContain("640ms cubic-bezier(0.23, 1, 0.32, 1) 1 both");
     expect(styles).toContain("@media (prefers-reduced-motion: no-preference)");
+    expect(styles).toContain(".theater-light-shine {\n  position: relative;");
+    expect(styles).toContain("overflow-x: clip;");
   });
 });

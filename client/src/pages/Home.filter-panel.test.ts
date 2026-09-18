@@ -127,4 +127,8 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).toContain("theater-light-shine");
     expect(filterSource).toContain("didInitializeCategory");
   });
+
+  it("überlässt den Theaterlicht-Reflex nicht der Seitenbreite", () => {
+    expect(filterSource).toContain("theater-light-shine");
+  });
 });
