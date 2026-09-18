@@ -8,6 +8,8 @@ interface HeroAnchorNavigationProps {
   onNavigate?: (item: HeroNavigationItem, placement: "hero-mobile" | "hero-desktop") => void;
   placement?: "hero-mobile" | "hero-desktop";
   variant?: "full" | "categories";
+  activeCategoryId?: string;
+  theaterLightKey?: number;
 }
 
 export default function HeroAnchorNavigation({
@@ -15,6 +17,8 @@ export default function HeroAnchorNavigation({
   onNavigate,
   placement = "hero-mobile",
   variant = "full",
+  activeCategoryId,
+  theaterLightKey = 0,
 }: HeroAnchorNavigationProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -58,6 +62,11 @@ export default function HeroAnchorNavigation({
   };
 
   const renderItem = (item: HeroNavigationItem, className: string) => {
+    const isActiveCategory = item.kind === "category" && item.categoryId === activeCategoryId;
+    const activeCategoryClass = isActiveCategory
+      ? `border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]${theaterLightKey > 0 ? " theater-light-shine" : ""}`
+      : "";
+
     if (item.kind !== "musical") {
       return (
         <button
@@ -65,7 +74,8 @@ export default function HeroAnchorNavigation({
           type="button"
           data-testid={`hero-anchor-${item.id}`}
           onClick={() => onNavigate?.(item, placement)}
-          className={className}
+          className={`${className} ${activeCategoryClass}`}
+          aria-pressed={item.kind === "category" ? isActiveCategory : undefined}
         >
           {item.label}
         </button>

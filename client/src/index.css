@@ -228,3 +228,47 @@ html {
   animation: pulse-once 0.9s ease-in-out 1 forwards;
   box-shadow: 0 0 18px rgba(184,148,74,0.40);
 }
+
+/* Ein einzelner Lichtreflex für die gerade gewählte Erlebniswelt.
+   Die Bewegung läuft bewusst nur einmal durch und ist kein dauerhaftes Blinken. */
+.theater-light-shine {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.theater-light-shine::after {
+  content: "";
+  position: absolute;
+  inset: -35% -55%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-115%, 0, 0) skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 40%,
+    rgba(255, 248, 210, 0.08) 46%,
+    rgba(255, 252, 228, 0.62) 50%,
+    rgba(255, 248, 210, 0.08) 54%,
+    transparent 60%
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theater-light-shine::after {
+    animation: theater-light-shine 640ms cubic-bezier(0.23, 1, 0.32, 1) 1 both;
+  }
+}
+
+@keyframes theater-light-shine {
+  0% {
+    opacity: 0;
+    transform: translate3d(-115%, 0, 0) skewX(-18deg);
+  }
+  18% { opacity: 0.82; }
+  76% { opacity: 0.42; }
+  100% {
+    opacity: 0;
+    transform: translate3d(115%, 0, 0) skewX(-18deg);
+  }
+}

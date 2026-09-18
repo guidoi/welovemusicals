@@ -79,6 +79,7 @@ export default function Home() {
   const [showMorePulsed, setShowMorePulsed] = useState(false); // Puls-Effekt einmalig für "Alle anzeigen"-Button
   const [resultAnimationKey, setResultAnimationKey] = useState(0);
   const [showStickyFilterBar, setShowStickyFilterBar] = useState(false);
+  const [heroCategoryShineKey, setHeroCategoryShineKey] = useState(0);
   const [isResetTouchFeedbackActive, setIsResetTouchFeedbackActive] = useState(false);
   const firstResultRef = useRef<HTMLDivElement>(null);
   const resultGridRef = useRef<HTMLDivElement>(null);
@@ -275,6 +276,7 @@ export default function Home() {
       setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
       setShowCompleteCatalog(true);
       setShowAllMusicals(true);
+      setHeroCategoryShineKey((currentKey) => currentKey + 1);
     }
 
     const targetHash = new URL(href, window.location.origin).hash.slice(1);
@@ -481,6 +483,8 @@ export default function Home() {
                 items={heroNavigationItems}
                 onNavigate={handleHeroNavigation}
                 placement="hero-mobile"
+                activeCategoryId={categoryFilter === "alle" ? undefined : categoryFilter}
+                theaterLightKey={heroCategoryShineKey}
               />
             </div>
 
@@ -491,6 +495,8 @@ export default function Home() {
                 onNavigate={handleHeroNavigation}
                 placement="hero-desktop"
                 variant="categories"
+                activeCategoryId={categoryFilter === "alle" ? undefined : categoryFilter}
+                theaterLightKey={heroCategoryShineKey}
               />
             </div>
 

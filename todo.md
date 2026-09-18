@@ -575,3 +575,6 @@
 
 ## Footer-Kontrast
 - [x] Copyright, Informationslinks und „Gemacht mit …“-Text im Footer in weißer Schrift ausgeben und prüfen
+
+## Theaterlicht für aktive Erlebniswelten
+- [x] Aktive Erlebniswelt mit einem einmaligen, dezenten Lichtreflex hervorheben und die Bewegungsreduktion berücksichtigen

@@ -1,7 +1,7 @@
 /*
  * Experience-led discovery controls for the musical catalogue.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, ChevronDown, MapPin, Search, X } from "lucide-react";
 import { ACTIVE_MUSICAL_IDS, musicals } from "@/lib/data";
 import {
@@ -62,6 +62,15 @@ export default function MusicalFilters({
   const [cityPanelOpen, setCityPanelOpen] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
   const [plzPanelOpen, setPlzPanelOpen] = useState(false);
+  const didInitializeCategory = useRef(false);
+  const [categoryLightKey, setCategoryLightKey] = useState(0);
+
+  useEffect(() => {
+    if (didInitializeCategory.current) {
+      setCategoryLightKey((currentKey) => currentKey + 1);
+    }
+    didInitializeCategory.current = true;
+  }, [categoryFilter]);
 
   const filteredCities = useMemo(() => {
     const normalizedQuery = cityQuery.trim().toLocaleLowerCase("de");
@@ -109,7 +118,7 @@ export default function MusicalFilters({
           <button
             type="button"
             onClick={() => setCategoryFilter("alle")}
-            className={`${basePillClass} ${categoryFilter === "alle" ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+            className={`${basePillClass} ${categoryFilter === "alle" ? `border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]${categoryLightKey > 0 ? " theater-light-shine" : ""}` : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
             aria-pressed={categoryFilter === "alle"}
           >
             Alle Shows
@@ -120,7 +129,7 @@ export default function MusicalFilters({
               type="button"
               onClick={() => setCategoryFilter(category.id)}
               title={category.description}
-              className={`${basePillClass} ${categoryFilter === category.id ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+              className={`${basePillClass} ${categoryFilter === category.id ? `border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]${categoryLightKey > 0 ? " theater-light-shine" : ""}` : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
               aria-pressed={categoryFilter === category.id}
             >
               <span className="sm:hidden">{category.shortLabel}</span>
