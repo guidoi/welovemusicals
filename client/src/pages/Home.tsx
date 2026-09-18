@@ -314,6 +314,22 @@ export default function Home() {
     cityFilter !== "alle" ? cityFilter : undefined,
     plzSearch.active ? `${plzSearch.radius} km` : undefined,
   ].filter(Boolean).join(" · ") || "Alle Shows";
+  const selectedCountryLabel = countryFilter === "de"
+    ? "Deutschland"
+    : countryFilter === "at"
+      ? "Österreich"
+      : countryFilter === "ch"
+        ? "der Schweiz"
+        : undefined;
+  const dynamicDiscoveryIntro = selectedExperienceCategory
+    ? `${selectedExperienceCategory.description} ${cityFilter !== "alle" ? `Entdecke deine Auswahl in ${cityFilter} und finde deinen nächsten besonderen Musicalabend.` : selectedCountryLabel ? `Entdecke deine Auswahl in ${selectedCountryLabel} und finde deinen nächsten besonderen Musicalabend.` : "Finde die Show, die deinen nächsten Musicalabend unvergesslich macht."}`
+    : plzSearch.active
+      ? "Entdecke Musicals und Shows in deiner Nähe – finde den nächsten besonderen Musicalabend ganz in deiner Umgebung."
+      : cityFilter !== "alle"
+        ? `Entdecke Musicals und Shows in ${cityFilter}, die zu deinem Geschmack passen – und finde deinen nächsten besonderen Abend.`
+        : selectedCountryLabel
+          ? `Entdecke Musicals und Shows in ${selectedCountryLabel}, die zu deinem Geschmack passen – für deinen nächsten unvergesslichen Musicalabend.`
+          : "Entdecke Musicals und Shows, die zu deinem Geschmack passen – von großen Bühnenbildern bis zu Geschichten, die dich noch lange begleiten.";
 
   const filteredMusicals = useMemo(() => {
     // Ohne Auswahl bleibt die Übersicht doppelfrei. Sobald gefiltert wird,
@@ -506,21 +522,13 @@ export default function Home() {
         <div className="container">
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
-            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">VORHANG AUF</span>
+            <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">DEIN MUSICAL-MOMENT</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {selectedExperienceCategory
-              ? selectedExperienceCategory.label
-              : includeHighlightsInOverview
-                ? "Alle Musicals & Shows"
-                : "Weitere Musicals & Shows"}
+            Welche Show passt zu dir?
           </h2>
           <p className={`max-w-2xl text-white ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
-            {selectedExperienceCategory
-              ? "Deine passenden Shows – Highlights zuerst."
-              : includeHighlightsInOverview
-                ? "Alle aktuellen Musicals & Shows auf einen Blick – unsere Top-Musicals zuerst, danach weitere Empfehlungen."
-                : "Spürst du es auch? Das leise Prickeln im Bauch, wenn das Licht im Saal langsam erlischt und der erste Ton erklingt? Willkommen in der magischen Welt der Musicals! Finde das Musical, dass dein Herz höher schlagen lässt."}
+            {dynamicDiscoveryIntro}
           </p>
           {includeHighlightsInOverview && (
             <button
@@ -634,11 +642,6 @@ export default function Home() {
               )}
             </div>
           ) : (
-            <>
-              <p data-testid="results-count-label" className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-white/65" aria-live="polite">
-                <span className="h-px w-5 bg-gold/65" aria-hidden="true" />
-                <span><span className="font-semibold text-gold">{filteredMusicals.length}</span> {filteredMusicals.length === 1 ? "Show gefunden" : "Shows gefunden"}</span>
-              </p>
               <div ref={resultGridRef} className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {displayedMusicals.map((musical, i) => (
                 <MusicalCard
@@ -650,7 +653,6 @@ export default function Home() {
                 />
               ))}
               </div>
-            </>
           )}
 
           {/* Show More / Show Less */}

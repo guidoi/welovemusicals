@@ -2,7 +2,7 @@
  * Experience-led discovery controls for the musical catalogue.
  */
 import { useMemo, useState } from "react";
-import { Check, ChevronDown, MapPin, Search, SlidersHorizontal, X } from "lucide-react";
+import { Check, ChevronDown, MapPin, Search, X } from "lucide-react";
 import { ACTIVE_MUSICAL_IDS, musicals } from "@/lib/data";
 import {
   COUNTRY_FILTERS,
@@ -100,23 +100,16 @@ export default function MusicalFilters({
 
   return (
     <section aria-labelledby="discover-filter-heading" className="space-y-5" data-testid="experience-filters">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <div className="flex items-center gap-2 text-gold">
-            <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
-            <p className="text-xs font-semibold uppercase tracking-[0.18em]">Entdecke nach deinem Geschmack</p>
-          </div>
-          <h3 id="discover-filter-heading" className="mt-1 font-display text-xl font-semibold text-foreground">
-            Welche Show passt zu dir?
-          </h3>
-        </div>
-        <p aria-live="polite" className="text-sm text-muted-foreground">
-          <span className="font-semibold text-gold">{resultCount}</span> {resultCount === 1 ? "Show" : "Shows"} gefunden
+      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+        <h3 id="discover-filter-heading" className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+          Erlebniswelt
+        </h3>
+        <p data-testid="filter-result-count" aria-live="polite" className="text-xs font-medium text-white/70">
+          <span aria-hidden="true" className="mr-2 text-gold/70">–</span><span className="font-semibold text-gold">{resultCount}</span> {resultCount === 1 ? "Show gefunden" : "Shows gefunden"}
         </p>
       </div>
 
       <div>
-        <p className="mb-2 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Musical-Kategorie">
           <button
             type="button"

@@ -7,7 +7,12 @@ const filterSource = readFileSync(new URL("../components/MusicalFilters.tsx", im
 describe("Startseiten-Erlebnisfilter", () => {
   it("nutzt durchgehend sichtbare Erlebniswelten statt technischer Kategorie-Dropdowns", () => {
     expect(homeSource).toContain('rounded-2xl border border-gold/20 bg-card/60');
-    expect(filterSource).toContain("Welche Show passt zu dir?");
+    expect(homeSource).toContain("Welche Show passt zu dir?");
+    expect(homeSource).toContain("const dynamicDiscoveryIntro = selectedExperienceCategory");
+    expect(filterSource).toContain("Erlebniswelt");
+    expect(filterSource).toContain('data-testid="filter-result-count"');
+    expect(filterSource).toContain('text-gold/70">–</span>');
+    expect(filterSource).not.toContain('uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>');
     expect(filterSource).toContain("EXPERIENCE_CATEGORIES");
     expect(filterSource).toContain("category.label");
     expect(filterSource).not.toContain("Alle Kategorien");
@@ -32,8 +37,8 @@ describe("Startseiten-Erlebnisfilter", () => {
   it("unterscheidet eine doppelfreie Fortsetzung von einer vollständigen Ergebnisansicht", () => {
     expect(homeSource).toContain("const [showCompleteCatalog, setShowCompleteCatalog] = useState(false);");
     expect(homeSource).toContain("const includeHighlightsInOverview = showCompleteCatalog || hasNarrowingFilter;");
-    expect(homeSource).toContain('"Alle Musicals & Shows"');
-    expect(homeSource).toContain('"Weitere Musicals & Shows"');
+    expect(homeSource).toContain("getEditorialOverviewMusicals(includeHighlightsInOverview, managedMusicals)");
+    expect(homeSource).toContain('Welche Show passt zu dir?');
     expect(homeSource).toContain("onFiltersReset={resetToAdditionalOverview}");
     expect(homeSource).toContain("const resetToAdditionalOverview = useCallback(() => {");
   });
@@ -71,9 +76,11 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("group-hover:-translate-x-0.5");
   });
 
-  it("zeigt bei einer aktiven Erlebniswelt nur den Kategorienamen als Überschrift", () => {
-    expect(homeSource).toContain("? selectedExperienceCategory.label");
-    expect(homeSource).not.toContain("? `Musicals & Shows: ${selectedExperienceCategory.label}`");
+  it("führt die Ergebnisse mit einer dynamischen, nutzenorientierten Einleitung", () => {
+    expect(homeSource).toContain("Welche Show passt zu dir?");
+    expect(homeSource).toContain("selectedExperienceCategory.description");
+    expect(homeSource).toContain("Entdecke Musicals und Shows in deiner Nähe");
+    expect(homeSource).toContain("Entdecke Musicals und Shows, die zu deinem Geschmack passen");
   });
 
   it("führt Filterklicks nach der Aktualisierung sanft zum Ergebnisbereich", () => {
@@ -83,7 +90,7 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("const safetyGap = isDesktop ? 16 : 26;");
     expect(homeSource).toContain("- headerHeight - stickyFilterAllowance - safetyGap");
     expect(homeSource).toContain("scrollToUpdatedResults();");
-    expect(homeSource).toContain('"Deine passenden Shows – Highlights zuerst."');
+    expect(homeSource).toContain("const dynamicDiscoveryIntro = selectedExperienceCategory");
   });
 
   it("hält eine kompakte Filterleiste unter dem Header erreichbar", () => {
@@ -98,11 +105,11 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
   });
 
-  it("kennzeichnet die genaue Trefferzahl direkt über dem Ergebnisgrid", () => {
-    expect(homeSource).toContain('data-testid="results-count-label"');
-    expect(homeSource).toContain('"Show gefunden"');
-    expect(homeSource).toContain('"Shows gefunden"');
-    expect(homeSource).toContain("{filteredMusicals.length}");
+  it("kennzeichnet die genaue Trefferzahl im Filterkasten statt doppelt am Ergebnisgrid", () => {
+    expect(filterSource).toContain('data-testid="filter-result-count"');
+    expect(filterSource).toContain('"Show gefunden"');
+    expect(filterSource).toContain('"Shows gefunden"');
+    expect(homeSource).not.toContain('data-testid="results-count-label"');
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {
