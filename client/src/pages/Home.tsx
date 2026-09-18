@@ -84,7 +84,6 @@ export default function Home() {
   const resultGridRef = useRef<HTMLDivElement>(null);
   const filterPanelRef = useRef<HTMLDivElement>(null);
   const resetTouchFeedbackTimeoutRef = useRef<number | undefined>(undefined);
-  const heroCategoryResultTimeoutRef = useRef<number | undefined>(undefined);
   const lastResetInteractionWasTouchRef = useRef(false);
   const reduceMotion = useReducedMotion();
 
@@ -113,18 +112,6 @@ export default function Home() {
 
   const scrollToUpdatedResults = useCallback(() => {
     window.setTimeout(scrollToFirstResult, 80);
-  }, [scrollToFirstResult]);
-
-  const guideHeroCategoryToFirstResult = useCallback(() => {
-    if (heroCategoryResultTimeoutRef.current !== undefined) {
-      window.clearTimeout(heroCategoryResultTimeoutRef.current);
-    }
-
-    // Die gewählte Erlebniswelt bleibt kurz sichtbar, bevor die erste passende Show folgt.
-    heroCategoryResultTimeoutRef.current = window.setTimeout(() => {
-      scrollToFirstResult();
-      heroCategoryResultTimeoutRef.current = undefined;
-    }, 850);
   }, [scrollToFirstResult]);
 
   const animateUpdatedResults = useCallback(() => {
@@ -241,9 +228,6 @@ export default function Home() {
     if (resetTouchFeedbackTimeoutRef.current !== undefined) {
       window.clearTimeout(resetTouchFeedbackTimeoutRef.current);
     }
-    if (heroCategoryResultTimeoutRef.current !== undefined) {
-      window.clearTimeout(heroCategoryResultTimeoutRef.current);
-    }
   }, []);
 
   // PLZ-Suche aus Header-Overlay empfangen und zu erstem Ergebnis scrollen
@@ -291,7 +275,6 @@ export default function Home() {
       setPlzSearch({ active: false, plz: "", radius: 50, originCoords: null });
       setShowCompleteCatalog(true);
       setShowAllMusicals(true);
-      guideHeroCategoryToFirstResult();
     }
 
     const targetHash = new URL(href, window.location.origin).hash.slice(1);
@@ -303,7 +286,7 @@ export default function Home() {
       window.history.pushState(nextHistoryState, "", href);
     }
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [consent?.analytics, guideHeroCategoryToFirstResult]);
+  }, [consent?.analytics]);
 
   useEffect(() => {
     const restoreHomeHeroAfterBack = () => {
