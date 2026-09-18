@@ -1,7 +1,7 @@
 /*
  * Experience-led discovery controls for the musical catalogue.
  */
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { Check, ChevronDown, MapPin, Search, X } from "lucide-react";
 import { ACTIVE_MUSICAL_IDS, musicals } from "@/lib/data";
 import {
@@ -44,7 +44,6 @@ interface MusicalFiltersProps {
   plzSearch: PlzSearchState;
   setPlzSearch: (state: PlzSearchState) => void;
   onFiltersReset?: () => void;
-  shineTrigger?: number;
 }
 
 const basePillClass = "rounded-full border px-3.5 py-2 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.97]";
@@ -59,27 +58,10 @@ export default function MusicalFilters({
   plzSearch,
   setPlzSearch,
   onFiltersReset,
-  shineTrigger = 0,
 }: MusicalFiltersProps) {
   const [cityPanelOpen, setCityPanelOpen] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
   const [plzPanelOpen, setPlzPanelOpen] = useState(false);
-  const didInitializeCategory = useRef(false);
-  const [categoryLightKey, setCategoryLightKey] = useState(0);
-
-  useEffect(() => {
-    if (didInitializeCategory.current) {
-      setCategoryLightKey((currentKey) => currentKey + 1);
-    }
-    didInitializeCategory.current = true;
-  }, [categoryFilter]);
-
-  useEffect(() => {
-    if (shineTrigger > 0) {
-      setCategoryLightKey((currentKey) => currentKey + 1);
-    }
-  }, [shineTrigger]);
-
   const filteredCities = useMemo(() => {
     const normalizedQuery = cityQuery.trim().toLocaleLowerCase("de");
     return allFilterCities.filter((city) => {
@@ -124,21 +106,20 @@ export default function MusicalFilters({
       <div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Musical-Kategorie">
           <button
-            key={`all-${categoryFilter === "alle" ? categoryLightKey : 0}`}
             type="button"
             onClick={() => setCategoryFilter("alle")}
-            className={`${basePillClass} ${categoryFilter === "alle" ? `border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]${categoryLightKey > 0 ? " theater-light-shine" : ""}` : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+            className={`${basePillClass} ${categoryFilter === "alle" ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
             aria-pressed={categoryFilter === "alle"}
           >
             Alle Shows
           </button>
           {EXPERIENCE_CATEGORIES.map((category) => (
             <button
-              key={`${category.id}-${categoryFilter === category.id ? categoryLightKey : 0}`}
+              key={category.id}
               type="button"
               onClick={() => setCategoryFilter(category.id)}
               title={category.description}
-              className={`${basePillClass} ${categoryFilter === category.id ? `border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]${categoryLightKey > 0 ? " theater-light-shine" : ""}` : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+              className={`${basePillClass} ${categoryFilter === category.id ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
               aria-pressed={categoryFilter === category.id}
             >
               <span className="sm:hidden">{category.shortLabel}</span>

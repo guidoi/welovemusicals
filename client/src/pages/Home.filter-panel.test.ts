@@ -121,14 +121,10 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("useReducedMotion");
   });
 
-  it("setzt für eine neu gewählte Erlebniswelt einen einmaligen umlaufenden Theaterlicht-Rand ein", () => {
-    expect(filterSource).toContain("const [categoryLightKey, setCategoryLightKey] = useState(0);");
-    expect(filterSource).toContain("setCategoryLightKey((currentKey) => currentKey + 1);");
-    expect(filterSource).toContain("theater-light-shine");
-    expect(filterSource).toContain("didInitializeCategory");
-    expect(filterSource).toContain("shineTrigger?: number;");
-    expect(filterSource).toContain("}, [shineTrigger]);");
-    expect(filterSource).toContain("categoryLightKey : 0}`}");
+  it("markiert die aktive Erlebniswelt ruhig und klar", () => {
+    expect(filterSource).toContain('"border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]"');
+    expect(filterSource).not.toContain("theater-light-shine");
+    expect(filterSource).not.toContain("shineTrigger");
   });
 
   it("hält Länder- und Ortsfilter ohne farbige Füllflächen", () => {
@@ -138,7 +134,4 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).toContain('rounded-xl border border-gold/20 bg-transparent');
   });
 
-  it("überlässt den Theaterlicht-Reflex nicht der Seitenbreite", () => {
-    expect(filterSource).toContain("theater-light-shine");
-  });
 });

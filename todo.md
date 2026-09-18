@@ -593,3 +593,6 @@
 
 ## Flache Länder- und Ortsfilter
 - [x] Länder- und Ortsfilter ohne transparente Farbflächen gestalten; Auswahl nur über Kontur und Schrift hervorheben
+
+## Ruhige aktive Erlebniswelt
+- [x] Theaterlicht-Animation entfernen und die aktive Erlebniswelt ohne Effekt klar markieren

@@ -85,7 +85,6 @@ describe("HeroAnchorNavigation", () => {
           variant="categories"
           placement="hero-desktop"
           activeCategoryId="blockbuster-spektakel"
-          theaterLightKey={1}
         />
       </Router>,
     );
@@ -98,7 +97,6 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('md:px-5');
     expect(markup).toContain('md:text-sm');
     expect(markup).toContain('aria-pressed="true"');
-    expect(markup).toContain('theater-light-shine');
     expect(markup).toContain('bg-gold');
   });
 });

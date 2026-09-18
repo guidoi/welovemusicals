@@ -14,15 +14,8 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain("setShowAllMusicals(true);");
     expect(homeSource).toContain("trackExperienceCategorySelection({");
     expect(homeSource).toContain("analyticsConsent: consent?.analytics === true");
-    expect(homeSource).toContain("const [heroCategoryShineKey, setHeroCategoryShineKey] = useState(0);");
-    expect(homeSource).toContain("setHeroCategoryShineKey((currentKey) => currentKey + 1);");
-    expect(homeSource).toContain("const [pendingCategoryFilterShine, setPendingCategoryFilterShine] = useState(false);");
-    expect(homeSource).toContain("new IntersectionObserver");
-    expect(homeSource).toContain("}, { threshold: 0.65 });");
-    expect(homeSource).toContain("}, 420);");
-    expect(homeSource).toContain("shineTrigger={filterCategoryShineKey}");
-    expect(homeSource).toContain("setPendingCategoryFilterShine(true);");
-    expect(homeSource).toContain("theaterLightKey={heroCategoryShineKey}");
+    expect(homeSource).not.toContain("theaterLightKey");
+    expect(homeSource).not.toContain("pendingCategoryFilterShine");
     expect(homeSource).not.toContain("guideHeroCategoryToFirstResult");
     expect(homeSource).toContain('placement="hero-mobile"');
     expect(homeSource).toContain('placement="hero-desktop"');
