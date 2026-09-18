@@ -14,6 +14,10 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain("setShowAllMusicals(true);");
     expect(homeSource).toContain("trackExperienceCategorySelection({");
     expect(homeSource).toContain("analyticsConsent: consent?.analytics === true");
+    expect(homeSource).toContain("const guideHeroCategoryToFirstResult = useCallback(() => {");
+    expect(homeSource).toContain("window.setTimeout(() => {");
+    expect(homeSource).toContain("}, 850);");
+    expect(homeSource).toContain("guideHeroCategoryToFirstResult();");
     expect(homeSource).toContain('placement="hero-mobile"');
     expect(homeSource).toContain('placement="hero-desktop"');
     expect(homeSource).toContain('variant="categories"');
