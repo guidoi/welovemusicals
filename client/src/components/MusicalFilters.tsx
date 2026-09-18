@@ -43,7 +43,6 @@ interface MusicalFiltersProps {
   setCityFilter: (city: string) => void;
   plzSearch: PlzSearchState;
   setPlzSearch: (state: PlzSearchState) => void;
-  resultCount: number;
   onFiltersReset?: () => void;
 }
 
@@ -58,7 +57,6 @@ export default function MusicalFilters({
   setCityFilter,
   plzSearch,
   setPlzSearch,
-  resultCount,
   onFiltersReset,
 }: MusicalFiltersProps) {
   const [cityPanelOpen, setCityPanelOpen] = useState(false);
@@ -100,13 +98,10 @@ export default function MusicalFilters({
 
   return (
     <section aria-labelledby="discover-filter-heading" className="space-y-5" data-testid="experience-filters">
-      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+      <div>
         <h3 id="discover-filter-heading" className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
           Erlebniswelt
         </h3>
-        <p data-testid="filter-result-count" aria-live="polite" className="text-xs font-medium text-white/70">
-          <span aria-hidden="true" className="mr-2 text-gold/70">–</span><span className="font-semibold text-gold">{resultCount}</span> {resultCount === 1 ? "Show gefunden" : "Shows gefunden"}
-        </p>
       </div>
 
       <div>

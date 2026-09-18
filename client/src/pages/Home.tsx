@@ -321,16 +321,6 @@ export default function Home() {
       : countryFilter === "ch"
         ? "der Schweiz"
         : undefined;
-  const dynamicDiscoveryIntro = selectedExperienceCategory
-    ? `${selectedExperienceCategory.description} ${cityFilter !== "alle" ? `Entdecke deine Auswahl in ${cityFilter} und finde deinen nächsten besonderen Musicalabend.` : selectedCountryLabel ? `Entdecke deine Auswahl in ${selectedCountryLabel} und finde deinen nächsten besonderen Musicalabend.` : "Finde die Show, die deinen nächsten Musicalabend unvergesslich macht."}`
-    : plzSearch.active
-      ? "Entdecke Musicals und Shows in deiner Nähe – finde den nächsten besonderen Musicalabend ganz in deiner Umgebung."
-      : cityFilter !== "alle"
-        ? `Entdecke Musicals und Shows in ${cityFilter}, die zu deinem Geschmack passen – und finde deinen nächsten besonderen Abend.`
-        : selectedCountryLabel
-          ? `Entdecke Musicals und Shows in ${selectedCountryLabel}, die zu deinem Geschmack passen – für deinen nächsten unvergesslichen Musicalabend.`
-          : "Entdecke Musicals und Shows, die zu deinem Geschmack passen – von großen Bühnenbildern bis zu Geschichten, die dich noch lange begleiten.";
-
   const filteredMusicals = useMemo(() => {
     // Ohne Auswahl bleibt die Übersicht doppelfrei. Sobald gefiltert wird,
     // durchsucht sie das komplette aktive Angebot einschließlich der Highlights.
@@ -378,6 +368,19 @@ export default function Home() {
 
     return result;
   }, [categoryFilter, countryFilter, cityFilter, plzSearch, managedMusicals, includeHighlightsInOverview]);
+
+  const dynamicDiscoveryIntro = selectedExperienceCategory
+    ? `${selectedExperienceCategory.description} ${cityFilter !== "alle" ? `Entdecke deine Auswahl in ${cityFilter} und finde deinen nächsten besonderen Musicalabend.` : selectedCountryLabel ? `Entdecke deine Auswahl in ${selectedCountryLabel} und finde deinen nächsten besonderen Musicalabend.` : "Finde die Show, die deinen nächsten Musicalabend unvergesslich macht."}`
+    : plzSearch.active
+      ? "Entdecke Musicals und Shows in deiner Nähe – finde den nächsten besonderen Musicalabend ganz in deiner Umgebung."
+      : cityFilter !== "alle"
+        ? `Entdecke Musicals und Shows in ${cityFilter}, die zu deinem Geschmack passen – und finde deinen nächsten besonderen Abend.`
+        : selectedCountryLabel
+          ? `Entdecke Musicals und Shows in ${selectedCountryLabel}, die zu deinem Geschmack passen – für deinen nächsten unvergesslichen Musicalabend.`
+          : "Entdecke Musicals und Shows, die zu deinem Geschmack passen – von großen Bühnenbildern bis zu Geschichten, die dich noch lange begleiten.";
+  const dynamicResultHint = filteredMusicals.length === 1
+    ? "Weiter unten findest du deinen passenden Show-Tipp."
+    : `Weiter unten findest du deine ${filteredMusicals.length} passenden Show-Tipps.`;
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 16);
 
@@ -528,7 +531,7 @@ export default function Home() {
             Welche Show passt zu dir?
           </h2>
           <p className={`max-w-2xl text-white ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
-            {dynamicDiscoveryIntro}
+            {dynamicDiscoveryIntro} <span className="font-medium text-gold-light">{dynamicResultHint}</span>
           </p>
           {includeHighlightsInOverview && (
             <button
@@ -580,7 +583,6 @@ export default function Home() {
                   setResultAnimationKey((currentKey) => currentKey + 1);
                 }
               }}
-              resultCount={filteredMusicals.length}
               onFiltersReset={resetToAdditionalOverview}
             />
           </div>

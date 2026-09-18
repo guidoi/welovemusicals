@@ -9,9 +9,10 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('rounded-2xl border border-gold/20 bg-card/60');
     expect(homeSource).toContain("Welche Show passt zu dir?");
     expect(homeSource).toContain("const dynamicDiscoveryIntro = selectedExperienceCategory");
+    expect(homeSource).toContain("const dynamicResultHint = filteredMusicals.length === 1");
+    expect(homeSource).toContain("Weiter unten findest du deine ${filteredMusicals.length} passenden Show-Tipps.");
     expect(filterSource).toContain("Erlebniswelt");
-    expect(filterSource).toContain('data-testid="filter-result-count"');
-    expect(filterSource).toContain('text-gold/70">–</span>');
+    expect(filterSource).not.toContain('data-testid="filter-result-count"');
     expect(filterSource).not.toContain('uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>');
     expect(filterSource).toContain("EXPERIENCE_CATEGORIES");
     expect(filterSource).toContain("category.label");
@@ -105,11 +106,12 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
   });
 
-  it("kennzeichnet die genaue Trefferzahl im Filterkasten statt doppelt am Ergebnisgrid", () => {
-    expect(filterSource).toContain('data-testid="filter-result-count"');
-    expect(filterSource).toContain('"Show gefunden"');
-    expect(filterSource).toContain('"Shows gefunden"');
+  it("verweist im Einführungstext dynamisch auf die passende Anzahl von Show-Tipps", () => {
+    expect(homeSource).toContain("const dynamicResultHint = filteredMusicals.length === 1");
+    expect(homeSource).toContain("Weiter unten findest du deinen passenden Show-Tipp.");
+    expect(homeSource).toContain("Weiter unten findest du deine ${filteredMusicals.length} passenden Show-Tipps.");
     expect(homeSource).not.toContain('data-testid="results-count-label"');
+    expect(filterSource).not.toContain('resultCount');
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {
