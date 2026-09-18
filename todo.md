@@ -584,3 +584,6 @@
 
 ## Sichtbares Theaterlicht nach Hero-Auswahl
 - [x] Lichtreflex am sichtbaren aktiven Filterbutton auslösen, sobald der Auswahlkasten nach Hero-Auswahl im Bildschirm ankommt
+
+## Umlaufender Theaterlicht-Rand
+- [x] Flächenreflex durch einen einmal umlaufenden Lichtpunkt am Rand des aktiven Erlebniswelt-Buttons ersetzen und auf Mobil prüfen

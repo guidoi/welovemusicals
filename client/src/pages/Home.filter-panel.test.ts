@@ -121,7 +121,7 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("useReducedMotion");
   });
 
-  it("setzt für eine neu gewählte Erlebniswelt einen einmaligen Theaterlicht-Reflex ein", () => {
+  it("setzt für eine neu gewählte Erlebniswelt einen einmaligen umlaufenden Theaterlicht-Rand ein", () => {
     expect(filterSource).toContain("const [categoryLightKey, setCategoryLightKey] = useState(0);");
     expect(filterSource).toContain("setCategoryLightKey((currentKey) => currentKey + 1);");
     expect(filterSource).toContain("theater-light-shine");

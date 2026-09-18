@@ -230,8 +230,8 @@ html {
   box-shadow: 0 0 18px rgba(184,148,74,0.40);
 }
 
-/* Ein einzelner Lichtreflex für die gerade gewählte Erlebniswelt.
-   Die Bewegung läuft bewusst nur einmal durch und ist kein dauerhaftes Blinken. */
+/* Ein einzelner Lichtpunkt läuft wie eine Theaterzündschnur einmal am Rand
+   der gerade gewählten Erlebniswelt entlang – nie als dauerhaftes Blinken. */
 .theater-light-shine {
   position: relative;
   isolation: isolate;
@@ -241,36 +241,34 @@ html {
 .theater-light-shine::after {
   content: "";
   position: absolute;
-  inset: -35% -55%;
+  inset: 1px;
   z-index: 1;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  border-bottom-color: rgba(255, 247, 194, 0.48);
+  border-left-color: rgba(255, 255, 238, 0.98);
   pointer-events: none;
   opacity: 0;
-  transform: translate3d(-115%, 0, 0) skewX(-18deg);
-  background: linear-gradient(
-    90deg,
-    transparent 40%,
-    rgba(255, 248, 210, 0.08) 46%,
-    rgba(255, 252, 228, 0.62) 50%,
-    rgba(255, 248, 210, 0.08) 54%,
-    transparent 60%
-  );
+  filter: drop-shadow(0 0 3px rgba(255, 246, 187, 0.95));
+  transform: rotate(0deg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .theater-light-shine::after {
-    animation: theater-light-shine 640ms cubic-bezier(0.23, 1, 0.32, 1) 1 both;
+    animation: theater-light-shine 960ms cubic-bezier(0.23, 1, 0.32, 1) 1 both;
   }
 }
 
 @keyframes theater-light-shine {
   0% {
-    opacity: 0;
-    transform: translate3d(-115%, 0, 0) skewX(-18deg);
+    opacity: 0.18;
+    transform: rotate(0deg);
   }
-  18% { opacity: 0.82; }
-  76% { opacity: 0.42; }
+  12% { opacity: 1; }
+  82% { opacity: 0.92; }
   100% {
     opacity: 0;
-    transform: translate3d(115%, 0, 0) skewX(-18deg);
+    transform: rotate(360deg);
   }
 }
