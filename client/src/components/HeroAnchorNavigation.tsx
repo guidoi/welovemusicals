@@ -62,7 +62,7 @@ export default function HeroAnchorNavigation({
   const renderItem = (item: HeroNavigationItem, className: string) => {
     const isActiveCategory = item.kind === "category" && item.categoryId === activeCategoryId;
     const activeCategoryClass = isActiveCategory
-      ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]"
+      ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]"
       : "";
 
     if (item.kind !== "musical") {

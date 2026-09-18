@@ -108,7 +108,7 @@ export default function MusicalFilters({
           <button
             type="button"
             onClick={() => setCategoryFilter("alle")}
-            className={`${basePillClass} ${categoryFilter === "alle" ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+            className={`${basePillClass} ${categoryFilter === "alle" ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
             aria-pressed={categoryFilter === "alle"}
           >
             Alle Shows
@@ -119,7 +119,7 @@ export default function MusicalFilters({
               type="button"
               onClick={() => setCategoryFilter(category.id)}
               title={category.description}
-              className={`${basePillClass} ${categoryFilter === category.id ? "border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+              className={`${basePillClass} ${categoryFilter === category.id ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
               aria-pressed={categoryFilter === category.id}
             >
               <span className="sm:hidden">{category.shortLabel}</span>

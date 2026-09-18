@@ -596,3 +596,6 @@
 
 ## Ruhige aktive Erlebniswelt
 - [x] Theaterlicht-Animation entfernen und die aktive Erlebniswelt ohne Effekt klar markieren
+
+## Aktive Erlebniswelt als Goldkontur
+- [x] Aktive Erlebniswelt testweise ohne Goldfläche, nur mit verstärkter Goldkontur und Goldschrift darstellen

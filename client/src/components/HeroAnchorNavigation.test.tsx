@@ -97,6 +97,6 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('md:px-5');
     expect(markup).toContain('md:text-sm');
     expect(markup).toContain('aria-pressed="true"');
-    expect(markup).toContain('bg-gold');
+    expect(markup).toContain('border-2 border-gold bg-transparent text-gold');
   });
 });

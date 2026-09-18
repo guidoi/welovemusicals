@@ -122,7 +122,7 @@ describe("Startseiten-Erlebnisfilter", () => {
   });
 
   it("markiert die aktive Erlebniswelt ruhig und klar", () => {
-    expect(filterSource).toContain('"border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]"');
+    expect(filterSource).toContain('"border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]"');
     expect(filterSource).not.toContain("theater-light-shine");
     expect(filterSource).not.toContain("shineTrigger");
   });
