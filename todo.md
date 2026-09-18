@@ -581,3 +581,6 @@
 
 ## Mobile Überlaufkorrektur für Theaterlicht
 - [x] Theaterlicht lokal am Erlebniswelt-Button verankern und horizontalen Mobile-Überlauf nach Auswahl prüfen
+
+## Sichtbares Theaterlicht nach Hero-Auswahl
+- [x] Lichtreflex am sichtbaren aktiven Filterbutton auslösen, sobald der Auswahlkasten nach Hero-Auswahl im Bildschirm ankommt

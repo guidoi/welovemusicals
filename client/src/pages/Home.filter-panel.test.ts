@@ -126,6 +126,9 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).toContain("setCategoryLightKey((currentKey) => currentKey + 1);");
     expect(filterSource).toContain("theater-light-shine");
     expect(filterSource).toContain("didInitializeCategory");
+    expect(filterSource).toContain("shineTrigger?: number;");
+    expect(filterSource).toContain("}, [shineTrigger]);");
+    expect(filterSource).toContain('key={`${category.id}-${categoryFilter === category.id ? categoryLightKey : 0}`}');
   });
 
   it("überlässt den Theaterlicht-Reflex nicht der Seitenbreite", () => {

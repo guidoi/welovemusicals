@@ -44,6 +44,7 @@ interface MusicalFiltersProps {
   plzSearch: PlzSearchState;
   setPlzSearch: (state: PlzSearchState) => void;
   onFiltersReset?: () => void;
+  shineTrigger?: number;
 }
 
 const basePillClass = "rounded-full border px-3.5 py-2 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.97]";
@@ -58,6 +59,7 @@ export default function MusicalFilters({
   plzSearch,
   setPlzSearch,
   onFiltersReset,
+  shineTrigger = 0,
 }: MusicalFiltersProps) {
   const [cityPanelOpen, setCityPanelOpen] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
@@ -71,6 +73,12 @@ export default function MusicalFilters({
     }
     didInitializeCategory.current = true;
   }, [categoryFilter]);
+
+  useEffect(() => {
+    if (shineTrigger > 0) {
+      setCategoryLightKey((currentKey) => currentKey + 1);
+    }
+  }, [shineTrigger]);
 
   const filteredCities = useMemo(() => {
     const normalizedQuery = cityQuery.trim().toLocaleLowerCase("de");
@@ -116,6 +124,7 @@ export default function MusicalFilters({
       <div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Musical-Kategorie">
           <button
+            key={`all-${categoryFilter === "alle" ? categoryLightKey : 0}`}
             type="button"
             onClick={() => setCategoryFilter("alle")}
             className={`${basePillClass} ${categoryFilter === "alle" ? `border-gold bg-gold text-background shadow-[0_0_16px_rgba(184,148,74,0.24)]${categoryLightKey > 0 ? " theater-light-shine" : ""}` : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
@@ -125,7 +134,7 @@ export default function MusicalFilters({
           </button>
           {EXPERIENCE_CATEGORIES.map((category) => (
             <button
-              key={category.id}
+              key={`${category.id}-${categoryFilter === category.id ? categoryLightKey : 0}`}
               type="button"
               onClick={() => setCategoryFilter(category.id)}
               title={category.description}

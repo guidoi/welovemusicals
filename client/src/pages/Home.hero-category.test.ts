@@ -16,6 +16,10 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain("analyticsConsent: consent?.analytics === true");
     expect(homeSource).toContain("const [heroCategoryShineKey, setHeroCategoryShineKey] = useState(0);");
     expect(homeSource).toContain("setHeroCategoryShineKey((currentKey) => currentKey + 1);");
+    expect(homeSource).toContain("const [pendingCategoryFilterShine, setPendingCategoryFilterShine] = useState(false);");
+    expect(homeSource).toContain("new IntersectionObserver");
+    expect(homeSource).toContain("shineTrigger={filterCategoryShineKey}");
+    expect(homeSource).toContain("setPendingCategoryFilterShine(true);");
     expect(homeSource).toContain("theaterLightKey={heroCategoryShineKey}");
     expect(homeSource).not.toContain("guideHeroCategoryToFirstResult");
     expect(homeSource).toContain('placement="hero-mobile"');

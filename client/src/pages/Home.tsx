@@ -80,6 +80,8 @@ export default function Home() {
   const [resultAnimationKey, setResultAnimationKey] = useState(0);
   const [showStickyFilterBar, setShowStickyFilterBar] = useState(false);
   const [heroCategoryShineKey, setHeroCategoryShineKey] = useState(0);
+  const [filterCategoryShineKey, setFilterCategoryShineKey] = useState(0);
+  const [pendingCategoryFilterShine, setPendingCategoryFilterShine] = useState(false);
   const [isResetTouchFeedbackActive, setIsResetTouchFeedbackActive] = useState(false);
   const firstResultRef = useRef<HTMLDivElement>(null);
   const resultGridRef = useRef<HTMLDivElement>(null);
@@ -110,6 +112,27 @@ export default function Home() {
       setTimeout(scrollToFirstResult, 80);
     }
   }, [scrollToFirstResult]);
+
+  useEffect(() => {
+    if (!pendingCategoryFilterShine) return;
+
+    const filterPanel = filterPanelRef.current;
+    if (!filterPanel || typeof IntersectionObserver === "undefined") {
+      setFilterCategoryShineKey((currentKey) => currentKey + 1);
+      setPendingCategoryFilterShine(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      setFilterCategoryShineKey((currentKey) => currentKey + 1);
+      setPendingCategoryFilterShine(false);
+      observer.disconnect();
+    }, { threshold: 0.25 });
+
+    observer.observe(filterPanel);
+    return () => observer.disconnect();
+  }, [pendingCategoryFilterShine]);
 
   const scrollToUpdatedResults = useCallback(() => {
     window.setTimeout(scrollToFirstResult, 80);
@@ -277,6 +300,7 @@ export default function Home() {
       setShowCompleteCatalog(true);
       setShowAllMusicals(true);
       setHeroCategoryShineKey((currentKey) => currentKey + 1);
+      setPendingCategoryFilterShine(true);
     }
 
     const targetHash = new URL(href, window.location.origin).hash.slice(1);
@@ -590,6 +614,7 @@ export default function Home() {
                 }
               }}
               onFiltersReset={resetToAdditionalOverview}
+              shineTrigger={filterCategoryShineKey}
             />
           </div>
 
