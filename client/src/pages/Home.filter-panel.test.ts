@@ -128,7 +128,14 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).toContain("didInitializeCategory");
     expect(filterSource).toContain("shineTrigger?: number;");
     expect(filterSource).toContain("}, [shineTrigger]);");
-    expect(filterSource).toContain('key={`${category.id}-${categoryFilter === category.id ? categoryLightKey : 0}`}');
+    expect(filterSource).toContain("categoryLightKey : 0}`}");
+  });
+
+  it("hält Länder- und Ortsfilter ohne farbige Füllflächen", () => {
+    expect(filterSource).toContain('"border-gold text-gold"');
+    expect(filterSource).toContain('"border-border/70 text-muted-foreground');
+    expect(filterSource).toContain('border border-gold/45 bg-transparent px-4');
+    expect(filterSource).toContain('rounded-xl border border-gold/20 bg-transparent');
   });
 
   it("überlässt den Theaterlicht-Reflex nicht der Seitenbreite", () => {

@@ -125,10 +125,14 @@ export default function Home() {
 
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry?.isIntersecting) return;
-      setFilterCategoryShineKey((currentKey) => currentKey + 1);
-      setPendingCategoryFilterShine(false);
+      // Erst nach dem Einrasten des weichen Anker-Scrolls leuchten, damit
+      // der Effekt nicht unterwegs verloren geht.
+      window.setTimeout(() => {
+        setFilterCategoryShineKey((currentKey) => currentKey + 1);
+        setPendingCategoryFilterShine(false);
+      }, 420);
       observer.disconnect();
-    }, { threshold: 0.25 });
+    }, { threshold: 0.65 });
 
     observer.observe(filterPanel);
     return () => observer.disconnect();

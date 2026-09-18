@@ -157,7 +157,7 @@ export default function MusicalFilters({
                 key={country.id}
                 type="button"
                 onClick={() => handleCountryChange(country.id)}
-                className={`${basePillClass} px-3 py-1.5 text-xs ${countryFilter === country.id ? "border-gold bg-gold/15 text-gold" : "border-border bg-card/40 text-muted-foreground hover:border-gold/50 hover:text-gold"}`}
+                className={`${basePillClass} bg-transparent px-3 py-1.5 text-xs ${countryFilter === country.id ? "border-gold text-gold" : "border-border/70 text-muted-foreground hover:border-gold/50 hover:text-gold"}`}
                 aria-pressed={countryFilter === country.id}
               >
                 {country.label}
@@ -171,7 +171,7 @@ export default function MusicalFilters({
           <button
             type="button"
             onClick={() => setCityPanelOpen((open) => !open)}
-            className="inline-flex min-h-10 w-full items-center justify-between gap-3 rounded-full border border-gold/45 bg-card/70 px-4 text-sm text-foreground transition-all duration-150 hover:border-gold hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:min-w-72 lg:w-80"
+            className="inline-flex min-h-10 w-full items-center justify-between gap-3 rounded-full border border-gold/45 bg-transparent px-4 text-sm text-foreground transition-all duration-150 hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:min-w-72 lg:w-80"
             aria-expanded={cityPanelOpen}
             aria-controls="city-finder-panel"
           >
@@ -207,7 +207,7 @@ export default function MusicalFilters({
                   <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">Beliebte Musical-Städte</p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {visibleQuickCities.map((city) => (
-                      <button key={city} type="button" onClick={() => selectCity(city)} className="rounded-full border border-gold/35 px-3 py-1.5 text-xs font-medium text-gold transition-colors hover:border-gold hover:bg-gold hover:text-background">
+                      <button key={city} type="button" onClick={() => selectCity(city)} className="rounded-full border border-gold/35 bg-transparent px-3 py-1.5 text-xs font-medium text-gold transition-colors hover:border-gold hover:text-gold-light">
                         {city}
                       </button>
                     ))}
@@ -216,12 +216,12 @@ export default function MusicalFilters({
               )}
 
               <div className="mt-4 max-h-48 overflow-y-auto border-t border-border/60 pt-2" role="listbox" aria-label="Gefundene Städte">
-                <button type="button" onClick={() => selectCity("alle")} className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-sm text-foreground transition-colors hover:bg-gold/10">
+                <button type="button" onClick={() => selectCity("alle")} className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-sm text-foreground transition-colors hover:text-gold">
                   {cityFilter === "alle" ? <Check className="h-4 w-4 text-gold" /> : <span className="h-4 w-4" />}
                   Alle Städte
                 </button>
                 {filteredCities.map((city) => (
-                  <button key={city} type="button" onClick={() => selectCity(city)} className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-sm text-foreground transition-colors hover:bg-gold/10" role="option" aria-selected={cityFilter === city}>
+                  <button key={city} type="button" onClick={() => selectCity(city)} className="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-sm text-foreground transition-colors hover:text-gold" role="option" aria-selected={cityFilter === city}>
                     {cityFilter === city ? <Check className="h-4 w-4 text-gold" /> : <MapPin className="h-4 w-4 text-gold/70" />}
                     {city}
                   </button>
@@ -229,7 +229,7 @@ export default function MusicalFilters({
                 {filteredCities.length === 0 && <p className="px-2 py-3 text-sm text-muted-foreground">Keine Stadt gefunden.</p>}
               </div>
 
-              <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5">
+              <div className="mt-4 rounded-xl border border-gold/20 bg-transparent">
                 <button type="button" onClick={() => setPlzPanelOpen((open) => !open)} className="flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-sm font-medium text-gold">
                   <span className="flex items-center gap-2"><MapPin className="h-4 w-4" />{plzSearch.active ? `Im Umkreis von ${plzSearch.radius} km` : "In meiner Nähe"}</span>
                   <ChevronDown className={`h-4 w-4 transition-transform duration-150 ${plzPanelOpen ? "rotate-180" : ""}`} />

@@ -587,3 +587,9 @@
 
 ## Umlaufender Theaterlicht-Rand
 - [x] Flächenreflex durch einen einmal umlaufenden Lichtpunkt am Rand des aktiven Erlebniswelt-Buttons ersetzen und auf Mobil prüfen
+
+## Deutlicher umlaufender Lichtpunkt
+- [x] Theaterlicht als klar sichtbaren weißen Lichtpunkt mit Goldglühen um den aktiven Erlebniswelt-Button ausführen und mobil prüfen
+
+## Flache Länder- und Ortsfilter
+- [x] Länder- und Ortsfilter ohne transparente Farbflächen gestalten; Auswahl nur über Kontur und Schrift hervorheben
