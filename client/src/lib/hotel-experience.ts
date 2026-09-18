@@ -1,20 +1,24 @@
 export const CURATED_HOTEL_CITY_SLUGS = ["berlin", "hamburg", "stuttgart"] as const;
 
 /**
- * HRS bleibt als vorbereiteter Partner konfiguriert, seine Karten werden bis zur
- * Entscheidung für eine neue Reise- oder Hotelpartnerschaft aber nicht gezeigt.
+ * HRS-Links bleiben vorläufig nur als nicht öffentliche Datenreserve erhalten.
+ * Bis ein passendes Travelcircus-Werbemittel ausgewählt wurde, werden keinerlei
+ * Hotel- oder Reisepartner auf Musical- und Stadtseiten gezeigt.
  */
 export const SHOW_MUSICAL_HOTEL_SECTIONS = false;
+export const SHOW_CITY_HOTEL_SECTIONS = false;
 
 export const HOTEL_EXPERIENCE_PARTNERS = {
   accommodation: {
     name: "HRS",
-    status: "active",
+    status: "inactive",
     bookingLabel: "Hotel finden",
   },
   package: {
     name: "Travelcircus",
-    status: "pending",
+    status: "confirmed",
+    awinMerchantId: "9151",
+    integrationStatus: "awaiting-creative",
     bookingLabel: "Musicalreise mit Hotel",
   },
 } as const;

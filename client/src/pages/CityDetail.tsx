@@ -22,6 +22,7 @@ import SchemaOrgCity from "@/components/SchemaOrgCity";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import TicketsAndHotel from "@/components/TicketsAndHotel";
 import { CITY_PROGRAM_SUBLINE, getCityProgramHeading } from "@/lib/city-program-heading";
+import { SHOW_CITY_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 
 export default function CityDetail() {
@@ -136,16 +137,18 @@ export default function CityDetail() {
                   {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
                 </span>
               </div>
-              <a
-                href={city.hotelSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors"
-              >
-                <Hotel className="w-4 h-4" />
-                <span className="text-sm">Hotels finden</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              {SHOW_CITY_HOTEL_SECTIONS && (
+                <a
+                  href={city.hotelSearchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors"
+                >
+                  <Hotel className="w-4 h-4" />
+                  <span className="text-sm">Hotels finden</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
           </motion.div>
         </div>
@@ -180,7 +183,7 @@ export default function CityDetail() {
         </div>
       </section>
 
-      <TicketsAndHotel city={city} />
+      {SHOW_CITY_HOTEL_SECTIONS && <TicketsAndHotel city={city} />}
 
       {/* Other Cities */}
       <section className="py-12 md:py-16">
