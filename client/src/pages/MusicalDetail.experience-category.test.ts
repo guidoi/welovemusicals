@@ -25,5 +25,6 @@ describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
     expect(musicalDetailSource).toContain("{related.length > 0 && (");
     expect(musicalDetailSource).toContain("experienceCategory?.recommendationHeadline");
     expect(musicalDetailSource).toContain("experienceCategory.recommendationIntro");
+    expect(musicalDetailSource).toContain('className="-mt-5 mb-6 text-sm text-cream/90"');
   });
 });

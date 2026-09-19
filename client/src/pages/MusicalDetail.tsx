@@ -637,7 +637,7 @@ export default function MusicalDetail() {
               {experienceCategory?.recommendationHeadline ?? "Ähnliche Musicals"}
             </h2>
             {experienceCategory && (
-              <p className="-mt-5 mb-6 text-sm text-muted-foreground">
+              <p className="-mt-5 mb-6 text-sm text-cream/90">
                 <span className="font-medium text-gold">{experienceCategory.label}</span> · {experienceCategory.recommendationIntro}
               </p>
             )}

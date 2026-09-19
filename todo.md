@@ -626,3 +626,6 @@
 
 ## Redaktionell geschärfte Erlebniswelten
 - [x] Texte der fünf Erlebniswelten für Auswahl, Einführung und Empfehlungen emotionaler sowie konkreter formulieren
+
+## Lesbare Empfehlungs-Subline
+- [x] Empfehlungseinleitung auf Detailseiten von Grau auf kontrastreiches Cremeweiß umstellen und prüfen
