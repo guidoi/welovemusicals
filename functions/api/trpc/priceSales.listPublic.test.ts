@@ -68,6 +68,21 @@ describe("Cloudflare Pages priceSales.listPublic", () => {
     );
   });
 
+  it("trennt neue Preisantwortfelder von früheren Edge-Cache-Einträgen", async () => {
+    const cache = {
+      match: vi.fn().mockResolvedValue(undefined),
+      put: vi.fn().mockResolvedValue(undefined),
+    };
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(csv, { status: 200 })));
+    vi.stubGlobal("caches", { default: cache });
+
+    await onRequestGet(createContext());
+
+    const cacheRequest = cache.match.mock.calls[0]?.[0] as Request;
+    expect(cacheRequest.url).toContain("/_edge-cache/price-sales-v3-20260920");
+    expect(cache.put).toHaveBeenCalledTimes(1);
+  });
+
   it("weist andere HTTP-Methoden zurück", async () => {
     const response = await onRequest({
       ...createContext(),
