@@ -15,7 +15,8 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).not.toContain('data-testid="filter-result-count"');
     expect(filterSource).not.toContain('uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>');
     expect(filterSource).toContain("EXPERIENCE_CATEGORIES");
-    expect(filterSource).toContain("category.label");
+    expect(filterSource).toContain("category.shortLabel");
+    expect(filterSource).not.toContain('hidden sm:inline">{category.label}</span>');
     expect(filterSource).not.toContain("Alle Kategorien");
   });
 
@@ -93,7 +94,9 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("const dynamicResultHint = getDiscoveryResultHint({");
     expect(homeSource).toContain("hasNarrowingFilter,");
     expect(homeSource).toContain("showCompleteCatalog,");
-    expect(homeSource).toContain("{dynamicResultHint.text}");
+    expect(homeSource).toContain("{dynamicResultHint.beforeCount}");
+    expect(homeSource).toContain("{dynamicResultHint.count}");
+    expect(homeSource).toContain("{dynamicResultHint.afterCount}");
     expect(homeSource).not.toContain('data-testid="results-count-label"');
     expect(filterSource).not.toContain('resultCount');
   });
@@ -102,6 +105,9 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('data-testid="result-anchor-link"');
     expect(homeSource).toContain('inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90');
     expect(homeSource).toContain('<ArrowDown className="h-4 w-4 shrink-0 text-gold');
+    expect(homeSource).toContain('data-testid="result-count-heart"');
+    expect(homeSource).toContain('fill-red-dark/80 text-red');
+    expect(homeSource).toContain('text-[10px] font-bold leading-none text-gold-light');
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {

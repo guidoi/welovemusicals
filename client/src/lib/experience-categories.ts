@@ -18,15 +18,6 @@ export const EXPERIENCE_CATEGORIES = [
     recommendationIntro: "Entdecke Bühnenlegenden, große Gefühle und Songs, die du nie vergisst.",
   },
   {
-    id: "pop-rock-filmhits",
-    label: "Pop, Rock & Filmhits",
-    shortLabel: "Pop, Rock & Film",
-    description: "Welthits, Filmmomente und Beats, die du längst kennst – jetzt live auf der Bühne.",
-    discoveryHeadline: "Welche Show passt zu deinem Sound?",
-    recommendationHeadline: "Deine Lieblingssongs, ganz groß erzählt",
-    recommendationIntro: "Noch mehr Shows voller Hits, Energie und mitreißender Live-Momente.",
-  },
-  {
     id: "familie-maerchen-magie",
     label: "Familie, Märchen & Magie",
     shortLabel: "Familie & Märchen",
@@ -34,6 +25,15 @@ export const EXPERIENCE_CATEGORIES = [
     discoveryHeadline: "Welches Familien-Musical passt zu euch?",
     recommendationHeadline: "Gemeinsame Lieblingsmomente für die ganze Familie",
     recommendationIntro: "Entdecke magische Shows, die Kinderaugen leuchten lassen und Erwachsene berühren.",
+  },
+  {
+    id: "pop-rock-filmhits",
+    label: "Pop, Rock & Filmhits",
+    shortLabel: "Pop, Rock & Film",
+    description: "Welthits, Filmmomente und Beats, die du längst kennst – jetzt live auf der Bühne.",
+    discoveryHeadline: "Welche Show passt zu deinem Sound?",
+    recommendationHeadline: "Deine Lieblingssongs, ganz groß erzählt",
+    recommendationIntro: "Noch mehr Shows voller Hits, Energie und mitreißender Live-Momente.",
   },
   {
     id: "besondere-geschichten",

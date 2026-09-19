@@ -12,18 +12,18 @@ describe("Erlebnis-Kategorien", () => {
     expect(EXPERIENCE_CATEGORIES.map((category) => category.id)).toEqual([
       "blockbuster-spektakel",
       "kult-klassiker",
-      "pop-rock-filmhits",
       "familie-maerchen-magie",
+      "pop-rock-filmhits",
       "besondere-geschichten",
     ]);
   });
 
-  it("ordnet die Filter nach Conversion-Priorität von Breitenwirkung bis Nische", () => {
+  it("ordnet die Filter mit Familie vor Pop, Rock und Film", () => {
     expect(EXPERIENCE_CATEGORIES.map((category) => category.label)).toEqual([
       "Blockbuster & Spektakel",
       "Kult & Klassiker",
-      "Pop, Rock & Filmhits",
       "Familie, Märchen & Magie",
+      "Pop, Rock & Filmhits",
       "Besondere Geschichten",
     ]);
     const familyCategory = EXPERIENCE_CATEGORIES.find((category) => category.id === "familie-maerchen-magie");

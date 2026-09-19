@@ -122,8 +122,7 @@ export default function MusicalFilters({
               className={`${basePillClass} ${categoryFilter === category.id ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
               aria-pressed={categoryFilter === category.id}
             >
-              <span className="sm:hidden">{category.shortLabel}</span>
-              <span className="hidden sm:inline">{category.label}</span>
+              {category.shortLabel}
             </button>
           ))}
         </div>

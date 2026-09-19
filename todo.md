@@ -664,7 +664,7 @@
 - [x] Ergebnis-Headline je aktiver Erlebniswelt individuell formulieren und die allgemeine Headline ohne Auswahl beibehalten
 
 ## Kompakte und größere mobile Erlebniswelt-Buttons
-- [x] Längere Hero-Erlebniswelt-Texte auf maximal zwei Begriffe kürzen, „Familie & Märchen“ sowie „Geschichten“ verwenden und die mobilen Buttons lesbarer vergrößern
+- [x] Längere Hero-Erlebniswelt-Texte auf maximal zwei Begriffe kürzen, „Familie & Märchen“ sowie „Drama & Komödie“ verwenden und die mobilen Buttons lesbarer vergrößern
 
 ## Abgrenzender Drama-und-Emotion-Button
 - [x] Kurzen Hero-Button „Geschichten“ durch „Drama & Emotion“ ersetzen; ausführliche Kategorie „Besondere Geschichten“ beibehalten
@@ -674,3 +674,13 @@
 
 ## Passende Drama-Komödie-Headline
 - [x] Ergebnis-Headline der Erlebniswelt „Besondere Geschichten“ passend zu Drama und Komödie formulieren
+
+## Ergebniszahl im Markenherz
+- [x] Dynamische Ergebniszahl als kleine rote Herz-Kontur mit goldener Zahl in den klickbaren Ergebnisanker integrieren
+## Einheitliche Erlebniswelt-Buttonlabels
+- [x] Erlebniswelt-Buttons im unteren Filterkasten mit den kompakten Hero-Begriffen synchronisieren; ausführliche Kategorien in Inhaltskontexten beibehalten
+## Familie vor Pop, Rock & Film
+- [x] Erlebniswelt „Familie & Märchen“ vor „Pop, Rock & Film“ in Hero- und Filter-Navigation auf Desktop und Mobil sortieren
+
+## Familie vor Pop, Rock & Film
+- [ ] Erlebniswelt „Familie & Märchen“ vor „Pop, Rock & Film“ in Hero- und Filter-Navigation auf Desktop und Mobil sortieren
