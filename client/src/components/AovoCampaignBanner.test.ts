@@ -78,7 +78,7 @@ describe("Aovo campaign banners", () => {
       groupId: "26180466",
       width: 300,
       height: 250,
-      imageUrl: "/manus-storage/creative-300-20260919_0ebb7a8d.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kqfKEqTblBouOywS.jpg",
       trackingNetwork: "stage",
       placement: "after-gallery",
       adLabel: "MJ-Ticketangebot",
@@ -103,10 +103,10 @@ describe("Aovo campaign banners", () => {
       groupId: "26185700",
       width: 728,
       height: 90,
-      trackingNetwork: "stage",
-      placement: "within-detail-description",
-      detailParagraphIndex: 2,
-      imageUrl: "/manus-storage/media-002_3c4c23f4.jpg",
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/GjHNFEoIcaLNLtYD.jpg",
     });
     expect(getAovoCampaigns("wir-sind-am-leben")).toEqual(expect.arrayContaining([
       expect.objectContaining({
@@ -115,7 +115,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "/manus-storage/media-003_6d1b19e8.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/VtiecJiBFLMHWhcC.jpg",
       }),
     ]));
     expect(mj).toMatchObject({
@@ -131,7 +131,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "/manus-storage/creative-728-20260919_93045379.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yHDbGkiApdeTfiVB.jpg",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
@@ -196,10 +196,10 @@ describe("Aovo campaign banners", () => {
     const mjCampaigns = getAovoCampaigns("mj-musical");
 
     expect(mjCampaigns.find((campaign) => campaign.groupId === "26180466")?.imageUrl).toBe(
-      "/manus-storage/creative-300-20260919_0ebb7a8d.jpg"
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kqfKEqTblBouOywS.jpg"
     );
     expect(mjCampaigns.find((campaign) => campaign.groupId === "26180462")?.imageUrl).toBe(
-      "/manus-storage/creative-728-20260919_93045379.jpg"
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yHDbGkiApdeTfiVB.jpg"
     );
   });
 

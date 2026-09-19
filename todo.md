@@ -702,3 +702,7 @@
 
 ## Robuster deutscher Preis-CSV-Import
 - [x] Unquoted deutsche Dezimalpreise aus dem Google-Website-Export serverseitig sicher rekonstruieren und MJ- sowie Sale-Zeilen validieren
+
+## Live-Sheet-Synchronisierung
+- [ ] Google-Sheets-Preis- und Sale-Adapter als Cloudflare-Pages-Funktion für die öffentliche Domain bereitstellen
+- [ ] Fack Ju Göhte, Wir sind am Leben und weitere aktuelle Preise/Sales auf der öffentlichen Domain abgleichen

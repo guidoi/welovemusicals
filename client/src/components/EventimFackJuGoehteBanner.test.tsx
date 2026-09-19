@@ -12,7 +12,7 @@ describe("EventimFackJuGoehteBanner", () => {
       </ConsentProvider>,
     );
 
-    expect(markup).toContain("2026-FJG-Banner_e7ab629a.jpg");
+    expect(markup).toContain("yyWiipPFyFlomsmA.jpg");
     expect(markup).toContain("Fack Ju Göhte Tickets bei Eventim ansehen");
     expect(markup).toContain("Fack Ju Göhte – Tickets bei Eventim");
     expect(markup).toContain("Anzeige");

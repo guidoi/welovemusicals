@@ -3,7 +3,7 @@ import { useConsent } from "@/contexts/ConsentContext";
 
 const CLICK_URL = "https://www.awin1.com/cread.php?s=4568822&v=11388&q=492097&r=2865727";
 const IMPRESSION_URL = "https://www.awin1.com/cshow.php?s=4568822&v=11388&q=492097&r=2865727";
-const BANNER_SRC = "/manus-storage/2026-FJG-Banner_e7ab629a.jpg";
+const BANNER_SRC = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yyWiipPFyFlomsmA.jpg";
 const NATIVE_BANNER_WIDTH = 300;
 const NATIVE_BANNER_HEIGHT = 50;
 
