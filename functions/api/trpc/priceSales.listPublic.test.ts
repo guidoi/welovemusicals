@@ -30,6 +30,8 @@ describe("Cloudflare Pages priceSales.listPublic", () => {
     const payload = await response.json() as Array<{ result: { data: { json: unknown[] } } }>;
     const rows = payload[0]?.result.data.json as Array<{ musicalId: string; priceFrom: string; saleEnabled: boolean; saleDiscount: string | null }>;
 
+    expect(response.headers.get("Cache-Control")).toContain("max-age=0");
+    expect(response.headers.get("Cache-Control")).toContain("s-maxage=600");
     expect(rows).toEqual(expect.arrayContaining([
       expect.objectContaining({ musicalId: "fackjugoehte", priceFrom: "40,49", saleEnabled: false, saleDiscount: null }),
       expect.objectContaining({ musicalId: "wir-sind-am-leben", priceFrom: "30,49", saleEnabled: true, saleDiscount: "2 FÜR 1" }),

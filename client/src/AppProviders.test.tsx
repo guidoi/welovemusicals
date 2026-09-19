@@ -26,7 +26,7 @@ describe("AppProviders", () => {
 
     expect(fetchMock).toHaveBeenCalledWith(
       "/api/trpc/priceSales.listPublic",
-      expect.objectContaining({ credentials: "omit" }),
+      expect.objectContaining({ credentials: "omit", cache: "no-store" }),
     );
   });
 

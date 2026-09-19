@@ -21,7 +21,7 @@ const CACHE_SECONDS = 600;
 const PUBLISHED_WEBSITE_EXPORT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRC2Ymp15Lrw6yzWFVFvhYR0cRa3rTYfGcAJ4PnYth3TFZ3E4A6ajuecKXvr_T7Nmn7WIiQFzlXmH8s/pub?gid=1001113831&single=true&output=csv";
 const JSON_HEADERS = {
   "Content-Type": "application/json; charset=utf-8",
-  "Cache-Control": `public, max-age=60, s-maxage=${CACHE_SECONDS}`,
+  "Cache-Control": `public, max-age=0, s-maxage=${CACHE_SECONDS}, must-revalidate`,
   "X-Content-Type-Options": "nosniff",
 };
 

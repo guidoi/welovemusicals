@@ -32,6 +32,7 @@ export function trpcFetch(input: RequestInfo | URL, init?: RequestInit): Promise
   return globalThis.fetch(input, {
     ...(init ?? {}),
     credentials: isPublicPriceQuery ? "omit" : "include",
+    cache: isPublicPriceQuery ? "no-store" : init?.cache,
   });
 }
 
