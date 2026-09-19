@@ -16,17 +16,17 @@ const categories: Array<{
   {
     key: "analytics",
     title: "Reichweitenmessung",
-    description: "Umami-Statistiken helfen uns zu verstehen, welche Inhalte genutzt werden.",
+    description: "Hilft uns zu verstehen, welche Inhalte für dich besonders hilfreich sind.",
   },
   {
     key: "affiliateTracking",
     title: "Partner- und Affiliate-Messung",
-    description: "Awin, TradeDoubler und Kampagnenimpressionen messen Partnerverweise und Anzeigen.",
+    description: "Misst Partnerverweise und Anzeigen, damit wir das Portal finanzieren können.",
   },
   {
     key: "externalMedia",
     title: "Externe Medien & Schriftarten",
-    description: "YouTube-Videos und externe Google-Schriftarten werden erst nach deiner Zustimmung geladen.",
+    description: "Lädt YouTube-Videos und externe Schriftarten erst nach deiner Zustimmung.",
   },
 ];
 
@@ -63,8 +63,7 @@ export default function CookieConsent() {
             <div>
               <p className="font-display text-xl font-bold text-white">Deine Privatsphäre ist uns wichtig</p>
               <p className="mt-2 text-sm leading-relaxed text-cream/70">
-                Wir verwenden technisch notwendige Speicherungen. Optionale Technologien für Statistiken,
-                Partnermessung, YouTube und externe Schriftarten aktivieren wir nur mit deiner Auswahl. Details findest du in der{" "}
+                Notwendige Speicherungen halten die Website funktionsfähig. Statistiken, Partner-Tracking, Videos und externe Schriftarten starten nur mit deiner Zustimmung. Mehr in der{" "}
                 <Link href="/datenschutz" className="text-gold underline decoration-gold/40 underline-offset-2 hover:text-gold-light">Datenschutzerklärung</Link>.
               </p>
               <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
@@ -91,7 +90,7 @@ export default function CookieConsent() {
                 <ShieldCheck className="mt-0.5 h-6 w-6 shrink-0 text-gold" />
                 <div>
                   <h2 id="consent-settings-title" className="font-display text-2xl font-bold text-white">Datenschutz-Einstellungen</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-cream/70">Du kannst deine Auswahl jederzeit im Footer ändern.</p>
+                  <p className="mt-2 text-sm leading-relaxed text-cream/70">Wähle, was du erlauben möchtest. Deine Auswahl kannst du jederzeit im Footer ändern.</p>
                 </div>
               </div>
               {hasDecision && (
@@ -104,7 +103,7 @@ export default function CookieConsent() {
             <div className="mt-6 space-y-3">
               <div className="rounded-sm border border-white/10 bg-white/[0.03] p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-white"><Check className="h-4 w-4 text-gold" /> Technisch notwendig</div>
-                <p className="mt-1 text-sm leading-relaxed text-white/60">Speicherung deiner Auswahl und die sichere Bereitstellung der Website. Immer aktiv.</p>
+                <p className="mt-1 text-sm leading-relaxed text-white/60">Speichert deine Auswahl und hält die Website sicher und funktionsfähig. Immer aktiv.</p>
               </div>
               {categories.map((category) => (
                 <label key={category.key} className="flex cursor-pointer items-start gap-3 rounded-sm border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-gold/35">

@@ -608,3 +608,6 @@
 
 ## Seitenübergreifend konsistente Farbpalette
 - [x] Header, Footer, Detail- und Stadtseiten, Consent, Filter und Karten auf die Rollenpalette Anthrazit, Creme, Gold sowie Conversion-Rot für SALE und Tickets angleichen
+
+## Kürzerer Cookie-Hinweis
+- [x] Cookie-Banner und Einstellungsdialog kürzer, verständlicher und vertrauensbildend formulieren; Optionen unverändert beibehalten
