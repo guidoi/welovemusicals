@@ -47,34 +47,17 @@ describe("Startseiten-Erlebnisfilter", () => {
   it("stellt aus einer geteilten Erlebniswelt-URL die vollständige Übersicht wieder her", () => {
     expect(homeSource).toContain("getExperienceCategoryFromSearch(window.location.search)");
     expect(homeSource).toContain("createExperienceCategoryHref(category)");
-    expect(homeSource).toContain('data-testid="overview-reset-button"');
-    expect(homeSource).toContain('aria-label="Zurück zur Übersicht"');
-    expect(homeSource).toContain("<ArrowLeft");
+    expect(homeSource).not.toContain('data-testid="overview-reset-button"');
+    expect(homeSource).not.toContain('aria-label="Zurück zur Übersicht"');
+    expect(homeSource).not.toContain("<ArrowLeft");
   });
 
-  it("ordnet das Rücksprung-Icon unter der Ergebnis-Subline an", () => {
-    const sublinePosition = homeSource.indexOf('"Deine passenden Shows – Highlights zuerst."');
-    const resetIconPosition = homeSource.indexOf('data-testid="overview-reset-button"');
-
-    expect(resetIconPosition).toBeGreaterThan(sublinePosition);
-    expect(homeSource).toContain('includeHighlightsInOverview ? "mb-3" : "mb-10"');
-  });
-
-  it("gibt dem Rücksprung-Icon eine dezente Hover-Rückmeldung", () => {
-    expect(homeSource).toContain("group-hover:-translate-x-0.5");
-    expect(homeSource).toContain("hover:shadow-[0_0_14px_rgba(184,148,74,0.28)]");
-    expect(homeSource).toContain("hover:bg-gold/15");
-  });
-
-  it("gibt auf Touch-Geräten eine kurze Rückmeldung und vereinheitlicht das Filter-Reset-Icon", () => {
-    expect(homeSource).toContain("const triggerResetTouchFeedback = useCallback((pointerType: string) => {");
-    expect(homeSource).toContain('if (pointerType !== "touch") return;');
-    expect(homeSource).toContain("}, 220);");
-    expect(homeSource).toContain("const delay = lastResetInteractionWasTouchRef.current ? 120 : 0;");
-    expect(homeSource).toContain("onClick={resetToAdditionalOverviewWithFeedback}");
-    expect(homeSource).toContain("onPointerDown={(event) => triggerResetTouchFeedback(event.pointerType)}");
-    expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
-    expect(homeSource).toContain("group-hover:-translate-x-0.5");
+  it("macht den dynamischen Ergebnis-Hinweis zum klickbaren Anker", () => {
+    expect(homeSource).toContain('data-testid="result-anchor-link"');
+    expect(homeSource).toContain("onClick={scrollToUpdatedResults}");
+    expect(homeSource).toContain('aria-label={`Zu ${filteredMusicals.length} passenden Show-Tipps springen`}');
+    expect(homeSource).toContain("group-hover:translate-y-0.5");
+    expect(homeSource).toContain('includeHighlightsInOverview ? "mb-6" : "mb-10"');
   });
 
   it("führt die Ergebnisse mit einer dynamischen, nutzenorientierten Einleitung", () => {
@@ -114,9 +97,10 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).not.toContain('resultCount');
   });
 
-  it("führt mit einer ruhigen cremeweißen Ergebniszeile und einem goldenen Pfeil", () => {
-    expect(homeSource).toContain('inline-flex items-center gap-2 text-sm font-semibold text-cream/90');
-    expect(homeSource).toContain('<ArrowDown className="h-4 w-4 text-gold"');
+  it("führt mit einem cremeweißen, klickbaren Ergebnisanker und einem goldenen Pfeil", () => {
+    expect(homeSource).toContain('data-testid="result-anchor-link"');
+    expect(homeSource).toContain('inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90');
+    expect(homeSource).toContain('<ArrowDown className="h-4 w-4 shrink-0 text-gold');
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {

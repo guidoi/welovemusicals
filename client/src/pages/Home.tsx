@@ -6,7 +6,6 @@ import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
-  ArrowLeft,
   SlidersHorizontal,
   Star,
   MapPin,
@@ -80,12 +79,9 @@ export default function Home() {
   const [showMorePulsed, setShowMorePulsed] = useState(false); // Puls-Effekt einmalig für "Alle anzeigen"-Button
   const [resultAnimationKey, setResultAnimationKey] = useState(0);
   const [showStickyFilterBar, setShowStickyFilterBar] = useState(false);
-  const [isResetTouchFeedbackActive, setIsResetTouchFeedbackActive] = useState(false);
   const firstResultRef = useRef<HTMLDivElement>(null);
   const resultGridRef = useRef<HTMLDivElement>(null);
   const filterPanelRef = useRef<HTMLDivElement>(null);
-  const resetTouchFeedbackTimeoutRef = useRef<number | undefined>(undefined);
-  const lastResetInteractionWasTouchRef = useRef(false);
   const reduceMotion = useReducedMotion();
 
   const scrollToFirstResult = useCallback(() => {
@@ -129,20 +125,6 @@ export default function Home() {
     window.scrollTo({ top, behavior: "smooth" });
   }, []);
 
-  const triggerResetTouchFeedback = useCallback((pointerType: string) => {
-    lastResetInteractionWasTouchRef.current = pointerType === "touch";
-    if (pointerType !== "touch") return;
-
-    if (resetTouchFeedbackTimeoutRef.current !== undefined) {
-      window.clearTimeout(resetTouchFeedbackTimeoutRef.current);
-    }
-    setIsResetTouchFeedbackActive(true);
-    resetTouchFeedbackTimeoutRef.current = window.setTimeout(() => {
-      setIsResetTouchFeedbackActive(false);
-      resetTouchFeedbackTimeoutRef.current = undefined;
-    }, 220);
-  }, []);
-
   const resetToAdditionalOverview = useCallback(() => {
     setCategoryFilter("alle");
     setCountryFilter("alle");
@@ -152,14 +134,6 @@ export default function Home() {
     setShowAllMusicals(false);
     window.history.replaceState(window.history.state, "", createMusicalOverviewHref());
   }, []);
-
-  const resetToAdditionalOverviewWithFeedback = useCallback(() => {
-    const delay = lastResetInteractionWasTouchRef.current ? 120 : 0;
-    window.setTimeout(() => {
-      resetToAdditionalOverview();
-      lastResetInteractionWasTouchRef.current = false;
-    }, delay);
-  }, [resetToAdditionalOverview]);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -223,12 +197,6 @@ export default function Home() {
       window.removeEventListener("scroll", updateStickyFilterVisibility);
       window.removeEventListener("resize", updateStickyFilterVisibility);
     };
-  }, []);
-
-  useEffect(() => () => {
-    if (resetTouchFeedbackTimeoutRef.current !== undefined) {
-      window.clearTimeout(resetTouchFeedbackTimeoutRef.current);
-    }
   }, []);
 
   // PLZ-Suche aus Header-Overlay empfangen und zu erstem Ergebnis scrollen
@@ -536,23 +504,16 @@ export default function Home() {
           <p className="max-w-2xl text-cream/90">
             {dynamicDiscoveryIntro}
           </p>
-          <p className={`mt-3 inline-flex items-center gap-2 text-sm font-semibold text-cream/90 ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
-            <ArrowDown className="h-4 w-4 text-gold" aria-hidden="true" />
+          <button
+            type="button"
+            data-testid="result-anchor-link"
+            onClick={scrollToUpdatedResults}
+            aria-label={`Zu ${filteredMusicals.length} passenden Show-Tipps springen`}
+            className={`group mt-3 inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90 transition-colors hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${includeHighlightsInOverview ? "mb-6" : "mb-10"}`}
+          >
+            <ArrowDown className="h-4 w-4 shrink-0 text-gold transition-transform duration-150 group-hover:translate-y-0.5" aria-hidden="true" />
             {dynamicResultHint}
-          </p>
-          {includeHighlightsInOverview && (
-            <button
-              type="button"
-              data-testid="overview-reset-button"
-              onClick={resetToAdditionalOverviewWithFeedback}
-              aria-label="Zurück zur Übersicht"
-              title="Zurück zur Übersicht"
-              onPointerDown={(event) => triggerResetTouchFeedback(event.pointerType)}
-              className={`group mb-8 inline-flex h-9 w-9 items-center justify-center rounded-full border text-gold transition-all duration-150 hover:-translate-x-0.5 hover:border-gold hover:bg-gold/15 hover:shadow-[0_0_14px_rgba(184,148,74,0.28)] active:translate-x-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${isResetTouchFeedbackActive ? "-translate-x-0.5 border-gold bg-gold/20 shadow-[0_0_14px_rgba(184,148,74,0.32)]" : "border-gold/50"}`}
-            >
-              <ArrowLeft className="h-4 w-4 transition-transform duration-150 group-hover:-translate-x-0.5" aria-hidden="true" />
-            </button>
-          )}
+          </button>
 
           <div ref={filterPanelRef} className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">
             <MusicalFilters

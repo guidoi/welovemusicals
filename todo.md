@@ -641,3 +641,6 @@
 
 ## Ticketlogos wieder neben der CTA
 - [x] Partnerlogos auf Mobilgeräten wieder rechts neben den roten Ticket-CTAs anordnen
+
+## Direkter Ergebnisanker ohne Rücksprung
+- [x] Runden Übersichts-Rücksprung entfernen und den dynamischen Hinweis als klickbaren Anker zu den passenden Shows gestalten
