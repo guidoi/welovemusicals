@@ -20,6 +20,18 @@ function redirectToLoginIfUnauthorized(error: unknown) {
   window.location.href = getLoginUrl();
 }
 
+/**
+ * Public Pages API calls must not pick up a stale cookie-specific cache variant.
+ * Same-origin retains the local Express authentication flow while leaving public
+ * price and sale requests independent from cross-origin session cookies.
+ */
+export function trpcFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
+  return globalThis.fetch(input, {
+    ...(init ?? {}),
+    credentials: "same-origin",
+  });
+}
+
 queryClient.getQueryCache().subscribe((event) => {
   if (event.type === "updated" && event.action.type === "error") {
     redirectToLoginIfUnauthorized(event.query.state.error);
@@ -39,12 +51,7 @@ const trpcClient = trpc.createClient({
     httpBatchLink({
       url: "/api/trpc",
       transformer: superjson,
-      fetch(input, init) {
-        return globalThis.fetch(input, {
-          ...(init ?? {}),
-          credentials: "include",
-        });
-      },
+      fetch: trpcFetch,
     }),
   ],
 });
