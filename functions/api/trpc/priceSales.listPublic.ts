@@ -48,7 +48,7 @@ export async function onRequestGet(context: PriceFunctionContext): Promise<Respo
   const cache = getCache();
   // This key must never overlap a Pages route: earlier static deployments answered
   // unknown routes with index.html, which would otherwise be returned as a cache hit.
-  const cacheKey = new Request(new URL("/_edge-cache/price-sales-v3-20260920", context.request.url));
+  const cacheKey = new Request(new URL("/_edge-cache/price-sales-v4-20260920", context.request.url));
   const cached = cache ? await cache.match(cacheKey) : undefined;
   if (cached) return cached;
 

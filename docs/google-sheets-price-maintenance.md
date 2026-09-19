@@ -15,9 +15,9 @@ Die Preise und Sale-Hinweise von **We Love Musicals** werden über die private A
 | `Sale-Hinweis` | Optionaler kurzer Hinweis | Ergänzende Information auf der Detailseite, sofern dort verwendet. |
 | `Gültig ab` | `TT.MM.JJJJ` oder `JJJJ-MM-TT` | Sale erscheint frühestens an diesem Tag. Optional. |
 | `Gültig bis` | `TT.MM.JJJJ` oder `JJJJ-MM-TT` | Sale endet nach diesem Tag. Optional. |
-| `Ticketlink` | Vollständiger HTTPS-Affiliate- oder Ticketlink | Optional. Ersetzt die zentralen Ticket-CTAs für genau dieses Musical. Akzeptiert werden nur freigegebene Hosts von AWIN, Stage, Tradedoubler, Eventim, oeticket und ATG. |
+| `Ticketlink` | Nicht pflegen | Wird von der Website bewusst ignoriert. Bestehende Werte bleiben ohne Wirkung. |
 
-> **Linkformat:** In `Ticketlink` gehört stets der komplette von AWIN, Stage, Tradedoubler, Eventim, oeticket oder ATG bereitgestellte Trackinglink. Die Website übernimmt diesen direkt und verschachtelt ihn nicht erneut in eine Affiliate-Umleitung.
+> **Ticketlinks, Stadt-Deeplinks, Banner-Klickziele und Trackingcodes werden nicht über Google Sheets gepflegt.** Sie werden nach Copy & Paste der von AWIN, TradeDoubler oder dem Veranstalter bereitgestellten Angaben kontrolliert direkt im Portal hinterlegt. So bleiben unterschiedliche CTA-Positionen, Städte und Banner eindeutig und korrekt zuordenbar.
 
 ## Aktualisierungszeit und Ausfallsicherheit
 
@@ -29,4 +29,4 @@ Wenn Google Sheets kurzzeitig nicht erreichbar ist oder eine Tabellenzeile fehle
 
 ## Wichtige Regeln
 
-`musical_id` darf nicht umbenannt werden. Zusätzliche Notiz- oder Bearbeitungsspalten werden bewusst ignoriert. Die optionale Spalte `Ticketlink` ist die einzige Linkspalte, die für das jeweilige Musical übernommen wird; ungültige oder nicht freigegebene Ziele werden verworfen, der bisherige sichere Ticketlink bleibt dann aktiv.
+`musical_id` darf nicht umbenannt werden. Zusätzliche Notiz-, Bearbeitungs- und Linkspalten werden bewusst ignoriert. Die Tabelle steuert ausschließlich Einstiegspreise, Sale-Status, Sale-Texte, Hinweise und Sale-Zeiträume – niemals Ticket-CTAs oder Banner.

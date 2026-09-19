@@ -6,7 +6,6 @@ const LIVE_URL = "https://welovemusicals.com/api/trpc/priceSales.listPublic?batc
 type PublicRecord = {
   musicalId: string;
   priceFrom: string;
-  ticketLink: string | null;
   saleEnabled: boolean;
   saleLabel: string | null;
   saleDiscount: string | null;
@@ -21,7 +20,6 @@ function hasSameWebsiteValues(sheet: PublicRecord, live: PublicRecord | undefine
   return (
     sheet.musicalId === live.musicalId &&
     sheet.priceFrom === live.priceFrom &&
-    sheet.ticketLink === (live.ticketLink ?? null) &&
     sheet.saleEnabled === live.saleEnabled &&
     sheet.saleLabel === live.saleLabel &&
     sheet.saleDiscount === live.saleDiscount &&

@@ -37,11 +37,11 @@ describe("Cloudflare Pages priceSales.listPublic", () => {
       expect.objectContaining({
         musicalId: "wir-sind-am-leben",
         priceFrom: "30,49",
-        ticketLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26185700",
         saleEnabled: true,
         saleDiscount: "2 FÜR 1",
       }),
     ]));
+    expect(rows.find((row) => row.musicalId === "wir-sind-am-leben")).not.toHaveProperty("ticketLink");
     expect(globalThis.fetch).toHaveBeenCalledWith(
       expect.any(String),
       expect.objectContaining({ cache: "no-store" }),
@@ -79,7 +79,7 @@ describe("Cloudflare Pages priceSales.listPublic", () => {
     await onRequestGet(createContext());
 
     const cacheRequest = cache.match.mock.calls[0]?.[0] as Request;
-    expect(cacheRequest.url).toContain("/_edge-cache/price-sales-v3-20260920");
+    expect(cacheRequest.url).toContain("/_edge-cache/price-sales-v4-20260920");
     expect(cache.put).toHaveBeenCalledTimes(1);
   });
 

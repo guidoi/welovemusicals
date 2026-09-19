@@ -1,7 +1,6 @@
 export type SheetPriceSaleOverride = {
   musicalId: string;
   priceFrom: string;
-  ticketLink: string | null;
   saleEnabled: boolean;
   saleLabel: string | null;
   saleDiscount: string | null;
@@ -85,12 +84,11 @@ type ParsedCsv = {
   dataRowCount: number;
 };
 
-type HeaderKey = "musicalId" | "priceFrom" | "ticketLink" | "saleEnabled" | "saleDiscount" | "saleNote" | "saleStartsAt" | "saleEndsAt";
+type HeaderKey = "musicalId" | "priceFrom" | "saleEnabled" | "saleDiscount" | "saleNote" | "saleStartsAt" | "saleEndsAt";
 
 const HEADER_ALIASES: Record<HeaderKey, string[]> = {
   musicalId: ["musical id", "musicalid", "id"],
   priceFrom: ["preis ab", "preis", "price from", "pricefrom"],
-  ticketLink: ["ticketlink", "ticket link", "ticket url", "ticketurl"],
   saleEnabled: ["sale aktiv", "saleaktiv", "sale active", "saleactive"],
   saleDiscount: ["sale text", "saletext", "sale rabatt", "salerabatt", "sale discount", "salediscount"],
   saleNote: ["sale hinweis", "salehinweis", "sale note", "salenote"],
@@ -219,44 +217,6 @@ function parseBoolean(value: string): boolean | null {
   return null;
 }
 
-/**
- * The Website-Export is public, so links must be constrained to known ticket
- * providers or affiliate networks before they may affect a website CTA.
- */
-const APPROVED_TICKET_LINK_HOSTS = new Set([
-  "www.awin1.com",
-  "visit.stage-entertainment.de",
-  "clk.tradedoubler.com",
-  "stage-entertainment.de",
-  "www.stage-entertainment.de",
-  "eventim.de",
-  "www.eventim.de",
-  "oeticket.com",
-  "www.oeticket.com",
-  "atgtickets.de",
-  "www.atgtickets.de",
-]);
-
-function parseApprovedTicketLink(value: string): string | null {
-  const input = value.trim();
-  if (!input) return null;
-
-  try {
-    const url = new URL(input);
-    if (
-      url.protocol !== "https:" ||
-      url.username ||
-      url.password ||
-      !APPROVED_TICKET_LINK_HOSTS.has(url.hostname.toLocaleLowerCase("en"))
-    ) {
-      return null;
-    }
-    return url.toString();
-  } catch {
-    return null;
-  }
-}
-
 /** Parses ISO or German spreadsheet dates without applying a locale or timezone conversion. */
 function parseSpreadsheetDate(value: string): string | null {
   const input = value.trim();
@@ -290,7 +250,6 @@ function parseSheetCsvDetailed(csv: string): ParsedCsv {
     const row = normalizeUnquotedGermanPrice(rawRow, rows[0].length, indexes.priceFrom);
     const musicalId = getCell(row, indexes.musicalId).toLocaleLowerCase("de");
     const priceFrom = parseGermanPrice(getCell(row, indexes.priceFrom));
-    const ticketLink = parseApprovedTicketLink(getCell(row, indexes.ticketLink));
     const requestedSale = parseBoolean(getCell(row, indexes.saleEnabled));
 
     if (!KNOWN_MUSICAL_IDS.has(musicalId) || !priceFrom || requestedSale === null) return;
@@ -311,7 +270,6 @@ function parseSheetCsvDetailed(csv: string): ParsedCsv {
     records.set(musicalId, {
       musicalId,
       priceFrom,
-      ticketLink,
       saleEnabled,
       saleLabel: saleEnabled ? "SALE" : null,
       saleDiscount: saleEnabled ? saleDiscount : null,
@@ -324,10 +282,7 @@ function parseSheetCsvDetailed(csv: string): ParsedCsv {
   return { records: Array.from(records.values()), dataRowCount: dataRows.length };
 }
 
-/**
- * Parses only the explicitly whitelisted Website-Export columns. Editorial notes
- * are ignored; ticket links require an approved HTTPS host before being exposed.
- */
+/** Parses only price and sale fields from the Website-Export; all link columns are ignored. */
 export function parseGoogleSheetPriceCsv(csv: string): SheetPriceSaleOverride[] {
   return parseSheetCsvDetailed(csv).records;
 }

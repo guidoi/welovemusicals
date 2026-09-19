@@ -8,7 +8,6 @@ describe("applyPriceSaleOverrides", () => {
       {
         musicalId: "mj-musical",
         priceFrom: "39,99",
-        ticketLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402",
         saleEnabled: true,
         saleLabel: "SALE",
         saleDiscount: "2 FÜR 1",
@@ -30,9 +29,10 @@ describe("applyPriceSaleOverrides", () => {
     expect(mj?.showFacts?.find((fact) => fact.label === "Tickets ab")?.value).toContain("39,99 €");
     expect(mj?.faqItems?.find((item) => item.question.includes("Wie viel"))?.answer).toContain("39,99 €");
     expect(mj?.seoDescription).toContain("39,99 €");
-    expect(mj?.eventimUrl).toBe("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402");
-    expect(mj?.ticketCtaUrl).toBe("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402");
-    expect(mj?.keyvisualLink).toBe("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402");
+    const editorialMj = musicals.find((musical) => musical.id === "mj-musical");
+    expect(mj?.eventimUrl).toBe(editorialMj?.eventimUrl);
+    expect(mj?.ticketCtaUrl).toBe(editorialMj?.ticketCtaUrl);
+    expect(mj?.keyvisualLink).toBe(editorialMj?.keyvisualLink);
   });
 
   it("entfernt einen bestehenden Sale-Störer, wenn die Redaktion ihn deaktiviert", () => {
@@ -40,7 +40,6 @@ describe("applyPriceSaleOverrides", () => {
       {
         musicalId: "eiskoenigin",
         priceFrom: "41,99",
-        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,

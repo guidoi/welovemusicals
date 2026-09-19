@@ -708,7 +708,7 @@
 - [x] Fack Ju Göhte, Wir sind am Leben und weitere aktuelle Preise/Sales auf der öffentlichen Domain abgleichen – FJG ohne 30-%-Sale, WSAL mit 2 FÜR 1 bis 30.09., MJ 56,99 € bestätigt
 
 ## Erweiterte Sheet-Pflege
-- [x] Sichere Ticketlink-Spalte für freigegebene Affiliate- und Ticket-Deeplinks aktivieren
+- [x] Ticketlink-Spalte aus Google Sheets bewusst vollständig ignorieren; CTA-, Stadt-, Banner- und Trackinglinks ausschließlich kontrolliert im Portal pflegen
 - [x] Preis- und Sale-Änderungen binnen einer Minute auf Website-Ebene automatisch abrufen
 - [x] Regelmäßigen Katalogcheck um bevorstehende und abgelaufene Sale-Zeiträume ergänzen
 - [x] Vollständigen Sheet- und Live-Abgleich dokumentieren – 22 von 22 Website-Export-Zeilen stimmen mit der Produktion überein

@@ -20,7 +20,6 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "eiskoenigin",
         priceFrom: "39,99",
-        ticketLink: null,
         saleEnabled: true,
         saleLabel: "SALE",
         saleDiscount: "BIS 40 %",
@@ -40,7 +39,6 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "mj-musical",
         priceFrom: "56,99",
-        ticketLink: "https://www.awin1.com/awclick.php?gid=123",
         saleEnabled: true,
         saleLabel: "SALE",
         saleDiscount: "BIS 20 %",
@@ -65,7 +63,6 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "tarzan",
         priceFrom: "66,99",
-        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
@@ -76,7 +73,6 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "koenig-der-loewen",
         priceFrom: "63,99",
-        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
@@ -87,7 +83,6 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "mj-musical",
         priceFrom: "35",
-        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
@@ -98,7 +93,7 @@ describe("Google-Sheets-Preisquelle", () => {
     ]);
   });
 
-  it("übernimmt nur sichere HTTPS-Ticketlinks aus der öffentlichen Exportspalte", () => {
+  it("ignoriert Ticketlinks aus der öffentlichen Exportspalte vollständig", () => {
     const csv = [
       header,
       "mj-musical,56,99,Nein,,,,,https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402,",
@@ -106,14 +101,12 @@ describe("Google-Sheets-Preisquelle", () => {
       "eiskoenigin,39,99,Nein,,,,,https://untrusted.example/tickets,",
     ].join("\n");
 
-    expect(parseGoogleSheetPriceCsv(csv)).toEqual(expect.arrayContaining([
-      expect.objectContaining({
-        musicalId: "mj-musical",
-        ticketLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402",
-      }),
-      expect.objectContaining({ musicalId: "tarzan", ticketLink: null }),
-      expect.objectContaining({ musicalId: "eiskoenigin", ticketLink: null }),
-    ]));
+    const overrides = parseGoogleSheetPriceCsv(csv);
+
+    expect(overrides).toHaveLength(3);
+    expect(JSON.stringify(overrides)).not.toContain("visit.stage-entertainment.de");
+    expect(JSON.stringify(overrides)).not.toContain("untrusted.example");
+    expect(JSON.stringify(overrides)).not.toContain("javascript:alert");
   });
 
   it("verwendet den Cache innerhalb des Intervalls und bei einem späteren Quellfehler den Letztstand", async () => {

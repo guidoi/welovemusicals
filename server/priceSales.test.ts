@@ -4,7 +4,6 @@ import { resolvePublicPriceSaleOverrides } from "./priceSales";
 const sheetValue = {
   musicalId: "eiskoenigin",
   priceFrom: "39,99",
-  ticketLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418",
   saleEnabled: true,
   saleLabel: "SALE",
   saleDiscount: "BIS 40 %",
@@ -36,7 +35,6 @@ describe("öffentliche Preis- und Sale-Quelle", () => {
       {
         musicalId: "eiskoenigin",
         priceFrom: "44,99",
-        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
