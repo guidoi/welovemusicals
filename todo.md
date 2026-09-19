@@ -665,3 +665,6 @@
 
 ## Kompakte und größere mobile Erlebniswelt-Buttons
 - [x] Längere Hero-Erlebniswelt-Texte auf maximal zwei Begriffe kürzen, „Familie & Märchen“ sowie „Geschichten“ verwenden und die mobilen Buttons lesbarer vergrößern
+
+## Abgrenzender Drama-und-Emotion-Button
+- [x] Kurzen Hero-Button „Geschichten“ durch „Drama & Emotion“ ersetzen; ausführliche Kategorie „Besondere Geschichten“ beibehalten

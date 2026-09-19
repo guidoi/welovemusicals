@@ -30,7 +30,7 @@ describe("Erlebnis-Kategorien", () => {
     expect(familyCategory?.shortLabel).toBe("Familie & Märchen");
     expect(EXPERIENCE_CATEGORIES.every((category) => category.shortLabel.split(/\s*&\s*/).length <= 2)).toBe(true);
     expect(getExperienceCategory("pop-rock-filmhits")?.shortLabel).toBe("Pop, Rock & Film");
-    expect(getExperienceCategory("besondere-geschichten")?.shortLabel).toBe("Geschichten");
+    expect(getExperienceCategory("besondere-geschichten")?.shortLabel).toBe("Drama & Emotion");
   });
 
   it("liefert für jede Erlebniswelt eine emotionale Empfehlungseinleitung", () => {
