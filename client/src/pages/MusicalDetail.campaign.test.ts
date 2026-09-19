@@ -4,6 +4,10 @@ import { describe, expect, it } from "vitest";
 const musicalDetailSource = readFileSync(new URL("./MusicalDetail.tsx", import.meta.url), "utf8");
 
 describe("MJ-Kampagnenplatzierung", () => {
+  it("löst Detailseiten ausschließlich aus dem aktiven Katalog auf", () => {
+    expect(musicalDetailSource).toContain("getActiveMusicals(managedMusicals).find");
+  });
+
   it("platziert das schmale MJ-Banner in der Mitte des oberen Fließtexts", () => {
     const inlineCampaign = musicalDetailSource.indexOf('inlineDescriptionCampaign?.placement === "within-detail-description"');
     const tourDates = musicalDetailSource.indexOf("{/* Tour Dates */}");

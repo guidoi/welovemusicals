@@ -166,6 +166,27 @@ function getCell(row: string[], index: number | undefined): string {
   return index === undefined ? "" : (row[index] ?? "").trim();
 }
 
+/**
+ * Google Sheets sometimes serializes a German decimal comma as two unquoted CSV
+ * cells (for example `mj-musical,56,99,Ja,...`). Rejoin only that recognizable
+ * price shape; quoted CSV and every other column stay untouched.
+ */
+function normalizeUnquotedGermanPrice(row: string[], headerLength: number, priceIndex: number | undefined): string[] {
+  if (priceIndex === undefined || row.length !== headerLength + 1) return row;
+
+  const wholePart = row[priceIndex]?.trim() ?? "";
+  const decimalPart = row[priceIndex + 1]?.trim() ?? "";
+  const isGermanDecimal = /^\d{1,3}(?:\.\d{3})*$/.test(wholePart) && /^\d{1,2}$/.test(decimalPart);
+
+  if (!isGermanDecimal) return row;
+
+  return [
+    ...row.slice(0, priceIndex),
+    `${wholePart},${decimalPart}`,
+    ...row.slice(priceIndex + 2),
+  ];
+}
+
 function parseGermanPrice(value: string): string | null {
   const stripped = value
     .trim()
@@ -225,23 +246,26 @@ function parseSheetCsvDetailed(csv: string): ParsedCsv {
   const records = new Map<string, SheetPriceSaleOverride>();
   const dataRows = rows.slice(1);
 
-  dataRows.forEach((row) => {
+  dataRows.forEach((rawRow) => {
+    const row = normalizeUnquotedGermanPrice(rawRow, rows[0].length, indexes.priceFrom);
     const musicalId = getCell(row, indexes.musicalId).toLocaleLowerCase("de");
     const priceFrom = parseGermanPrice(getCell(row, indexes.priceFrom));
-    const saleEnabled = parseBoolean(getCell(row, indexes.saleEnabled));
+    const requestedSale = parseBoolean(getCell(row, indexes.saleEnabled));
 
-    if (!KNOWN_MUSICAL_IDS.has(musicalId) || !priceFrom || saleEnabled === null) return;
+    if (!KNOWN_MUSICAL_IDS.has(musicalId) || !priceFrom || requestedSale === null) return;
 
     const saleDiscount = getCell(row, indexes.saleDiscount) || null;
     const saleNote = getCell(row, indexes.saleNote) || null;
-    const saleStartsAt = parseSpreadsheetDate(getCell(row, indexes.saleStartsAt));
-    const saleEndsAt = parseSpreadsheetDate(getCell(row, indexes.saleEndsAt));
-
-    // A sale row is only valid if it can actually be shown safely.
-    if (saleEnabled && !saleDiscount) return;
-    if (getCell(row, indexes.saleStartsAt) && !saleStartsAt) return;
-    if (getCell(row, indexes.saleEndsAt) && !saleEndsAt) return;
-    if (saleStartsAt && saleEndsAt && saleStartsAt > saleEndsAt) return;
+    const rawSaleStart = getCell(row, indexes.saleStartsAt);
+    const rawSaleEnd = getCell(row, indexes.saleEndsAt);
+    const saleStartsAt = parseSpreadsheetDate(rawSaleStart);
+    const saleEndsAt = parseSpreadsheetDate(rawSaleEnd);
+    const saleIsComplete = Boolean(saleDiscount) &&
+      (!rawSaleStart || Boolean(saleStartsAt)) &&
+      (!rawSaleEnd || Boolean(saleEndsAt)) &&
+      !(saleStartsAt && saleEndsAt && saleStartsAt > saleEndsAt);
+    // A malformed sale must never hide an otherwise valid price update.
+    const saleEnabled = requestedSale && saleIsComplete;
 
     records.set(musicalId, {
       musicalId,

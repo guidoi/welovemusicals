@@ -10,7 +10,7 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(16);
+    expect(AOVO_CAMPAIGNS).toHaveLength(17);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
@@ -27,9 +27,10 @@ describe("Aovo campaign banners", () => {
       "tarzan",
       "starlight-express",
       "wir-sind-am-leben",
+      "wir-sind-am-leben",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(16);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(17);
   });
 
   it("keeps the provided Moulin Rouge campaign dimensions and tracking URLs", () => {
@@ -98,7 +99,25 @@ describe("Aovo campaign banners", () => {
       placement: "before-story-paragraph",
       storyParagraphIndex: 2,
     });
-    expect(wirSindAmLeben).toMatchObject({ groupId: "26185700", trackingNetwork: "stage" });
+    expect(wirSindAmLeben).toMatchObject({
+      groupId: "26185700",
+      width: 728,
+      height: 90,
+      trackingNetwork: "stage",
+      placement: "within-detail-description",
+      detailParagraphIndex: 2,
+      imageUrl: "/manus-storage/media-002_3c4c23f4.jpg",
+    });
+    expect(getAovoCampaigns("wir-sind-am-leben")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26185698",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-gallery",
+        imageUrl: "/manus-storage/media-003_6d1b19e8.jpg",
+      }),
+    ]));
     expect(mj).toMatchObject({
       groupId: "26180466",
       trackingNetwork: "stage",
@@ -112,7 +131,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NaetGqhtkugkzHPN.jpg",
+        imageUrl: "/manus-storage/media-001_cce28350.jpg",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
@@ -173,14 +192,14 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("referenziert beide MJ-Originalgrafiken über direkte öffentliche Projekt-Asset-Adressen", () => {
+  it("referenziert die neue MJ-728×90-Grafik über eine dauerhafte Projekt-Asset-Adresse", () => {
     const mjCampaigns = getAovoCampaigns("mj-musical");
 
     expect(mjCampaigns.find((campaign) => campaign.groupId === "26180466")?.imageUrl).toBe(
       "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NSpbtNWBfODnfNlF.jpg"
     );
     expect(mjCampaigns.find((campaign) => campaign.groupId === "26180462")?.imageUrl).toBe(
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NaetGqhtkugkzHPN.jpg"
+      "/manus-storage/media-001_cce28350.jpg"
     );
   });
 

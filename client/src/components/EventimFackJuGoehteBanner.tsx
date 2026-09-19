@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useConsent } from "@/contexts/ConsentContext";
 
-const CLICK_URL = "https://www.awin1.com/cread.php?s=4568823&v=11388&q=492097&r=2865727";
-const IMPRESSION_URL = "https://www.awin1.com/cshow.php?s=4568823&v=11388&q=492097&r=2865727";
-const BANNER_SRC = "/images/show-visuals/fjg-eventim-awin-banner-4568823.jpg";
+const CLICK_URL = "https://www.awin1.com/cread.php?s=4568822&v=11388&q=492097&r=2865727";
+const IMPRESSION_URL = "https://www.awin1.com/cshow.php?s=4568822&v=11388&q=492097&r=2865727";
+const BANNER_SRC = "/manus-storage/2026-FJG-Banner_e7ab629a.jpg";
 const NATIVE_BANNER_WIDTH = 300;
-const NATIVE_BANNER_HEIGHT = 250;
+const NATIVE_BANNER_HEIGHT = 50;
 
 export default function EventimFackJuGoehteBanner() {
   const { consent } = useConsent();
@@ -21,7 +21,7 @@ export default function EventimFackJuGoehteBanner() {
     <aside
       className="mx-auto my-8 w-full max-w-[300px]"
       aria-label="Anzeige: Fack Ju Göhte Tickets bei Eventim"
-      data-campaign-id="4568823"
+      data-campaign-id="4568822"
     >
       <p className="mb-2 text-right text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
         Anzeige

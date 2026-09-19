@@ -2200,7 +2200,7 @@ export function getMusicalBySlug(slug: string, catalog: Musical[] = musicals): M
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "we-will-rock-you", "salon-rosie", "und-julia"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia"];
 
 export function getActiveMusicals(catalog: Musical[] = musicals): Musical[] {
   return catalog.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));

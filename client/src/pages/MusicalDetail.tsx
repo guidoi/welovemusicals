@@ -37,7 +37,7 @@ import MusicalQuotes from "@/components/MusicalQuotes";
 import MusicalGallery from "@/components/MusicalGallery";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
 import TourDates from "@/components/TourDates";
-import { ACTIVE_MUSICAL_IDS, cities, createAwinLink, providers } from "@/lib/data";
+import { ACTIVE_MUSICAL_IDS, cities, createAwinLink, getActiveMusicals, providers } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -55,7 +55,7 @@ export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug || "";
   const { musicals: managedMusicals } = useManagedMusicals();
-  const musical = managedMusicals.find((candidate) => candidate.slug === slug);
+  const musical = getActiveMusicals(managedMusicals).find((candidate) => candidate.slug === slug);
 
   // Reset after route, frame and layout restoration so cards from a scrolled overview always open at the page start.
   useLayoutEffect(() => {

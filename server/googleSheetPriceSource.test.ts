@@ -33,17 +33,54 @@ describe("Google-Sheets-Preisquelle", () => {
     expect(parseCsv('a,"b,c"\n1,2')).toEqual([["a", "b,c"], ["1", "2"]]);
   });
 
-  it("ignoriert unbekannte IDs und verwirft unsichere Preis- oder Sale-Zeilen", () => {
+  it("rekonstruiert unquotierte deutsche Dezimalpreise aus dem veröffentlichten Google-Export", () => {
+    const unquotedPriceRow = "mj-musical,56,99,Ja,BIS 20 %,,,30.09.2026,https://example.test/mj,";
+
+    expect(parseGoogleSheetPriceCsv(`${header}\n${unquotedPriceRow}`)).toEqual([
+      {
+        musicalId: "mj-musical",
+        priceFrom: "56,99",
+        saleEnabled: true,
+        saleLabel: "SALE",
+        saleDiscount: "BIS 20 %",
+        saleNote: null,
+        saleStartsAt: null,
+        saleEndsAt: "2026-09-30",
+      },
+    ]);
+  });
+
+  it("ignoriert unbekannte oder ungültige Preise, behält aber valide Preise bei unvollständigen Sales", () => {
     const csv = [
       header,
       "unbekannt,19,99,Nein,,,,,,",
       "mj-musical,ungültig,Nein,,,,,,",
       "tarzan,66,99,Ja,,,,,,",
-      "koenig-der-loewen,63,99,Ja,BIS 15 %,Hinweis,21.09.2026,14.09.2026,,,",
+      "koenig-der-loewen,63,99,Ja,BIS 15 %,Hinweis,21.09.2026,14.09.2026,,",
       "mj-musical,35,Nein,SHOULD NOT LEAK,Private note,,,,",
     ].join("\n");
 
     expect(parseGoogleSheetPriceCsv(csv)).toEqual([
+      {
+        musicalId: "tarzan",
+        priceFrom: "66,99",
+        saleEnabled: false,
+        saleLabel: null,
+        saleDiscount: null,
+        saleNote: null,
+        saleStartsAt: null,
+        saleEndsAt: null,
+      },
+      {
+        musicalId: "koenig-der-loewen",
+        priceFrom: "63,99",
+        saleEnabled: false,
+        saleLabel: null,
+        saleDiscount: null,
+        saleNote: null,
+        saleStartsAt: null,
+        saleEndsAt: null,
+      },
       {
         musicalId: "mj-musical",
         priceFrom: "35",
