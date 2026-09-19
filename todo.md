@@ -662,3 +662,6 @@
 
 ## Dynamische Erlebniswelt-Headlines
 - [x] Ergebnis-Headline je aktiver Erlebniswelt individuell formulieren und die allgemeine Headline ohne Auswahl beibehalten
+
+## Kompakte und größere mobile Erlebniswelt-Buttons
+- [x] Längere Hero-Erlebniswelt-Texte auf maximal zwei Begriffe kürzen, „Familie & Märchen“ sowie „Geschichten“ verwenden und die mobilen Buttons lesbarer vergrößern

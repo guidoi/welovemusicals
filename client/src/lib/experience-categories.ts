@@ -29,7 +29,7 @@ export const EXPERIENCE_CATEGORIES = [
   {
     id: "familie-maerchen-magie",
     label: "Familie, Märchen & Magie",
-    shortLabel: "Familie, Märchen & Magie",
+    shortLabel: "Familie & Märchen",
     description: "Zusammen staunen, lachen und in Geschichten eintauchen, die für alle Generationen leuchten.",
     discoveryHeadline: "Welches Familien-Musical passt zu euch?",
     recommendationHeadline: "Gemeinsame Lieblingsmomente für die ganze Familie",
@@ -38,7 +38,7 @@ export const EXPERIENCE_CATEGORIES = [
   {
     id: "besondere-geschichten",
     label: "Besondere Geschichten",
-    shortLabel: "Besondere Geschichten",
+    shortLabel: "Geschichten",
     description: "Starke Figuren, neue Blickwinkel und Geschichten, die dich noch über den Abend hinaus begleiten.",
     discoveryHeadline: "Welche Geschichte passt zu dir?",
     recommendationHeadline: "Geschichten, die etwas in dir auslösen",

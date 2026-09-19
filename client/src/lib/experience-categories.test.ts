@@ -27,7 +27,10 @@ describe("Erlebnis-Kategorien", () => {
       "Besondere Geschichten",
     ]);
     const familyCategory = EXPERIENCE_CATEGORIES.find((category) => category.id === "familie-maerchen-magie");
-    expect(familyCategory?.shortLabel).toBe("Familie, Märchen & Magie");
+    expect(familyCategory?.shortLabel).toBe("Familie & Märchen");
+    expect(EXPERIENCE_CATEGORIES.every((category) => category.shortLabel.split(/\s*&\s*/).length <= 2)).toBe(true);
+    expect(getExperienceCategory("pop-rock-filmhits")?.shortLabel).toBe("Pop, Rock & Film");
+    expect(getExperienceCategory("besondere-geschichten")?.shortLabel).toBe("Geschichten");
   });
 
   it("liefert für jede Erlebniswelt eine emotionale Empfehlungseinleitung", () => {
