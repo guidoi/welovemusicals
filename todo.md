@@ -704,11 +704,14 @@
 - [x] Unquoted deutsche Dezimalpreise aus dem Google-Website-Export serverseitig sicher rekonstruieren und MJ- sowie Sale-Zeilen validieren
 
 ## Live-Sheet-Synchronisierung
-- [x] Google-Sheets-Preis- und Sale-Adapter als Cloudflare-Pages-Funktion für die öffentliche Domain bereitstellen – browser- und edge-cache-sicher mit zehnminütigem Servercache
+- [x] Google-Sheets-Preis- und Sale-Adapter als Cloudflare-Pages-Funktion für die öffentliche Domain bereitstellen – browser- und edge-cache-sicher mit maximal 60 Sekunden Website-Cache
 - [x] Fack Ju Göhte, Wir sind am Leben und weitere aktuelle Preise/Sales auf der öffentlichen Domain abgleichen – FJG ohne 30-%-Sale, WSAL mit 2 FÜR 1 bis 30.09., MJ 56,99 € bestätigt
 
 ## Erweiterte Sheet-Pflege
-- [ ] Sichere Ticketlink-Spalte für freigegebene Affiliate- und Ticket-Deeplinks aktivieren
-- [ ] Preis- und Sale-Änderungen binnen einer Minute auf Website-Ebene automatisch abrufen
-- [ ] Regelmäßigen Katalogcheck um bevorstehende und abgelaufene Sale-Zeiträume ergänzen
-- [ ] Vollständigen Sheet- und Live-Abgleich dokumentieren
+- [x] Sichere Ticketlink-Spalte für freigegebene Affiliate- und Ticket-Deeplinks aktivieren
+- [x] Preis- und Sale-Änderungen binnen einer Minute auf Website-Ebene automatisch abrufen
+- [x] Regelmäßigen Katalogcheck um bevorstehende und abgelaufene Sale-Zeiträume ergänzen
+- [x] Vollständigen Sheet- und Live-Abgleich dokumentieren – 22 von 22 Website-Export-Zeilen stimmen mit der Produktion überein
+
+## Einheitliche Kategorie-Bezeichnungen
+- [x] Kurzlabels aus Hero und Filter auch in Teaser- und Detailseiten-Badges verwenden – insbesondere „Drama & Komödie“ statt „Besondere Geschichten“
