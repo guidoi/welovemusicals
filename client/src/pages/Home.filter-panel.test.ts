@@ -103,8 +103,9 @@ describe("Startseiten-Erlebnisfilter", () => {
 
   it("führt mit einem cremeweißen, klickbaren Ergebnisanker, goldener Zahl und goldenem Pfeil", () => {
     expect(homeSource).toContain('data-testid="result-anchor-link"');
-    expect(homeSource).toContain('inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90');
-    expect(homeSource).toContain('<ArrowDown className="h-4 w-4 shrink-0 text-gold');
+    expect(homeSource).toContain('flex max-w-xl items-start gap-2 text-left text-sm font-semibold leading-relaxed text-cream/90');
+    expect(homeSource).toContain('<ArrowDown className="mt-1 h-4 w-4 shrink-0 text-gold');
+    expect(homeSource).toContain('<span className="min-w-0">');
     expect(homeSource).toContain('data-testid="result-count"');
     expect(homeSource).toContain('font-extrabold text-gold');
     expect(homeSource).not.toContain('data-testid="result-count-heart"');

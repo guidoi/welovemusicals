@@ -513,14 +513,16 @@ export default function Home() {
             data-testid="result-anchor-link"
             onClick={scrollToUpdatedResults}
             aria-label={dynamicResultHint.ariaLabel}
-            className={`group mt-3 inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90 transition-colors hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${includeHighlightsInOverview ? "mb-6" : "mb-10"}`}
+            className={`group mt-3 flex max-w-xl items-start gap-2 text-left text-sm font-semibold leading-relaxed text-cream/90 transition-colors hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${includeHighlightsInOverview ? "mb-6" : "mb-10"}`}
           >
-            <ArrowDown className="h-4 w-4 shrink-0 text-gold transition-transform duration-150 group-hover:translate-y-0.5" aria-hidden="true" />
-            <span>{dynamicResultHint.beforeCount}</span>
-            <span data-testid="result-count" className="font-extrabold text-gold">
-              {dynamicResultHint.count}
+            <ArrowDown className="mt-1 h-4 w-4 shrink-0 text-gold transition-transform duration-150 group-hover:translate-y-0.5" aria-hidden="true" />
+            <span className="min-w-0">
+              {dynamicResultHint.beforeCount}{" "}
+              <span data-testid="result-count" className="font-extrabold text-gold">
+                {dynamicResultHint.count}
+              </span>{" "}
+              {dynamicResultHint.afterCount}
             </span>
-            <span>{dynamicResultHint.afterCount}</span>
           </button>
 
           <div ref={filterPanelRef} className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">

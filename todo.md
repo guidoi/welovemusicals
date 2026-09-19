@@ -687,3 +687,6 @@
 
 ## Goldene Ergebniszahl im Fließtext
 - [x] Herzsymbol aus dem Ergebnisanker entfernen und die dynamische Zahl responsiv inline in Gold hervorheben
+
+## Natürlicher Umbruch des Ergebnisankers
+- [x] Ergebnisanker als zusammenhängenden Textfluss mit festem Pfeil links gestalten, damit Mobilumbrüche natürlich erfolgen
