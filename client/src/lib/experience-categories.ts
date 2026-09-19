@@ -38,7 +38,7 @@ export const EXPERIENCE_CATEGORIES = [
   {
     id: "besondere-geschichten",
     label: "Besondere Geschichten",
-    shortLabel: "Drama & Emotion",
+    shortLabel: "Drama & Komödie",
     description: "Starke Figuren, neue Blickwinkel und Geschichten, die dich noch über den Abend hinaus begleiten.",
     discoveryHeadline: "Welche Geschichte passt zu dir?",
     recommendationHeadline: "Geschichten, die etwas in dir auslösen",

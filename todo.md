@@ -668,3 +668,6 @@
 
 ## Abgrenzender Drama-und-Emotion-Button
 - [x] Kurzen Hero-Button „Geschichten“ durch „Drama & Emotion“ ersetzen; ausführliche Kategorie „Besondere Geschichten“ beibehalten
+
+## Präziser Drama-und-Komödie-Button
+- [x] Kurzen Hero-Button „Drama & Emotion“ durch „Drama & Komödie“ ersetzen; ausführliche Kategorie unverändert beibehalten
