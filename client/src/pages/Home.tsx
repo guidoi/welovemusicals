@@ -536,8 +536,8 @@ export default function Home() {
           <p className="max-w-2xl text-cream/90">
             {dynamicDiscoveryIntro}
           </p>
-          <p className={`mt-3 inline-flex items-center gap-2 text-sm font-semibold text-gold ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
-            <ArrowDown className="h-4 w-4" aria-hidden="true" />
+          <p className={`mt-3 inline-flex items-center gap-2 text-sm font-semibold text-cream/90 ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
+            <ArrowDown className="h-4 w-4 text-gold" aria-hidden="true" />
             {dynamicResultHint}
           </p>
           {includeHighlightsInOverview && (

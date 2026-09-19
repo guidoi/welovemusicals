@@ -620,3 +620,6 @@
 
 ## Hervorgehobener Ergebnis-Hinweis
 - [x] Dynamischen Hinweis zu passenden Show-Tipps als ruhige goldene Ergebniszeile unter dem Einleitungstext hervorheben
+
+## Cremeweiße Ergebniszeile
+- [x] Dynamischen Ergebnis-Hinweis in Cremeweiß wie den Fließtext ausgeben; Orientierungspfeil dezent gold belassen
