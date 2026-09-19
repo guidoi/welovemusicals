@@ -632,3 +632,6 @@
 
 ## Einheitliche Stadt-Ticket-CTAs
 - [x] Termin- und Stadt-CTAs auf Detailseiten wieder mit „Tickets sichern“ beschriften; Sale nur an zentralen Angebots-CTAs zeigen
+
+## Mobile Ticketlogo-Anordnung
+- [x] Partnerlogo auf Detailseiten mobil unter der roten Ticket-CTA ausgeben; Desktop-Anordnung daneben beibehalten

@@ -520,12 +520,12 @@ export default function MusicalDetail() {
                 ? `Aktuell: ${ticketCta.label} – direkt bei ${ticketProviderName}.`
                 : `Sichere dir jetzt deine Tickets für ${musical.title} – bequem und sicher über ${ticketProviderName}.`}
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <a
                 href={boxTicketLink}
                 target="_blank"
                 rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark sm:w-auto"
               >
                 {ticketCta.label}
                 <ExternalLink className="w-5 h-5" />
@@ -534,7 +534,7 @@ export default function MusicalDetail() {
                 data-testid="ticket-provider-logo"
                 src={ticketProviderBrand.logoSrc}
                 alt={ticketProviderBrand.name}
-                className="ml-3 h-7 max-w-36 w-auto object-contain object-left opacity-90"
+                className="ml-0 h-5 max-w-28 w-auto object-contain object-left opacity-90 sm:ml-3 sm:h-7 sm:max-w-36"
               />
             </div>
             <p className="text-xs text-muted-foreground/50 mt-4">
@@ -656,12 +656,12 @@ export default function MusicalDetail() {
               className="lg:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 px-4 py-3 shadow-lg backdrop-blur-sm transition-all duration-300"
           style={{ opacity: showSticky ? 1 : 0, pointerEvents: showSticky ? 'auto' : 'none', transform: showSticky ? 'translateY(0)' : 'translateY(8px)' }}
         >
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
             <a
               href={stickyTicketLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
+              className="flex w-full items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark sm:flex-1"
             >
               <Ticket className="w-4 h-4" />
               {ticketCta.label}
@@ -670,7 +670,7 @@ export default function MusicalDetail() {
               data-testid="sticky-ticket-provider-logo"
               src={ticketProviderBrand.logoSrc}
               alt={ticketProviderBrand.name}
-              className="h-5 max-w-[5.5rem] w-auto shrink-0 object-contain object-right opacity-90"
+              className="h-5 max-w-[5.5rem] w-auto self-center object-contain opacity-90 sm:self-auto sm:object-right"
             />
           </div>
         </div>
