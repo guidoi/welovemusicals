@@ -644,3 +644,9 @@
 
 ## Direkter Ergebnisanker ohne Rücksprung
 - [x] Runden Übersichts-Rücksprung entfernen und den dynamischen Hinweis als klickbaren Anker zu den passenden Shows gestalten
+
+## Nutzerwege für Such- und Ortsfilter
+- [x] Erlebniswelt, Alle Shows, Länderwahl, Ortssuche und Rücksetzen im Browser als Besucherfluss prüfen
+
+## Kontextgerechter Ergebnis-Hinweis
+- [x] Ergebnis-Hinweis ohne aktive Auswahl neutral als weitere Shows formulieren; bei „Alle Shows“ und aktiven Filtern eindeutig unterscheiden

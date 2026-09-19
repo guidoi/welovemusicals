@@ -54,6 +54,7 @@ import {
   createMusicalOverviewHref,
   getExperienceCategoryFromSearch,
 } from "@/lib/experience-category-url";
+import { getDiscoveryResultHint } from "@/lib/discovery-result-hint";
 
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
@@ -347,9 +348,11 @@ export default function Home() {
         : selectedCountryLabel
           ? `Entdecke Musicals und Shows in ${selectedCountryLabel}, die zu deinem Geschmack passen – für deinen nächsten unvergesslichen Musicalabend.`
           : "Entdecke Musicals und Shows, die zu deinem Geschmack passen – von großen Bühnenbildern bis zu Geschichten, die dich noch lange begleiten.";
-  const dynamicResultHint = filteredMusicals.length === 1
-    ? "Weiter unten findest du deinen passenden Show-Tipp."
-    : `Weiter unten findest du deine ${filteredMusicals.length} passenden Show-Tipps.`;
+  const dynamicResultHint = getDiscoveryResultHint({
+    count: filteredMusicals.length,
+    hasNarrowingFilter,
+    showCompleteCatalog,
+  });
 
   const displayedMusicals = showAllMusicals ? filteredMusicals : filteredMusicals.slice(0, 16);
 
@@ -508,11 +511,11 @@ export default function Home() {
             type="button"
             data-testid="result-anchor-link"
             onClick={scrollToUpdatedResults}
-            aria-label={`Zu ${filteredMusicals.length} passenden Show-Tipps springen`}
+            aria-label={dynamicResultHint.ariaLabel}
             className={`group mt-3 inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90 transition-colors hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${includeHighlightsInOverview ? "mb-6" : "mb-10"}`}
           >
             <ArrowDown className="h-4 w-4 shrink-0 text-gold transition-transform duration-150 group-hover:translate-y-0.5" aria-hidden="true" />
-            {dynamicResultHint}
+            {dynamicResultHint.text}
           </button>
 
           <div ref={filterPanelRef} className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">

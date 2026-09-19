@@ -9,8 +9,8 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('rounded-2xl border border-gold/20 bg-card/60');
     expect(homeSource).toContain("Welche Show passt zu dir?");
     expect(homeSource).toContain("const dynamicDiscoveryIntro = selectedExperienceCategory");
-    expect(homeSource).toContain("const dynamicResultHint = filteredMusicals.length === 1");
-    expect(homeSource).toContain("Weiter unten findest du deine ${filteredMusicals.length} passenden Show-Tipps.");
+    expect(homeSource).toContain('import { getDiscoveryResultHint } from "@/lib/discovery-result-hint";');
+    expect(homeSource).toContain("const dynamicResultHint = getDiscoveryResultHint({");
     expect(filterSource).toContain("Erlebniswelt");
     expect(filterSource).not.toContain('data-testid="filter-result-count"');
     expect(filterSource).not.toContain('uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>');
@@ -55,7 +55,7 @@ describe("Startseiten-Erlebnisfilter", () => {
   it("macht den dynamischen Ergebnis-Hinweis zum klickbaren Anker", () => {
     expect(homeSource).toContain('data-testid="result-anchor-link"');
     expect(homeSource).toContain("onClick={scrollToUpdatedResults}");
-    expect(homeSource).toContain('aria-label={`Zu ${filteredMusicals.length} passenden Show-Tipps springen`}');
+    expect(homeSource).toContain('aria-label={dynamicResultHint.ariaLabel}');
     expect(homeSource).toContain("group-hover:translate-y-0.5");
     expect(homeSource).toContain('includeHighlightsInOverview ? "mb-6" : "mb-10"');
   });
@@ -89,10 +89,11 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('aria-label="Filter zurücksetzen"');
   });
 
-  it("verweist im Einführungstext dynamisch auf die passende Anzahl von Show-Tipps", () => {
-    expect(homeSource).toContain("const dynamicResultHint = filteredMusicals.length === 1");
-    expect(homeSource).toContain("Weiter unten findest du deinen passenden Show-Tipp.");
-    expect(homeSource).toContain("Weiter unten findest du deine ${filteredMusicals.length} passenden Show-Tipps.");
+  it("unterscheidet im Ergebnis-Hinweis zwischen weiteren, allen und passenden Shows", () => {
+    expect(homeSource).toContain("const dynamicResultHint = getDiscoveryResultHint({");
+    expect(homeSource).toContain("hasNarrowingFilter,");
+    expect(homeSource).toContain("showCompleteCatalog,");
+    expect(homeSource).toContain("{dynamicResultHint.text}");
     expect(homeSource).not.toContain('data-testid="results-count-label"');
     expect(filterSource).not.toContain('resultCount');
   });
