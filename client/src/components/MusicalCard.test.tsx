@@ -55,6 +55,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("whitespace-nowrap");
     expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-xs font-semibold leading-none text-white md:text-sm"');
     expect(markup).toContain("text-white");
+    expect(markup).toContain('border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm');
     expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
     expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
     expect(markup).toContain("justify-center");
@@ -153,6 +154,9 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain("Infos &amp; Tickets");
     expect(markup).toContain('data-testid="teaser-ticket-cta-icon"');
     expect(markup).toContain("h-7 w-7 shrink-0 items-center justify-center rounded-full");
+    expect(markup).toContain('text-white/90 transition-colors group-hover:text-white');
+    expect(markup).toContain('border border-gold/55 bg-transparent text-gold');
+    expect(markup).not.toContain('group-hover:bg-gold group-hover:text-background');
     expect(markup).toContain('stroke-width="2.25"');
     expect(markup).not.toContain("Tickets sichern");
     expect(markup).not.toContain("via Eventim");

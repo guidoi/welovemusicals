@@ -108,7 +108,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
             {/* Featured Badge */}
             {musical.featured && (
               <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
-                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold bg-transparent px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-gold`}>
+                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm`}>
                   <Star className="h-3 w-3 fill-gold text-gold" />
                   Top-Musical
                 </span>
@@ -171,11 +171,11 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
                 alt={ticketProviderBrand.name}
                 className={`h-8 ${providerLogoWidthClass} w-auto object-contain object-left opacity-90 md:h-7`}
               />
-              <span data-testid="teaser-ticket-cta" className="flex items-center gap-2 text-sm font-semibold text-gold group-hover:text-gold-light transition-colors">
+              <span data-testid="teaser-ticket-cta" className="flex items-center gap-2 text-sm font-semibold text-white/90 transition-colors group-hover:text-white">
                 Infos &amp; Tickets
                 <span
                   data-testid="teaser-ticket-cta-icon"
-                  className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/55 bg-gold/10 text-gold transition-all duration-150 group-hover:-translate-y-0.5 group-hover:border-gold-light group-hover:bg-gold group-hover:text-background"
+                  className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/55 bg-transparent text-gold transition-all duration-150 group-hover:-translate-y-0.5 group-hover:border-gold-light group-hover:text-gold-light"
                   aria-hidden="true"
                 >
                   <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.25} />

@@ -599,3 +599,6 @@
 
 ## Aktive Erlebniswelt als Goldkontur
 - [x] Aktive Erlebniswelt testweise ohne Goldfläche, nur mit verstärkter Goldkontur und Goldschrift darstellen
+
+## Ruhigere Goldhierarchie in Startseiten-Teasern
+- [x] Top-Musical-Badge und Ticket-CTA in den Teasern reduzieren; Kategorie- und SALE-Badges unverändert beibehalten
