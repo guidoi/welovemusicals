@@ -697,7 +697,7 @@
 ## Preis- und Kampagnenupdate September
 - [x] Website-Export des Google Sheets prüfen und den MJ-Preis über die zentrale Preisquelle bestätigen
 - [x] Neue native MJ-, Fack-Ju-Göhte- und Wir-sind-am-Leben-Creatives dimensionsgerecht und consent-konform einbinden
-- [ ] Wir sind am Leben bis einschließlich 30.09.2026 mit „2 FÜR 1“ kennzeichnen – wartet auf den öffentlichen Website-Export mit `Sale aktiv=Ja`, `Sale-Text=2 FÜR 1` und `Gültig bis=30.09.2026`
+- [x] Wir sind am Leben bis einschließlich 30.09.2026 mit „2 FÜR 1“ kennzeichnen – öffentlicher Website-Export mit `Sale aktiv=Ja`, `Sale-Text=2 FÜR 1` und `Gültig bis=30.09.2026` abgeglichen und in Vorschau sichtbar bestätigt
 - [x] We Will Rock You aus dem aktiven Katalog entfernen und öffentliche Seiten als NotFound prüfen
 
 ## Robuster deutscher Preis-CSV-Import
