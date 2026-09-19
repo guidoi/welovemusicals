@@ -638,3 +638,6 @@
 
 ## Zentrierte mobile Ticketlogos
 - [x] Partnerlogos unter mobilen Ticket-CTAs in einer eigenen zentrierten Zeile ausrichten
+
+## Ticketlogos wieder neben der CTA
+- [x] Partnerlogos auf Mobilgeräten wieder rechts neben den roten Ticket-CTAs anordnen

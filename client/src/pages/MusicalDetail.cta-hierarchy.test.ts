@@ -21,11 +21,11 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
     expect(source).not.toContain('ticketCtaLabel={ticketCta.label}');
   });
 
-  it("ordnet Partnerlogos auf Mobilgeräten unter den Ticket-CTAs an", () => {
-    expect(source).toContain('flex flex-col items-center gap-3 sm:flex-row sm:gap-4');
-    expect(source).toContain('w-full items-center justify-center gap-2 rounded-sm bg-red');
-    expect(source).toContain('ml-0 h-5 max-w-28');
-    expect(source).toContain('flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3');
-    expect(source).toContain('self-center object-contain opacity-90 sm:self-auto');
+  it("ordnet Partnerlogos auf Mobilgeräten kompakt rechts neben den Ticket-CTAs an", () => {
+    expect(source).toContain('className="flex items-center gap-4"');
+    expect(source).toContain('inline-flex items-center gap-2 rounded-sm bg-red');
+    expect(source).toContain('ml-3 h-7 max-w-36');
+    expect(source).toContain('className="flex items-center gap-3"');
+    expect(source).toContain('shrink-0 object-contain object-right opacity-90');
   });
 });
