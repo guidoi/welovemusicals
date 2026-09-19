@@ -656,3 +656,6 @@
 
 ## Redaktionelle Freigabe-Checkliste
 - [x] Kompakte Pflicht-Checkliste für neue oder aktualisierte Musicaleinträge ergänzen und dokumentarisch prüfen
+
+## Monatlicher Katalog- und Preischeck
+- [x] Wiederkehrenden Qualitätscheck für aktive Musicals mit Preisen, Aktionen, Ticketpfaden und redaktioneller Konsistenz definieren und einrichten
