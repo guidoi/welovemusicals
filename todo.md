@@ -704,5 +704,5 @@
 - [x] Unquoted deutsche Dezimalpreise aus dem Google-Website-Export serverseitig sicher rekonstruieren und MJ- sowie Sale-Zeilen validieren
 
 ## Live-Sheet-Synchronisierung
-- [ ] Google-Sheets-Preis- und Sale-Adapter als Cloudflare-Pages-Funktion für die öffentliche Domain bereitstellen
-- [ ] Fack Ju Göhte, Wir sind am Leben und weitere aktuelle Preise/Sales auf der öffentlichen Domain abgleichen
+- [x] Google-Sheets-Preis- und Sale-Adapter als Cloudflare-Pages-Funktion für die öffentliche Domain bereitstellen – browser- und edge-cache-sicher mit zehnminütigem Servercache
+- [x] Fack Ju Göhte, Wir sind am Leben und weitere aktuelle Preise/Sales auf der öffentlichen Domain abgleichen – FJG ohne 30-%-Sale, WSAL mit 2 FÜR 1 bis 30.09., MJ 56,99 € bestätigt
