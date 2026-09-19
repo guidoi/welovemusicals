@@ -614,3 +614,6 @@
 
 ## Rote obere Mobile-Ticket-CTA
 - [x] Obere Detailseiten-Ticket-CTA mit Preisangabe als rote Conversion-CTA an die übrigen Ticketaktionen angleichen
+
+## Dynamische Ticket-CTA-Texte
+- [x] Aktive Show-Angebote und Preise zentral in den Ticket-CTA-Texten von Detailseite, Ticketbox, Sticky-CTA und Terminen ausgeben

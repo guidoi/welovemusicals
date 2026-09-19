@@ -49,6 +49,7 @@ import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import { getExperienceCategory } from "@/lib/experience-categories";
 import { getRelatedMusicals } from "@/lib/related-musicals";
+import { getTicketCta } from "@/lib/ticket-cta";
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
@@ -167,6 +168,7 @@ export default function MusicalDetail() {
   const ticketProviderName = usesStageProductPage ? "Stage Entertainment" : usesAtgTickets ? "ATG Tickets" : "Eventim";
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
+  const ticketCta = getTicketCta(musical);
   const aovoCampaign = getAovoCampaign(musical.id);
   const aovoCampaigns = getAovoCampaigns(musical.id);
   const inlineDescriptionCampaign = getAovoCampaigns(musical.id).find(
@@ -272,7 +274,7 @@ export default function MusicalDetail() {
             className="flex w-full items-center justify-center gap-2 rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
           >
             <Ticket className="w-4 h-4" />
-            Tickets buchen{musical.priceFrom && <span className="font-normal opacity-75 ml-1">– ab {musical.priceFrom} €</span>}
+            {ticketCta.label}
           </a>
         </div>
       )}
@@ -394,7 +396,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} />
+          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} ticketCtaLabel={ticketCta.label} />
         )}
       </div>
 
@@ -510,11 +512,13 @@ export default function MusicalDetail() {
             <div className="flex items-center gap-3 mb-4">
               <Ticket className="w-6 h-6 text-red" />
               <h2 className="font-display text-2xl font-bold text-foreground">
-                Tickets sichern
+                {ticketCta.kind === "offer" ? "Angebot sichern" : "Tickets sichern"}
               </h2>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Sichere dir jetzt deine Tickets für {musical.title} – bequem und sicher über {ticketProviderName}.
+              {ticketCta.kind === "offer"
+                ? `Aktuell: ${ticketCta.label} – direkt bei ${ticketProviderName}.`
+                : `Sichere dir jetzt deine Tickets für ${musical.title} – bequem und sicher über ${ticketProviderName}.`}
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -523,7 +527,7 @@ export default function MusicalDetail() {
                 rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark"
               >
-                Tickets
+                {ticketCta.label}
                 <ExternalLink className="w-5 h-5" />
               </a>
               <img
@@ -660,7 +664,7 @@ export default function MusicalDetail() {
               className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
             >
               <Ticket className="w-4 h-4" />
-              Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}
+              {ticketCta.label}
             </a>
             <img
               data-testid="sticky-ticket-provider-logo"

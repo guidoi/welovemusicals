@@ -6,7 +6,9 @@ const source = readFileSync(new URL("./MusicalDetail.tsx", import.meta.url), "ut
 describe("MusicalDetail ticket CTA hierarchy", () => {
   it("verwendet für die Ticket-Conversion oberhalb des mobilen Detailinhalts Rot", () => {
     expect(source).toContain("border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white");
-    expect(source).toContain("Tickets buchen{musical.priceFrom");
+    expect(source).toContain('import { getTicketCta } from "@/lib/ticket-cta";');
+    expect(source).toContain("const ticketCta = getTicketCta(musical);");
+    expect(source).toContain("{ticketCta.label}");
   });
 
   it("behält Gold für die Erlebniswelt und Orientierung im Hero", () => {

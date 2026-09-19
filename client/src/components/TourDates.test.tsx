@@ -27,4 +27,22 @@ describe("TourDates", () => {
     expect(markup).toContain("md:hover:border-gold");
     expect(markup).toContain("focus-within:border-gold");
   });
+
+  it("übernimmt einen dynamischen Angebots-CTA für alle passenden Tourtermine", () => {
+    const markup = renderToStaticMarkup(
+      <TourDates
+        tourDates={[
+          {
+            city: "Hamburg",
+            venue: "Musicaltheater",
+            startDate: "2026-10-01",
+            eventimUrl: "https://example.com/tickets",
+          },
+        ]}
+        ticketCtaLabel="SALE · 2 FÜR 1"
+      />,
+    );
+
+    expect(markup).toContain("SALE · 2 FÜR 1");
+  });
 });
