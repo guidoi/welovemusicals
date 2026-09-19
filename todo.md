@@ -617,3 +617,6 @@
 
 ## Dynamische Ticket-CTA-Texte
 - [x] Aktive Show-Angebote und Preise zentral in den Ticket-CTA-Texten von Detailseite, Ticketbox, Sticky-CTA und Terminen ausgeben
+
+## Hervorgehobener Ergebnis-Hinweis
+- [x] Dynamischen Hinweis zu passenden Show-Tipps als ruhige goldene Ergebniszeile unter dem Einleitungstext hervorheben

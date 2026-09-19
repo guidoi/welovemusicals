@@ -5,6 +5,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
+  ArrowDown,
   ArrowLeft,
   SlidersHorizontal,
   Star,
@@ -532,8 +533,12 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Welche Show passt zu dir?
           </h2>
-          <p className={`max-w-2xl text-cream/90 ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
-            {dynamicDiscoveryIntro} <span className="font-medium text-cream">{dynamicResultHint}</span>
+          <p className="max-w-2xl text-cream/90">
+            {dynamicDiscoveryIntro}
+          </p>
+          <p className={`mt-3 inline-flex items-center gap-2 text-sm font-semibold text-gold ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
+            <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            {dynamicResultHint}
           </p>
           {includeHighlightsInOverview && (
             <button

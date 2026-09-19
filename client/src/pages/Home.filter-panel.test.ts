@@ -114,6 +114,11 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).not.toContain('resultCount');
   });
 
+  it("hebt den dynamischen Ergebnis-Hinweis ruhig als goldene Zeile hervor", () => {
+    expect(homeSource).toContain('inline-flex items-center gap-2 text-sm font-semibold text-gold');
+    expect(homeSource).toContain('<ArrowDown className="h-4 w-4"');
+  });
+
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {
     expect(homeSource).toContain("const [resultAnimationKey, setResultAnimationKey] = useState(0);");
     expect(homeSource).toContain("const animateUpdatedResults = useCallback(() => {");
