@@ -269,7 +269,7 @@ export default function MusicalDetail() {
             href={heroTicketLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-sm border border-gold py-3 text-sm font-semibold tracking-wide text-gold transition-colors duration-200 hover:bg-gold hover:text-background"
+            className="flex w-full items-center justify-center gap-2 rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
           >
             <Ticket className="w-4 h-4" />
             Tickets buchen{musical.priceFrom && <span className="font-normal opacity-75 ml-1">– ab {musical.priceFrom} €</span>}

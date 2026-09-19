@@ -611,3 +611,6 @@
 
 ## Kürzerer Cookie-Hinweis
 - [x] Cookie-Banner und Einstellungsdialog kürzer, verständlicher und vertrauensbildend formulieren; Optionen unverändert beibehalten
+
+## Rote obere Mobile-Ticket-CTA
+- [x] Obere Detailseiten-Ticket-CTA mit Preisangabe als rote Conversion-CTA an die übrigen Ticketaktionen angleichen
