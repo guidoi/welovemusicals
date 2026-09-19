@@ -37,3 +37,18 @@ Nach dem Hinzufügen, Deaktivieren oder wesentlichen Umkategorisieren einer Show
 | Erlebniswelt, Land, Ort oder Umkreis gewählt | „Weiter unten findest du deine **X passenden Show-Tipps**.“ | „Passend“ ist nur nach einer bewussten Auswahl zulässig. |
 
 Die Textlogik liegt zentral in `client/src/lib/discovery-result-hint.ts` und wird durch `discovery-result-hint.test.ts` abgesichert. Vor einem Checkpoint immer `pnpm test && pnpm exec tsc --noEmit && pnpm build` ausführen und die drei Zustände einmal im Browser kontrollieren.
+
+## Redaktionelle Freigabe-Checkliste
+
+Diese kurze Liste wird für jede neue, reaktivierte oder wesentlich aktualisierte Show vor der Veröffentlichung einmal vollständig abgehakt. Sie verhindert, dass unvollständige Daten, veraltete Angebote oder nicht stimmige Startseitenführung in die öffentliche Ansicht gelangen.
+
+| Bereich | Vor der Freigabe prüfen |
+|---|---|
+| **Grunddaten** | Titel, URL-Slug, Spielort, Städte, Spielzeit, Einstiegspreis und Veranstalter stimmen mit der aktuellen Quelle überein. |
+| **Erlebniswelt** | Genau eine der fünf Erlebniswelten ist gesetzt und entspricht der primären Buchungsmotivation der Show. |
+| **Ticketpfad** | Haupt-CTA, mobile CTA und Tourtermine führen zum richtigen Partnerziel; Stadt-CTAs heißen weiterhin „Tickets sichern“. |
+| **Aktion & Preis** | Sale ist nur mit gültigem Text und korrektem Laufzeitfenster aktiv; abgelaufene Aktionen und Preise sind entfernt oder angepasst. |
+| **Startseite** | Entscheidung über Highlights oder weitere Shows ist bewusst getroffen; Teaser, Reihenfolge und Erlebniswelt-Badge sind stimmig. |
+| **Detailseite** | Keyvisual, Einstiegstext, Fakten, Termine, FAQ, Anbieterlogo sowie Bildnachweise sind vollständig und widerspruchsfrei. |
+| **SEO & Medien** | Seitentitel, Beschreibung, Social-Motiv, Bild-Alttexte und Schema-Daten passen zur neuen Show; ein Trailer erhält ein lebendiges Szenenbild statt eines doppelten Artworks. |
+| **Freigabe** | Die drei Ergebniszustände („weitere“, „alle“, „passende“ Shows) sowie die relevante Start- und Detailseite in Desktop und Mobil prüfen; danach Tests, TypeScript und Build ausführen. |

@@ -653,3 +653,6 @@
 
 ## Redaktionelle Prüfung nach Show-Updates
 - [x] Verbindliche Prüfschritte für Erlebniswelten und kontextgerechte Ergebnis-Texte nach Änderungen am Musicalkatalog dokumentieren
+
+## Redaktionelle Freigabe-Checkliste
+- [x] Kompakte Pflicht-Checkliste für neue oder aktualisierte Musicaleinträge ergänzen und dokumentarisch prüfen
