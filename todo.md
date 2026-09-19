@@ -671,3 +671,6 @@
 
 ## Präziser Drama-und-Komödie-Button
 - [x] Kurzen Hero-Button „Drama & Emotion“ durch „Drama & Komödie“ ersetzen; ausführliche Kategorie unverändert beibehalten
+
+## Passende Drama-Komödie-Headline
+- [x] Ergebnis-Headline der Erlebniswelt „Besondere Geschichten“ passend zu Drama und Komödie formulieren

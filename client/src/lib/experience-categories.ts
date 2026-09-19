@@ -40,7 +40,7 @@ export const EXPERIENCE_CATEGORIES = [
     label: "Besondere Geschichten",
     shortLabel: "Drama & Komödie",
     description: "Starke Figuren, neue Blickwinkel und Geschichten, die dich noch über den Abend hinaus begleiten.",
-    discoveryHeadline: "Welche Geschichte passt zu dir?",
+    discoveryHeadline: "Welche Show lässt dich lachen oder nachdenken?",
     recommendationHeadline: "Geschichten, die etwas in dir auslösen",
     recommendationIntro: "Hier findest du besondere Shows mit Haltung, Herz und überraschenden Perspektiven.",
   },

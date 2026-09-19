@@ -31,6 +31,7 @@ describe("Erlebnis-Kategorien", () => {
     expect(EXPERIENCE_CATEGORIES.every((category) => category.shortLabel.split(/\s*&\s*/).length <= 2)).toBe(true);
     expect(getExperienceCategory("pop-rock-filmhits")?.shortLabel).toBe("Pop, Rock & Film");
     expect(getExperienceCategory("besondere-geschichten")?.shortLabel).toBe("Drama & Komödie");
+    expect(getExperienceCategory("besondere-geschichten")?.discoveryHeadline).toBe("Welche Show lässt dich lachen oder nachdenken?");
   });
 
   it("liefert für jede Erlebniswelt eine emotionale Empfehlungseinleitung", () => {
@@ -44,7 +45,7 @@ describe("Erlebnis-Kategorien", () => {
     expect(getExperienceCategory("kult-klassiker")?.discoveryHeadline).toBe("Welcher Klassiker passt zu dir?");
     expect(getExperienceCategory("pop-rock-filmhits")?.discoveryHeadline).toBe("Welche Show passt zu deinem Sound?");
     expect(getExperienceCategory("familie-maerchen-magie")?.discoveryHeadline).toBe("Welches Familien-Musical passt zu euch?");
-    expect(getExperienceCategory("besondere-geschichten")?.discoveryHeadline).toBe("Welche Geschichte passt zu dir?");
+    expect(getExperienceCategory("besondere-geschichten")?.discoveryHeadline).toBe("Welche Show lässt dich lachen oder nachdenken?");
   });
 
   it("unterscheidet die Erlebniswelten mit konkreten redaktionellen Bildern", () => {
