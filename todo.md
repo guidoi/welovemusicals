@@ -659,3 +659,6 @@
 
 ## Monatlicher Katalog- und Preischeck
 - [x] Wiederkehrenden Qualitätscheck für aktive Musicals mit Preisen, Aktionen, Ticketpfaden und redaktioneller Konsistenz definieren und einrichten
+
+## Dynamische Erlebniswelt-Headlines
+- [x] Ergebnis-Headline je aktiver Erlebniswelt individuell formulieren und die allgemeine Headline ohne Auswahl beibehalten

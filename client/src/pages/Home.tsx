@@ -348,6 +348,7 @@ export default function Home() {
         : selectedCountryLabel
           ? `Entdecke Musicals und Shows in ${selectedCountryLabel}, die zu deinem Geschmack passen – für deinen nächsten unvergesslichen Musicalabend.`
           : "Entdecke Musicals und Shows, die zu deinem Geschmack passen – von großen Bühnenbildern bis zu Geschichten, die dich noch lange begleiten.";
+  const dynamicDiscoveryHeadline = selectedExperienceCategory?.discoveryHeadline ?? "Welche Show passt zu dir?";
   const dynamicResultHint = getDiscoveryResultHint({
     count: filteredMusicals.length,
     hasNarrowingFilter,
@@ -502,7 +503,7 @@ export default function Home() {
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">DEIN MUSICAL-MOMENT</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Welche Show passt zu dir?
+            {dynamicDiscoveryHeadline}
           </h2>
           <p className="max-w-2xl text-cream/90">
             {dynamicDiscoveryIntro}

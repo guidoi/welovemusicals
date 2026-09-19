@@ -31,8 +31,17 @@ describe("Erlebnis-Kategorien", () => {
   });
 
   it("liefert für jede Erlebniswelt eine emotionale Empfehlungseinleitung", () => {
+    expect(EXPERIENCE_CATEGORIES.every((category) => category.discoveryHeadline.endsWith("?"))).toBe(true);
     expect(EXPERIENCE_CATEGORIES.every((category) => category.recommendationHeadline.length > 12)).toBe(true);
     expect(EXPERIENCE_CATEGORIES.every((category) => category.recommendationIntro.length > 24)).toBe(true);
+  });
+
+  it("spricht je Erlebniswelt mit einer passenden Auswahlfrage an", () => {
+    expect(getExperienceCategory("blockbuster-spektakel")?.discoveryHeadline).toBe("Welcher Blockbuster passt zu dir?");
+    expect(getExperienceCategory("kult-klassiker")?.discoveryHeadline).toBe("Welcher Klassiker passt zu dir?");
+    expect(getExperienceCategory("pop-rock-filmhits")?.discoveryHeadline).toBe("Welche Show passt zu deinem Sound?");
+    expect(getExperienceCategory("familie-maerchen-magie")?.discoveryHeadline).toBe("Welches Familien-Musical passt zu euch?");
+    expect(getExperienceCategory("besondere-geschichten")?.discoveryHeadline).toBe("Welche Geschichte passt zu dir?");
   });
 
   it("unterscheidet die Erlebniswelten mit konkreten redaktionellen Bildern", () => {

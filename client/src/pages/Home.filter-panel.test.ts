@@ -7,7 +7,7 @@ const filterSource = readFileSync(new URL("../components/MusicalFilters.tsx", im
 describe("Startseiten-Erlebnisfilter", () => {
   it("nutzt durchgehend sichtbare Erlebniswelten statt technischer Kategorie-Dropdowns", () => {
     expect(homeSource).toContain('rounded-2xl border border-gold/20 bg-card/60');
-    expect(homeSource).toContain("Welche Show passt zu dir?");
+    expect(homeSource).toContain('const dynamicDiscoveryHeadline = selectedExperienceCategory?.discoveryHeadline ?? "Welche Show passt zu dir?";');
     expect(homeSource).toContain("const dynamicDiscoveryIntro = selectedExperienceCategory");
     expect(homeSource).toContain('import { getDiscoveryResultHint } from "@/lib/discovery-result-hint";');
     expect(homeSource).toContain("const dynamicResultHint = getDiscoveryResultHint({");
@@ -39,7 +39,7 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain("const [showCompleteCatalog, setShowCompleteCatalog] = useState(false);");
     expect(homeSource).toContain("const includeHighlightsInOverview = showCompleteCatalog || hasNarrowingFilter;");
     expect(homeSource).toContain("getEditorialOverviewMusicals(includeHighlightsInOverview, managedMusicals)");
-    expect(homeSource).toContain('Welche Show passt zu dir?');
+    expect(homeSource).toContain("{dynamicDiscoveryHeadline}");
     expect(homeSource).toContain("onFiltersReset={resetToAdditionalOverview}");
     expect(homeSource).toContain("const resetToAdditionalOverview = useCallback(() => {");
   });
@@ -61,7 +61,7 @@ describe("Startseiten-Erlebnisfilter", () => {
   });
 
   it("führt die Ergebnisse mit einer dynamischen, nutzenorientierten Einleitung", () => {
-    expect(homeSource).toContain("Welche Show passt zu dir?");
+    expect(homeSource).toContain("const dynamicDiscoveryHeadline = selectedExperienceCategory?.discoveryHeadline");
     expect(homeSource).toContain("selectedExperienceCategory.description");
     expect(homeSource).toContain("Entdecke Musicals und Shows in deiner Nähe");
     expect(homeSource).toContain("Entdecke Musicals und Shows, die zu deinem Geschmack passen");
