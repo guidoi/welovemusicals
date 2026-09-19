@@ -22,7 +22,7 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
   });
 
   it("ordnet Partnerlogos auf Mobilgeräten unter den Ticket-CTAs an", () => {
-    expect(source).toContain('flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4');
+    expect(source).toContain('flex flex-col items-center gap-3 sm:flex-row sm:gap-4');
     expect(source).toContain('w-full items-center justify-center gap-2 rounded-sm bg-red');
     expect(source).toContain('ml-0 h-5 max-w-28');
     expect(source).toContain('flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3');

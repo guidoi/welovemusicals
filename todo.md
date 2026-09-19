@@ -635,3 +635,6 @@
 
 ## Mobile Ticketlogo-Anordnung
 - [x] Partnerlogo auf Detailseiten mobil unter der roten Ticket-CTA ausgeben; Desktop-Anordnung daneben beibehalten
+
+## Zentrierte mobile Ticketlogos
+- [x] Partnerlogos unter mobilen Ticket-CTAs in einer eigenen zentrierten Zeile ausrichten

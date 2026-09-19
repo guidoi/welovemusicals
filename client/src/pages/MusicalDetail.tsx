@@ -520,7 +520,7 @@ export default function MusicalDetail() {
                 ? `Aktuell: ${ticketCta.label} – direkt bei ${ticketProviderName}.`
                 : `Sichere dir jetzt deine Tickets für ${musical.title} – bequem und sicher über ${ticketProviderName}.`}
             </p>
-            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
               <a
                 href={boxTicketLink}
                 target="_blank"
