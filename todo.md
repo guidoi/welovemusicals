@@ -650,3 +650,6 @@
 
 ## Kontextgerechter Ergebnis-Hinweis
 - [x] Ergebnis-Hinweis ohne aktive Auswahl neutral als weitere Shows formulieren; bei „Alle Shows“ und aktiven Filtern eindeutig unterscheiden
+
+## Redaktionelle Prüfung nach Show-Updates
+- [x] Verbindliche Prüfschritte für Erlebniswelten und kontextgerechte Ergebnis-Texte nach Änderungen am Musicalkatalog dokumentieren

@@ -25,3 +25,15 @@ Direkt nach `id` wird die Kategorie notiert. Die Kategorie darf nicht leer bleib
 ```
 
 Wenn eine Show zwischen zwei Kategorien liegt, entscheidet die **primäre Buchungsmotivation**: visuelles Großereignis, etablierter Klassiker, Musik-/Filmbezug, Familienerlebnis oder besondere Erzählung. Nur bei einer deutlichen Änderung des Produktionsprofils wird die Kategorie später angepasst.
+
+## Pflichtprüfung nach jeder Katalogänderung
+
+Nach dem Hinzufügen, Deaktivieren oder wesentlichen Umkategorisieren einer Show wird die Startseitenführung mitgeprüft. Damit bleiben Formulierung und Anzahl der gezeigten Shows inhaltlich korrekt, auch wenn sich der Katalog verändert.
+
+| Besucherzustand | Erwartete Ergebniszeile | Prüfung |
+|---|---|---|
+| Keine Auswahl | „Weiter unten findest du **X weitere Musicals & Shows**.“ | Die Übersicht führt lediglich die Shows unterhalb der Highlights fort; „passend“ darf hier nicht erscheinen. |
+| Einstieg „Alle Shows“ | „Weiter unten findest du **alle X Musicals & Shows**.“ | Die vollständige Übersicht einschließlich Highlights ist aktiv. |
+| Erlebniswelt, Land, Ort oder Umkreis gewählt | „Weiter unten findest du deine **X passenden Show-Tipps**.“ | „Passend“ ist nur nach einer bewussten Auswahl zulässig. |
+
+Die Textlogik liegt zentral in `client/src/lib/discovery-result-hint.ts` und wird durch `discovery-result-hint.test.ts` abgesichert. Vor einem Checkpoint immer `pnpm test && pnpm exec tsc --noEmit && pnpm build` ausführen und die drei Zustände einmal im Browser kontrollieren.
