@@ -5,7 +5,7 @@ const header = "musical_id,Preis ab,Sale aktiv,Sale-Text,Sale-Hinweis,Gültig ab
 const csv = [
   header,
   "fackjugoehte,40,49,Nein,,,,,",
-  "wir-sind-am-leben,30,49,Ja,2 FÜR 1,,,30.09.2026,",
+  "wir-sind-am-leben,30,49,Ja,2 FÜR 1,,,30.09.2026,https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26185700",
 ].join("\n");
 
 function createContext(url = "https://welovemusicals.com/api/trpc/priceSales.listPublic") {
@@ -31,11 +31,21 @@ describe("Cloudflare Pages priceSales.listPublic", () => {
     const rows = payload[0]?.result.data.json as Array<{ musicalId: string; priceFrom: string; saleEnabled: boolean; saleDiscount: string | null }>;
 
     expect(response.headers.get("Cache-Control")).toContain("max-age=0");
-    expect(response.headers.get("Cache-Control")).toContain("s-maxage=600");
+    expect(response.headers.get("Cache-Control")).toContain("s-maxage=60");
     expect(rows).toEqual(expect.arrayContaining([
       expect.objectContaining({ musicalId: "fackjugoehte", priceFrom: "40,49", saleEnabled: false, saleDiscount: null }),
-      expect.objectContaining({ musicalId: "wir-sind-am-leben", priceFrom: "30,49", saleEnabled: true, saleDiscount: "2 FÜR 1" }),
+      expect.objectContaining({
+        musicalId: "wir-sind-am-leben",
+        priceFrom: "30,49",
+        ticketLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26185700",
+        saleEnabled: true,
+        saleDiscount: "2 FÜR 1",
+      }),
     ]));
+    expect(globalThis.fetch).toHaveBeenCalledWith(
+      expect.any(String),
+      expect.objectContaining({ cache: "no-store" }),
+    );
   });
 
   it("verwendet den veröffentlichten Website-Export auch ohne Pages-Umgebungsvariable", async () => {

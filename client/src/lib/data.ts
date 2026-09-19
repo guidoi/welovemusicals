@@ -141,7 +141,21 @@ export const ATG_PENDING_TOUR_TEXT_LINK_IDS = {
   },
 } as const;
 
+const DIRECT_AFFILIATE_HOSTS = new Set([
+  "www.awin1.com",
+  "visit.stage-entertainment.de",
+  "clk.tradedoubler.com",
+]);
+
 export function createAwinLink(destinationUrl: string): string {
+  try {
+    if (DIRECT_AFFILIATE_HOSTS.has(new URL(destinationUrl).hostname.toLocaleLowerCase("en"))) {
+      return destinationUrl;
+    }
+  } catch {
+    // Existing editorial URLs continue through the standard affiliate wrapper.
+  }
+
   const encodedUrl = encodeURIComponent(destinationUrl);
   return `https://www.awin1.com/cread.php?awinmid=${AWIN_MERCHANT_ID}&awinaffid=${AWIN_PUBLISHER_ID}&ued=${encodedUrl}`;
 }

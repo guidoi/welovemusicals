@@ -15,7 +15,9 @@ type CacheWithDefault = {
   };
 };
 
-const CACHE_SECONDS = 600;
+// Fresh data is checked every minute. The browser itself never retains a stale
+// response; Google may add its own short publication delay before the CSV changes.
+const CACHE_SECONDS = 60;
 // This is the intentionally public Website-Export, never the private editing sheet.
 // Pages Functions use it when the deployment does not inject an environment binding.
 const PUBLISHED_WEBSITE_EXPORT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRC2Ymp15Lrw6yzWFVFvhYR0cRa3rTYfGcAJ4PnYth3TFZ3E4A6ajuecKXvr_T7Nmn7WIiQFzlXmH8s/pub?gid=1001113831&single=true&output=csv";
@@ -54,6 +56,9 @@ export async function onRequestGet(context: PriceFunctionContext): Promise<Respo
 
   try {
     const response = await fetch(csvUrl, {
+      // Do not retain Google's five-minute response in the Cloudflare subrequest
+      // cache; the explicit 60-second edge cache below is the sole website cache.
+      cache: "no-store",
       headers: {
         Accept: "text/csv",
         "User-Agent": "WeLoveMusicalsPriceSync/1.0",

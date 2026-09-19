@@ -706,3 +706,9 @@
 ## Live-Sheet-Synchronisierung
 - [x] Google-Sheets-Preis- und Sale-Adapter als Cloudflare-Pages-Funktion für die öffentliche Domain bereitstellen – browser- und edge-cache-sicher mit zehnminütigem Servercache
 - [x] Fack Ju Göhte, Wir sind am Leben und weitere aktuelle Preise/Sales auf der öffentlichen Domain abgleichen – FJG ohne 30-%-Sale, WSAL mit 2 FÜR 1 bis 30.09., MJ 56,99 € bestätigt
+
+## Erweiterte Sheet-Pflege
+- [ ] Sichere Ticketlink-Spalte für freigegebene Affiliate- und Ticket-Deeplinks aktivieren
+- [ ] Preis- und Sale-Änderungen binnen einer Minute auf Website-Ebene automatisch abrufen
+- [ ] Regelmäßigen Katalogcheck um bevorstehende und abgelaufene Sale-Zeiträume ergänzen
+- [ ] Vollständigen Sheet- und Live-Abgleich dokumentieren

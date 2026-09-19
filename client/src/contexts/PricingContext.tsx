@@ -5,6 +5,7 @@ import { createContext, useContext, useMemo } from "react";
 export type PriceSaleOverride = {
   musicalId: string;
   priceFrom: string;
+  ticketLink: string | null;
   saleEnabled: boolean;
   saleLabel: string | null;
   saleDiscount: string | null;
@@ -56,9 +57,16 @@ export function applyPriceSaleOverrides(
     if (!override) return musical;
 
     const priceFrom = override.priceFrom.trim();
+    const ticketLink = override.ticketLink?.trim() || null;
     return {
       ...musical,
       priceFrom,
+      eventimUrl: ticketLink ?? musical.eventimUrl,
+      ticketCtaUrl: ticketLink ?? musical.ticketCtaUrl,
+      keyvisualLink: ticketLink ?? musical.keyvisualLink,
+      awinHeroUrl: ticketLink ?? musical.awinHeroUrl,
+      awinStickyUrl: ticketLink ?? musical.awinStickyUrl,
+      awinBoxUrl: ticketLink ?? musical.awinBoxUrl,
       sale: createSale(override),
       description: replacePrice(musical.description, priceFrom) ?? musical.description,
       seoTitle: replacePrice(musical.seoTitle, priceFrom),
@@ -79,6 +87,8 @@ export function applyPriceSaleOverrides(
 export function PricingProvider({ children }: { children: React.ReactNode }) {
   const { data: overrides = [], isLoading } = trpc.priceSales.listPublic.useQuery(undefined, {
     staleTime: 60_000,
+    refetchInterval: 60_000,
+    refetchOnWindowFocus: true,
   });
 
   const value = useMemo(

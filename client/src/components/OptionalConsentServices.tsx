@@ -8,6 +8,12 @@ const TRADEDOUBLER_SCRIPT_ID = "tradedoubler-link-converter";
 const GOOGLE_FONTS_ID = "welovemusicals-google-fonts";
 const UMAMI_SCRIPT_ID = "welovemusicals-umami";
 const AFFILIATE_EXCLUDED_PATHS = new Set(["/impressum", "/datenschutz"]);
+// Direct product pages only. visit.stage-entertainment.de already is a
+// TradeDoubler destination and must never be converted a second time.
+const UNTRACKED_STAGE_DESTINATION_HOSTS = new Set([
+  "stage-entertainment.de",
+  "www.stage-entertainment.de",
+]);
 
 export function shouldLoadAffiliateTrackingForPath(pathname: string, search = "") {
   const isWebdevPreview = new URLSearchParams(search).get("from_webdev") === "1";
@@ -39,9 +45,7 @@ function startTradeDoublerConverter(analyticsConsent: boolean) {
         continue;
       }
 
-      const isStageDestination =
-        destination.hostname === "stage-entertainment.de" ||
-        destination.hostname.endsWith(".stage-entertainment.de");
+      const isStageDestination = UNTRACKED_STAGE_DESTINATION_HOSTS.has(destination.hostname);
       if (!isStageDestination) continue;
       link.href = `https://visit.stage-entertainment.de/click?p=394206&a=3492604&ttid=18&url=${encodeURIComponent(destination.href)}`;
     }

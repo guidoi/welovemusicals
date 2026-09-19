@@ -245,7 +245,8 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(consentServices).toContain("new MutationObserver(convertStageLinksWithFallback)");
     expect(consentServices).not.toContain("new MutationObserver(convertEligibleLinks)");
     expect(consentServices).toContain("https://visit.stage-entertainment.de/click?p=394206");
-    expect(consentServices).toContain('destination.hostname.endsWith(".stage-entertainment.de")');
+    expect(consentServices).toContain("UNTRACKED_STAGE_DESTINATION_HOSTS");
+    expect(consentServices).toContain('"www.stage-entertainment.de"');
     expect(consentServices).toContain("convertStageLinksWithFallback();");
   });
 });

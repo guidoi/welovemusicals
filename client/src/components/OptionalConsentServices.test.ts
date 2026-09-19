@@ -28,6 +28,8 @@ describe("Affiliate-Dienste auf Rechtsseiten", () => {
     expect(source).toContain("catch {");
     expect(source).toContain("new MutationObserver(convertStageLinksWithFallback)");
     expect(source).not.toContain("new MutationObserver(convertEligibleLinks)");
+    expect(source).toContain("UNTRACKED_STAGE_DESTINATION_HOSTS");
+    expect(source).toContain("visit.stage-entertainment.de already is a");
   });
 
   it("misst die Verfügbarkeit optionaler Partner-Skripte nur über die consent-gebundene Analysehilfe", () => {

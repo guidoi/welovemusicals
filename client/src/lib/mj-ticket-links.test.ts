@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getMusicalBySlug, MJ_STAGE_TEXT_LINK_URL } from "./data";
+import { createAwinLink, getMusicalBySlug, MJ_STAGE_TEXT_LINK_URL } from "./data";
 
 describe("MJ Stage-Entertainment-Textlink", () => {
   it("verwendet die neue TradeDoubler-Kampagne an allen Ticket-CTAs außerhalb von Banneranzeigen", () => {
@@ -18,5 +18,6 @@ describe("MJ Stage-Entertainment-Textlink", () => {
       mj?.awinBoxUrl,
       mj?.tourDates?.[0]?.eventimUrl,
     ]).toEqual(Array(7).fill(MJ_STAGE_TEXT_LINK_URL));
+    expect(createAwinLink(MJ_STAGE_TEXT_LINK_URL)).toBe(MJ_STAGE_TEXT_LINK_URL);
   });
 });

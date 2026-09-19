@@ -222,7 +222,7 @@ export default function MusicalDetail() {
                   className="inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold"
                 >
                   <Tag className="h-3.5 w-3.5" />
-                  {experienceCategory.label}
+                  {experienceCategory.shortLabel}
                 </span>
               )}
             </div>
@@ -638,7 +638,7 @@ export default function MusicalDetail() {
             </h2>
             {experienceCategory && (
               <p className="-mt-5 mb-6 text-sm text-cream/90">
-                <span className="font-medium text-gold">{experienceCategory.label}</span> · {experienceCategory.recommendationIntro}
+                <span className="font-medium text-gold">{experienceCategory.shortLabel}</span> · {experienceCategory.recommendationIntro}
               </p>
             )}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

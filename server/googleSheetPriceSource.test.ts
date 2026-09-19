@@ -13,13 +13,14 @@ function response(csv: string, status = 200) {
 }
 
 describe("Google-Sheets-Preisquelle", () => {
-  it("parst Google-CSV sicher mit Anführungszeichen und bewahrt nur Website-Felder", () => {
+  it("parst Google-CSV sicher mit Anführungszeichen und bewahrt nur freigegebene Website-Felder", () => {
     const overrides = parseGoogleSheetPriceCsv(`${header}\n${validRow}`);
 
     expect(overrides).toEqual([
       {
         musicalId: "eiskoenigin",
         priceFrom: "39,99",
+        ticketLink: null,
         saleEnabled: true,
         saleLabel: "SALE",
         saleDiscount: "BIS 40 %",
@@ -28,18 +29,18 @@ describe("Google-Sheets-Preisquelle", () => {
         saleEndsAt: "2026-09-21",
       },
     ]);
-    expect(Object.keys(overrides[0]!)).not.toContain("ticketLink");
     expect(JSON.stringify(overrides)).not.toContain("redaktionell privat");
     expect(parseCsv('a,"b,c"\n1,2')).toEqual([["a", "b,c"], ["1", "2"]]);
   });
 
   it("rekonstruiert unquotierte deutsche Dezimalpreise aus dem veröffentlichten Google-Export", () => {
-    const unquotedPriceRow = "mj-musical,56,99,Ja,BIS 20 %,,,30.09.2026,https://example.test/mj,";
+    const unquotedPriceRow = "mj-musical,56,99,Ja,BIS 20 %,,,30.09.2026,https://www.awin1.com/awclick.php?gid=123,";
 
     expect(parseGoogleSheetPriceCsv(`${header}\n${unquotedPriceRow}`)).toEqual([
       {
         musicalId: "mj-musical",
         priceFrom: "56,99",
+        ticketLink: "https://www.awin1.com/awclick.php?gid=123",
         saleEnabled: true,
         saleLabel: "SALE",
         saleDiscount: "BIS 20 %",
@@ -64,6 +65,7 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "tarzan",
         priceFrom: "66,99",
+        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
@@ -74,6 +76,7 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "koenig-der-loewen",
         priceFrom: "63,99",
+        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
@@ -84,6 +87,7 @@ describe("Google-Sheets-Preisquelle", () => {
       {
         musicalId: "mj-musical",
         priceFrom: "35",
+        ticketLink: null,
         saleEnabled: false,
         saleLabel: null,
         saleDiscount: null,
@@ -92,6 +96,24 @@ describe("Google-Sheets-Preisquelle", () => {
         saleEndsAt: null,
       },
     ]);
+  });
+
+  it("übernimmt nur sichere HTTPS-Ticketlinks aus der öffentlichen Exportspalte", () => {
+    const csv = [
+      header,
+      "mj-musical,56,99,Nein,,,,,https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402,",
+      "tarzan,66,99,Nein,,,,,javascript:alert(1),",
+      "eiskoenigin,39,99,Nein,,,,,https://untrusted.example/tickets,",
+    ].join("\n");
+
+    expect(parseGoogleSheetPriceCsv(csv)).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        musicalId: "mj-musical",
+        ticketLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402",
+      }),
+      expect.objectContaining({ musicalId: "tarzan", ticketLink: null }),
+      expect.objectContaining({ musicalId: "eiskoenigin", ticketLink: null }),
+    ]));
   });
 
   it("verwendet den Cache innerhalb des Intervalls und bei einem späteren Quellfehler den Letztstand", async () => {

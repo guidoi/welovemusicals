@@ -18,6 +18,7 @@ export type PriceSaleOverrideInput = {
 export type PublicPriceSaleOverride = {
   musicalId: string;
   priceFrom: string;
+  ticketLink: string | null;
   saleEnabled: boolean;
   saleLabel: string | null;
   saleDiscount: string | null;
@@ -37,6 +38,7 @@ function mapDatabaseOverride(override: MusicalPriceOverride): PublicPriceSaleOve
   return {
     musicalId: override.musicalId,
     priceFrom: override.priceFrom,
+    ticketLink: null,
     saleEnabled: override.saleEnabled,
     saleLabel: override.saleLabel,
     saleDiscount: override.saleDiscount,

@@ -9,7 +9,7 @@ describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
     expect(musicalDetailSource).toContain("const experienceCategory = getExperienceCategory(musical.experienceCategory);");
     expect(musicalDetailSource).toContain('data-testid="detail-experience-category"');
     expect(musicalDetailSource).toContain('rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold');
-    expect(musicalDetailSource).toContain("{experienceCategory.label}");
+    expect(musicalDetailSource).toContain("{experienceCategory.shortLabel}");
   });
 
   it("zeigt keine früheren Detailseiten-Zusatz-Tags neben der Erlebniswelt", () => {
