@@ -127,7 +127,7 @@ export default function MusicalDetail() {
             <h1 className="font-display text-3xl font-bold text-foreground mb-4">
               Musical nicht gefunden
             </h1>
-            <Link href="/" className="text-accent hover:text-accent/80 transition-colors">
+            <Link href="/" className="text-gold hover:text-gold-light transition-colors">
               Zurück zur Startseite
             </Link>
           </div>
@@ -190,7 +190,7 @@ export default function MusicalDetail() {
       {/* Floating Back Button */}
       <Link
         href="/"
-        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 transition-all duration-200 shadow-lg" style={{color: '#b8944a'}} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor='rgba(0,0,0,0.7)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor='rgba(0,0,0,0.5)')}
+        className="fixed top-20 left-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/35 bg-black/60 text-gold backdrop-blur-sm shadow-lg transition-all duration-200 hover:bg-black/80 hover:text-gold-light"
         aria-label="Zurück zur Übersicht"
       >
         <ArrowLeft className="w-5 h-5" />
@@ -235,15 +235,15 @@ export default function MusicalDetail() {
               {musical.title}
             </motion.h1>
             {musical.subtitle && (
-              <p className="hidden lg:block text-lg italic mb-4" style={{color: 'rgba(184,148,74,0.8)'}}>{musical.subtitle}</p>
+              <p className="mb-4 hidden text-lg italic text-gold/80 lg:block">{musical.subtitle}</p>
             )}
 
-            <div className="flex items-center gap-2 text-white/70">
-              <MapPin className="w-4 h-4" style={{color: '#b8944a'}} />
+            <div className="flex items-center gap-2 text-cream/70">
+              <MapPin className="w-4 h-4 text-gold" />
               {musical.city && musical.venuePerCity ? (
                 <span>
                   {musical.cities?.map((c, i) => (
-                    <span key={c}>{i > 0 && <span style={{color: '#b8944a'}}> &amp; </span>}{c} ({musical.venuePerCity![c]})</span>
+                    <span key={c}>{i > 0 && <span className="text-gold"> &amp; </span>}{c} ({musical.venuePerCity![c]})</span>
                   ))}
                 </span>
               ) : musical.city && musical.venue && !musical.venuePerCity && (!musical.cities || musical.cities.length === 1) ? (
@@ -251,7 +251,7 @@ export default function MusicalDetail() {
               ) : musical.id === 'gloeckner-von-notre-dame' && musical.cities ? (
                 <span>{musical.cities.join(", ")}</span>
               ) : musical.headerCities && musical.cities ? (
-                <span>{musical.headerCities.join(", ")} <span style={{color: '#b8944a'}}>und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span></span>
+                <span>{musical.headerCities.join(", ")} <span className="text-gold">und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span></span>
               ) : (
                 <span>{musical.cities?.join(", ")}</span>
               )}
@@ -269,7 +269,7 @@ export default function MusicalDetail() {
             href={heroTicketLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full border transition-colors duration-200 rounded-sm py-3 text-sm font-semibold tracking-wide" style={{borderColor: '#b8944a', color: '#b8944a'}} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor='#b8944a'; e.currentTarget.style.color='#1a1a1a'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor='transparent'; e.currentTarget.style.color='#b8944a'; }}
+            className="flex w-full items-center justify-center gap-2 rounded-sm border border-gold py-3 text-sm font-semibold tracking-wide text-gold transition-colors duration-200 hover:bg-gold hover:text-background"
           >
             <Ticket className="w-4 h-4" />
             Tickets buchen{musical.priceFrom && <span className="font-normal opacity-75 ml-1">– ab {musical.priceFrom} €</span>}
@@ -303,14 +303,14 @@ export default function MusicalDetail() {
                   {musical.detailHeadline || "Über das Musical"}
                 </h2>
                 {musical.detailDescription ? (
-                  <div className="text-white leading-relaxed text-lg mb-8 space-y-4 md:space-y-6">
+                  <div className="mb-8 space-y-4 text-lg leading-relaxed text-cream/90 md:space-y-6">
                     {musical.detailDescription.split('\n\n').map((paragraph, i) => {
                       // Absätze, die nur aus **Text** bestehen, als Zwischenheadline rendern
                       const headlineMatch = paragraph.match(/^\*\*(.+)\*\*$/);
                       return (
                       <div key={i}>
                         {headlineMatch ? (
-                          <h3 className="font-display text-xl font-bold mt-6 mb-2 tracking-wide" style={{color: '#b8944a'}}>
+                          <h3 className="mt-6 mb-2 font-display text-xl font-bold tracking-wide text-gold">
                             {headlineMatch[1]}
                           </h3>
                         ) : (
@@ -368,7 +368,7 @@ export default function MusicalDetail() {
                     })}
                   </div>
                 ) : (
-                  <p className="text-white leading-relaxed text-lg mb-8">
+                  <p className="mb-8 text-lg leading-relaxed text-cream/90">
                     {musical.description}
                   </p>
                 )}
@@ -418,7 +418,7 @@ export default function MusicalDetail() {
                         <AovoCampaignBanner campaign={aovoCampaign} />
                       )}
                     <p
-                      className={`text-white/80 leading-relaxed mb-4 text-lg ${
+                      className={`mb-4 text-lg leading-relaxed text-cream/80 ${
                         aovoCampaign?.placement === "before-story-paragraph" &&
                         index === aovoCampaign.storyParagraphIndex
                           ? "mt-12"
@@ -462,11 +462,10 @@ export default function MusicalDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="rounded-sm overflow-hidden"
-                style={{ border: '1px solid rgba(212,175,55,0.4)', background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(0,0,0,0) 60%)' }}
+                className="overflow-hidden rounded-sm border border-gold/40 bg-gradient-to-br from-gold/10 to-transparent"
               >
-                <div className="px-6 pt-6 pb-4 border-b" style={{ borderColor: 'rgba(212,175,55,0.2)' }}>
-                  <p className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: 'rgba(212,175,55,0.7)' }}>Das erwartet dich</p>
+                <div className="border-b border-gold/20 px-6 pt-6 pb-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold/70">Das erwartet dich</p>
                   <h3 className="font-display text-xl md:text-2xl font-bold text-white mt-1">Warum {musical.title} ein Erlebnis der Extraklasse ist</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
@@ -475,19 +474,18 @@ export default function MusicalDetail() {
                       key={i}
                       className="flex items-start gap-4 px-6 py-5"
                       style={{
-                        borderRight: i % 2 === 0 ? '1px solid rgba(212,175,55,0.15)' : 'none',
-                        borderBottom: i < musical.uspItems!.length - 2 ? '1px solid rgba(212,175,55,0.15)' : 'none',
+                        borderRight: i % 2 === 0 ? '1px solid oklch(0.78 0.12 85 / 0.15)' : 'none',
+                        borderBottom: i < musical.uspItems!.length - 2 ? '1px solid oklch(0.78 0.12 85 / 0.15)' : 'none',
                       }}
                     >
                       <div
-                        className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center mt-0.5"
-                        style={{ background: 'rgba(212,175,55,0.12)', color: 'rgb(212,175,55)' }}
+                        className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-gold/15 text-gold"
                       >
                         {iconMap[usp.icon] ?? <Star className="w-5 h-5" />}
                       </div>
                       <div>
                         <p className="font-semibold text-white text-sm leading-snug mb-0.5">{usp.title}</p>
-                        <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{usp.text}</p>
+                        <p className="text-sm leading-relaxed text-cream/60">{usp.text}</p>
                       </div>
                     </div>
                   ))}
@@ -507,11 +505,10 @@ export default function MusicalDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="rounded-sm p-8"
-            style={{ border: '1px solid rgb(239, 68, 68)' }}
+            className="rounded-sm border border-red p-8"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Ticket className="w-6 h-6" style={{ color: 'rgb(239, 68, 68)' }} />
+              <Ticket className="w-6 h-6 text-red" />
               <h2 className="font-display text-2xl font-bold text-foreground">
                 Tickets sichern
               </h2>
@@ -524,10 +521,7 @@ export default function MusicalDetail() {
                 href={boxTicketLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-sm transition-colors text-lg text-white"
-                style={{ backgroundColor: 'rgb(239, 68, 68)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+              className="inline-flex items-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark"
               >
                 Tickets
                 <ExternalLink className="w-5 h-5" />
@@ -596,7 +590,7 @@ export default function MusicalDetail() {
                   <p className="text-sm text-muted-foreground mb-4">
                     {city.description}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold" style={{ color: "#b8944a" }}>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
                     <Hotel className="w-4 h-4" />
                     Hotels durchsuchen
                   </span>
@@ -655,7 +649,7 @@ export default function MusicalDetail() {
       {/* Sticky CTA – Mobile only, mit Fade-Transition */}
       {ctaTicketLink && (
         <div
-          className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg transition-all duration-300"
+              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 px-4 py-3 shadow-lg backdrop-blur-sm transition-all duration-300"
           style={{ opacity: showSticky ? 1 : 0, pointerEvents: showSticky ? 'auto' : 'none', transform: showSticky ? 'translateY(0)' : 'translateY(8px)' }}
         >
           <div className="flex items-center gap-3">
@@ -663,10 +657,7 @@ export default function MusicalDetail() {
               href={stickyTicketLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 flex-1 rounded-sm py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200"
-              style={{ backgroundColor: 'rgb(239, 68, 68)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgb(220, 38, 38)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgb(239, 68, 68)')}
+              className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
             >
               <Ticket className="w-4 h-4" />
               Tickets buchen{musical.priceFrom && <span className="font-normal opacity-80 ml-1">– ab {musical.priceFrom} €</span>}

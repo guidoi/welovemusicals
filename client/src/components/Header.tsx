@@ -373,12 +373,9 @@ export default function Header() {
                   <button
                     key={r}
                     onClick={() => setPlzRadius(r)}
-                    className="px-2.5 py-1 text-xs rounded-sm border transition-all"
-                    style={
-                      plzRadius === r
-                        ? { backgroundColor: 'rgba(184,148,74,0.28)', color: '#d4a85a', borderColor: 'rgba(184,148,74,0.70)' }
-                        : { backgroundColor: 'transparent', color: 'rgba(255,255,255,0.65)', borderColor: 'rgba(255,255,255,0.28)' }
-                    }
+                    className={`rounded-sm border px-2.5 py-1 text-xs transition-all ${plzRadius === r
+                      ? "border-gold/70 bg-gold/20 text-gold"
+                      : "border-white/28 bg-transparent text-cream/65"}`}
                   >
                     {r} km
                   </button>

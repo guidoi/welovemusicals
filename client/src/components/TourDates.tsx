@@ -136,7 +136,7 @@ export default function TourDates({
                   variant="outline"
                   size="sm"
                   onClick={() => setSelectedCity("alle")}
-                  className="border" style={{color: '#b8944a', borderColor: 'rgba(184,148,74,0.4)'}} onMouseEnter={(e) => (e.currentTarget.style.backgroundColor='rgba(184,148,74,0.1)')} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor='transparent')}
+                  className="border border-gold/40 text-gold hover:bg-gold/10"
                 >
                   Filter zurücksetzen
                 </Button>
@@ -181,7 +181,7 @@ export default function TourDates({
                       {city}
                     </h3>
                     {firstDate.badge && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider" style={{backgroundColor: 'rgba(184,148,74,0.2)', color: '#b8944a', border: '1px solid rgba(184,148,74,0.4)'}}>
+                      <span className="inline-flex items-center rounded-full border border-gold/40 bg-gold/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold">
                         {firstDate.badge}
                       </span>
                     )}
@@ -190,14 +190,14 @@ export default function TourDates({
 
                 {/* Premiere-Badge wenn vorhanden */}
                 {firstDate.premiereDate && (
-                  <div className="inline-flex items-center gap-1.5 mb-2 px-2.5 py-1 rounded-full border text-[11px] font-bold uppercase tracking-wider" style={{backgroundColor: 'rgba(184,148,74,0.15)', borderColor: 'rgba(184,148,74,0.5)', color: '#b8944a'}}>
-                    <Star className="w-3 h-3" style={{fill: '#b8944a'}} />
+                  <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-gold/50 bg-gold/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-gold">
+                    <Star className="w-3 h-3 fill-gold" />
                     Premiere am {new Date(firstDate.premiereDate + 'T00:00:00').toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
                   </div>
                 )}
 
                 {/* Venue (aus erstem Eintrag – bei gleicher Stadt i.d.R. identisch) */}
-                <p className="text-sm text-white/80 font-medium leading-snug mb-3">
+                <p className="mb-3 text-sm font-medium leading-snug text-cream/80">
                   {firstDate.venue}
                 </p>
 
@@ -208,21 +208,14 @@ export default function TourDates({
                       key={idx}
                       className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
                     >
-                      <p className="text-sm font-semibold" style={{color: '#b8944a'}}>
+                      <p className="text-sm font-semibold text-gold">
                         {date.displayLabel || formatDateRange(date.startDate, date.endDate)}
                       </p>
                       <a
                         href={date.eventimUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="shrink-0 px-5 py-2 font-semibold rounded-sm text-center transition-colors text-white text-sm"
-                        style={{ backgroundColor: "rgb(239, 68, 68)" }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.backgroundColor = "rgb(220, 38, 38)")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.backgroundColor = "rgb(239, 68, 68)")
-                        }
+                        className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
                       >
                         Tickets sichern
                       </a>

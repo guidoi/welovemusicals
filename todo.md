@@ -602,3 +602,9 @@
 
 ## Ruhigere Goldhierarchie in Startseiten-Teasern
 - [x] Top-Musical-Badge und Ticket-CTA in den Teasern reduzieren; Kategorie- und SALE-Badges unverändert beibehalten
+
+## Konsistente Startseiten-Farbpalette
+- [ ] Startseitenelemente auf die Rollenpalette Anthrazit, Creme, Gold und SALE-Rot abstimmen; keine zusätzliche Akzentfarbe einführen
+
+## Seitenübergreifend konsistente Farbpalette
+- [x] Header, Footer, Detail- und Stadtseiten, Consent, Filter und Karten auf die Rollenpalette Anthrazit, Creme, Gold sowie Conversion-Rot für SALE und Tickets angleichen

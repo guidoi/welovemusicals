@@ -21,33 +21,6 @@ interface MusicalCardProps {
   filterAnimationKey?: number;
 }
 
-const categoryLabels: Record<string, string> = {
-  ensuite: "Das Original",
-  "fester-standort": "Das Original",
-  tournee: "Tournee",
-  erwachsene: "Erwachsene",
-  familie: "Familie",
-  kinder: "Kinder",
-};
-
-const categoryColors: Record<string, string> = {
-  ensuite: "bg-gold/20 text-gold",
-  "fester-standort": "bg-gold/20 text-gold",
-  tournee: "bg-burgundy/30 text-burgundy-light",
-  erwachsene: "bg-purple-900/30 text-purple-300",
-  familie: "bg-emerald-900/30 text-emerald-400",
-  kinder: "bg-sky-900/30 text-sky-400",
-};
-
-const categoryIcons: Record<string, string> = {
-  ensuite: "🏛️",
-  "fester-standort": "🏛️",
-  tournee: "🚌",
-  erwachsene: "🎭",
-  familie: "👨‍👩‍👧",
-  kinder: "⭐",
-};
-
 export default function MusicalCard({ musical, index = 0, anchorId, filterAnimationKey }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const reduceMotion = useReducedMotion();
@@ -85,14 +58,14 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
             {/* Sale badge */}
             {hasActiveSale && musical.sale && (
               <div
-                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden border border-red-200/90 bg-[#ef4444] px-2 py-0.5 shadow-lg shadow-red-950/40`}
+                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden bg-red px-2 py-0.5 shadow-lg shadow-red-950/40`}
                 aria-label={`Sale: ${musical.sale.discount}`}
                 data-testid="sale-badge"
                 data-sale-layout="compact"
               >
                 <div className="flex h-full items-center justify-center gap-1">
                   <span data-testid="sale-icon" className="relative grid h-7 w-7 shrink-0 place-items-center" aria-hidden="true">
-                    <Tag className="absolute h-7 w-7 fill-[#991b1b] text-[#991b1b]" strokeWidth={0} />
+                    <Tag className="absolute h-7 w-7 fill-red-dark text-red-dark" strokeWidth={0} />
                     <span className="relative -translate-x-px font-black text-[14px] leading-none text-white">%</span>
                   </span>
                   <span
@@ -108,7 +81,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
             {/* Featured Badge */}
             {musical.featured && (
               <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
-                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm`}>
+                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream backdrop-blur-sm`}>
                   <Star className="h-3 w-3 fill-gold text-gold" />
                   Top-Musical
                 </span>
@@ -145,7 +118,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
             </div>
 
             {/* Description */}
-            <p className="text-sm text-white leading-relaxed line-clamp-2 mb-4">
+            <p className="text-sm text-cream/90 leading-relaxed line-clamp-2 mb-4">
               {musical.description}
             </p>
 
@@ -171,7 +144,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
                 alt={ticketProviderBrand.name}
                 className={`h-8 ${providerLogoWidthClass} w-auto object-contain object-left opacity-90 md:h-7`}
               />
-              <span data-testid="teaser-ticket-cta" className="flex items-center gap-2 text-sm font-semibold text-white/90 transition-colors group-hover:text-white">
+              <span data-testid="teaser-ticket-cta" className="flex items-center gap-2 text-sm font-semibold text-cream transition-colors group-hover:text-white">
                 Infos &amp; Tickets
                 <span
                   data-testid="teaser-ticket-cta-icon"

@@ -407,7 +407,7 @@ export default function Home() {
                 <span className="sm:hidden">Filter</span>
                 <span className="hidden sm:inline">Filter anpassen</span>
               </button>
-              <p className="min-w-0 truncate text-xs text-white/80" aria-live="polite">
+              <p className="min-w-0 truncate text-xs text-cream/80" aria-live="polite">
                 <span className="font-semibold text-gold">{stickyFilterSummary}</span>
                 <span className="hidden sm:inline"> · {filteredMusicals.length} {filteredMusicals.length === 1 ? "Show" : "Shows"}</span>
               </p>
@@ -458,7 +458,7 @@ export default function Home() {
               <span className="gold-gradient">Musical-Erlebnisse</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
+            <p className="text-lg md:text-xl text-cream/75 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
               {HOME_HERO_TEASER}{" "}
               <span className="block md:inline text-gold font-semibold">Licht aus, Magie an!</span>
             </p>
@@ -467,11 +467,11 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
               <div className="flex items-center gap-2">
                 <Music className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
+                <span className="text-cream/80 text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-gold" />
-                <span className="text-white/80 text-sm">{(() => { const s = new Set<string>(); managedMusicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
+                <span className="text-cream/80 text-sm">{(() => { const s = new Set<string>(); managedMusicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
               </div>
 
             </div>
@@ -486,7 +486,7 @@ export default function Home() {
             </div>
 
             <div className="mt-7 hidden md:block">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/65">Entdecke nach Erlebniswelt</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream/65">Entdecke nach Erlebniswelt</p>
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={handleHeroNavigation}
@@ -532,8 +532,8 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Welche Show passt zu dir?
           </h2>
-          <p className={`max-w-2xl text-white ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
-            {dynamicDiscoveryIntro} <span className="font-medium text-gold-light">{dynamicResultHint}</span>
+          <p className={`max-w-2xl text-cream/90 ${includeHighlightsInOverview ? "mb-3" : "mb-10"}`}>
+            {dynamicDiscoveryIntro} <span className="font-medium text-cream">{dynamicResultHint}</span>
           </p>
           {includeHighlightsInOverview && (
             <button
@@ -706,7 +706,7 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Musical-Städte in Deutschland, Österreich und der Schweiz
           </h2>
-          <p className="text-white max-w-2xl mb-10">
+          <p className="max-w-2xl text-cream/90 mb-10">
             Vom Hamburger Hafen bis zu den Prachtboulevards von Wien – entdecke die schönsten Musical-Metropolen und mach deine Reise mit dem perfekten Hotel zu einem Erlebnis, das du nie vergisst!
           </p>
 

@@ -95,7 +95,7 @@ export default function CityDetail() {
       {/* Floating Back Button */}
       <Link
         href="/"
-        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-primary hover:bg-black/70 hover:text-primary/80 transition-all duration-200 shadow-lg"
+        className="fixed top-20 left-4 z-50 flex items-center justify-center w-10 h-10 rounded-full border border-gold/35 bg-black/60 text-gold backdrop-blur-sm transition-all duration-200 hover:bg-black/80 hover:text-gold-light shadow-lg"
         aria-label="Zurück zur Übersicht"
       >
         <ArrowLeft className="w-5 h-5" />
@@ -126,14 +126,14 @@ export default function CityDetail() {
             <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-3">
               Musicals in {city.name}
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl">
+            <p className="text-lg text-cream/75 max-w-2xl">
               {city.description}
             </p>
 
             <div className="flex flex-wrap items-center gap-6 mt-6">
               <div className="flex items-center gap-2">
                 <Music className="w-4 h-4 text-gold" />
-                <span className="text-white/80 text-sm">
+                <span className="text-cream/80 text-sm">
                   {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
                 </span>
               </div>
@@ -206,10 +206,10 @@ export default function CityDetail() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <h3 className="font-display text-sm font-semibold text-white group-hover:text-gold transition-colors">
+                  <h3 className="font-display text-sm font-semibold text-cream group-hover:text-gold transition-colors">
                     {otherCity.name}
                   </h3>
-                  <p className="text-xs text-white/60">
+                  <p className="text-xs text-cream/60">
                     {getActiveMusicalCountByCity(otherCity.name)} {getActiveMusicalCountByCity(otherCity.name) === 1 ? "Musical" : "Musicals"}
                   </p>
                 </div>

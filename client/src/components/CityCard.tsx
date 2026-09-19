@@ -50,20 +50,20 @@ export default function CityCard({ city, index = 0 }: CityCardProps) {
               <h3 className="font-display text-xl font-bold text-white">{city.name}</h3>
             </div>
 
-            <p className="text-sm text-white/70 line-clamp-2 mb-3 leading-relaxed">
+            <p className="text-sm text-cream/70 line-clamp-2 mb-3 leading-relaxed">
               {city.description}
             </p>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <Music className="w-3.5 h-3.5 text-gold/70" />
-                <span className="text-xs text-white/60">
+                <span className="text-xs text-cream/60">
                   {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Hotel className="w-3.5 h-3.5 text-gold/70" />
-                <span className="text-xs text-gold group-hover:text-gold-light transition-colors">
+                <span className="text-xs text-cream/90 transition-colors group-hover:text-cream">
                   Hotels
                 </span>
               </div>

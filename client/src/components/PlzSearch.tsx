@@ -322,7 +322,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
                 if (!e.target.value) handleClear();
               }}
               onKeyDown={(e) => { if (e.key === "Enter") handleSearch(); }}
-              className="w-full pl-9 pr-8 py-3 text-sm rounded-sm border border-gold/60 bg-black/30 text-white placeholder:text-white/60 focus:border-gold outline-none transition-colors backdrop-blur-sm"
+              className="w-full pl-9 pr-8 py-3 text-sm rounded-sm border border-gold/60 bg-black/30 text-cream placeholder:text-cream/60 focus:border-gold outline-none transition-colors backdrop-blur-sm"
             />
             {(inputPlz || state.active) && (
               <button onClick={handleClear} className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors">
@@ -333,8 +333,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
           <button
             onClick={handleSearch}
             disabled={loading || inputPlz.length < 4}
-            className="px-4 py-3 rounded-sm text-sm font-semibold transition-all disabled:opacity-40 flex items-center gap-2"
-            style={{ backgroundColor: '#c9952a', color: '#0a0a0a' }}
+            className="flex items-center gap-2 rounded-sm bg-gold px-4 py-3 text-sm font-semibold text-background transition-colors disabled:opacity-40 hover:bg-gold-light"
           >
             {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
             <span className="hidden sm:inline">Suchen</span>
@@ -343,7 +342,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
             onClick={handleGeolocate}
             disabled={loading}
             title="Meinen Standort verwenden"
-              className="px-3 py-3 rounded-sm text-sm transition-all disabled:opacity-40 border border-gold/70 text-gold hover:text-yellow-300 hover:border-gold backdrop-blur-sm bg-black/20"
+              className="rounded-sm border border-gold/70 bg-black/20 px-3 py-3 text-sm text-gold transition-all disabled:opacity-40 hover:border-gold hover:text-gold-light backdrop-blur-sm"
           >
             <Navigation className="w-4 h-4" />
           </button>
@@ -354,12 +353,9 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
             <button
               key={r}
               onClick={() => handleRadiusChange(r)}
-              className="px-2.5 py-1 text-xs rounded-sm border transition-all"
-              style={
-                state.radius === r
-                  ? { backgroundColor: 'rgba(212,168,90,0.35)', color: '#f0c96a', borderColor: 'rgba(212,168,90,0.90)' }
-                  : { backgroundColor: 'rgba(0,0,0,0.15)', color: 'rgba(255,255,255,0.85)', borderColor: 'rgba(255,255,255,0.45)' }
-              }
+              className={`rounded-sm border px-2.5 py-1 text-xs transition-all ${state.radius === r
+                ? "border-gold/80 bg-gold/20 text-gold-light"
+                : "border-white/45 bg-black/15 text-cream/85"}`}
             >
               {r} km
             </button>
@@ -409,8 +405,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
         <button
           onClick={handleSearch}
           disabled={loading || inputPlz.length < 4}
-          className="px-3 py-2 rounded-sm text-sm font-medium transition-all disabled:opacity-40"
-          style={{ backgroundColor: 'rgba(184,148,74,0.15)', color: '#b8944a', border: '1px solid rgba(184,148,74,0.3)' }}
+          className="rounded-sm border border-gold/40 bg-gold/15 px-3 py-2 text-sm font-medium text-gold transition-all disabled:opacity-40 hover:bg-gold/20"
         >
           {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
         </button>
@@ -428,12 +423,9 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
           <button
             key={r}
             onClick={() => handleRadiusChange(r)}
-            className="px-2.5 py-1 text-xs rounded-sm border transition-all"
-            style={
-              state.radius === r
-                ? { backgroundColor: 'rgba(184,148,74,0.28)', color: '#d4a85a', borderColor: 'rgba(184,148,74,0.70)' }
-                : { backgroundColor: 'transparent', color: 'rgba(255,255,255,0.65)', borderColor: 'rgba(255,255,255,0.28)' }
-            }
+            className={`rounded-sm border px-2.5 py-1 text-xs transition-all ${state.radius === r
+              ? "border-gold/70 bg-gold/20 text-gold"
+              : "border-white/28 bg-transparent text-cream/65"}`}
           >
             {r} km
           </button>
@@ -441,7 +433,7 @@ export default function PlzSearch({ state, onChange, compact = false }: PlzSearc
       </div>
       {error && <p className="text-xs text-red-400">{error}</p>}
       {state.active && state.originCoords && (
-        <p className="text-xs" style={{ color: '#b8944a' }}>
+        <p className="text-xs text-gold">
           <MapPin className="w-3 h-3 inline mr-1" />
           Umkreis {state.radius} km um PLZ {state.plz} {state.country && `(${state.country})`}
           {state.originCity && ` · Nähe ${state.originCity}`}
