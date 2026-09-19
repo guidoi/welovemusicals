@@ -96,13 +96,7 @@ export default function MusicalFilters({
   const visibleQuickCities = QUICK_CITY_NAMES.filter((city) => countryFilter === "alle" || getCityCountry(city) === countryFilter);
 
   return (
-    <section aria-labelledby="discover-filter-heading" className="space-y-5" data-testid="experience-filters">
-      <div>
-        <h3 id="discover-filter-heading" className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
-          Erlebniswelt
-        </h3>
-      </div>
-
+    <section aria-label="Musical-Auswahl" className="space-y-5" data-testid="experience-filters">
       <div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Musical-Kategorie">
           <button

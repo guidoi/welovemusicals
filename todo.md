@@ -690,3 +690,6 @@
 
 ## Natürlicher Umbruch des Ergebnisankers
 - [x] Ergebnisanker als zusammenhängenden Textfluss mit festem Pfeil links gestalten, damit Mobilumbrüche natürlich erfolgen
+
+## Beschriftungsfreie Erlebnis-Buttons
+- [x] Zusatzüberschriften zu den Erlebnis-Buttons im Hero und Filterkasten entfernen; Buttonauswahl kompakt beibehalten

@@ -5,15 +5,17 @@ const homeSource = readFileSync(new URL("./Home.tsx", import.meta.url), "utf8");
 const filterSource = readFileSync(new URL("../components/MusicalFilters.tsx", import.meta.url), "utf8");
 
 describe("Startseiten-Erlebnisfilter", () => {
-  it("nutzt durchgehend sichtbare Erlebniswelten statt technischer Kategorie-Dropdowns", () => {
+  it("nutzt sichtbare Auswahlbuttons ohne zusätzliche Erlebniswelt-Beschriftung", () => {
     expect(homeSource).toContain('rounded-2xl border border-gold/20 bg-card/60');
     expect(homeSource).toContain('const dynamicDiscoveryHeadline = selectedExperienceCategory?.discoveryHeadline ?? "Welche Show passt zu dir?";');
     expect(homeSource).toContain("const dynamicDiscoveryIntro = selectedExperienceCategory");
     expect(homeSource).toContain('import { getDiscoveryResultHint } from "@/lib/discovery-result-hint";');
     expect(homeSource).toContain("const dynamicResultHint = getDiscoveryResultHint({");
-    expect(filterSource).toContain("Erlebniswelt");
+    expect(homeSource).not.toContain("Entdecke nach Erlebniswelt");
+    expect(filterSource).toContain('aria-label="Musical-Auswahl"');
+    expect(filterSource).not.toContain("Erlebniswelt");
+    expect(filterSource).not.toContain("discover-filter-heading");
     expect(filterSource).not.toContain('data-testid="filter-result-count"');
-    expect(filterSource).not.toContain('uppercase tracking-[0.14em] text-muted-foreground">Erlebniswelt</p>');
     expect(filterSource).toContain("EXPERIENCE_CATEGORIES");
     expect(filterSource).toContain("category.shortLabel");
     expect(filterSource).not.toContain('hidden sm:inline">{category.label}</span>');

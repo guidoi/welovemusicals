@@ -458,8 +458,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-7 hidden md:block">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream/65">Entdecke nach Erlebniswelt</p>
+            <div className="mt-5 hidden md:block">
               <HeroAnchorNavigation
                 items={heroNavigationItems}
                 onNavigate={handleHeroNavigation}
