@@ -684,3 +684,6 @@
 
 ## Ergebniszahl im ungefüllten Logoherz
 - [x] Ergebniszahl in einem vergrößerten, ungefüllten roten Logoherz mit weißer Zahl darstellen
+
+## Goldene Ergebniszahl im Fließtext
+- [x] Herzsymbol aus dem Ergebnisanker entfernen und die dynamische Zahl responsiv inline in Gold hervorheben

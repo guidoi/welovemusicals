@@ -101,14 +101,14 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).not.toContain('resultCount');
   });
 
-  it("führt mit einem cremeweißen, klickbaren Ergebnisanker und einem goldenen Pfeil", () => {
+  it("führt mit einem cremeweißen, klickbaren Ergebnisanker, goldener Zahl und goldenem Pfeil", () => {
     expect(homeSource).toContain('data-testid="result-anchor-link"');
     expect(homeSource).toContain('inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90');
     expect(homeSource).toContain('<ArrowDown className="h-4 w-4 shrink-0 text-gold');
-    expect(homeSource).toContain('data-testid="result-count-heart"');
-    expect(homeSource).toContain('fill: "none", stroke: "rgb(239, 68, 68)", strokeWidth: 2.5');
-    expect(homeSource).toContain('h-7 w-8');
-    expect(homeSource).toContain('text-xs font-extrabold leading-none text-white');
+    expect(homeSource).toContain('data-testid="result-count"');
+    expect(homeSource).toContain('font-extrabold text-gold');
+    expect(homeSource).not.toContain('data-testid="result-count-heart"');
+    expect(homeSource).not.toContain('<Heart');
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {

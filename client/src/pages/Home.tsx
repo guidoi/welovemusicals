@@ -6,7 +6,6 @@ import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
-  Heart,
   SlidersHorizontal,
   Star,
   MapPin,
@@ -518,18 +517,8 @@ export default function Home() {
           >
             <ArrowDown className="h-4 w-4 shrink-0 text-gold transition-transform duration-150 group-hover:translate-y-0.5" aria-hidden="true" />
             <span>{dynamicResultHint.beforeCount}</span>
-            <span
-              data-testid="result-count-heart"
-              aria-hidden="true"
-              className="relative inline-flex h-7 w-8 shrink-0 items-center justify-center"
-            >
-              <Heart
-                className="absolute h-7 w-8"
-                style={{ fill: "none", stroke: "rgb(239, 68, 68)", strokeWidth: 2.5 }}
-              />
-              <span className="relative z-10 text-xs font-extrabold leading-none text-white">
-                {dynamicResultHint.count}
-              </span>
+            <span data-testid="result-count" className="font-extrabold text-gold">
+              {dynamicResultHint.count}
             </span>
             <span>{dynamicResultHint.afterCount}</span>
           </button>
