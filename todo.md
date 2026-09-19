@@ -623,3 +623,6 @@
 
 ## Cremeweiße Ergebniszeile
 - [x] Dynamischen Ergebnis-Hinweis in Cremeweiß wie den Fließtext ausgeben; Orientierungspfeil dezent gold belassen
+
+## Redaktionell geschärfte Erlebniswelten
+- [x] Texte der fünf Erlebniswelten für Auswahl, Einführung und Empfehlungen emotionaler sowie konkreter formulieren

@@ -35,6 +35,14 @@ describe("Erlebnis-Kategorien", () => {
     expect(EXPERIENCE_CATEGORIES.every((category) => category.recommendationIntro.length > 24)).toBe(true);
   });
 
+  it("unterscheidet die Erlebniswelten mit konkreten redaktionellen Bildern", () => {
+    expect(getExperienceCategory("blockbuster-spektakel")?.description).toContain("Gänsehaut im Saal");
+    expect(getExperienceCategory("kult-klassiker")?.description).toContain("Zeitlose Lieblingsshows");
+    expect(getExperienceCategory("pop-rock-filmhits")?.description).toContain("Welthits");
+    expect(getExperienceCategory("familie-maerchen-magie")?.description).toContain("Zusammen staunen");
+    expect(getExperienceCategory("besondere-geschichten")?.description).toContain("Starke Figuren");
+  });
+
   it("ordnet jedes aktive Musical genau einer Erlebniswelt zu", () => {
     const activeMusicals = getActiveMusicals();
     expect(activeMusicals).toHaveLength(ACTIVE_MUSICAL_IDS.length);
