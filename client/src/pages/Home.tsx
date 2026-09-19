@@ -521,10 +521,13 @@ export default function Home() {
             <span
               data-testid="result-count-heart"
               aria-hidden="true"
-              className="relative inline-flex h-6 w-7 shrink-0 items-center justify-center"
+              className="relative inline-flex h-7 w-8 shrink-0 items-center justify-center"
             >
-              <Heart className="absolute h-6 w-7 fill-red-dark/80 text-red" strokeWidth={1.75} />
-              <span className="relative z-10 text-[10px] font-bold leading-none text-gold-light">
+              <Heart
+                className="absolute h-7 w-8"
+                style={{ fill: "none", stroke: "rgb(239, 68, 68)", strokeWidth: 2.5 }}
+              />
+              <span className="relative z-10 text-xs font-extrabold leading-none text-white">
                 {dynamicResultHint.count}
               </span>
             </span>

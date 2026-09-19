@@ -106,8 +106,9 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(homeSource).toContain('inline-flex items-center gap-2 text-left text-sm font-semibold text-cream/90');
     expect(homeSource).toContain('<ArrowDown className="h-4 w-4 shrink-0 text-gold');
     expect(homeSource).toContain('data-testid="result-count-heart"');
-    expect(homeSource).toContain('fill-red-dark/80 text-red');
-    expect(homeSource).toContain('text-[10px] font-bold leading-none text-gold-light');
+    expect(homeSource).toContain('fill: "none", stroke: "rgb(239, 68, 68)", strokeWidth: 2.5');
+    expect(homeSource).toContain('h-7 w-8');
+    expect(homeSource).toContain('text-xs font-extrabold leading-none text-white');
   });
 
   it("blendet aktualisierte Teaser dezent und mit reduzierter Bewegungsoption ein", () => {

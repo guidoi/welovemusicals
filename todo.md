@@ -681,3 +681,6 @@
 - [x] Erlebniswelt-Buttons im unteren Filterkasten mit den kompakten Hero-Begriffen synchronisieren; ausführliche Kategorien in Inhaltskontexten beibehalten
 ## Familie vor Pop, Rock & Film
 - [x] Erlebniswelt „Familie & Märchen“ vor „Pop, Rock & Film“ in Hero- und Filter-Navigation auf Desktop und Mobil sortieren
+
+## Ergebniszahl im ungefüllten Logoherz
+- [x] Ergebniszahl in einem vergrößerten, ungefüllten roten Logoherz mit weißer Zahl darstellen
