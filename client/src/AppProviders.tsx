@@ -21,14 +21,17 @@ function redirectToLoginIfUnauthorized(error: unknown) {
 }
 
 /**
- * Public Pages API calls must not pick up a stale cookie-specific cache variant.
- * Same-origin retains the local Express authentication flow while leaving public
- * price and sale requests independent from cross-origin session cookies.
+ * The public Pages price API must not pick up a cookie-specific cache variant.
+ * Keep credentials for OAuth-protected procedures, but omit them specifically for
+ * the public price query that is served by the Cloudflare Pages Function.
  */
 export function trpcFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
+  const requestUrl = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
+  const isPublicPriceQuery = requestUrl.includes("/priceSales.listPublic");
+
   return globalThis.fetch(input, {
     ...(init ?? {}),
-    credentials: "same-origin",
+    credentials: isPublicPriceQuery ? "omit" : "include",
   });
 }
 

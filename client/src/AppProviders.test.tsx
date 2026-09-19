@@ -18,7 +18,7 @@ describe("AppProviders", () => {
     ).not.toThrow();
   });
 
-  it("sendet öffentliche tRPC-Anfragen ohne mitgesendete Session-Cookies", async () => {
+  it("sendet die öffentliche Preisabfrage ohne Session-Cookies", async () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response("{}"));
     vi.stubGlobal("fetch", fetchMock);
 
@@ -26,7 +26,19 @@ describe("AppProviders", () => {
 
     expect(fetchMock).toHaveBeenCalledWith(
       "/api/trpc/priceSales.listPublic",
-      expect.objectContaining({ credentials: "same-origin" }),
+      expect.objectContaining({ credentials: "omit" }),
+    );
+  });
+
+  it("behält Sitzungs-Cookies für geschützte tRPC-Prozeduren", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(new Response("{}"));
+    vi.stubGlobal("fetch", fetchMock);
+
+    await trpcFetch("/api/trpc/auth.me");
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      "/api/trpc/auth.me",
+      expect.objectContaining({ credentials: "include" }),
     );
   });
 });
