@@ -629,3 +629,6 @@
 
 ## Lesbare Empfehlungs-Subline
 - [x] Empfehlungseinleitung auf Detailseiten von Grau auf kontrastreiches Cremeweiß umstellen und prüfen
+
+## Einheitliche Stadt-Ticket-CTAs
+- [x] Termin- und Stadt-CTAs auf Detailseiten wieder mit „Tickets sichern“ beschriften; Sale nur an zentralen Angebots-CTAs zeigen

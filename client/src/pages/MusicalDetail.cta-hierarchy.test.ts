@@ -15,4 +15,9 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
     expect(source).toContain("data-testid=\"detail-experience-category\"");
     expect(source).toContain("border border-gold bg-transparent");
   });
+
+  it("belässt die Ticket-CTAs an einzelnen Spielorten bei der ruhigen Standardbeschriftung", () => {
+    expect(source).toContain('<TourDates tourDates={musical.tourDates}');
+    expect(source).not.toContain('ticketCtaLabel={ticketCta.label}');
+  });
 });

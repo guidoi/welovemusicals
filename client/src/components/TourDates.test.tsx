@@ -28,7 +28,7 @@ describe("TourDates", () => {
     expect(markup).toContain("focus-within:border-gold");
   });
 
-  it("übernimmt einen dynamischen Angebots-CTA für alle passenden Tourtermine", () => {
+  it("nutzt auch für weitere Terminlisten den einheitlichen Stadt-CTA", () => {
     const markup = renderToStaticMarkup(
       <TourDates
         tourDates={[
@@ -39,10 +39,10 @@ describe("TourDates", () => {
             eventimUrl: "https://example.com/tickets",
           },
         ]}
-        ticketCtaLabel="SALE · 2 FÜR 1"
       />,
     );
 
-    expect(markup).toContain("SALE · 2 FÜR 1");
+    expect(markup).toContain("Tickets sichern");
+    expect(markup).not.toContain("SALE · 2 FÜR 1");
   });
 });
