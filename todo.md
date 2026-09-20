@@ -718,3 +718,7 @@
 
 ## Startseiten-SEO
 - [x] Google-Snippet der Startseite auf „Musicals 2026/2027: Shows, Termine & Tickets“ sowie einen nutzenorientierten Beschreibungstext mit Terminen, Spielorten und Tickets umstellen
+
+## Google-Bild- und Crawling-Signale
+- [x] Startseitenbild für Google und Social Media auf das repräsentative König-der-Löwen-Motiv mit Rafiki ausrichten; Bild-Metadaten, primäres Seitenbild und große Bildvorschau ergänzen
+- [x] We Will Rock You nach Saisonende aus der öffentlichen Sitemap entfernen und gegen Rückkehr absichern

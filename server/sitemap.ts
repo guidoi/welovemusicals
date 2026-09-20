@@ -13,7 +13,6 @@ const musicalSlugs = [
   "tarzan",
   "zurueck-in-die-zukunft",
   "eiskoenigin",
-  "we-will-rock-you",
   "wir-sind-am-leben",
   "der-teufel-traegt-prada",
   "bibi-tina",
