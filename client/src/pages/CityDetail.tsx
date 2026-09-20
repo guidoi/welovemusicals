@@ -22,6 +22,7 @@ import SchemaOrgCity from "@/components/SchemaOrgCity";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import TicketsAndHotel from "@/components/TicketsAndHotel";
 import { CITY_PROGRAM_SUBLINE, getCityProgramHeading } from "@/lib/city-program-heading";
+import { getCitySeo } from "@/lib/city-seo";
 import { SHOW_CITY_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 
@@ -45,12 +46,9 @@ export default function CityDetail() {
 
   // Dynamische SEO-Meta-Tags
   const musicalCount = city ? getActiveMusicalCountByCity(city.name, managedMusicals) : 0;
-  const seoTitle = city
-    ? `Musicals in ${city.name} – Tickets & Spielorte | We Love Musicals`
-    : "Stadt nicht gefunden | We Love Musicals";
-  const seoDescription = city
-    ? `${musicalCount > 0 ? `${musicalCount} Musical${musicalCount !== 1 ? 's' : ''} in ${city.name}` : `Musicals in ${city.name}`} – ${city.description.length > 100 ? city.description.slice(0, 97) + '...' : city.description}`
-    : "";
+  const citySeo = city ? getCitySeo(city, musicalCount) : null;
+  const seoTitle = citySeo?.title ?? "Stadt nicht gefunden | We Love Musicals";
+  const seoDescription = citySeo?.description ?? "";
   const canonicalUrl = city
     ? `https://welovemusicals.com/stadt/${params.slug}`
     : undefined;
@@ -124,7 +122,7 @@ export default function CityDetail() {
             </div>
 
             <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-3">
-              Musicals in {city.name}
+              {citySeo?.heading}
             </h1>
             <p className="text-lg text-cream/75 max-w-2xl">
               {city.description}

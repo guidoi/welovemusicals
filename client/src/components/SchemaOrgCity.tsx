@@ -4,6 +4,7 @@
  */
 import { useEffect } from "react";
 import type { City, Musical } from "@/lib/data";
+import { getCitySeo } from "@/lib/city-seo";
 
 interface SchemaOrgCityProps {
   city: City;
@@ -36,6 +37,48 @@ export function getCityBreadcrumbItems(city: Pick<City, "name" | "slug">) {
   ];
 }
 
+export function getCityCollectionPageSchema(city: City, musicals: Musical[]) {
+  const BASE_URL = "https://welovemusicals.com";
+  const pageUrl = `${BASE_URL}/stadt/${city.slug}`;
+  const seo = getCitySeo(city, musicals.length);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: seo.title,
+    description: seo.description,
+    inLanguage: "de-DE",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      name: "We Love Musicals",
+      url: `${BASE_URL}/`,
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      contentUrl: city.image,
+      caption: `Musicals in ${city.name}`,
+    },
+    about: {
+      "@type": "Thing",
+      name: `Musicals in ${city.name}`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: `Aktuelle Musicals in ${city.name}`,
+      numberOfItems: musicals.length,
+      itemListElement: musicals.map((musical, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `${BASE_URL}/musical/${musical.slug}`,
+        name: musical.title,
+      })),
+    },
+  };
+}
+
 export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
   useEffect(() => {
     // Entferne vorherige JSON-LD Skripte dieser Seite
@@ -45,7 +88,15 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
     const BASE_URL = "https://welovemusicals.com";
     const pageUrl = `${BASE_URL}/stadt/${city.slug}`;
 
-    // 1. TouristDestination für die Stadt
+    // 1. CollectionPage für die lokale Suchintention und die aktuelle Show-Auswahl
+    const collectionPageEl = document.createElement("script");
+    collectionPageEl.type = "application/ld+json";
+    collectionPageEl.setAttribute("data-schema-org-city", "collection-page");
+    collectionPageEl.textContent = JSON.stringify(getCityCollectionPageSchema(city, musicals));
+    document.head.appendChild(collectionPageEl);
+    scripts.push(collectionPageEl);
+
+    // 2. TouristDestination für die Stadt
     const touristSchema = {
       "@context": "https://schema.org",
       "@type": "TouristDestination",
@@ -73,7 +124,7 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
     document.head.appendChild(touristEl);
     scripts.push(touristEl);
 
-    // 2. MusicEvent-Liste für alle Tourtermine in dieser Stadt
+    // 3. MusicEvent-Liste für alle Tourtermine in dieser Stadt
     const cityTourDates = musicals.flatMap((musical) =>
       (musical.tourDates || [])
         .filter((d) => d.city === city.name)
@@ -127,7 +178,7 @@ export default function SchemaOrgCity({ city, musicals }: SchemaOrgCityProps) {
       scripts.push(eventEl);
     }
 
-    // 3. BreadcrumbList
+    // 4. BreadcrumbList
     const breadcrumbSchema = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

@@ -16,4 +16,11 @@ describe("öffentliche Sitemap", () => {
     const sitemap = readFileSync(new URL("../client/public/sitemap.xml", import.meta.url), "utf8");
     expect(sitemap).not.toContain("/musical/we-will-rock-you");
   });
+
+  it("markiert die aktualisierten Stadtseiten mit einem aussagekräftigen Änderungsdatum", () => {
+    const sitemap = readFileSync(new URL("../client/public/sitemap.xml", import.meta.url), "utf8");
+    expect(sitemap).toContain(
+      "<loc>https://welovemusicals.com/stadt/hamburg</loc>\n    <lastmod>2026-09-21</lastmod>",
+    );
+  });
 });
