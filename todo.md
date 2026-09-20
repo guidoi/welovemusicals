@@ -715,3 +715,6 @@
 
 ## Einheitliche Kategorie-Bezeichnungen
 - [x] Kurzlabels aus Hero und Filter auch in Teaser- und Detailseiten-Badges verwenden – insbesondere „Drama & Komödie“ statt „Besondere Geschichten“
+
+## Startseiten-SEO
+- [x] Google-Snippet der Startseite auf „Musicals 2026/2027: Shows, Termine & Tickets“ sowie einen nutzenorientierten Beschreibungstext mit Terminen, Spielorten und Tickets umstellen
