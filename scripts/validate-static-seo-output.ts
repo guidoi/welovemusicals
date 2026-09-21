@@ -15,10 +15,10 @@ function escapeHtml(value: string): string {
 }
 
 async function assertPage(relativePath: string, expectations: string[]) {
-  const html = await readFile(resolve(DIST_ROOT, relativePath), "utf8");
+  const html = await readFile(resolve(DIST_ROOT, relativePath, "index.html"), "utf8");
   for (const expectation of expectations) {
     if (!html.includes(expectation)) {
-      throw new Error(`${relativePath} misses expected SEO value: ${expectation}`);
+      throw new Error(`${relativePath}/index.html misses expected SEO value: ${expectation}`);
     }
   }
 }

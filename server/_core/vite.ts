@@ -76,18 +76,18 @@ export function serveStatic(app: Express) {
   };
 
   // Canonical SEO routes are emitted as static route documents during the build.
-  // Serve them as slashless static files, so their canonical URL is also the
-  // response URL and no trailing-slash redirect is introduced.
+  // Serve them at the slashless public URL instead of letting Express redirect to
+  // a trailing slash, so their canonical URL is also the response URL.
   app.get(/^\/(stadt|musical)\/[^/]+$/, (req, res, next) => {
-    const routeDocument = path.resolve(distPath, `.${req.path}`);
-    const relativePath = path.relative(distPath, routeDocument);
-    if (relativePath.startsWith("..") || path.isAbsolute(relativePath) || !fs.existsSync(routeDocument)) {
+    const routeIndex = path.resolve(distPath, `.${req.path}`, "index.html");
+    const relativePath = path.relative(distPath, routeIndex);
+    if (relativePath.startsWith("..") || path.isAbsolute(relativePath) || !fs.existsSync(routeIndex)) {
       next();
       return;
     }
 
     setHtmlDocumentHeaders(res);
-    res.sendFile(routeDocument);
+    res.sendFile(routeIndex);
   });
 
   app.use(express.static(distPath, {

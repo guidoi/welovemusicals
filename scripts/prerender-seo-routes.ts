@@ -172,7 +172,7 @@ function applySeoTemplate(html: string, page: SeoPage): string {
 }
 
 async function writePage(page: SeoPage, shellHtml: string): Promise<void> {
-  const outputPath = resolve(DIST_ROOT, `.${page.path}`);
+  const outputPath = resolve(DIST_ROOT, `.${page.path}`, "index.html");
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, applySeoTemplate(shellHtml, page), "utf8");
 }
@@ -185,6 +185,10 @@ async function main() {
   ];
 
   await Promise.all(pages.map((page) => writePage(page, shellHtml)));
+  const redirects = pages
+    .map((page) => `${page.path} ${page.path}/index.html 200`)
+    .join("\n");
+  await writeFile(resolve(DIST_ROOT, "_redirects"), `${redirects}\n`, "utf8");
   console.log(`Generated static SEO metadata for ${pages.length} canonical city and musical routes.`);
 }
 

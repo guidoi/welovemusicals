@@ -734,3 +734,6 @@
 - [x] Google-Sheets-Sale mit `Ja` und `30%` für Fack Ju Göhte live abgleichen
 - [x] Schmale AWIN-Campaign `4568827` im zweiten Fließtextabschnitt und quadratische AWIN-Campaign `4568823` nach der Galerie einbinden
 - [x] Den gelieferten AWIN-Textlink `4568988` für allgemeine Detailseiten-CTAs bestätigen; stadtbezogene Ticketbuttons unverändert belassen
+
+## SEO-Routenauslieferung
+- [x] Kanonische Stadt- und Musicalrouten als echte HTML-Dokumente mit `text/html` ausliefern; Cloudflare-Rewrites auf die statischen `index.html`-Dateien und lokale Serverprüfung ergänzen
