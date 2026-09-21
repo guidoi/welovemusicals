@@ -46,4 +46,15 @@ describe("MJ-Kampagnenplatzierung", () => {
   it("rendert platzierte Kampagnen nicht ein zweites Mal im unteren Kampagnenbereich", () => {
     expect(musicalDetailSource).toContain('aovoCampaign && !aovoCampaign.placement');
   });
+
+  it("platziert die Fack-Ju-Göhte-Back-to-School-Banner im Text und nach der Galerie", () => {
+    const wideBanner = musicalDetailSource.indexOf('<EventimFackJuGoehteBanner format="wide" />');
+    const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
+    const squareBanner = musicalDetailSource.indexOf('<EventimFackJuGoehteBanner format="square" />');
+    const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
+
+    expect(wideBanner).toBeGreaterThan(-1);
+    expect(squareBanner).toBeGreaterThan(gallery);
+    expect(squareBanner).toBeLessThan(showFacts);
+  });
 });

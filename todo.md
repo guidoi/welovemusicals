@@ -729,3 +729,8 @@
 - [ ] Bestehende Google-Search-Console-Daten nach Suchpotenzial, CTR, Indexierungsfehlern und Chancen für zwei Pilot-Städte auswerten
 - [ ] Hamburg und eine datenstarke zweite Stadt als redaktionell eigenständige Musical-Hubs ausbauen – erst nach Quellen- und Qualitätsfreigabe
 - [ ] Consent-konformes Affiliate-Klick- und Partnerreporting für qualifizierte Klicks, validierte Provisionen und Stornos aufsetzen
+
+## Fack Ju Göhte Back-to-School-Sale
+- [x] Google-Sheets-Sale mit `Ja` und `30%` für Fack Ju Göhte live abgleichen
+- [x] Schmale AWIN-Campaign `4568827` im zweiten Fließtextabschnitt und quadratische AWIN-Campaign `4568823` nach der Galerie einbinden
+- [x] Den gelieferten AWIN-Textlink `4568988` für allgemeine Detailseiten-CTAs bestätigen; stadtbezogene Ticketbuttons unverändert belassen

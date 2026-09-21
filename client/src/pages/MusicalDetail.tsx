@@ -330,7 +330,7 @@ export default function MusicalDetail() {
                           </div>
                         )}
                         {musical.id === "fackjugoehte" && i === 1 && (
-                          <EventimFackJuGoehteBanner />
+                          <EventimFackJuGoehteBanner format="wide" />
                         )}
                         {/* Mobile Keyvisual:
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
@@ -547,12 +547,13 @@ export default function MusicalDetail() {
         <MusicalGallery images={musical.gallery} />
       )}
 
-      {afterGalleryCampaigns.length > 0 && (
+      {(afterGalleryCampaigns.length > 0 || musical.id === "fackjugoehte") && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
             {afterGalleryCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
             ))}
+            {musical.id === "fackjugoehte" && <EventimFackJuGoehteBanner format="square" />}
           </div>
         </section>
       )}
