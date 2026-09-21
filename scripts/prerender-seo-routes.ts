@@ -118,10 +118,19 @@ function createCityContent(city: City, cityMusicals: Musical[], heading: string)
 
 function createMusicalContent(musical: Musical, heading: string): string {
   const location = [musical.city, musical.venue].filter(Boolean).join(" · ");
-  const citySlug = musical.city ? cities.find((city) => city.name === musical.city)?.slug : undefined;
+  const musicalCities = Array.from(new Set([
+    ...(musical.city ? [musical.city] : []),
+    ...(musical.cities ?? []),
+  ]));
+  const cityLinks = musicalCities
+    .map((cityName) => cities.find((city) => city.name === cityName))
+    .filter((city): city is City => Boolean(city))
+    .slice(0, 12)
+    .map((city) => `<a href="/stadt/${escapeHtml(city.slug)}">Musicals in ${escapeHtml(city.name)}</a>`)
+    .join(" · ");
   return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(musical.description)}</p>
     ${location ? `<p><strong>Spielort:</strong> ${escapeHtml(location)}</p>` : ""}
-    ${musical.city && citySlug ? `<p><a href="/stadt/${escapeHtml(citySlug)}">Musicals in ${escapeHtml(musical.city)}</a></p>` : ""}
+    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}
   </main>`;
 }
 

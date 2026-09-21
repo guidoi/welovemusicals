@@ -26,6 +26,7 @@ describe("TourDates", () => {
     expect(markup).not.toContain("stage-entertainment-logo-white.png");
     expect(markup).toContain("md:hover:border-gold");
     expect(markup).toContain("focus-within:border-gold");
+    expect(markup).toContain('href="/stadt/berlin"');
   });
 
   it("nutzt auch für weitere Terminlisten den einheitlichen Stadt-CTA", () => {
@@ -44,5 +45,6 @@ describe("TourDates", () => {
 
     expect(markup).toContain("Tickets sichern");
     expect(markup).not.toContain("SALE · 2 FÜR 1");
+    expect(markup).toContain('href="/stadt/hamburg"');
   });
 });

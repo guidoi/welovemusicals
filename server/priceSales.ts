@@ -2,6 +2,9 @@ import { asc, eq } from "drizzle-orm";
 import { musicalPriceOverrides, type MusicalPriceOverride } from "../drizzle/schema";
 import { getDb } from "./db";
 import { listGoogleSheetPriceOverrides, type SheetPriceSaleOverride } from "./googleSheetPriceSource";
+import { ACTIVE_MUSICAL_IDS } from "../client/src/lib/data";
+
+const ACTIVE_MUSICAL_ID_SET = new Set<string>(ACTIVE_MUSICAL_IDS);
 
 export type PriceSaleOverrideInput = {
   musicalId: string;
@@ -60,7 +63,9 @@ export function resolvePublicPriceSaleOverrides(
 
   sheetOverrides.forEach((override) => resolved.set(override.musicalId, override));
 
-  return Array.from(resolved.values()).sort((a, b) => a.musicalId.localeCompare(b.musicalId, "de"));
+  return Array.from(resolved.values())
+    .filter((override) => ACTIVE_MUSICAL_ID_SET.has(override.musicalId))
+    .sort((a, b) => a.musicalId.localeCompare(b.musicalId, "de"));
 }
 
 export async function listPublicPriceSaleOverrides(): Promise<PublicPriceSaleOverride[]> {

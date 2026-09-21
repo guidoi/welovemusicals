@@ -52,4 +52,10 @@ describe("öffentliche Preis- und Sale-Quelle", () => {
       { musicalId: "tarzan", priceFrom: "66,99" },
     ]);
   });
+
+  it("gibt keine Preis- oder Sale-Daten für beendete Shows öffentlich aus", () => {
+    const endedShowValue = { ...databaseValue, musicalId: "we-will-rock-you", priceFrom: "48,49" };
+
+    expect(resolvePublicPriceSaleOverrides([], [endedShowValue])).toEqual([]);
+  });
 });

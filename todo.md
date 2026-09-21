@@ -741,3 +741,6 @@
 
 ## Direkte Performance-Optimierung
 - [x] Nicht für die Startseite benötigte Stadt-, Musical-, Recht- und Verwaltungsseiten per Lazy Loading aus dem initialen JavaScript auslagern; Start-Bundle von rund 1,50 MB auf rund 1,15 MB reduzieren
+
+## Saisonbereinigung Stuttgart
+- [x] Veraltete We-Will-Rock-You-Nennung aus Stadtbeschreibung und öffentlicher Preisantwort entfernt; aktiven 7-Show-Katalog geprüft

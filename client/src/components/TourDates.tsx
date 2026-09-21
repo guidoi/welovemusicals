@@ -6,7 +6,7 @@
  * Alle Termine einer Stadt werden chronologisch untereinander angezeigt.
  * Abgelaufene Termine (endDate < heute) werden automatisch ausgeblendet.
  */
-import { MusicalTourDate } from "@/lib/data";
+import { cities, MusicalTourDate } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import {
@@ -171,6 +171,7 @@ export default function TourDates({
         <div className={forceDropdown ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "flex flex-col gap-4 max-w-2xl mx-auto"}>
           {sortedCityEntries.map(([city, dates]) => {
             const firstDate = dates[0];
+            const citySlug = cities.find((candidate) => candidate.name === city)?.slug;
             return (
               <div
                 key={city}
@@ -180,7 +181,14 @@ export default function TourDates({
                 <div className="mb-1 flex items-start justify-between gap-4">
                   <div className="flex items-center gap-2">
                     <h3 className="text-lg font-bold text-card-foreground uppercase tracking-widest font-heading">
-                      {city}
+                      {citySlug ? (
+                        <a
+                          href={`/stadt/${citySlug}`}
+                          className="transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                        >
+                          {city}
+                        </a>
+                      ) : city}
                     </h3>
                     {firstDate.badge && (
                       <span className="inline-flex items-center rounded-full border border-gold/40 bg-gold/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold">

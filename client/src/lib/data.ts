@@ -2154,8 +2154,8 @@ export const cities: City[] = [
     slug: "stuttgart",
     name: "Stuttgart",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-stuttgart-jTG7sLRjCNSW9LsE43iiZb.webp",
-    description: "Heimat von Disneys Die Eiskönigin und We Will Rock You. Stuttgart ist ein fester Bestandteil der deutschen Musical-Landschaft.",
-    musicalCount: 1,
+    description: "Stuttgart verbindet große Stage-Musicals im Apollo und Palladium Theater mit abwechslungsreichen Tournee-Gastspielen. Entdecke aktuelle Termine für Familien-, Kult- und Pop-Musicals.",
+    musicalCount: 7,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-stuttgart&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252531002%26orderBy%3DRecommendations",
   },
 
