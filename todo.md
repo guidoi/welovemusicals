@@ -737,3 +737,6 @@
 
 ## SEO-Routenauslieferung
 - [x] Kanonische Stadt- und Musicalrouten als echte HTML-Dokumente mit `text/html` ausliefern; Cloudflare-Rewrites auf die statischen `index.html`-Dateien und lokale Serverprüfung ergänzen
+
+## Direkte Performance-Optimierung
+- [x] Nicht für die Startseite benötigte Stadt-, Musical-, Recht- und Verwaltungsseiten per Lazy Loading aus dem initialen JavaScript auslagern; Start-Bundle von rund 1,50 MB auf rund 1,15 MB reduzieren
