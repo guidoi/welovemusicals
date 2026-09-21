@@ -185,10 +185,6 @@ async function main() {
   ];
 
   await Promise.all(pages.map((page) => writePage(page, shellHtml)));
-  const redirects = pages
-    .map((page) => `${page.path} ${page.path}/index.html 200`)
-    .join("\n");
-  await writeFile(resolve(DIST_ROOT, "_redirects"), `${redirects}\n`, "utf8");
   console.log(`Generated static SEO metadata for ${pages.length} canonical city and musical routes.`);
 }
 
