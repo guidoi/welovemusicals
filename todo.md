@@ -727,8 +727,9 @@
 - [x] Stadtseiten mit eindeutigen Titeln, Beschreibungen, CollectionPage-Daten und aktuellen Sitemap-Signalen ausstatten
 - [x] Stadt- und Musicalseiten beim ersten HTTP-Abruf mit statischen Canonicals, Metadaten, Social-Informationen und JSON-LD ausliefern
 - [ ] Bestehende Google-Search-Console-Daten nach Suchpotenzial, CTR, Indexierungsfehlern und Chancen für zwei Pilot-Städte auswerten
-- [ ] Hamburg und eine datenstarke zweite Stadt als redaktionell eigenständige Musical-Hubs ausbauen – erst nach Quellen- und Qualitätsfreigabe
-- [ ] Consent-konformes Affiliate-Klick- und Partnerreporting für qualifizierte Klicks, validierte Provisionen und Stornos aufsetzen
+- [x] Hamburg und Berlin als redaktionell eigenständige Musical-Hubs ausbauen – mit Quellen- und Qualitätsfreigabe, Planungsleitfaden, offiziellen Besucherhinweisen und interner Showverlinkung
+- [x] Consent-konforme, datensparsame Messung qualifizierter Ticketklicks nach Musical, Partner und CTA-Platzierung einführen
+- [ ] Partnerreporting für validierte Provisionen und Stornos mit periodischen Awin- und TradeDoubler-Exporten aufsetzen
 
 ## Fack Ju Göhte Back-to-School-Sale
 - [x] Google-Sheets-Sale mit `Ja` und `30%` für Fack Ju Göhte live abgleichen

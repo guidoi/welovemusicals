@@ -9,6 +9,9 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
     expect(source).toContain('import { getTicketCta } from "@/lib/ticket-cta";');
     expect(source).toContain("const ticketCta = getTicketCta(musical);");
     expect(source).toContain("{ticketCta.label}");
+    expect(source).toContain('trackDetailTicketClick("mobile-hero", heroTicketLink)');
+    expect(source).toContain('trackDetailTicketClick("ticket-box", boxTicketLink)');
+    expect(source).toContain('trackDetailTicketClick("sticky", stickyTicketLink)');
   });
 
   it("behält Gold für die Erlebniswelt und Orientierung im Hero", () => {
@@ -19,6 +22,7 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
   it("belässt die Ticket-CTAs an einzelnen Spielorten bei der ruhigen Standardbeschriftung", () => {
     expect(source).toContain('<TourDates tourDates={musical.tourDates}');
     expect(source).not.toContain('ticketCtaLabel={ticketCta.label}');
+    expect(source).toContain('trackDetailTicketClick("city-date", ticketUrl)');
   });
 
   it("ordnet Partnerlogos auf Mobilgeräten kompakt rechts neben den Ticket-CTAs an", () => {

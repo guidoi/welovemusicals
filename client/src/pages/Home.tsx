@@ -407,6 +407,10 @@ export default function Home() {
           <img
             src={HOME_HERO_IMAGE}
             alt={HOME_HERO_ALT}
+            width={676}
+            height={496}
+            fetchPriority="high"
+            decoding="sync"
             className={`w-full h-full object-cover ${DESKTOP_HERO_IMAGE_POSITION_CLASS}`}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-background" />

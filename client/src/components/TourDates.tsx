@@ -22,6 +22,7 @@ interface TourDatesProps {
   tourDates: MusicalTourDate[];
   forceDropdown?: boolean;
   musicalSlug?: string;
+  onTicketClick?: (ticketUrl: string) => void;
 }
 
 /** Gibt true zurück, wenn das endDate heute oder in der Zukunft liegt.
@@ -54,6 +55,7 @@ export default function TourDates({
   tourDates,
   forceDropdown = false,
   musicalSlug,
+  onTicketClick,
 }: TourDatesProps) {
   const [selectedCity, setSelectedCity] = useState<string>("alle");
 
@@ -216,6 +218,7 @@ export default function TourDates({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
+                        onClick={() => onTicketClick?.(date.eventimUrl)}
                       >
                         Tickets sichern
                       </a>

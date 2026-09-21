@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { trackExperienceCategorySelection, trackPartnerScriptStatus } from "./category-analytics";
+import { trackAffiliateTicketClick, trackExperienceCategorySelection, trackPartnerScriptStatus } from "./category-analytics";
 
 describe("Kategorie-Analyse", () => {
   afterEach(() => {
@@ -57,6 +57,31 @@ describe("Kategorie-Analyse", () => {
     expect(track).toHaveBeenCalledWith("affiliate_partner_script", {
       partner: "tradedoubler",
       status: "loaded",
+    });
+  });
+
+  it("erfasst Ticketklicks nur nach Einwilligung und ohne Ziel- oder Personendaten", () => {
+    const track = vi.fn();
+    vi.stubGlobal("window", { umami: { track } });
+
+    expect(trackAffiliateTicketClick({
+      musicalId: "mj-musical",
+      partner: "stage",
+      placement: "ticket-box",
+      analyticsConsent: false,
+    })).toBe(false);
+    expect(track).not.toHaveBeenCalled();
+
+    expect(trackAffiliateTicketClick({
+      musicalId: "mj-musical",
+      partner: "stage",
+      placement: "ticket-box",
+      analyticsConsent: true,
+    })).toBe(true);
+    expect(track).toHaveBeenCalledWith("affiliate_ticket_click", {
+      musical: "mj-musical",
+      partner: "stage",
+      placement: "ticket-box",
     });
   });
 });

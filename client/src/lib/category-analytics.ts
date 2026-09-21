@@ -21,6 +21,23 @@ type TrackPartnerScriptStatusInput = {
   analyticsConsent: boolean;
 };
 
+export type AffiliateClickPlacement =
+  | "mobile-hero"
+  | "keyvisual"
+  | "ticket-box"
+  | "city-date"
+  | "sticky"
+  | "campaign-banner";
+
+type AffiliatePartner = "eventim" | "atg" | "stage" | "tradedoubler";
+
+type TrackAffiliateTicketClickInput = {
+  musicalId: string;
+  partner: AffiliatePartner;
+  placement: AffiliateClickPlacement;
+  analyticsConsent: boolean;
+};
+
 function getUmamiTracker(): UmamiTracker | undefined {
   if (typeof window === "undefined") return undefined;
   return (window as Window & { umami?: UmamiTracker }).umami;
@@ -63,5 +80,30 @@ export function trackPartnerScriptStatus({
   if (!tracker) return false;
 
   tracker.track("affiliate_partner_script", { partner, status });
+  return true;
+}
+
+/**
+ * Records a deliberate ticket click only after optional analytics consent.
+ * The allowlisted event intentionally omits the destination URL, city, price,
+ * visitor identifiers and any booking data. It is a conversion-quality signal,
+ * not a revenue or transaction measurement.
+ */
+export function trackAffiliateTicketClick({
+  musicalId,
+  partner,
+  placement,
+  analyticsConsent,
+}: TrackAffiliateTicketClickInput): boolean {
+  if (!analyticsConsent) return false;
+
+  const tracker = getUmamiTracker();
+  if (!tracker) return false;
+
+  tracker.track("affiliate_ticket_click", {
+    musical: musicalId,
+    partner,
+    placement,
+  });
   return true;
 }

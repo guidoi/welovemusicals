@@ -9,6 +9,7 @@ import {
 } from "../client/src/lib/data";
 import { getCitySeo } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
+import { getCityGuide } from "../client/src/lib/city-guide";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const DIST_ROOT = resolve(PROJECT_ROOT, "dist");
@@ -23,6 +24,7 @@ interface SeoPage {
   imageAlt: string;
   canonicalUrl: string;
   schema: Record<string, unknown>;
+  contentHtml: string;
 }
 
 function escapeHtml(value: string): string {
@@ -99,6 +101,30 @@ function getCityItemList(city: City, cityMusicals: Musical[]) {
   };
 }
 
+function createCityContent(city: City, cityMusicals: Musical[], heading: string): string {
+  const guide = getCityGuide(city.slug);
+  const musicalLinks = cityMusicals.map((musical) => (
+    `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a></li>`
+  )).join("");
+  const guideContent = guide ? `
+    <section><h2>${escapeHtml(guide.heading)}</h2><p>${escapeHtml(guide.intro)}</p>
+      <ol>${guide.steps.map((step) => `<li><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.text)}</p></li>`).join("")}</ol>
+    </section>` : "";
+
+  return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(city.description)}</p>
+    <section><h2>Aktuelle Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${guideContent}
+  </main>`;
+}
+
+function createMusicalContent(musical: Musical, heading: string): string {
+  const location = [musical.city, musical.venue].filter(Boolean).join(" · ");
+  const citySlug = musical.city ? cities.find((city) => city.name === musical.city)?.slug : undefined;
+  return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(musical.description)}</p>
+    ${location ? `<p><strong>Spielort:</strong> ${escapeHtml(location)}</p>` : ""}
+    ${musical.city && citySlug ? `<p><a href="/stadt/${escapeHtml(citySlug)}">Musicals in ${escapeHtml(musical.city)}</a></p>` : ""}
+  </main>`;
+}
+
 function createCityPage(city: City): SeoPage {
   const cityMusicals = getActiveMusicalsByCity(city.name);
   const seo = getCitySeo(city, cityMusicals.length);
@@ -116,6 +142,7 @@ function createCityPage(city: City): SeoPage {
       getCityBreadcrumbs(city),
       getCityItemList(city, cityMusicals),
     ),
+    contentHtml: createCityContent(city, cityMusicals, seo.heading),
   };
 }
 
@@ -136,6 +163,7 @@ function createMusicalPage(musical: Musical): SeoPage {
       description: seo.description,
       url: seo.canonicalUrl,
     }),
+    contentHtml: createMusicalContent(musical, musical.title),
   };
 }
 
@@ -168,7 +196,8 @@ function applySeoTemplate(html: string, page: SeoPage): string {
     .replace(/\s*<meta property="og:image:type"[^>]*\/>/, "")
     .replace(/\s*<meta property="og:image:width"[^>]*\/>/, "")
     .replace(/\s*<meta property="og:image:height"[^>]*\/>/, "")
-    .replace(/<script id="site-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, `<script id="site-schema" type="application/ld+json">${schema}</script>`);
+    .replace(/<script id="site-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, `<script id="site-schema" type="application/ld+json">${schema}</script>`)
+    .replace('<div id="root"></div>', `<div id="root">${page.contentHtml}</div>`);
 }
 
 async function writePage(page: SeoPage, shellHtml: string): Promise<void> {

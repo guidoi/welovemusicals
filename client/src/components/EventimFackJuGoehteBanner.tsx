@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useConsent } from "@/contexts/ConsentContext";
+import { trackAffiliateTicketClick } from "@/lib/category-analytics";
 
 type FackJuGoehteBannerFormat = "wide" | "square";
 
@@ -61,7 +62,15 @@ export default function EventimFackJuGoehteBanner({
       </p>
       <button
         type="button"
-        onClick={() => window.open(campaign.clickUrl, "_blank", "noopener,noreferrer")}
+        onClick={() => {
+          trackAffiliateTicketClick({
+            musicalId: "fackjugoehte",
+            partner: "eventim",
+            placement: "campaign-banner",
+            analyticsConsent: consent?.analytics === true,
+          });
+          window.open(campaign.clickUrl, "_blank", "noopener,noreferrer");
+        }}
         className="block w-full overflow-hidden rounded-sm text-left transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         aria-label="Fack Ju Göhte Back-to-School-Sale bei Eventim ansehen (Anzeige)"
       >

@@ -51,11 +51,20 @@ import { getExperienceCategory } from "@/lib/experience-categories";
 import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
 import { getTicketCta } from "@/lib/ticket-cta";
+import { useConsent } from "@/contexts/ConsentContext";
+import { trackAffiliateTicketClick, type AffiliateClickPlacement } from "@/lib/category-analytics";
+
+function getAffiliatePartner(ticketUrl: string): "eventim" | "atg" | "stage" {
+  if (ticketUrl.includes("stage-entertainment.de")) return "stage";
+  if (ticketUrl.includes("atgtickets.de")) return "atg";
+  return "eventim";
+}
 
 export default function MusicalDetail() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug || "";
   const { musicals: managedMusicals } = useManagedMusicals();
+  const { consent } = useConsent();
   const musical = getActiveMusicals(managedMusicals).find((candidate) => candidate.slug === slug);
 
   // Reset after route, frame and layout restoration so cards from a scrolled overview always open at the page start.
@@ -162,6 +171,14 @@ export default function MusicalDetail() {
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const ticketCta = getTicketCta(musical);
+  const trackDetailTicketClick = (placement: AffiliateClickPlacement, ticketUrl: string) => {
+    trackAffiliateTicketClick({
+      musicalId: musical.id,
+      partner: getAffiliatePartner(ticketUrl),
+      placement,
+      analyticsConsent: consent?.analytics === true,
+    });
+  };
   const aovoCampaign = getAovoCampaign(musical.id);
   const aovoCampaigns = getAovoCampaigns(musical.id);
   const inlineDescriptionCampaign = getAovoCampaigns(musical.id).find(
@@ -265,6 +282,7 @@ export default function MusicalDetail() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center justify-center gap-2 rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
+            onClick={() => trackDetailTicketClick("mobile-hero", heroTicketLink)}
           >
             <Ticket className="w-4 h-4" />
             {ticketCta.label}
@@ -283,7 +301,7 @@ export default function MusicalDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={ticketProviderName} />
+                <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={ticketProviderName} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
               </motion.div>
             </div>
 
@@ -347,7 +365,7 @@ export default function MusicalDetail() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.3 }}
                             >
-                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={ticketProviderName} />
+                              <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={ticketProviderName} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
 
                             </motion.div>
                           </div>
@@ -389,7 +407,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} />
+          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
         )}
       </div>
 
@@ -519,6 +537,7 @@ export default function MusicalDetail() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark"
+                onClick={() => trackDetailTicketClick("ticket-box", boxTicketLink)}
               >
                 {ticketCta.label}
                 <ExternalLink className="w-5 h-5" />
@@ -656,6 +675,7 @@ export default function MusicalDetail() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
+              onClick={() => trackDetailTicketClick("sticky", stickyTicketLink)}
             >
               <Ticket className="w-4 h-4" />
               {ticketCta.label}
