@@ -722,3 +722,10 @@
 ## Google-Bild- und Crawling-Signale
 - [x] Startseitenbild für Google und Social Media auf das repräsentative König-der-Löwen-Motiv mit Rafiki ausrichten; Bild-Metadaten, primäres Seitenbild und große Bildvorschau ergänzen
 - [x] We Will Rock You nach Saisonende aus der öffentlichen Sitemap entfernen und gegen Rückkehr absichern
+
+## Organisches Wachstum und Affiliate-Qualität
+- [x] Stadtseiten mit eindeutigen Titeln, Beschreibungen, CollectionPage-Daten und aktuellen Sitemap-Signalen ausstatten
+- [x] Stadt- und Musicalseiten beim ersten HTTP-Abruf mit statischen Canonicals, Metadaten, Social-Informationen und JSON-LD ausliefern
+- [ ] Bestehende Google-Search-Console-Daten nach Suchpotenzial, CTR, Indexierungsfehlern und Chancen für zwei Pilot-Städte auswerten
+- [ ] Hamburg und eine datenstarke zweite Stadt als redaktionell eigenständige Musical-Hubs ausbauen – erst nach Quellen- und Qualitätsfreigabe
+- [ ] Consent-konformes Affiliate-Klick- und Partnerreporting für qualifizierte Klicks, validierte Provisionen und Stornos aufsetzen

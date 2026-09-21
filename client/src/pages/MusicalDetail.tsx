@@ -48,6 +48,7 @@ import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provide
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import { getExperienceCategory } from "@/lib/experience-categories";
+import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
 import { getTicketCta } from "@/lib/ticket-cta";
 
@@ -71,18 +72,10 @@ export default function MusicalDetail() {
   }, [slug]);
 
   // Dynamische SEO-Meta-Tags – individuelle Felder aus data.ts haben Vorrang
-  const seoTitle = musical
-    ? musical.seoTitle ?? `${musical.title} – Tickets & Termine | We Love Musicals`
-    : "Musical nicht gefunden | We Love Musicals";
-  const seoDescription = musical
-    ? musical.seoDescription ??
-      (musical.description.length > 155
-        ? musical.description.slice(0, 152) + "..."
-        : musical.description)
-    : "";
-  const canonicalUrl = musical
-    ? `https://welovemusicals.com/musical/${musical.slug || musical.id}`
-    : undefined;
+  const musicalSeo = musical ? getMusicalSeo(musical) : null;
+  const seoTitle = musicalSeo?.title ?? "Musical nicht gefunden | We Love Musicals";
+  const seoDescription = musicalSeo?.description ?? "";
+  const canonicalUrl = musicalSeo?.canonicalUrl;
   useSEO({
     title: seoTitle,
     description: seoDescription,

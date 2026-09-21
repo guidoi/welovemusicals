@@ -69,24 +69,41 @@ export function serveStatic(app: Express) {
     );
   }
 
+  const setHtmlDocumentHeaders = (res: express.Response) => {
+    res.setHeader("Cache-Control", HTML_DOCUMENT_CACHE_CONTROL);
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Expires", "0");
+  };
+
+  // Canonical SEO routes are emitted as static route documents during the build.
+  // Serve them as slashless static files, so their canonical URL is also the
+  // response URL and no trailing-slash redirect is introduced.
+  app.get(/^\/(stadt|musical)\/[^/]+$/, (req, res, next) => {
+    const routeDocument = path.resolve(distPath, `.${req.path}`);
+    const relativePath = path.relative(distPath, routeDocument);
+    if (relativePath.startsWith("..") || path.isAbsolute(relativePath) || !fs.existsSync(routeDocument)) {
+      next();
+      return;
+    }
+
+    setHtmlDocumentHeaders(res);
+    res.sendFile(routeDocument);
+  });
+
   app.use(express.static(distPath, {
     maxAge: '1d',
     etag: false,
     setHeaders: (res, filePath) => {
       if (path.basename(filePath) === "index.html") {
-        res.setHeader("Cache-Control", HTML_DOCUMENT_CACHE_CONTROL);
-        res.setHeader("Pragma", "no-cache");
-        res.setHeader("Expires", "0");
+        setHtmlDocumentHeaders(res);
       }
     },
   }));
 
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
+    setHtmlDocumentHeaders(res);
     res.set({
-      "Cache-Control": HTML_DOCUMENT_CACHE_CONTROL,
-      "Pragma": "no-cache",
-      "Expires": "0",
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "SAMEORIGIN",
       "X-XSS-Protection": "1; mode=block",
