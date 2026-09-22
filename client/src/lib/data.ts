@@ -65,6 +65,7 @@ export interface Musical {
   image: string;
   heroImage?: string; // Alternatives Hero-Bild für die Detailseite (z.B. Galerie-Bild statt Teaser)
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
+  keyvisualLandscape?: boolean; // Querformat-Keyvisual vollständig statt beschnitten darstellen
   keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
   ticketCtaUrl?: string; // Optionaler eigener Link für den roten "Tickets sichern"-Button
   awinHeroUrl?: string; // Awin-Link für den Gold-Ghost-Button oben (mit clickref=...-hero)
@@ -1995,6 +1996,67 @@ export const musicals: Musical[] = [
     seoTitle: "& JULIA – Das Pop-Musical Stuttgart 2026 | Tickets ab 49,99 €",
     seoDescription: "& JULIA – Das Pop-Musical mit 24 Nummer-1-Hits im Stage Palladium Theater Stuttgart. Roar, Can't Stop The Feeling, Perfect & mehr. Ab Herbst 2026. Jetzt Tickets sichern!",
   },
+  {
+    id: "tina-das-musical",
+    experienceCategory: "pop-rock-filmhits",
+    slug: "tina-das-tina-turner-musical",
+    title: "TINA – DAS TINA TURNER MUSICAL",
+    subtitle: "Das Original von Tina Turner",
+    provider: "Stage Entertainment",
+    priceFrom: "53,99",
+    category: "ensuite",
+    categories: ["fester-standort", "erwachsene"],
+    city: "Hamburg",
+    venue: "Stage Operettenhaus",
+    venuePerCity: { "Hamburg": "Stage Operettenhaus" },
+    cities: ["Hamburg"],
+    description: "TINA – Das Tina Turner Musical kehrt ab April 2027 für kurze Zeit ins Stage Operettenhaus Hamburg zurück. Die autorisierte Originalproduktion erzählt die Geschichte der Queen of Rock’n’Roll mit ihren größten Hits. Tickets ab 53,99 €.",
+    detailHeadline: "DIE QUEEN OF ROCK’N’ROLL KEHRT NACH HAMBURG ZURÜCK.",
+    detailDescription: "TINA – Das Tina Turner Musical kehrt ab April 2027 für kurze Zeit nach Hamburg zurück. Die von Tina Turner autorisierte Originalproduktion erzählt den Weg einer außergewöhnlichen Künstlerin – von ihren Anfängen in Nutbush, Tennessee, bis an die Weltspitze des Rock’n’Roll.\n\n**Eine Stimme. Eine Geschichte. Eine Legende.**\n\nMit Welthits wie \"Proud Mary\", \"The Best\", \"Private Dancer\" und \"We Don’t Need Another Hero\" wird Tina Turners Musik live auf die Bühne gebracht. Die energiegeladene Inszenierung verbindet große Konzertmomente mit der persönlichen Geschichte hinter der Ikone.\n\n**Das Original von Tina Turner**\n\nSeit der Weltpremiere im Londoner West End begeistert die Produktion Publikum auf der ganzen Welt. Mehr als acht Millionen Menschen haben TINA bereits erlebt – in Deutschland sahen die Show zwischen 2019 und 2024 über eine Million Gäste in Hamburg und Stuttgart.\n\n**Ab April 2027 im Stage Operettenhaus**\n\nJetzt kommt die gefeierte Produktion zurück an die Reeperbahn. Erlebe eine große Rock-Biografie voller Rhythmus, Mut und unvergesslicher Songs im Stage Operettenhaus Hamburg.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp",
+    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp",
+    keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp",
+    keyvisualLandscape: true,
+    keyvisualLink: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    ticketCtaUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    eventimUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    awinHeroUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    awinStickyUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    awinBoxUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    youtubeTrailerId: "N5BdeG7SVug",
+    featured: true,
+    tags: ["Rock-Legende", "Biografie", "Hamburg"],
+    uspItems: [
+      { icon: "Music", title: "Die größten Tina-Turner-Hits", text: "Proud Mary, The Best, Private Dancer und viele weitere Songs live auf der Bühne" },
+      { icon: "Star", title: "Das Original von Tina Turner", text: "Die autorisierte Produktion über den Weg der Queen of Rock’n’Roll" },
+      { icon: "Users", title: "Über 8 Millionen Gäste weltweit", text: "Seit der Weltpremiere im Londoner West End international gefeiert" },
+      { icon: "MapPin", title: "Zurück im Operettenhaus", text: "Ab April 2027 für kurze Zeit im Herzen der Hamburger Reeperbahn" },
+    ],
+    tourDates: [
+      { city: "Hamburg", venue: "Stage Operettenhaus", startDate: "2027-04-06", eventimUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074", displayLabel: "Ab April 2027" },
+    ],
+    gallery: [
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp", alt: "TINA – Das Tina Turner Musical im Stage Operettenhaus Hamburg © Manuel Harlan" },
+    ],
+    showFacts: [
+      { label: "Spielort", value: "Stage Operettenhaus, Hamburg" },
+      { label: "Start", value: "Ab April 2027" },
+      { label: "Tickets ab", value: "53,99 € (bei Stage Entertainment)" },
+      { label: "Altersempfehlung", value: "Empfohlen ab 14 Jahren; Einlass ab 3 Jahren" },
+      { label: "Hinweis", value: "Die Vorstellung enthält Blitz- und Stroboskoplichter" },
+    ],
+    storyHeadline: "VON NUTBUSH AUF DIE WELTBÜHNEN",
+    storyText: "TINA erzählt die Geschichte einer Frau, die nie aufgehört hat, ihren eigenen Weg zu gehen. Aus den frühen Jahren in Tennessee wird eine Weltkarriere – mit einer unverwechselbaren Stimme, grenzenloser Energie und Songs, die bis heute ganze Generationen bewegen.\n\nDie Bühnenbiografie verbindet intime Momente mit den großen Auftritten einer Legende. Dabei steht nicht nur die Musik im Mittelpunkt, sondern auch der Mut, sich immer wieder neu zu erfinden.",
+    faqItems: [
+      { question: "Wo wird TINA – Das Tina Turner Musical gespielt?", answer: "Ab April 2027 im Stage Operettenhaus am Spielbudenplatz in Hamburg." },
+      { question: "Wann beginnt die Spielzeit?", answer: "Die Rückkehr nach Hamburg ist ab April 2027 angekündigt. Der erste aktuell gelistete Termin ist der 6. April 2027." },
+      { question: "Wie viel kosten die Tickets?", answer: "Tickets sind bei Stage Entertainment ab 53,99 € erhältlich. Der Preis hängt von Vorstellung und Sitzplatzkategorie ab." },
+      { question: "Ist TINA für Kinder geeignet?", answer: "Einlass ist ab drei Jahren möglich. Aufgrund der Themen sowie der Licht- und Soundeffekte wird die Show laut Stage Entertainment ab 14 Jahren empfohlen." },
+      { question: "Gibt es besondere Hinweise zur Show?", answer: "In der Vorstellung werden Blitz- und Stroboskoplichter eingesetzt. Empfindliche Personen sollten dies bei ihrer Planung berücksichtigen." },
+    ],
+    seoTitle: "TINA – Das Tina Turner Musical Hamburg 2027 | Tickets ab 53,99 €",
+    seoDescription: "TINA – Das Tina Turner Musical kehrt ab April 2027 ins Stage Operettenhaus Hamburg zurück. Das Original von Tina Turner – Tickets ab 53,99 €.",
+  },
 ];
 export const cities: City[] = [
   {
@@ -2213,7 +2275,7 @@ export function getMusicalBySlug(slug: string, catalog: Musical[] = musicals): M
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical"];
 
 export function getActiveMusicals(catalog: Musical[] = musicals): Musical[] {
   return catalog.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
@@ -2227,9 +2289,9 @@ export function hasActiveTourDateForCity(musical: Musical, cityName: string): bo
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   if (musical.tourDates && musical.tourDates.length > 0) {
-    // Musical has tour dates: check if any date for this city is still active (endDate >= today)
+    // A missing end date denotes an announced or open-ended run and stays visible.
     return musical.tourDates.some(
-      (td) => td.city === cityName && td.endDate != null && new Date(td.endDate) >= today
+      (td) => td.city === cityName && (td.endDate == null || new Date(td.endDate) >= today)
     );
   }
   // No tour dates defined: fall back to city field match (always show)

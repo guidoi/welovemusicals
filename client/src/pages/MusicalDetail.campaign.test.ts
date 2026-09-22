@@ -57,4 +57,10 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(squareBanner).toBeGreaterThan(gallery);
     expect(squareBanner).toBeLessThan(showFacts);
   });
+
+  it("setzt Trailer an die Keyvisual-Position und platziert TINAs Banner im oberen Fließtext", () => {
+    expect(musicalDetailSource).toContain("{musical.youtubeTrailerId ? (");
+    expect(musicalDetailSource).toContain("!musical.youtubeTrailerId && (musical.id === 'moulinrouge'");
+    expect(musicalDetailSource).not.toContain("{/* YouTube Video */}");
+  });
 });

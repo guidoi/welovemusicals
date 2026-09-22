@@ -38,6 +38,20 @@ Nach dem Hinzufügen, Deaktivieren oder wesentlichen Umkategorisieren einer Show
 
 Die Textlogik liegt zentral in `client/src/lib/discovery-result-hint.ts` und wird durch `discovery-result-hint.test.ts` abgesichert. Vor einem Checkpoint immer `pnpm test && pnpm exec tsc --noEmit && pnpm build` ausführen und die drei Zustände einmal im Browser kontrollieren.
 
+## Material-Checkliste für neue Shows
+
+Für eine vollständige Anlage kann vorhandenes, offizielles Material von Stage, Eventim, dem Veranstalter und dessen Pressebereich recherchiert werden. Am schnellsten und rechtssichersten gelingt die Veröffentlichung jedoch, wenn die folgenden Angaben gesammelt ankommen. Fehlende Punkte werden vor dem Livegang anhand offizieller Quellen ergänzt oder klar als offen markiert.
+
+| Bereich | Benötigtes Material |
+|---|---|
+| **Grunddaten** | Offizieller Titel, Stadt, Theater, Spielzeit oder Startdatum, Einstiegspreis und offizielle Produktseite. |
+| **Ticketlink** | Der fertige Awin- oder TradeDoubler-**Textlink** für alle allgemeinen Ticket-CTAs. Stadttermin-Links werden nur mitgeliefert, wenn sie tatsächlich abweichen. |
+| **Creatives** | Keyvisual oder Szenenbild inklusive Bildcredit sowie – falls vorhanden – 728×90 und 300×250 als Dateien. Zu jedem Banner gehört die separate Click-/Campaign-ID; keine `document.write`-Skripte einfügen. |
+| **Inhalt** | Presseinformation, offizieller Beschreibungstext oder Medienlink; optional Trailer-Link, Besonderheiten, Altersfreigabe, Spielzeit und Hinweise zu Licht-/Soundeffekten. |
+| **Aktion** | Bei Aktionen: exakter Wortlaut, Preis oder Vorteil, Start- und Enddatum sowie der dazugehörige Partnerlink. Preise und Sales gehören anschließend in die Google-Sheets-Spalten; Ticketlinks und Banner verbleiben in der redaktionellen Affiliate-Pflege. |
+
+> **Copy & Paste für neue Shows:** Titel · Stadt/Theater · Beginn/Ende · Tickets ab · offizieller Link · Textlink · 728×90-ID + Datei · 300×250-ID + Datei · Keyvisual + Credit · Trailer · Presseinformation · Aktion mit Laufzeit.
+
 ## Redaktionelle Freigabe-Checkliste
 
 Diese kurze Liste wird für jede neue, reaktivierte oder wesentlich aktualisierte Show vor der Veröffentlichung einmal vollständig abgehakt. Sie verhindert, dass unvollständige Daten, veraltete Angebote oder nicht stimmige Startseitenführung in die öffentliche Ansicht gelangen.

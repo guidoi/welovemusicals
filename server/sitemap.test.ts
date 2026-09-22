@@ -17,6 +17,14 @@ describe("öffentliche Sitemap", () => {
     expect(sitemap).not.toContain("/musical/we-will-rock-you");
   });
 
+  it("führt TINA in der dynamischen und statischen Sitemap", () => {
+    const sitemapSource = readFileSync(new URL("./sitemap.ts", import.meta.url), "utf8");
+    const sitemap = readFileSync(new URL("../client/public/sitemap.xml", import.meta.url), "utf8");
+
+    expect(sitemapSource).toMatch(/^\s*"tina-das-tina-turner-musical",?\s*$/m);
+    expect(sitemap).toContain("/musical/tina-das-tina-turner-musical");
+  });
+
   it("markiert die aktualisierten Stadtseiten mit einem aussagekräftigen Änderungsdatum", () => {
     const sitemap = readFileSync(new URL("../client/public/sitemap.xml", import.meta.url), "utf8");
     expect(sitemap).toContain(

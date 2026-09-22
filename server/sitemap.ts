@@ -42,6 +42,7 @@ const musicalSlugs = [
   "fack-ju-goehte",
   "drei-haselnuesse-fuer-aschenbroedel",
   "rapunzel",
+  "tina-das-tina-turner-musical",
 ];
 
 // Stadt-Slugs

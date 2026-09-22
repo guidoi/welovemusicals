@@ -747,3 +747,8 @@
 
 ## Startseiten-Snippet
 - [x] Google-, Open-Graph-, Twitter- und Schema.org-Beschreibung der Startseite auf „Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Starlight Express, Eiskönigin, Mamma Mia! und mehr.“ vereinheitlichen
+
+## TINA – Das Tina Turner Musical
+- [x] TINA als aktive Hamburg-Produktion ab April 2027 mit bestätigtem Einstiegspreis, Stage-Textlink, Trailer, Quellenbasis und Bildcredit anlegen
+- [x] Native TINA-Creatives consent-konform einbinden: 728×90 (Campaign 26204070) im oberen Fließtext und 300×250 (Campaign 26204068) nach der Galerie
+- [x] TINA-URL in statischer und dynamischer Sitemap aufnehmen sowie die wiederverwendbare Material-Checkliste für neue Shows ergänzen

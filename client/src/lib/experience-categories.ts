@@ -82,6 +82,7 @@ export const EXPERIENCE_CATEGORY_BY_MUSICAL_ID: Record<string, ExperienceCategor
   "tanz-der-vampire": "kult-klassiker",
   dracula: "kult-klassiker",
   "mj-musical": "pop-rock-filmhits",
+  "tina-das-musical": "pop-rock-filmhits",
   ziz: "pop-rock-filmhits",
   "und-julia": "pop-rock-filmhits",
   "we-will-rock-you": "pop-rock-filmhits",

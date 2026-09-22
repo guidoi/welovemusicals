@@ -22,6 +22,7 @@ export const trailerThumbnailByVideoId: Record<string, string> = {
   q2cWpBQX62Q: "/images/show-visuals/trailer-thumbnails/q2cWpBQX62Q.jpg",
   o7OjpWsGkbY: "/images/show-visuals/trailer-thumbnails/o7OjpWsGkbY.jpg",
   "2W1AQr11rqo": "/images/show-visuals/trailer-thumbnails/2W1AQr11rqo.jpg",
+  N5BdeG7SVug: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp",
 };
 
 /**
@@ -34,6 +35,7 @@ export const sceneThumbnailVideoIds = new Set([
   "IWrg3s9gMsY",
   "-N3CbbBAyMM",
   "9zPIQ43Iwwc",
+  "N5BdeG7SVug",
 ]);
 
 export function getTrailerThumbnail(videoId: string): string | undefined {

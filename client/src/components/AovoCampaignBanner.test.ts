@@ -10,7 +10,7 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(17);
+    expect(AOVO_CAMPAIGNS).toHaveLength(19);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
@@ -23,6 +23,8 @@ describe("Aovo campaign banners", () => {
       "mj-musical",
       "mj-musical",
       "mj-musical",
+      "tina-das-musical",
+      "tina-das-musical",
       "ziz",
       "tarzan",
       "starlight-express",
@@ -30,7 +32,35 @@ describe("Aovo campaign banners", () => {
       "wir-sind-am-leben",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(17);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(19);
+  });
+
+  it("uses the supplied native TINA creatives and Stage tracking IDs", () => {
+    expect(getAovoCampaigns("tina-das-musical")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26204070",
+        width: 728,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/krTROylxWabyrCcC.jpg",
+      }),
+      expect.objectContaining({
+        groupId: "26204068",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-gallery",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/fqeFcGbNUPrUgytq.jpg",
+      }),
+    ]));
+    expect(getAovoCampaignClickUrl("26204070", "stage")).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204070"
+    );
+    expect(getAovoCampaignImpressionUrl("26204068", "123456789", "stage")).toBe(
+      "https://visit.stage-entertainment.de/imp?type(img)g(26204068)a(3492604)123456789"
+    );
   });
 
   it("keeps the provided Moulin Rouge campaign dimensions and tracking URLs", () => {

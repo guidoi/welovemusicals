@@ -19,4 +19,13 @@ describe("aktiver Musicalkatalog", () => {
     expect(stuttgartIds).not.toContain("we-will-rock-you");
     expect(stuttgartIds).toContain("eiskoenigin");
   });
+
+  it("aktiviert TINA für Hamburg und aktualisiert die Hamburger Teaserzählung", () => {
+    const hamburg = cities.find((city) => city.slug === "hamburg");
+    const hamburgIds = getActiveMusicalsByCity("Hamburg").map((musical) => musical.id);
+
+    expect(ACTIVE_MUSICAL_IDS).toContain("tina-das-musical");
+    expect(hamburgIds).toContain("tina-das-musical");
+    expect(hamburg?.musicalCount).toBe(hamburgIds.length);
+  });
 });
