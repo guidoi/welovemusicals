@@ -761,9 +761,17 @@
 - [x] Trailer auf Desktop wieder nach dem oberen Beschreibungsteil und vor Spielorten platzieren
 - [x] Mobile Trailer wieder nach dem definierten ersten Fließtextabsatz anzeigen; Keyvisuals bleiben danach im etablierten Absatzfluss
 - [x] TINA-Keyvisual auf das gelieferte quadratische Originalmotiv umstellen
+- [x] Fragile Keyvisual-Einblendanimation entfernt, damit alle Detailseiten bei einem harten Reload wieder zuverlässig ihre Medienreihenfolge behalten
 
 ## KDL – 25-Jahre-Angebot
 - [x] Stage-Creatives der Kampagnen 26180470 (728 × 90) und 26180460 (300 × 250) auf das aktuelle Angebot „Jedes zweite Ticket ab 25 €“ aktualisieren
 - [x] Editorial-Fallback auf „2. TICKET AB 25 €“ aktualisieren; Google Sheet bleibt für den Live-Sale maßgeblich
-- [ ] KDL-Sale im privaten Google Sheet auf das aktuelle Angebot umstellen
+- [x] Privaten Website-Export geprüft: KDL-Sale steht bereits korrekt auf „2. TICKET AB 25 €“
 - [ ] TINA-Preis im privaten Google Sheet anlegen
+
+## Stage-Angebotsupdate
+- [x] Tarzan-Creatives der Kampagnen 26185546 (728 × 90) und 26185544 (300 × 250) nativ einbinden; Querformat im oberen Fließtext, Quadrat nach der Galerie
+- [x] ZURÜCK IN DIE ZUKUNFT-Creatives der Kampagnen 26185502 (728 × 90) und 26185500 (300 × 250) nativ einbinden; Querformat im oberen Fließtext, Quadrat nach der Galerie
+- [x] Eiskönigin-Creatives der Kampagnen 26185658 (729 × 90) und 26185656 (300 × 250) aktualisieren
+- [x] Editorial-Fallbacks auf Tarzan „BIS 40 %“ und Eiskönigin „BIS 15 %“ aktualisieren
+- [ ] Tarzan-Sale im privaten Google Sheet von „BIS 15 % / Familien-Tickets“ auf „BIS 40 %“ ändern

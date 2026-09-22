@@ -298,13 +298,9 @@ export default function MusicalDetail() {
             {/* Keyvisual – Desktop linke Spalte für alle Musicals.
                 Der Trailer bleibt bewusst weiter unten im Seitenfluss. */}
             <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
+              <div>
                 <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.keyvisualLandscape || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={ticketProviderName} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
-              </motion.div>
+              </div>
             </div>
 
             {/* Main Content */}
@@ -365,14 +361,10 @@ export default function MusicalDetail() {
                              - alle anderen: nach i=1 */}
                         {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : musical.id === 'tarzan' ? i === 2 : musical.id === 'ziz' ? i === 2 : musical.id === 'teufel-traegt-prada' ? i === 2 : musical.id === 'die-amme' ? i === 2 : musical.id === 'wir-sind-am-leben' ? i === 2 : musical.id === 'tanz-der-vampire' ? i === 2 : musical.id === 'we-will-rock-you' ? i === 2 : musical.id === 'salon-rosie' ? i === 2 : musical.id === 'und-julia' ? i === 2 : i === 1) && (
                           <div className="lg:hidden my-8">
-                            <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.5, delay: 0.3 }}
-                            >
+                            <div>
                               <MusicalKeyVisual image={musical.keyvisual || musical.image} title={musical.title} ticketLink={keyvisualTicketLink} landscape={musical.keyvisualLandscape || musical.id === 'moulinrouge' || musical.id === 'phantom-der-oper' || musical.id === 'gloeckner-von-notre-dame' || musical.id === 'starlight-express'} ticketProvider={ticketProviderName} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
 
-                            </motion.div>
+                            </div>
                           </div>
                         )}
                         {inlineDescriptionCampaign?.placement === "within-detail-description" &&

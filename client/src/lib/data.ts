@@ -1280,10 +1280,8 @@ export const musicals: Musical[] = [
     tags: ["Familie", "Disney", "Ensuite"],
     sale: {
       label: "SALE",
-      discount: "BIS 40 %",
-      note: "Bis 21.09.2026 bis zu 40 % Rabatt auf ausgewählte Vorstellungen sichern.*",
-      validFrom: "2026-09-14",
-      validUntil: "2026-09-21",
+      discount: "BIS 15 %",
+      note: "Bis zu 15 % Rabatt auf ausgewählte Vorstellungen sichern.*",
     },
     youtubeTrailerId: "cwLZ_5EML5U",
     uspItems: [
@@ -1363,9 +1361,9 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Disney", "Familie", "Ensuite"],
     sale: {
-      label: "FAMILIEN:",
-      discount: "BIS 15 %",
-      note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
+      label: "SALE",
+      discount: "BIS 40 %",
+      note: "Bis zu 40 % Rabatt auf ausgewählte Abschiedsvorstellungen sichern.*",
     },
     uspItems: [
       { icon: "Wind", title: "Einzigartige 360°-Luftakrobatik", text: "300 Flugeinsätze, bis zu 30m Flugbahnen – Tarzan verbringt 80% der Show in der Luft" },

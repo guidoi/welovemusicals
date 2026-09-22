@@ -10,7 +10,7 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(19);
+    expect(AOVO_CAMPAIGNS).toHaveLength(21);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
@@ -26,13 +26,15 @@ describe("Aovo campaign banners", () => {
       "tina-das-musical",
       "tina-das-musical",
       "ziz",
+      "ziz",
+      "tarzan",
       "tarzan",
       "starlight-express",
       "wir-sind-am-leben",
       "wir-sind-am-leben",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(19);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(21);
   });
 
   it("uses the supplied native TINA creatives and Stage tracking IDs", () => {
@@ -88,7 +90,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/veOrHsDBhQmRcVOq.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yYleKPaaEBoJnkwk.jpg",
       }),
       expect.objectContaining({
         groupId: "26185656",
@@ -96,14 +98,47 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gtbhoCIZurpGlnvU.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xzexNcKEKQeyouzb.jpg",
       }),
     ]));
-    expect(getAovoCampaign("tarzan")).toMatchObject({
-      width: 300,
-      height: 250,
-      imageUrl: "/images/show-visuals/tarzan-300x250.png",
-    });
+    expect(getAovoCampaigns("tarzan")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26185546",
+        width: 728,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/hMSLfxEDGvtpGuxe.jpg",
+      }),
+      expect.objectContaining({
+        groupId: "26185544",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-gallery",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kFgSOCDcCAnOWbkF.jpg",
+      }),
+    ]));
+    expect(getAovoCampaigns("ziz")).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26185502",
+        width: 728,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BkyJevjHoYNAGGBb.jpg",
+      }),
+      expect.objectContaining({
+        groupId: "26185500",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-gallery",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zrbcvAjlcjmZFmkg.jpg",
+      }),
+    ]));
     expect(getAovoCampaign("mj-musical")).toMatchObject({
       groupId: "26180466",
       width: 300,
