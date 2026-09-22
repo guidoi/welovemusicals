@@ -43,6 +43,7 @@ import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
 import AovoCampaignBanner, { getAovoCampaign, getAovoCampaigns } from "@/components/AovoCampaignBanner";
+import EventimDraculaBanner from "@/components/EventimDraculaBanner";
 import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
@@ -353,6 +354,9 @@ export default function MusicalDetail() {
                         {musical.id === "fackjugoehte" && i === 1 && (
                           <EventimFackJuGoehteBanner format="wide" />
                         )}
+                        {musical.id === "dracula" && i === 5 && (
+                          <EventimDraculaBanner format="wide" />
+                        )}
                         {/* Mobile Keyvisual:
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
                              - Drei Haseelnüsse: nach i=0
@@ -560,13 +564,14 @@ export default function MusicalDetail() {
         <MusicalGallery images={musical.gallery} />
       )}
 
-      {(afterGalleryCampaigns.length > 0 || musical.id === "fackjugoehte") && (
+      {(afterGalleryCampaigns.length > 0 || musical.id === "fackjugoehte" || musical.id === "dracula") && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
             {afterGalleryCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
             ))}
             {musical.id === "fackjugoehte" && <EventimFackJuGoehteBanner format="square" />}
+            {musical.id === "dracula" && <EventimDraculaBanner format="square" />}
           </div>
         </section>
       )}

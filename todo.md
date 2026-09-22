@@ -752,3 +752,6 @@
 - [x] TINA als aktive Hamburg-Produktion ab April 2027 mit bestätigtem Einstiegspreis, Stage-Textlink, Trailer, Quellenbasis und Bildcredit anlegen
 - [x] Native TINA-Creatives consent-konform einbinden: 728×90 (Campaign 26204070) im oberen Fließtext und 300×250 (Campaign 26204068) nach der Galerie
 - [x] TINA-URL in statischer und dynamischer Sitemap aufnehmen sowie die wiederverwendbare Material-Checkliste für neue Shows ergänzen
+
+## DRACULA – Das Musical
+- [x] Native Eventim/Awin-Creatives eingebunden: 728×90 (Campaign 3889113) im oberen Fließtext und 300×250 (Campaign 3889111) nach der Galerie; Click-URLs direkt, Impressionen nur nach Affiliate-Consent

@@ -58,6 +58,17 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(squareBanner).toBeLessThan(showFacts);
   });
 
+  it("platziert die Dracula-Creatives im oberen Fließtext und nach der Bildergalerie", () => {
+    const wideBanner = musicalDetailSource.indexOf('<EventimDraculaBanner format="wide" />');
+    const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
+    const squareBanner = musicalDetailSource.indexOf('<EventimDraculaBanner format="square" />');
+    const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
+
+    expect(wideBanner).toBeGreaterThan(-1);
+    expect(squareBanner).toBeGreaterThan(gallery);
+    expect(squareBanner).toBeLessThan(showFacts);
+  });
+
   it("setzt Trailer an die Keyvisual-Position und platziert TINAs Banner im oberen Fließtext", () => {
     expect(musicalDetailSource).toContain("{musical.youtubeTrailerId ? (");
     expect(musicalDetailSource).toContain("!musical.youtubeTrailerId && (musical.id === 'moulinrouge'");
