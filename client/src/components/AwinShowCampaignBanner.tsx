@@ -283,7 +283,7 @@ export default function AwinShowCampaignBanner({
           height={creative.height}
           className="block h-auto w-full"
           loading="eager"
-          decoding="async"
+          decoding="sync"
         />
       </button>
     </aside>
