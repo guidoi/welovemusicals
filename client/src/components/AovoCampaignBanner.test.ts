@@ -10,10 +10,12 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(21);
+    expect(AOVO_CAMPAIGNS).toHaveLength(26);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "moulinrouge",
       "salon-rosie",
+      "salon-rosie",
+      "teufel-traegt-prada",
       "teufel-traegt-prada",
       "eiskoenigin",
       "eiskoenigin",
@@ -29,12 +31,15 @@ describe("Aovo campaign banners", () => {
       "ziz",
       "tarzan",
       "tarzan",
+      "tanz-der-vampire",
+      "tanz-der-vampire",
       "starlight-express",
       "wir-sind-am-leben",
       "wir-sind-am-leben",
       "und-julia",
+      "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(21);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(26);
   });
 
   it("uses the supplied native TINA creatives and Stage tracking IDs", () => {
@@ -90,7 +95,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yYleKPaaEBoJnkwk.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XAIAosoXydWgLiUv.jpg",
       }),
       expect.objectContaining({
         groupId: "26185656",
@@ -98,7 +103,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xzexNcKEKQeyouzb.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/wkPNMqjIKNhqFhlt.jpg",
       }),
     ]));
     expect(getAovoCampaigns("tarzan")).toEqual(expect.arrayContaining([
@@ -151,19 +156,30 @@ describe("Aovo campaign banners", () => {
     });
   });
 
-  it("uses the supplied Stage Entertainment tracking and in-story placement for Wir sind am Leben and & Julia", () => {
-    const undJulia = getAovoCampaign("und-julia");
+  it("uses the supplied Stage Entertainment tracking and in-description placement for Wir sind am Leben and & Julia", () => {
+    const undJulia = getAovoCampaigns("und-julia");
     const wirSindAmLeben = getAovoCampaign("wir-sind-am-leben");
     const mj = getAovoCampaign("mj-musical");
 
-    expect(undJulia).toMatchObject({
-      groupId: "26185666",
-      width: 728,
-      height: 90,
-      trackingNetwork: "stage",
-      placement: "before-story-paragraph",
-      storyParagraphIndex: 2,
-    });
+    expect(undJulia).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        groupId: "26185666",
+        width: 728,
+        height: 90,
+        trackingNetwork: "stage",
+        placement: "within-detail-description",
+        detailParagraphIndex: 2,
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zLhEgGUtvChrLSXQ.jpg",
+      }),
+      expect.objectContaining({
+        groupId: "26185664",
+        width: 300,
+        height: 250,
+        trackingNetwork: "stage",
+        placement: "after-gallery",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yGwFLzKjTQuzjxpb.jpg",
+      }),
+    ]));
     expect(wirSindAmLeben).toMatchObject({
       groupId: "26185700",
       width: 728,
@@ -205,6 +221,21 @@ describe("Aovo campaign banners", () => {
     expect(getAovoCampaignImpressionUrl("26185666", "123456789", "stage")).toBe(
       "https://visit.stage-entertainment.de/imp?type(img)g(26185666)a(3492604)123456789"
     );
+  });
+
+  it("uses the delivered Stage creatives for Salon Rosie, Tanz der Vampire and Der Teufel trägt Prada", () => {
+    expect(getAovoCampaigns("salon-rosie")).toEqual(expect.arrayContaining([
+      expect.objectContaining({ groupId: "26185722", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description" }),
+      expect.objectContaining({ groupId: "26185720", width: 300, height: 250, placement: "after-gallery" }),
+    ]));
+    expect(getAovoCampaigns("tanz-der-vampire")).toEqual(expect.arrayContaining([
+      expect.objectContaining({ groupId: "26185674", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description" }),
+      expect.objectContaining({ groupId: "26185672", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery" }),
+    ]));
+    expect(getAovoCampaigns("teufel-traegt-prada")).toEqual(expect.arrayContaining([
+      expect.objectContaining({ groupId: "26185640", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description" }),
+      expect.objectContaining({ groupId: "26185638", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery" }),
+    ]));
   });
 
   it("ordnet die bereitgestellten KDL- und MJ-Aovo-Creatives der gewünschten Bannerhierarchie zu", () => {

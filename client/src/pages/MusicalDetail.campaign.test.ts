@@ -69,6 +69,19 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(squareBanner).toBeLessThan(showFacts);
   });
 
+  it("platziert die neuen Eventim- und ATG-Creatives im Fließtext und nach der Bildergalerie", () => {
+    const wideBanner = musicalDetailSource.indexOf('<AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />');
+    const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
+    const squareBanner = musicalDetailSource.indexOf('<AwinShowCampaignBanner campaign={awinShowCampaign} format="square" />');
+    const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
+
+    expect(musicalDetailSource).toContain('import AwinShowCampaignBanner, { getAwinShowCampaign }');
+    expect(musicalDetailSource).toContain('const awinShowCampaign = getAwinShowCampaign(musical.id)');
+    expect(wideBanner).toBeGreaterThan(-1);
+    expect(squareBanner).toBeGreaterThan(gallery);
+    expect(squareBanner).toBeLessThan(showFacts);
+  });
+
   it("bewahrt die definierte Reihenfolge von Keyvisual und Trailer auf Desktop und Mobil", () => {
     const desktopKeyvisual = musicalDetailSource.indexOf("{/* Keyvisual – Desktop linke Spalte");
     const mobileTrailer = musicalDetailSource.indexOf('data-testid="mobile-inline-trailer"');

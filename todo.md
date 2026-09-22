@@ -775,3 +775,14 @@
 - [x] Eiskönigin-Creatives der Kampagnen 26185658 (729 × 90) und 26185656 (300 × 250) aktualisieren
 - [x] Editorial-Fallbacks auf Tarzan „BIS 40 %“ und Eiskönigin „BIS 15 %“ aktualisieren
 - [ ] Tarzan-Sale im privaten Google Sheet von „BIS 15 % / Familien-Tickets“ auf „BIS 40 %“ ändern
+
+## Bannerrunde September 2026 – Abschluss
+- [x] Keyvisual-Ausfall nach Desktop-Refresh behoben: Einblendanimation entfernt, etablierte Desktop-/Mobilreihenfolge gesichert
+- [x] Salon Rosie: Stage 728 × 90 (26185722) im oberen Fließtext und 300 × 250 (26185720) nach Galerie
+- [x] Tanz der Vampire: Stage 728 × 90 (26185674) im oberen Fließtext und 300 × 250 (26185672) nach Galerie; alte untere Sonderanzeige ersetzt
+- [x] & Julia: Stage 728 × 90 (26185666) aktualisiert und 300 × 250 (26185664) nach Galerie ergänzt
+- [x] Der Teufel trägt Prada: Stage 728 × 90 (26185640) und 300 × 250 (26185638) aktualisiert
+- [x] Die Eiskönigin: Stage 729 × 90 (26185658) und 300 × 250 (26185656) aktualisiert
+- [x] Drei Haselnüsse für Aschenbrödel: Eventim/AWIN 728 × 90 (3980776) und 300 × 250 (3980773) integriert
+- [x] Disney Der Glöckner von Notre-Dame: ATG/AWIN 728 × 90 (4882557) und 300 × 250 (4882583) integriert
+- [x] Das Phantom der Oper: ATG/AWIN 728 × 90 (4804894) und Original-Hochformat (4804889, 320 × 480) integriert

@@ -41,8 +41,8 @@ import { ACTIVE_MUSICAL_IDS, cities, createAwinLink, getActiveMusicals, provider
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
-import AovoTanzDerVampireBanner from "@/components/AovoTanzDerVampireBanner";
 import AovoCampaignBanner, { getAovoCampaign, getAovoCampaigns } from "@/components/AovoCampaignBanner";
+import AwinShowCampaignBanner, { getAwinShowCampaign } from "@/components/AwinShowCampaignBanner";
 import EventimDraculaBanner from "@/components/EventimDraculaBanner";
 import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
@@ -191,6 +191,7 @@ export default function MusicalDetail() {
   const afterFaqCampaigns = aovoCampaigns.filter(
     (campaign) => campaign.placement === "after-faq"
   );
+  const awinShowCampaign = getAwinShowCampaign(musical.id);
   const hasCompactAfterFaqCampaign = afterFaqCampaigns.some(
     (campaign) => campaign.compactTopSpacing
   );
@@ -350,6 +351,9 @@ export default function MusicalDetail() {
                         )}
                         {musical.id === "dracula" && i === 5 && (
                           <EventimDraculaBanner format="wide" />
+                        )}
+                        {awinShowCampaign && i === awinShowCampaign.wideDetailParagraphIndex && (
+                          <AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />
                         )}
                         {/* Mobile Keyvisual:
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")
@@ -563,7 +567,7 @@ export default function MusicalDetail() {
         <MusicalGallery images={musical.gallery} />
       )}
 
-      {(afterGalleryCampaigns.length > 0 || musical.id === "fackjugoehte" || musical.id === "dracula") && (
+      {(afterGalleryCampaigns.length > 0 || musical.id === "fackjugoehte" || musical.id === "dracula" || Boolean(awinShowCampaign)) && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
             {afterGalleryCampaigns.map((campaign) => (
@@ -571,6 +575,7 @@ export default function MusicalDetail() {
             ))}
             {musical.id === "fackjugoehte" && <EventimFackJuGoehteBanner format="square" />}
             {musical.id === "dracula" && <EventimDraculaBanner format="square" />}
+            {awinShowCampaign && <AwinShowCampaignBanner campaign={awinShowCampaign} format="square" />}
           </div>
         </section>
       )}
@@ -630,10 +635,9 @@ export default function MusicalDetail() {
       )}
 
       {/* Kampagnenanzeigen bleiben unabhängig vom vorübergehend deaktivierten HRS-Bereich sichtbar. */}
-      {(musical.id === "tanz-der-vampire" || (aovoCampaign && !aovoCampaign.placement)) && (
+      {aovoCampaign && !aovoCampaign.placement && (
         <section className="py-12 md:py-16 bg-background" data-testid="musical-campaign-section">
           <div className="container max-w-4xl">
-            {musical.id === "tanz-der-vampire" && <AovoTanzDerVampireBanner />}
             {!aovoCampaign?.placement && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
           </div>
         </section>
