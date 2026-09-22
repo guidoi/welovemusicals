@@ -1118,9 +1118,9 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Familie", "Disney", "Das Original"],
     sale: {
-      label: "FAMILIEN:",
-      discount: "BIS 15 %",
-      note: "Familien-Tickets für bis zu zwei Erwachsene pro Kind bis 16 Jahre",
+      label: "25 JAHRE",
+      discount: "2. TICKET AB 25 €",
+      note: "Nur für kurze Zeit: Jedes zweite Ticket ab 25 €.",
     },
     youtubeTrailerId: "BqOiOukh3KQ",
     uspItems: [

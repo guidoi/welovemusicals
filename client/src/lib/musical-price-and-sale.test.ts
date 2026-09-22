@@ -17,11 +17,16 @@ describe("aktuelle Musicalpreise und Sale-Störer", () => {
     expect(findMusical("teufel-traegt-prada")?.priceFrom).toBe("46,99");
   });
 
-  it("zeigt Tarzan mit bis 15 Prozent und Salon Rosie mit zwei für eins als aktive Sale-Störer", () => {
+  it("zeigt die aktuellen Angebotsfallbacks als aktive Sale-Störer", () => {
     const now = new Date("2026-09-13T12:00:00");
 
+    expect(findMusical("koenig-der-loewen")?.sale).toMatchObject({
+      discount: "2. TICKET AB 25 €",
+      note: "Nur für kurze Zeit: Jedes zweite Ticket ab 25 €.",
+    });
     expect(findMusical("tarzan")?.sale).toMatchObject({ discount: "BIS 15 %" });
     expect(findMusical("salon-rosie")?.sale).toMatchObject({ discount: "2 FÜR 1" });
+    expect(isSaleActive(findMusical("koenig-der-loewen")?.sale, now)).toBe(true);
     expect(isSaleActive(findMusical("tarzan")?.sale, now)).toBe(true);
     expect(isSaleActive(findMusical("salon-rosie")?.sale, now)).toBe(true);
   });

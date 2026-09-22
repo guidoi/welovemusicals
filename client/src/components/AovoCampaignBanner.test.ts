@@ -181,7 +181,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xFcqGUobMzNazpmJ.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/KGtCOEFGfgbQHHaH.jpg",
       }),
       expect.objectContaining({
         groupId: "26180460",
@@ -189,7 +189,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/flIDVltwpwOIvdKZ.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/IfbilkdRigknWprn.jpg",
       }),
       expect.objectContaining({
         groupId: "26068528",

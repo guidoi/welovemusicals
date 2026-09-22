@@ -761,3 +761,9 @@
 - [x] Trailer auf Desktop wieder nach dem oberen Beschreibungsteil und vor Spielorten platzieren
 - [x] Mobile Trailer wieder nach dem definierten ersten Fließtextabsatz anzeigen; Keyvisuals bleiben danach im etablierten Absatzfluss
 - [x] TINA-Keyvisual auf das gelieferte quadratische Originalmotiv umstellen
+
+## KDL – 25-Jahre-Angebot
+- [x] Stage-Creatives der Kampagnen 26180470 (728 × 90) und 26180460 (300 × 250) auf das aktuelle Angebot „Jedes zweite Ticket ab 25 €“ aktualisieren
+- [x] Editorial-Fallback auf „2. TICKET AB 25 €“ aktualisieren; Google Sheet bleibt für den Live-Sale maßgeblich
+- [ ] KDL-Sale im privaten Google Sheet auf das aktuelle Angebot umstellen
+- [ ] TINA-Preis im privaten Google Sheet anlegen
