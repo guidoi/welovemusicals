@@ -13,7 +13,7 @@ describe("TINA – Das Tina Turner Musical", () => {
       city: "Hamburg",
       venue: "Stage Operettenhaus",
       priceFrom: "53,99",
-      keyvisualLandscape: true,
+      keyvisual: "/manus-storage/tina-das-tina-turner-musical-keyvisual-2027_d6a8a39e.avif",
       youtubeTrailerId: "N5BdeG7SVug",
     });
     expect(tina?.tourDates).toEqual([

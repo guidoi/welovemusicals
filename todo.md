@@ -755,3 +755,9 @@
 
 ## DRACULA – Das Musical
 - [x] Native Eventim/Awin-Creatives eingebunden: 728×90 (Campaign 3889113) im oberen Fließtext und 300×250 (Campaign 3889111) nach der Galerie; Click-URLs direkt, Impressionen nur nach Affiliate-Consent
+
+## Detailseiten-Medienreihenfolge
+- [x] Quadratische Keyvisuals auf Desktop wieder links neben dem Beschreibungstext anzeigen
+- [x] Trailer auf Desktop wieder nach dem oberen Beschreibungsteil und vor Spielorten platzieren
+- [x] Mobile Trailer wieder nach dem definierten ersten Fließtextabsatz anzeigen; Keyvisuals bleiben danach im etablierten Absatzfluss
+- [x] TINA-Keyvisual auf das gelieferte quadratische Originalmotiv umstellen

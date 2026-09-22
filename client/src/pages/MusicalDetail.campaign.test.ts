@@ -69,9 +69,20 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(squareBanner).toBeLessThan(showFacts);
   });
 
-  it("setzt Trailer an die Keyvisual-Position und platziert TINAs Banner im oberen Fließtext", () => {
-    expect(musicalDetailSource).toContain("{musical.youtubeTrailerId ? (");
-    expect(musicalDetailSource).toContain("!musical.youtubeTrailerId && (musical.id === 'moulinrouge'");
-    expect(musicalDetailSource).not.toContain("{/* YouTube Video */}");
+  it("bewahrt die definierte Reihenfolge von Keyvisual und Trailer auf Desktop und Mobil", () => {
+    const desktopKeyvisual = musicalDetailSource.indexOf("{/* Keyvisual – Desktop linke Spalte");
+    const mobileTrailer = musicalDetailSource.indexOf('data-testid="mobile-inline-trailer"');
+    const mobileKeyvisual = musicalDetailSource.indexOf("{/* Mobile Keyvisual:");
+    const desktopTrailer = musicalDetailSource.indexOf('data-testid="desktop-trailer-section"');
+    const tourDates = musicalDetailSource.indexOf("{/* Tour Dates */}");
+
+    expect(desktopKeyvisual).toBeGreaterThan(-1);
+    expect(musicalDetailSource).not.toContain("{musical.youtubeTrailerId ? (");
+    expect(mobileTrailer).toBeGreaterThan(-1);
+    expect(mobileKeyvisual).toBeGreaterThan(mobileTrailer);
+    expect(musicalDetailSource).not.toContain("!musical.youtubeTrailerId && (musical.id === 'moulinrouge'");
+    expect(desktopTrailer).toBeGreaterThan(mobileKeyvisual);
+    expect(tourDates).toBeGreaterThan(desktopTrailer);
+    expect(musicalDetailSource).toContain("musical.id === 'tina-das-musical'");
   });
 });
