@@ -746,4 +746,4 @@
 - [x] Veraltete We-Will-Rock-You-Nennung aus Stadtbeschreibung und öffentlicher Preisantwort entfernt; aktiven 7-Show-Katalog geprüft
 
 ## Startseiten-Snippet
-- [x] Google-, Open-Graph- und Twitter-Beschreibung der Startseite auf „Entdecke die besten Musicals & Shows in Deutschland, Österreich und der Schweiz – aktuelle Termine, Städte, Spielpläne und Tickets.“ vereinheitlichen
+- [x] Google-, Open-Graph-, Twitter- und Schema.org-Beschreibung der Startseite auf „Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Starlight Express, Eiskönigin, Mamma Mia! und mehr.“ vereinheitlichen
