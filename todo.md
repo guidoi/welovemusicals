@@ -801,3 +801,4 @@
 - [x] Die Schöne und das Biest: Eventim/AWIN 728 × 90 (3736769) nach dem Familienabschnitt und 300 × 250 (3736775) nach der Galerie eingebunden
 - [x] Rapunzel: Eventim/AWIN 728 × 90 (4573325) nach dem Märchen- und Musikabschnitt und 300 × 250 (4573313) nach der Galerie eingebunden
 - [x] Alle acht gelieferten Creatives projektgehostet, in Originalmaßen geprüft und so angebunden, dass Impressionen ausschließlich nach Affiliate-Einwilligung geladen werden
+- [x] Awin-/ATG-Creatives gezielt ohne Lazy Loading rendern, damit sie auch auf langen mobilen Detailseiten zuverlässig sichtbar bleiben

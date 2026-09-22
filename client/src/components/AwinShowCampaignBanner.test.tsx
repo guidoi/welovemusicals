@@ -63,6 +63,7 @@ describe("AwinShowCampaignBanner", () => {
     expect(moulinRouge?.creatives.square.clickUrl).toContain("s=4782560");
     expect(moulinRougeSquare).toContain('width="600"');
     expect(moulinRougeSquare).toContain('height="600"');
+    expect(moulinRougeSquare).toContain('loading="eager"');
 
     expect(starlight?.partner).toBe("atg");
     expect(starlight?.wideDetailParagraphIndex).toBe(2);
@@ -80,6 +81,7 @@ describe("AwinShowCampaignBanner", () => {
     expect(rapunzel?.wideDetailParagraphIndex).toBe(2);
     expect(rapunzel?.creatives.wide.clickUrl).toContain("s=4573325");
     expect(rapunzel?.creatives.square.clickUrl).toContain("s=4573313");
+    expect(renderBanner("rapunzel", "wide")).toContain('loading="eager"');
   });
 
   it("contains every supplied Awin and ATG campaign pair", () => {
