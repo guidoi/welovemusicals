@@ -762,6 +762,7 @@
 - [x] Mobile Trailer wieder nach dem definierten ersten Fließtextabsatz anzeigen; Keyvisuals bleiben danach im etablierten Absatzfluss
 - [x] TINA-Keyvisual auf das gelieferte quadratische Originalmotiv umstellen
 - [x] Fragile Keyvisual-Einblendanimation entfernt, damit alle Detailseiten bei einem harten Reload wieder zuverlässig ihre Medienreihenfolge behalten
+- [x] TINA-Keyvisual auf die aktuell gelieferte Originaldatei aktualisiert und die mobile Position nach der Einleitungsüberschrift per Regression abgesichert
 
 ## KDL – 25-Jahre-Angebot
 - [x] Stage-Creatives der Kampagnen 26180470 (728 × 90) und 26180460 (300 × 250) auf das aktuelle Angebot „Jedes zweite Ticket ab 25 €“ aktualisieren

@@ -98,5 +98,6 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(desktopTrailer).toBeGreaterThan(mobileKeyvisual);
     expect(tourDates).toBeGreaterThan(desktopTrailer);
     expect(musicalDetailSource).toContain("musical.id === 'tina-das-musical'");
+    expect(musicalDetailSource).toContain("musical.id === 'tina-das-musical' ? i === 1");
   });
 });
