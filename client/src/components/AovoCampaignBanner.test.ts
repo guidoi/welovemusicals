@@ -86,7 +86,7 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("keeps the supplied 300 × 250 creatives at native dimensions", () => {
+  it("platziert das Eiskönigin-Querbanner nach dem abgeschlossenen Spektakel-Abschnitt und behält native Formate bei", () => {
     expect(getAovoCampaigns("eiskoenigin")).toEqual(expect.arrayContaining([
       expect.objectContaining({
         groupId: "26185658",
@@ -94,7 +94,7 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 4,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XAIAosoXydWgLiUv.jpg",
       }),
       expect.objectContaining({
@@ -113,7 +113,7 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 4,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/hMSLfxEDGvtpGuxe.jpg",
       }),
       expect.objectContaining({
@@ -132,7 +132,7 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 4,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BkyJevjHoYNAGGBb.jpg",
       }),
       expect.objectContaining({
@@ -168,7 +168,7 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 3,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zLhEgGUtvChrLSXQ.jpg",
       }),
       expect.objectContaining({
@@ -186,7 +186,7 @@ describe("Aovo campaign banners", () => {
       height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 4,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/GjHNFEoIcaLNLtYD.jpg",
     });
     expect(getAovoCampaigns("wir-sind-am-leben")).toEqual(expect.arrayContaining([
@@ -211,7 +211,7 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 4,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yHDbGkiApdeTfiVB.jpg",
       }),
     ]));
@@ -229,11 +229,11 @@ describe("Aovo campaign banners", () => {
       expect.objectContaining({ groupId: "26185720", width: 300, height: 250, placement: "after-gallery" }),
     ]));
     expect(getAovoCampaigns("tanz-der-vampire")).toEqual(expect.arrayContaining([
-      expect.objectContaining({ groupId: "26185674", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description" }),
+      expect.objectContaining({ groupId: "26185674", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4 }),
       expect.objectContaining({ groupId: "26185672", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery" }),
     ]));
     expect(getAovoCampaigns("teufel-traegt-prada")).toEqual(expect.arrayContaining([
-      expect.objectContaining({ groupId: "26185640", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description" }),
+      expect.objectContaining({ groupId: "26185640", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4 }),
       expect.objectContaining({ groupId: "26185638", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery" }),
     ]));
   });
@@ -246,7 +246,7 @@ describe("Aovo campaign banners", () => {
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
-        detailParagraphIndex: 2,
+        detailParagraphIndex: 4,
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/KGtCOEFGfgbQHHaH.jpg",
       }),
       expect.objectContaining({

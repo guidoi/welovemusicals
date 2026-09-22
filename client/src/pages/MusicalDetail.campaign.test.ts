@@ -54,6 +54,7 @@ describe("MJ-Kampagnenplatzierung", () => {
     const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
 
     expect(wideBanner).toBeGreaterThan(-1);
+    expect(musicalDetailSource).toContain('musical.id === "fackjugoehte" && i === 5');
     expect(squareBanner).toBeGreaterThan(gallery);
     expect(squareBanner).toBeLessThan(showFacts);
   });

@@ -786,3 +786,10 @@
 - [x] Drei Haselnüsse für Aschenbrödel: Eventim/AWIN 728 × 90 (3980776) und 300 × 250 (3980773) integriert
 - [x] Disney Der Glöckner von Notre-Dame: ATG/AWIN 728 × 90 (4882557) und 300 × 250 (4882583) integriert
 - [x] Das Phantom der Oper: ATG/AWIN 728 × 90 (4804894) und Original-Hochformat (4804889, 320 × 480) integriert
+
+## Redaktionelle Bannerplatzierung
+- [x] Querbanner künftig je Detailseite im natürlichen oberen Lesefluss nach einem thematisch abgeschlossenen, conversion-starken Abschnitt platzieren – nie reflexartig direkt unter Headline oder Keyvisual
+- [x] Eiskönigin-Querbanner 26185658 hinter dem vollständigen Abschnitt „Spektakel für alle Sinne“ platziert; das 300 × 250-Format bleibt nach der Galerie
+- [x] Große Formate grundsätzlich nach der Galerie und vor „Alles, was du wissen musst“ belassen, sofern keine begründete kampagnenspezifische Ausnahme vorliegt
+- [x] Mobile Placement-Prüfung für alle aktuellen Querbanner durchgeführt: Salon Rosie, TINA, Drei Haselnüsse, Glöckner, Phantom und Dracula bereits sinnvoll im Lesefluss belassen
+- [x] Querbanner im mobilen Lesefluss hinter vollständige Textabschnitte verschoben: Der Teufel trägt Prada, König der Löwen, MJ, Zurück in die Zukunft, Tarzan (nach „Oscar-prämierte Musik von Phil Collins“), Tanz der Vampire, Wir sind am Leben, & Julia und Fack Ju Göhte

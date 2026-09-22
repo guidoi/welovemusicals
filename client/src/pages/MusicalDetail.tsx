@@ -346,7 +346,7 @@ export default function MusicalDetail() {
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} eagerThumbnail />
                           </div>
                         )}
-                        {musical.id === "fackjugoehte" && i === 1 && (
+                        {musical.id === "fackjugoehte" && i === 5 && (
                           <EventimFackJuGoehteBanner format="wide" />
                         )}
                         {musical.id === "dracula" && i === 5 && (
