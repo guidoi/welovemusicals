@@ -746,4 +746,4 @@
 - [x] Veraltete We-Will-Rock-You-Nennung aus Stadtbeschreibung und öffentlicher Preisantwort entfernt; aktiven 7-Show-Katalog geprüft
 
 ## Startseiten-Snippet
-- [x] Google-, Open-Graph- und Twitter-Beschreibung der Startseite auf „Entdecke die besten Musicals & Shows in Deutschland, Österreich und der Schweiz – aktuelle Termine, Spielorte und Tickets.“ vereinheitlichen
+- [x] Google-, Open-Graph- und Twitter-Beschreibung der Startseite auf „Entdecke die besten Musicals & Shows in Deutschland, Österreich und der Schweiz – aktuelle Termine, Städte, Spielpläne und Tickets.“ vereinheitlichen
