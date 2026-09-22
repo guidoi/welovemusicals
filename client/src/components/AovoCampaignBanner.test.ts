@@ -10,9 +10,8 @@ import {
 
 describe("Aovo campaign banners", () => {
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(26);
+    expect(AOVO_CAMPAIGNS).toHaveLength(24);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
-      "moulinrouge",
       "salon-rosie",
       "salon-rosie",
       "teufel-traegt-prada",
@@ -33,13 +32,12 @@ describe("Aovo campaign banners", () => {
       "tarzan",
       "tanz-der-vampire",
       "tanz-der-vampire",
-      "starlight-express",
       "wir-sind-am-leben",
       "wir-sind-am-leben",
       "und-julia",
       "und-julia",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(26);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(24);
   });
 
   it("uses the supplied native TINA creatives and Stage tracking IDs", () => {
@@ -70,20 +68,9 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("keeps the provided Moulin Rouge campaign dimensions and tracking URLs", () => {
-    const campaign = getAovoCampaign("moulinrouge");
-    expect(campaign).toMatchObject({
-      groupId: "26068414",
-      width: 750,
-      height: 200,
-      imageUrl: "/images/show-visuals/moulin-rouge-750x200.png",
-    });
-    expect(getAovoCampaignClickUrl("26068414")).toBe(
-      "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26068414"
-    );
-    expect(getAovoCampaignImpressionUrl("26068414", "123456789")).toBe(
-      "https://imp.tradedoubler.com/imp?type(img)g(26068414)a(3492604)123456789"
-    );
+  it("removes superseded unplaced Moulin Rouge and Starlight campaigns", () => {
+    expect(getAovoCampaign("moulinrouge")).toBeUndefined();
+    expect(getAovoCampaign("starlight-express")).toBeUndefined();
   });
 
   it("platziert das Eiskönigin-Querbanner nach dem abgeschlossenen Spektakel-Abschnitt und behält native Formate bei", () => {

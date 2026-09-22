@@ -125,6 +125,109 @@ export const AWIN_SHOW_CAMPAIGNS: readonly AwinShowCampaign[] = [
       }),
     },
   },
+  {
+    musicalId: "moulinrouge",
+    title: "Moulin Rouge! Das Musical",
+    partner: "atg",
+    // Nach dem vollständigen Abschnitt zur Theaterverwandlung,
+    // vor dem abschließenden Tony-Award-Kontext.
+    wideDetailParagraphIndex: 4,
+    creatives: {
+      wide: createAwinCreative({
+        creativeId: "4782564",
+        merchantId: "111888",
+        queryId: "597568",
+        imageUrl: "/manus-storage/05212026-233915595-asset_93453a11.jpg",
+        width: 728,
+        height: 90,
+      }),
+      square: createAwinCreative({
+        creativeId: "4782560",
+        merchantId: "111888",
+        queryId: "597568",
+        imageUrl: "/manus-storage/05212026-233915793-asset_fc839ed7.jpg",
+        width: 600,
+        height: 600,
+      }),
+    },
+  },
+  {
+    musicalId: "starlight-express",
+    title: "Starlight Express",
+    partner: "atg",
+    // Nach dem vollständigen Rollschuh-Action-Abschnitt,
+    // vor der Geschichte von Rusty.
+    wideDetailParagraphIndex: 2,
+    creatives: {
+      wide: createAwinCreative({
+        creativeId: "4785482",
+        merchantId: "111888",
+        queryId: "508544",
+        imageUrl: "/manus-storage/05262026-060503701-asset_4113c4ab.jpg",
+        width: 728,
+        height: 90,
+      }),
+      square: createAwinCreative({
+        creativeId: "4785481",
+        merchantId: "111888",
+        queryId: "508544",
+        imageUrl: "/manus-storage/05262026-060504131-asset_fc450ba9.jpg",
+        width: 320,
+        height: 480,
+      }),
+    },
+  },
+  {
+    musicalId: "schoene-und-das-biest",
+    title: "Die Schöne und das Biest – Das neue Musical",
+    partner: "eventim",
+    // Nach dem vollständigen Familienabschnitt, vor den Tourneestädten.
+    wideDetailParagraphIndex: 3,
+    creatives: {
+      wide: createAwinCreative({
+        creativeId: "3736769",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "/manus-storage/imgdie-schoene-und-das-biest-das-neue-musical-awin-728x90-1773759468872_06dfa802.jpg",
+        width: 728,
+        height: 90,
+      }),
+      square: createAwinCreative({
+        creativeId: "3736775",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "/manus-storage/imgdie-schoene-und-das-biest-das-neue-musical-awin-300x250-1773759509379_acc6b7d2.jpg",
+        width: 300,
+        height: 250,
+      }),
+    },
+  },
+  {
+    musicalId: "rapunzel",
+    title: "Rapunzel – Das märchenhafte Musical",
+    partner: "eventim",
+    // Nach dem vollständigen Märchen- und Musikabschnitt,
+    // vor dem kreativen Traumteam.
+    wideDetailParagraphIndex: 2,
+    creatives: {
+      wide: createAwinCreative({
+        creativeId: "4573325",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "/manus-storage/imgrapunzel-das-neue-musical-awin-728x90-1784714913612_2a361a37.jpg",
+        width: 728,
+        height: 90,
+      }),
+      square: createAwinCreative({
+        creativeId: "4573313",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "/manus-storage/imgrapunzel-das-neue-musical-awin-300x250-1784714842593_61296029.jpg",
+        width: 300,
+        height: 250,
+      }),
+    },
+  },
 ] as const;
 
 export function getAwinShowCampaign(musicalId: string) {

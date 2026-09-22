@@ -20,14 +20,6 @@ export type AovoCampaign = {
 
 export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
   {
-    musicalId: "moulinrouge",
-    musicalTitle: "Moulin Rouge!",
-    groupId: "26068414",
-    width: 750,
-    height: 200,
-    imageUrl: "/images/show-visuals/moulin-rouge-750x200.png",
-  },
-  {
     musicalId: "salon-rosie",
     musicalTitle: "Salon Rosie",
     groupId: "26185722",
@@ -276,14 +268,6 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     placement: "after-gallery",
     adLabel: "Tanz-der-Vampire-Ticketangebot",
     clickAriaLabel: "Tanz-der-Vampire-Ticketangebot in neuem Tab öffnen",
-  },
-  {
-    musicalId: "starlight-express",
-    musicalTitle: "Starlight Express",
-    groupId: "26068496",
-    width: 750,
-    height: 200,
-    imageUrl: "/images/show-visuals/starlight-express-750x200.png",
   },
   {
     musicalId: "wir-sind-am-leben",

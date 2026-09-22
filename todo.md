@@ -793,3 +793,10 @@
 - [x] Große Formate grundsätzlich nach der Galerie und vor „Alles, was du wissen musst“ belassen, sofern keine begründete kampagnenspezifische Ausnahme vorliegt
 - [x] Mobile Placement-Prüfung für alle aktuellen Querbanner durchgeführt: Salon Rosie, TINA, Drei Haselnüsse, Glöckner, Phantom und Dracula bereits sinnvoll im Lesefluss belassen
 - [x] Querbanner im mobilen Lesefluss hinter vollständige Textabschnitte verschoben: Der Teufel trägt Prada, König der Löwen, MJ, Zurück in die Zukunft, Tarzan (nach „Oscar-prämierte Musik von Phil Collins“), Tanz der Vampire, Wir sind am Leben, & Julia und Fack Ju Göhte
+
+## Neue Awin-/ATG-Banner September 2026
+- [x] Moulin Rouge: ATG/AWIN 728 × 90 (4782564) nach dem Theater-Abschnitt und Original-600 × 600 (4782560) nach der Galerie eingebunden; alte unplatzierte TradeDoubler-Anzeige entfernt
+- [x] Starlight Express: ATG/AWIN 728 × 90 (4785482) nach dem Rollschuh-Action-Abschnitt und Original-Hochformat 320 × 480 (4785481) nach der Galerie eingebunden; alte unplatzierte TradeDoubler-Anzeige entfernt
+- [x] Die Schöne und das Biest: Eventim/AWIN 728 × 90 (3736769) nach dem Familienabschnitt und 300 × 250 (3736775) nach der Galerie eingebunden
+- [x] Rapunzel: Eventim/AWIN 728 × 90 (4573325) nach dem Märchen- und Musikabschnitt und 300 × 250 (4573313) nach der Galerie eingebunden
+- [x] Alle acht gelieferten Creatives projektgehostet, in Originalmaßen geprüft und so angebunden, dass Impressionen ausschließlich nach Affiliate-Einwilligung geladen werden

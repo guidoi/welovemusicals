@@ -49,11 +49,48 @@ describe("AwinShowCampaignBanner", () => {
     expect(phantomSquare).toContain("ATG Tickets");
   });
 
-  it("contains exactly the three newly supplied Awin and ATG campaign pairs", () => {
+  it("uses the supplied Moulin Rouge, Starlight, Biest and Rapunzel creative pairs at native dimensions", () => {
+    const moulinRouge = getAwinShowCampaign("moulinrouge");
+    const starlight = getAwinShowCampaign("starlight-express");
+    const biest = getAwinShowCampaign("schoene-und-das-biest");
+    const rapunzel = getAwinShowCampaign("rapunzel");
+    const moulinRougeSquare = renderBanner("moulinrouge", "square");
+    const starlightSquare = renderBanner("starlight-express", "square");
+
+    expect(moulinRouge?.partner).toBe("atg");
+    expect(moulinRouge?.wideDetailParagraphIndex).toBe(4);
+    expect(moulinRouge?.creatives.wide.clickUrl).toContain("s=4782564");
+    expect(moulinRouge?.creatives.square.clickUrl).toContain("s=4782560");
+    expect(moulinRougeSquare).toContain('width="600"');
+    expect(moulinRougeSquare).toContain('height="600"');
+
+    expect(starlight?.partner).toBe("atg");
+    expect(starlight?.wideDetailParagraphIndex).toBe(2);
+    expect(starlight?.creatives.wide.clickUrl).toContain("s=4785482");
+    expect(starlight?.creatives.square.clickUrl).toContain("s=4785481");
+    expect(starlightSquare).toContain('width="320"');
+    expect(starlightSquare).toContain('height="480"');
+
+    expect(biest?.partner).toBe("eventim");
+    expect(biest?.wideDetailParagraphIndex).toBe(3);
+    expect(biest?.creatives.wide.clickUrl).toContain("s=3736769");
+    expect(biest?.creatives.square.clickUrl).toContain("s=3736775");
+
+    expect(rapunzel?.partner).toBe("eventim");
+    expect(rapunzel?.wideDetailParagraphIndex).toBe(2);
+    expect(rapunzel?.creatives.wide.clickUrl).toContain("s=4573325");
+    expect(rapunzel?.creatives.square.clickUrl).toContain("s=4573313");
+  });
+
+  it("contains every supplied Awin and ATG campaign pair", () => {
     expect(AWIN_SHOW_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "dreihaselnuesse",
       "gloeckner-von-notre-dame",
       "phantom-der-oper",
+      "moulinrouge",
+      "starlight-express",
+      "schoene-und-das-biest",
+      "rapunzel",
     ]);
   });
 });
