@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 
 const homeHtml = readFileSync(new URL("../../index.html", import.meta.url), "utf8");
 const kdlImage = "https://welovemusicals.com/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg";
-const homeDescription = "Die besten Musicals &amp; Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Starlight Express, Eiskönigin, Mamma Mia! und mehr.";
-const structuredDescription = "Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Starlight Express, Eiskönigin, Mamma Mia! und mehr.";
+const homeDescription = "Die besten Musicals &amp; Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.";
+const structuredDescription = "Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.";
 
 describe("Startseiten-Metadaten", () => {
   it("setzt ein repräsentatives Musicalmotiv statt eines einzelnen Tournee-Keyvisuals", () => {

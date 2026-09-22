@@ -746,7 +746,7 @@
 - [x] Veraltete We-Will-Rock-You-Nennung aus Stadtbeschreibung und öffentlicher Preisantwort entfernt; aktiven 7-Show-Katalog geprüft
 
 ## Startseiten-Snippet
-- [x] Google-, Open-Graph-, Twitter- und Schema.org-Beschreibung der Startseite auf „Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Starlight Express, Eiskönigin, Mamma Mia! und mehr.“ vereinheitlichen
+- [x] Google-, Open-Graph-, Twitter- und Schema.org-Beschreibung der Startseite auf „Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.“ vereinheitlichen
 
 ## TINA – Das Tina Turner Musical
 - [x] TINA als aktive Hamburg-Produktion ab April 2027 mit bestätigtem Einstiegspreis, Stage-Textlink, Trailer, Quellenbasis und Bildcredit anlegen
