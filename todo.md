@@ -801,6 +801,7 @@
 - [x] Starlight Express: ATG/AWIN 728 × 90 (4785482) nach dem Rollschuh-Action-Abschnitt und Original-Hochformat 320 × 480 (4785481) nach der Galerie eingebunden; alte unplatzierte TradeDoubler-Anzeige entfernt
 - [x] Die Schöne und das Biest: Eventim/AWIN 728 × 90 (3736769) nach dem Familienabschnitt und 300 × 250 (3736775) nach der Galerie eingebunden
 - [x] Rapunzel: Eventim/AWIN 728 × 90 (4573325) nach dem Märchen- und Musikabschnitt und 300 × 250 (4573313) nach der Galerie eingebunden
-- [x] Alle acht gelieferten Creatives projektgehostet, in Originalmaßen geprüft und so angebunden, dass Impressionen ausschließlich nach Affiliate-Einwilligung geladen werden
+- [x] Alle acht gelieferten Creatives im CDN gehostet, in Originalmaßen geprüft und so angebunden, dass Impressionen ausschließlich nach Affiliate-Einwilligung geladen werden
 - [x] Awin-/ATG-Creatives ohne Lazy Loading und mit synchronem Bilddecodieren rendern, damit sie auch auf langen mobilen Detailseiten zuverlässig sichtbar bleiben
 - [x] Kompletter Sicht- und Asset-Abgleich auf Mobil und Desktop für TINA, Moulin Rouge, Starlight Express, Rapunzel sowie Die Schöne und das Biest; alle neun aktualisierten Bilddateien liefern HTTP 200
+- [x] Tatsächlichen mobilen Bildfehler behoben: Projektinterne `/manus-storage`-Pfade lieferten im Seiten-DOM natürliche Bildmaße 0 × 0; TINA-Keyvisual und alle neuen Awin-/ATG-Creatives sind deshalb auf direkt ladbare CDN-URLs umgestellt und anschließend in mobilen sowie Desktop-Screenshots verifiziert

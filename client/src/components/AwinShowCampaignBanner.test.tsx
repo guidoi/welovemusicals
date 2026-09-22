@@ -61,6 +61,8 @@ describe("AwinShowCampaignBanner", () => {
     expect(moulinRouge?.wideDetailParagraphIndex).toBe(4);
     expect(moulinRouge?.creatives.wide.clickUrl).toContain("s=4782564");
     expect(moulinRouge?.creatives.square.clickUrl).toContain("s=4782560");
+    expect(moulinRouge?.creatives.wide.imageUrl).toContain("UgTcyxPlEFQcQEfj.jpg");
+    expect(moulinRouge?.creatives.square.imageUrl).toContain("LLbYiHYYucAcIsfS.jpg");
     expect(moulinRougeSquare).toContain('width="600"');
     expect(moulinRougeSquare).toContain('height="600"');
     expect(moulinRougeSquare).toContain('loading="eager"');
@@ -70,6 +72,8 @@ describe("AwinShowCampaignBanner", () => {
     expect(starlight?.wideDetailParagraphIndex).toBe(2);
     expect(starlight?.creatives.wide.clickUrl).toContain("s=4785482");
     expect(starlight?.creatives.square.clickUrl).toContain("s=4785481");
+    expect(starlight?.creatives.wide.imageUrl).toContain("cNjssQMFzIxxObAw.jpg");
+    expect(starlight?.creatives.square.imageUrl).toContain("aVLvtLqeZGZpSyOm.jpg");
     expect(starlightSquare).toContain('width="320"');
     expect(starlightSquare).toContain('height="480"');
 
@@ -77,11 +81,15 @@ describe("AwinShowCampaignBanner", () => {
     expect(biest?.wideDetailParagraphIndex).toBe(3);
     expect(biest?.creatives.wide.clickUrl).toContain("s=3736769");
     expect(biest?.creatives.square.clickUrl).toContain("s=3736775");
+    expect(biest?.creatives.wide.imageUrl).toContain("ofkQWvwvsFFYcItR.jpg");
+    expect(biest?.creatives.square.imageUrl).toContain("GDrhbvoacicMlOjP.jpg");
 
     expect(rapunzel?.partner).toBe("eventim");
     expect(rapunzel?.wideDetailParagraphIndex).toBe(2);
     expect(rapunzel?.creatives.wide.clickUrl).toContain("s=4573325");
     expect(rapunzel?.creatives.square.clickUrl).toContain("s=4573313");
+    expect(rapunzel?.creatives.wide.imageUrl).toContain("kXTJLZsyeoxkPzcT.jpg");
+    expect(rapunzel?.creatives.square.imageUrl).toContain("NnlhNtybfKuJEoGP.jpg");
     expect(renderBanner("rapunzel", "wide")).toContain('loading="eager"');
     expect(renderBanner("rapunzel", "wide")).toContain('decoding="sync"');
   });

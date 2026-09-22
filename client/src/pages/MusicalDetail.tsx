@@ -353,7 +353,14 @@ export default function MusicalDetail() {
                           <EventimDraculaBanner format="wide" />
                         )}
                         {awinShowCampaign && i === awinShowCampaign.wideDetailParagraphIndex && (
-                          <AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />
+                          <>
+                            <div className="hidden lg:block">
+                              <AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />
+                            </div>
+                            <div className="lg:hidden" data-testid="awin-show-campaign-mobile">
+                              <AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />
+                            </div>
+                          </>
                         )}
                         {/* Mobile Keyvisual:
                              - Moulin Rouge!: nach i=2 (nach "Von Offenbach...", vor "Das Theater...")

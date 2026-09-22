@@ -81,6 +81,8 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(wideBanner).toBeGreaterThan(-1);
     expect(squareBanner).toBeGreaterThan(gallery);
     expect(squareBanner).toBeLessThan(showFacts);
+    expect(musicalDetailSource).toContain('data-testid="awin-show-campaign-mobile"');
+    expect(musicalDetailSource).toContain('<div className="hidden lg:block">\n                              <AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />');
   });
 
   it("bewahrt die definierte Reihenfolge von Keyvisual und Trailer auf Desktop und Mobil", () => {
