@@ -6,6 +6,8 @@
  *   damit breite Querformat-Bilder vollständig sichtbar sind
  */
 
+import React from "react";
+
 interface MusicalKeyVisualProps {
   image: string;
   title: string;
