@@ -352,6 +352,7 @@ export function getAovoCampaignImpressionUrl(
 
 export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaign }) {
   const { consent } = useConsent();
+  const isInlineWideCampaign = campaign.placement === "within-detail-description" && campaign.width >= 700;
   const impressionUrl = useMemo(
     () => getAovoCampaignImpressionUrl(campaign.groupId, String(Math.random()).slice(2, 11), campaign.trackingNetwork),
     [campaign.groupId, campaign.trackingNetwork]
@@ -367,6 +368,8 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
     <aside
       className={campaign.compactTopSpacing
         ? "mx-auto mt-2 w-full pt-2 md:mt-3 md:pt-3"
+        : isInlineWideCampaign
+          ? "mx-auto mt-3 mb-8 w-full pt-1 md:my-8 md:pt-6"
         : "mx-auto mt-8 w-full pt-6"}
       style={{ maxWidth: campaign.width }}
       aria-label={`Anzeige: ${campaign.adLabel ?? `Ticket und Hotel – ${campaign.musicalTitle}`}`}

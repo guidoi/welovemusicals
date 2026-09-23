@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getMusicalBySlug } from "./data";
+import { getMusicalBySlug, WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL } from "./data";
 
 describe("WIR SIND AM LEBEN ticket data", () => {
   it("exposes the Berlin ticket section with venue, dates and Stage destination", () => {
@@ -11,10 +11,9 @@ describe("WIR SIND AM LEBEN ticket data", () => {
         venue: "Stage Theater des Westens",
         startDate: "2026-07-01",
         endDate: "2027-02-28",
-        eventimUrl: "https://www.stage-entertainment.de/musicals-shows/wir-sind-am-leben-berlin",
+        eventimUrl: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
       }),
     ]);
     expect(musical?.showFacts).toContainEqual({ label: "Spielzeit", value: "01.07.2026 – 28.02.2027" });
   });
 });
-

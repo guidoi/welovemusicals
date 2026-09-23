@@ -295,6 +295,8 @@ describe("Aovo campaign banners", () => {
     expect(componentSource).toContain("height={campaign.height}");
     expect(componentSource).toContain("campaign.compactTopSpacing");
     expect(componentSource).toContain('"mx-auto mt-2 w-full pt-2 md:mt-3 md:pt-3"');
+    expect(componentSource).toContain('campaign.placement === "within-detail-description" && campaign.width >= 700');
+    expect(componentSource).toContain('"mx-auto mt-3 mb-8 w-full pt-1 md:my-8 md:pt-6"');
     expect(componentSource).not.toContain("border-t border-gold/15");
     expect(componentSource).toContain(">Anzeige</p>");
   });

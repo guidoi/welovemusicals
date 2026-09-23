@@ -92,6 +92,8 @@ describe("AwinShowCampaignBanner", () => {
     expect(rapunzel?.creatives.square.imageUrl).toContain("NnlhNtybfKuJEoGP.jpg");
     expect(renderBanner("rapunzel", "wide")).toContain('loading="eager"');
     expect(renderBanner("rapunzel", "wide")).toContain('decoding="sync"');
+    expect(renderBanner("rapunzel", "wide")).toContain("mt-3 mb-8 w-full md:my-8");
+    expect(renderBanner("rapunzel", "square")).toContain("mx-auto my-8 w-full");
   });
 
   it("contains every supplied Awin and ATG campaign pair", () => {

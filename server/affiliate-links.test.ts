@@ -1,17 +1,27 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { ACTIVE_MUSICAL_IDS, ATG_PENDING_TOUR_TEXT_LINK_IDS, AWIN_TEXT_LINKS, EISKOENIGIN_STAGE_TEXT_LINK_URL, getActiveMusicals, getMusicalBySlug, MJ_STAGE_TEXT_LINK_URL, musicals } from "../client/src/lib/data";
+import {
+  ACTIVE_MUSICAL_IDS,
+  ATG_PENDING_TOUR_TEXT_LINK_IDS,
+  AWIN_TEXT_LINKS,
+  EISKOENIGIN_STAGE_TEXT_LINK_URL,
+  getActiveMusicals,
+  getMusicalBySlug,
+  KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
+  MJ_STAGE_TEXT_LINK_URL,
+  PRADA_STAGE_TEXT_LINK_URL,
+  SALON_ROSIE_STAGE_TEXT_LINK_URL,
+  TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
+  TARZAN_STAGE_TEXT_LINK_URL,
+  TINA_STAGE_TEXT_LINK_URL,
+  UND_JULIA_STAGE_TEXT_LINK_URL,
+  WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
+  ZIZ_STAGE_TEXT_LINK_URL,
+  musicals,
+} from "../client/src/lib/data";
 
-const KDL_STAGE_PRODUCT_URL = "https://www.stage-entertainment.de/musicals-shows/b/disneys-der-koenig-der-loewen-hamburg";
 const STAGE_PRODUCT_URLS = {
-  tarzan: "https://www.stage-entertainment.de/musicals-shows/disneys-tarzan-hamburg",
-  ziz: "https://www.stage-entertainment.de/musicals-shows/zurueck-in-die-zukunft-hamburg/ticketshop",
-  "teufel-traegt-prada": "https://www.stage-entertainment.de/musicals-shows/der-teufel-traegt-prada-hamburg",
-  "wir-sind-am-leben": "https://www.stage-entertainment.de/musicals-shows/wir-sind-am-leben-berlin",
-  "tanz-der-vampire": "https://www.stage-entertainment.de/musicals-shows/tanz-der-vampire-stuttgart",
   "we-will-rock-you": "https://www.stage-entertainment.de/musicals-shows/we-will-rock-you-stuttgart",
-  "und-julia": "https://www.stage-entertainment.de/musicals-shows/und-julia-stuttgart",
-  "salon-rosie": "https://www.stage-entertainment.de/musicals-shows/salon-rosie-berlin",
 } as const;
 
 describe("Affiliate-Link-Zuordnung", () => {
@@ -154,17 +164,17 @@ describe("Affiliate-Link-Zuordnung", () => {
 
   });
 
-  it("verwendet für König der Löwen die direkte Stage-Entertainment-Produktseite an allen Ticket-CTAs", () => {
+  it("verwendet für König der Löwen den gelieferten Stage-Textlink an allen Ticket-CTAs", () => {
     const kdl = musicals.find((musical) => musical.id === "koenig-der-loewen");
 
     expect(kdl).toBeDefined();
-    expect(kdl?.keyvisualLink).toBe(KDL_STAGE_PRODUCT_URL);
-    expect(kdl?.ticketCtaUrl).toBe(KDL_STAGE_PRODUCT_URL);
-    expect(kdl?.eventimUrl).toBe(KDL_STAGE_PRODUCT_URL);
-    expect(kdl?.awinHeroUrl).toBe(KDL_STAGE_PRODUCT_URL);
-    expect(kdl?.awinStickyUrl).toBe(KDL_STAGE_PRODUCT_URL);
-    expect(kdl?.awinBoxUrl).toBe(KDL_STAGE_PRODUCT_URL);
-    expect(kdl?.tourDates?.[0]?.eventimUrl).toBe(KDL_STAGE_PRODUCT_URL);
+    expect(kdl?.keyvisualLink).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.ticketCtaUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.eventimUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.awinHeroUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.awinStickyUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.awinBoxUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.tourDates?.[0]?.eventimUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
   });
 
   it("verwendet die bereitgestellten Stage-Produktseiten an allen Ticket-CTAs und Tourterminen", () => {
@@ -216,6 +226,34 @@ describe("Affiliate-Link-Zuordnung", () => {
       eiskoenigin?.awinBoxUrl,
       ...(eiskoenigin?.tourDates ?? []).map((date) => date.eventimUrl),
     ]).toEqual(Array(7).fill(EISKOENIGIN_STAGE_TEXT_LINK_URL));
+  });
+
+  it("vereinheitlicht die weiteren gelieferten Stage-Textlinks für alle CTA- und Terminpfade", () => {
+    const expectations = {
+      ziz: ZIZ_STAGE_TEXT_LINK_URL,
+      "tina-das-musical": TINA_STAGE_TEXT_LINK_URL,
+      "und-julia": UND_JULIA_STAGE_TEXT_LINK_URL,
+      tarzan: TARZAN_STAGE_TEXT_LINK_URL,
+      "teufel-traegt-prada": PRADA_STAGE_TEXT_LINK_URL,
+      "tanz-der-vampire": TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
+      "wir-sind-am-leben": WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
+      "salon-rosie": SALON_ROSIE_STAGE_TEXT_LINK_URL,
+    } as const;
+
+    for (const [id, textLink] of Object.entries(expectations)) {
+      const musical = musicals.find((entry) => entry.id === id);
+
+      expect(musical, `Musical ${id} muss vorhanden sein`).toBeDefined();
+      expect([
+        musical?.keyvisualLink,
+        musical?.ticketCtaUrl,
+        musical?.eventimUrl,
+        musical?.awinHeroUrl,
+        musical?.awinStickyUrl,
+        musical?.awinBoxUrl,
+        ...(musical?.tourDates ?? []).map((date) => date.eventimUrl),
+      ]).toEqual(Array(7).fill(textLink));
+    }
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {

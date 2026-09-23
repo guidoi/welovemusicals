@@ -809,3 +809,11 @@
 ## Rapunzel-Artworks September 2026
 - [x] Neues Querformat als unbeschnittenes Headerbild der Detailseite eingebunden
 - [x] Neues quadratisches Originalmotiv für Karten, Desktop-Keyvisual links und das mobile Keyvisual im Fließtext eingebunden
+
+## Mobile Navigation und Lesefluss September 2026
+- [x] Erlebniswelt-Buttons auf Mobil an die Orientierung „Musicals & Shows“ und „Städte“ angeglichen: gleiche 40-Pixel-Höhe, horizontale Polsterung, Goldkontur, Schriftgewicht, Laufweite und Interaktionsstil
+- [x] Mobile Querbanner im Fließtext direkt an den vorangehenden, inhaltlich abgeschlossenen Absatz angebunden; auf Desktop bleibt der großzügigere Lesefluss bestehen und große Formate nach der Galerie behalten ihren Abstand
+
+## Stage-Textlinks September 2026
+- [x] Gelieferte Stage-Textlinks als direkte, sichere `click`-URLs ohne Ausführung der bereitgestellten `document.write`-Skripte für König der Löwen, MJ, Zurück in die Zukunft, TINA, & Julia, Tarzan, Der Teufel trägt Prada, Eiskönigin, Tanz der Vampire, Wir sind am Leben und Salon Rosie hinterlegt
+- [x] Je Show alle Ticketpfade vereinheitlicht: Haupt-CTA, Hero-CTA, Sticky-CTA, Angebotskasten, Keyvisual und zugehöriger Terminbutton verwenden jeweils dieselbe gelieferte Tracking-Kampagne

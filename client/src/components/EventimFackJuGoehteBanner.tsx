@@ -52,7 +52,7 @@ export default function EventimFackJuGoehteBanner({
 
   return (
     <aside
-      className="mx-auto my-8 w-full"
+      className={format === "wide" ? "mx-auto mt-3 mb-8 w-full md:my-8" : "mx-auto my-8 w-full"}
       style={{ maxWidth: campaign.width }}
       aria-label={`Anzeige: Fack Ju Göhte Back-to-School-Sale ${campaign.placementLabel}`}
       data-campaign-id={campaign.campaignId}

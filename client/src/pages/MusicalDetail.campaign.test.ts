@@ -16,8 +16,8 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(tourDates).toBeGreaterThan(inlineCampaign);
     expect(musicalDetailSource).toContain('data-testid="within-detail-description-campaign"');
     expect(musicalDetailSource).toContain('data-testid="within-detail-description-campaign-mobile"');
-    expect(musicalDetailSource).toContain('className="my-8 hidden lg:block"');
-    expect(musicalDetailSource).toContain('className="my-8 lg:hidden"');
+    expect(musicalDetailSource).toContain('className="hidden lg:block" data-testid="within-detail-description-campaign"');
+    expect(musicalDetailSource).toContain('className="lg:hidden" data-testid="within-detail-description-campaign-mobile"');
   });
 
   it("platziert große Kampagnen nach der Bildergalerie und vor dem Wissensbereich", () => {

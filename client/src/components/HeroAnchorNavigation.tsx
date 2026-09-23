@@ -99,10 +99,10 @@ export default function HeroAnchorNavigation({
       )}
 
       {categoryItems.length > 0 && (
-        <div className="mb-3 flex flex-wrap justify-center gap-1.5" data-testid="hero-category-navigation" aria-label="Musicals nach Erlebniswelt entdecken">
+        <div className="mb-3 flex flex-wrap justify-center gap-2" data-testid="hero-category-navigation" aria-label="Musicals nach Erlebniswelt entdecken">
           {categoryItems.map((item) => renderItem(
             item,
-            "inline-flex h-9 items-center rounded-full border border-gold/60 bg-transparent px-3.5 text-xs font-semibold text-gold transition-all duration-150 hover:border-gold hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm",
+            "inline-flex h-10 items-center rounded-full border border-gold bg-transparent px-4 text-xs font-bold tracking-[0.08em] text-gold shadow-lg shadow-black/20 transition-all duration-150 hover:-translate-y-0.5 hover:border-gold-light hover:bg-gold/15 hover:text-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-12 md:px-5 md:text-sm",
           ))}
         </div>
       )}

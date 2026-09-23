@@ -24,6 +24,7 @@ describe("EventimFackJuGoehteBanner", () => {
     expect(markup).toContain('height="90"');
     expect(markup).toContain("Back-to-School-Sale");
     expect(markup).toContain("Anzeige");
+    expect(markup).toContain("mt-3 mb-8 w-full md:my-8");
   });
 
   it("rendert das quadratische Back-to-School-Creative nativ mit AWIN-Campaign 4568823", () => {
@@ -37,5 +38,6 @@ describe("EventimFackJuGoehteBanner", () => {
     expect(markup).toContain('height="250"');
     expect(markup).toContain("nach der Bildergalerie");
     expect(markup).toContain('loading="lazy"');
+    expect(markup).toContain("mx-auto my-8 w-full");
   });
 });

@@ -332,7 +332,7 @@ export default function MusicalDetail() {
                         )}
                         {inlineDescriptionCampaign?.placement === "within-detail-description" &&
                           i === inlineDescriptionCampaign.detailParagraphIndex && (
-                            <div className="my-8 hidden lg:block" data-testid="within-detail-description-campaign">
+                            <div className="hidden lg:block" data-testid="within-detail-description-campaign">
                               <AovoCampaignBanner campaign={inlineDescriptionCampaign} />
                             </div>
                           )}
@@ -382,7 +382,7 @@ export default function MusicalDetail() {
                         )}
                         {inlineDescriptionCampaign?.placement === "within-detail-description" &&
                           i === inlineDescriptionCampaign.detailParagraphIndex && (
-                            <div className="my-8 lg:hidden" data-testid="within-detail-description-campaign-mobile">
+                            <div className="lg:hidden" data-testid="within-detail-description-campaign-mobile">
                               <AovoCampaignBanner campaign={inlineDescriptionCampaign} />
                             </div>
                           )}

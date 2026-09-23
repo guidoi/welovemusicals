@@ -7,7 +7,7 @@ import HeroAnchorNavigation from "./HeroAnchorNavigation";
 const staticLocationHook = (): [string, (path: string) => void] => ["/", () => undefined];
 
 describe("HeroAnchorNavigation", () => {
-  it("rendert kleine goldumrandete Orientierungstabs und weiße Musicalbuttons mit Desktop-Pfeilsteuerungen", () => {
+  it("richtet Erlebniswelt- und Orientierungsbuttons auf Mobil einheitlich aus und behält die Desktop-Pfeilsteuerungen", () => {
     const markup = renderToStaticMarkup(
       <Router hook={staticLocationHook}>
         <HeroAnchorNavigation
@@ -93,7 +93,7 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('data-testid="hero-anchor-category-blockbuster-spektakel"');
     expect(markup).not.toContain('data-testid="hero-orientation-navigation"');
     expect(markup).not.toContain('href="/musical/alpha"');
-    expect(markup).toMatch(/data-testid="hero-anchor-category-blockbuster-spektakel"[^>]*h-9[^>]*px-3\.5[^>]*text-xs/);
+    expect(markup).toMatch(/data-testid="hero-anchor-category-blockbuster-spektakel"[^>]*h-10[^>]*px-4[^>]*text-xs[^>]*font-bold[^>]*tracking-\[0\.08em\]/);
     expect(markup).toContain('md:h-12');
     expect(markup).toContain('md:px-5');
     expect(markup).toContain('md:text-sm');

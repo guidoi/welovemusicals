@@ -24,6 +24,7 @@ describe("EventimDraculaBanner", () => {
     expect(markup).toContain('height="90"');
     expect(markup).toContain("im Fließtext");
     expect(markup).toContain("Anzeige");
+    expect(markup).toContain("mt-3 mb-8 w-full md:my-8");
   });
 
   it("rendert das quadratische Dracula-Creative nativ mit AWIN-Campaign 3889111", () => {
@@ -37,5 +38,6 @@ describe("EventimDraculaBanner", () => {
     expect(markup).toContain('height="250"');
     expect(markup).toContain("nach der Bildergalerie");
     expect(markup).toContain('loading="lazy"');
+    expect(markup).toContain("mx-auto my-8 w-full");
   });
 });
