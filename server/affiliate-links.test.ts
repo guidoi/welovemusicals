@@ -4,18 +4,29 @@ import {
   ACTIVE_MUSICAL_IDS,
   ATG_PENDING_TOUR_TEXT_LINK_IDS,
   AWIN_TEXT_LINKS,
+  EISKOENIGIN_STAGE_SHOW_PAGE_URL,
   EISKOENIGIN_STAGE_TEXT_LINK_URL,
   getActiveMusicals,
   getMusicalBySlug,
+  KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL,
   KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
+  MJ_STAGE_SHOW_PAGE_URL,
   MJ_STAGE_TEXT_LINK_URL,
+  PRADA_STAGE_SHOW_PAGE_URL,
   PRADA_STAGE_TEXT_LINK_URL,
+  SALON_ROSIE_STAGE_SHOW_PAGE_URL,
   SALON_ROSIE_STAGE_TEXT_LINK_URL,
+  TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL,
   TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
+  TARZAN_STAGE_SHOW_PAGE_URL,
   TARZAN_STAGE_TEXT_LINK_URL,
+  TINA_STAGE_SHOW_PAGE_URL,
   TINA_STAGE_TEXT_LINK_URL,
+  UND_JULIA_STAGE_SHOW_PAGE_URL,
   UND_JULIA_STAGE_TEXT_LINK_URL,
+  WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL,
   WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
+  ZIZ_STAGE_SHOW_PAGE_URL,
   ZIZ_STAGE_TEXT_LINK_URL,
   musicals,
 } from "../client/src/lib/data";
@@ -164,17 +175,19 @@ describe("Affiliate-Link-Zuordnung", () => {
 
   });
 
-  it("verwendet für König der Löwen den gelieferten Stage-Textlink an allen Ticket-CTAs", () => {
+  it("verwendet bei König der Löwen die Stage-Showseite am Keyvisual und den Ticketshop an allen CTAs", () => {
     const kdl = musicals.find((musical) => musical.id === "koenig-der-loewen");
 
     expect(kdl).toBeDefined();
-    expect(kdl?.keyvisualLink).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
-    expect(kdl?.ticketCtaUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
-    expect(kdl?.eventimUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
-    expect(kdl?.awinHeroUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
-    expect(kdl?.awinStickyUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
-    expect(kdl?.awinBoxUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
-    expect(kdl?.tourDates?.[0]?.eventimUrl).toBe(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL);
+    expect(kdl?.keyvisualLink).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
+    expect([
+      kdl?.ticketCtaUrl,
+      kdl?.eventimUrl,
+      kdl?.awinHeroUrl,
+      kdl?.awinStickyUrl,
+      kdl?.awinBoxUrl,
+      kdl?.tourDates?.[0]?.eventimUrl,
+    ]).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL));
   });
 
   it("verwendet die bereitgestellten Stage-Produktseiten an allen Ticket-CTAs und Tourterminen", () => {
@@ -192,67 +205,67 @@ describe("Affiliate-Link-Zuordnung", () => {
     }
   });
 
-  it("verwendet die neue Stage-TradeDoubler-Textlink-Kampagne an allen MJ-CTAs außerhalb der Banner", () => {
+  it("verwendet bei MJ die Stage-Showseite am Keyvisual und den Shop an allen Ticket-CTAs", () => {
     const mj = musicals.find((musical) => musical.id === "mj-musical");
 
     expect(mj).toBeDefined();
     expect(MJ_STAGE_TEXT_LINK_URL).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404"
     );
+    expect(mj?.keyvisualLink).toBe(MJ_STAGE_SHOW_PAGE_URL);
     expect([
-      mj?.keyvisualLink,
       mj?.ticketCtaUrl,
       mj?.eventimUrl,
       mj?.awinHeroUrl,
       mj?.awinStickyUrl,
       mj?.awinBoxUrl,
       ...(mj?.tourDates ?? []).map((date) => date.eventimUrl),
-    ]).toEqual(Array(7).fill(MJ_STAGE_TEXT_LINK_URL));
+    ]).toEqual(Array(6).fill(MJ_STAGE_TEXT_LINK_URL));
   });
 
-  it("verwendet die neue Stage-TradeDoubler-Textlink-Kampagne an allen Eiskönigin-CTAs außerhalb der Banner", () => {
+  it("verwendet bei Eiskönigin die Stage-Showseite am Keyvisual und den Shop an allen Ticket-CTAs", () => {
     const eiskoenigin = musicals.find((musical) => musical.id === "eiskoenigin");
 
     expect(eiskoenigin).toBeDefined();
     expect(EISKOENIGIN_STAGE_TEXT_LINK_URL).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420"
     );
+    expect(eiskoenigin?.keyvisualLink).toBe(EISKOENIGIN_STAGE_SHOW_PAGE_URL);
     expect([
-      eiskoenigin?.keyvisualLink,
       eiskoenigin?.ticketCtaUrl,
       eiskoenigin?.eventimUrl,
       eiskoenigin?.awinHeroUrl,
       eiskoenigin?.awinStickyUrl,
       eiskoenigin?.awinBoxUrl,
       ...(eiskoenigin?.tourDates ?? []).map((date) => date.eventimUrl),
-    ]).toEqual(Array(7).fill(EISKOENIGIN_STAGE_TEXT_LINK_URL));
+    ]).toEqual(Array(6).fill(EISKOENIGIN_STAGE_TEXT_LINK_URL));
   });
 
-  it("vereinheitlicht die weiteren gelieferten Stage-Textlinks für alle CTA- und Terminpfade", () => {
+  it("trennt bei den weiteren Stage-Shows die Keyvisual-Landingpage von Ticket-CTA und Termin", () => {
     const expectations = {
-      ziz: ZIZ_STAGE_TEXT_LINK_URL,
-      "tina-das-musical": TINA_STAGE_TEXT_LINK_URL,
-      "und-julia": UND_JULIA_STAGE_TEXT_LINK_URL,
-      tarzan: TARZAN_STAGE_TEXT_LINK_URL,
-      "teufel-traegt-prada": PRADA_STAGE_TEXT_LINK_URL,
-      "tanz-der-vampire": TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
-      "wir-sind-am-leben": WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
-      "salon-rosie": SALON_ROSIE_STAGE_TEXT_LINK_URL,
+      ziz: { showPageLink: ZIZ_STAGE_SHOW_PAGE_URL, shopLink: ZIZ_STAGE_TEXT_LINK_URL },
+      "tina-das-musical": { showPageLink: TINA_STAGE_SHOW_PAGE_URL, shopLink: TINA_STAGE_TEXT_LINK_URL },
+      "und-julia": { showPageLink: UND_JULIA_STAGE_SHOW_PAGE_URL, shopLink: UND_JULIA_STAGE_TEXT_LINK_URL },
+      tarzan: { showPageLink: TARZAN_STAGE_SHOW_PAGE_URL, shopLink: TARZAN_STAGE_TEXT_LINK_URL },
+      "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
+      "tanz-der-vampire": { showPageLink: TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL, shopLink: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL },
+      "wir-sind-am-leben": { showPageLink: WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, shopLink: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL },
+      "salon-rosie": { showPageLink: SALON_ROSIE_STAGE_SHOW_PAGE_URL, shopLink: SALON_ROSIE_STAGE_TEXT_LINK_URL },
     } as const;
 
-    for (const [id, textLink] of Object.entries(expectations)) {
+    for (const [id, { showPageLink, shopLink }] of Object.entries(expectations)) {
       const musical = musicals.find((entry) => entry.id === id);
 
       expect(musical, `Musical ${id} muss vorhanden sein`).toBeDefined();
+      expect(musical?.keyvisualLink).toBe(showPageLink);
       expect([
-        musical?.keyvisualLink,
         musical?.ticketCtaUrl,
         musical?.eventimUrl,
         musical?.awinHeroUrl,
         musical?.awinStickyUrl,
         musical?.awinBoxUrl,
         ...(musical?.tourDates ?? []).map((date) => date.eventimUrl),
-      ]).toEqual(Array(7).fill(textLink));
+      ]).toEqual(Array(6).fill(shopLink));
     }
   });
 

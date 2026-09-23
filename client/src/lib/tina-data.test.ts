@@ -1,10 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { createAwinLink, getMusicalBySlug } from "./data";
+import {
+  createAwinLink,
+  getMusicalBySlug,
+  TINA_STAGE_SHOW_PAGE_URL,
+  TINA_STAGE_TEXT_LINK_URL,
+} from "./data";
 
 describe("TINA – Das Tina Turner Musical", () => {
-  it("enthält die bestätigten Hamburg-Produktionsdaten und den Stage-Textlink", () => {
+  it("enthält die bestätigten Hamburg-Produktionsdaten, die Showseite am Keyvisual und den Shop an den CTAs", () => {
     const tina = getMusicalBySlug("tina-das-tina-turner-musical");
-    const stageTextLink = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072";
 
     expect(tina).toBeDefined();
     expect(tina).toMatchObject({
@@ -14,6 +18,7 @@ describe("TINA – Das Tina Turner Musical", () => {
       venue: "Stage Operettenhaus",
       priceFrom: "53,99",
       keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/PQObqPVEcqxSqgEF.webp",
+      keyvisualLink: TINA_STAGE_SHOW_PAGE_URL,
       youtubeTrailerId: "N5BdeG7SVug",
     });
     expect(tina?.tourDates).toEqual([
@@ -22,18 +27,17 @@ describe("TINA – Das Tina Turner Musical", () => {
         venue: "Stage Operettenhaus",
         startDate: "2027-04-06",
         displayLabel: "Ab April 2027",
-        eventimUrl: stageTextLink,
+        eventimUrl: TINA_STAGE_TEXT_LINK_URL,
       }),
     ]);
     expect([
-      tina?.keyvisualLink,
       tina?.ticketCtaUrl,
       tina?.eventimUrl,
       tina?.awinHeroUrl,
       tina?.awinStickyUrl,
       tina?.awinBoxUrl,
-    ]).toEqual(Array(6).fill(stageTextLink));
-    expect(createAwinLink(stageTextLink)).toBe(stageTextLink);
+    ]).toEqual(Array(5).fill(TINA_STAGE_TEXT_LINK_URL));
+    expect(createAwinLink(TINA_STAGE_TEXT_LINK_URL)).toBe(TINA_STAGE_TEXT_LINK_URL);
   });
 
   it("kennzeichnet die autorisierte Produktion ohne ein nicht belegtes Enddatum", () => {

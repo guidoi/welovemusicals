@@ -112,10 +112,25 @@ export interface Provider {
 // Hinweis: Publisher-ID muss nach AWIN-Registrierung eingesetzt werden
 export const AWIN_MERCHANT_ID = "11388";
 export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
+
+// Offizielle Stage-Show-Landingpages für die als zusätzliche Information
+// anklickbaren Keyvisuals. Aus den zuvor gelieferten TradeDoubler-Snippets
+// abgeleitet; externe JavaScript- und document.write-Snippets werden nie ausgeführt.
+export const KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398";
+export const MJ_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402";
+export const ZIZ_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410";
+export const TINA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074";
+export const UND_JULIA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149394";
+export const TARZAN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406";
+export const PRADA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414";
+export const EISKOENIGIN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418";
+export const TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426";
+export const WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434";
+export const SALON_ROSIE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438";
+
+// Direkte Stage-Shop-Deeplinks für alle sichtbaren Ticket-CTAs, Angebote und Termine.
 export const MJ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404";
 export const EISKOENIGIN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420";
-// Aus dem gelieferten Stage-Textlink-Snippet abgeleitet; bewusst als direkter Click-Link,
-// damit kein externes JavaScript oder document.write auf der Website ausgeführt wird.
 export const KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149400";
 export const ZIZ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412";
 export const TINA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072";
@@ -1121,7 +1136,7 @@ export const musicals: Musical[] = [
     image: "/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg",
     heroImage: "/images/kdl/JPG72dpi(RGB)-KDL_HH_Prio1_Savanne.jpg",
     keyvisual: "/images/kdl/kdl-logo-1080x1080.webp",
-    keyvisualLink: KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
+    keyvisualLink: KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
     eventimUrl: KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
     awinHeroUrl: KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
@@ -1203,7 +1218,7 @@ export const musicals: Musical[] = [
     image: "/images/mj/MJ_HH_Smooth_Criminal_Stage.jpg",
     heroImage: "/images/mj/MJ_Szenenmotiv_Broadway_MatthewMurphy.jpg",
     keyvisual: "/images/mj/mj-keyvisual.png",
-    keyvisualLink: MJ_STAGE_TEXT_LINK_URL,
+    keyvisualLink: MJ_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: MJ_STAGE_TEXT_LINK_URL,
     eventimUrl: MJ_STAGE_TEXT_LINK_URL,
     awinHeroUrl: MJ_STAGE_TEXT_LINK_URL,
@@ -1282,7 +1297,7 @@ export const musicals: Musical[] = [
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_Elsa_LetItGo_(c)JohanPersson_a3fe492d.webp",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_ElsaUndAnna_Finale_HoldingHands_(c)JohanPersson_a2fb5b4c.webp",
     keyvisual: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/JPG72dpi(RGB)-EISHH&STU_Icon_200-400_ISOv2_06a10360.jpg",
-    keyvisualLink: EISKOENIGIN_STAGE_TEXT_LINK_URL,
+    keyvisualLink: EISKOENIGIN_STAGE_SHOW_PAGE_URL,
     eventimUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
     ticketCtaUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
     awinHeroUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,
@@ -1363,7 +1378,7 @@ export const musicals: Musical[] = [
     image: "/images/tarzan/tarzan-terence.jpg",
     heroImage: "/images/tarzan/tarzan-jane-fremde-wie-ich.jpg",
     keyvisual: "/images/tarzan/tarzan-keyvisual.jpg",
-    keyvisualLink: TARZAN_STAGE_TEXT_LINK_URL,
+    keyvisualLink: TARZAN_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: TARZAN_STAGE_TEXT_LINK_URL,
     eventimUrl: TARZAN_STAGE_TEXT_LINK_URL,
     awinHeroUrl: TARZAN_STAGE_TEXT_LINK_URL,
@@ -1451,7 +1466,7 @@ export const musicals: Musical[] = [
     image: "/images/ziz/marty-und-company-1.jpg",
     heroImage: "/images/ziz/marty-und-company-2.jpg",
     keyvisual: "/images/ziz/ziz-keyvisual.webp",
-    keyvisualLink: ZIZ_STAGE_TEXT_LINK_URL,
+    keyvisualLink: ZIZ_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: ZIZ_STAGE_TEXT_LINK_URL,
     eventimUrl: ZIZ_STAGE_TEXT_LINK_URL,
     awinHeroUrl: ZIZ_STAGE_TEXT_LINK_URL,
@@ -1529,7 +1544,7 @@ export const musicals: Musical[] = [
     image: "/images/prada/prada-fashionshow.webp",
     heroImage: "/images/prada/prada-miranda-ensemble.webp",
     keyvisual: "/images/prada/prada-keyvisual.webp",
-    keyvisualLink: PRADA_STAGE_TEXT_LINK_URL,
+    keyvisualLink: PRADA_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: PRADA_STAGE_TEXT_LINK_URL,
     eventimUrl: PRADA_STAGE_TEXT_LINK_URL,
     awinHeroUrl: PRADA_STAGE_TEXT_LINK_URL,
@@ -1674,7 +1689,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
     awinBoxUrl: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
     keyvisual: "/images/wir-sind-am-leben/wsal-keyvisual.webp",
-    keyvisualLink: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL,
+    keyvisualLink: WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL,
     gallery: [
       { url: "/images/wir-sind-am-leben/wsal-szene-rot.webp", alt: "Ensemble-Szene in rotem Licht" },
       { url: "/images/wir-sind-am-leben/wsal-ensemble-buehne.webp", alt: "Ensemble auf der Berliner Hinterhof-Bühne" },
@@ -1746,7 +1761,7 @@ export const musicals: Musical[] = [
     image: "/images/tanz-der-vampire/tdv-theater.webp",
     heroImage: "/images/tanz-der-vampire/tdv-theater.webp",
     keyvisual: "/images/tanz-der-vampire/tdv-keyvisual.webp",
-    keyvisualLink: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
+    keyvisualLink: TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
     eventimUrl: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
     awinHeroUrl: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL,
@@ -1882,7 +1897,7 @@ export const musicals: Musical[] = [
     image: "/images/salon-rosie/salon-rosie-keyvisual.webp",
     heroImage: "/images/salon-rosie/salon-rosie-keyvisual.webp",
     keyvisual: "/images/salon-rosie/salon-rosie-keyvisual.webp",
-    keyvisualLink: SALON_ROSIE_STAGE_TEXT_LINK_URL,
+    keyvisualLink: SALON_ROSIE_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: SALON_ROSIE_STAGE_TEXT_LINK_URL,
     eventimUrl: SALON_ROSIE_STAGE_TEXT_LINK_URL,
     awinHeroUrl: SALON_ROSIE_STAGE_TEXT_LINK_URL,
@@ -1952,7 +1967,7 @@ export const musicals: Musical[] = [
     image: "/images/und-julia/und-julia-szene-04.webp",
     heroImage: "/images/und-julia/und-julia-szene-04.webp",
     keyvisual: "/images/und-julia/und-julia-keyvisual.webp",
-    keyvisualLink: UND_JULIA_STAGE_TEXT_LINK_URL,
+    keyvisualLink: UND_JULIA_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: UND_JULIA_STAGE_TEXT_LINK_URL,
     eventimUrl: UND_JULIA_STAGE_TEXT_LINK_URL,
     awinHeroUrl: UND_JULIA_STAGE_TEXT_LINK_URL,
@@ -2026,7 +2041,7 @@ export const musicals: Musical[] = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp",
     heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ERPlohtxlWfFpfJE.webp",
     keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/PQObqPVEcqxSqgEF.webp",
-    keyvisualLink: TINA_STAGE_TEXT_LINK_URL,
+    keyvisualLink: TINA_STAGE_SHOW_PAGE_URL,
     ticketCtaUrl: TINA_STAGE_TEXT_LINK_URL,
     eventimUrl: TINA_STAGE_TEXT_LINK_URL,
     awinHeroUrl: TINA_STAGE_TEXT_LINK_URL,

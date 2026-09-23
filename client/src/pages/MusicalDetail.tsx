@@ -168,6 +168,7 @@ export default function MusicalDetail() {
   const boxTicketLink = musical.awinBoxUrl ?? ctaTicketLink;
   const usesAtgTickets = isAtgTicketMusical(musical.slug);
   const usesStageProductPage = musical.eventimUrl.includes("stage-entertainment.de");
+  const keyvisualOpensShowPage = usesStageProductPage && keyvisualTicketLink !== ticketLink;
   const ticketProviderName = usesStageProductPage ? "Stage Entertainment" : usesAtgTickets ? "ATG Tickets" : "Eventim";
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
@@ -302,7 +303,7 @@ export default function MusicalDetail() {
                 Der Trailer bleibt bewusst weiter unten im Seitenfluss. */}
             <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
               <div>
-                <MusicalKeyVisual image={desktopKeyvisual} title={musical.title} ticketLink={keyvisualTicketLink} landscape={desktopKeyvisualLandscape} ticketProvider={ticketProviderName} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
+                <MusicalKeyVisual image={desktopKeyvisual} title={musical.title} ticketLink={keyvisualTicketLink} landscape={desktopKeyvisualLandscape} ticketProvider={ticketProviderName} linkPurpose={keyvisualOpensShowPage ? "show-page" : "tickets"} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
               </div>
             </div>
 
@@ -375,7 +376,7 @@ export default function MusicalDetail() {
                         {(musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : musical.id === 'tarzan' ? i === 2 : musical.id === 'ziz' ? i === 2 : musical.id === 'teufel-traegt-prada' ? i === 2 : musical.id === 'die-amme' ? i === 2 : musical.id === 'wir-sind-am-leben' ? i === 2 : musical.id === 'tanz-der-vampire' ? i === 2 : musical.id === 'we-will-rock-you' ? i === 2 : musical.id === 'salon-rosie' ? i === 2 : musical.id === 'und-julia' ? i === 2 : musical.id === 'tina-das-musical' ? i === 1 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <div>
-                              <MusicalKeyVisual image={desktopKeyvisual} title={musical.title} ticketLink={keyvisualTicketLink} landscape={desktopKeyvisualLandscape} ticketProvider={ticketProviderName} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
+                              <MusicalKeyVisual image={desktopKeyvisual} title={musical.title} ticketLink={keyvisualTicketLink} landscape={desktopKeyvisualLandscape} ticketProvider={ticketProviderName} linkPurpose={keyvisualOpensShowPage ? "show-page" : "tickets"} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
 
                             </div>
                           </div>

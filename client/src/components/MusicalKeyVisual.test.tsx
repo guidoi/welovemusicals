@@ -20,6 +20,21 @@ describe("MusicalKeyVisual", () => {
     expect(markup).toContain('title="Tickets für Test-Musical über Test Partner kaufen"');
   });
 
+  it("kennzeichnet ein verlinktes Keyvisual als offizielle Showseite", () => {
+    const markup = renderToStaticMarkup(
+      <MusicalKeyVisual
+        image="https://images.example.com/keyvisual.webp"
+        title="Test-Musical"
+        ticketLink="https://stage.example.com/show-page"
+        ticketProvider="Stage Entertainment"
+        linkPurpose="show-page"
+      />,
+    );
+
+    expect(markup).toContain('href="https://stage.example.com/show-page"');
+    expect(markup).toContain('title="Offizielle Showseite von Test-Musical bei Stage Entertainment öffnen"');
+  });
+
   it("behält das Keyvisual ohne Ticketlink als reines Bild bei", () => {
     const markup = renderToStaticMarkup(
       <MusicalKeyVisual image="/images/keyvisual.webp" title="Test-Musical" />,
