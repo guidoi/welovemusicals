@@ -818,3 +818,4 @@
 - [x] Gelieferte Stage-Textlinks als direkte, sichere `click`-URLs ohne Ausführung der bereitgestellten `document.write`-Skripte für König der Löwen, MJ, Zurück in die Zukunft, TINA, & Julia, Tarzan, Der Teufel trägt Prada, Eiskönigin, Tanz der Vampire, Wir sind am Leben und Salon Rosie hinterlegt
 - [x] Je Show alle Ticketpfade vereinheitlicht: Haupt-CTA, Hero-CTA, Sticky-CTA, Angebotskasten, Keyvisual und zugehöriger Terminbutton verwenden jeweils dieselbe gelieferte Tracking-Kampagne
 - [x] Jedes aktive Detailseiten-Keyvisual als klickbaren, neuen Tab öffnenden Ticket-Deeplink abgesichert; Regression verlangt für alle 20 aktiven Shows ein Keyvisual mit HTTPS-Partnerlink
+- [x] Neue Stage-Shop-Deeplinks für alle 11 gelieferten Shows übernommen: Die bisherigen allgemeinen Stage-Ziele wurden durch die aktuellen TradeDoubler-`click`-Kampagnen ersetzt; jede neue Ziel-URL liefert HTTP 200

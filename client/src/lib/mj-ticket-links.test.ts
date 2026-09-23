@@ -21,7 +21,7 @@ describe("MJ Stage-Entertainment-Textlink", () => {
 
     expect(mj).toBeDefined();
     expect(MJ_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402"
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404"
     );
     expect([
       mj?.keyvisualLink,
@@ -39,7 +39,7 @@ describe("MJ Stage-Entertainment-Textlink", () => {
     const koenigDerLoewen = getMusicalBySlug("koenig-der-loewen");
 
     expect(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149400",
     );
     expect([
       koenigDerLoewen?.keyvisualLink,
@@ -67,15 +67,15 @@ describe("MJ Stage-Entertainment-Textlink", () => {
     ] as const;
 
     expect(stageTextLinkCases.map(([, link]) => link)).toEqual([
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149394",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149396",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149428",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149436",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149440",
     ]);
 
     for (const [slug, link] of stageTextLinkCases) {

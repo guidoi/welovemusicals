@@ -197,7 +197,7 @@ describe("Affiliate-Link-Zuordnung", () => {
 
     expect(mj).toBeDefined();
     expect(MJ_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402"
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404"
     );
     expect([
       mj?.keyvisualLink,
@@ -215,7 +215,7 @@ describe("Affiliate-Link-Zuordnung", () => {
 
     expect(eiskoenigin).toBeDefined();
     expect(EISKOENIGIN_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418"
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420"
     );
     expect([
       eiskoenigin?.keyvisualLink,

@@ -112,19 +112,19 @@ export interface Provider {
 // Hinweis: Publisher-ID muss nach AWIN-Registrierung eingesetzt werden
 export const AWIN_MERCHANT_ID = "11388";
 export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
-export const MJ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402";
-export const EISKOENIGIN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418";
+export const MJ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404";
+export const EISKOENIGIN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420";
 // Aus dem gelieferten Stage-Textlink-Snippet abgeleitet; bewusst als direkter Click-Link,
 // damit kein externes JavaScript oder document.write auf der Website ausgeführt wird.
-export const KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398";
-export const ZIZ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410";
-export const TINA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074";
-export const UND_JULIA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149394";
-export const TARZAN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406";
-export const PRADA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414";
-export const TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426";
-export const WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434";
-export const SALON_ROSIE_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438";
+export const KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149400";
+export const ZIZ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412";
+export const TINA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072";
+export const UND_JULIA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149396";
+export const TARZAN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408";
+export const PRADA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416";
+export const TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149428";
+export const WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149436";
+export const SALON_ROSIE_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149440";
 
 export const AWIN_TEXT_LINKS = {
   moulinRouge: { gid: "597568", merchantId: "111888", linkId: "4845203" },

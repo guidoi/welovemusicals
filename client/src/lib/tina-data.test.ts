@@ -4,7 +4,7 @@ import { createAwinLink, getMusicalBySlug } from "./data";
 describe("TINA – Das Tina Turner Musical", () => {
   it("enthält die bestätigten Hamburg-Produktionsdaten und den Stage-Textlink", () => {
     const tina = getMusicalBySlug("tina-das-tina-turner-musical");
-    const stageTextLink = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074";
+    const stageTextLink = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072";
 
     expect(tina).toBeDefined();
     expect(tina).toMatchObject({
