@@ -23,4 +23,14 @@ describe("Rapunzel Berlin-Termin", () => {
     expect(rapunzel?.cities).toContain("Berlin");
     expect(getActiveMusicalCountByCity("Berlin")).toBe(5);
   });
+
+  it("nutzt die neuen Rapunzel-Artworks responsiv", () => {
+    const rapunzel = getMusicalBySlug("rapunzel");
+
+    expect(rapunzel).toMatchObject({
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kGHppGRVbSoKlriz.webp",
+      heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/pYzmfdYMSFiUcBYM.webp",
+      keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kGHppGRVbSoKlriz.webp",
+    });
+  });
 });

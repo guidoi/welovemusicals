@@ -805,3 +805,7 @@
 - [x] Awin-/ATG-Creatives ohne Lazy Loading und mit synchronem Bilddecodieren rendern, damit sie auch auf langen mobilen Detailseiten zuverlässig sichtbar bleiben
 - [x] Kompletter Sicht- und Asset-Abgleich auf Mobil und Desktop für TINA, Moulin Rouge, Starlight Express, Rapunzel sowie Die Schöne und das Biest; alle neun aktualisierten Bilddateien liefern HTTP 200
 - [x] Tatsächlichen mobilen Bildfehler behoben: Projektinterne `/manus-storage`-Pfade lieferten im Seiten-DOM natürliche Bildmaße 0 × 0; TINA-Keyvisual und alle neuen Awin-/ATG-Creatives sind deshalb auf direkt ladbare CDN-URLs umgestellt und anschließend in mobilen sowie Desktop-Screenshots verifiziert
+
+## Rapunzel-Artworks September 2026
+- [x] Neues Querformat als unbeschnittenes Headerbild der Detailseite eingebunden
+- [x] Neues quadratisches Originalmotiv für Karten, Desktop-Keyvisual links und das mobile Keyvisual im Fließtext eingebunden

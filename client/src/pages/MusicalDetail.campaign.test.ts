@@ -101,5 +101,8 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(tourDates).toBeGreaterThan(desktopTrailer);
     expect(musicalDetailSource).toContain("musical.id === 'tina-das-musical'");
     expect(musicalDetailSource).toContain("musical.id === 'tina-das-musical' ? i === 1");
+    expect(musicalDetailSource).toContain("const desktopKeyvisual = musical.keyvisual || musical.image");
+    expect(musicalDetailSource).toContain('<MusicalKeyVisual image={desktopKeyvisual}');
+    expect(musicalDetailSource).not.toContain("keyvisualMobile");
   });
 });
