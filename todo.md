@@ -811,7 +811,7 @@
 - [x] Neues quadratisches Originalmotiv für Karten, Desktop-Keyvisual links und das mobile Keyvisual im Fließtext eingebunden
 
 ## Mobile Navigation und Lesefluss September 2026
-- [x] Erlebniswelt-Buttons auf Mobil an die Orientierung „Musicals & Shows“ und „Städte“ angeglichen: gleiche 40-Pixel-Höhe, horizontale Polsterung, Goldkontur, Schriftgewicht, Laufweite und Interaktionsstil
+- [x] Erlebniswelt-Buttons auf Mobil an die Orientierung „Musicals & Shows“ und „Städte“ angeglichen: gleiche 40-Pixel-Höhe, horizontale Polsterung, weiße Kontur und Schrift, Schriftgewicht, Laufweite und Interaktionsstil; aktive Auswahl bleibt Gold
 - [x] Mobile Querbanner im Fließtext direkt an den vorangehenden, inhaltlich abgeschlossenen Absatz angebunden; auf Desktop bleibt der großzügigere Lesefluss bestehen und große Formate nach der Galerie behalten ihren Abstand
 
 ## Stage-Textlinks September 2026
@@ -824,3 +824,7 @@
 ## Manus-Vorschau und Partnertracking September 2026
 - [x] Wiederkehrende, nicht zuordenbare Manus-Meldung „Script error.“ auf globale Awin-/TradeDoubler-Fremdskripte eingegrenzt; diese werden nicht mehr geladen
 - [x] Direkte Affiliate-Click-URLs und native, sichtbarkeits- sowie consent-gesteuerte Impressionpixel bleiben erhalten; keine fremden document.write-, MasterTag- oder Link-Converter-Skripte mehr
+
+## Erlebniswelten-Kontrast September 2026
+- [x] Erlebniswelt-Buttons sowie die mobilen Hero-Orientierungen „Musicals & Shows“ und „Städte“ von Gold auf weiße Kontur, weiße Schrift und dezente Weißfläche umgestellt; die aktive Erlebniswelt bleibt zur klaren Zustandsanzeige Gold
+- [x] Inaktive Länderbuttons „Deutschland“, „Österreich“ und „Schweiz“ an dieselbe weiße Kontrastvariante angepasst; die aktive Länderauswahl bleibt Gold

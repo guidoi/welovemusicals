@@ -131,7 +131,7 @@ export default function MusicalFilters({
                 key={country.id}
                 type="button"
                 onClick={() => handleCountryChange(country.id)}
-                className={`${basePillClass} bg-transparent px-3 py-1.5 text-xs ${countryFilter === country.id ? "border-gold text-gold" : "border-border/70 text-muted-foreground hover:border-gold/50 hover:text-gold"}`}
+                className={`${basePillClass} bg-transparent px-3 py-1.5 text-xs ${countryFilter === country.id ? "border-gold text-gold" : "border-white/85 bg-white/10 text-white hover:border-white hover:bg-white/20"}`}
                 aria-pressed={countryFilter === country.id}
               >
                 {country.label}
