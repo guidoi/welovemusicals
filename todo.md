@@ -831,3 +831,6 @@
 
 ## Mobiler Hero-Viewport September 2026
 - [x] Headerfließtext auf Mobil mit engerer Zeilenhöhe und reduzierten Abständen verdichtet; Überschrift, Statistikzeile und Erlebniswelt-Navigation sind enger gruppiert, damit alle fünf Erlebniswelt-Buttons nach der Cookie-Auswahl bei kleiner iPhone-Browserhöhe ohne Scrollen sichtbar bleiben
+
+## Erlebniswelt-Navigation September 2026
+- [x] Den Städte-Button aus der Erlebniswelt entfernt: Der Hero führt nun klar zur Musical-Auswahl, während die Städtenavigation weiterhin über Header und Stadtbereich erreichbar bleibt

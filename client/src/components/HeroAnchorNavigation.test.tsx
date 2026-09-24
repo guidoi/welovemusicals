@@ -51,7 +51,7 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('type="button"');
     expect(markup).toContain('>Musicals &amp; Shows<');
     expect(markup).toMatch(/data-testid="hero-anchor-all-musicals"[^>]*border-white[^>]*bg-transparent[^>]*text-white/);
-    expect(markup).toContain('data-testid="hero-anchor-musical-cities"');
+    expect(markup).not.toContain('data-testid="hero-anchor-musical-cities"');
     expect(markup).toContain('href="/musical/alpha"');
     expect(markup).toContain('>Weitere Musicals &amp; Shows<');
     expect(markup).toMatch(/data-testid="hero-anchor-more-musicals"[^>]*border-gold bg-transparent/);

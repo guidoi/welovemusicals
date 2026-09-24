@@ -21,7 +21,8 @@ export default function HeroAnchorNavigation({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
-  const orientationItems = items.filter((item) => item.id === "all-musicals" || item.id === "musical-cities");
+  // Die Erlebniswelt führt zum Musicalkatalog. Städte bleiben bewusst ausschließlich über die Hauptnavigation erreichbar.
+  const orientationItems = items.filter((item) => item.id === "all-musicals");
   const categoryItems = items.filter((item) => item.kind === "category");
   const musicalItems = items.filter((item) => item.kind === "musical" || item.id === "more-musicals");
 
