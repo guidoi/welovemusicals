@@ -206,7 +206,9 @@ function applySeoTemplate(html: string, page: SeoPage): string {
     .replace(/\s*<meta property="og:image:width"[^>]*\/>/, "")
     .replace(/\s*<meta property="og:image:height"[^>]*\/>/, "")
     .replace(/<script id="site-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, `<script id="site-schema" type="application/ld+json">${schema}</script>`)
-    .replace('<div id="root"></div>', `<div id="root">${page.contentHtml}</div>`);
+    // Static content remains available to crawlers and no-JavaScript visitors,
+    // but does not flash briefly before the React app mounts on regular reloads.
+    .replace('<div id="root"></div>', `<div id="root"><noscript>${page.contentHtml}</noscript></div>`);
 }
 
 async function writePage(page: SeoPage, shellHtml: string): Promise<void> {

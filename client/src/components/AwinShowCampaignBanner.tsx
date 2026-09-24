@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
 
@@ -245,20 +246,17 @@ export default function AwinShowCampaignBanner({
   const creative = campaign.creatives[format];
   const placementLabel = format === "wide" ? "im Fließtext" : "nach der Bildergalerie";
 
-  useEffect(() => {
-    if (!consent?.affiliateTracking) return;
-
-    const tracker = new Image();
-    tracker.src = creative.impressionUrl;
-  }, [consent?.affiliateTracking, creative.impressionUrl]);
-
   return (
     <aside
-      className={format === "wide" ? "mx-auto mt-3 mb-8 w-full md:my-8" : "mx-auto my-8 w-full"}
+      className={format === "wide" ? "relative mx-auto mt-3 mb-8 w-full md:my-8" : "relative mx-auto my-8 w-full"}
       style={{ maxWidth: creative.width }}
       aria-label={`Anzeige: ${campaign.title} ${placementLabel}`}
       data-campaign-id={creative.creativeId}
     >
+      <AffiliateImpressionPixel
+        url={creative.impressionUrl}
+        enabled={consent?.affiliateTracking === true}
+      />
       <p className="mb-2 text-right text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
         Anzeige
       </p>

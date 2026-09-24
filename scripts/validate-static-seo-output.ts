@@ -16,6 +16,9 @@ function escapeHtml(value: string): string {
 
 async function assertPage(relativePath: string, expectations: string[]) {
   const html = await readFile(resolve(DIST_ROOT, relativePath, "index.html"), "utf8");
+  if (!html.includes('<div id="root"><noscript>')) {
+    throw new Error(`${relativePath}/index.html must keep its static SEO content inside noscript`);
+  }
   for (const expectation of expectations) {
     if (!html.includes(expectation)) {
       throw new Error(`${relativePath}/index.html misses expected SEO value: ${expectation}`);

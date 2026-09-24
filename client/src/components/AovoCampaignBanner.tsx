@@ -1,4 +1,5 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
+import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
 
@@ -358,23 +359,21 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
     [campaign.groupId, campaign.trackingNetwork]
   );
 
-  useEffect(() => {
-    if (!consent?.affiliateTracking) return;
-    const impressionPixel = new Image();
-    impressionPixel.src = impressionUrl;
-  }, [consent?.affiliateTracking, impressionUrl]);
-
   return (
     <aside
       className={campaign.compactTopSpacing
-        ? "mx-auto mt-2 w-full pt-2 md:mt-3 md:pt-3"
+        ? "relative mx-auto mt-2 w-full pt-2 md:mt-3 md:pt-3"
         : isInlineWideCampaign
-          ? "mx-auto mt-3 mb-8 w-full pt-1 md:my-8 md:pt-6"
-        : "mx-auto mt-8 w-full pt-6"}
+          ? "relative mx-auto mt-3 mb-8 w-full pt-1 md:my-8 md:pt-6"
+        : "relative mx-auto mt-8 w-full pt-6"}
       style={{ maxWidth: campaign.width }}
       aria-label={`Anzeige: ${campaign.adLabel ?? `Ticket und Hotel – ${campaign.musicalTitle}`}`}
       data-campaign-id={campaign.groupId}
     >
+      <AffiliateImpressionPixel
+        url={impressionUrl}
+        enabled={consent?.affiliateTracking === true}
+      />
       <p className="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Anzeige</p>
       <button
         type="button"
