@@ -424,31 +424,31 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             {/* Decorative Line */}
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-16 h-px bg-gold/50" />
+            <div className="flex items-center justify-center gap-3 mb-3 md:gap-4 md:mb-6">
+              <div className="w-12 h-px bg-gold/50 md:w-16" />
               <Star className="w-4 h-4 text-gold" />
-              <div className="w-16 h-px bg-gold/50" />
+              <div className="w-12 h-px bg-gold/50 md:w-16" />
             </div>
 
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+            <h1 className="font-display text-[2rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-4 md:leading-tight">
               Dein Portal für{" "}
               <span className="gold-gradient">Musical-Erlebnisse</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-cream/75 max-w-2xl mx-auto mb-8 leading-relaxed font-body">
+            <p className="max-w-2xl mx-auto mb-4 text-[17px] leading-[1.4] text-cream/75 font-body md:mb-8 md:text-xl md:leading-relaxed">
               {HOME_HERO_TEASER}{" "}
               <span className="block md:inline text-gold font-semibold">Licht aus, Magie an!</span>
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-              <div className="flex items-center gap-2">
-                <Music className="w-5 h-5 text-gold" />
-                <span className="text-cream/80 text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10">
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <Music className="w-4 h-4 text-gold md:w-5 md:h-5" />
+                <span className="text-cream/80 text-xs md:text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-gold" />
-                <span className="text-cream/80 text-sm">{(() => { const s = new Set<string>(); managedMusicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
+              <div className="flex items-center gap-1.5 md:gap-2">
+                <MapPin className="w-4 h-4 text-gold md:w-5 md:h-5" />
+                <span className="text-cream/80 text-xs md:text-sm">{(() => { const s = new Set<string>(); managedMusicals.filter(m => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug)).forEach(m => { if (m.city) s.add(m.city); if (m.cities) m.cities.forEach(c => s.add(c)); if (m.tourDates) m.tourDates.forEach(t => s.add(t.city)); }); return s.size; })()} Städte</span>
               </div>
 
             </div>

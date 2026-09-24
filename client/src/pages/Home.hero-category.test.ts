@@ -20,5 +20,8 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain('placement="hero-mobile"');
     expect(homeSource).toContain('placement="hero-desktop"');
     expect(homeSource).toContain('variant="categories"');
+    expect(homeSource).toContain('mb-4 text-[17px] leading-[1.4]');
+    expect(homeSource).toContain('gap-4 md:gap-10');
+    expect(homeSource).toContain('text-xs md:text-sm');
   });
 });

@@ -828,3 +828,6 @@
 ## Erlebniswelten-Kontrast September 2026
 - [x] Erlebniswelt-Buttons sowie die mobilen Hero-Orientierungen „Musicals & Shows“ und „Städte“ auf reinen weißen Rahmen und weiße Schrift ohne Hintergrundfüllung umgestellt; die aktive Erlebniswelt bleibt zur klaren Zustandsanzeige Gold
 - [x] Inaktive Länderbuttons „Deutschland“, „Österreich“ und „Schweiz“ an dieselbe weiße Kontrastvariante angepasst; die aktive Länderauswahl bleibt Gold
+
+## Mobiler Hero-Viewport September 2026
+- [x] Headerfließtext auf Mobil mit engerer Zeilenhöhe und reduzierten Abständen verdichtet; Überschrift, Statistikzeile und Erlebniswelt-Navigation sind enger gruppiert, damit alle fünf Erlebniswelt-Buttons nach der Cookie-Auswahl bei kleiner iPhone-Browserhöhe ohne Scrollen sichtbar bleiben

@@ -9,8 +9,8 @@ import {
 
 describe("Mobile Hero-Navigationsabstände", () => {
   it("verdichtet nur die äußeren Abstände der Tabgruppen", () => {
-    expect(MOBILE_HERO_NAVIGATION_TOP_CLASS).toBe("mt-10");
-    expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-8");
+    expect(MOBILE_HERO_NAVIGATION_TOP_CLASS).toBe("mt-5");
+    expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-5");
   });
 
   it("vergrößert den Desktop-Hero und priorisiert Sonne sowie Rafiki im Bildausschnitt", () => {
@@ -20,6 +20,6 @@ describe("Mobile Hero-Navigationsabstände", () => {
 
   it("rückt die Highlights am Desktop näher an den Hero, ohne den mobilen Abstand zu verändern", () => {
     expect(DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS).toBe("md:pt-0");
-    expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-8");
+    expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-5");
   });
 });
