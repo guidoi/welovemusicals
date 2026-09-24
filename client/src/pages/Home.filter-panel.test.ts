@@ -25,7 +25,7 @@ describe("Startseiten-Erlebnisfilter", () => {
   it("setzt Länder als Buttons um und entfernt die Sortierung", () => {
     expect(filterSource).toContain("COUNTRY_FILTERS");
     expect(filterSource).toContain("country.label");
-    expect(filterSource).toContain('border-white/85 bg-white/10 text-white');
+    expect(filterSource).toContain('border-white text-white hover:border-white');
     expect(filterSource).toContain('border-gold text-gold');
     expect(filterSource).not.toContain("Sortierung");
     expect(homeSource).not.toContain("sortOption");
@@ -131,7 +131,7 @@ describe("Startseiten-Erlebnisfilter", () => {
 
   it("hält Länderbuttons in weißer Lesefarbe und die aktive Auswahl gold", () => {
     expect(filterSource).toContain('"border-gold text-gold"');
-    expect(filterSource).toContain('"border-white/85 bg-white/10 text-white hover:border-white hover:bg-white/20"');
+    expect(filterSource).toContain('"border-white text-white hover:border-white"');
     expect(filterSource).toContain('border border-gold/45 bg-transparent px-4');
     expect(filterSource).toContain('rounded-xl border border-gold/20 bg-transparent');
   });

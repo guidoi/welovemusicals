@@ -826,5 +826,5 @@
 - [x] Direkte Affiliate-Click-URLs und native, sichtbarkeits- sowie consent-gesteuerte Impressionpixel bleiben erhalten; keine fremden document.write-, MasterTag- oder Link-Converter-Skripte mehr
 
 ## Erlebniswelten-Kontrast September 2026
-- [x] Erlebniswelt-Buttons sowie die mobilen Hero-Orientierungen „Musicals & Shows“ und „Städte“ von Gold auf weiße Kontur, weiße Schrift und dezente Weißfläche umgestellt; die aktive Erlebniswelt bleibt zur klaren Zustandsanzeige Gold
+- [x] Erlebniswelt-Buttons sowie die mobilen Hero-Orientierungen „Musicals & Shows“ und „Städte“ auf reinen weißen Rahmen und weiße Schrift ohne Hintergrundfüllung umgestellt; die aktive Erlebniswelt bleibt zur klaren Zustandsanzeige Gold
 - [x] Inaktive Länderbuttons „Deutschland“, „Österreich“ und „Schweiz“ an dieselbe weiße Kontrastvariante angepasst; die aktive Länderauswahl bleibt Gold
