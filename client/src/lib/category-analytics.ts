@@ -12,15 +12,6 @@ type TrackExperienceCategorySelectionInput = {
   analyticsConsent: boolean;
 };
 
-type PartnerScriptName = "awin" | "tradedoubler";
-type PartnerScriptStatus = "loaded" | "failed";
-
-type TrackPartnerScriptStatusInput = {
-  partner: PartnerScriptName;
-  status: PartnerScriptStatus;
-  analyticsConsent: boolean;
-};
-
 export type AffiliateClickPlacement =
   | "mobile-hero"
   | "keyvisual"
@@ -61,25 +52,6 @@ export function trackExperienceCategorySelection({
     category: categoryId,
     placement,
   });
-  return true;
-}
-
-/**
- * Measures the technical availability of an optional affiliate script only
- * after analytics consent. No URL, ticket selection, location, IP or user ID
- * is sent with the anonymous event.
- */
-export function trackPartnerScriptStatus({
-  partner,
-  status,
-  analyticsConsent,
-}: TrackPartnerScriptStatusInput): boolean {
-  if (!analyticsConsent) return false;
-
-  const tracker = getUmamiTracker();
-  if (!tracker) return false;
-
-  tracker.track("affiliate_partner_script", { partner, status });
   return true;
 }
 

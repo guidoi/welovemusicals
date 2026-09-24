@@ -279,25 +279,16 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(getMusicalBySlug("sister-act")).toBeUndefined();
   });
 
-  it("initialisiert den TradeDoubler Link Converter erst nach Zustimmung und nur einmal", () => {
+  it("verzichtet auf globale Partner-Fremdskripte und nutzt ausschließlich direkte Trackingziele", () => {
     const consentServices = readFileSync(
       new URL("../client/src/components/OptionalConsentServices.tsx", import.meta.url),
       "utf8"
     );
 
-    expect(consentServices).toContain(
-      "if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location, window.location.search)) return;"
-    );
-    expect(consentServices).toContain("shouldLoadAffiliateTrackingForPath");
-    expect(consentServices).toContain('new URLSearchParams(search).get("from_webdev") === "1"');
-    expect(consentServices).toContain("https://clk.tradedoubler.com/lc?a(3492604)rand(");
-    expect(consentServices).toContain("converter?.init");
-    expect(consentServices).toContain("const initialiseConverterOnce");
-    expect(consentServices).toContain("new MutationObserver(convertStageLinksWithFallback)");
-    expect(consentServices).not.toContain("new MutationObserver(convertEligibleLinks)");
-    expect(consentServices).toContain("https://visit.stage-entertainment.de/click?p=394206");
-    expect(consentServices).toContain("UNTRACKED_STAGE_DESTINATION_HOSTS");
-    expect(consentServices).toContain('"www.stage-entertainment.de"');
-    expect(consentServices).toContain("convertStageLinksWithFallback();");
+    expect(consentServices).toContain("native, consent-gated creatives");
+    expect(consentServices).not.toContain("dwin2.com");
+    expect(consentServices).not.toContain("tradedoubler.com/lc");
+    expect(consentServices).not.toContain("TDLinkConverter");
+    expect(consentServices).not.toContain("MutationObserver");
   });
 });

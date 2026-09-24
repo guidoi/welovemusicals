@@ -8,7 +8,8 @@ describe("Datenschutz zur Kategorie-Analyse", () => {
     expect(privacySource).toContain("Erlebnis-Kategorie");
     expect(privacySource).toContain("mobil oder Desktop");
     expect(privacySource).toContain("Ticket-, Standort-, URL- und sonstige personenbezogene Daten");
-    expect(privacySource).toContain("Awin- und TradeDoubler-Skripte");
+    expect(privacySource).toContain("native Kampagnenbilder und zugehörige Impressionpixel");
+    expect(privacySource).toContain("Globale Awin- oder TradeDoubler-Fremdskripte werden nicht geladen");
     expect(privacySource).toContain("Bei bewussten Ticketklicks");
     expect(privacySource).toContain("Musicalkennung, Partner und CTA-Platzierung");
   });

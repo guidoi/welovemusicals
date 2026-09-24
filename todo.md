@@ -820,3 +820,7 @@
 - [x] Jedes aktive Detailseiten-Keyvisual als klickbaren, neuen Tab öffnenden Ticket-Deeplink abgesichert; Regression verlangt für alle 20 aktiven Shows ein Keyvisual mit HTTPS-Partnerlink
 - [x] Neue Stage-Shop-Deeplinks für alle 11 gelieferten Shows übernommen: Die bisherigen allgemeinen Stage-Ziele wurden durch die aktuellen TradeDoubler-`click`-Kampagnen ersetzt; jede neue Ziel-URL liefert HTTP 200
 - [x] Stage-Linkstrategie getrennt: Keyvisuals der 11 Stage-Shows führen über die zuvor gelieferten TradeDoubler-Links auf die jeweilige offizielle Show-Landingpage; Ticket-, Angebots- und Sticky-CTAs sowie Terminbuttons behalten die neuen direkten Shop-Deeplinks. Beide Linksets liefern HTTP 200.
+
+## Manus-Vorschau und Partnertracking September 2026
+- [x] Wiederkehrende, nicht zuordenbare Manus-Meldung „Script error.“ auf globale Awin-/TradeDoubler-Fremdskripte eingegrenzt; diese werden nicht mehr geladen
+- [x] Direkte Affiliate-Click-URLs und native, sichtbarkeits- sowie consent-gesteuerte Impressionpixel bleiben erhalten; keine fremden document.write-, MasterTag- oder Link-Converter-Skripte mehr
