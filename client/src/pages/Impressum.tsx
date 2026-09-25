@@ -311,7 +311,16 @@ export default function Impressum() {
                   <div>
                     <h4 className="font-semibold text-gold mb-2">RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
-                      <li><strong>Keyvisual:</strong> © ShowSlot Touring GmbH</li>
+                      <li><strong>Headerbild, Keyvisual &amp; Logo:</strong> © ShowSlot Touring GmbH</li>
+                    </ul>
+                  </div>
+
+                  {/* TINA – Das Tina Turner Musical */}
+                  <div>
+                    <h4 className="font-semibold text-gold mb-2">TINA – DAS TINA TURNER MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Produktionsfoto, Headerbild &amp; Galerie:</strong> © Manuel Harlan / Stage Entertainment</li>
+                      <li><strong>Keyvisual &amp; Logo:</strong> © Stage Entertainment</li>
                     </ul>
                   </div>
 

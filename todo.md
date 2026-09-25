@@ -834,3 +834,8 @@
 
 ## Erlebniswelt-Navigation September 2026
 - [x] Den Städte-Button aus der Erlebniswelt entfernt: Der Hero führt nun klar zur Musical-Auswahl, während die Städtenavigation weiterhin über Header und Stadtbereich erreichbar bleibt
+
+## Bildnachweise September 2026
+- [x] Impressum gegen alle 20 aktiven Musical-Produktionen geprüft und um den fehlenden TINA-Bildnachweis ergänzt
+- [x] Neue Rapunzel-Header- und Keyvisual-Artworks ausdrücklich den Bildnachweisen von ShowSlot Touring GmbH zugeordnet
+- [x] Regression ergänzt: Jeder künftige aktive Musicaleintrag benötigt einen zugeordneten Bildnachweis im Impressum
