@@ -105,7 +105,7 @@ export default function MusicalFilters({
             className={`${basePillClass} ${categoryFilter === "alle" ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
             aria-pressed={categoryFilter === "alle"}
           >
-            Alle Shows
+            Alle Musicals &amp; Shows
           </button>
           {EXPERIENCE_CATEGORIES.map((category) => (
             <button

@@ -20,6 +20,8 @@ describe("Startseiten-Erlebnisfilter", () => {
     expect(filterSource).toContain("category.shortLabel");
     expect(filterSource).not.toContain('hidden sm:inline">{category.label}</span>');
     expect(filterSource).not.toContain("Alle Kategorien");
+    expect(filterSource).toContain("Alle Musicals &amp; Shows");
+    expect(filterSource).not.toContain("Alle Shows");
   });
 
   it("setzt Länder als Buttons um und entfernt die Sortierung", () => {
