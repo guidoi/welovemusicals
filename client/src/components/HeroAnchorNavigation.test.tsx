@@ -12,7 +12,7 @@ describe("HeroAnchorNavigation", () => {
       <Router hook={staticLocationHook}>
         <HeroAnchorNavigation
           items={[
-            { id: "all-musicals", label: "Musicals & Shows", href: "#musicals", kind: "overview" },
+            { id: "all-musicals", label: "Alle Musicals & Shows", href: "#musicals", kind: "overview" },
             { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
             { id: "category-kult-klassiker", label: "Kult & Klassiker", href: "#more-musicals", kind: "category", categoryId: "kult-klassiker" },
             { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
@@ -49,7 +49,7 @@ describe("HeroAnchorNavigation", () => {
     expect(markup).toContain('text-white');
     expect(markup).toContain('data-testid="hero-anchor-all-musicals"');
     expect(markup).toContain('type="button"');
-    expect(markup).toContain('>Musicals &amp; Shows<');
+    expect(markup).toContain('>Alle Musicals &amp; Shows<');
     expect(markup).toMatch(/data-testid="hero-anchor-all-musicals"[^>]*border-white[^>]*bg-transparent[^>]*text-white/);
     expect(markup).not.toContain('data-testid="hero-anchor-musical-cities"');
     expect(markup).toContain('href="/musical/alpha"');
@@ -79,7 +79,7 @@ describe("HeroAnchorNavigation", () => {
       <Router hook={staticLocationHook}>
         <HeroAnchorNavigation
           items={[
-            { id: "all-musicals", label: "Musicals & Shows", href: "#musicals", kind: "overview" },
+            { id: "all-musicals", label: "Alle Musicals & Shows", href: "#musicals", kind: "overview" },
             { id: "category-blockbuster-spektakel", label: "Blockbuster", href: "#more-musicals", kind: "category", categoryId: "blockbuster-spektakel" },
             { id: "musical-alpha", label: "ALPHA", href: "/musical/alpha", kind: "musical" },
           ]}

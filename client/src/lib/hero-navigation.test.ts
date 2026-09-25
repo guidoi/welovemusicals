@@ -15,7 +15,7 @@ describe("getHeroNavigationItems", () => {
     );
 
     expect(items).toEqual([
-      { id: "all-musicals", label: "Musicals & Shows", href: "#more-musicals", kind: "overview" },
+      { id: "all-musicals", label: "Alle Musicals & Shows", href: "#more-musicals", kind: "overview" },
       { id: "musical-cities", label: "Städte", href: "#staedte", kind: "city" },
       { id: "category-blockbuster-spektakel", label: "Blockbuster", href: "/?erlebnis=blockbuster-spektakel#more-musicals", kind: "category", categoryId: "blockbuster-spektakel" },
       { id: "category-kult-klassiker", label: "Kult & Klassiker", href: "/?erlebnis=kult-klassiker#more-musicals", kind: "category", categoryId: "kult-klassiker" },

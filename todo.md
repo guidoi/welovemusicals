@@ -834,6 +834,7 @@
 
 ## Erlebniswelt-Navigation September 2026
 - [x] Den Städte-Button aus der Erlebniswelt entfernt: Der Hero führt nun klar zur Musical-Auswahl, während die Städtenavigation weiterhin über Header und Stadtbereich erreichbar bleibt
+- [x] Den Hero-Einstieg in „Alle Musicals & Shows“ präzisiert: Das macht den Gesamtüberblick gegenüber den thematischen Erlebniswelten eindeutig, ohne die bewährte Begriffslogik von Header, SEO und Katalog zu verändern
 
 ## Bildnachweise September 2026
 - [x] Impressum gegen alle 20 aktiven Musical-Produktionen geprüft und um den fehlenden TINA-Bildnachweis ergänzt
