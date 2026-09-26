@@ -46,5 +46,7 @@ describe("TourDates", () => {
     expect(markup).toContain("Tickets sichern");
     expect(markup).not.toContain("SALE · 2 FÜR 1");
     expect(markup).toContain('href="/stadt/hamburg"');
+    expect(markup).toContain('rel="noopener sponsored"');
+    expect(markup).not.toContain("noreferrer");
   });
 });

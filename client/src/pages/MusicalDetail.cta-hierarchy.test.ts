@@ -12,6 +12,7 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
     expect(source).toContain('trackDetailTicketClick("mobile-hero", heroTicketLink)');
     expect(source).toContain('trackDetailTicketClick("ticket-box", boxTicketLink)');
     expect(source).toContain('trackDetailTicketClick("sticky", stickyTicketLink)');
+    expect(source.match(/rel="noopener sponsored"/g)).toHaveLength(3);
   });
 
   it("behält Gold für die Erlebniswelt und Orientierung im Hero", () => {

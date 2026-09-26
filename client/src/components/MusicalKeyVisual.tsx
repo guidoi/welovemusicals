@@ -43,7 +43,7 @@ export default function MusicalKeyVisual({ image, title, ticketLink, landscape, 
         <a
           href={ticketLink}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener sponsored"
           className="block group cursor-pointer"
           title={linkPurpose === "show-page"
             ? `Offizielle Showseite von ${title} bei ${ticketProvider} öffnen`

@@ -16,7 +16,8 @@ describe("MusicalKeyVisual", () => {
 
     expect(markup).toContain('href="https://tickets.example.com/deeplink"');
     expect(markup).toContain('target="_blank"');
-    expect(markup).toContain('rel="noopener noreferrer"');
+    expect(markup).toContain('rel="noopener sponsored"');
+    expect(markup).not.toContain("noreferrer");
     expect(markup).toContain('title="Tickets für Test-Musical über Test Partner kaufen"');
   });
 

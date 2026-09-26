@@ -285,7 +285,7 @@ export default function MusicalDetail() {
           <a
             href={heroTicketLink}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener sponsored"
             className="flex w-full items-center justify-center gap-2 rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
             onClick={() => trackDetailTicketClick("mobile-hero", heroTicketLink)}
           >
@@ -546,7 +546,7 @@ export default function MusicalDetail() {
               <a
                 href={boxTicketLink}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener sponsored"
                 className="inline-flex items-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark"
                 onClick={() => trackDetailTicketClick("ticket-box", boxTicketLink)}
               >
@@ -685,7 +685,7 @@ export default function MusicalDetail() {
             <a
               href={stickyTicketLink}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener sponsored"
               className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
               onClick={() => trackDetailTicketClick("sticky", stickyTicketLink)}
             >

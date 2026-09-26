@@ -26,7 +26,7 @@ export default function AovoTanzDerVampireBanner() {
       <p className="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Anzeige</p>
       <button
         type="button"
-        onClick={() => window.open(AOVO_TDV_CLICK_URL, "_blank", "noopener,noreferrer")}
+        onClick={() => window.open(AOVO_TDV_CLICK_URL, "_blank", "noopener")}
         className="block w-full overflow-hidden rounded-sm border border-white/10 bg-transparent p-0 text-left transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         aria-label="Ticket-und-Hotel-Angebot für Tanz der Vampire in neuem Tab öffnen"
       >

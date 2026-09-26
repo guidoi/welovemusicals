@@ -224,7 +224,7 @@ export default function TourDates({
                       <a
                         href={date.eventimUrl}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener sponsored"
                         className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
                         onClick={() => onTicketClick?.(date.eventimUrl)}
                       >

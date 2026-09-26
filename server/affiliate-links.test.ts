@@ -291,4 +291,33 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(consentServices).not.toContain("TDLinkConverter");
     expect(consentServices).not.toContain("MutationObserver");
   });
+
+  it("erhält bei Affiliate-Klicks den Herkunftsverweis für die Attributionskette", () => {
+    const affiliateSourceFiles = [
+      "../client/src/components/AovoCampaignBanner.tsx",
+      "../client/src/components/AovoTanzDerVampireBanner.tsx",
+      "../client/src/components/AwinShowCampaignBanner.tsx",
+      "../client/src/components/EventimDraculaBanner.tsx",
+      "../client/src/components/EventimFackJuGoehteBanner.tsx",
+      "../client/src/components/MusicalKeyVisual.tsx",
+      "../client/src/components/TourDates.tsx",
+    ];
+
+    for (const relativePath of affiliateSourceFiles) {
+      const source = readFileSync(new URL(relativePath, import.meta.url), "utf8");
+      expect(source, `${relativePath} darf Affiliate-Referrer nicht unterdrücken`).not.toContain("noreferrer");
+    }
+
+    const stageBanner = readFileSync(
+      new URL("../client/src/components/AovoCampaignBanner.tsx", import.meta.url),
+      "utf8"
+    );
+    expect(stageBanner).toContain('"_blank", "noopener"');
+
+    const ticketDetail = readFileSync(
+      new URL("../client/src/pages/MusicalDetail.tsx", import.meta.url),
+      "utf8"
+    );
+    expect(ticketDetail.match(/rel="noopener sponsored"/g)).toHaveLength(3);
+  });
 });

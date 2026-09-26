@@ -841,3 +841,12 @@
 - [x] Impressum gegen alle 20 aktiven Musical-Produktionen geprüft und um den fehlenden TINA-Bildnachweis ergänzt
 - [x] Neue Rapunzel-Header- und Keyvisual-Artworks ausdrücklich den Bildnachweisen von ShowSlot Touring GmbH zugeordnet
 - [x] Regression ergänzt: Jeder künftige aktive Musicaleintrag benötigt einen zugeordneten Bildnachweis im Impressum
+
+## Affiliate-Attribution und Produktionsaudit September 2026
+- [x] Produktionsdomain, aktuelle GitHub-Revision und Cloudflare-Pages-Deployment abgeglichen: `welovemusicals.com` läuft auf GitHub-Commit `49ad43c8`; Cloudflare meldet erfolgreichen Produktionsdeploy.
+- [x] Produktionszugriffe der letzten Woche per Cloudflare geprüft: kein Traffic-Einbruch (täglich 158–243 eindeutige Besucher vom 19.–25.09.; Werte enthalten Edge-/Bot-Traffic und sind keine Buchungskennzahl).
+- [x] Cookie-Einwilligung technisch abgegrenzt: Ticket-CTAs und Keyvisuals nutzen ihre direkten Affiliate-Click-URLs unabhängig von `affiliateTracking`; ausschließlich Banner-Impressions bleiben einwilligungsbasiert.
+- [x] Referrer-Unterdrückung an Affiliate-CTAs, Keyvisuals, Tourterminen und Kampagnenbannern entfernt. `noopener` bleibt als Sicherheitsmaßnahme erhalten; Standardlinks tragen zusätzlich `sponsored`, damit Stage/TradeDoubler, Awin und ATG die Herkunftsseite erhalten.
+- [x] Stage-Impressionendpoint separat geprüft: Server liefert einen 302 auf das Creative; der Audit-Browser blockt den Bildpixel. Das betrifft Impressions, nicht die direkten Buchungslinks; externe Tracking-Blocker können die Pixelzählung verhindern.
+- [ ] TradeDoubler-Klick- und Salesreport im Publisher-Backend abgleichen (ohne autorisierten TradeDoubler-Zugang nicht automatisiert prüfbar); bei Bedarf CSV-Export bereitstellen.
+- [ ] Eigene Klickanalyse (Umami) live konfigurieren oder Report-Zugang bereitstellen: Im Produktionsbrowser ist derzeit kein Umami-Skript eingebunden, daher gibt es keine unabhängige Website-Klickreihe zur Gegenprüfung.
