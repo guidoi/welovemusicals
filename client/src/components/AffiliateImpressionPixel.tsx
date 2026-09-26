@@ -6,9 +6,9 @@ type AffiliateImpressionPixelProps = {
 };
 
 /**
- * Loads one native affiliate impression image only after consent and once its
- * enclosing campaign is actually visible. This avoids hidden responsive
- * duplicates while retaining the advertiser's standard image-request signal.
+ * Loads one native affiliate impression image immediately after consent when
+ * its responsive campaign variant is rendered. This matches standard campaign
+ * impression semantics while avoiding the hidden desktop/mobile duplicate.
  */
 export default function AffiliateImpressionPixel({
   url,
@@ -26,22 +26,16 @@ export default function AffiliateImpressionPixel({
     const target = pixelRef.current;
     if (!target) return;
 
-    if (typeof IntersectionObserver === "undefined") {
-      setShouldLoad(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
+    // The same wide creative can exist in desktop and mobile markup. A hidden
+    // breakpoint wrapper has no client rects, so only the active variant loads
+    // its advertiser pixel; visible banners need not wait for a user scroll.
+    const frame = window.requestAnimationFrame(() => {
+      if (target.getClientRects().length > 0) {
         setShouldLoad(true);
-        observer.disconnect();
-      },
-      { threshold: 0.01 },
-    );
+      }
+    });
 
-    observer.observe(target);
-    return () => observer.disconnect();
+    return () => window.cancelAnimationFrame(frame);
   }, [enabled, url]);
 
   return (
