@@ -15,4 +15,15 @@ describe("CookieConsent wording", () => {
     expect(source).toContain("Nur notwendige");
     expect(source).toContain("Auswahl speichern");
   });
+
+  it("stellt die Option Nur notwendige sichtbar, aber ohne Fettschrift dar", () => {
+    const necessaryButtonClasses = [...source.matchAll(/onClick=\{acceptNecessary\} className="([^"]+)"/g)]
+      .map((match) => match[1]);
+
+    expect(necessaryButtonClasses).toHaveLength(2);
+    necessaryButtonClasses.forEach((classes) => {
+      expect(classes).toContain("font-normal");
+      expect(classes).not.toContain("font-semibold");
+    });
+  });
 });

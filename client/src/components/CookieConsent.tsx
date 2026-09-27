@@ -70,7 +70,7 @@ export default function CookieConsent() {
                 <button type="button" onClick={acceptAll} className="rounded-sm bg-gold px-4 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-gold-light">
                   Alle akzeptieren
                 </button>
-                <button type="button" onClick={acceptNecessary} className="rounded-sm border border-white/25 px-4 py-2.5 text-sm font-semibold text-cream transition-colors hover:border-gold/70 hover:text-gold">
+                <button type="button" onClick={acceptNecessary} className="rounded-sm border border-white/25 px-4 py-2.5 text-sm font-normal text-cream transition-colors hover:border-gold/70 hover:text-gold">
                   Nur notwendige
                 </button>
                 <button type="button" onClick={openSettings} className="rounded-sm px-3 py-2.5 text-sm font-medium text-gold transition-colors hover:text-gold-light">
@@ -122,7 +122,7 @@ export default function CookieConsent() {
             </div>
 
             <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-between">
-              <button type="button" onClick={acceptNecessary} className="rounded-sm border border-white/25 px-4 py-2.5 text-sm font-semibold text-cream transition-colors hover:border-gold/70 hover:text-gold">
+              <button type="button" onClick={acceptNecessary} className="rounded-sm border border-white/25 px-4 py-2.5 text-sm font-normal text-cream transition-colors hover:border-gold/70 hover:text-gold">
                 Nur notwendige
               </button>
               <div className="flex flex-col gap-2 sm:flex-row">
