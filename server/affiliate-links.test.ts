@@ -294,6 +294,41 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(consentServices).toContain("visit.stage-entertainment.de/click");
   });
 
+  it("verwendet für alle aktiven Stage-Ziele und TradeDoubler-Helfer konsistent die verifizierte Webseitenkennung 3492604", () => {
+    const tradeDoublerWebsiteId = "3492604";
+    const unzutreffendeKontonummer = "2475512";
+    const activeStageUrls = getActiveMusicals()
+      .flatMap((musical) => [
+        musical.keyvisualLink,
+        musical.ticketCtaUrl,
+        musical.eventimUrl,
+        musical.awinHeroUrl,
+        musical.awinStickyUrl,
+        musical.awinBoxUrl,
+        ...(musical.tourDates ?? []).map((date) => date.eventimUrl),
+      ])
+      .filter((url): url is string => Boolean(url?.includes("stage-entertainment.de/click")));
+
+    expect(activeStageUrls.length).toBeGreaterThan(0);
+    for (const url of activeStageUrls) {
+      const trackingUrl = new URL(url);
+      expect(trackingUrl.searchParams.get("a")).toBe(tradeDoublerWebsiteId);
+      expect(url).not.toContain(unzutreffendeKontonummer);
+    }
+
+    const tradeDoublerSources = [
+      "../client/src/components/OptionalConsentServices.tsx",
+      "../client/src/components/AovoCampaignBanner.tsx",
+      "../client/src/components/AovoTanzDerVampireBanner.tsx",
+    ];
+
+    for (const relativePath of tradeDoublerSources) {
+      const source = readFileSync(new URL(relativePath, import.meta.url), "utf8");
+      expect(source, `${relativePath} muss die verifizierte Webseitenkennung verwenden`).toContain(`a=${tradeDoublerWebsiteId}`);
+      expect(source, `${relativePath} darf keine Kontonummer als Webseitenkennung verwenden`).not.toContain(`a=${unzutreffendeKontonummer}`);
+    }
+  });
+
   it("erhält bei Affiliate-Klicks den Herkunftsverweis für die Attributionskette", () => {
     const affiliateSourceFiles = [
       "../client/src/components/AovoCampaignBanner.tsx",

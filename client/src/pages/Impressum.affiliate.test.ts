@@ -29,9 +29,10 @@ const IMAGE_CREDIT_HEADING_BY_MUSICAL_ID: Record<string, string> = {
 };
 
 describe("Impressum – Affiliate-Transparenz", () => {
-  it("nennt TradeDoubler und die Publisher-ID für Stage Entertainment", () => {
+  it("nennt TradeDoubler für Stage Entertainment ohne eine nichttechnische Kontonummer als Linkkennung auszugeben", () => {
     expect(impressumSource).toContain("Stage Entertainment über TradeDoubler");
-    expect(impressumSource).toContain("Publisher-ID 2475512");
+    expect(impressumSource).not.toContain("Publisher-ID");
+    expect(impressumSource).not.toContain("2475512");
   });
 
   it("nennt für jedes aktive Musical einen Bildnachweis und sichert TINA sowie die neuen Rapunzel-Artworks", () => {
