@@ -851,3 +851,9 @@
 - [x] Starken Impressionrückgang auf die produktive Umstellung vom 24.09. zurückgeführt: Pixel warteten zuvor auf Scroll-Sichtbarkeit. Sie laden nun nach Affiliate-Einwilligung für das tatsächlich gerenderte Responsive-Banner sofort, ohne verdeckte Desktop-/Mobil-Duplikate mitzuzählen.
 - [ ] TradeDoubler-Klick- und Salesreport im Publisher-Backend abgleichen (ohne autorisierten TradeDoubler-Zugang nicht automatisiert prüfbar); bei Bedarf CSV-Export bereitstellen.
 - [ ] Eigene Klickanalyse (Umami) live konfigurieren oder Report-Zugang bereitstellen: Im Produktionsbrowser ist derzeit kein Umami-Skript eingebunden, daher gibt es keine unabhängige Website-Klickreihe zur Gegenprüfung.
+
+## TradeDoubler Link Converter – Wiederherstellung September 2026
+- [x] Den am 24.09. eigeninitiativ entfernten TradeDoubler Link Converter wiederhergestellt. Er startet ausschließlich nach Affiliate-Einwilligung und nur außerhalb von Impressum/Datenschutz.
+- [x] Direkte bereitgestellte `visit.stage-entertainment.de/click`-Ziele bleiben unverändert; nur noch rohe `stage-entertainment.de`-Links werden vom Converter bzw. lokalen Fallback ergänzt und nie doppelt umgewandelt.
+- [x] Awin MasterTag bleibt entfernt; fremde `document.write`-Werbemittelsnippets werden weiterhin nicht ausgeführt.
+- [x] Datenschutzhinweis und Regressionen an die zustimmungsbasierte Converter-Nutzung angepasst.

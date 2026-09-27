@@ -11,11 +11,14 @@ describe("Optionale Dienste", () => {
     expect(source).toContain("loadGoogleFonts();");
   });
 
-  it("verzichtet auf globale Awin- und TradeDoubler-Fremdskripte", () => {
+  it("lädt nur den TradeDoubler-Link-Converter nach Affiliate-Einwilligung", () => {
     expect(source).not.toContain("dwin2.com");
-    expect(source).not.toContain("tradedoubler.com/lc");
-    expect(source).not.toContain("TDLinkConverter");
-    expect(source).not.toContain("MutationObserver");
-    expect(source).toContain("native, consent-gated creatives");
+    expect(source).toContain("clk.tradedoubler.com/lc");
+    expect(source).toContain("TDLinkConverter");
+    expect(source).toContain("MutationObserver");
+    expect(source).toContain("if (!consent?.affiliateTracking");
+    expect(source).toContain("shouldLoadAffiliateTrackingForPath");
+    expect(source).toContain("UNTRACKED_STAGE_DESTINATION_HOSTS");
+    expect(source).toContain("visit.stage-entertainment.de/click");
   });
 });

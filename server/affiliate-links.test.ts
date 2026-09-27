@@ -279,17 +279,19 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(getMusicalBySlug("sister-act")).toBeUndefined();
   });
 
-  it("verzichtet auf globale Partner-Fremdskripte und nutzt ausschließlich direkte Trackingziele", () => {
+  it("ergänzt direkte Trackingziele durch den zustimmungsbasierten TradeDoubler-Link-Converter", () => {
     const consentServices = readFileSync(
       new URL("../client/src/components/OptionalConsentServices.tsx", import.meta.url),
       "utf8"
     );
 
-    expect(consentServices).toContain("native, consent-gated creatives");
     expect(consentServices).not.toContain("dwin2.com");
-    expect(consentServices).not.toContain("tradedoubler.com/lc");
-    expect(consentServices).not.toContain("TDLinkConverter");
-    expect(consentServices).not.toContain("MutationObserver");
+    expect(consentServices).toContain("clk.tradedoubler.com/lc");
+    expect(consentServices).toContain("TDLinkConverter");
+    expect(consentServices).toContain("MutationObserver");
+    expect(consentServices).toContain("if (!consent?.affiliateTracking");
+    expect(consentServices).toContain("UNTRACKED_STAGE_DESTINATION_HOSTS");
+    expect(consentServices).toContain("visit.stage-entertainment.de/click");
   });
 
   it("erhält bei Affiliate-Klicks den Herkunftsverweis für die Attributionskette", () => {
