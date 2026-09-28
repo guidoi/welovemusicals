@@ -288,6 +288,8 @@ describe("Affiliate-Link-Zuordnung", () => {
     expect(consentServices).not.toContain("dwin2.com");
     expect(consentServices).toContain("clk.tradedoubler.com/lc");
     expect(consentServices).toContain("TDLinkConverter");
+    expect(consentServices).toContain("tdlcAsyncInit");
+    expect(consentServices).toContain('"tdlc-jssdk"');
     expect(consentServices).toContain("MutationObserver");
     expect(consentServices).toContain("if (!consent?.affiliateTracking");
     expect(consentServices).toContain("UNTRACKED_STAGE_DESTINATION_HOSTS");

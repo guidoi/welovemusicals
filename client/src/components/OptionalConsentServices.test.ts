@@ -15,6 +15,8 @@ describe("Optionale Dienste", () => {
     expect(source).not.toContain("dwin2.com");
     expect(source).toContain("clk.tradedoubler.com/lc");
     expect(source).toContain("TDLinkConverter");
+    expect(source).toContain("tdlcAsyncInit");
+    expect(source).toContain('"tdlc-jssdk"');
     expect(source).toContain("MutationObserver");
     expect(source).toContain("if (!consent?.affiliateTracking");
     expect(source).toContain("shouldLoadAffiliateTrackingForPath");

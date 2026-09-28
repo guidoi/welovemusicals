@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { useConsent } from "@/contexts/ConsentContext";
 
-const TRADEDOUBLER_SCRIPT_ID = "tradedoubler-link-converter";
+// TradeDoubler's official Link Converter bootstrap uses this exact script id.
+const TRADEDOUBLER_SCRIPT_ID = "tdlc-jssdk";
 const GOOGLE_FONTS_ID = "welovemusicals-google-fonts";
 const UMAMI_SCRIPT_ID = "welovemusicals-umami";
 const AFFILIATE_EXCLUDED_PATHS = new Set(["/impressum", "/datenschutz"]);
@@ -44,10 +45,13 @@ function startTradeDoublerConverter() {
     }
   };
 
+  const tradeDoublerWindow = window as Window & {
+    TDLinkConverter?: { init: (options: object) => void };
+    tdlcAsyncInit?: () => void;
+  };
+  const previousAsyncInit = tradeDoublerWindow.tdlcAsyncInit;
   const initialiseConverter = () => {
-    const converter = (window as Window & {
-      TDLinkConverter?: { init: (options: object) => void };
-    }).TDLinkConverter;
+    const converter = tradeDoublerWindow.TDLinkConverter;
 
     try {
       converter?.init({});
@@ -57,11 +61,14 @@ function startTradeDoublerConverter() {
     }
   };
 
+  // Matches the official snippet supplied by TradeDoubler for website 3492604:
+  // the provider invokes this callback after its loader is available.
+  tradeDoublerWindow.tdlcAsyncInit = initialiseConverter;
+
   const script = document.createElement("script");
   script.id = TRADEDOUBLER_SCRIPT_ID;
   script.src = `https://clk.tradedoubler.com/lc?a(3492604)rand(${Math.floor(Date.now() / 3_600_000)})`;
   script.onload = () => {
-    initialiseConverter();
     convertUntrackedStageLinks();
   };
   script.onerror = convertUntrackedStageLinks;
@@ -76,7 +83,12 @@ function startTradeDoublerConverter() {
   convertUntrackedStageLinks();
   document.head.appendChild(script);
 
-  return () => observer?.disconnect();
+  return () => {
+    observer?.disconnect();
+    if (tradeDoublerWindow.tdlcAsyncInit === initialiseConverter) {
+      tradeDoublerWindow.tdlcAsyncInit = previousAsyncInit;
+    }
+  };
 }
 
 function loadGoogleFonts() {

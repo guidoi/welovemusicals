@@ -854,6 +854,7 @@
 
 ## TradeDoubler Link Converter – Wiederherstellung September 2026
 - [x] Den am 24.09. eigeninitiativ entfernten TradeDoubler Link Converter wiederhergestellt. Er startet ausschließlich nach Affiliate-Einwilligung und nur außerhalb von Impressum/Datenschutz.
+- [x] Converter-Initialisierung an das in der TradeDoubler-Oberfläche für „We Love Musicals – 3492604“ bereitgestellte Muster angeglichen: offizielles `tdlc-jssdk`-Skript plus `tdlcAsyncInit` → `TDLinkConverter.init({})`.
 - [x] Direkte bereitgestellte `visit.stage-entertainment.de/click`-Ziele bleiben unverändert; nur noch rohe `stage-entertainment.de`-Links werden vom Converter bzw. lokalen Fallback ergänzt und nie doppelt umgewandelt.
 - [x] Awin MasterTag bleibt entfernt; fremde `document.write`-Werbemittelsnippets werden weiterhin nicht ausgeführt.
 - [x] Datenschutzhinweis und Regressionen an die zustimmungsbasierte Converter-Nutzung angepasst.
