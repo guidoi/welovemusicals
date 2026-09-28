@@ -822,8 +822,8 @@
 - [x] Stage-Linkstrategie getrennt: Keyvisuals der 11 Stage-Shows führen über die zuvor gelieferten TradeDoubler-Links auf die jeweilige offizielle Show-Landingpage; Ticket-, Angebots- und Sticky-CTAs sowie Terminbuttons behalten die neuen direkten Shop-Deeplinks. Beide Linksets liefern HTTP 200.
 
 ## Manus-Vorschau und Partnertracking September 2026
-- [x] Wiederkehrende, nicht zuordenbare Manus-Meldung „Script error.“ auf globale Awin-/TradeDoubler-Fremdskripte eingegrenzt; diese werden nicht mehr geladen
-- [x] Direkte Affiliate-Click-URLs und native, sichtbarkeits- sowie consent-gesteuerte Impressionpixel bleiben erhalten; keine fremden document.write-, MasterTag- oder Link-Converter-Skripte mehr
+- [x] Wiederkehrende, nicht zuordenbare Manus-Meldung „Script error.“ auf globale Partner-Fremdskripte eingegrenzt; der Awin-MasterTag und fremde document.write-Werbemittelsnippets bleiben entfernt
+- [x] Direkte Affiliate-Click-URLs und native, einwilligungsbasierte Impressionpixel bleiben erhalten; der TradeDoubler Link Converter wurde nach seiner zwischenzeitlichen Entfernung wiederhergestellt und ergänzt ausschließlich rohe Stage-Ziele
 
 ## Erlebniswelten-Kontrast September 2026
 - [x] Erlebniswelt-Buttons sowie die mobilen Hero-Orientierungen „Musicals & Shows“ und „Städte“ auf reinen weißen Rahmen und weiße Schrift ohne Hintergrundfüllung umgestellt; die aktive Erlebniswelt bleibt zur klaren Zustandsanzeige Gold
@@ -857,3 +857,4 @@
 - [x] Direkte bereitgestellte `visit.stage-entertainment.de/click`-Ziele bleiben unverändert; nur noch rohe `stage-entertainment.de`-Links werden vom Converter bzw. lokalen Fallback ergänzt und nie doppelt umgewandelt.
 - [x] Awin MasterTag bleibt entfernt; fremde `document.write`-Werbemittelsnippets werden weiterhin nicht ausgeführt.
 - [x] Datenschutzhinweis und Regressionen an die zustimmungsbasierte Converter-Nutzung angepasst.
+- [x] Umsatzauswirkende Trackingänderungen benötigen künftig vor Umsetzung eine ausdrückliche Freigabe des Projektinhabers; die verbindliche Projektanweisung liegt in `AGENTS.md`.
