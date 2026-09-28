@@ -37,4 +37,31 @@ describe("serveCanonicalSeoRoute", () => {
     expect(post.status).toBe(405);
     expect(fetch).not.toHaveBeenCalled();
   });
+
+  it("leitet frühere Musical-Aliasse dauerhaft auf die kanonische Route um", async () => {
+    const fetch = vi.fn();
+    const response = await serveCanonicalSeoRoute({
+      request: new Request("https://welovemusicals.com/musical/eiskoenigin?utm_source=legacy"),
+      params: { slug: "eiskoenigin" },
+      env: { ASSETS: { fetch } },
+    }, "musical");
+
+    expect(response.status).toBe(301);
+    expect(response.headers.get("Location")).toBe(
+      "https://welovemusicals.com/musical/die-eiskoenigin?utm_source=legacy",
+    );
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it("liefert für endgültig entfernte Musicalseiten den Status 410", async () => {
+    const fetch = vi.fn();
+    const response = await serveCanonicalSeoRoute({
+      request: new Request("https://welovemusicals.com/musical/sister-act"),
+      params: { slug: "sister-act" },
+      env: { ASSETS: { fetch } },
+    }, "musical");
+
+    expect(response.status).toBe(410);
+    expect(fetch).not.toHaveBeenCalled();
+  });
 });

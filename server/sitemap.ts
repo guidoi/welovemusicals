@@ -1,115 +1,32 @@
-/**
- * Dynamische Sitemap.xml
- * Enthält alle Musical- und Stadtdetailseiten sowie statische Seiten.
- * Wird als Express-Route unter /sitemap.xml registriert.
- */
 import type { Express, Request, Response } from "express";
+import { cities, getActiveMusicals } from "../client/src/lib/data";
 
-// Musical-Slugs (alle aktiven Produktionen)
-const musicalSlugs = [
-  "koenig-der-loewen",
-  "mj-michael-jackson",
-  "and-julia",
-  "tarzan",
-  "zurueck-in-die-zukunft",
-  "eiskoenigin",
-  "wir-sind-am-leben",
-  "der-teufel-traegt-prada",
-  "bibi-tina",
-  "die-amme",
-  "cher-show",
-  "dracula",
-  "da-vinci-code",
-  "drei-haselnuesse",
-  "fitzek-einladung",
-  "pretty-woman",
-  "grease",
-  "elisabeth",
-  "kinky-boots",
-  "greatest-show",
-  "hans-zimmer",
-  "dschungelbuch",
-  "aladin",
-  "schneekoenigin",
-  "harry-potter",
-  "phantom-der-oper",
-  "moulin-rouge",
-  "starlight-express",
-  "mrs-doubtfire",
-  "weihnachtsbaeckerei",
-  "phantom-der-oper-trinity",
-  "romeo-und-julia",
-  "fack-ju-goehte",
-  "drei-haselnuesse-fuer-aschenbroedel",
-  "rapunzel",
-  "tina-das-tina-turner-musical",
-];
+function entry(baseUrl: string, path: string, changefreq: string, priority: string): string {
+  return `  <url>
+    <loc>${baseUrl}${path}</loc>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+}
 
-// Stadt-Slugs
-const citySlugs = [
-  "berlin",
-  "bremen",
-  "dresden",
-  "duesseldorf",
-  "duisburg",
-  "frankfurt",
-  "graz",
-  "halle",
-  "hamburg",
-  "hannover",
-  "innsbruck",
-  "koeln",
-  "leipzig",
-  "muenchen",
-  "nuernberg",
-  "oberhausen",
-  "stuttgart",
-  "hildesheim",
-  "linz",
-  "solingen",
-  "wien",
-];
-
-function buildSitemap(baseUrl: string): string {
-  const today = new Date().toISOString().split("T")[0];
-
-  const urls: string[] = [];
-
-  // Statische Seiten
-  const staticPages = [
-    { loc: "/", priority: "1.0", changefreq: "daily" },
-    { loc: "/impressum", priority: "0.3", changefreq: "monthly" },
-    { loc: "/datenschutz", priority: "0.3", changefreq: "monthly" },
+/**
+ * Development-server counterpart of the build-generated public sitemap.
+ * Both use only canonical, currently active routes from the shared catalog.
+ */
+export function buildSitemap(baseUrl: string): string {
+  const normalizedBaseUrl = baseUrl.replace(/\/$/, "");
+  const urls = [
+    entry(normalizedBaseUrl, "/", "weekly", "1.0"),
+    entry(normalizedBaseUrl, "/impressum", "yearly", "0.3"),
+    entry(normalizedBaseUrl, "/datenschutz", "yearly", "0.3"),
+    ...getActiveMusicals().map((musical) => entry(normalizedBaseUrl, `/musical/${musical.slug}`, "monthly", "0.9")),
+    ...cities.map((city) => entry(
+      normalizedBaseUrl,
+      `/stadt/${city.slug}`,
+      "monthly",
+      city.slug === "hamburg" || city.slug === "berlin" ? "0.8" : "0.7",
+    )),
   ];
-
-  for (const page of staticPages) {
-    urls.push(`  <url>
-    <loc>${baseUrl}${page.loc}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`);
-  }
-
-  // Musical-Detailseiten
-  for (const slug of musicalSlugs) {
-    urls.push(`  <url>
-    <loc>${baseUrl}/musical/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>`);
-  }
-
-  // Stadt-Detailseiten
-  for (const slug of citySlugs) {
-    urls.push(`  <url>
-    <loc>${baseUrl}/stadt/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`);
-  }
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -123,9 +40,8 @@ export function registerSitemapRoute(app: Express): void {
     const host = req.headers["x-forwarded-host"] || req.headers.host || "welovemusicals.com";
     const baseUrl = `${protocol}://${host}`;
 
-    const sitemap = buildSitemap(baseUrl);
     res.setHeader("Content-Type", "application/xml; charset=utf-8");
-    res.setHeader("Cache-Control", "public, max-age=3600"); // 1 Stunde cachen
-    res.send(sitemap);
+    res.setHeader("Cache-Control", "public, max-age=3600");
+    res.send(buildSitemap(baseUrl));
   });
 }

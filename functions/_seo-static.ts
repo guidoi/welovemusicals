@@ -10,6 +10,19 @@ export type SeoStaticRouteContext = {
 
 const PUBLIC_SLUG = /^[a-z0-9-]+$/;
 
+const LEGACY_MUSICAL_REDIRECTS: Record<string, string> = {
+  eiskoenigin: "die-eiskoenigin",
+  "mj-musical": "mj-das-michael-jackson-musical",
+  tarzan: "disneys-musical-tarzan",
+  "teufel-traegt-prada": "der-teufel-traegt-prada-das-musical",
+  ziz: "zurueck-in-die-zukunft-das-musical",
+};
+
+const RETIRED_MUSICAL_SLUGS = new Set([
+  "sister-act",
+  "we-will-rock-you",
+]);
+
 /**
  * Serves a pre-rendered SEO document through the Pages ASSETS binding.
  * Pages otherwise redirects directory assets to a trailing slash before the
@@ -27,6 +40,19 @@ export async function serveCanonicalSeoRoute(
   const slug = context.params.slug;
   if (!slug || !PUBLIC_SLUG.test(slug)) {
     return new Response("Not Found", { status: 404 });
+  }
+
+  if (routeSegment === "musical") {
+    const canonicalSlug = LEGACY_MUSICAL_REDIRECTS[slug];
+    if (canonicalSlug) {
+      const redirectUrl = new URL(`/musical/${canonicalSlug}`, context.request.url);
+      redirectUrl.search = new URL(context.request.url).search;
+      return Response.redirect(redirectUrl, 301);
+    }
+
+    if (RETIRED_MUSICAL_SLUGS.has(slug)) {
+      return new Response("Gone", { status: 410 });
+    }
   }
 
   const targetUrl = new URL(`/${routeSegment}/${slug}/`, context.request.url);

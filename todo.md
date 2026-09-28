@@ -859,3 +859,8 @@
 - [x] Awin MasterTag bleibt entfernt; fremde `document.write`-Werbemittelsnippets werden weiterhin nicht ausgeführt.
 - [x] Datenschutzhinweis und Regressionen an die zustimmungsbasierte Converter-Nutzung angepasst.
 - [x] Umsatzauswirkende Trackingänderungen benötigen künftig vor Umsetzung eine ausdrückliche Freigabe des Projektinhabers; die verbindliche Projektanweisung liegt in `AGENTS.md`.
+
+## Kanonische SEO-Routen September 2026
+- [x] Öffentliche XML-Sitemap wird nun bei jedem Build aus dem aktiven Katalog erzeugt und enthält ausschließlich 20 kanonische Musical-URLs
+- [x] Stale Sitemap-Einträge und Soft-404-Quellen bereinigt: frühere Eiskönigin-, MJ-, Tarzan-, Prada- und ZIZ-Aliasse erhalten 301 auf die jeweilige kanonische Seite; Sister Act und We Will Rock You erhalten 410
+- [x] Entwicklungs- und Produktions-Sitemap teilen denselben Katalog; Regressionen sichern aktive kanonische URLs, Redirects und entfernte Shows
