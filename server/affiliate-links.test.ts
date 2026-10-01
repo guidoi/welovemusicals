@@ -241,7 +241,6 @@ describe("Affiliate-Link-Zuordnung", () => {
   it("trennt bei den weiteren Stage-Shows die Keyvisual-Landingpage von Ticket-CTA und Termin", () => {
     const expectations = {
       "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
-      "wir-sind-am-leben": { showPageLink: WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, shopLink: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL },
     } as const;
 
     for (const [id, { showPageLink, shopLink }] of Object.entries(expectations)) {
@@ -334,6 +333,25 @@ describe("Affiliate-Link-Zuordnung", () => {
       tanzDerVampire?.awinBoxUrl,
       ...(tanzDerVampire?.tourDates ?? []).map((date) => date.eventimUrl),
     ]).toEqual(Array(7).fill(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL));
+  });
+
+  it("verwendet bei Wir sind am Leben die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
+    const wirSindAmLeben = musicals.find((musical) => musical.id === "wir-sind-am-leben");
+
+    expect(wirSindAmLeben).toBeDefined();
+    expect(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434"
+    );
+    expect(WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
+    expect([
+      wirSindAmLeben?.keyvisualLink,
+      wirSindAmLeben?.ticketCtaUrl,
+      wirSindAmLeben?.eventimUrl,
+      wirSindAmLeben?.awinHeroUrl,
+      wirSindAmLeben?.awinStickyUrl,
+      wirSindAmLeben?.awinBoxUrl,
+      ...(wirSindAmLeben?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL));
   });
 
   it("verwendet bei & JULIA, Salon Rosie und Eiskönigin die freigegebenen Stage-Produktseiten auch für Text-CTAs und Termine", () => {

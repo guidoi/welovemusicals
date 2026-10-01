@@ -888,3 +888,8 @@
 - [x] Gelieferte Banner-Kennungen geprüft und unverändert belassen: & JULIA `26185666` / `26185664`, Salon Rosie `26185722` / `26185720`, Eiskönigin `26185658` / `26185656`. Native Creatives, Kampagnenklicks und consent-gesteuerte Impressionen bleiben unverändert.
 - [x] Auf ausdrückliche Freigabe führen Keyvisual, alle Text-/Ticket-CTAs sowie die Stuttgart-/Berlin-/Hamburg-Termine über die Stage-Produktseiten: & JULIA `g=26149394`, Salon Rosie `g=26149438`, Eiskönigin `g=26149418`. Die bisherigen Shop-Deeplinks `g=26149396`, `g=26149440` und `g=26149420` sind im aktiven Katalog nicht mehr verknüpft.
 - [x] Salon Rosies Preis ist in der veröffentlichten Google-Sheets-Preisquelle mit `65,99 €` hinterlegt; Ticketlink-Spalten bleiben für die Website ignoriert.
+
+## Wir sind am Leben – Creatives, Produktseite und Preis Oktober 2026
+- [x] Neue Original-Creatives gesichert und als öffentliche CDN-Dateien eingebunden: 728 × 90 für Campaign `26185700` sowie 300 × 250 für Campaign `26185698`. Platzierungen bleiben bewusst nach abgeschlossenem Textabschnitt beziehungsweise nach der Galerie. Keine externen Werbe- oder `document.write`-Skripte werden ausgeführt.
+- [x] Auf ausdrückliche Freigabe führen WSAL-Keyvisual, alle Text-/Ticket-CTAs und der Berlin-Termin über die getrackte Stage-Produktseite `g=26149434`; der frühere Shop-Deeplink `g=26149436` ist im aktiven Katalog nicht mehr verknüpft. Banner-Klickziele, Impressionen und Affiliate-Consent bleiben unverändert.
+- [x] Google Sheets liefert für WSAL `29,99 €`, `Sale aktiv: Nein` und keine Sale-Texte. Die lokale Preis-API bestätigt die Deaktivierung der Rabattaktion.

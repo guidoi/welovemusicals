@@ -63,12 +63,10 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
   it("trennt bei den weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {
     const stageLinkCases = [
       ["der-teufel-traegt-prada-das-musical", PRADA_STAGE_SHOW_PAGE_URL, PRADA_STAGE_TEXT_LINK_URL],
-      ["wir-sind-am-leben", WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL],
     ] as const;
 
     expect(stageLinkCases.map(([, , shopLink]) => shopLink)).toEqual([
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149436",
     ]);
 
     for (const [slug, showPageLink, shopLink] of stageLinkCases) {
@@ -102,6 +100,18 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     expect(tanzDerVampire?.keyvisualLink).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
     expect(ticketPaths(tanzDerVampire)).toEqual(Array(6).fill(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL));
     expect(createAwinLink(TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL)).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
+  });
+
+  it("verwendet bei Wir sind am Leben die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const wirSindAmLeben = getMusicalBySlug("wir-sind-am-leben");
+
+    expect(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434",
+    );
+    expect(WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
+    expect(wirSindAmLeben?.keyvisualLink).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
+    expect(ticketPaths(wirSindAmLeben)).toEqual(Array(6).fill(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL)).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
   });
 
   it("verwendet bei & JULIA, Salon Rosie und Eiskönigin die gelieferten Stage-Produktseiten auch an den Text-CTAs", () => {
