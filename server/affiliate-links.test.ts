@@ -206,22 +206,20 @@ describe("Affiliate-Link-Zuordnung", () => {
     }
   });
 
-  it("verwendet bei MJ die Stage-Showseite am Keyvisual und den Shop an allen Ticket-CTAs", () => {
+  it("verwendet bei MJ die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
     const mj = musicals.find((musical) => musical.id === "mj-musical");
 
     expect(mj).toBeDefined();
-    expect(MJ_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404"
-    );
-    expect(mj?.keyvisualLink).toBe(MJ_STAGE_SHOW_PAGE_URL);
+    expect(MJ_STAGE_TEXT_LINK_URL).toBe(MJ_STAGE_SHOW_PAGE_URL);
     expect([
+      mj?.keyvisualLink,
       mj?.ticketCtaUrl,
       mj?.eventimUrl,
       mj?.awinHeroUrl,
       mj?.awinStickyUrl,
       mj?.awinBoxUrl,
       ...(mj?.tourDates ?? []).map((date) => date.eventimUrl),
-    ]).toEqual(Array(6).fill(MJ_STAGE_TEXT_LINK_URL));
+    ]).toEqual(Array(7).fill(MJ_STAGE_SHOW_PAGE_URL));
   });
 
   it("verwendet bei Eiskönigin die Stage-Showseite am Keyvisual und den Shop an allen Ticket-CTAs", () => {

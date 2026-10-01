@@ -871,3 +871,7 @@
 ## König der Löwen – Creatives und Produktseitenlinks Oktober 2026
 - [x] Neue native KDL-Creatives für Campaign `26180470` (728 × 90) und `26180460` (300 × 250) als unveränderte Originalformate ins CDN übernommen; Positionen bleiben im oberen Fließtext beziehungsweise nach der Galerie.
 - [x] Auf ausdrückliche Freigabe führen KDL-Text- und Ticketpfade einschließlich Hamburg-Termin über die getrackte Stage-Produktseite `g=26149398`; der Shop-Deeplink `g=26149400` ist für KDL nicht mehr im aktiven Katalog verknüpft.
+
+## MJ – Produktseitenlink Oktober 2026
+- [x] Gelieferten Code geprüft: Die doppelte Angabe beschreibt unverändert das quadratische 300 × 250-Creative `26180466`; das bereits aktive 728 × 90-Creative `26180462` bleibt unverändert. Native Creatives, Kampagnenklicks und consent-gesteuerte Impressionen bleiben unverändert.
+- [x] Auf ausdrückliche Freigabe führen MJ-Keyvisual, sämtliche Text-/Ticket-CTAs und der Hamburg-Termin über die getrackte Stage-Produktseite `g=26149402`; der frühere MJ-Shop-Deeplink `g=26149404` ist im aktiven Katalog nicht mehr verknüpft.

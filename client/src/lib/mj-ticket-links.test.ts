@@ -36,19 +36,17 @@ const ticketPaths = (musical: ReturnType<typeof getMusicalBySlug>) => [
 ];
 
 describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
-  it("verwendet bei MJ die Show-Landingpage am Keyvisual und den Shop an allen Ticket-CTAs", () => {
+  it("verwendet bei MJ die gelieferte Show-Landingpage auch an allen Text-CTAs", () => {
     const mj = getMusicalBySlug("mj-das-michael-jackson-musical");
 
     expect(mj).toBeDefined();
     expect(MJ_STAGE_SHOW_PAGE_URL).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402",
     );
-    expect(MJ_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404",
-    );
+    expect(MJ_STAGE_TEXT_LINK_URL).toBe(MJ_STAGE_SHOW_PAGE_URL);
     expect(mj?.keyvisualLink).toBe(MJ_STAGE_SHOW_PAGE_URL);
-    expect(ticketPaths(mj)).toEqual(Array(6).fill(MJ_STAGE_TEXT_LINK_URL));
-    expect(createAwinLink(MJ_STAGE_TEXT_LINK_URL)).toBe(MJ_STAGE_TEXT_LINK_URL);
+    expect(ticketPaths(mj)).toEqual(Array(6).fill(MJ_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(MJ_STAGE_TEXT_LINK_URL)).toBe(MJ_STAGE_SHOW_PAGE_URL);
   });
 
   it("verwendet bei König der Löwen die gelieferte Show-Landingpage auch an allen Text-CTAs", () => {
