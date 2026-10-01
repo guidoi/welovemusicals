@@ -65,7 +65,6 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
   it("trennt bei den weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {
     const stageLinkCases = [
       ["zurueck-in-die-zukunft-das-musical", ZIZ_STAGE_SHOW_PAGE_URL, ZIZ_STAGE_TEXT_LINK_URL],
-      ["tina-das-tina-turner-musical", TINA_STAGE_SHOW_PAGE_URL, TINA_STAGE_TEXT_LINK_URL],
       ["und-julia", UND_JULIA_STAGE_SHOW_PAGE_URL, UND_JULIA_STAGE_TEXT_LINK_URL],
       ["der-teufel-traegt-prada-das-musical", PRADA_STAGE_SHOW_PAGE_URL, PRADA_STAGE_TEXT_LINK_URL],
       ["die-eiskoenigin", EISKOENIGIN_STAGE_SHOW_PAGE_URL, EISKOENIGIN_STAGE_TEXT_LINK_URL],
@@ -76,7 +75,6 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
 
     expect(stageLinkCases.map(([, , shopLink]) => shopLink)).toEqual([
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149396",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420",
@@ -92,6 +90,18 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
       expect(ticketPaths(musical)).toEqual(Array(6).fill(shopLink));
       expect(createAwinLink(shopLink)).toBe(shopLink);
     }
+  });
+
+  it("verwendet bei TINA die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const tina = getMusicalBySlug("tina-das-tina-turner-musical");
+
+    expect(TINA_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074",
+    );
+    expect(TINA_STAGE_TEXT_LINK_URL).toBe(TINA_STAGE_SHOW_PAGE_URL);
+    expect(tina?.keyvisualLink).toBe(TINA_STAGE_SHOW_PAGE_URL);
+    expect(ticketPaths(tina)).toEqual(Array(6).fill(TINA_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(TINA_STAGE_TEXT_LINK_URL)).toBe(TINA_STAGE_SHOW_PAGE_URL);
   });
 
   it("verwendet bei Tarzan die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {

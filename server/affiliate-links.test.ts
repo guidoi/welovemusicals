@@ -245,7 +245,6 @@ describe("Affiliate-Link-Zuordnung", () => {
   it("trennt bei den weiteren Stage-Shows die Keyvisual-Landingpage von Ticket-CTA und Termin", () => {
     const expectations = {
       ziz: { showPageLink: ZIZ_STAGE_SHOW_PAGE_URL, shopLink: ZIZ_STAGE_TEXT_LINK_URL },
-      "tina-das-musical": { showPageLink: TINA_STAGE_SHOW_PAGE_URL, shopLink: TINA_STAGE_TEXT_LINK_URL },
       "und-julia": { showPageLink: UND_JULIA_STAGE_SHOW_PAGE_URL, shopLink: UND_JULIA_STAGE_TEXT_LINK_URL },
       "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
       "tanz-der-vampire": { showPageLink: TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL, shopLink: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL },
@@ -286,6 +285,25 @@ describe("Affiliate-Link-Zuordnung", () => {
       tarzan?.awinBoxUrl,
       ...(tarzan?.tourDates ?? []).map((date) => date.eventimUrl),
     ]).toEqual(Array(7).fill(TARZAN_STAGE_SHOW_PAGE_URL));
+  });
+
+  it("verwendet bei TINA die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
+    const tina = musicals.find((musical) => musical.id === "tina-das-musical");
+
+    expect(tina).toBeDefined();
+    expect(TINA_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074"
+    );
+    expect(TINA_STAGE_TEXT_LINK_URL).toBe(TINA_STAGE_SHOW_PAGE_URL);
+    expect([
+      tina?.keyvisualLink,
+      tina?.ticketCtaUrl,
+      tina?.eventimUrl,
+      tina?.awinHeroUrl,
+      tina?.awinStickyUrl,
+      tina?.awinBoxUrl,
+      ...(tina?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(TINA_STAGE_SHOW_PAGE_URL));
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {
