@@ -222,30 +222,26 @@ describe("Affiliate-Link-Zuordnung", () => {
     ]).toEqual(Array(7).fill(MJ_STAGE_SHOW_PAGE_URL));
   });
 
-  it("verwendet bei Eiskönigin die Stage-Showseite am Keyvisual und den Shop an allen Ticket-CTAs", () => {
+  it("verwendet bei Eiskönigin die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
     const eiskoenigin = musicals.find((musical) => musical.id === "eiskoenigin");
 
     expect(eiskoenigin).toBeDefined();
-    expect(EISKOENIGIN_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420"
-    );
-    expect(eiskoenigin?.keyvisualLink).toBe(EISKOENIGIN_STAGE_SHOW_PAGE_URL);
+    expect(EISKOENIGIN_STAGE_TEXT_LINK_URL).toBe(EISKOENIGIN_STAGE_SHOW_PAGE_URL);
     expect([
+      eiskoenigin?.keyvisualLink,
       eiskoenigin?.ticketCtaUrl,
       eiskoenigin?.eventimUrl,
       eiskoenigin?.awinHeroUrl,
       eiskoenigin?.awinStickyUrl,
       eiskoenigin?.awinBoxUrl,
       ...(eiskoenigin?.tourDates ?? []).map((date) => date.eventimUrl),
-    ]).toEqual(Array(6).fill(EISKOENIGIN_STAGE_TEXT_LINK_URL));
+    ]).toEqual(Array(7).fill(EISKOENIGIN_STAGE_SHOW_PAGE_URL));
   });
 
   it("trennt bei den weiteren Stage-Shows die Keyvisual-Landingpage von Ticket-CTA und Termin", () => {
     const expectations = {
-      "und-julia": { showPageLink: UND_JULIA_STAGE_SHOW_PAGE_URL, shopLink: UND_JULIA_STAGE_TEXT_LINK_URL },
       "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
       "wir-sind-am-leben": { showPageLink: WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, shopLink: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL },
-      "salon-rosie": { showPageLink: SALON_ROSIE_STAGE_SHOW_PAGE_URL, shopLink: SALON_ROSIE_STAGE_TEXT_LINK_URL },
     } as const;
 
     for (const [id, { showPageLink, shopLink }] of Object.entries(expectations)) {
@@ -338,6 +334,35 @@ describe("Affiliate-Link-Zuordnung", () => {
       tanzDerVampire?.awinBoxUrl,
       ...(tanzDerVampire?.tourDates ?? []).map((date) => date.eventimUrl),
     ]).toEqual(Array(7).fill(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL));
+  });
+
+  it("verwendet bei & JULIA, Salon Rosie und Eiskönigin die freigegebenen Stage-Produktseiten auch für Text-CTAs und Termine", () => {
+    const productPageCases = {
+      "und-julia": UND_JULIA_STAGE_SHOW_PAGE_URL,
+      "salon-rosie": SALON_ROSIE_STAGE_SHOW_PAGE_URL,
+      eiskoenigin: EISKOENIGIN_STAGE_SHOW_PAGE_URL,
+    } as const;
+
+    for (const [id, showPageLink] of Object.entries(productPageCases)) {
+      const musical = musicals.find((entry) => entry.id === id);
+      const textLink = id === "und-julia"
+        ? UND_JULIA_STAGE_TEXT_LINK_URL
+        : id === "salon-rosie"
+          ? SALON_ROSIE_STAGE_TEXT_LINK_URL
+          : EISKOENIGIN_STAGE_TEXT_LINK_URL;
+
+      expect(musical, `Musical ${id} muss vorhanden sein`).toBeDefined();
+      expect(textLink).toBe(showPageLink);
+      expect([
+        musical?.keyvisualLink,
+        musical?.ticketCtaUrl,
+        musical?.eventimUrl,
+        musical?.awinHeroUrl,
+        musical?.awinStickyUrl,
+        musical?.awinBoxUrl,
+        ...(musical?.tourDates ?? []).map((date) => date.eventimUrl),
+      ]).toEqual(Array(7).fill(showPageLink));
+    }
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {

@@ -883,3 +883,8 @@
 ## Tanz der Vampire – Produktseitenlink Oktober 2026
 - [x] Gelieferte Banner-Kennungen geprüft: 728 × 90 nutzt unverändert `26185674`, 300 × 250 unverändert `26185672`; beide nativen Creatives und ihre consent-gesteuerten Impressionpfade bleiben unverändert.
 - [x] Auf ausdrückliche Freigabe führen Tanz-der-Vampire-Keyvisual, alle Text-/Ticket-CTAs und der Stuttgart-Termin über die getrackte Stage-Produktseite `g=26149426`; der frühere TDV-Shop-Deeplink `g=26149428` ist im aktiven Katalog nicht mehr verknüpft.
+
+## & JULIA, Salon Rosie und Eiskönigin – Produktseitenlinks Oktober 2026
+- [x] Gelieferte Banner-Kennungen geprüft und unverändert belassen: & JULIA `26185666` / `26185664`, Salon Rosie `26185722` / `26185720`, Eiskönigin `26185658` / `26185656`. Native Creatives, Kampagnenklicks und consent-gesteuerte Impressionen bleiben unverändert.
+- [x] Auf ausdrückliche Freigabe führen Keyvisual, alle Text-/Ticket-CTAs sowie die Stuttgart-/Berlin-/Hamburg-Termine über die Stage-Produktseiten: & JULIA `g=26149394`, Salon Rosie `g=26149438`, Eiskönigin `g=26149418`. Die bisherigen Shop-Deeplinks `g=26149396`, `g=26149440` und `g=26149420` sind im aktiven Katalog nicht mehr verknüpft.
+- [x] Salon Rosies Preis ist in der veröffentlichten Google-Sheets-Preisquelle mit `65,99 €` hinterlegt; Ticketlink-Spalten bleiben für die Website ignoriert.

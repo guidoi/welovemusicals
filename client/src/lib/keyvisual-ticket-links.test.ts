@@ -35,7 +35,7 @@ describe("Keyvisual-Affiliate-Links", () => {
     }
   });
 
-  it("führt die Stage-Keyvisuals auf die jeweilige offizielle Show-Landingpage; MJ, KDL, ZIZ, Tarzan, TINA und Tanz der Vampire nutzen diese bewusst auch an Text-CTAs", () => {
+  it("führt die Stage-Keyvisuals auf die jeweilige offizielle Show-Landingpage; die freigegebenen Produktseiten-Ausnahmen nutzen diese bewusst auch an Text-CTAs", () => {
     const stageShowPages = {
       "koenig-der-loewen": KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL,
       "mj-musical": MJ_STAGE_SHOW_PAGE_URL,
@@ -54,7 +54,7 @@ describe("Keyvisual-Affiliate-Links", () => {
       const musical = getActiveMusicals().find((entry) => entry.id === id);
 
       expect(musical?.keyvisualLink).toBe(showPageLink);
-      if (id === "mj-musical" || id === "tarzan" || id === "koenig-der-loewen" || id === "tina-das-musical" || id === "ziz" || id === "tanz-der-vampire") {
+      if (["mj-musical", "tarzan", "koenig-der-loewen", "tina-das-musical", "ziz", "tanz-der-vampire", "und-julia", "salon-rosie", "eiskoenigin"].includes(id)) {
         expect(musical?.eventimUrl).toBe(showPageLink);
       } else {
         expect(musical?.keyvisualLink).not.toBe(musical?.eventimUrl);
