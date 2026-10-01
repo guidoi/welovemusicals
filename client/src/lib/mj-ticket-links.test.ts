@@ -64,12 +64,11 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     expect(ticketPaths(koenigDerLoewen)).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL));
   });
 
-  it("trennt bei allen weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {
+  it("trennt bei den weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {
     const stageLinkCases = [
       ["zurueck-in-die-zukunft-das-musical", ZIZ_STAGE_SHOW_PAGE_URL, ZIZ_STAGE_TEXT_LINK_URL],
       ["tina-das-tina-turner-musical", TINA_STAGE_SHOW_PAGE_URL, TINA_STAGE_TEXT_LINK_URL],
       ["und-julia", UND_JULIA_STAGE_SHOW_PAGE_URL, UND_JULIA_STAGE_TEXT_LINK_URL],
-      ["disneys-musical-tarzan", TARZAN_STAGE_SHOW_PAGE_URL, TARZAN_STAGE_TEXT_LINK_URL],
       ["der-teufel-traegt-prada-das-musical", PRADA_STAGE_SHOW_PAGE_URL, PRADA_STAGE_TEXT_LINK_URL],
       ["die-eiskoenigin", EISKOENIGIN_STAGE_SHOW_PAGE_URL, EISKOENIGIN_STAGE_TEXT_LINK_URL],
       ["tanz-der-vampire", TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL, TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL],
@@ -81,7 +80,6 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149396",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149428",
@@ -96,5 +94,17 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
       expect(ticketPaths(musical)).toEqual(Array(6).fill(shopLink));
       expect(createAwinLink(shopLink)).toBe(shopLink);
     }
+  });
+
+  it("verwendet bei Tarzan die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const tarzan = getMusicalBySlug("disneys-musical-tarzan");
+
+    expect(TARZAN_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406",
+    );
+    expect(TARZAN_STAGE_TEXT_LINK_URL).toBe(TARZAN_STAGE_SHOW_PAGE_URL);
+    expect(tarzan?.keyvisualLink).toBe(TARZAN_STAGE_SHOW_PAGE_URL);
+    expect(ticketPaths(tarzan)).toEqual(Array(6).fill(TARZAN_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(TARZAN_STAGE_TEXT_LINK_URL)).toBe(TARZAN_STAGE_SHOW_PAGE_URL);
   });
 });

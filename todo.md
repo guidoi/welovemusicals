@@ -864,3 +864,6 @@
 - [x] Öffentliche XML-Sitemap wird nun bei jedem Build aus dem aktiven Katalog erzeugt und enthält ausschließlich 20 kanonische Musical-URLs
 - [x] Stale Sitemap-Einträge und Soft-404-Quellen bereinigt: frühere Eiskönigin-, MJ-, Tarzan-, Prada- und ZIZ-Aliasse erhalten 301 auf die jeweilige kanonische Seite; Sister Act und We Will Rock You erhalten 410
 - [x] Entwicklungs- und Produktions-Sitemap teilen denselben Katalog; Regressionen sichern aktive kanonische URLs, Redirects und entfernte Shows
+
+## Tarzan-Textlinks Oktober 2026
+- [x] Auf ausdrückliche Freigabe führen alle Tarzan-Text- und Ticketpfade einschließlich Hamburg-Termin über die getrackte Stage-Produktseite `g=26149406`; das Keyvisual verwendete diese Produktseite bereits. Der Shop-Deeplink `g=26149408` ist für Tarzan nicht mehr im aktiven Katalog verknüpft.

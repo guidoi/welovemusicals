@@ -246,7 +246,6 @@ describe("Affiliate-Link-Zuordnung", () => {
       ziz: { showPageLink: ZIZ_STAGE_SHOW_PAGE_URL, shopLink: ZIZ_STAGE_TEXT_LINK_URL },
       "tina-das-musical": { showPageLink: TINA_STAGE_SHOW_PAGE_URL, shopLink: TINA_STAGE_TEXT_LINK_URL },
       "und-julia": { showPageLink: UND_JULIA_STAGE_SHOW_PAGE_URL, shopLink: UND_JULIA_STAGE_TEXT_LINK_URL },
-      tarzan: { showPageLink: TARZAN_STAGE_SHOW_PAGE_URL, shopLink: TARZAN_STAGE_TEXT_LINK_URL },
       "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
       "tanz-der-vampire": { showPageLink: TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL, shopLink: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL },
       "wir-sind-am-leben": { showPageLink: WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, shopLink: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL },
@@ -267,6 +266,25 @@ describe("Affiliate-Link-Zuordnung", () => {
         ...(musical?.tourDates ?? []).map((date) => date.eventimUrl),
       ]).toEqual(Array(6).fill(shopLink));
     }
+  });
+
+  it("verwendet bei Tarzan die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
+    const tarzan = musicals.find((musical) => musical.id === "tarzan");
+
+    expect(tarzan).toBeDefined();
+    expect(TARZAN_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406"
+    );
+    expect(TARZAN_STAGE_TEXT_LINK_URL).toBe(TARZAN_STAGE_SHOW_PAGE_URL);
+    expect([
+      tarzan?.keyvisualLink,
+      tarzan?.ticketCtaUrl,
+      tarzan?.eventimUrl,
+      tarzan?.awinHeroUrl,
+      tarzan?.awinStickyUrl,
+      tarzan?.awinBoxUrl,
+      ...(tarzan?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(TARZAN_STAGE_SHOW_PAGE_URL));
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {
