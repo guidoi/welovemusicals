@@ -51,17 +51,15 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     expect(createAwinLink(MJ_STAGE_TEXT_LINK_URL)).toBe(MJ_STAGE_TEXT_LINK_URL);
   });
 
-  it("verwendet bei König der Löwen die Show-Landingpage am Keyvisual und den Shop an allen Ticket-CTAs", () => {
+  it("verwendet bei König der Löwen die gelieferte Show-Landingpage auch an allen Text-CTAs", () => {
     const koenigDerLoewen = getMusicalBySlug("koenig-der-loewen");
 
     expect(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398",
     );
-    expect(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149400",
-    );
+    expect(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
     expect(koenigDerLoewen?.keyvisualLink).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
-    expect(ticketPaths(koenigDerLoewen)).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL));
+    expect(ticketPaths(koenigDerLoewen)).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL));
   });
 
   it("trennt bei den weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {

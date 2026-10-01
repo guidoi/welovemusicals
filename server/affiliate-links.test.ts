@@ -175,11 +175,12 @@ describe("Affiliate-Link-Zuordnung", () => {
 
   });
 
-  it("verwendet bei König der Löwen die Stage-Showseite am Keyvisual und den Ticketshop an allen CTAs", () => {
+  it("verwendet bei König der Löwen die gelieferte Stage-Showseite auch an allen Text-CTAs", () => {
     const kdl = musicals.find((musical) => musical.id === "koenig-der-loewen");
 
     expect(kdl).toBeDefined();
     expect(kdl?.keyvisualLink).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
+    expect(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
     expect([
       kdl?.ticketCtaUrl,
       kdl?.eventimUrl,
@@ -187,7 +188,7 @@ describe("Affiliate-Link-Zuordnung", () => {
       kdl?.awinStickyUrl,
       kdl?.awinBoxUrl,
       kdl?.tourDates?.[0]?.eventimUrl,
-    ]).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL));
+    ]).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL));
   });
 
   it("verwendet die bereitgestellten Stage-Produktseiten an allen Ticket-CTAs und Tourterminen", () => {

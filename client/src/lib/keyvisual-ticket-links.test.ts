@@ -35,7 +35,7 @@ describe("Keyvisual-Affiliate-Links", () => {
     }
   });
 
-  it("führt die Stage-Keyvisuals auf die jeweilige offizielle Show-Landingpage; Tarzan nutzt diese bewusst auch an Text-CTAs", () => {
+  it("führt die Stage-Keyvisuals auf die jeweilige offizielle Show-Landingpage; KDL und Tarzan nutzen diese bewusst auch an Text-CTAs", () => {
     const stageShowPages = {
       "koenig-der-loewen": KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL,
       "mj-musical": MJ_STAGE_SHOW_PAGE_URL,
@@ -54,7 +54,7 @@ describe("Keyvisual-Affiliate-Links", () => {
       const musical = getActiveMusicals().find((entry) => entry.id === id);
 
       expect(musical?.keyvisualLink).toBe(showPageLink);
-      if (id === "tarzan") {
+      if (id === "tarzan" || id === "koenig-der-loewen") {
         expect(musical?.eventimUrl).toBe(showPageLink);
       } else {
         expect(musical?.keyvisualLink).not.toBe(musical?.eventimUrl);

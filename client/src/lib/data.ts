@@ -129,11 +129,11 @@ export const WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entert
 export const SALON_ROSIE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438";
 
 // Direkte Stage-Shop-Deeplinks für sichtbare Ticket-CTAs, Angebote und Termine.
-// Tarzan ist die bewusst freigegebene Ausnahme: Auch die Textlinks führen über
-// die bereitgestellte, getrackte Stage-Produktseite (Campaign 26149406).
+// KDL und Tarzan sind die bewusst freigegebenen Ausnahmen: Auch ihre Textlinks
+// führen über die bereitgestellten, getrackten Stage-Produktseiten.
 export const MJ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149404";
 export const EISKOENIGIN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420";
-export const KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149400";
+export const KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL = KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL;
 export const ZIZ_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412";
 export const TINA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204072";
 export const UND_JULIA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149396";

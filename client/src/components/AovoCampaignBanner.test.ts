@@ -225,7 +225,7 @@ describe("Aovo campaign banners", () => {
     ]));
   });
 
-  it("ordnet die bereitgestellten KDL- und MJ-Aovo-Creatives der gewünschten Bannerhierarchie zu", () => {
+  it("ordnet die aktuellen KDL- und MJ-Aovo-Creatives der gewünschten Bannerhierarchie zu", () => {
     expect(getAovoCampaigns("koenig-der-loewen")).toEqual(expect.arrayContaining([
       expect.objectContaining({
         groupId: "26180470",
@@ -234,7 +234,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 4,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/KGtCOEFGfgbQHHaH.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/bGQQgJFTLFjAcGBP.jpg",
       }),
       expect.objectContaining({
         groupId: "26180460",
@@ -242,7 +242,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/IfbilkdRigknWprn.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ekoxWvdvUAIombDp.jpg",
       }),
       expect.objectContaining({
         groupId: "26068528",

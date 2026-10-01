@@ -867,3 +867,7 @@
 
 ## Tarzan-Textlinks Oktober 2026
 - [x] Auf ausdrückliche Freigabe führen alle Tarzan-Text- und Ticketpfade einschließlich Hamburg-Termin über die getrackte Stage-Produktseite `g=26149406`; das Keyvisual verwendete diese Produktseite bereits. Der Shop-Deeplink `g=26149408` ist für Tarzan nicht mehr im aktiven Katalog verknüpft.
+
+## König der Löwen – Creatives und Produktseitenlinks Oktober 2026
+- [x] Neue native KDL-Creatives für Campaign `26180470` (728 × 90) und `26180460` (300 × 250) als unveränderte Originalformate ins CDN übernommen; Positionen bleiben im oberen Fließtext beziehungsweise nach der Galerie.
+- [x] Auf ausdrückliche Freigabe führen KDL-Text- und Ticketpfade einschließlich Hamburg-Termin über die getrackte Stage-Produktseite `g=26149398`; der Shop-Deeplink `g=26149400` ist für KDL nicht mehr im aktiven Katalog verknüpft.
