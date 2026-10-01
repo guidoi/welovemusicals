@@ -242,10 +242,8 @@ describe("Affiliate-Link-Zuordnung", () => {
 
   it("trennt bei den weiteren Stage-Shows die Keyvisual-Landingpage von Ticket-CTA und Termin", () => {
     const expectations = {
-      ziz: { showPageLink: ZIZ_STAGE_SHOW_PAGE_URL, shopLink: ZIZ_STAGE_TEXT_LINK_URL },
       "und-julia": { showPageLink: UND_JULIA_STAGE_SHOW_PAGE_URL, shopLink: UND_JULIA_STAGE_TEXT_LINK_URL },
       "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
-      "tanz-der-vampire": { showPageLink: TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL, shopLink: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL },
       "wir-sind-am-leben": { showPageLink: WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, shopLink: WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL },
       "salon-rosie": { showPageLink: SALON_ROSIE_STAGE_SHOW_PAGE_URL, shopLink: SALON_ROSIE_STAGE_TEXT_LINK_URL },
     } as const;
@@ -302,6 +300,44 @@ describe("Affiliate-Link-Zuordnung", () => {
       tina?.awinBoxUrl,
       ...(tina?.tourDates ?? []).map((date) => date.eventimUrl),
     ]).toEqual(Array(7).fill(TINA_STAGE_SHOW_PAGE_URL));
+  });
+
+  it("verwendet bei ZIZ die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
+    const ziz = musicals.find((musical) => musical.id === "ziz");
+
+    expect(ziz).toBeDefined();
+    expect(ZIZ_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410"
+    );
+    expect(ZIZ_STAGE_TEXT_LINK_URL).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
+    expect([
+      ziz?.keyvisualLink,
+      ziz?.ticketCtaUrl,
+      ziz?.eventimUrl,
+      ziz?.awinHeroUrl,
+      ziz?.awinStickyUrl,
+      ziz?.awinBoxUrl,
+      ...(ziz?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(ZIZ_STAGE_SHOW_PAGE_URL));
+  });
+
+  it("verwendet bei Tanz der Vampire die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
+    const tanzDerVampire = musicals.find((musical) => musical.id === "tanz-der-vampire");
+
+    expect(tanzDerVampire).toBeDefined();
+    expect(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426"
+    );
+    expect(TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
+    expect([
+      tanzDerVampire?.keyvisualLink,
+      tanzDerVampire?.ticketCtaUrl,
+      tanzDerVampire?.eventimUrl,
+      tanzDerVampire?.awinHeroUrl,
+      tanzDerVampire?.awinStickyUrl,
+      tanzDerVampire?.awinBoxUrl,
+      ...(tanzDerVampire?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL));
   });
 
   it("deaktiviert DIE AMME in der öffentlichen Musical-Liste", () => {

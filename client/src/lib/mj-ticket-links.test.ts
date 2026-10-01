@@ -62,21 +62,17 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
 
   it("trennt bei den weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {
     const stageLinkCases = [
-      ["zurueck-in-die-zukunft-das-musical", ZIZ_STAGE_SHOW_PAGE_URL, ZIZ_STAGE_TEXT_LINK_URL],
       ["und-julia", UND_JULIA_STAGE_SHOW_PAGE_URL, UND_JULIA_STAGE_TEXT_LINK_URL],
       ["der-teufel-traegt-prada-das-musical", PRADA_STAGE_SHOW_PAGE_URL, PRADA_STAGE_TEXT_LINK_URL],
       ["die-eiskoenigin", EISKOENIGIN_STAGE_SHOW_PAGE_URL, EISKOENIGIN_STAGE_TEXT_LINK_URL],
-      ["tanz-der-vampire", TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL, TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL],
       ["wir-sind-am-leben", WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL, WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL],
       ["salon-rosie", SALON_ROSIE_STAGE_SHOW_PAGE_URL, SALON_ROSIE_STAGE_TEXT_LINK_URL],
     ] as const;
 
     expect(stageLinkCases.map(([, , shopLink]) => shopLink)).toEqual([
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149412",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149396",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149420",
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149428",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149436",
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149440",
     ]);
@@ -88,6 +84,30 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
       expect(ticketPaths(musical)).toEqual(Array(6).fill(shopLink));
       expect(createAwinLink(shopLink)).toBe(shopLink);
     }
+  });
+
+  it("verwendet bei ZIZ die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const ziz = getMusicalBySlug("zurueck-in-die-zukunft-das-musical");
+
+    expect(ZIZ_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410",
+    );
+    expect(ZIZ_STAGE_TEXT_LINK_URL).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
+    expect(ziz?.keyvisualLink).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
+    expect(ticketPaths(ziz)).toEqual(Array(6).fill(ZIZ_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(ZIZ_STAGE_TEXT_LINK_URL)).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
+  });
+
+  it("verwendet bei Tanz der Vampire die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const tanzDerVampire = getMusicalBySlug("tanz-der-vampire");
+
+    expect(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426",
+    );
+    expect(TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
+    expect(tanzDerVampire?.keyvisualLink).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
+    expect(ticketPaths(tanzDerVampire)).toEqual(Array(6).fill(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL)).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
   });
 
   it("verwendet bei TINA die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {

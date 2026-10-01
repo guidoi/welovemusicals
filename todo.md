@@ -875,3 +875,11 @@
 ## MJ – Produktseitenlink Oktober 2026
 - [x] Gelieferten Code geprüft: Die doppelte Angabe beschreibt unverändert das quadratische 300 × 250-Creative `26180466`; das bereits aktive 728 × 90-Creative `26180462` bleibt unverändert. Native Creatives, Kampagnenklicks und consent-gesteuerte Impressionen bleiben unverändert.
 - [x] Auf ausdrückliche Freigabe führen MJ-Keyvisual, sämtliche Text-/Ticket-CTAs und der Hamburg-Termin über die getrackte Stage-Produktseite `g=26149402`; der frühere MJ-Shop-Deeplink `g=26149404` ist im aktiven Katalog nicht mehr verknüpft.
+
+## ZIZ – Produktseitenlink Oktober 2026
+- [x] Gelieferte Banner-Kennungen geprüft: 728 × 90 nutzt unverändert `26185502`, 300 × 250 unverändert `26185500`; beide nativen Creatives und ihre consent-gesteuerten Impressionpfade bleiben unverändert.
+- [x] Auf ausdrückliche Freigabe führen ZIZ-Keyvisual, alle Text-/Ticket-CTAs und der Hamburg-Termin über die getrackte Stage-Produktseite `g=26149410`; der frühere ZIZ-Shop-Deeplink `g=26149412` ist im aktiven Katalog nicht mehr verknüpft.
+
+## Tanz der Vampire – Produktseitenlink Oktober 2026
+- [x] Gelieferte Banner-Kennungen geprüft: 728 × 90 nutzt unverändert `26185674`, 300 × 250 unverändert `26185672`; beide nativen Creatives und ihre consent-gesteuerten Impressionpfade bleiben unverändert.
+- [x] Auf ausdrückliche Freigabe führen Tanz-der-Vampire-Keyvisual, alle Text-/Ticket-CTAs und der Stuttgart-Termin über die getrackte Stage-Produktseite `g=26149426`; der frühere TDV-Shop-Deeplink `g=26149428` ist im aktiven Katalog nicht mehr verknüpft.
