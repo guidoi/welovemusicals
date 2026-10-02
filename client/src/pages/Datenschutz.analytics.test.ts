@@ -13,5 +13,9 @@ describe("Datenschutz zur Kategorie-Analyse", () => {
     expect(privacySource).toContain("document.write</code> führen wir nicht aus");
     expect(privacySource).toContain("Bei bewussten Ticketklicks");
     expect(privacySource).toContain("Musicalkennung, Partner und CTA-Platzierung");
+    expect(privacySource).toContain("Microsoft Clarity");
+    expect(privacySource).toContain("erst nach Ihrer Statistik-Einwilligung geladen");
+    expect(privacySource).toContain("deaktiviertem Werbespeicher");
+    expect(privacySource).toContain("Clarity-Cookies gelöscht");
   });
 });

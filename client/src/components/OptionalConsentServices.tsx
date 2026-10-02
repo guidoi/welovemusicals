@@ -6,7 +6,18 @@ import { useConsent } from "@/contexts/ConsentContext";
 const TRADEDOUBLER_SCRIPT_ID = "tdlc-jssdk";
 const GOOGLE_FONTS_ID = "welovemusicals-google-fonts";
 const UMAMI_SCRIPT_ID = "welovemusicals-umami";
+const CLARITY_SCRIPT_ID = "welovemusicals-microsoft-clarity";
+const CLARITY_PROJECT_ID = "yrei35xhu5";
 const AFFILIATE_EXCLUDED_PATHS = new Set(["/impressum", "/datenschutz"]);
+const PRODUCTION_HOSTNAMES = new Set(["welovemusicals.com", "www.welovemusicals.com"]);
+
+type ClarityFunction = ((...args: unknown[]) => void) & { q?: unknown[][] };
+
+declare global {
+  interface Window {
+    clarity?: ClarityFunction;
+  }
+}
 
 // Direct visit.stage-entertainment.de links are already TradeDoubler targets
 // and must never be wrapped a second time by the converter.
@@ -113,6 +124,42 @@ function loadUmami() {
   document.body.appendChild(script);
 }
 
+/** Never mix development-preview recordings into the production Clarity project. */
+export function shouldLoadClarityForHostname(hostname: string) {
+  return PRODUCTION_HOSTNAMES.has(hostname.toLocaleLowerCase("en-US"));
+}
+
+/**
+ * Clarity is a statistics service, not affiliate tracking. The official consentv2
+ * signal is queued before its provider script loads; advertising storage remains
+ * denied even after a visitor accepts analytics.
+ */
+function startClarity() {
+  if (document.getElementById(CLARITY_SCRIPT_ID)) return () => undefined;
+
+  const clarity: ClarityFunction = window.clarity ?? Object.assign(
+    (...args: unknown[]) => {
+      clarity.q = clarity.q ?? [];
+      clarity.q.push(args);
+    },
+    {},
+  );
+  window.clarity = clarity;
+  clarity("consentv2", { ad_Storage: "denied", analytics_Storage: "granted" });
+
+  const script = document.createElement("script");
+  script.id = CLARITY_SCRIPT_ID;
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
+  document.head.appendChild(script);
+
+  return () => {
+    // The consent context also triggers a reload after revocation. This immediate
+    // command additionally clears Clarity cookies before that reload can occur.
+    window.clarity?.("consent", false);
+  };
+}
+
 export default function OptionalConsentServices() {
   const { consent } = useConsent();
   const [location] = useLocation();
@@ -120,6 +167,11 @@ export default function OptionalConsentServices() {
   useEffect(() => {
     if (!consent?.analytics) return;
     loadUmami();
+  }, [consent?.analytics]);
+
+  useEffect(() => {
+    if (!consent?.analytics || !shouldLoadClarityForHostname(window.location.hostname)) return;
+    return startClarity();
   }, [consent?.analytics]);
 
   useEffect(() => {

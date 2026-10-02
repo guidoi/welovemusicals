@@ -893,3 +893,8 @@
 - [x] Neue Original-Creatives gesichert und als öffentliche CDN-Dateien eingebunden: 728 × 90 für Campaign `26185700` sowie 300 × 250 für Campaign `26185698`. Platzierungen bleiben bewusst nach abgeschlossenem Textabschnitt beziehungsweise nach der Galerie. Keine externen Werbe- oder `document.write`-Skripte werden ausgeführt.
 - [x] Auf ausdrückliche Freigabe führen WSAL-Keyvisual, alle Text-/Ticket-CTAs und der Berlin-Termin über die getrackte Stage-Produktseite `g=26149434`; der frühere Shop-Deeplink `g=26149436` ist im aktiven Katalog nicht mehr verknüpft. Banner-Klickziele, Impressionen und Affiliate-Consent bleiben unverändert.
 - [x] Google Sheets liefert für WSAL `29,99 €`, `Sale aktiv: Nein` und keine Sale-Texte. Die lokale Preis-API bestätigt die Deaktivierung der Rabattaktion.
+
+## Microsoft Clarity – Oktober 2026
+- [x] Projektkennung `yrei35xhu5` vom Projektinhaber erhalten und ausschließlich in die Produktionseinbindung aufgenommen.
+- [x] Clarity wird nur nach Statistik-Einwilligung auf `welovemusicals.com` geladen; `consentv2` meldet `analytics_storage: granted` und dauerhaft `ad_storage: denied`. Vorschau, lokale Entwicklung und „Nur notwendige“ bleiben vollständig Clarity-frei.
+- [x] Widerruf löscht Clarity-Cookies vor dem vorhandenen Consent-Reload. Partner-/Affiliate-Tracking, Deeplinks, Impressionen und deren Zustimmung bleiben unverändert.
