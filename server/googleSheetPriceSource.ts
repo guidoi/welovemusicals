@@ -30,6 +30,8 @@ type SourceCache = {
   lastKnownGood: SheetPriceSaleOverride[];
 };
 
+export const WEBSITE_PRICE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRC2Ymp15Lrw6yzWFVFvhYR0cRa3rTYfGcAJ4PnYth3TFZ3E4A6ajuecKXvr_T7Nmn7WIiQFzlXmH8s/pub?gid=1001113831&single=true&output=csv";
+
 const DEFAULT_CACHE_TTL_MS = 60_000;
 const DEFAULT_TIMEOUT_MS = 4_500;
 
@@ -77,6 +79,7 @@ const KNOWN_MUSICAL_IDS = new Set([
   "we-will-rock-you",
   "salon-rosie",
   "und-julia",
+  "tina-das-musical",
 ]);
 
 type ParsedCsv = {

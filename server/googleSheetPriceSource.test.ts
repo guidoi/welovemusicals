@@ -109,6 +109,24 @@ describe("Google-Sheets-Preisquelle", () => {
     expect(JSON.stringify(overrides)).not.toContain("javascript:alert");
   });
 
+  it("übernimmt den aktiven TINA-Datensatz ausschließlich als Preis- und Salewert", () => {
+    const overrides = parseGoogleSheetPriceCsv(`${header}\ntina-das-musical,53,99,Nein,,,,,https://untrusted.example/tickets,`);
+
+    expect(overrides).toEqual([
+      {
+        musicalId: "tina-das-musical",
+        priceFrom: "53,99",
+        saleEnabled: false,
+        saleLabel: null,
+        saleDiscount: null,
+        saleNote: null,
+        saleStartsAt: null,
+        saleEndsAt: null,
+      },
+    ]);
+    expect(JSON.stringify(overrides)).not.toContain("untrusted.example");
+  });
+
   it("verwendet den Cache innerhalb des Intervalls und bei einem späteren Quellfehler den Letztstand", async () => {
     let currentTime = 1_000;
     const fetcher = vi

@@ -10,6 +10,8 @@ import {
 import { getCitySeo } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
 import { getCityGuide } from "../client/src/lib/city-guide";
+import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
+import { createGoogleSheetPriceSource, WEBSITE_PRICE_SHEET_CSV_URL } from "../server/googleSheetPriceSource";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const DIST_ROOT = resolve(PROJECT_ROOT, "dist");
@@ -25,6 +27,7 @@ interface SeoPage {
   canonicalUrl: string;
   schema: Record<string, unknown>;
   contentHtml: string;
+  schemaPage?: "city" | "musical";
 }
 
 function escapeHtml(value: string): string {
@@ -116,7 +119,12 @@ function createCityContent(city: City, cityMusicals: Musical[], heading: string)
   </main>`;
 }
 
-function createMusicalContent(musical: Musical, heading: string): string {
+function formatGermanDate(value: string): string {
+  return new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })
+    .format(new Date(`${value}T12:00:00Z`));
+}
+
+function createMusicalContent(musical: Musical, heading: string, priceFrom?: string): string {
   const location = [musical.city, musical.venue].filter(Boolean).join(" · ");
   const musicalCities = Array.from(new Set([
     ...(musical.city ? [musical.city] : []),
@@ -128,8 +136,19 @@ function createMusicalContent(musical: Musical, heading: string): string {
     .slice(0, 12)
     .map((city) => `<a href="/stadt/${escapeHtml(city.slug)}">Musicals in ${escapeHtml(city.name)}</a>`)
     .join(" · ");
+  const upcomingDates = (musical.tourDates ?? [])
+    .filter((date) => (date.endDate ?? date.startDate) >= new Date().toISOString().slice(0, 10))
+    .map((date) => {
+      const duration = date.endDate && date.endDate !== date.startDate
+        ? `${formatGermanDate(date.startDate)} bis ${formatGermanDate(date.endDate)}`
+        : formatGermanDate(date.startDate);
+      return `<li><strong>${escapeHtml(date.city)}</strong> · ${escapeHtml(date.venue)} · ${escapeHtml(duration)}</li>`;
+    })
+    .join("");
   return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(musical.description)}</p>
     ${location ? `<p><strong>Spielort:</strong> ${escapeHtml(location)}</p>` : ""}
+    ${priceFrom ? `<p><strong>Tickets ab:</strong> ${escapeHtml(priceFrom)} €</p>` : ""}
+    ${upcomingDates ? `<section><h2>Termine &amp; Spielstätten</h2><ul>${upcomingDates}</ul></section>` : ""}
     ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}
   </main>`;
 }
@@ -152,12 +171,24 @@ function createCityPage(city: City): SeoPage {
       getCityItemList(city, cityMusicals),
     ),
     contentHtml: createCityContent(city, cityMusicals, seo.heading),
+    schemaPage: "city",
   };
 }
 
-function createMusicalPage(musical: Musical): SeoPage {
+function createMusicalPage(musical: Musical, priceFrom?: string): SeoPage {
   const seo = getMusicalSeo(musical);
   const imageAlt = musical.title;
+  const pageSchema = createPageSchema(
+    seoPageShape(seo.title, seo.description, seo.image, imageAlt, seo.canonicalUrl),
+    getMusicalBreadcrumbs(musical),
+    {
+      "@type": "CreativeWork",
+      name: musical.title,
+      description: seo.description,
+      url: seo.canonicalUrl,
+    },
+  );
+  pageSchema["@graph"].push(...getMusicalEventSchemas(musical, { priceFrom }));
 
   return {
     path: `/musical/${musical.slug}`,
@@ -166,13 +197,9 @@ function createMusicalPage(musical: Musical): SeoPage {
     image: seo.image,
     imageAlt,
     canonicalUrl: seo.canonicalUrl,
-    schema: createPageSchema(seoPageShape(seo.title, seo.description, seo.image, imageAlt, seo.canonicalUrl), getMusicalBreadcrumbs(musical), {
-      "@type": "CreativeWork",
-      name: musical.title,
-      description: seo.description,
-      url: seo.canonicalUrl,
-    }),
-    contentHtml: createMusicalContent(musical, musical.title),
+    schema: pageSchema,
+    contentHtml: createMusicalContent(musical, musical.title, priceFrom),
+    schemaPage: "musical",
   };
 }
 
@@ -205,7 +232,7 @@ function applySeoTemplate(html: string, page: SeoPage): string {
     .replace(/\s*<meta property="og:image:type"[^>]*\/>/, "")
     .replace(/\s*<meta property="og:image:width"[^>]*\/>/, "")
     .replace(/\s*<meta property="og:image:height"[^>]*\/>/, "")
-    .replace(/<script id="site-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, `<script id="site-schema" type="application/ld+json">${schema}</script>`)
+    .replace(/<script id="site-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, `<script id="site-schema" type="application/ld+json" data-schema-page="${page.schemaPage ?? "default"}">${schema}</script>`)
     // Static content remains available to crawlers and no-JavaScript visitors,
     // but does not flash briefly before the React app mounts on regular reloads.
     .replace('<div id="root"></div>', `<div id="root"><noscript>${page.contentHtml}</noscript></div>`);
@@ -219,9 +246,11 @@ async function writePage(page: SeoPage, shellHtml: string): Promise<void> {
 
 async function main() {
   const shellHtml = await readFile(resolve(DIST_ROOT, "index.html"), "utf8");
+  const priceOverrides = await createGoogleSheetPriceSource({ url: WEBSITE_PRICE_SHEET_CSV_URL }).listOverrides();
+  const pricesByMusicalId = new Map(priceOverrides.map((override) => [override.musicalId, override.priceFrom]));
   const pages = [
     ...cities.map(createCityPage),
-    ...activeMusicals.map(createMusicalPage),
+    ...activeMusicals.map((musical) => createMusicalPage(musical, pricesByMusicalId.get(musical.id) ?? musical.priceFrom)),
   ];
 
   await Promise.all(pages.map((page) => writePage(page, shellHtml)));

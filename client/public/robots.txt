@@ -1,4 +1,13 @@
+# Öffentliche Inhalte für Websuche und KI-gestützte Suche zugänglich halten.
 User-agent: *
+Allow: /
+
+# ChatGPT Search: unabhängig von einer möglichen GPTBot-Trainingsrichtlinie.
+User-agent: OAI-SearchBot
+Allow: /
+
+# Gemini Apps und Google-Search-Grounding.
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://welovemusicals.com/sitemap.xml
