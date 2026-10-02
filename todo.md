@@ -908,3 +908,8 @@
 - [x] `phantom-der-oper-trinity` wird als historischer Platzhalter per 301 auf die aktuelle, kanonische Detailseite `phantom-der-oper` geleitet.
 - [x] Die endgültig entfernten früheren Shows `cher-show` und `grease` liefern jetzt HTTP 410 statt einer indexierbaren Startseitenantwort.
 - [x] Der frühere technische Pfad `/umami` liefert jetzt HTTP 404 mit `X-Robots-Tag: noindex`. Er fällt nicht mehr auf die SPA-Startseite zurück und wird nicht mehr als weich-fehlerhafte Inhaltsseite gecrawlt. Die heutige Statistikmessung nutzt Microsoft Clarity nach Einwilligung; ein selbstgehostetes Umami-Script ist nicht konfiguriert.
+
+## Interne Linkintegrität – Oktober 2026
+- [x] Die gesamte öffentliche Navigation geprüft: Startseitenkarten, Suche, Header, Hero, Footer, Detailseiten-Empfehlungen, Stadtseiten, strukturierte Daten, Sitemap und alle statisch gerenderten HTML-Seiten erzeugen Musicalziele ausschließlich aus dem aktiven Katalog.
+- [x] Kein interner Link verweist auf einen der 301- oder 410-Slugs. Der Build-Audit hat 194 interne Musicallinks über 20 kanonische Ziele geprüft; Ergebnis: 0 Ziele über Weiterleitung oder Gone-Status.
+- [x] Dauerhafte Regression ergänzt: Katalog-/Stadt-/Empfehlungslisten und Hero-Navigation dürfen keine inaktive, umgeleitete oder entfernte Musicalseite ausgeben. Die statische SEO-Buildprüfung prüft alle erzeugten HTML-Dateien ebenfalls gegen die zentrale 301-/410-Liste.

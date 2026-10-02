@@ -1,10 +1,16 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { getCityBySlug, getMusicalBySlug } from "../client/src/lib/data";
 import { getCitySeo } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
+import { LEGACY_MUSICAL_REDIRECTS, RETIRED_MUSICAL_SLUGS } from "../functions/_seo-static";
 
 const DIST_ROOT = resolve(import.meta.dirname, "..", "dist");
+const SITE_ORIGIN = "https://welovemusicals.com";
+const BLOCKED_MUSICAL_PATHS = new Set([
+  ...Object.keys(LEGACY_MUSICAL_REDIRECTS),
+  ...RETIRED_MUSICAL_SLUGS,
+].map((slug) => `/musical/${slug}`));
 
 function escapeHtml(value: string): string {
   return value
@@ -23,6 +29,46 @@ async function assertPage(relativePath: string, expectations: string[]) {
     if (!html.includes(expectation)) {
       throw new Error(`${relativePath}/index.html misses expected SEO value: ${expectation}`);
     }
+  }
+}
+
+async function listHtmlFiles(directory: string): Promise<string[]> {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const nested = await Promise.all(entries.map(async (entry) => {
+    const path = resolve(directory, entry.name);
+    if (entry.isDirectory()) return listHtmlFiles(path);
+    return entry.isFile() && entry.name.endsWith(".html") ? [path] : [];
+  }));
+  return nested.flat();
+}
+
+function getInternalMusicalTargets(html: string): string[] {
+  const hrefs = html.matchAll(/\bhref=(["'])(.*?)\1/g);
+  const targets: string[] = [];
+
+  for (const [, , href] of hrefs) {
+    const target = new URL(href, SITE_ORIGIN);
+    if (target.origin !== SITE_ORIGIN || !target.pathname.startsWith("/musical/")) continue;
+    targets.push(target.pathname.replace(/\/$/, ""));
+  }
+
+  return targets;
+}
+
+async function assertStaticHtmlHasNoBlockedInternalLinks() {
+  const htmlFiles = await listHtmlFiles(DIST_ROOT);
+  const violations: string[] = [];
+
+  for (const filePath of htmlFiles) {
+    const html = await readFile(filePath, "utf8");
+    const forbiddenTargets = getInternalMusicalTargets(html).filter((target) => BLOCKED_MUSICAL_PATHS.has(target));
+    if (forbiddenTargets.length > 0) {
+      violations.push(`${filePath.replace(`${DIST_ROOT}/`, "")}: ${[...new Set(forbiddenTargets)].join(", ")}`);
+    }
+  }
+
+  if (violations.length > 0) {
+    throw new Error(`Static HTML links must never point to redirected or retired musical pages:\n${violations.join("\n")}`);
   }
 }
 
@@ -74,6 +120,8 @@ async function main() {
       'href="/stadt/bochum"',
     ]),
   ]);
+
+  await assertStaticHtmlHasNoBlockedInternalLinks();
 
   console.log("Static SEO output assertions passed.");
 }
