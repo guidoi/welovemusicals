@@ -166,11 +166,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://welovemusicals.com/stadt/hannover</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://welovemusicals.com/stadt/innsbruck</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -192,11 +187,6 @@
   </url>
   <url>
     <loc>https://welovemusicals.com/stadt/nuernberg</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://welovemusicals.com/stadt/oberhausen</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

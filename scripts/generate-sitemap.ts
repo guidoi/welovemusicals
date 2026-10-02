@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
-import { cities, getActiveMusicals } from "../client/src/lib/data";
+import { cities, getActiveMusicals, getActiveMusicalsByCity } from "../client/src/lib/data";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const DEFAULT_BASE_URL = "https://welovemusicals.com";
@@ -38,11 +38,13 @@ export function createSitemapXml(baseUrl = DEFAULT_BASE_URL): string {
     changefreq: "monthly",
     priority: "0.9",
   }));
-  const cityPages: SitemapEntry[] = cities.map((city) => ({
-    path: `/stadt/${city.slug}`,
-    changefreq: "monthly",
-    priority: city.slug === "hamburg" || city.slug === "berlin" ? "0.8" : "0.7",
-  }));
+  const cityPages: SitemapEntry[] = cities
+    .filter((city) => getActiveMusicalsByCity(city.name).length > 0)
+    .map((city) => ({
+      path: `/stadt/${city.slug}`,
+      changefreq: "monthly",
+      priority: city.slug === "hamburg" || city.slug === "berlin" ? "0.8" : "0.7",
+    }));
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

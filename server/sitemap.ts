@@ -1,5 +1,5 @@
 import type { Express, Request, Response } from "express";
-import { cities, getActiveMusicals } from "../client/src/lib/data";
+import { cities, getActiveMusicals, getActiveMusicalsByCity } from "../client/src/lib/data";
 
 function entry(baseUrl: string, path: string, changefreq: string, priority: string): string {
   return `  <url>
@@ -20,7 +20,7 @@ export function buildSitemap(baseUrl: string): string {
     entry(normalizedBaseUrl, "/impressum", "yearly", "0.3"),
     entry(normalizedBaseUrl, "/datenschutz", "yearly", "0.3"),
     ...getActiveMusicals().map((musical) => entry(normalizedBaseUrl, `/musical/${musical.slug}`, "monthly", "0.9")),
-    ...cities.map((city) => entry(
+    ...cities.filter((city) => getActiveMusicalsByCity(city.name).length > 0).map((city) => entry(
       normalizedBaseUrl,
       `/stadt/${city.slug}`,
       "monthly",
