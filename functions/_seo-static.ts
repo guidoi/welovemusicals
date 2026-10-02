@@ -11,16 +11,37 @@ export type SeoStaticRouteContext = {
 const PUBLIC_SLUG = /^[a-z0-9-]+$/;
 
 const LEGACY_MUSICAL_REDIRECTS: Record<string, string> = {
+  "and-julia": "und-julia",
+  "der-teufel-traegt-prada": "der-teufel-traegt-prada-das-musical",
+  "drei-haselnuesse": "drei-haselnuesse-fuer-aschenbroedel",
   eiskoenigin: "die-eiskoenigin",
+  "mj-michael-jackson": "mj-das-michael-jackson-musical",
   "mj-musical": "mj-das-michael-jackson-musical",
   tarzan: "disneys-musical-tarzan",
   "teufel-traegt-prada": "der-teufel-traegt-prada-das-musical",
   ziz: "zurueck-in-die-zukunft-das-musical",
+  "zurueck-in-die-zukunft": "zurueck-in-die-zukunft-das-musical",
 };
 
 const RETIRED_MUSICAL_SLUGS = new Set([
+  "aladin",
+  "bibi-tina",
+  "da-vinci-code",
+  "die-amme",
+  "dschungelbuch",
+  "elisabeth",
+  "fitzek-einladung",
+  "greatest-show",
+  "hans-zimmer",
+  "harry-potter",
+  "kinky-boots",
+  "mrs-doubtfire",
+  "pretty-woman",
+  "romeo-und-julia",
+  "schneekoenigin",
   "sister-act",
   "we-will-rock-you",
+  "weihnachtsbaeckerei",
 ]);
 
 /**

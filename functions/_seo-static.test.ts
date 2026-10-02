@@ -53,6 +53,27 @@ describe("serveCanonicalSeoRoute", () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
+  it.each([
+    ["mj-michael-jackson", "mj-das-michael-jackson-musical"],
+    ["and-julia", "und-julia"],
+    ["drei-haselnuesse", "drei-haselnuesse-fuer-aschenbroedel"],
+    ["zurueck-in-die-zukunft", "zurueck-in-die-zukunft-das-musical"],
+    ["der-teufel-traegt-prada", "der-teufel-traegt-prada-das-musical"],
+  ])("leitet den historischen Slug %s dauerhaft auf %s um", async (legacySlug, canonicalSlug) => {
+    const fetch = vi.fn();
+    const response = await serveCanonicalSeoRoute({
+      request: new Request(`https://welovemusicals.com/musical/${legacySlug}?source=gsc`),
+      params: { slug: legacySlug },
+      env: { ASSETS: { fetch } },
+    }, "musical");
+
+    expect(response.status).toBe(301);
+    expect(response.headers.get("Location")).toBe(
+      `https://welovemusicals.com/musical/${canonicalSlug}?source=gsc`,
+    );
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
   it("liefert für endgültig entfernte Musicalseiten den Status 410", async () => {
     const fetch = vi.fn();
     const response = await serveCanonicalSeoRoute({
@@ -62,6 +83,36 @@ describe("serveCanonicalSeoRoute", () => {
     }, "musical");
 
     expect(response.status).toBe(410);
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    "harry-potter",
+    "elisabeth",
+    "pretty-woman",
+    "schneekoenigin",
+    "hans-zimmer",
+    "aladin",
+    "weihnachtsbaeckerei",
+    "mrs-doubtfire",
+    "greatest-show",
+    "da-vinci-code",
+    "die-amme",
+    "dschungelbuch",
+    "fitzek-einladung",
+    "kinky-boots",
+    "bibi-tina",
+    "romeo-und-julia",
+  ])("liefert für den endgültig entfallenen Slug %s einen Status 410", async (slug) => {
+    const fetch = vi.fn();
+    const response = await serveCanonicalSeoRoute({
+      request: new Request(`https://welovemusicals.com/musical/${slug}`),
+      params: { slug },
+      env: { ASSETS: { fetch } },
+    }, "musical");
+
+    expect(response.status).toBe(410);
+    expect(await response.text()).toBe("Gone");
     expect(fetch).not.toHaveBeenCalled();
   });
 });
