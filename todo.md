@@ -903,3 +903,8 @@
 - [x] Gleichwertige frühere Musical-Slugs werden per 301 mit Pfad- und Query-Erhalt auf die aktuelle kanonische Detailseite geleitet: `mj-michael-jackson`, `and-julia`, `drei-haselnuesse`, `zurueck-in-die-zukunft` und `der-teufel-traegt-prada`.
 - [x] Für endgültig entfallene Shows liefert die Cloudflare-Funktion jetzt explizit HTTP 410 statt des bisherigen Startseiten-HTML mit HTTP 200: Aladin, Bibi & Tina, Da Vinci Code, Die Amme, Dschungelbuch, Elisabeth, Fitzek Einladung, Greatest Show, Hans Zimmer, Harry Potter, Kinky Boots, Mrs. Doubtfire, Pretty Woman, Romeo & Julia, Schneekönigin und Weihnachtsbäckerei.
 - [x] Bereits korrekte Regeln bleiben bewusst bestehen: `tarzan`, `eiskoenigin`, `teufel-traegt-prada`, `ziz` und `mj-musical` führen auf ihre aktuellen Seiten; das beendete `we-will-rock-you` bleibt 410. Die aktive Detailseite `wir-sind-am-leben` bleibt unverändert erreichbar.
+
+## Search Console – Gecrawlt, zurzeit nicht indexiert Oktober 2026
+- [x] `phantom-der-oper-trinity` wird als historischer Platzhalter per 301 auf die aktuelle, kanonische Detailseite `phantom-der-oper` geleitet.
+- [x] Die endgültig entfernten früheren Shows `cher-show` und `grease` liefern jetzt HTTP 410 statt einer indexierbaren Startseitenantwort.
+- [x] Der frühere technische Pfad `/umami` liefert jetzt HTTP 404 mit `X-Robots-Tag: noindex`. Er fällt nicht mehr auf die SPA-Startseite zurück und wird nicht mehr als weich-fehlerhafte Inhaltsseite gecrawlt. Die heutige Statistikmessung nutzt Microsoft Clarity nach Einwilligung; ein selbstgehostetes Umami-Script ist nicht konfiguriert.

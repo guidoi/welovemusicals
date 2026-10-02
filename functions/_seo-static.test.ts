@@ -59,6 +59,7 @@ describe("serveCanonicalSeoRoute", () => {
     ["drei-haselnuesse", "drei-haselnuesse-fuer-aschenbroedel"],
     ["zurueck-in-die-zukunft", "zurueck-in-die-zukunft-das-musical"],
     ["der-teufel-traegt-prada", "der-teufel-traegt-prada-das-musical"],
+    ["phantom-der-oper-trinity", "phantom-der-oper"],
   ])("leitet den historischen Slug %s dauerhaft auf %s um", async (legacySlug, canonicalSlug) => {
     const fetch = vi.fn();
     const response = await serveCanonicalSeoRoute({
@@ -88,6 +89,8 @@ describe("serveCanonicalSeoRoute", () => {
 
   it.each([
     "harry-potter",
+    "cher-show",
+    "grease",
     "elisabeth",
     "pretty-woman",
     "schneekoenigin",
