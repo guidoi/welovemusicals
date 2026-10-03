@@ -44,7 +44,6 @@ import SchemaOrg from "@/components/SchemaOrg";
 import AovoCampaignBanner, { getAovoCampaign, getAovoCampaigns } from "@/components/AovoCampaignBanner";
 import AwinShowCampaignBanner, { getAwinShowCampaign } from "@/components/AwinShowCampaignBanner";
 import EventimDraculaBanner from "@/components/EventimDraculaBanner";
-import EventimFackJuGoehteBanner from "@/components/EventimFackJuGoehteBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
@@ -400,9 +399,6 @@ export default function MusicalDetail() {
                             <YouTubeEmbed videoId={musical.youtubeTrailerId} title={`${musical.title} Trailer`} eagerThumbnail />
                           </div>
                         )}
-                        {musical.id === "fackjugoehte" && i === 5 && (
-                          <EventimFackJuGoehteBanner format="wide" />
-                        )}
                         {musical.id === "dracula" && i === 5 && (
                           <EventimDraculaBanner format="wide" />
                         )}
@@ -628,13 +624,12 @@ export default function MusicalDetail() {
         <MusicalGallery images={musical.gallery} />
       )}
 
-      {(afterGalleryCampaigns.length > 0 || musical.id === "fackjugoehte" || musical.id === "dracula" || Boolean(awinShowCampaign)) && (
+      {(afterGalleryCampaigns.length > 0 || musical.id === "dracula" || Boolean(awinShowCampaign)) && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
             {afterGalleryCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
             ))}
-            {musical.id === "fackjugoehte" && <EventimFackJuGoehteBanner format="square" />}
             {musical.id === "dracula" && <EventimDraculaBanner format="square" />}
             {awinShowCampaign && <AwinShowCampaignBanner campaign={awinShowCampaign} format="square" />}
           </div>

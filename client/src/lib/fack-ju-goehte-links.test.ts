@@ -22,4 +22,11 @@ describe("Fack Ju Göhte Affiliate-Links", () => {
     expect(berlin?.eventimUrl).toContain("clickref=fjg-berlin-dates");
     expect(berlin?.eventimUrl).not.toContain("linkid=4568988");
   });
+
+  it("führt den Tabellenpreis als redaktionellen Fallback ohne abgelaufene Sale-Aktion", () => {
+    const musical = getMusicalBySlug("fack-ju-goehte");
+
+    expect(musical?.priceFrom).toBe("40,49");
+    expect(musical?.sale).toBeUndefined();
+  });
 });

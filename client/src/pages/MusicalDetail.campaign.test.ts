@@ -47,16 +47,9 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(musicalDetailSource).toContain('aovoCampaign && !aovoCampaign.placement');
   });
 
-  it("platziert die Fack-Ju-Göhte-Back-to-School-Banner im Text und nach der Galerie", () => {
-    const wideBanner = musicalDetailSource.indexOf('<EventimFackJuGoehteBanner format="wide" />');
-    const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
-    const squareBanner = musicalDetailSource.indexOf('<EventimFackJuGoehteBanner format="square" />');
-    const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
-
-    expect(wideBanner).toBeGreaterThan(-1);
-    expect(musicalDetailSource).toContain('musical.id === "fackjugoehte" && i === 5');
-    expect(squareBanner).toBeGreaterThan(gallery);
-    expect(squareBanner).toBeLessThan(showFacts);
+  it("rendert nach Ende der Fack-Ju-Göhte-Back-to-School-Aktion keine Sale-Creatives", () => {
+    expect(musicalDetailSource).not.toContain("EventimFackJuGoehteBanner");
+    expect(musicalDetailSource).not.toContain('musical.id === "fackjugoehte" && i === 5');
   });
 
   it("platziert die Dracula-Creatives im oberen Fließtext und nach der Bildergalerie", () => {

@@ -97,7 +97,6 @@ function assertConsentGuards() {
   for (const componentPath of [
     "client/src/components/AovoTanzDerVampireBanner.tsx",
     "client/src/components/EventimDraculaBanner.tsx",
-    "client/src/components/EventimFackJuGoehteBanner.tsx",
   ]) {
     const component = source(componentPath);
     requireSource(component, "if (!consent?.affiliateTracking) return;", componentPath);
@@ -108,7 +107,6 @@ function assertConsentGuards() {
     "client/src/components/AovoTanzDerVampireBanner.tsx",
     "client/src/components/AwinShowCampaignBanner.tsx",
     "client/src/components/EventimDraculaBanner.tsx",
-    "client/src/components/EventimFackJuGoehteBanner.tsx",
   ]) {
     requireSource(source(componentPath), "useSafeAffiliateTicketLink", componentPath);
   }
@@ -154,7 +152,6 @@ function assertAttributionSafety() {
     "client/src/components/AovoTanzDerVampireBanner.tsx",
     "client/src/components/AwinShowCampaignBanner.tsx",
     "client/src/components/EventimDraculaBanner.tsx",
-    "client/src/components/EventimFackJuGoehteBanner.tsx",
     "client/src/components/MusicalKeyVisual.tsx",
     "client/src/components/TourDates.tsx",
   ]) {
@@ -187,7 +184,6 @@ function assertFallbackLoggingSafety() {
     "client/src/components/AovoTanzDerVampireBanner.tsx",
     "client/src/components/AwinShowCampaignBanner.tsx",
     "client/src/components/EventimDraculaBanner.tsx",
-    "client/src/components/EventimFackJuGoehteBanner.tsx",
   ]) {
     requireSource(source(componentPath), "useAffiliateLinkFallbackLogging", componentPath);
   }

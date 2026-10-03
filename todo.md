@@ -998,3 +998,11 @@
 - [x] Jede neue oder geänderte Stadtzeile nutzt einen direkten, show- und stadtbezogenen Awin/Eventim-CTA mit `awinmid=11388`, `awinaffid=2865727` und eigenem `clickref`. Es wurden keine Banner, Pixel, Converter oder Consent-Regeln verändert.
 - [x] Berlin, Hamburg und Hannover nehmen Aschenbrödel aufgrund der zukünftigen Tourtermine automatisch in Stadtseite, Stadtfilter, Kartenanzahl, Sitemap und statische SEO-Ausgabe auf. Desktop- und Mobilansichten für Detailseite sowie Berlin/Hamburg geprüft.
 - [x] Gesamtsuite: 102 Testdateien / 348 Tests; TypeScript, Produktionsbuild, Sitemap/SEO-Output, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich.
+
+## Fack Ju Göhte – Preis und beendete 30%-Aktion – Oktober 2026
+- [x] Die veröffentlichte Preisquelle bestätigt `fackjugoehte`: **40,49 €**, `Sale aktiv = Nein`, leere Sale-Felder. Die Produktions-API liefert nach dem Cacheablauf ebenfalls `priceFrom: 40,49` und `saleEnabled: false`.
+- [x] Redaktioneller Preis-/SEO-/FAQ-Fallback auf 40,49 € angeglichen und der abgelaufene Back-to-School-Sale-Fallback entfernt.
+- [x] Beide beendeten nativen 30%-FJG-Creatives einschließlich ihrer Komponenten, Consent-Pixelpfade und Regressionen vollständig aus dem Auslieferungsweg entfernt. Desktop- und Mobilprüfung zeigen keine Sale-Creatives; Ticket- und Städte-CTAs mit den bestehenden direkten Awin-Links bleiben erhalten.
+
+## Drei Haselnüsse für Aschenbrödel – Veranstalter-FAQ – Oktober 2026
+- [x] Neue FAQ ergänzt: **ShowSlot** veranstaltet die Nikolaus-Tour, **Bavaria Live Promotion** die Rosalie-Tour. Die Zuordnung ist regression-getestet und wird in FAQ-Schema sowie statischer SEO-Ausgabe geführt.

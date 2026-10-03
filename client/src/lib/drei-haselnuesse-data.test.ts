@@ -24,6 +24,15 @@ describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
     expect(seo.description).toContain("40,49 €");
   });
 
+  it("nennt die Veranstalter der Nikolaus- und Rosalie-Tour korrekt", () => {
+    const organizerFaq = musical?.faqItems?.find((item) => item.question === "Wer veranstaltet die Tourneen?");
+
+    expect(organizerFaq?.answer).toContain("ShowSlot");
+    expect(organizerFaq?.answer).toContain("Nikolaus-Tour");
+    expect(organizerFaq?.answer).toContain("Bavaria Live Promotion");
+    expect(organizerFaq?.answer).toContain("Rosalie-Tour");
+  });
+
   it("führt die in den Presseinformationen ergänzten und korrigierten Termine", () => {
     const dates = musical?.tourDates ?? [];
     const find = (city: string, startDate: string) =>

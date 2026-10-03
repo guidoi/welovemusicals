@@ -451,7 +451,6 @@ describe("Affiliate-Link-Zuordnung", () => {
       "../client/src/components/AovoTanzDerVampireBanner.tsx",
       "../client/src/components/AwinShowCampaignBanner.tsx",
       "../client/src/components/EventimDraculaBanner.tsx",
-      "../client/src/components/EventimFackJuGoehteBanner.tsx",
       "../client/src/components/MusicalKeyVisual.tsx",
       "../client/src/components/TourDates.tsx",
     ];
