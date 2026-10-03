@@ -42,7 +42,7 @@ describe("AwinShowCampaignBanner", () => {
     const square = renderBanner("fackjugoehte", "square");
 
     expect(campaign?.partner).toBe("eventim");
-    expect(campaign?.wideDetailParagraphIndex).toBe(3);
+    expect(campaign?.wideDetailParagraphIndex).toBe(6);
     expect(campaign?.creatives.wide.clickUrl).toContain("s=4568825");
     expect(campaign?.creatives.wide.impressionUrl).toContain("s=4568825");
     expect(campaign?.creatives.wide.imageUrl).toContain("PGhNOeeTILmvQnrv.jpg");

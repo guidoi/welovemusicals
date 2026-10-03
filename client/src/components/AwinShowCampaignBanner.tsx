@@ -85,8 +85,8 @@ export const AWIN_SHOW_CAMPAIGNS: readonly AwinShowCampaign[] = [
     musicalId: "fackjugoehte",
     title: "Fack Ju Göhte – Das Musical",
     partner: "eventim",
-    // Nach dem Chaos-Abschnitt und vor dem Kontext zur Auszeichnung.
-    wideDetailParagraphIndex: 3,
+    // Nach dem vollständigen oberen Fließtext, unterhalb des Keyvisual-Kontexts.
+    wideDetailParagraphIndex: 6,
     creatives: {
       wide: createAwinCreative({
         creativeId: "4568825",

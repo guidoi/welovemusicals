@@ -12,7 +12,7 @@ describe("aktuelle Musicalpreise und Sale-Störer", () => {
     expect(findMusical("mj-musical")?.priceFrom).toBe("56,99");
     expect(findMusical("ziz")?.priceFrom).toBe("44,79");
     expect(findMusical("tanz-der-vampire")?.priceFrom).toBe("49,99");
-    expect(findMusical("starlight-express")?.priceFrom).toBe("31");
+    expect(findMusical("starlight-express")?.priceFrom).toBe("59,99");
     expect(findMusical("und-julia")?.priceFrom).toBe("49,99");
     expect(findMusical("teufel-traegt-prada")?.priceFrom).toBe("46,99");
     expect(findMusical("gloeckner-von-notre-dame")?.priceFrom).toBe("49,99");
@@ -43,5 +43,17 @@ describe("aktuelle Musicalpreise und Sale-Störer", () => {
 
   it("liefert MJ bereits vor dem Google-Sheets-Abruf ohne überholten Sale-Fallback aus", () => {
     expect(findMusical("mj-musical")?.sale).toBeUndefined();
+  });
+
+  it("hält den STEX-Fallback in SEO, Fakten und FAQ auf dem Tabellenpreis", () => {
+    const starlight = findMusical("starlight-express");
+
+    expect(starlight?.seoDescription).toContain("59,99 €");
+    expect(starlight?.showFacts).toContainEqual(
+      expect.objectContaining({ label: "Tickets ab", value: expect.stringContaining("59,99 EUR") }),
+    );
+    expect(starlight?.faqItems).toContainEqual(
+      expect.objectContaining({ question: "Wie viel kosten Tickets?", answer: expect.stringContaining("59,99 EUR") }),
+    );
   });
 });

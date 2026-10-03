@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getMusicalBySlug } from "./data";
+import { getActiveMusicalsByCity, getMusicalBySlug } from "./data";
 
 describe("Fack Ju Göhte Affiliate-Links", () => {
   it("verwendet den gelieferten AWIN-Textlink für allgemeine CTAs", () => {
@@ -19,8 +19,19 @@ describe("Fack Ju Göhte Affiliate-Links", () => {
     const musical = getMusicalBySlug("fack-ju-goehte");
     const berlin = musical?.tourDates?.find((date) => date.city === "Berlin");
 
+    expect(berlin).toMatchObject({
+      venue: "BlueMax Theater",
+      startDate: "2026-09-25",
+      endDate: "2026-10-31",
+    });
     expect(berlin?.eventimUrl).toContain("clickref=fjg-berlin-dates");
     expect(berlin?.eventimUrl).not.toContain("linkid=4568988");
+  });
+
+  it("führt die aktuelle Berliner BlueMax-Spielzeit auf Stadtseite und in Ortsfiltern", () => {
+    const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
+
+    expect(berlinIds).toContain("fackjugoehte");
   });
 
   it("führt den Tabellenpreis als redaktionellen Fallback ohne abgelaufene Sale-Aktion", () => {

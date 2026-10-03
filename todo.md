@@ -1066,3 +1066,10 @@
 - [x] Der bestätigte Berlin-Stopp für **Die Schöne und das Biest – Das neue Musical** ist vom 06. bis 23. Januar 2027 im BlueMax Theater ergänzt. Der bestehende Awin/Eventim-Textlink bleibt dabei unverändert.
 - [x] Berlin ist als Tour- und Headerstadt hinterlegt; die aktive Berliner Stadtseite, der Familien-&-Märchen-Filter sowie die Katalogzählung listen die Produktion jetzt mit insgesamt sieben aktiven Shows.
 - [x] Desktop- und Mobilprüfung bestätigen den Termin auf der Detailseite und die sichtbare Karte auf der Berlin-Stadtseite.
+
+
+## Fack Ju Göhte und Starlight Express – Oktober 2026
+- [x] **Fack Ju Göhte** läuft in Berlin im BlueMax Theater bis 31.10.2026. Dadurch ist die Show wieder in der Berliner Stadtseite und in Ortsfiltern aktiv; der bestehende Berliner Awin/Eventim-Deep-Link bleibt unverändert.
+- [x] Das native FJG-Querbanner bleibt als Partner-Creative und consent-gesteuerte Impression erhalten, erscheint aber erst nach dem vollständigen oberen Fließtext und damit unterhalb des Keyvisual-Kontexts.
+- [x] **STARLIGHT EXPRESS** ist in „Preise & Aktionen“ sowie im veröffentlichten „Website-Export“ auf 59,99 € aktualisiert. Katalogfallback, SEO, Fakten, FAQ und Ticket-CTAs verwenden ebenfalls 59,99 €; die Preis-API liefert den Wert nach Neuladen.
+- [x] Desktop- und Mobilprüfung bestätigen FJG-Position und Berlin-Karte; STEX-Ticket-CTA und Faktbox zeigen 59,99 €.
