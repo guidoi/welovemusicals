@@ -8,6 +8,11 @@ cwd = "."
 [assets]
 directory = "dist/public"
 
+[[d1_databases]]
+binding = "AFFILIATE_FALLBACK_LOGS"
+database_name = "welovemusicals-affiliate-events"
+database_id = "14532c98-ba62-4ae6-87a9-071534683d5b"
+
 [env.production]
 routes = [
   { pattern = "welovemusicals.com/*", zone_name = "welovemusicals.com" }

@@ -11,4 +11,8 @@ describe("Crawler-Freigaben", () => {
     expect(robots).toContain("User-agent: Google-Extended\nAllow: /");
     expect(robots).toContain("Sitemap: https://welovemusicals.com/sitemap.xml");
   });
+
+  it("schließt geschützte Verwaltungsrouten von Crawls aus", () => {
+    expect(robots).toContain("Disallow: /verwaltung/");
+  });
 });

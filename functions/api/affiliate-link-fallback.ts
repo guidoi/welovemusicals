@@ -1,21 +1,23 @@
-type AffiliateFallbackReason = "invalid-url" | "unsupported-destination" | "invalid-affiliate-parameters";
-type AffiliateFallbackPartner = "stage" | "tradedoubler" | "awin" | "atg" | "eventim" | "other";
-type AffiliateFallbackPlacement = "ticket-base" | "keyvisual" | "mobile-hero" | "sticky" | "ticket-box" | "city-date" | "campaign-banner";
+import {
+  recordAffiliateFallbackEvent,
+  type AffiliateFallbackEnvironment,
+  type AffiliateFallbackEvent,
+} from "../_affiliate-fallback-events";
 
-type AffiliateFallbackPayload = {
-  reason: AffiliateFallbackReason;
-  partner: AffiliateFallbackPartner;
-  placement: AffiliateFallbackPlacement;
-  musicalId: string;
+type AffiliateFallbackPayload = AffiliateFallbackEvent;
+
+type Context = {
+  request: Request;
+  env?: AffiliateFallbackEnvironment;
 };
 
-const REASONS = new Set<AffiliateFallbackReason>([
+const REASONS = new Set<AffiliateFallbackEvent["reason"]>([
   "invalid-url",
   "unsupported-destination",
   "invalid-affiliate-parameters",
 ]);
-const PARTNERS = new Set<AffiliateFallbackPartner>(["stage", "tradedoubler", "awin", "atg", "eventim", "other"]);
-const PLACEMENTS = new Set<AffiliateFallbackPlacement>([
+const PARTNERS = new Set<AffiliateFallbackEvent["partner"]>(["stage", "tradedoubler", "awin", "atg", "eventim", "other"]);
+const PLACEMENTS = new Set<AffiliateFallbackEvent["placement"]>([
   "ticket-base",
   "keyvisual",
   "mobile-hero",
@@ -53,11 +55,11 @@ function isPayload(value: unknown): value is AffiliateFallbackPayload {
     && typeof payload.musicalId === "string"
     && /^[a-z0-9-]{1,80}$/.test(payload.musicalId)
     && typeof payload.reason === "string"
-    && REASONS.has(payload.reason as AffiliateFallbackReason)
+    && REASONS.has(payload.reason as AffiliateFallbackEvent["reason"])
     && typeof payload.partner === "string"
-    && PARTNERS.has(payload.partner as AffiliateFallbackPartner)
+    && PARTNERS.has(payload.partner as AffiliateFallbackEvent["partner"])
     && typeof payload.placement === "string"
-    && PLACEMENTS.has(payload.placement as AffiliateFallbackPlacement);
+    && PLACEMENTS.has(payload.placement as AffiliateFallbackEvent["placement"]);
 }
 
 /**
@@ -65,7 +67,7 @@ function isPayload(value: unknown): value is AffiliateFallbackPayload {
  * Affiliate-Fallbacks. Es akzeptiert bewusst keine URL, Query-Parameter,
  * Consent-Information, Besucher- oder Gerätekennung.
  */
-export async function onRequestPost(context: { request: Request }): Promise<Response> {
+export async function onRequestPost(context: Context): Promise<Response> {
   const { request } = context;
   if (!isSameOrigin(request)) return new Response("Forbidden", { status: 403, headers: noStoreHeaders() });
   if (!request.headers.get("content-type")?.startsWith("application/json")) {
@@ -84,13 +86,18 @@ export async function onRequestPost(context: { request: Request }): Promise<Resp
 
   if (!isPayload(payload)) return new Response("Bad Request", { status: 400, headers: noStoreHeaders() });
 
-  // Cloudflare Pages Observability records this structured technical warning.
-  // The timestamp is supplied by the platform; no client, URL or tracking data is logged.
-  console.warn("affiliate_link_fallback", payload);
+  try {
+    const stored = await recordAffiliateFallbackEvent(context.env?.AFFILIATE_FALLBACK_LOGS, payload);
+    if (stored) console.warn("affiliate_link_fallback", payload);
+  } catch (error) {
+    // Storage failures must never interrupt a ticket flow or trigger a client retry loop.
+    console.error("affiliate_link_fallback_storage_failed", error instanceof Error ? error.message : "unknown");
+  }
+
   return new Response(null, { status: 204, headers: noStoreHeaders() });
 }
 
-export async function onRequest(context: { request: Request }): Promise<Response> {
+export async function onRequest(context: Context): Promise<Response> {
   if (context.request.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405, headers: { ...noStoreHeaders(), Allow: "POST" } });
   }

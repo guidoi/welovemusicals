@@ -176,6 +176,11 @@ function assertFallbackLoggingSafety() {
   requireSource(endpoint, "const MAX_BODY_BYTES = 512", "Fallback-Protokollroute");
   requireSource(endpoint, "keys.join(\",\") === \"musicalId,partner,placement,reason\"", "Fallback-Protokollroute");
   requireSource(endpoint, 'console.warn("affiliate_link_fallback", payload)', "Fallback-Protokollroute");
+  requireSource(endpoint, "recordAffiliateFallbackEvent", "Fallback-Protokollroute");
+
+  const eventStore = source("functions/_affiliate-fallback-events.ts");
+  requireSource(eventStore, "affiliate_link_fallback_events", "D1-Fallback-Ablage");
+  requireSource(eventStore, "musical_id, partner, placement, reason", "D1-Fallback-Ablage");
 
   for (const componentPath of [
     "client/src/components/AovoCampaignBanner.tsx",

@@ -1,6 +1,7 @@
 # Öffentliche Inhalte für Websuche und KI-gestützte Suche zugänglich halten.
 User-agent: *
 Allow: /
+Disallow: /verwaltung/
 
 # ChatGPT Search: unabhängig von einer möglichen GPTBot-Trainingsrichtlinie.
 User-agent: OAI-SearchBot

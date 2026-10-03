@@ -9,8 +9,15 @@ const validPayload = {
   musicalId: "koenig-der-loewen",
 };
 
+function createDatabase() {
+  const run = vi.fn().mockResolvedValue({ success: true });
+  const bind = vi.fn().mockReturnValue({ run });
+  return { database: { prepare: vi.fn().mockReturnValue({ bind }) }, run };
+}
+
 describe("Affiliate-Fallback-Protokollroute", () => {
   it("protokolliert ausschließlich den erlaubten Minimaldatensatz", async () => {
+    const db = createDatabase();
     const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
     const response = await onRequestPost({
       request: new Request(endpoint, {
@@ -18,11 +25,13 @@ describe("Affiliate-Fallback-Protokollroute", () => {
         headers: { "content-type": "application/json", origin: "https://welovemusicals.com" },
         body: JSON.stringify(validPayload),
       }),
+      env: { AFFILIATE_FALLBACK_LOGS: db.database },
     });
 
     expect(response.status).toBe(204);
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect(warn).toHaveBeenCalledWith("affiliate_link_fallback", validPayload);
+    expect(db.run).toHaveBeenCalledOnce();
     warn.mockRestore();
   });
 

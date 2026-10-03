@@ -21,6 +21,7 @@ const CityDetail = lazy(() => import("./pages/CityDetail"));
 const Impressum = lazy(() => import("./pages/Impressum"));
 const Datenschutz = lazy(() => import("./pages/Datenschutz"));
 const PriceSalesAdmin = lazy(() => import("./pages/PriceSalesAdmin"));
+const AffiliateLinkFallbackAdmin = lazy(() => import("./pages/AffiliateLinkFallbackAdmin"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -76,6 +77,7 @@ function Router() {
           <Route path={"/impressum"} component={Impressum} />
           <Route path={"/datenschutz"} component={Datenschutz} />
           <Route path={"/verwaltung/preise"} component={PriceSalesAdminRoute} />
+          <Route path={"/verwaltung/affiliate-links"} component={AffiliateLinkFallbackAdmin} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
         </Switch>

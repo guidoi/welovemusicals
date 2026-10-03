@@ -936,3 +936,10 @@
 - [x] Der Datensatz enthält ausschließlich Fehlergrund, Musicalkennung, CTA-Platzierung und Partnerkategorie. Ursprungs- und Fallback-URL, Query-Parameter, Cookies, Consent-Status, Besucher-/Gerätekennungen, Buchungsdaten und Affiliate-Pixel sind ausgeschlossen; Requests senden keine Browser-Credentials.
 - [x] Die Route akzeptiert nur Same-Origin-POSTs, exakt die vier erlaubten Felder und höchstens 512 Byte. Sie schreibt den strukturierten technischen Warnhinweis `affiliate_link_fallback` in die Cloudflare-Observability; dies dient ausschließlich späterer Fehleranalyse und verändert weder Links noch Tracking-Consent.
 - [x] Datenschutztext und Deployment-Gate erweitert. Alle CTA-, Keyvisual-, Termin- sowie nativen Kampagnenpfade sind mit dem Fallback-Logger verbunden; erfolgreiche Gesamtprüfung: 87 Testdateien / 310 Tests, TypeScript, Produktionsbuild und Diff-Prüfung.
+
+## Geschützte Affiliate-Link-Auswertung – Oktober 2026
+- [x] EU-D1-Datenbank `welovemusicals-affiliate-events` angelegt, ohne Replikation und ausschließlich für die vier freigegebenen technischen Fallback-Felder plus Plattformzeitstempel.
+- [x] Fallback-Route speichert nur nach erfolgreicher Validierung und Same-Origin-Prüfung; Speicherfehler beeinflussen weder Ticketlink noch Nutzerfluss.
+- [x] Geschützte Verwaltungsansicht unter `/verwaltung/affiliate-links` ergänzt: Zeitraum 7/30/90 Tage, Kennzahlen, Partneraufschlüsselung und aggregierte Fehlergruppen – ohne URLs oder personenbezogene Daten.
+- [x] Cloudflare Access schützt die Verwaltungsseite und ihre API getrennt, ausschließlich für `guidoi@web.de`; öffentliche Musicalseiten bleiben HTTP 200. Verwaltungsroute ist zusätzlich von Sitemap und Crawlern ausgeschlossen.
+- [x] 91 Testdateien / 318 Tests, TypeScript, Build und Affiliate-Integritätsgate erfolgreich; Desktop- und Mobilansicht geprüft.
