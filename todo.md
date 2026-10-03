@@ -985,3 +985,9 @@
 - [x] Bestehende Unsplash-Stadtbilder fordern nun mit `auto=format` ein modernes Browserformat an. Native Affiliate-Banner bleiben bewusst unangetastet, damit die exakt gelieferten Creatives, Formate, Abmessungen und Kampagnenplatzierungen unverändert bleiben.
 - [x] Karten, Keyvisuals, Galerie und Hero verwenden asynchrones Bilddecoding; Karten und Keyvisuals erhalten passende `sizes`-Hinweise. 15 repräsentative Seiten mit aktualisierten Assets wurden jeweils als Desktop- und Mobilansicht geprüft.
 - [x] Dauerhafter Standard ergänzt: `scripts/prepare-web-image.py` erzeugt neue WebP-Assets rollenbezogen, `pnpm run test:image-standard` sperrt alte Bildformate im aktiven Katalog und läuft automatisch im Produktionsbuild. Vollständige Test-/Typ-/Build-/Diff-Prüfung erfolgreich.
+
+## Automatische Stadtseitenstärkung – Oktober 2026
+- [x] Alle 21 aktuell bespielten Stadtseiten erhalten automatisch aus dem aktiven Katalog erzeugte redaktionelle Inhalte: jahresaktuellen Einstieg, bis zu vier passende Highlights mit internen Musical-Links, aktuelle Spielstätten und drei konkrete Planungshinweise.
+- [x] Hamburg, Bochum, Berlin, Stuttgart und Köln besitzen zusätzlich präzise, stadtbezogene Einstiege. Bochum trennt beispielsweise RuhrCongress und STARLIGHT EXPRESS Theater klar; Hamburg berücksichtigt die unterschiedlichen Theaterlagen.
+- [x] Für Berlin und Hamburg bleiben geprüfte offizielle Anreise- und Theaterquellen als Ergänzung erhalten. Tournee- und Einzelspielorte erhalten eine sachliche, katalogbasierte Planungshilfe statt generischer Fülltexte.
+- [x] Die Inhalte werden auch beim Produktionsbuild in die statischen kanonischen Stadtseiten geschrieben. Statischer Audit bestätigt alle 21 aktiven Stadtseiten mit Highlights, Spielstätten, Planung und ausschließlich internen Links zu aktiven Musicals.
