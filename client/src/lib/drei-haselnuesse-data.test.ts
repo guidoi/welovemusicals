@@ -56,6 +56,27 @@ describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
     expect(find("Mannheim", "2026-11-25")).toBeUndefined();
   });
 
+  it("behält alle vorherigen Termine zusätzlich, außer den ausdrücklich entfernten Stopps", () => {
+    const dates = musical?.tourDates ?? [];
+    const find = (city: string, startDate: string) =>
+      dates.find((date) => date.city === city && date.startDate === startDate);
+
+    expect(dates).toHaveLength(106);
+    expect(find("Aschaffenburg", "2026-12-14")).toBeDefined();
+    expect(find("Bremerhaven", "2026-10-29")).toBeDefined();
+    expect(find("Donaueschingen", "2026-12-15")).toMatchObject({ venue: "Donauhalle (Mozart-Saal)" });
+    expect(find("Halle (Saale)", "2026-12-03")).toMatchObject({ endDate: "2026-12-04" });
+    expect(find("Husum", "2026-10-30")).toBeDefined();
+    expect(find("Koblenz", "2026-11-30")).toBeDefined();
+    expect(find("Neuss", "2026-10-22")).toBeDefined();
+    expect(find("Offenburg", "2026-10-26")).toBeDefined();
+    expect(find("Paderborn", "2026-10-20")).toBeDefined();
+    expect(find("Ravensburg", "2026-12-16")).toBeDefined();
+    expect(find("Wetzlar", "2026-11-29")).toBeDefined();
+    expect(find("Mannheim", "2026-11-25")).toBeUndefined();
+    expect(find("Würzburg", "2026-12-11")).toBeUndefined();
+  });
+
   it("deckt 80 Städte zwischen dem ersten und letzten bestätigten Spieltag ab", () => {
     const dates = musical?.tourDates ?? [];
     const uniqueCities = new Set(dates.map((date) => date.city));
