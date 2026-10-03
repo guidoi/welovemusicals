@@ -726,10 +726,10 @@
 ## Organisches Wachstum und Affiliate-Qualität
 - [x] Stadtseiten mit eindeutigen Titeln, Beschreibungen, CollectionPage-Daten und aktuellen Sitemap-Signalen ausstatten
 - [x] Stadt- und Musicalseiten beim ersten HTTP-Abruf mit statischen Canonicals, Metadaten, Social-Informationen und JSON-LD ausliefern
-- [ ] Bestehende Google-Search-Console-Daten nach Suchpotenzial, CTR, Indexierungsfehlern und Chancen für zwei Pilot-Städte auswerten
+- [~] Extern abhängig: Google-Search-Console-Daten nach Suchpotenzial, CTR, Indexierungsfehlern und Chancen für zwei Pilot-Städte auswerten; erst fortsetzen, wenn ein autorisierter lesender Search-Console-Zugriff bereitsteht.
 - [x] Hamburg und Berlin als redaktionell eigenständige Musical-Hubs ausbauen – mit Quellen- und Qualitätsfreigabe, Planungsleitfaden, offiziellen Besucherhinweisen und interner Showverlinkung
 - [x] Consent-konforme, datensparsame Messung qualifizierter Ticketklicks nach Musical, Partner und CTA-Platzierung einführen
-- [ ] Partnerreporting für validierte Provisionen und Stornos mit periodischen Awin- und TradeDoubler-Exporten aufsetzen
+- [~] Extern abhängig: Partnerreporting für validierte Provisionen und Stornos mit periodischen Awin- und TradeDoubler-Exporten aufsetzen; erfordert freigegebene Exportzugänge oder bereitgestellte CSV-Dateien.
 
 ## Fack Ju Göhte Back-to-School-Sale
 - [x] Google-Sheets-Sale mit `Ja` und `30%` für Fack Ju Göhte live abgleichen
@@ -769,14 +769,14 @@
 - [x] Stage-Creatives der Kampagnen 26180470 (728 × 90) und 26180460 (300 × 250) auf das aktuelle Angebot „Jedes zweite Ticket ab 25 €“ aktualisieren
 - [x] Editorial-Fallback auf „2. TICKET AB 25 €“ aktualisieren; Google Sheet bleibt für den Live-Sale maßgeblich
 - [x] Privaten Website-Export geprüft: KDL-Sale steht bereits korrekt auf „2. TICKET AB 25 €“
-- [ ] TINA-Preis im privaten Google Sheet anlegen
+- [~] Extern abhängig: TINA-Preis im privaten Google Sheet anlegen; die Preisquelle bleibt ausschließlich vom Projektinhaber bearbeitbar.
 
 ## Stage-Angebotsupdate
 - [x] Tarzan-Creatives der Kampagnen 26185546 (728 × 90) und 26185544 (300 × 250) nativ einbinden; Querformat im oberen Fließtext, Quadrat nach der Galerie
 - [x] ZURÜCK IN DIE ZUKUNFT-Creatives der Kampagnen 26185502 (728 × 90) und 26185500 (300 × 250) nativ einbinden; Querformat im oberen Fließtext, Quadrat nach der Galerie
 - [x] Eiskönigin-Creatives der Kampagnen 26185658 (729 × 90) und 26185656 (300 × 250) aktualisieren
 - [x] Editorial-Fallbacks auf Tarzan „BIS 40 %“ und Eiskönigin „BIS 15 %“ aktualisieren
-- [ ] Tarzan-Sale im privaten Google Sheet von „BIS 15 % / Familien-Tickets“ auf „BIS 40 %“ ändern
+- [~] Extern abhängig: Tarzan-Sale im privaten Google Sheet von „BIS 15 % / Familien-Tickets“ auf „BIS 40 %“ ändern; die Preisquelle bleibt ausschließlich vom Projektinhaber bearbeitbar.
 
 ## Bannerrunde September 2026 – Abschluss
 - [x] Keyvisual-Ausfall nach Desktop-Refresh behoben: Einblendanimation entfernt, etablierte Desktop-/Mobilreihenfolge gesichert
@@ -849,8 +849,8 @@
 - [x] Referrer-Unterdrückung an Affiliate-CTAs, Keyvisuals, Tourterminen und Kampagnenbannern entfernt. `noopener` bleibt als Sicherheitsmaßnahme erhalten; Standardlinks tragen zusätzlich `sponsored`, damit Stage/TradeDoubler, Awin und ATG die Herkunftsseite erhalten.
 - [x] Stage-Impressionendpoint separat geprüft: Server liefert einen 302 auf das Creative; der Audit-Browser blockt den Bildpixel. Das betrifft Impressions, nicht die direkten Buchungslinks; externe Tracking-Blocker können die Pixelzählung verhindern.
 - [x] Starken Impressionrückgang auf die produktive Umstellung vom 24.09. zurückgeführt: Pixel warteten zuvor auf Scroll-Sichtbarkeit. Sie laden nun nach Affiliate-Einwilligung für das tatsächlich gerenderte Responsive-Banner sofort, ohne verdeckte Desktop-/Mobil-Duplikate mitzuzählen.
-- [ ] TradeDoubler-Klick- und Salesreport im Publisher-Backend abgleichen (ohne autorisierten TradeDoubler-Zugang nicht automatisiert prüfbar); bei Bedarf CSV-Export bereitstellen.
-- [ ] Eigene Klickanalyse (Umami) live konfigurieren oder Report-Zugang bereitstellen: Im Produktionsbrowser ist derzeit kein Umami-Skript eingebunden, daher gibt es keine unabhängige Website-Klickreihe zur Gegenprüfung.
+- [~] Extern abhängig: TradeDoubler-Klick- und Salesreport im Publisher-Backend abgleichen; ohne autorisierten TradeDoubler-Zugang nicht automatisiert prüfbar. Bei Bedarf einen Export bereitstellen.
+- [x] Umami-Aufgabe durch Microsoft Clarity ersetzt: Clarity ist nach Statistik-Einwilligung integriert und erlaubt eine eigenständige, datenschutzkonforme Klickanalyse; ein Umami-Skript wird nicht mehr benötigt.
 
 ## TradeDoubler Link Converter – Wiederherstellung September 2026
 - [x] Den am 24.09. eigeninitiativ entfernten TradeDoubler Link Converter wiederhergestellt. Er startet ausschließlich nach Affiliate-Einwilligung und nur außerhalb von Impressum/Datenschutz.
