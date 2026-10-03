@@ -8,7 +8,10 @@ describe("Affiliate-Link-Auswertung", () => {
     expect(source).toContain("/api/admin/affiliate-link-fallback-events?days=${period}");
     expect(source).toContain("&format=csv");
     expect(source).toContain("CSV-Export");
-    expect(source).toContain("download");
+    expect(source).toContain("downloadAffiliateFallbackCsv");
+    expect(source).toContain("CSV-Export heruntergeladen");
+    expect(source).toContain("CSV-Export nicht möglich");
+    expect(source).toContain("CSV wird erstellt …");
     expect(source).toContain("application/json");
     expect(source).toContain("Die Auswertung ist in dieser lokalen Vorschau nicht verfügbar.");
     expect(source).toContain("Zeitraum der technischen Ereignisse");

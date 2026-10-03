@@ -949,3 +949,8 @@
 - [x] Die Datei enthält nur Musicalkennung, Partnerkategorie, Platzierung, Fehlergrund, Anzahl und letzten technischen Zeitstempel. URLs, Query-Parameter, Besucher-, Cookie-, Consent- und Buchungsdaten bleiben ausgeschlossen.
 - [x] UTF-8 mit BOM und Semikolontrennung für Excel ergänzt; Formelzeichen werden defensiv neutralisiert. Die Antwort ist nicht cachebar und trägt einen eindeutigen Dateinamen.
 - [x] Backend, Adminoberfläche und Desktop-/Mobilansicht geprüft; Gesamtsuite, TypeScript, Produktionsbuild, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich.
+
+## Bestätigung nach CSV-Export – Oktober 2026
+- [x] Der CSV-Download wird nun aktiv über die geschützte API angefordert; die Erfolgsmeldung erscheint nur nach dem Empfang einer gültigen, nicht leeren CSV-Datei.
+- [x] Sonner-Pop-up bestätigt den Download mit Dateinamen. Bei einer fehlenden Berechtigung, einer fehlerhaften Antwort oder einer leeren Datei erscheint stattdessen ein Fehlerhinweis; der Download-Button zeigt währenddessen „CSV wird erstellt …“.
+- [x] Erfolgs- und Fehlerpfad unit-getestet; die echte Browserprüfung mit einer kontrollierten CSV-Antwort bestätigt den sichtbaren Erfolgshinweis. Gesamtsuite, TypeScript, Build, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.
