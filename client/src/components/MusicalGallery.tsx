@@ -8,7 +8,7 @@
 
 import { MusicalGalleryImage } from "@/lib/data";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 interface MusicalGalleryProps {
   images: MusicalGalleryImage[];
@@ -21,7 +21,8 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
 
   if (!images || images.length === 0) return null;
 
-  const displayed = images.slice(0, 6);
+  const displayed = images;
+  const showDots = displayed.length > 1 && displayed.length <= 10;
 
   const updateScrollState = () => {
     const el = scrollContainerRef.current;
@@ -102,7 +103,7 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
           )}
 
           {/* Dot-Indikatoren */}
-          {displayed.length > 1 && (
+          {showDots && (
             <div className="flex justify-center gap-1.5 mt-4">
               {displayed.map((_, idx) => (
                 <button

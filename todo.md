@@ -1022,3 +1022,10 @@
 - [x] Redaktions- und SEO-Fallback auf **49,99 €** aktualisiert: Katalogpreis, Ticket-Fakt, FAQ-Antwort sowie statisches Event-/FAQ-Schema stimmen überein.
 - [x] Die öffentliche Preis-API liefert bereits 49,99 € ohne Sale. Der direkte veröffentlichte CSV-Abruf gab parallel noch 54,99 € zurück; der öffentlich sichtbare Produktionspreis und der neue robuste Katalogfallback bleiben daher bei der vom Projektinhaber bestätigten Angabe 49,99 €.
 - [x] Keine Ticket-URLs, Awin-/ATG-Kennungen, Banner, Pixel oder Consent-Regeln geändert. 101 Testdateien / 349 Tests, TypeScript, Produktionsbuild, statische Preisprüfung, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich.
+
+## Fack Ju Göhte – neue Pressefotos in WebP Oktober 2026
+- [x] Alle **21** gelieferten Pressefotos (`FACKJUGÖHTE-2026-01` bis `-20` einschließlich des zweiten Motivs zu `-13`) unverändert als Originale außerhalb des Projekts gesichert und als WebP ins öffentliche CDN hochgeladen.
+- [x] Neue WebP-Kartenvariante und breites Headermotiv aus der gelieferten Bildreihe erstellt und eingebunden; das bereits freigegebene FJG-Keyvisual bleibt bewusst unverändert.
+- [x] Die vollständige neue Fotoserie ersetzt die bisherige FJG-Galerie. Die Galerie begrenzt Bildreihen nicht länger auf sechs Fotos; bei mehr als zehn Fotos bleiben die Pfeilsteuerung und Lazy-Loading aktiv, die optisch überladene Punktnavigation wird ausgeblendet.
+- [x] Alle 23 neuen CDN-Bilder liefern HTTP 200 mit `image/webp`. Browserprüfung bestätigt 21 Galerieelemente, das erste und letzte neue Motiv sowie das Nachladen bis zum letzten Bild. Bildnachweis im Impressum (`© Nico Moser`) war bereits korrekt hinterlegt.
+- [x] 103 Testdateien / 353 Tests, TypeScript, Produktionsbuild, Bildstandard, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich; FJG-Detailseite auf Desktop und Mobil geprüft.
