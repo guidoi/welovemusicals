@@ -38,6 +38,23 @@ describe("aktiver Musicalkatalog", () => {
     expect(berlin?.musicalCount).toBe(berlinIds.length);
   });
 
+  it("führt Die Schöne und das Biest mit dem Berliner BlueMax-Termin in Stadtseite und Filtern", () => {
+    const berlin = cities.find((city) => city.slug === "berlin");
+    const musical = musicals.find((candidate) => candidate.id === "schoene-und-das-biest");
+    const berlinIds = getActiveMusicalsByCity("Berlin").map((candidate) => candidate.id);
+
+    expect(musical?.cities).toContain("Berlin");
+    expect(musical?.headerCities).toContain("Berlin");
+    expect(musical?.tourDates).toContainEqual(expect.objectContaining({
+      city: "Berlin",
+      venue: "BlueMax Theater",
+      startDate: "2027-01-06",
+      endDate: "2027-01-23",
+    }));
+    expect(berlinIds).toContain("schoene-und-das-biest");
+    expect(berlin?.musicalCount).toBe(berlinIds.length);
+  });
+
   it("führt Aschenbrödel über aktive Tourtermine auf relevanten Stadtseiten und in Stadtfiltern", () => {
     const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
     const hamburgIds = getActiveMusicalsByCity("Hamburg").map((musical) => musical.id);

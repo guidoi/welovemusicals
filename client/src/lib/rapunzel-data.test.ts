@@ -17,11 +17,11 @@ describe("Rapunzel Berlin-Termin", () => {
     expect(berlinDate?.eventimUrl).toContain("clickref=rapunzel-berlin-dates");
   });
 
-  it("führt Berlin im Rapunzel-Header und zählt mit Aschenbrödel sowie Der Kleine Lord sechs aktive Musicals", () => {
+  it("führt Berlin im Rapunzel-Header und zählt mit Aschenbrödel, Der Kleine Lord und dem Biest sieben aktive Musicals", () => {
     const rapunzel = getMusicalBySlug("rapunzel");
 
     expect(rapunzel?.cities).toContain("Berlin");
-    expect(getActiveMusicalCountByCity("Berlin")).toBe(6);
+    expect(getActiveMusicalCountByCity("Berlin")).toBe(7);
   });
 
   it("nutzt die neuen Rapunzel-Artworks responsiv", () => {

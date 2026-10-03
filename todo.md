@@ -1060,3 +1060,9 @@
 - [x] Das bereits eingebundene Uwe-Kröger-Pressefoto ist nach dem Abschnitt „Uwe Kröger als Graf von Dorincourt“ direkt in den oberen DKL-Fließtext verschoben.
 - [x] Die DKL-Galerie ist vorerst deaktiviert; die Detailseite zeigt dadurch keinen Bereich „Live-Momente“ mehr. Das separate markenführende Keyvisual, Header, Ticketpfade und Awin-Creatives bleiben unverändert.
 - [x] Desktop- und Mobilprüfung bestätigt das Foto im gewünschten Textkontext sowie das Ausblenden der Galerie.
+
+
+## Die Schöne und das Biest – Berlin Januar 2027
+- [x] Der bestätigte Berlin-Stopp für **Die Schöne und das Biest – Das neue Musical** ist vom 06. bis 23. Januar 2027 im BlueMax Theater ergänzt. Der bestehende Awin/Eventim-Textlink bleibt dabei unverändert.
+- [x] Berlin ist als Tour- und Headerstadt hinterlegt; die aktive Berliner Stadtseite, der Familien-&-Märchen-Filter sowie die Katalogzählung listen die Produktion jetzt mit insgesamt sieben aktiven Shows.
+- [x] Desktop- und Mobilprüfung bestätigen den Termin auf der Detailseite und die sichtbare Karte auf der Berlin-Stadtseite.
