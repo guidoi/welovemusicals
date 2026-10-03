@@ -11,6 +11,7 @@ import { ConsentProvider } from "./contexts/ConsentContext";
 import CookieConsent from "./components/CookieConsent";
 import OptionalConsentServices from "./components/OptionalConsentServices";
 import { PricingProvider } from "./contexts/PricingContext";
+import { AffiliateLinkOverridesProvider } from "./contexts/AffiliateLinkOverridesContext";
 import { getAdminAccessRedirect } from "./lib/admin-access-domain";
 
 // Detail- und Rechteseiten sind nicht Teil der Startseiten-Interaktion. Durch
@@ -91,14 +92,16 @@ function App() {
     <ErrorBoundary>
       <ConsentProvider>
         <PricingProvider>
-          <ThemeProvider defaultTheme="dark">
-            <TooltipProvider>
-              <Toaster />
-              <Router />
-              <OptionalConsentServices />
-              <CookieConsent />
-            </TooltipProvider>
-          </ThemeProvider>
+          <AffiliateLinkOverridesProvider>
+            <ThemeProvider defaultTheme="dark">
+              <TooltipProvider>
+                <Toaster />
+                <Router />
+                <OptionalConsentServices />
+                <CookieConsent />
+              </TooltipProvider>
+            </ThemeProvider>
+          </AffiliateLinkOverridesProvider>
         </PricingProvider>
       </ConsentProvider>
     </ErrorBoundary>

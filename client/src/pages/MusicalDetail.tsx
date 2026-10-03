@@ -52,7 +52,8 @@ import { getExperienceCategory } from "@/lib/experience-categories";
 import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
 import { getTicketCta } from "@/lib/ticket-cta";
-import { getSafeAffiliateTicketLink, type SafeAffiliateLink } from "@/lib/affiliate-link-safety";
+import { getAffiliateOverridePartner, type SafeAffiliateLink } from "@/lib/affiliate-link-safety";
+import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging, type AffiliateFallbackLogEntry } from "@/lib/affiliate-link-fallback-logger";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick, type AffiliateClickPlacement } from "@/lib/category-analytics";
@@ -161,18 +162,48 @@ export default function MusicalDetail() {
   // Get provider info
   const providerInfo = providers.find((p) => p.name === musical.provider);
 
-  const ticketLinkSafety = getSafeAffiliateTicketLink(createAwinLink(musical.eventimUrl));
+  const ticketBaseCandidate = createAwinLink(musical.eventimUrl);
+  const ticketLinkSafety = useSafeAffiliateTicketLink(ticketBaseCandidate, {
+    musicalId: musical.id,
+    partner: getAffiliateOverridePartner(ticketBaseCandidate),
+    placement: "ticket-base",
+  });
   const ticketLink = ticketLinkSafety.url;
-  const keyvisualTicketLinkSafety = getSafeAffiliateTicketLink(musical.keyvisualLink ?? ticketLink, ticketLink);
+  const keyvisualCandidate = musical.keyvisualLink ?? ticketBaseCandidate;
+  const keyvisualTicketLinkSafety = useSafeAffiliateTicketLink(keyvisualCandidate, {
+    musicalId: musical.id,
+    partner: getAffiliateOverridePartner(keyvisualCandidate),
+    placement: "keyvisual",
+  }, ticketLink);
   const keyvisualTicketLink = keyvisualTicketLinkSafety.url;
-  const ctaTicketLinkSafety = getSafeAffiliateTicketLink(musical.ticketCtaUrl ?? ticketLink, ticketLink);
+  const ctaCandidate = musical.ticketCtaUrl ?? ticketBaseCandidate;
+  const ctaTicketLinkSafety = useSafeAffiliateTicketLink(ctaCandidate, {
+    musicalId: musical.id,
+    partner: getAffiliateOverridePartner(ctaCandidate),
+    placement: "ticket-box",
+  }, ticketLink);
   const ctaTicketLink = ctaTicketLinkSafety.url;
   // Awin-spezifische Links für die drei CTA-Positionen (mit clickref)
-  const heroTicketLinkSafety = getSafeAffiliateTicketLink(musical.awinHeroUrl ?? ctaTicketLink, ctaTicketLink);
+  const heroCandidate = musical.awinHeroUrl ?? ctaCandidate;
+  const heroTicketLinkSafety = useSafeAffiliateTicketLink(heroCandidate, {
+    musicalId: musical.id,
+    partner: getAffiliateOverridePartner(heroCandidate),
+    placement: "mobile-hero",
+  }, ctaTicketLink);
   const heroTicketLink = heroTicketLinkSafety.url;
-  const stickyTicketLinkSafety = getSafeAffiliateTicketLink(musical.awinStickyUrl ?? ctaTicketLink, ctaTicketLink);
+  const stickyCandidate = musical.awinStickyUrl ?? ctaCandidate;
+  const stickyTicketLinkSafety = useSafeAffiliateTicketLink(stickyCandidate, {
+    musicalId: musical.id,
+    partner: getAffiliateOverridePartner(stickyCandidate),
+    placement: "sticky",
+  }, ctaTicketLink);
   const stickyTicketLink = stickyTicketLinkSafety.url;
-  const boxTicketLinkSafety = getSafeAffiliateTicketLink(musical.awinBoxUrl ?? ctaTicketLink, ctaTicketLink);
+  const boxCandidate = musical.awinBoxUrl ?? ctaCandidate;
+  const boxTicketLinkSafety = useSafeAffiliateTicketLink(boxCandidate, {
+    musicalId: musical.id,
+    partner: getAffiliateOverridePartner(boxCandidate),
+    placement: "ticket-box",
+  }, ctaTicketLink);
   const boxTicketLink = boxTicketLinkSafety.url;
   const usesAtgTickets = isAtgTicketMusical(musical.slug);
   const usesStageProductPage = musical.eventimUrl.includes("stage-entertainment.de");

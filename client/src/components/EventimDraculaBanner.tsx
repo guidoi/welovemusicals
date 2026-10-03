@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
-import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 
 type DraculaBannerFormat = "wide" | "square";
@@ -44,7 +44,11 @@ export default function EventimDraculaBanner({
 }) {
   const { consent } = useConsent();
   const campaign = DRACULA_AWIN_CAMPAIGNS[format];
-  const safeClickLink = getSafeAffiliateTicketLink(campaign.clickUrl);
+  const safeClickLink = useSafeAffiliateTicketLink(campaign.clickUrl, {
+    musicalId: "dracula",
+    partner: "eventim",
+    placement: "campaign-banner",
+  });
   useAffiliateLinkFallbackLogging([{
     link: safeClickLink,
     musicalId: "dracula",

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
-import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 
 export type AovoCampaign = {
@@ -360,10 +360,12 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
     () => getAovoCampaignImpressionUrl(campaign.groupId, String(Math.random()).slice(2, 11), campaign.trackingNetwork),
     [campaign.groupId, campaign.trackingNetwork]
   );
-  const safeClickLink = useMemo(
-    () => getSafeAffiliateTicketLink(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork)),
-    [campaign.groupId, campaign.trackingNetwork],
-  );
+  const campaignClickUrl = getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork);
+  const safeClickLink = useSafeAffiliateTicketLink(campaignClickUrl, {
+    musicalId: campaign.musicalId,
+    partner: campaign.trackingNetwork === "stage" ? "stage" : "tradedoubler",
+    placement: "campaign-banner",
+  });
   useAffiliateLinkFallbackLogging([{
     link: safeClickLink,
     musicalId: campaign.musicalId,

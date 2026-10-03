@@ -25,6 +25,11 @@ describe("Affiliate-Link-Auswertung", () => {
     expect(source).toContain("Seitennavigation der Fehlergruppen");
     expect(source).toContain("Zeige {pagination.startIndex + 1}–{pagination.endIndex}");
     expect(source).toContain("aria-current");
+    expect(source).toContain("Ziel bearbeiten");
+    expect(source).toContain("Sicher speichern");
+    expect(source).toContain("Katalogziel wiederhergestellt");
+    expect(source).toContain("ADMIN_TARGET_ENDPOINT");
+    expect(source).toContain("partnerHints");
     expect(source).toContain("Aggregiert, maximal 100 Gruppen");
     expect(source).toContain("URLs und personenbezogene Daten werden nicht gespeichert");
     expect(source).not.toContain("originalUrl");

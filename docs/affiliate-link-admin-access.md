@@ -8,6 +8,7 @@ Die Auswertung liegt unter `https://welovemusicals.com/verwaltung/affiliate-link
 |---|---|---|---|
 | We Love Musicals – Affiliate-Link-Auswertung | Self-hosted | `welovemusicals.com/verwaltung/affiliate-links*` | Allow: ausschließlich `guidoi@web.de` |
 | We Love Musicals – Affiliate-Link-Auswertungs-API | Self-hosted | `welovemusicals.com/api/admin/affiliate-link-fallback-events*` | Allow: ausschließlich `guidoi@web.de` |
+| We Love Musicals – Affiliate-Link-Zielverwaltung | Self-hosted | `welovemusicals.com/api/admin/affiliate-link-target-overrides*` | Allow: ausschließlich `guidoi@web.de` |
 
 Die beiden Anwendungen verwenden denselben Cloudflare-Access-Login. Der Browser kann dadurch die geschützte Seite und die gleichfalls geschützte First-Party-API auf derselben Domain aufrufen, ohne dass ein Passwort oder ein API-Schlüssel im Frontend hinterlegt wird.
 
@@ -22,5 +23,7 @@ D1-Datenbank: `welovemusicals-affiliate-events` (EU-Jurisdiktion, keine Replikat
 | `partner` | Partnerkategorie |
 | `placement` | CTA- oder Bannerplatzierung |
 | `reason` | technischer Fallback-Grund |
+
+Die separate Tabelle `affiliate_link_target_overrides` enthält ausschließlich manuell geprüfte Ziel-Overrides (Musicalkennung, Partner, Platzierung, Ziel-URL und Änderungszeitpunkt). Sie enthält keine Besucher- oder Buchungsdaten.
 
 Es werden ausdrücklich keine URLs, Query-Parameter, Cookies, Consent-Informationen, Geräte- oder Besucherkennungen, IP-Adressen im Anwendungspayload oder Buchungsdaten gespeichert.

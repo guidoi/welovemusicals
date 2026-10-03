@@ -2,7 +2,7 @@ import React from "react";
 import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
-import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 
 export type AwinShowCampaignFormat = "wide" | "square";
@@ -247,7 +247,11 @@ export default function AwinShowCampaignBanner({
   const { consent } = useConsent();
   const creative = campaign.creatives[format];
   const placementLabel = format === "wide" ? "im Fließtext" : "nach der Bildergalerie";
-  const safeClickLink = getSafeAffiliateTicketLink(creative.clickUrl);
+  const safeClickLink = useSafeAffiliateTicketLink(creative.clickUrl, {
+    musicalId: campaign.musicalId,
+    partner: campaign.partner,
+    placement: "campaign-banner",
+  });
   useAffiliateLinkFallbackLogging([{
     link: safeClickLink,
     musicalId: campaign.musicalId,

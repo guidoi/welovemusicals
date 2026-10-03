@@ -110,7 +110,7 @@ function assertConsentGuards() {
     "client/src/components/EventimDraculaBanner.tsx",
     "client/src/components/EventimFackJuGoehteBanner.tsx",
   ]) {
-    requireSource(source(componentPath), "getSafeAffiliateTicketLink", componentPath);
+    requireSource(source(componentPath), "useSafeAffiliateTicketLink", componentPath);
   }
 }
 
@@ -132,7 +132,7 @@ function assertTicketPathsRemainConsentIndependent() {
     {
       path: "client/src/components/TourDates.tsx",
       requiredLinks: [
-        "getSafeAffiliateTicketLink(date.eventimUrl)",
+        "useSafeAffiliateTicketLink(date.eventimUrl",
         "href={safeTicketLink.url}",
         "useAffiliateLinkFallbackLogging",
       ],
@@ -193,6 +193,28 @@ function assertFallbackLoggingSafety() {
   }
 }
 
+function assertTargetOverrideSafety() {
+  const provider = source("client/src/contexts/AffiliateLinkOverridesContext.tsx");
+  requireSource(provider, 'fetch("/api/affiliate-link-overrides"', "Zieloverride-Provider");
+  requireSource(provider, 'credentials: "omit"', "Zieloverride-Provider");
+  requireSource(provider, "PRODUCTION_HOSTNAMES", "Zieloverride-Provider");
+
+  const resolver = source("client/src/lib/use-affiliate-link-target.ts");
+  requireSource(resolver, "getSafeAffiliateTicketLink(override ?? candidate", "Zieloverride-Auflösung");
+  requireSource(resolver, "useAffiliateLinkOverrides", "Zieloverride-Auflösung");
+
+  const adminEndpoint = source("functions/api/admin/affiliate-link-target-overrides.ts");
+  requireSource(adminEndpoint, "isValidAffiliateOverrideTarget", "Zieloverride-Verwaltung");
+  requireSource(adminEndpoint, "onRequestPut", "Zieloverride-Verwaltung");
+  requireSource(adminEndpoint, "onRequestDelete", "Zieloverride-Verwaltung");
+
+  const validator = source("functions/_affiliate-target-validation.ts");
+  requireSource(validator, '&& url.searchParams.get("a") === "3492604"', "Zieloverride-Validierung");
+  requireSource(validator, 'const AWIN_PUBLISHER_ID = "2865727"', "Zieloverride-Validierung");
+  requireSource(validator, "isDirectStageClick", "Zieloverride-Validierung");
+  requireSource(validator, "isDirectTradeDoublerClick", "Zieloverride-Validierung");
+}
+
 const ticketLinks = getTicketLinks();
 let stageLinks = 0;
 let awinLinks = 0;
@@ -211,6 +233,7 @@ assertConsentGuards();
 assertTicketPathsRemainConsentIndependent();
 assertAttributionSafety();
 assertFallbackLoggingSafety();
+assertTargetOverrideSafety();
 
 console.log(
   `Affiliate-Integritätsgate bestanden: ${stageLinks} direkte Stage-Links, ${awinLinks} direkte Awin-Links und ${otherTicketLinks} weitere Partnerziele geprüft; Converter und Impressionen bleiben einwilligungsgesteuert.`,

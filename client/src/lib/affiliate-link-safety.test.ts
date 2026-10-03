@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getSafeAffiliateTicketLink, isSafeAffiliateTicketUrl } from "./affiliate-link-safety";
+import { getAffiliateOverridePartner, getSafeAffiliateTicketLink, isSafeAffiliateTicketUrl } from "./affiliate-link-safety";
 
 describe("Affiliate-Link-Sicherheitsnetz", () => {
   const directStage = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398";
@@ -7,6 +7,12 @@ describe("Affiliate-Link-Sicherheitsnetz", () => {
   const awinTextLink = "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=4568988&clickref=kdl-cta";
   const awinCreative = "https://www.awin1.com/cread.php?s=4568827&v=11388&q=492097&r=2865727";
   const awinWrappedEventim = "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fexample%2F";
+
+  it("ordnet kontrollierbare Ziele der korrekten Partnergruppe zu", () => {
+    expect(getAffiliateOverridePartner(directStage)).toBe("stage");
+    expect(getAffiliateOverridePartner(tradeDoublerCampaign)).toBe("tradedoubler");
+    expect(getAffiliateOverridePartner("https://www.awin1.com/cread.php?s=4882557&v=111888&q=614186&r=2865727")).toBe("atg");
+  });
 
   it("behält gültige direkte Stage- und Awin-Ziele unverändert", () => {
     expect(isSafeAffiliateTicketUrl(directStage)).toBe(true);

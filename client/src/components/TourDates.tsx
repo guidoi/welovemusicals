@@ -7,7 +7,8 @@
  * Abgelaufene Termine (endDate < heute) werden automatisch ausgeblendet.
  */
 import { cities, MusicalTourDate } from "@/lib/data";
-import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { getAffiliateOverridePartner } from "@/lib/affiliate-link-safety";
+import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
@@ -261,7 +262,11 @@ function TourDateTicketLink({
   label: string;
   onTicketClick?: (ticketUrl: string) => void;
 }) {
-  const safeTicketLink = getSafeAffiliateTicketLink(date.eventimUrl);
+  const safeTicketLink = useSafeAffiliateTicketLink(date.eventimUrl, {
+    musicalId,
+    partner: getAffiliateOverridePartner(date.eventimUrl),
+    placement: "city-date",
+  });
 
   useAffiliateLinkFallbackLogging([{
     link: safeTicketLink,

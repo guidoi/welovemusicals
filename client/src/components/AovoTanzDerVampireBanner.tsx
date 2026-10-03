@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useConsent } from "@/contexts/ConsentContext";
-import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 
 export const AOVO_TDV_CLICK_URL = "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26137318";
@@ -16,7 +16,11 @@ export default function AovoTanzDerVampireBanner() {
     () => getAovoTdVImpressionUrl(String(Math.random()).slice(2, 11)),
     []
   );
-  const safeClickLink = useMemo(() => getSafeAffiliateTicketLink(AOVO_TDV_CLICK_URL), []);
+  const safeClickLink = useSafeAffiliateTicketLink(AOVO_TDV_CLICK_URL, {
+    musicalId: "tanz-der-vampire",
+    partner: "tradedoubler",
+    placement: "campaign-banner",
+  });
   useAffiliateLinkFallbackLogging([{
     link: safeClickLink,
     musicalId: "tanz-der-vampire",

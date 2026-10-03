@@ -1,6 +1,7 @@
 import { AWIN_PUBLISHER_ID } from "./data";
 
 export type AffiliateFallbackReason = "invalid-url" | "unsupported-destination" | "invalid-affiliate-parameters";
+export type AffiliateOverridePartner = "stage" | "tradedoubler" | "awin" | "atg" | "eventim" | "other";
 
 export type SafeAffiliateLink = {
   url: string;
@@ -101,6 +102,21 @@ export function isSafeAffiliateTicketUrl(value: string | undefined): boolean {
   if (!parsed) return false;
   if (isDirectStageClick(parsed) || isDirectAwinClick(parsed) || isDirectTradeDoublerClick(parsed)) return true;
   return SAFE_DIRECT_TICKET_HOSTS.has(parsed.hostname);
+}
+
+/** Categorizes a visible target for one exact technical fallback-group override. */
+export function getAffiliateOverridePartner(value: string | undefined): AffiliateOverridePartner {
+  const parsed = tryParseUrl(value);
+  if (!parsed) return "other";
+  if (parsed.hostname === STAGE_HOST) return "stage";
+  if (parsed.hostname === TRADEDOUBLER_CLICK_HOST) return "tradedoubler";
+  if (parsed.hostname.endsWith("atgtickets.de")) return "atg";
+  if (parsed.hostname === AWIN_HOST) {
+    const merchantId = parsed.searchParams.get("mid") ?? parsed.searchParams.get("v");
+    return merchantId === "111888" ? "atg" : "eventim";
+  }
+  if (parsed.hostname.endsWith("eventim.de")) return "eventim";
+  return "other";
 }
 
 function fallbackFor(value: string | undefined): string {

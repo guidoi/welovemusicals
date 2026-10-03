@@ -2,6 +2,7 @@ import {
   getAffiliateFallbackReport,
   type AffiliateFallbackEnvironment,
 } from "../../_affiliate-fallback-events";
+import { getAffiliateLinkTargetOverrides } from "../../_affiliate-link-target-overrides";
 
 type Context = {
   request: Request;
@@ -82,7 +83,8 @@ export async function onRequestGet(context: Context): Promise<Response> {
     });
   }
 
-  return Response.json(report, { headers: noStoreHeaders() });
+  const overrides = await getAffiliateLinkTargetOverrides(context.env.AFFILIATE_FALLBACK_LOGS);
+  return Response.json({ ...report, overrides: overrides ?? [] }, { headers: noStoreHeaders() });
 }
 
 export async function onRequest(context: Context): Promise<Response> {

@@ -6,7 +6,8 @@ const endpoint = "https://welovemusicals.com/api/admin/affiliate-link-fallback-e
 function createDatabase(musicalId = "tarzan") {
   const all = vi.fn()
     .mockResolvedValueOnce({ results: [{ total: 2, last24Hours: 1, latestAt: "2026-10-03 12:00:00" }] })
-    .mockResolvedValueOnce({ results: [{ musicalId, partner: "stage", placement: "ticket-box", reason: "invalid-url", eventCount: 2, latestAt: "2026-10-03 12:00:00" }] });
+    .mockResolvedValueOnce({ results: [{ musicalId, partner: "stage", placement: "ticket-box", reason: "invalid-url", eventCount: 2, latestAt: "2026-10-03 12:00:00" }] })
+    .mockResolvedValueOnce({ results: [] });
   const bind = vi.fn().mockReturnValue({ all });
   return { prepare: vi.fn().mockReturnValue({ bind }) };
 }
@@ -14,7 +15,7 @@ function createDatabase(musicalId = "tarzan") {
 describe("Affiliate-Fallback-Auswertungsroute", () => {
   it("liefert ausschließlich aggregierte und nicht zwischengespeicherte Daten", async () => {
     const response = await onRequestGet({ request: new Request(endpoint), env: { AFFILIATE_FALLBACK_LOGS: createDatabase() } } as never);
-    const payload = await response.json() as { periodDays: number; summary: { total: number }; rows: Array<{ musicalId: string }> };
+    const payload = await response.json() as { periodDays: number; summary: { total: number }; rows: Array<{ musicalId: string }>; overrides: unknown[] };
 
     expect(response.status).toBe(200);
     expect(response.headers.get("cache-control")).toBe("no-store");
@@ -23,6 +24,7 @@ describe("Affiliate-Fallback-Auswertungsroute", () => {
       summary: expect.objectContaining({ total: 2 }),
     }));
     expect(payload.rows).toEqual([{ musicalId: "tarzan", partner: "stage", placement: "ticket-box", reason: "invalid-url", eventCount: 2, latestAt: "2026-10-03 12:00:00" }]);
+    expect(payload.overrides).toEqual([]);
   });
 
   it("lehnt andere Methoden ab und meldet eine fehlende Datenbank", async () => {
