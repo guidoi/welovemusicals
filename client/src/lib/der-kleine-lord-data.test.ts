@@ -12,10 +12,11 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
     expect(musical?.city).toBe("Berlin");
     expect(musical?.venue).toBe("BlueMax Theater am Potsdamer Platz");
     expect(musical?.priceFrom).toBe("59,99");
-    expect(musical?.ticketCtaUrl).toContain("www.awin1.com/cread.php");
-    expect(musical?.ticketCtaUrl).toContain("awinmid=11388");
+    expect(musical?.ticketCtaUrl).toContain("www.awin1.com/awclick.php");
+    expect(musical?.ticketCtaUrl).toContain("gid=492097");
+    expect(musical?.ticketCtaUrl).toContain("mid=11388");
     expect(musical?.ticketCtaUrl).toContain("awinaffid=2865727");
-    expect(musical?.ticketCtaUrl).toContain("der-kleine-lord-das-musical");
+    expect(musical?.ticketCtaUrl).toContain("linkid=3666159");
     expect(musical?.tourDates).toEqual([
       expect.objectContaining({
         city: "Berlin",
@@ -25,6 +26,22 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
         premiereDate: "2026-11-13",
       }),
     ]);
+  });
+
+  it("verwendet den gelieferten Awin-Textlink an allen allgemeinen CTAs und behält den Berliner Terminpfad bei", () => {
+    const musical = getMusicalBySlug("der-kleine-lord");
+    const expectedBase = "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3666159&clickref=";
+
+    expect(musical?.keyvisualLink).toBe(`${expectedBase}dkl-keyvisual`);
+    expect(musical?.ticketCtaUrl).toBe(`${expectedBase}dkl-cta`);
+    expect(musical?.eventimUrl).toBe(`${expectedBase}dkl-ticket`);
+    expect(musical?.awinHeroUrl).toBe(`${expectedBase}dkl-hero`);
+    expect(musical?.awinStickyUrl).toBe(`${expectedBase}dkl-sticky`);
+    expect(musical?.awinBoxUrl).toBe(`${expectedBase}dkl-box`);
+    expect(musical?.tourDates?.[0]?.eventimUrl).toContain("www.awin1.com/cread.php");
+    expect(musical?.tourDates?.[0]?.eventimUrl).toContain("awinmid=11388");
+    expect(musical?.tourDates?.[0]?.eventimUrl).toContain("awinaffid=2865727");
+    expect(musical?.tourDates?.[0]?.eventimUrl).not.toContain("linkid=3666159");
   });
 
   it("verwendet die gelieferten WebP-Motive und führt Uwe Kröger in der Detailgalerie", () => {

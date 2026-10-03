@@ -1037,3 +1037,8 @@
 - [x] Native Eventim-Creatives eingebunden: `s=3663000` (728 × 90) nach dem abgeschlossenen ersten Erzählabschnitt und `s=3662990` (300 × 250) nach der Galerie vor den Wissensdaten. Impressions bleiben ausschließlich nach Affiliate-Einwilligung aktiv.
 - [x] Berlin-Stadtseite, Stadtfilter, Teaserzählung, Sitemap und statische Ausgabe enthalten die neue Show automatisch. Desktop- und Mobilprüfung zeigt alle Medien, Banner und die Berliner Kachel korrekt.
 - [~] Extern abhängig: In der privaten Google-Preisquelle die Zeile mit dem Kürzel **`der-kleine-lord`** sowie Preis **59,99** (Sale: Nein) ergänzen. Der Katalogfallback zeigt bis dahin bereits 59,99 €.
+
+## Der Kleine Lord – Awin-Textlink Oktober 2026
+- [x] Das gelieferte Awin-Textlink-Werbemittel `gid=492097`, `mid=11388`, `awinaffid=2865727`, `linkid=3666159` ist an allen allgemeinen DKL-Pfaden aktiv: Keyvisual, Ticket-CTA, Hero-, Sticky- und Box-CTA sowie allgemeiner Eventim-Link.
+- [x] Jeder allgemeine Pfad erhält einen separaten `clickref` (`dkl-keyvisual`, `dkl-cta`, `dkl-hero`, `dkl-sticky`, `dkl-box`, `dkl-ticket`). Der vorhandene Berliner Termin-Deep-Link bleibt bewusst unverändert als direkter Awin-Zielpfad ohne allgemeines Textlink-Werbemittel.
+- [x] 104 Testdateien / 360 Tests, TypeScript, Produktionsbuild, statische SEO-Ausgabe, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich. Es wurden keine Pixel-, Banner- oder Consent-Regeln verändert.
