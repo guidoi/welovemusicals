@@ -91,6 +91,32 @@ function getMusicalBreadcrumbs(musical: Musical) {
   ];
 }
 
+function createLegalPage(
+  path: "impressum" | "datenschutz",
+  heading: string,
+  description: string,
+): SeoPage {
+  const canonicalUrl = `${BASE_URL}/${path}`;
+  const image = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
+  const title = `${heading} | We Love Musicals`;
+  const imageAlt = "Bühnenatmosphäre bei We Love Musicals";
+  const breadcrumbs = [
+    { "@type": "ListItem", position: 1, name: "We Love Musicals", item: BASE_URL },
+    { "@type": "ListItem", position: 2, name: heading, item: canonicalUrl },
+  ];
+
+  return {
+    path: `/${path}`,
+    title,
+    description,
+    image,
+    imageAlt,
+    canonicalUrl,
+    schema: createPageSchema({ title, description, image, imageAlt, canonicalUrl }, breadcrumbs),
+    contentHtml: `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p></main>`,
+  };
+}
+
 function getCityItemList(city: City, cityMusicals: Musical[]) {
   return {
     "@type": "ItemList",
@@ -258,6 +284,16 @@ async function main() {
   const priceOverrides = await createGoogleSheetPriceSource({ url: WEBSITE_PRICE_SHEET_CSV_URL }).listOverrides();
   const pricesByMusicalId = new Map(priceOverrides.map((override) => [override.musicalId, override.priceFrom]));
   const pages = [
+    createLegalPage(
+      "impressum",
+      "Impressum",
+      "Impressum und Anbieterinformationen von We Love Musicals, dem Musical-Portal für Deutschland, Österreich und die Schweiz.",
+    ),
+    createLegalPage(
+      "datenschutz",
+      "Datenschutzerklärung",
+      "Datenschutzerklärung von We Love Musicals: Informationen zur Verarbeitung personenbezogener Daten, Cookies, Analyse und Affiliate-Links.",
+    ),
     ...cities.map(createCityPage),
     ...activeMusicals.map((musical) => createMusicalPage(musical, pricesByMusicalId.get(musical.id) ?? musical.priceFrom)),
   ];

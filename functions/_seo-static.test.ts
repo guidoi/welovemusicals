@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { serveCanonicalSeoRoute } from "./_seo-static";
+import { serveCanonicalSeoRoute, serveCanonicalStaticPage } from "./_seo-static";
 
 describe("serveCanonicalSeoRoute", () => {
   it("liefert das Stadtseiten-HTML unter der kanonischen URL über die Assets-Bindung", async () => {
@@ -117,5 +117,22 @@ describe("serveCanonicalSeoRoute", () => {
     expect(response.status).toBe(410);
     expect(await response.text()).toBe("Gone");
     expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it.each(["impressum", "datenschutz"] as const)("liefert %s als eigenes kanonisches HTML-Dokument", async (page) => {
+    const fetch = vi.fn().mockResolvedValue(new Response(`<html>${page}</html>`, {
+      headers: { "Content-Type": "text/html; charset=UTF-8" },
+    }));
+
+    const response = await serveCanonicalStaticPage({
+      request: new Request(`https://welovemusicals.com/${page}?source=footer`),
+      env: { ASSETS: { fetch } },
+    }, page);
+
+    expect(fetch).toHaveBeenCalledWith(expect.objectContaining({
+      href: `https://welovemusicals.com/${page}/?source=footer`,
+    }));
+    expect(response.headers.get("Content-Type")).toContain("text/html");
+    expect(await response.text()).toBe(`<html>${page}</html>`);
   });
 });

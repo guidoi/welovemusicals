@@ -48,6 +48,24 @@ export const RETIRED_MUSICAL_SLUGS = new Set([
 ]);
 
 /**
+ * Serves a static SEO document at a canonical top-level route. Pages otherwise
+ * falls through to the SPA shell at paths such as /impressum, which would make
+ * the home page canonical visible to non-JavaScript crawlers.
+ */
+export async function serveCanonicalStaticPage(
+  context: Omit<SeoStaticRouteContext, "params">,
+  page: "impressum" | "datenschutz",
+): Promise<Response> {
+  if (context.request.method !== "GET" && context.request.method !== "HEAD") {
+    return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });
+  }
+
+  const targetUrl = new URL(`/${page}/`, context.request.url);
+  targetUrl.search = new URL(context.request.url).search;
+  return context.env.ASSETS.fetch(targetUrl);
+}
+
+/**
  * Serves a pre-rendered SEO document through the Pages ASSETS binding.
  * Pages otherwise redirects directory assets to a trailing slash before the
  * document is reached. A dynamic Function keeps the canonical, slashless URL

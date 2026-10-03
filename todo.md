@@ -913,3 +913,9 @@
 - [x] Die gesamte öffentliche Navigation geprüft: Startseitenkarten, Suche, Header, Hero, Footer, Detailseiten-Empfehlungen, Stadtseiten, strukturierte Daten, Sitemap und alle statisch gerenderten HTML-Seiten erzeugen Musicalziele ausschließlich aus dem aktiven Katalog.
 - [x] Kein interner Link verweist auf einen der 301- oder 410-Slugs. Der Build-Audit hat 194 interne Musicallinks über 20 kanonische Ziele geprüft; Ergebnis: 0 Ziele über Weiterleitung oder Gone-Status.
 - [x] Dauerhafte Regression ergänzt: Katalog-/Stadt-/Empfehlungslisten und Hero-Navigation dürfen keine inaktive, umgeleitete oder entfernte Musicalseite ausgeben. Die statische SEO-Buildprüfung prüft alle erzeugten HTML-Dateien ebenfalls gegen die zentrale 301-/410-Liste.
+
+## Lighthouse- und technischer SEO-Audit Oktober 2026
+- [x] Öffentliche Produktionsseiten mit Lighthouse geprüft: Startseite Desktop 91/91/100/100, KDL mobil 72/87/100/100, Hamburg mobil 68/90/100/100 (Performance/Accessibility/Best Practices/SEO). CLS liegt in allen bewertbaren Läufen bei 0; Third-Party-Code blockierte den Main Thread nicht.
+- [x] 44 Sitemap-URLs im Live-Crawl geprüft: alle HTTP 200 und mit Meta-Description. Befund bei Impressum/Datenschutz behoben: eigene statische SEO-Dokumente mit korrektem Canonical, H1 und Schema werden über Cloudflare-Pages-Funktionen ausgeliefert.
+- [x] Mobile Zoom-Sperre (`maximum-scale=1`) entfernt und gegen Wiedereinführung getestet.
+- [x] Größter verbleibender Hebel dokumentiert: responsive, komprimierte Bildvarianten für Karten und Stadtseiten; erst danach Bundle-/DOM-Optimierungen priorisieren. Affiliate-Tracking, Deeplinks, Consent und Impressionen wurden nicht geändert.

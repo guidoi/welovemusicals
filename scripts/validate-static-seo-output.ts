@@ -84,6 +84,18 @@ async function main() {
   const mjSeo = getMusicalSeo(mj);
 
   await Promise.all([
+    assertPage("impressum", [
+      "<title>Impressum | We Love Musicals</title>",
+      'href="https://welovemusicals.com/impressum"',
+      "<h1>Impressum</h1>",
+      'id="site-schema"',
+    ]),
+    assertPage("datenschutz", [
+      "<title>Datenschutzerklärung | We Love Musicals</title>",
+      'href="https://welovemusicals.com/datenschutz"',
+      "<h1>Datenschutzerklärung</h1>",
+      'id="site-schema"',
+    ]),
     assertPage("stadt/hamburg", [
       `<title>${escapeHtml(hamburgSeo.title)}</title>`,
       'href="https://welovemusicals.com/stadt/hamburg"',
