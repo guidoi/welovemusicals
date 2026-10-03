@@ -21,6 +21,10 @@ describe("Affiliate-Link-Auswertung", () => {
     expect(source).toContain("Zuletzt erfasst bis (UTC)");
     expect(source).toContain("Filter zurücksetzen");
     expect(source).toContain("filterAffiliateFallbackRows");
+    expect(source).toContain("paginateAffiliateFallbackRows");
+    expect(source).toContain("Seitennavigation der Fehlergruppen");
+    expect(source).toContain("Zeige {pagination.startIndex + 1}–{pagination.endIndex}");
+    expect(source).toContain("aria-current");
     expect(source).toContain("Aggregiert, maximal 100 Gruppen");
     expect(source).toContain("URLs und personenbezogene Daten werden nicht gespeichert");
     expect(source).not.toContain("originalUrl");

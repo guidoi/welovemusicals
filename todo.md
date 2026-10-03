@@ -960,3 +960,8 @@
 - [x] Netzwerk-Dropdown sowie Datumsgrenzen „zuletzt erfasst ab/bis“ (UTC) ergänzt. Die Ansicht zeigt transparent, wie viele der geladenen Gruppen den aktuellen Kriterien entsprechen, und bietet „Filter zurücksetzen“.
 - [x] Kein zusätzlicher Browser-, Tracking- oder Datenbankabruf: Die Filter laufen ausschließlich im geschützten Browserbereich auf den bereits datensparsam aggregierten D1-Daten. CSV-Export und Affiliatepfade bleiben unverändert.
 - [x] Unit- und Browserprüfung für Textsuche, Netzwerk- und Datumsfilter erfolgreich; Gesamtsuite, TypeScript, Produktionsbuild, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.
+
+## Paginierung der Affiliate-Link-Auswertung – Oktober 2026
+- [x] Die Tabelle zeigt bei mehr als zehn gefilterten Fehlergruppen nun zehn Gruppen pro Seite mit Zurück-/Weiter-Navigation, nummerierten Seiten und sichtbarem Bereichszähler.
+- [x] Filter- oder Zeitraumwechsel startet zuverlässig wieder auf Seite 1; eine verkleinerte Ergebnismenge begrenzt die aktuelle Seite automatisch. Die Navigation hat eindeutige Labels und `aria-current` für die aktive Seite.
+- [x] Paginierung arbeitet ausschließlich auf bereits geladenen, geschützten Aggregaten. Browserprüfung mit 23 Gruppen bestätigt Seite 1 (1–10), Seite 2 (11–20) und die letzte Seite (21–23); Gesamtsuite, TypeScript, Build, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.

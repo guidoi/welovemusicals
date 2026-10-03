@@ -3,6 +3,8 @@ import {
   BarChart3,
   CalendarClock,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Download,
   ExternalLink,
   Filter,
@@ -19,6 +21,7 @@ import {
   hasActiveAffiliateFallbackFilters,
   type AffiliateFallbackFilters,
 } from "@/lib/affiliate-fallback-filters";
+import { AFFILIATE_FALLBACKS_PER_PAGE, paginateAffiliateFallbackRows } from "@/lib/affiliate-fallback-pagination";
 
 type PeriodDays = 7 | 30 | 90;
 
@@ -96,6 +99,7 @@ export default function AffiliateLinkFallbackAdmin() {
   const [exporting, setExporting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filters, setFilters] = useState<AffiliateFallbackFilters>(EMPTY_FILTERS);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const loadReport = useCallback(async () => {
     setLoading(true);
@@ -119,6 +123,10 @@ export default function AffiliateLinkFallbackAdmin() {
   }, [loadReport]);
 
   const filteredRows = useMemo(() => filterAffiliateFallbackRows(report?.rows ?? [], filters), [filters, report?.rows]);
+  const { rows: paginatedRows, pagination } = useMemo(
+    () => paginateAffiliateFallbackRows(filteredRows, currentPage),
+    [currentPage, filteredRows],
+  );
   const partnerOptions = useMemo(() => Array.from(new Set(report?.rows.map((row) => row.partner) ?? [])).sort(), [report?.rows]);
   const partnerBreakdown = useMemo(() => {
     const totals = new Map<string, number>();
@@ -127,6 +135,14 @@ export default function AffiliateLinkFallbackAdmin() {
   }, [filteredRows]);
 
   const csvExportUrl = `/api/admin/affiliate-link-fallback-events?days=${period}&format=csv`;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters, period]);
+
+  useEffect(() => {
+    setCurrentPage((page) => Math.min(page, pagination.totalPages));
+  }, [pagination.totalPages]);
 
   const exportCsv = useCallback(async () => {
     setExporting(true);
@@ -195,7 +211,7 @@ export default function AffiliateLinkFallbackAdmin() {
               <article className="rounded-2xl border border-white/10 bg-black/30 p-5"><h2 className="font-display text-xl font-bold">Nach Partner</h2><div className="mt-5 space-y-3">{partnerBreakdown.map(([partner, count]) => <div key={partner} className="flex items-center justify-between gap-3"><span className="rounded-full bg-white/[0.07] px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white/75">{partner}</span><span className="text-lg font-bold text-gold">{count}</span></div>)}</div></article>
               <article className="rounded-2xl border border-white/10 bg-black/30 p-5"><h2 className="font-display text-xl font-bold">So wird die Zahl gelesen</h2><p className="mt-3 text-sm leading-6 text-white/65">Jede Zeile fasst gleiche technische Fälle zusammen. Prüfen Sie zuerst häufige Fehlergründe und anschließend die zugehörige Show beziehungsweise Platzierung. Ein Ereignis bedeutet nicht automatisch einen defekten Partner oder entgangenen Umsatz.</p></article>
             </section>
-            <section className="overflow-hidden rounded-2xl border border-white/10 bg-black/30"><div className="border-b border-white/10 px-5 py-4"><h2 className="font-display text-xl font-bold">Fehlerübersicht</h2><p className="mt-1 text-xs text-white/50">{filteredRows.length} von {report.rows.length} Fehlergruppen. Aggregiert, maximal 100 Gruppen. URLs und personenbezogene Daten werden nicht gespeichert.</p></div><div className="overflow-x-auto"><table className="w-full min-w-[720px] text-left text-sm"><thead className="bg-white/[0.035] text-xs uppercase tracking-[0.12em] text-white/50"><tr><th className="px-5 py-3">Musical</th><th className="px-4 py-3">Partner</th><th className="px-4 py-3">Platzierung</th><th className="px-4 py-3">Fehlergrund</th><th className="px-4 py-3 text-right">Anzahl</th><th className="px-5 py-3">Zuletzt</th></tr></thead><tbody>{filteredRows.map((row) => <tr key={`${row.musicalId}-${row.partner}-${row.placement}-${row.reason}`} className="border-t border-white/[0.07] text-white/75"><td className="px-5 py-3 font-semibold text-white">{row.musicalId}</td><td className="px-4 py-3 uppercase text-gold">{row.partner}</td><td className="px-4 py-3">{placementLabels[row.placement] ?? row.placement}</td><td className="px-4 py-3">{reasonLabels[row.reason] ?? row.reason}</td><td className="px-4 py-3 text-right font-bold text-white">{row.eventCount}</td><td className="px-5 py-3 text-xs text-white/55">{formatDate(row.latestAt)}</td></tr>)}{filteredRows.length === 0 ? <tr><td colSpan={6} className="px-5 py-8 text-center text-sm text-white/55">Keine Fehlergruppen entsprechen den aktuellen Filtern.</td></tr> : null}</tbody></table></div></section>
+            <section className="overflow-hidden rounded-2xl border border-white/10 bg-black/30"><div className="border-b border-white/10 px-5 py-4"><h2 className="font-display text-xl font-bold">Fehlerübersicht</h2><p className="mt-1 text-xs text-white/50">{filteredRows.length} von {report.rows.length} Fehlergruppen. Aggregiert, maximal 100 Gruppen. URLs und personenbezogene Daten werden nicht gespeichert.</p></div><div className="overflow-x-auto"><table className="w-full min-w-[720px] text-left text-sm"><thead className="bg-white/[0.035] text-xs uppercase tracking-[0.12em] text-white/50"><tr><th className="px-5 py-3">Musical</th><th className="px-4 py-3">Partner</th><th className="px-4 py-3">Platzierung</th><th className="px-4 py-3">Fehlergrund</th><th className="px-4 py-3 text-right">Anzahl</th><th className="px-5 py-3">Zuletzt</th></tr></thead><tbody>{paginatedRows.map((row) => <tr key={`${row.musicalId}-${row.partner}-${row.placement}-${row.reason}`} className="border-t border-white/[0.07] text-white/75"><td className="px-5 py-3 font-semibold text-white">{row.musicalId}</td><td className="px-4 py-3 uppercase text-gold">{row.partner}</td><td className="px-4 py-3">{placementLabels[row.placement] ?? row.placement}</td><td className="px-4 py-3">{reasonLabels[row.reason] ?? row.reason}</td><td className="px-4 py-3 text-right font-bold text-white">{row.eventCount}</td><td className="px-5 py-3 text-xs text-white/55">{formatDate(row.latestAt)}</td></tr>)}{filteredRows.length === 0 ? <tr><td colSpan={6} className="px-5 py-8 text-center text-sm text-white/55">Keine Fehlergruppen entsprechen den aktuellen Filtern.</td></tr> : null}</tbody></table></div>{filteredRows.length > AFFILIATE_FALLBACKS_PER_PAGE ? <nav aria-label="Seitennavigation der Fehlergruppen" className="flex flex-col gap-3 border-t border-white/10 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"><p className="text-xs text-white/55">Zeige {pagination.startIndex + 1}–{pagination.endIndex} von {filteredRows.length} gefilterten Fehlergruppen</p><div className="flex flex-wrap items-center gap-1.5"><button type="button" onClick={() => setCurrentPage((page) => Math.max(1, page - 1))} disabled={pagination.page === 1} className="inline-flex h-8 items-center gap-1 rounded-md border border-white/15 px-2 text-xs font-semibold text-white/75 transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-40"><ChevronLeft className="h-3.5 w-3.5" /> Zurück</button>{Array.from({ length: pagination.totalPages }, (_, index) => index + 1).map((page) => <button key={page} type="button" onClick={() => setCurrentPage(page)} aria-current={pagination.page === page ? "page" : undefined} className={`h-8 min-w-8 rounded-md border px-2 text-xs font-bold transition ${pagination.page === page ? "border-gold bg-gold text-black" : "border-white/15 text-white/75 hover:border-gold/50"}`}>{page}</button>)}<button type="button" onClick={() => setCurrentPage((page) => Math.min(pagination.totalPages, page + 1))} disabled={pagination.page === pagination.totalPages} className="inline-flex h-8 items-center gap-1 rounded-md border border-white/15 px-2 text-xs font-semibold text-white/75 transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-40">Weiter <ChevronRight className="h-3.5 w-3.5" /></button></div></nav> : null}</section>
           </>}
         </> : loading && !error ? <p className="py-12 text-center text-sm text-white/60">Technische Ereignisse werden geladen …</p> : null}
       </div>
