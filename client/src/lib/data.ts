@@ -129,7 +129,7 @@ export const WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entert
 export const SALON_ROSIE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438";
 
 // Direkte Stage-Shop-Deeplinks für sichtbare Ticket-CTAs, Angebote und Termine.
-// MJ, KDL, ZIZ, Tarzan, TINA, Tanz der Vampire, & JULIA, Salon Rosie, Eiskönigin und Wir sind am Leben sind die bewusst freigegebenen Ausnahmen: Auch ihre Textlinks
+// MJ, KDL, ZIZ, Tarzan, TINA, Der Teufel trägt Prada, Tanz der Vampire, & JULIA, Salon Rosie, Eiskönigin und Wir sind am Leben sind die bewusst freigegebenen Ausnahmen: Auch ihre Textlinks
 // führen über die bereitgestellten, getrackten Stage-Produktseiten.
 export const MJ_STAGE_TEXT_LINK_URL = MJ_STAGE_SHOW_PAGE_URL;
 export const EISKOENIGIN_STAGE_TEXT_LINK_URL = EISKOENIGIN_STAGE_SHOW_PAGE_URL;
@@ -138,7 +138,7 @@ export const ZIZ_STAGE_TEXT_LINK_URL = ZIZ_STAGE_SHOW_PAGE_URL;
 export const TINA_STAGE_TEXT_LINK_URL = TINA_STAGE_SHOW_PAGE_URL;
 export const UND_JULIA_STAGE_TEXT_LINK_URL = UND_JULIA_STAGE_SHOW_PAGE_URL;
 export const TARZAN_STAGE_TEXT_LINK_URL = TARZAN_STAGE_SHOW_PAGE_URL;
-export const PRADA_STAGE_TEXT_LINK_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416";
+export const PRADA_STAGE_TEXT_LINK_URL = PRADA_STAGE_SHOW_PAGE_URL;
 export const TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL = TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL;
 export const WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL = WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL;
 export const SALON_ROSIE_STAGE_TEXT_LINK_URL = SALON_ROSIE_STAGE_SHOW_PAGE_URL;

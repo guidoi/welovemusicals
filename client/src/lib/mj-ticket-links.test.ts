@@ -60,22 +60,16 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     expect(ticketPaths(koenigDerLoewen)).toEqual(Array(6).fill(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL));
   });
 
-  it("trennt bei den weiteren gelieferten Stage-Shows die Landingpage vom Ticketshop", () => {
-    const stageLinkCases = [
-      ["der-teufel-traegt-prada-das-musical", PRADA_STAGE_SHOW_PAGE_URL, PRADA_STAGE_TEXT_LINK_URL],
-    ] as const;
+  it("verwendet bei Der Teufel trägt Prada die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const prada = getMusicalBySlug("der-teufel-traegt-prada-das-musical");
 
-    expect(stageLinkCases.map(([, , shopLink]) => shopLink)).toEqual([
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149416",
-    ]);
-
-    for (const [slug, showPageLink, shopLink] of stageLinkCases) {
-      const musical = getMusicalBySlug(slug);
-
-      expect(musical?.keyvisualLink).toBe(showPageLink);
-      expect(ticketPaths(musical)).toEqual(Array(6).fill(shopLink));
-      expect(createAwinLink(shopLink)).toBe(shopLink);
-    }
+    expect(PRADA_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414",
+    );
+    expect(PRADA_STAGE_TEXT_LINK_URL).toBe(PRADA_STAGE_SHOW_PAGE_URL);
+    expect(prada?.keyvisualLink).toBe(PRADA_STAGE_SHOW_PAGE_URL);
+    expect(ticketPaths(prada)).toEqual(Array(6).fill(PRADA_STAGE_SHOW_PAGE_URL));
+    expect(createAwinLink(PRADA_STAGE_TEXT_LINK_URL)).toBe(PRADA_STAGE_SHOW_PAGE_URL);
   });
 
   it("verwendet bei ZIZ die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {

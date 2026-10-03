@@ -7,7 +7,7 @@ import {
 } from "./data";
 
 describe("TINA – Das Tina Turner Musical", () => {
-  it("enthält die bestätigten Hamburg-Produktionsdaten, die Showseite am Keyvisual und den Shop an den CTAs", () => {
+  it("enthält die bestätigten Hamburg-Produktionsdaten und die Produktseite an Keyvisual sowie CTAs", () => {
     const tina = getMusicalBySlug("tina-das-tina-turner-musical");
 
     expect(tina).toBeDefined();

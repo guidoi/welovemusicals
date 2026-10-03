@@ -238,25 +238,20 @@ describe("Affiliate-Link-Zuordnung", () => {
     ]).toEqual(Array(7).fill(EISKOENIGIN_STAGE_SHOW_PAGE_URL));
   });
 
-  it("trennt bei den weiteren Stage-Shows die Keyvisual-Landingpage von Ticket-CTA und Termin", () => {
-    const expectations = {
-      "teufel-traegt-prada": { showPageLink: PRADA_STAGE_SHOW_PAGE_URL, shopLink: PRADA_STAGE_TEXT_LINK_URL },
-    } as const;
+  it("verwendet bei Der Teufel trägt Prada die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {
+    const prada = musicals.find((musical) => musical.id === "teufel-traegt-prada");
 
-    for (const [id, { showPageLink, shopLink }] of Object.entries(expectations)) {
-      const musical = musicals.find((entry) => entry.id === id);
-
-      expect(musical, `Musical ${id} muss vorhanden sein`).toBeDefined();
-      expect(musical?.keyvisualLink).toBe(showPageLink);
-      expect([
-        musical?.ticketCtaUrl,
-        musical?.eventimUrl,
-        musical?.awinHeroUrl,
-        musical?.awinStickyUrl,
-        musical?.awinBoxUrl,
-        ...(musical?.tourDates ?? []).map((date) => date.eventimUrl),
-      ]).toEqual(Array(6).fill(shopLink));
-    }
+    expect(prada).toBeDefined();
+    expect(PRADA_STAGE_TEXT_LINK_URL).toBe(PRADA_STAGE_SHOW_PAGE_URL);
+    expect([
+      prada?.keyvisualLink,
+      prada?.ticketCtaUrl,
+      prada?.eventimUrl,
+      prada?.awinHeroUrl,
+      prada?.awinStickyUrl,
+      prada?.awinBoxUrl,
+      ...(prada?.tourDates ?? []).map((date) => date.eventimUrl),
+    ]).toEqual(Array(7).fill(PRADA_STAGE_SHOW_PAGE_URL));
   });
 
   it("verwendet bei Tarzan die freigegebene Stage-Produktseite auch für alle Text-CTAs und Termine", () => {

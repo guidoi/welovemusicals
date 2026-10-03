@@ -1006,3 +1006,8 @@
 
 ## Drei Haselnüsse für Aschenbrödel – Veranstalter-FAQ – Oktober 2026
 - [x] Neue FAQ ergänzt: **ShowSlot** veranstaltet die Nikolaus-Tour, **Bavaria Live Promotion** die Rosalie-Tour. Die Zuordnung ist regression-getestet und wird in FAQ-Schema sowie statischer SEO-Ausgabe geführt.
+
+## TINA und Der Teufel trägt Prada – Affiliate-Codeprüfung Oktober 2026
+- [x] Die gelieferten TINA-Kampagnen sind bereits exakt aktiv: 728 × 90 `g=26204070`, 300 × 250 `g=26204068`, Produktseitenlink `g=26204074`. Native CDN-Creatives, bewusst gewählte Platzierungen und consent-gesteuerte Impressionen bleiben unverändert.
+- [x] Die gelieferten Prada-Kampagnen sind ebenfalls bereits exakt aktiv: 728 × 90 `g=26185640`, 300 × 250 `g=26185638`. Die Text-/Ticketpfade einschließlich Hamburg-Termin führen nun ebenfalls über die ausdrücklich gelieferte Stage-Produktseite `g=26149414`; der bisherige Shop-Pfad `g=26149416` ist nicht mehr im aktiven Katalog verknüpft.
+- [x] Regressionen decken Bannergruppen, Formate, Produktseiten-Keyvisuals und sämtliche Text-/Ticket-/Terminpfade ab. 101 Testdateien / 348 Tests, TypeScript, Produktionsbuild, statische SEO-Ausgabe, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich; beide Seiten auf Desktop und Mobil ohne Cropping oder Platzierungsfehler geprüft.

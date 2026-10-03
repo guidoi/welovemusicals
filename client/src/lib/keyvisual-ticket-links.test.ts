@@ -54,7 +54,7 @@ describe("Keyvisual-Affiliate-Links", () => {
       const musical = getActiveMusicals().find((entry) => entry.id === id);
 
       expect(musical?.keyvisualLink).toBe(showPageLink);
-      if (["mj-musical", "tarzan", "koenig-der-loewen", "tina-das-musical", "ziz", "tanz-der-vampire", "und-julia", "salon-rosie", "eiskoenigin", "wir-sind-am-leben"].includes(id)) {
+      if (["mj-musical", "tarzan", "koenig-der-loewen", "tina-das-musical", "ziz", "teufel-traegt-prada", "tanz-der-vampire", "und-julia", "salon-rosie", "eiskoenigin", "wir-sind-am-leben"].includes(id)) {
         expect(musical?.eventimUrl).toBe(showPageLink);
       } else {
         expect(musical?.keyvisualLink).not.toBe(musical?.eventimUrl);
