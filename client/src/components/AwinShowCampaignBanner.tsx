@@ -82,6 +82,31 @@ export const AWIN_SHOW_CAMPAIGNS: readonly AwinShowCampaign[] = [
     },
   },
   {
+    musicalId: "fackjugoehte",
+    title: "Fack Ju Göhte – Das Musical",
+    partner: "eventim",
+    // Nach dem Chaos-Abschnitt und vor dem Kontext zur Auszeichnung.
+    wideDetailParagraphIndex: 3,
+    creatives: {
+      wide: createAwinCreative({
+        creativeId: "4568825",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/PGhNOeeTILmvQnrv.jpg",
+        width: 320,
+        height: 50,
+      }),
+      square: createAwinCreative({
+        creativeId: "4568821",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/EQwzPBnYGrQFUlxB.jpg",
+        width: 180,
+        height: 150,
+      }),
+    },
+  },
+  {
     musicalId: "dreihaselnuesse",
     title: "Drei Haselnüsse für Aschenbrödel",
     partner: "eventim",

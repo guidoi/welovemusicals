@@ -36,6 +36,27 @@ describe("AwinShowCampaignBanner", () => {
     expect(square).toContain('height="250"');
   });
 
+  it("keeps the supplied native Fack Ju Göhte creatives and Awin paths", () => {
+    const campaign = getAwinShowCampaign("fackjugoehte");
+    const wide = renderBanner("fackjugoehte", "wide");
+    const square = renderBanner("fackjugoehte", "square");
+
+    expect(campaign?.partner).toBe("eventim");
+    expect(campaign?.wideDetailParagraphIndex).toBe(3);
+    expect(campaign?.creatives.wide.clickUrl).toContain("s=4568825");
+    expect(campaign?.creatives.wide.impressionUrl).toContain("s=4568825");
+    expect(campaign?.creatives.wide.imageUrl).toContain("PGhNOeeTILmvQnrv.jpg");
+    expect(campaign?.creatives.square.clickUrl).toContain("s=4568821");
+    expect(campaign?.creatives.square.impressionUrl).toContain("s=4568821");
+    expect(campaign?.creatives.square.imageUrl).toContain("EQwzPBnYGrQFUlxB.jpg");
+    expect(wide).toContain('data-campaign-id="4568825"');
+    expect(wide).toContain('width="320"');
+    expect(wide).toContain('height="50"');
+    expect(square).toContain('data-campaign-id="4568821"');
+    expect(square).toContain('width="180"');
+    expect(square).toContain('height="150"');
+  });
+
   it("keeps the supplied Eventim creatives for Drei Haselnüsse", () => {
     const campaign = getAwinShowCampaign("dreihaselnuesse");
     const wide = renderBanner("dreihaselnuesse", "wide");
@@ -119,6 +140,7 @@ describe("AwinShowCampaignBanner", () => {
   it("contains every supplied Awin and ATG campaign pair", () => {
     expect(AWIN_SHOW_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "der-kleine-lord",
+      "fackjugoehte",
       "dreihaselnuesse",
       "gloeckner-von-notre-dame",
       "phantom-der-oper",

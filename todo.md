@@ -1048,3 +1048,9 @@
 - [x] Das gelieferte logo-freie Quadratmotiv außerhalb des Repos im DKL-Assetarchiv gesichert, verlustarm als 1280 × 1280 WebP aufbereitet und per öffentlicher CDN-URL eingebunden.
 - [x] DKL-Karte (`image`) und Detailseiten-Header (`heroImage`) verwenden nun dieselbe neue CDN-Quelle; das bisherige markenführende quadratische Keyvisual bleibt unverändert im Seitenfluss und verlinkt weiterhin über den bestehenden Awin-Textlink.
 - [x] CDN-Prüfung bestätigt HTTP 200 und `image/webp`; Desktop- und Mobilprüfung bestätigt das neue Motiv in Karte und Header. Keine Affiliate-, Pixel-, Consent- oder sonstigen Ticketpfade verändert.
+
+
+## Fack Ju Göhte – native Awin-Creatives Oktober 2026
+- [x] Die gelieferten FJG-Awin-Creatives `4568825` (320 × 50) und `4568821` (180 × 150) unverändert außerhalb des Repos gesichert und als native Werbemittel über öffentliche CDN-Quellen eingebunden.
+- [x] Das schmale Creative erscheint nach dem Abschnitt „Chaos, Lachen und jede Menge Musik“, das 180 × 150-Creative nach der Galerie. Klickziele und Impressionpfade verwenden `v=11388`, `q=492097`, `r=2865727` sowie jeweils die gelieferte Creative-ID.
+- [x] Browserprüfung bestätigt beide Motive auf Desktop und Mobil; ohne Affiliate-Einwilligung bleiben ihre Awin-Impression-Pixel ohne `src`. Bestehende FJG-Textlinks, Stadt-Deep-Links, Sale-Logik und Consent-Regeln bleiben unverändert.
