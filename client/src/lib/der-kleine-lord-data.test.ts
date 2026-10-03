@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import { getActiveMusicalsByCity, getMusicalBySlug } from "./data";
 
 const DKL_CDN_PREFIX = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/";
+const DKL_LOGO_FREE_CARD_AND_HERO = `${DKL_CDN_PREFIX}sMrkJMvPtRQdnlMJ.webp`;
+const DKL_BRANDED_KEYVISUAL = `${DKL_CDN_PREFIX}UARCYeGDkgcsgNrm.webp`;
 
 describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
   it("führt die Berliner Weltpremiere mit Spielzeit, Preis und direktem Awin-Ziel", () => {
@@ -44,12 +46,12 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
     expect(musical?.tourDates?.[0]?.eventimUrl).not.toContain("linkid=3666159");
   });
 
-  it("verwendet die gelieferten WebP-Motive und führt Uwe Kröger in der Detailgalerie", () => {
+  it("verwendet das logo-freie WebP-Motiv für Karte und Header und behält das Keyvisual bei", () => {
     const musical = getMusicalBySlug("der-kleine-lord");
 
-    expect(musical?.image).toBe(`${DKL_CDN_PREFIX}UARCYeGDkgcsgNrm.webp`);
-    expect(musical?.heroImage).toBe(`${DKL_CDN_PREFIX}iNtOfOSmUuVXFCre.webp`);
-    expect(musical?.keyvisual).toBe(`${DKL_CDN_PREFIX}UARCYeGDkgcsgNrm.webp`);
+    expect(musical?.image).toBe(DKL_LOGO_FREE_CARD_AND_HERO);
+    expect(musical?.heroImage).toBe(DKL_LOGO_FREE_CARD_AND_HERO);
+    expect(musical?.keyvisual).toBe(DKL_BRANDED_KEYVISUAL);
     expect(musical?.gallery).toEqual([
       expect.objectContaining({
         url: `${DKL_CDN_PREFIX}ZWCOQhljNRjcinLB.webp`,
