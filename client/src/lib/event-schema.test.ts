@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getMusicalBySlug } from "./data";
+import { getActiveMusicals, getMusicalBySlug } from "./data";
 import { getMusicalEventItemList, getMusicalEventSchemas } from "./event-schema";
 
 describe("maschinenlesbare Veranstaltungsdaten", () => {
@@ -21,7 +21,11 @@ describe("maschinenlesbare Veranstaltungsdaten", () => {
         name: "Stage Theater an der Elbe",
         address: { addressLocality: "Hamburg", addressCountry: "DE" },
       },
-      organizer: { "@type": "Organization", name: "Stage Entertainment" },
+      organizer: {
+        "@type": "Organization",
+        name: "Stage Entertainment",
+        url: "https://www.stage-entertainment.de",
+      },
       offers: {
         "@type": "Offer",
         url: "https://welovemusicals.com/musical/mj-das-michael-jackson-musical",
@@ -60,5 +64,21 @@ describe("maschinenlesbare Veranstaltungsdaten", () => {
     const [event] = getMusicalEventSchemas(tina!, { today: "2026-10-02" });
     expect(event).toBeDefined();
     expect(event).not.toHaveProperty("offers");
+  });
+
+  it("liefert für alle aktiven Events eine offizielle Veranstalterdomain", () => {
+    const events = getActiveMusicals().flatMap((musical) => getMusicalEventSchemas(musical, {
+      priceFrom: musical.priceFrom,
+      today: "2026-10-03",
+    }));
+
+    expect(events.length).toBeGreaterThan(0);
+    events.forEach((event) => {
+      expect(event.organizer).toMatchObject({
+        "@type": "Organization",
+        name: expect.any(String),
+        url: expect.stringMatching(/^https:\/\//),
+      });
+    });
   });
 });

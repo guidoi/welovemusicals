@@ -13,6 +13,8 @@ const PROVIDER_URLS: Record<string, string> = {
   "Trinity Concerts": "https://www.trinityconcerts.de",
   "Bavaria Live Promotion": "https://www.bavaria-live.de",
   "Schmidts Tivoli": "https://www.schmidts-tivoli.de",
+  // Offizielle Plattform der von Plate & Sommer entwickelten Berliner Musicals.
+  "Plate & Sommer": "https://musicalsberlin.com/",
 };
 
 export function getCountryForCity(city: string): "DE" | "AT" | "CH" {
@@ -62,6 +64,12 @@ export type MusicalEventSchemaOptions = {
 /**
  * Builds one factual event object per city and run. Event and offer URLs deliberately
  * point to the canonical We Love Musicals detail page, never to an affiliate redirect.
+ *
+ * `Offer.validFrom` is intentionally omitted for the standard ticket offers: Google
+ * requires it only for date-restricted offers, and the catalog has no verified ticket
+ * sales-start date for the current, generally available base prices. Inventing one
+ * merely to silence a non-critical Search Console recommendation would make the schema
+ * less truthful.
  */
 export function getMusicalEventSchema(
   musical: Musical,
