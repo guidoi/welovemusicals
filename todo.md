@@ -985,3 +985,9 @@
 - [x] Bestehende Unsplash-Stadtbilder fordern nun mit `auto=format` ein modernes Browserformat an. Native Affiliate-Banner bleiben bewusst unangetastet, damit die exakt gelieferten Creatives, Formate, Abmessungen und Kampagnenplatzierungen unverändert bleiben.
 - [x] Karten, Keyvisuals, Galerie und Hero verwenden asynchrones Bilddecoding; Karten und Keyvisuals erhalten passende `sizes`-Hinweise. 15 repräsentative Seiten mit aktualisierten Assets wurden jeweils als Desktop- und Mobilansicht geprüft.
 - [x] Dauerhafter Standard ergänzt: `scripts/prepare-web-image.py` erzeugt neue WebP-Assets rollenbezogen, `pnpm run test:image-standard` sperrt alte Bildformate im aktiven Katalog und läuft automatisch im Produktionsbuild. Vollständige Test-/Typ-/Build-/Diff-Prüfung erfolgreich.
+
+## Drei Haselnüsse für Aschenbrödel – Tour und SEO Oktober 2026
+- [x] Detailtexte, SEO-Titel, Meta-Beschreibung, Fakten und FAQs auf Basis der gelieferten Presseinformationen zur Nikolaus- und Rosalie-Tour überarbeitet. Die Seite kommuniziert jetzt nachvollziehbar beide Ensembles, mehr als 70 Städte sowie den bestätigten Zeitraum 15. Oktober 2026 bis 24. Februar 2027.
+- [x] Die Tour- und Städteübersicht enthält 85 bestätigte Spieltage in 71 Städten. Ergänzt bzw. korrigiert sind unter anderem Hamburg (27.–28. Januar 2027), Mannheim (25.–26. November 2026), Würzburg, Zweibrücken, Weiden, Halle, Leipzig, Stuttgart, Wien, Zwickau und Hameln (korrekt 14. November 2026).
+- [x] Alle Haupt- und Stadt-CTAs bleiben direkte Awin/Eventim-Links mit Publisher-Kennung `2865727`, individuellen `clickref`-Werten und Eventim-Zieladresse. Keine Trackinglogik, Partnerkennung oder Consent-Gating wurde geändert.
+- [x] Google Sheets und die lokale Preis-API bestätigen für `dreihaselnuesse` `40,49 €`, ohne Sale. Statische SEO-Ausgabe enthält 85 MusicEvent-Objekte, 71 Spielorte, korrekten ShowSlot-Organisator und den Preis `40.49`.
