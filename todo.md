@@ -1054,3 +1054,9 @@
 - [x] Die gelieferten FJG-Awin-Creatives `4568825` (320 × 50) und `4568821` (180 × 150) unverändert außerhalb des Repos gesichert und als native Werbemittel über öffentliche CDN-Quellen eingebunden.
 - [x] Das schmale Creative erscheint nach dem Abschnitt „Chaos, Lachen und jede Menge Musik“, das 180 × 150-Creative nach der Galerie. Klickziele und Impressionpfade verwenden `v=11388`, `q=492097`, `r=2865727` sowie jeweils die gelieferte Creative-ID.
 - [x] Browserprüfung bestätigt beide Motive auf Desktop und Mobil; ohne Affiliate-Einwilligung bleiben ihre Awin-Impression-Pixel ohne `src`. Bestehende FJG-Textlinks, Stadt-Deep-Links, Sale-Logik und Consent-Regeln bleiben unverändert.
+
+
+## Der Kleine Lord – Uwe-Kröger-Pressefoto Oktober 2026
+- [x] Das bereits eingebundene Uwe-Kröger-Pressefoto ist nach dem Abschnitt „Uwe Kröger als Graf von Dorincourt“ direkt in den oberen DKL-Fließtext verschoben.
+- [x] Die DKL-Galerie ist vorerst deaktiviert; die Detailseite zeigt dadurch keinen Bereich „Live-Momente“ mehr. Das separate markenführende Keyvisual, Header, Ticketpfade und Awin-Creatives bleiben unverändert.
+- [x] Desktop- und Mobilprüfung bestätigt das Foto im gewünschten Textkontext sowie das Ausblenden der Galerie.

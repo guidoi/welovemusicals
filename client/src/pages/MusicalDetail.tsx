@@ -434,6 +434,19 @@ export default function MusicalDetail() {
                               <AovoCampaignBanner campaign={inlineDescriptionCampaign} />
                             </div>
                           )}
+                        {musical.inlineDetailImage && musical.inlineDetailImageAfterParagraphIndex === i && (
+                          <figure className="mx-auto my-8 w-full max-w-2xl overflow-hidden rounded-sm border border-border/50 bg-card shadow-lg">
+                            <img
+                              data-testid="inline-detail-image"
+                              src={musical.inlineDetailImage.url}
+                              alt={musical.inlineDetailImage.alt}
+                              className="block h-auto w-full"
+                              loading="lazy"
+                              decoding="async"
+                              sizes="(min-width: 1024px) 66vw, 100vw"
+                            />
+                          </figure>
+                        )}
                       </div>
                       );
                     })}

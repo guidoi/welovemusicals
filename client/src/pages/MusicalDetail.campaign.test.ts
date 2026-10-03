@@ -78,6 +78,18 @@ describe("MJ-Kampagnenplatzierung", () => {
     expect(musicalDetailSource).toContain('<div className="hidden lg:block">\n                              <AwinShowCampaignBanner campaign={awinShowCampaign} format="wide" />');
   });
 
+  it("rendert ein konfiguriertes DKL-Pressefoto im oberen Fließtext statt eine leere Galerie vorauszusetzen", () => {
+    const description = musicalDetailSource.indexOf("musical.detailDescription.split('\\n\\n').map");
+    const inlineImage = musicalDetailSource.indexOf("musical.inlineDetailImage && musical.inlineDetailImageAfterParagraphIndex === i");
+    const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
+
+    expect(description).toBeGreaterThan(-1);
+    expect(inlineImage).toBeGreaterThan(description);
+    expect(gallery).toBeGreaterThan(inlineImage);
+    expect(musicalDetailSource).toContain('data-testid="inline-detail-image"');
+    expect(musicalDetailSource).toContain("src={musical.inlineDetailImage.url}");
+  });
+
   it("bewahrt die definierte Reihenfolge von Keyvisual und Trailer auf Desktop und Mobil", () => {
     const desktopKeyvisual = musicalDetailSource.indexOf("{/* Keyvisual – Desktop linke Spalte");
     const mobileTrailer = musicalDetailSource.indexOf('data-testid="mobile-inline-trailer"');

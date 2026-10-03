@@ -81,6 +81,8 @@ export interface Musical {
   tourDates?: MusicalTourDate[];
   quotes?: MusicalQuote[];
   gallery?: MusicalGalleryImage[];
+  inlineDetailImage?: MusicalGalleryImage; // Einzelnes Pressefoto innerhalb des oberen Fließtexts
+  inlineDetailImageAfterParagraphIndex?: number; // 0-basiert nach welchem Beschreibungsabsatz es erscheint
   showFacts?: MusicalShowFact[];
   storyHeadline?: string; // Headline für Story-Bereich
   storyText?: string; // Story-Text für Detail-Seite
@@ -599,9 +601,8 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Berlin", venue: "BlueMax Theater am Potsdamer Platz", startDate: "2026-11-13", endDate: "2026-12-30", premiereDate: "2026-11-13", eventimUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/") },
     ],
-    gallery: [
-      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZWCOQhljNRjcinLB.webp", alt: "Uwe Kröger als Graf von Dorincourt in Der Kleine Lord – Das Musical" },
-    ],
+    inlineDetailImage: { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZWCOQhljNRjcinLB.webp", alt: "Uwe Kröger als Graf von Dorincourt in Der Kleine Lord – Das Musical" },
+    inlineDetailImageAfterParagraphIndex: 4,
     showFacts: [
       { label: "Spielzeit", value: "13. November bis 30. Dezember 2026" },
       { label: "Spielort", value: "BlueMax Theater am Potsdamer Platz, Berlin" },

@@ -52,12 +52,14 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
     expect(musical?.image).toBe(DKL_LOGO_FREE_CARD_AND_HERO);
     expect(musical?.heroImage).toBe(DKL_LOGO_FREE_CARD_AND_HERO);
     expect(musical?.keyvisual).toBe(DKL_BRANDED_KEYVISUAL);
-    expect(musical?.gallery).toEqual([
+    expect(musical?.inlineDetailImage).toEqual(
       expect.objectContaining({
         url: `${DKL_CDN_PREFIX}ZWCOQhljNRjcinLB.webp`,
         alt: expect.stringContaining("Uwe Kröger"),
       }),
-    ]);
+    );
+    expect(musical?.inlineDetailImageAfterParagraphIndex).toBe(4);
+    expect(musical?.gallery).toBeUndefined();
   });
 
   it("ist als Familienmusical auf der Berliner Stadtseite und im Stadtfilter aktiv", () => {
