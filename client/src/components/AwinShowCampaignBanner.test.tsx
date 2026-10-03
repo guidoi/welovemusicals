@@ -19,6 +19,23 @@ function renderBanner(musicalId: string, format: "wide" | "square") {
 }
 
 describe("AwinShowCampaignBanner", () => {
+  it("keeps the supplied Eventim creatives for Der Kleine Lord at native dimensions", () => {
+    const campaign = getAwinShowCampaign("der-kleine-lord");
+    const wide = renderBanner("der-kleine-lord", "wide");
+    const square = renderBanner("der-kleine-lord", "square");
+
+    expect(campaign?.partner).toBe("eventim");
+    expect(campaign?.wideDetailParagraphIndex).toBe(2);
+    expect(campaign?.creatives.wide.clickUrl).toContain("s=3663000");
+    expect(campaign?.creatives.square.clickUrl).toContain("s=3662990");
+    expect(wide).toContain('data-campaign-id="3663000"');
+    expect(wide).toContain('width="728"');
+    expect(wide).toContain('height="90"');
+    expect(square).toContain('data-campaign-id="3662990"');
+    expect(square).toContain('width="300"');
+    expect(square).toContain('height="250"');
+  });
+
   it("keeps the supplied Eventim creatives for Drei Haselnüsse", () => {
     const campaign = getAwinShowCampaign("dreihaselnuesse");
     const wide = renderBanner("dreihaselnuesse", "wide");
@@ -101,6 +118,7 @@ describe("AwinShowCampaignBanner", () => {
 
   it("contains every supplied Awin and ATG campaign pair", () => {
     expect(AWIN_SHOW_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
+      "der-kleine-lord",
       "dreihaselnuesse",
       "gloeckner-von-notre-dame",
       "phantom-der-oper",

@@ -57,6 +57,31 @@ const createAwinCreative = ({
  */
 export const AWIN_SHOW_CAMPAIGNS: readonly AwinShowCampaign[] = [
   {
+    musicalId: "der-kleine-lord",
+    title: "Der Kleine Lord – Das Musical",
+    partner: "eventim",
+    // Nach dem vollständigen Abschnitt zu Ceddies Reise und vor dem Cast-Abschnitt.
+    wideDetailParagraphIndex: 2,
+    creatives: {
+      wide: createAwinCreative({
+        creativeId: "3663000",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/uVQHbJxsGeZwpXYA.jpeg",
+        width: 728,
+        height: 90,
+      }),
+      square: createAwinCreative({
+        creativeId: "3662990",
+        merchantId: "11388",
+        queryId: "492097",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/AkVpArEaKdeKaAcN.jpeg",
+        width: 300,
+        height: 250,
+      }),
+    },
+  },
+  {
     musicalId: "dreihaselnuesse",
     title: "Drei Haselnüsse für Aschenbrödel",
     partner: "eventim",

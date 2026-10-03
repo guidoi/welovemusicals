@@ -76,8 +76,9 @@ async function main() {
   const hamburg = getCityBySlug("hamburg");
   const berlin = getCityBySlug("berlin");
   const fackJuGoehte = getMusicalBySlug("fack-ju-goehte");
+  const derKleineLord = getMusicalBySlug("der-kleine-lord");
   const mj = getMusicalBySlug("mj-das-michael-jackson-musical");
-  if (!hamburg || !berlin || !fackJuGoehte || !mj) throw new Error("Expected reference pages are not active");
+  if (!hamburg || !berlin || !fackJuGoehte || !derKleineLord || !mj) throw new Error("Expected reference pages are not active");
 
   const hamburgSeo = getCitySeo(hamburg, 6);
   const berlinSeo = getCitySeo(berlin, 5);
@@ -129,6 +130,16 @@ async function main() {
       `<title>${escapeHtml(berlinSeo.title)}</title>`,
       '<h2>Musicalabend in Berlin planen</h2>',
       'href="/musical/wir-sind-am-leben"',
+      'href="/musical/der-kleine-lord"',
+    ]),
+    assertPage("musical/der-kleine-lord", [
+      `<h1>${escapeHtml(derKleineLord.title)}</h1>`,
+      'data-schema-page="musical"',
+      'href="/stadt/berlin"',
+      'BlueMax Theater am Potsdamer Platz',
+      '2026-11-13',
+      '2026-12-30',
+      'Uwe Kröger',
     ]),
     assertPage("musical/fack-ju-goehte", [
       `<h1>${escapeHtml(fackJuGoehte.title)}</h1>`,

@@ -9,6 +9,7 @@ const IMAGE_CREDIT_HEADING_BY_MUSICAL_ID: Record<string, string> = {
   dracula: "DRACULA – DAS MUSICAL",
   moulinrouge: "MOULIN ROUGE! DAS MUSICAL",
   "phantom-der-oper": "DAS PHANTOM DER OPER",
+  "der-kleine-lord": "DER KLEINE LORD – DAS MUSICAL",
   "fack-ju-goehte": "FACK JU GÖHTE – DAS MUSICAL",
   dreihaselnuesse: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL",
   rapunzel: "RAPUNZEL – DAS MÄRCHENHAFTE MUSICAL",

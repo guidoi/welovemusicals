@@ -18,7 +18,7 @@ describe("Keyvisual-Affiliate-Links", () => {
   it("verbindet jedes aktive Keyvisual mit einem sicheren HTTPS-Partnerlink", () => {
     const activeMusicals = getActiveMusicals();
 
-    expect(activeMusicals).toHaveLength(20);
+    expect(activeMusicals).toHaveLength(21);
 
     for (const musical of activeMusicals) {
       expect(musical.keyvisual, `${musical.title} benötigt ein Keyvisual`).toBeTruthy();

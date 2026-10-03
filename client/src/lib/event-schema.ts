@@ -7,6 +7,7 @@ const PROVIDER_URLS: Record<string, string> = {
   "ATG Touring": "https://www.atgtickets.de",
   "Stage Entertainment": "https://www.stage-entertainment.de",
   "ShowSlot": "https://www.showslot.de",
+  "ShowSlot Touring GmbH": "https://showslot.com",
   "Limelight Live Entertainment": "https://www.limelight-entertainment.de",
   "Semmel Concerts": "https://www.semmel.de",
   "Theater Liberi": "https://www.theater-liberi.de",

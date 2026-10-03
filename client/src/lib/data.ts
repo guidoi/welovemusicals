@@ -568,6 +568,67 @@ export const musicals: Musical[] = [
     ],
   },
   {
+    id: "der-kleine-lord",
+    experienceCategory: "familie-maerchen-magie",
+    slug: "der-kleine-lord",
+    title: "DER KLEINE LORD",
+    subtitle: "Das Musical",
+    provider: "ShowSlot Touring GmbH",
+    priceFrom: "59,99",
+    category: "kinder",
+    categories: ["fester-standort", "familie", "kinder"],
+    city: "Berlin",
+    cities: ["Berlin"],
+    venue: "BlueMax Theater am Potsdamer Platz",
+    venuePerCity: { Berlin: "BlueMax Theater am Potsdamer Platz" },
+    description: "Der Roman-Weltbestseller als großes Weihnachtsmusical: Ceddie Little Lord Fauntleroy verändert im BlueMax Theater Berlin das Herz seines strengen Großvaters. Tickets ab 59,99 €.",
+    detailHeadline: "EIN WEIHNACHTSWUNDER FÜR DIE GANZE FAMILIE",
+    detailDescription: "Ab 13. November 2026 feiert DER KLEINE LORD – DAS MUSICAL im BlueMax Theater am Potsdamer Platz Weltpremiere. Die berührende Geschichte um Ceddie, Lord Fauntleroy und seinen zunächst unnahbaren Großvater wird mit neuer Musik, großen Bildern und bewegenden Choreografien zum besonderen Erlebnis in der Adventszeit.\n\n**VON NEW YORK INS VIKTORIANISCHE ENGLAND**\n\nCeddie wächst unbeschwert mit seiner Mutter in New York auf. Als sich herausstellt, dass er der alleinige Erbe eines englischen Adelsbesitzes ist, beginnt für ihn eine Reise in eine völlig neue Welt. Als kleiner Lord Fauntleroy begegnet er seinem Großvater, dem stolzen Grafen von Dorincourt – und gewinnt dessen verhärtetes Herz mit Wärme, Mut und Offenheit.\n\n**UWE KRÖGER ALS GRAF VON DORINCOURT**\n\nMusicalstar Uwe Kröger übernimmt vom 13. November bis 16. Dezember 2026 die Rolle des Grafen von Dorincourt. Mit ihm erzählt die Weltpremiere eine Geschichte über Familie, Versöhnung und die Kraft der Liebe – festlich, emotional und passend für gemeinsame Winterabende in Berlin.\n\nDie Musik stammt von Marian Lux, Buch und Liedtexte von Constanze Behrends sowie Stephan Kanyar. Creative Development verantworten Stephan Huber und Leonie Webb. So wird der Klassiker als modernes Musical mit großen Gefühlen für Kinder, Eltern und Großeltern neu erlebbar.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UARCYeGDkgcsgNrm.webp",
+    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/iNtOfOSmUuVXFCre.webp",
+    keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UARCYeGDkgcsgNrm.webp",
+    keyvisualLink: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/"),
+    ticketCtaUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/"),
+    awinHeroUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/"),
+    awinStickyUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/"),
+    awinBoxUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/"),
+    eventimUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/"),
+    featured: false,
+    tags: ["Berlin", "Familie", "Weihnachten"],
+    tourDates: [
+      { city: "Berlin", venue: "BlueMax Theater am Potsdamer Platz", startDate: "2026-11-13", endDate: "2026-12-30", premiereDate: "2026-11-13", eventimUrl: createAwinLink("https://www.eventim.de/artist/der-kleine-lord-das-musical/") },
+    ],
+    gallery: [
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZWCOQhljNRjcinLB.webp", alt: "Uwe Kröger als Graf von Dorincourt in Der Kleine Lord – Das Musical" },
+    ],
+    showFacts: [
+      { label: "Spielzeit", value: "13. November bis 30. Dezember 2026" },
+      { label: "Spielort", value: "BlueMax Theater am Potsdamer Platz, Berlin" },
+      { label: "Showdauer", value: "Ca. 2 Stunden 30 Minuten inklusive Pause" },
+      { label: "Sprache", value: "Alle Songs und Dialoge auf Deutsch" },
+      { label: "Tickets ab", value: "59,99 € zzgl. Vorverkaufsgebühren" },
+      { label: "Besonderer Gast", value: "Uwe Kröger als Graf von Dorincourt bis 16. Dezember 2026" },
+    ],
+    uspItems: [
+      { icon: "Heart", title: "Große Gefühle zur Weihnachtszeit", text: "Eine Geschichte über Familie, Versöhnung und Herzenswärme" },
+      { icon: "Star", title: "Weltpremiere in Berlin", text: "Exklusiv im BlueMax Theater am Potsdamer Platz" },
+      { icon: "Music", title: "Neue Musicalmusik", text: "Komponiert von Marian Lux" },
+      { icon: "Users", title: "Für Generationen", text: "Ein gemeinsamer Musicalabend für Kinder, Eltern und Großeltern" },
+    ],
+    storyHeadline: "WIE EIN JUNGE EIN HERZ VERÄNDERT",
+    storyText: "Der kleine Ceddie wird unerwartet zum Erben eines englischen Adelsbesitzes. Der Umzug von New York nach England stellt sein Leben auf den Kopf – und führt ihn direkt zu seinem Großvater, dem gefürchteten Grafen von Dorincourt.\n\nWas als Begegnung zweier vollkommen unterschiedlicher Welten beginnt, wird zu einer Geschichte über Verständnis und Nähe. Mit seiner unverstellten Art bringt Ceddie nach und nach Licht in das Schloss und in das Leben eines Mannes, der längst verlernt hatte, Liebe zuzulassen.",
+    faqItems: [
+      { question: "Wo wird Der Kleine Lord – Das Musical gespielt?", answer: "Die Weltpremiere spielt vom 13. November bis 30. Dezember 2026 im BlueMax Theater am Potsdamer Platz in Berlin." },
+      { question: "Wer spielt den Grafen von Dorincourt?", answer: "Uwe Kröger übernimmt die Rolle des Grafen von Dorincourt vom 13. November bis 16. Dezember 2026." },
+      { question: "Wie lange dauert Der Kleine Lord – Das Musical?", answer: "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive einer Pause." },
+      { question: "In welcher Sprache wird gespielt?", answer: "Alle Songs und Dialoge werden auf Deutsch aufgeführt." },
+      { question: "Ab welchem Preis sind Tickets erhältlich?", answer: "Tickets sind ab 59,99 € zuzüglich Vorverkaufsgebühren erhältlich." },
+      { question: "Wer veranstaltet die Produktion?", answer: "Veranstalter der Weltpremiere ist ShowSlot Touring GmbH." },
+    ],
+    seoTitle: "Der Kleine Lord – Das Musical Tickets 2026 | Berlin",
+    seoDescription: "Der Kleine Lord – Das Musical feiert vom 13. November bis 30. Dezember 2026 Weltpremiere im BlueMax Theater Berlin. Mit Uwe Kröger. Tickets ab 59,99 €.",
+  },
+  {
     id: "fackjugoehte",
     experienceCategory: "pop-rock-filmhits",
     slug: "fack-ju-goehte",
@@ -2130,7 +2191,7 @@ export const cities: City[] = [
     name: "Berlin",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-berlin-isrpM3SJSsQbjuVy58kX5V.webp",
     description: "Berlin lockt mit dem Theater des Westens und dem BlueMax Theater. Kultur, Musical und zahlreiche Tournee-Gastspiele vereint in einer Stadt.",
-    musicalCount: 5,
+    musicalCount: 6,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-berlin&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252555133%26orderBy%3DRecommendations",
   },
 
@@ -2341,7 +2402,7 @@ export function getMusicalBySlug(slug: string, catalog: Musical[] = musicals): M
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "der-kleine-lord", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical"];
 
 export function getActiveMusicals(catalog: Musical[] = musicals): Musical[] {
   return catalog.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));

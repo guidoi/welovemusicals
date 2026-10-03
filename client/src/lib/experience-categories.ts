@@ -89,6 +89,7 @@ export const EXPERIENCE_CATEGORY_BY_MUSICAL_ID: Record<string, ExperienceCategor
   fackjugoehte: "pop-rock-filmhits",
   tarzan: "blockbuster-spektakel",
   "schoene-und-das-biest": "familie-maerchen-magie",
+  "der-kleine-lord": "familie-maerchen-magie",
   dreihaselnuesse: "familie-maerchen-magie",
   rapunzel: "familie-maerchen-magie",
   "teufel-traegt-prada": "besondere-geschichten",

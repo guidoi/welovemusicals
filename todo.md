@@ -1029,3 +1029,11 @@
 - [x] Die vollständige neue Fotoserie ersetzt die bisherige FJG-Galerie. Die Galerie begrenzt Bildreihen nicht länger auf sechs Fotos; bei mehr als zehn Fotos bleiben die Pfeilsteuerung und Lazy-Loading aktiv, die optisch überladene Punktnavigation wird ausgeblendet.
 - [x] Alle 23 neuen CDN-Bilder liefern HTTP 200 mit `image/webp`. Browserprüfung bestätigt 21 Galerieelemente, das erste und letzte neue Motiv sowie das Nachladen bis zum letzten Bild. Bildnachweis im Impressum (`© Nico Moser`) war bereits korrekt hinterlegt.
 - [x] 103 Testdateien / 353 Tests, TypeScript, Produktionsbuild, Bildstandard, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich; FJG-Detailseite auf Desktop und Mobil geprüft.
+
+## Der Kleine Lord – neues Musical in Berlin Oktober 2026
+- [x] **DER KLEINE LORD – DAS MUSICAL** als aktiven Berliner Eintrag angelegt: Weltpremiere im BlueMax Theater am Potsdamer Platz vom **13.11. bis 30.12.2026**, Tickets ab **59,99 €**, Familien-/Weihnachts-Erlebniswelt, vollständige SEO-, FAQ-, Event- und Breadcrumb-Daten.
+- [x] Alle Haupt-CTAs, Keyvisual und Berlin-Termin verwenden einen direkten Awin/Eventim-Link zur offiziellen Showseite; mangels eines separaten Textlink-Werbemittels wird der vorhandene, direkte Awin-Wrapper verwendet. Keine Awin-, Banner-, Pixel- oder Consent-Logik außerhalb des neuen Showeintrags geändert.
+- [x] Geliefertes quadratisches Keyvisual sowie das breite Headermotiv verlustfrei als WebP ins öffentliche CDN integriert. Das Uwe-Kröger-Pressefoto ist als „Live-Moment“ an geeigneter Stelle in der Detailgalerie eingebunden. Bildmaterial wird im Impressum als über ShowSlot Touring GmbH bereitgestelltes Pressematerial ausgewiesen.
+- [x] Native Eventim-Creatives eingebunden: `s=3663000` (728 × 90) nach dem abgeschlossenen ersten Erzählabschnitt und `s=3662990` (300 × 250) nach der Galerie vor den Wissensdaten. Impressions bleiben ausschließlich nach Affiliate-Einwilligung aktiv.
+- [x] Berlin-Stadtseite, Stadtfilter, Teaserzählung, Sitemap und statische Ausgabe enthalten die neue Show automatisch. Desktop- und Mobilprüfung zeigt alle Medien, Banner und die Berliner Kachel korrekt.
+- [ ] Preisquelle: bitte im Google Sheet die Zeile mit dem Kürzel **`der-kleine-lord`** sowie Preis **59,99** (Sale: Nein) ergänzen. Der Katalogfallback zeigt bis dahin bereits 59,99 €.

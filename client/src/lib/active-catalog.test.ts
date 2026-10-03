@@ -29,6 +29,15 @@ describe("aktiver Musicalkatalog", () => {
     expect(hamburg?.musicalCount).toBe(hamburgIds.length);
   });
 
+  it("aktiviert Der Kleine Lord für Berlin und aktualisiert die Berliner Teaserzählung", () => {
+    const berlin = cities.find((city) => city.slug === "berlin");
+    const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
+
+    expect(ACTIVE_MUSICAL_IDS).toContain("der-kleine-lord");
+    expect(berlinIds).toContain("der-kleine-lord");
+    expect(berlin?.musicalCount).toBe(berlinIds.length);
+  });
+
   it("führt Aschenbrödel über aktive Tourtermine auf relevanten Stadtseiten und in Stadtfiltern", () => {
     const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
     const hamburgIds = getActiveMusicalsByCity("Hamburg").map((musical) => musical.id);
