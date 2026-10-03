@@ -3,6 +3,7 @@ import {
   BarChart3,
   CalendarClock,
   CheckCircle2,
+  Download,
   ExternalLink,
   RefreshCcw,
   ShieldCheck,
@@ -109,6 +110,8 @@ export default function AffiliateLinkFallbackAdmin() {
     return Array.from(totals.entries()).sort((a, b) => b[1] - a[1]);
   }, [report]);
 
+  const csvExportUrl = `/api/admin/affiliate-link-fallback-events?days=${period}&format=csv`;
+
   return (
     <main className="min-h-screen bg-[#111018] px-4 py-7 text-white md:px-8 md:py-10">
       <div className="mx-auto max-w-6xl space-y-6">
@@ -129,6 +132,7 @@ export default function AffiliateLinkFallbackAdmin() {
             {PERIOD_OPTIONS.map((option) => (
               <button key={option.value} type="button" onClick={() => setPeriod(option.value)} className={`h-9 rounded-lg border px-3 text-sm font-semibold transition ${period === option.value ? "border-gold bg-gold text-black" : "border-white/15 text-white/75 hover:border-white/30"}`}>{option.label}</button>
             ))}
+            <a href={csvExportUrl} download className="inline-flex h-9 items-center gap-2 rounded-lg border border-gold/45 px-3 text-sm font-semibold text-gold transition hover:border-gold hover:bg-gold/10" aria-label={`CSV-Export für ${period} Tage herunterladen`}><Download className="h-3.5 w-3.5" /> CSV-Export</a>
             <button type="button" onClick={() => void loadReport()} disabled={loading} className="inline-flex h-9 items-center gap-2 rounded-lg border border-white/15 px-3 text-sm font-semibold text-white/80 transition hover:border-gold/50 disabled:opacity-50"><RefreshCcw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} /> Aktualisieren</button>
           </div>
         </section>

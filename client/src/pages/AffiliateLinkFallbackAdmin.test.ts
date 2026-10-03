@@ -6,6 +6,9 @@ const source = readFileSync(new URL("./AffiliateLinkFallbackAdmin.tsx", import.m
 describe("Affiliate-Link-Auswertung", () => {
   it("stellt eine geschützte, aggregierte und manuell aktualisierbare Sicht bereit", () => {
     expect(source).toContain("/api/admin/affiliate-link-fallback-events?days=${period}");
+    expect(source).toContain("&format=csv");
+    expect(source).toContain("CSV-Export");
+    expect(source).toContain("download");
     expect(source).toContain("application/json");
     expect(source).toContain("Die Auswertung ist in dieser lokalen Vorschau nicht verfügbar.");
     expect(source).toContain("Zeitraum der technischen Ereignisse");

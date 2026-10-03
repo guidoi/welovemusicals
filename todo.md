@@ -943,3 +943,9 @@
 - [x] Geschützte Verwaltungsansicht unter `/verwaltung/affiliate-links` ergänzt: Zeitraum 7/30/90 Tage, Kennzahlen, Partneraufschlüsselung und aggregierte Fehlergruppen – ohne URLs oder personenbezogene Daten.
 - [x] Cloudflare Access schützt die Verwaltungsseite und ihre API getrennt, ausschließlich für `guidoi@web.de`; öffentliche Musicalseiten bleiben HTTP 200. Verwaltungsroute ist zusätzlich von Sitemap und Crawlern ausgeschlossen.
 - [x] 91 Testdateien / 318 Tests, TypeScript, Build und Affiliate-Integritätsgate erfolgreich; Desktop- und Mobilansicht geprüft.
+
+## CSV-Export der Affiliate-Link-Fallbacks – Oktober 2026
+- [x] CSV-Export in der geschützten Auswertung ergänzt; er übernimmt stets den ausgewählten Zeitraum von 7, 30 oder 90 Tagen.
+- [x] Die Datei enthält nur Musicalkennung, Partnerkategorie, Platzierung, Fehlergrund, Anzahl und letzten technischen Zeitstempel. URLs, Query-Parameter, Besucher-, Cookie-, Consent- und Buchungsdaten bleiben ausgeschlossen.
+- [x] UTF-8 mit BOM und Semikolontrennung für Excel ergänzt; Formelzeichen werden defensiv neutralisiert. Die Antwort ist nicht cachebar und trägt einen eindeutigen Dateinamen.
+- [x] Backend, Adminoberfläche und Desktop-/Mobilansicht geprüft; Gesamtsuite, TypeScript, Produktionsbuild, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich.

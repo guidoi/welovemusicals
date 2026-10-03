@@ -3,10 +3,10 @@ import { onRequest, onRequestGet } from "./affiliate-link-fallback-events";
 
 const endpoint = "https://welovemusicals.com/api/admin/affiliate-link-fallback-events?days=7";
 
-function createDatabase() {
+function createDatabase(musicalId = "tarzan") {
   const all = vi.fn()
     .mockResolvedValueOnce({ results: [{ total: 2, last24Hours: 1, latestAt: "2026-10-03 12:00:00" }] })
-    .mockResolvedValueOnce({ results: [{ musicalId: "tarzan", partner: "stage", placement: "ticket-box", reason: "invalid-url", eventCount: 2, latestAt: "2026-10-03 12:00:00" }] });
+    .mockResolvedValueOnce({ results: [{ musicalId, partner: "stage", placement: "ticket-box", reason: "invalid-url", eventCount: 2, latestAt: "2026-10-03 12:00:00" }] });
   const bind = vi.fn().mockReturnValue({ all });
   return { prepare: vi.fn().mockReturnValue({ bind }) };
 }
@@ -31,5 +31,30 @@ describe("Affiliate-Fallback-Auswertungsroute", () => {
 
     expect(method.status).toBe(405);
     expect(unavailable.status).toBe(503);
+  });
+
+  it("liefert einen nicht zwischengespeicherten CSV-Export ohne Linkdaten", async () => {
+    const response = await onRequestGet({
+      request: new Request(`${endpoint}&format=csv`),
+      env: { AFFILIATE_FALLBACK_LOGS: createDatabase() },
+    } as never);
+    const csv = await response.text();
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-type")).toBe("text/csv; charset=utf-8");
+    expect(response.headers.get("content-disposition")).toBe('attachment; filename="affiliate-link-fallbacks-7-tage.csv"');
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(csv).toContain("Auswertungszeitraum (Tage)");
+    expect(csv).toContain('"tarzan";"stage";"ticket-box";"invalid-url";"2"');
+    expect(csv).not.toContain("originalUrl");
+  });
+
+  it("neutralisiert Formelzeichen in CSV-Zellen", async () => {
+    const response = await onRequestGet({
+      request: new Request(`${endpoint}&format=csv`),
+      env: { AFFILIATE_FALLBACK_LOGS: createDatabase("=HYPERLINK(\"https://example.test\")") },
+    } as never);
+
+    await expect(response.text()).resolves.toContain("\"'=HYPERLINK(\"\"https://example.test\"\")\"");
   });
 });
