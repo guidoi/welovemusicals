@@ -26,7 +26,6 @@ import { getCitySeo } from "@/lib/city-seo";
 import { SHOW_CITY_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { getCityGuide } from "@/lib/city-guide";
-import { getCityEditorialContent } from "@/lib/city-editorial-content";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
@@ -83,7 +82,6 @@ export default function CityDetail() {
   const cityMusicals = getActiveMusicalsByCity(city.name, managedMusicals);
   const otherCities = [...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).filter((c) => c.slug !== city.slug).slice(0, 5);
   const cityGuide = getCityGuide(city.slug);
-  const editorialContent = getCityEditorialContent(city, cityMusicals);
 
   return (
     <>
@@ -156,76 +154,6 @@ export default function CityDetail() {
         </div>
       </section>
 
-      {editorialContent && (
-        <section className="border-y border-border/50 bg-card/35 py-12 md:py-16" aria-labelledby="city-editorial-heading">
-          <div className="container max-w-6xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold">{editorialContent.eyebrow}</p>
-            <h2 id="city-editorial-heading" className="mt-3 font-display text-2xl font-bold text-foreground md:text-3xl">
-              {editorialContent.heading}
-            </h2>
-            <p className="mt-4 max-w-4xl leading-relaxed text-cream/85">{editorialContent.intro}</p>
-
-            <div className="mt-9 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-              <section className="rounded-sm border border-border/60 bg-background/55 p-5 md:p-6" aria-labelledby="city-highlights-heading">
-                <div className="flex items-center gap-2 text-gold">
-                  <Ticket className="h-4 w-4" aria-hidden="true" />
-                  <h3 id="city-highlights-heading" className="font-display text-xl font-bold text-foreground">
-                    {editorialContent.highlightsHeading}
-                  </h3>
-                </div>
-                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {editorialContent.highlights.map((highlight) => (
-                    <li key={highlight.slug}>
-                      <Link
-                        href={`/musical/${highlight.slug}`}
-                        className="group block rounded-sm border border-border/55 bg-card/55 p-4 transition-colors hover:border-gold/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50"
-                      >
-                        <span className="block font-display text-base font-bold text-foreground transition-colors group-hover:text-gold">
-                          {highlight.title}
-                        </span>
-                        {highlight.venue && <span className="mt-1.5 block text-sm leading-snug text-muted-foreground">{highlight.venue}</span>}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
-              <section className="rounded-sm border border-border/60 bg-background/55 p-5 md:p-6" aria-labelledby="city-venues-heading">
-                <div className="flex items-center gap-2 text-gold">
-                  <MapPin className="h-4 w-4" aria-hidden="true" />
-                  <h3 id="city-venues-heading" className="font-display text-xl font-bold text-foreground">
-                    {editorialContent.venuesHeading}
-                  </h3>
-                </div>
-                <ul className="mt-5 space-y-4">
-                  {editorialContent.venues.map((venue) => (
-                    <li key={venue.name} className="border-l-2 border-gold/60 pl-4">
-                      <p className="font-semibold text-foreground">{venue.name}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{venue.musicalTitles.join(" · ")}</p>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </div>
-
-            <section className="mt-6 rounded-sm border border-border/60 bg-background/55 p-5 md:p-6" aria-labelledby="city-planning-heading">
-              <h3 id="city-planning-heading" className="font-display text-xl font-bold text-foreground">
-                {editorialContent.planningHeading}
-              </h3>
-              <ol className="mt-5 grid gap-4 md:grid-cols-3">
-                {editorialContent.planningSteps.map((step, index) => (
-                  <li key={step.title} className="rounded-sm border border-border/50 bg-card/45 p-4">
-                    <span className="text-sm font-semibold text-gold">{String(index + 1).padStart(2, "0")}</span>
-                    <h4 className="mt-2 font-semibold text-foreground">{step.title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.text}</p>
-                  </li>
-                ))}
-              </ol>
-            </section>
-          </div>
-        </section>
-      )}
-
       {/* Musicals in this City */}
       <section id="programm" className="py-12 md:py-16 scroll-mt-24">
         <div className="container">
@@ -259,10 +187,19 @@ export default function CityDetail() {
         <section className="bg-card/40 py-12 md:py-16" aria-labelledby="city-guide-heading">
           <div className="container max-w-4xl">
             <h2 id="city-guide-heading" className="font-display text-2xl font-bold text-foreground md:text-3xl">
-              Offizielle Hinweise für deinen Besuch in {city.name}
+              {cityGuide.heading}
             </h2>
-            <p className="mt-4 max-w-3xl leading-relaxed text-cream/85">Aktuelle Anreise-, Theater- und Programmhinweise findest du direkt bei den offiziellen Stellen.</p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <p className="mt-4 max-w-3xl leading-relaxed text-cream/85">{cityGuide.intro}</p>
+            <ol className="mt-8 grid gap-5 md:grid-cols-3">
+              {cityGuide.steps.map((step, index) => (
+                <li key={step.title} className="rounded-sm border border-border/60 bg-background/60 p-5">
+                  <span className="text-sm font-semibold text-gold">{String(index + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-2 font-display text-lg font-bold text-foreground">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
               {cityGuide.officialLinks.map((link) => (
                 <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-gold transition-colors hover:text-gold-light">
                   {link.label}<ExternalLink className="h-3.5 w-3.5" />

@@ -75,10 +75,9 @@ async function assertStaticHtmlHasNoBlockedInternalLinks() {
 async function main() {
   const hamburg = getCityBySlug("hamburg");
   const berlin = getCityBySlug("berlin");
-  const bochum = getCityBySlug("bochum");
   const fackJuGoehte = getMusicalBySlug("fack-ju-goehte");
   const mj = getMusicalBySlug("mj-das-michael-jackson-musical");
-  if (!hamburg || !berlin || !bochum || !fackJuGoehte || !mj) throw new Error("Expected reference pages are not active");
+  if (!hamburg || !berlin || !fackJuGoehte || !mj) throw new Error("Expected reference pages are not active");
 
   const hamburgSeo = getCitySeo(hamburg, 6);
   const berlinSeo = getCitySeo(berlin, 5);
@@ -103,10 +102,7 @@ async function main() {
       'id="site-schema"',
       '"@type":"ItemList"',
       '<h1>Musicals in Hamburg 2026/2027</h1>',
-      '<h2 id="city-editorial-heading">Musicalabend in Hamburg: Highlights &amp; Planung</h2>',
-      '<h3>Aktuelle Highlights in Hamburg</h3>',
-      '<h3>Spielstätten im aktuellen Programm</h3>',
-      '<h3>Deinen Musicalabend in Hamburg planen</h3>',
+      '<h2>Musicalabend in Hamburg planen</h2>',
       'href="/musical/mj-das-michael-jackson-musical"',
     ]),
     assertPage("musical/mj-das-michael-jackson-musical", [
@@ -131,13 +127,8 @@ async function main() {
     ]),
     assertPage("stadt/berlin", [
       `<title>${escapeHtml(berlinSeo.title)}</title>`,
-      '<h2 id="city-editorial-heading">Musicalabend in Berlin: Highlights &amp; Planung</h2>',
+      '<h2>Musicalabend in Berlin planen</h2>',
       'href="/musical/wir-sind-am-leben"',
-    ]),
-    assertPage("stadt/bochum", [
-      '<h2 id="city-editorial-heading">Musicalabend in Bochum: Highlights &amp; Planung</h2>',
-      "RuhrCongress und STARLIGHT EXPRESS Theater unterscheiden",
-      'href="/musical/starlight-express"',
     ]),
     assertPage("musical/fack-ju-goehte", [
       `<h1>${escapeHtml(fackJuGoehte.title)}</h1>`,

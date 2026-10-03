@@ -10,7 +10,6 @@ import {
 import { getCitySeo } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
 import { getCityGuide } from "../client/src/lib/city-guide";
-import { getCityEditorialContent } from "../client/src/lib/city-editorial-content";
 import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
 import { getMusicalFaqSchema, getVisibleFaqItems } from "../client/src/lib/faq-schema";
 import { createGoogleSheetPriceSource, WEBSITE_PRICE_SHEET_CSV_URL } from "../server/googleSheetPriceSource";
@@ -134,33 +133,16 @@ function getCityItemList(city: City, cityMusicals: Musical[]) {
 
 function createCityContent(city: City, cityMusicals: Musical[], heading: string): string {
   const guide = getCityGuide(city.slug);
-  const editorialContent = getCityEditorialContent(city, cityMusicals);
   const musicalLinks = cityMusicals.map((musical) => (
     `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a></li>`
   )).join("");
-  const editorialHtml = editorialContent ? `
-    <section aria-labelledby="city-editorial-heading">
-      <p>${escapeHtml(editorialContent.eyebrow)}</p>
-      <h2 id="city-editorial-heading">${escapeHtml(editorialContent.heading)}</h2>
-      <p>${escapeHtml(editorialContent.intro)}</p>
-      <section><h3>${escapeHtml(editorialContent.highlightsHeading)}</h3><ul>${editorialContent.highlights.map((highlight) => (
-        `<li><a href="/musical/${escapeHtml(highlight.slug)}">${escapeHtml(highlight.title)}</a>${highlight.venue ? ` · ${escapeHtml(highlight.venue)}` : ""}</li>`
-      )).join("")}</ul></section>
-      <section><h3>${escapeHtml(editorialContent.venuesHeading)}</h3><ul>${editorialContent.venues.map((venue) => (
-        `<li><strong>${escapeHtml(venue.name)}</strong> · ${escapeHtml(venue.musicalTitles.join(", "))}</li>`
-      )).join("")}</ul></section>
-      <section><h3>${escapeHtml(editorialContent.planningHeading)}</h3><ol>${editorialContent.planningSteps.map((step) => (
-        `<li><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.text)}</p></li>`
-      )).join("")}</ol></section>
-    </section>` : "";
-  const officialLinks = guide ? `
-    <section><h2>Offizielle Hinweise für deinen Besuch in ${escapeHtml(city.name)}</h2>
-      <p>Aktuelle Anreise-, Theater- und Programmhinweise findest du direkt bei den offiziellen Stellen.</p>
-      <ul>${guide.officialLinks.map((link) => `<li><a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a></li>`).join("")}</ul>
+  const guideContent = guide ? `
+    <section><h2>${escapeHtml(guide.heading)}</h2><p>${escapeHtml(guide.intro)}</p>
+      <ol>${guide.steps.map((step) => `<li><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.text)}</p></li>`).join("")}</ol>
     </section>` : "";
 
   return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(city.description)}</p>
-    ${editorialHtml}<section><h2>Alle aktuellen Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${officialLinks}
+    <section><h2>Aktuelle Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${guideContent}
   </main>`;
 }
 
