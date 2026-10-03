@@ -1017,3 +1017,8 @@
 - [x] Wiederhergestellt: Aschaffenburg (14.12.2026), Bremerhaven (29.10.2026), Donaueschingen (15.12.2026), Halle (Saale) (03.–04.12.2026), Husum (30.10.2026), Koblenz (30.11.2026), Neuss (22.10.2026), Offenburg (26.10.2026), Paderborn (20.10.2026), Ravensburg (16.12.2026) und Wetzlar (29.11.2026).
 - [x] Die aktualisierten, nicht überschneidenden Zukunftstermine bleiben zusätzlich erhalten; die längere neue Wien-Spieldauer (06.–17.01.2027) ersetzt weiterhin den darin vollständig enthaltenen früheren Zeitraum. Bestand: **106 Termine in 80 Städten**, alle mit bestehenden stadtbezogenen Awin-CTAs.
 - [x] Regression schützt die vollständige Ergänzung sowie die beiden ausdrücklich entfernten Stopps. 101 Testdateien / 349 Tests, TypeScript, Produktionsbuild, Sitemap-/SEO-Ausgabe, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich; Detailseite auf Desktop und Mobil geprüft.
+
+## Der Glöckner von Notre-Dame – Preisfallback Oktober 2026
+- [x] Redaktions- und SEO-Fallback auf **49,99 €** aktualisiert: Katalogpreis, Ticket-Fakt, FAQ-Antwort sowie statisches Event-/FAQ-Schema stimmen überein.
+- [x] Die öffentliche Preis-API liefert bereits 49,99 € ohne Sale. Der direkte veröffentlichte CSV-Abruf gab parallel noch 54,99 € zurück; der öffentlich sichtbare Produktionspreis und der neue robuste Katalogfallback bleiben daher bei der vom Projektinhaber bestätigten Angabe 49,99 €.
+- [x] Keine Ticket-URLs, Awin-/ATG-Kennungen, Banner, Pixel oder Consent-Regeln geändert. 101 Testdateien / 349 Tests, TypeScript, Produktionsbuild, statische Preisprüfung, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich.

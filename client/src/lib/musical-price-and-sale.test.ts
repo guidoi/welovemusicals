@@ -15,6 +15,7 @@ describe("aktuelle Musicalpreise und Sale-Störer", () => {
     expect(findMusical("starlight-express")?.priceFrom).toBe("31");
     expect(findMusical("und-julia")?.priceFrom).toBe("49,99");
     expect(findMusical("teufel-traegt-prada")?.priceFrom).toBe("46,99");
+    expect(findMusical("gloeckner-von-notre-dame")?.priceFrom).toBe("49,99");
   });
 
   it("zeigt die aktuellen Angebotsfallbacks als aktive Sale-Störer", () => {
