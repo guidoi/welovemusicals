@@ -3,6 +3,7 @@ import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
 import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 
 export type AwinShowCampaignFormat = "wide" | "square";
 type AwinPartner = "eventim" | "atg";
@@ -246,6 +247,13 @@ export default function AwinShowCampaignBanner({
   const { consent } = useConsent();
   const creative = campaign.creatives[format];
   const placementLabel = format === "wide" ? "im Fließtext" : "nach der Bildergalerie";
+  const safeClickLink = getSafeAffiliateTicketLink(creative.clickUrl);
+  useAffiliateLinkFallbackLogging([{
+    link: safeClickLink,
+    musicalId: campaign.musicalId,
+    placement: "campaign-banner",
+    partner: campaign.partner,
+  }]);
 
   return (
     <aside
@@ -270,7 +278,7 @@ export default function AwinShowCampaignBanner({
             placement: "campaign-banner",
             analyticsConsent: consent?.analytics === true,
           });
-          window.open(getSafeAffiliateTicketLink(creative.clickUrl).url, "_blank", "noopener");
+          window.open(safeClickLink.url, "_blank", "noopener");
         }}
         className="block w-full overflow-hidden rounded-sm text-left transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         aria-label={`${campaign.title} bei ${campaign.partner === "atg" ? "ATG Tickets" : "Eventim"} ansehen (Anzeige)`}

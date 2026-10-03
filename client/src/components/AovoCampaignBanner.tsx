@@ -3,6 +3,7 @@ import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
 import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 
 export type AovoCampaign = {
   musicalId: string;
@@ -359,6 +360,16 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
     () => getAovoCampaignImpressionUrl(campaign.groupId, String(Math.random()).slice(2, 11), campaign.trackingNetwork),
     [campaign.groupId, campaign.trackingNetwork]
   );
+  const safeClickLink = useMemo(
+    () => getSafeAffiliateTicketLink(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork)),
+    [campaign.groupId, campaign.trackingNetwork],
+  );
+  useAffiliateLinkFallbackLogging([{
+    link: safeClickLink,
+    musicalId: campaign.musicalId,
+    placement: "campaign-banner",
+    partner: campaign.trackingNetwork === "stage" ? "stage" : "tradedoubler",
+  }]);
 
   return (
     <aside
@@ -387,10 +398,7 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
           });
           // `noopener` schützt das Ursprungsfenster, ohne den für die
           // Affiliate-Attribution relevanten Herkunftsverweis zu unterdrücken.
-          const ticketUrl = getSafeAffiliateTicketLink(
-            getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork),
-          ).url;
-          window.open(ticketUrl, "_blank", "noopener");
+          window.open(safeClickLink.url, "_blank", "noopener");
         }}
         className="block w-full overflow-hidden rounded-sm bg-transparent p-0 text-left outline outline-1 outline-white/10 outline-offset-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         aria-label={campaign.clickAriaLabel ?? `Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}

@@ -118,7 +118,12 @@ function assertTicketPathsRemainConsentIndependent() {
   const ticketRenderers = [
     {
       path: "client/src/pages/MusicalDetail.tsx",
-      requiredLinks: ["href={heroTicketLink}", "href={boxTicketLink}", "href={stickyTicketLink}"],
+      requiredLinks: [
+        "href={heroTicketLink}",
+        "href={boxTicketLink}",
+        "href={stickyTicketLink}",
+        "useAffiliateLinkFallbackLogging",
+      ],
     },
     {
       path: "client/src/components/MusicalKeyVisual.tsx",
@@ -126,7 +131,11 @@ function assertTicketPathsRemainConsentIndependent() {
     },
     {
       path: "client/src/components/TourDates.tsx",
-      requiredLinks: ["getSafeAffiliateTicketLink(date.eventimUrl).url", "href={ticketUrl}"],
+      requiredLinks: [
+        "getSafeAffiliateTicketLink(date.eventimUrl)",
+        "href={safeTicketLink.url}",
+        "useAffiliateLinkFallbackLogging",
+      ],
     },
   ];
 
@@ -157,6 +166,28 @@ function assertAttributionSafety() {
   }
 }
 
+function assertFallbackLoggingSafety() {
+  const logger = source("client/src/lib/affiliate-link-fallback-logger.ts");
+  requireSource(logger, 'fetch("/api/affiliate-link-fallback"', "Fallback-Logger");
+  requireSource(logger, 'credentials: "omit"', "Fallback-Logger");
+  requireSource(logger, "PRODUCTION_HOSTNAMES", "Fallback-Logger");
+
+  const endpoint = source("functions/api/affiliate-link-fallback.ts");
+  requireSource(endpoint, "const MAX_BODY_BYTES = 512", "Fallback-Protokollroute");
+  requireSource(endpoint, "keys.join(\",\") === \"musicalId,partner,placement,reason\"", "Fallback-Protokollroute");
+  requireSource(endpoint, 'console.warn("affiliate_link_fallback", payload)', "Fallback-Protokollroute");
+
+  for (const componentPath of [
+    "client/src/components/AovoCampaignBanner.tsx",
+    "client/src/components/AovoTanzDerVampireBanner.tsx",
+    "client/src/components/AwinShowCampaignBanner.tsx",
+    "client/src/components/EventimDraculaBanner.tsx",
+    "client/src/components/EventimFackJuGoehteBanner.tsx",
+  ]) {
+    requireSource(source(componentPath), "useAffiliateLinkFallbackLogging", componentPath);
+  }
+}
+
 const ticketLinks = getTicketLinks();
 let stageLinks = 0;
 let awinLinks = 0;
@@ -174,6 +205,7 @@ if (awinLinks === 0) fail("Es wurden keine direkten Awin-Ticketlinks geprüft.")
 assertConsentGuards();
 assertTicketPathsRemainConsentIndependent();
 assertAttributionSafety();
+assertFallbackLoggingSafety();
 
 console.log(
   `Affiliate-Integritätsgate bestanden: ${stageLinks} direkte Stage-Links, ${awinLinks} direkte Awin-Links und ${otherTicketLinks} weitere Partnerziele geprüft; Converter und Impressionen bleiben einwilligungsgesteuert.`,

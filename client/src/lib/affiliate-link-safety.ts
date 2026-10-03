@@ -40,6 +40,15 @@ function tryParseUrl(value: string | undefined): URL | undefined {
   }
 }
 
+function tryDecodeUrlParameter(value: string | null): string | undefined {
+  if (!value) return undefined;
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return undefined;
+  }
+}
+
 function isDirectStageClick(parsed: URL): boolean {
   return parsed.hostname === STAGE_HOST
     && parsed.pathname === "/click"
@@ -55,12 +64,16 @@ function isDirectAwinClick(parsed: URL): boolean {
     return false;
   }
 
+  const wrappedDestination = tryParseUrl(tryDecodeUrlParameter(parsed.searchParams.get("ued")));
+  const hasSafeWrappedDestination = Boolean(
+    wrappedDestination && SAFE_DIRECT_TICKET_HOSTS.has(wrappedDestination.hostname),
+  );
   const legacyCreative = parsed.searchParams.get("r") === AWIN_PUBLISHER_ID
     && Boolean(parsed.searchParams.get("s"))
     && Boolean(parsed.searchParams.get("v"))
     && Boolean(parsed.searchParams.get("q"));
   const textLink = parsed.searchParams.get("awinaffid") === AWIN_PUBLISHER_ID
-    && (Boolean(parsed.searchParams.get("ued")) || (
+    && (hasSafeWrappedDestination || (
       Boolean(parsed.searchParams.get("gid"))
       && Boolean(parsed.searchParams.get("mid"))
       && Boolean(parsed.searchParams.get("linkid"))

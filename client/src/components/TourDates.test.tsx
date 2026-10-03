@@ -7,6 +7,7 @@ describe("TourDates", () => {
   it("zeigt Ticketdaten ohne Anbieterlogo in der Ticketkarte", () => {
     const markup = renderToStaticMarkup(
       <TourDates
+        musicalId="wir-sind-am-leben"
         musicalSlug="wir-sind-am-leben"
         tourDates={[
           {
@@ -32,6 +33,7 @@ describe("TourDates", () => {
   it("nutzt auch für weitere Terminlisten den einheitlichen Stadt-CTA", () => {
     const markup = renderToStaticMarkup(
       <TourDates
+        musicalId="test-show"
         tourDates={[
           {
             city: "Hamburg",
@@ -48,5 +50,6 @@ describe("TourDates", () => {
     expect(markup).toContain('href="/stadt/hamburg"');
     expect(markup).toContain('rel="noopener sponsored"');
     expect(markup).not.toContain("noreferrer");
+    expect(markup).toContain('href="https://www.eventim.de/"');
   });
 });

@@ -52,7 +52,8 @@ import { getExperienceCategory } from "@/lib/experience-categories";
 import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
 import { getTicketCta } from "@/lib/ticket-cta";
-import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { getSafeAffiliateTicketLink, type SafeAffiliateLink } from "@/lib/affiliate-link-safety";
+import { useAffiliateLinkFallbackLogging, type AffiliateFallbackLogEntry } from "@/lib/affiliate-link-fallback-logger";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick, type AffiliateClickPlacement } from "@/lib/category-analytics";
 
@@ -160,13 +161,19 @@ export default function MusicalDetail() {
   // Get provider info
   const providerInfo = providers.find((p) => p.name === musical.provider);
 
-  const ticketLink = getSafeAffiliateTicketLink(createAwinLink(musical.eventimUrl)).url;
-  const keyvisualTicketLink = getSafeAffiliateTicketLink(musical.keyvisualLink ?? ticketLink, ticketLink).url;
-  const ctaTicketLink = getSafeAffiliateTicketLink(musical.ticketCtaUrl ?? ticketLink, ticketLink).url;
+  const ticketLinkSafety = getSafeAffiliateTicketLink(createAwinLink(musical.eventimUrl));
+  const ticketLink = ticketLinkSafety.url;
+  const keyvisualTicketLinkSafety = getSafeAffiliateTicketLink(musical.keyvisualLink ?? ticketLink, ticketLink);
+  const keyvisualTicketLink = keyvisualTicketLinkSafety.url;
+  const ctaTicketLinkSafety = getSafeAffiliateTicketLink(musical.ticketCtaUrl ?? ticketLink, ticketLink);
+  const ctaTicketLink = ctaTicketLinkSafety.url;
   // Awin-spezifische Links für die drei CTA-Positionen (mit clickref)
-  const heroTicketLink = getSafeAffiliateTicketLink(musical.awinHeroUrl ?? ctaTicketLink, ctaTicketLink).url;
-  const stickyTicketLink = getSafeAffiliateTicketLink(musical.awinStickyUrl ?? ctaTicketLink, ctaTicketLink).url;
-  const boxTicketLink = getSafeAffiliateTicketLink(musical.awinBoxUrl ?? ctaTicketLink, ctaTicketLink).url;
+  const heroTicketLinkSafety = getSafeAffiliateTicketLink(musical.awinHeroUrl ?? ctaTicketLink, ctaTicketLink);
+  const heroTicketLink = heroTicketLinkSafety.url;
+  const stickyTicketLinkSafety = getSafeAffiliateTicketLink(musical.awinStickyUrl ?? ctaTicketLink, ctaTicketLink);
+  const stickyTicketLink = stickyTicketLinkSafety.url;
+  const boxTicketLinkSafety = getSafeAffiliateTicketLink(musical.awinBoxUrl ?? ctaTicketLink, ctaTicketLink);
+  const boxTicketLink = boxTicketLinkSafety.url;
   const usesAtgTickets = isAtgTicketMusical(musical.slug);
   const usesStageProductPage = musical.eventimUrl.includes("stage-entertainment.de");
   const keyvisualOpensShowPage = usesStageProductPage && keyvisualTicketLink !== ticketLink;
@@ -202,6 +209,16 @@ export default function MusicalDetail() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <AffiliateFallbackLogger
+        musicalId={musical.id}
+        links={[
+          [ticketLinkSafety, "ticket-base"],
+          [keyvisualTicketLinkSafety, "keyvisual"],
+          [heroTicketLinkSafety, "mobile-hero"],
+          [stickyTicketLinkSafety, "sticky"],
+          [boxTicketLinkSafety, "ticket-box"],
+        ]}
+      />
       <SchemaOrg musical={musical} />
       <Header />
 
@@ -419,7 +436,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
+          <TourDates tourDates={musical.tourDates} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
         )}
       </div>
 
@@ -706,4 +723,22 @@ export default function MusicalDetail() {
       <Footer />
     </div>
   );
+}
+
+function AffiliateFallbackLogger({
+  musicalId,
+  links,
+}: {
+  musicalId: string;
+  links: readonly [SafeAffiliateLink, AffiliateFallbackLogEntry["placement"]][];
+}) {
+  useAffiliateLinkFallbackLogging(
+    links.map(([link, placement]) => ({
+      link,
+      musicalId,
+      placement,
+      partner: getAffiliatePartner(link.url),
+    })),
+  );
+  return null;
 }

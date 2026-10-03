@@ -6,12 +6,14 @@ describe("Affiliate-Link-Sicherheitsnetz", () => {
   const tradeDoublerCampaign = "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26137318";
   const awinTextLink = "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=4568988&clickref=kdl-cta";
   const awinCreative = "https://www.awin1.com/cread.php?s=4568827&v=11388&q=492097&r=2865727";
+  const awinWrappedEventim = "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fexample%2F";
 
   it("behält gültige direkte Stage- und Awin-Ziele unverändert", () => {
     expect(isSafeAffiliateTicketUrl(directStage)).toBe(true);
     expect(isSafeAffiliateTicketUrl(tradeDoublerCampaign)).toBe(true);
     expect(isSafeAffiliateTicketUrl(awinTextLink)).toBe(true);
     expect(isSafeAffiliateTicketUrl(awinCreative)).toBe(true);
+    expect(isSafeAffiliateTicketUrl(awinWrappedEventim)).toBe(true);
     expect(getSafeAffiliateTicketLink(directStage)).toEqual({ url: directStage, usedFallback: false });
   });
 
@@ -19,6 +21,7 @@ describe("Affiliate-Link-Sicherheitsnetz", () => {
     expect(isSafeAffiliateTicketUrl("https://visit.stage-entertainment.de/click?p=394206&a=3492604")).toBe(false);
     expect(isSafeAffiliateTicketUrl("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398&ttid=18")).toBe(false);
     expect(isSafeAffiliateTicketUrl("https://www.awin1.com/awclick.php?gid=492097&mid=11388&linkid=4568988")).toBe(false);
+    expect(isSafeAffiliateTicketUrl("https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&ued=javascript%3Aalert%281%29")).toBe(false);
   });
 
   it("verwendet bei fehlerhaften Links einen gültigen show-spezifischen Primärpfad und sonst die offizielle Anbieteradresse", () => {

@@ -17,5 +17,8 @@ describe("Datenschutz zur Kategorie-Analyse", () => {
     expect(privacySource).toContain("erst nach Ihrer Statistik-Einwilligung geladen");
     expect(privacySource).toContain("deaktiviertem Werbespeicher");
     expect(privacySource).toContain("Clarity-Cookies gelöscht");
+    expect(privacySource).toContain("Technische Affiliate-Link-Sicherheit");
+    expect(privacySource).toContain("Fehlergrund, Musicalkennung, Linkplatzierung und Partnerkategorie");
+    expect(privacySource).toContain("keine ursprüngliche oder ersetzte URL");
   });
 });

@@ -8,6 +8,7 @@
  */
 import { cities, MusicalTourDate } from "@/lib/data";
 import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
+import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import {
@@ -21,6 +22,7 @@ import React, { useState } from "react";
 
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
+  musicalId?: string;
   forceDropdown?: boolean;
   musicalSlug?: string;
   onTicketClick?: (ticketUrl: string) => void;
@@ -54,6 +56,7 @@ function groupByCity(tourDates: MusicalTourDate[]): Record<string, MusicalTourDa
 }
 export default function TourDates({
   tourDates,
+  musicalId = "unknown",
   forceDropdown = false,
   musicalSlug,
   onTicketClick,
@@ -218,6 +221,7 @@ export default function TourDates({
                     <TourDateTicketLink
                       key={idx}
                       date={date}
+                      musicalId={musicalId}
                       label={date.displayLabel || formatDateRange(date.startDate, date.endDate)}
                       onTicketClick={onTicketClick}
                     />
@@ -248,24 +252,37 @@ export default function TourDates({
 
 function TourDateTicketLink({
   date,
+  musicalId,
   label,
   onTicketClick,
 }: {
   date: MusicalTourDate;
+  musicalId: string;
   label: string;
   onTicketClick?: (ticketUrl: string) => void;
 }) {
-  const ticketUrl = getSafeAffiliateTicketLink(date.eventimUrl).url;
+  const safeTicketLink = getSafeAffiliateTicketLink(date.eventimUrl);
+
+  useAffiliateLinkFallbackLogging([{
+    link: safeTicketLink,
+    musicalId,
+    placement: "city-date",
+    partner: safeTicketLink.url.includes("stage-entertainment.de")
+      ? "stage"
+      : safeTicketLink.url.includes("atgtickets.de")
+        ? "atg"
+        : "eventim",
+  }]);
 
   return (
     <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
       <p className="text-sm font-semibold text-gold">{label}</p>
       <a
-        href={ticketUrl}
+        href={safeTicketLink.url}
         target="_blank"
         rel="noopener sponsored"
         className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
-        onClick={() => onTicketClick?.(ticketUrl)}
+        onClick={() => onTicketClick?.(safeTicketLink.url)}
       >
         Tickets sichern
       </a>
