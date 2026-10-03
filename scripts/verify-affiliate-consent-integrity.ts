@@ -203,6 +203,12 @@ function assertTargetOverrideSafety() {
   requireSource(resolver, "getSafeAffiliateTicketLink(override ?? candidate", "Zieloverride-Auflösung");
   requireSource(resolver, "useAffiliateLinkOverrides", "Zieloverride-Auflösung");
 
+  const suggestion = source("client/src/lib/affiliate-link-target-suggestion.ts");
+  requireSource(suggestion, "getActiveMusicals", "Katalogvorschlag");
+  requireSource(suggestion, "isSafeAffiliateTicketUrl", "Katalogvorschlag");
+  requireSource(suggestion, "getAffiliateOverridePartner", "Katalogvorschlag");
+  requireSource(suggestion, "return undefined", "Katalogvorschlag");
+
   const adminEndpoint = source("functions/api/admin/affiliate-link-target-overrides.ts");
   requireSource(adminEndpoint, "isValidAffiliateOverrideTarget", "Zieloverride-Verwaltung");
   requireSource(adminEndpoint, "onRequestPut", "Zieloverride-Verwaltung");

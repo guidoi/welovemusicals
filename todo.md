@@ -972,3 +972,9 @@
 - [x] D1-Tabelle `affiliate_link_target_overrides` in EU angelegt, initial leer. Sie enthält nur Musicalkennung, Netzwerk, Platzierung, Ziel-URL und Änderungszeitpunkt – ohne Besucher-, Consent-, Cookie-, Buchungs- oder Ereignisdaten.
 - [x] Öffentliche Seiten laden ausschließlich valide Overrides aus einer getrennten, nicht protokollierenden Konfigurationsroute und prüfen sie vor Verwendung erneut durch das bestehende Sicherheitsnetz. Wenn kein Override verfügbar oder valide ist, bleibt die Katalog-URL aktiv.
 - [x] Der schreibende Endpunkt ist mit einer neuen Cloudflare-Access-Anwendung ausschließlich für `guidoi@web.de` geschützt; der anonyme Check liefert 302 zu Cloudflare Access. 100 Testdateien / 340 Tests, TypeScript, Produktionsbuild, Linkintegritätsgate und Diff-Prüfung erfolgreich; UI-Simulation bestätigt Speichern und Wiederherstellen.
+
+## Sicherer Katalogvorschlag für Affiliate-Ziele – Oktober 2026
+- [x] Der neue Button „Katalogvorschlag“ befüllt das Ziel-URL-Feld ausschließlich aus einer bereits aktiven, show-spezifischen und lokal validen Katalog-URL derselben Partnerkategorie.
+- [x] Für Stage wird beispielsweise der vorhandene getrackte Show-/Ticketpfad mit `p=394206`, `a=3492604` und vorhandener `g`-Kennung übernommen; Awin/Eventim/ATG behalten die vorhandene Publisherkennung `2865727`.
+- [x] Es werden keine Partnerseiten abgerufen, keine Klicks oder Impressionen ausgelöst und keine Kampagnen-, Banner- oder Städtekodierungen erfunden. Für Termin- und Kampagnenbannergruppen ohne eindeutiges Katalogziel wird bewusst kein Vorschlag erstellt.
+- [x] Nach dem Einfügen ist die URL weiterhin manuell prüf- und editierbar; beim Speichern schützt die bestehende Servervalidierung unverändert. Browserprüfung bestätigt das Einfügen der Tarzan-Stage-URL; 101 Testdateien / 343 Tests, TypeScript, Build, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.

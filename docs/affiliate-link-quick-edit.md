@@ -6,6 +6,8 @@ Die Funktion befindet sich in der geschützten Auswertung unter `/verwaltung/aff
 
 Eine Fehlergruppe besteht aus **Musicalkennung**, **Partnerkategorie** und **Platzierung**. Für genau diese Kombination kann eine neue, direkt vom Partner gelieferte Ziel-URL hinterlegt werden. Das Ziel wird bei der nächsten öffentlichen Seitenauslieferung geladen und vor der Verwendung erneut durch die lokale Sicherheitsprüfung validiert. Ungültige, nicht erreichbare oder nicht geladene Overrides verdrängen niemals den statischen Kataloglink.
 
+Der Button **„Katalogvorschlag“** befüllt das Feld ausschließlich mit einer bereits aktiven, show-spezifischen und lokal validen Katalog-URL derselben Partnerkategorie. Er ruft keine Partnerseite auf, erzeugt keine Kennungen und versucht insbesondere nicht, City- oder Creative-spezifische Links zu erraten. Für Termin- und Kampagnenbannergruppen ohne eindeutigen Kataloggegenwert bleibt das Feld bewusst leer; dort muss die vom Partner bereitgestellte URL eingefügt werden.
+
 ## Zulässige URLs
 
 | Partner | Voraussetzung |

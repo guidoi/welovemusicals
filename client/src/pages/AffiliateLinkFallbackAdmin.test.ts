@@ -30,6 +30,8 @@ describe("Affiliate-Link-Auswertung", () => {
     expect(source).toContain("Katalogziel wiederhergestellt");
     expect(source).toContain("ADMIN_TARGET_ENDPOINT");
     expect(source).toContain("partnerHints");
+    expect(source).toContain("Katalogvorschlag");
+    expect(source).toContain("getAffiliateTargetSuggestion");
     expect(source).toContain("Aggregiert, maximal 100 Gruppen");
     expect(source).toContain("URLs und personenbezogene Daten werden nicht gespeichert");
     expect(source).not.toContain("originalUrl");

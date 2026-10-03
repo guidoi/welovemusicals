@@ -14,6 +14,7 @@ import {
   Save,
   Search,
   ShieldCheck,
+  WandSparkles,
   X,
 } from "lucide-react";
 import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
@@ -25,6 +26,7 @@ import {
   type AffiliateFallbackFilters,
 } from "@/lib/affiliate-fallback-filters";
 import { AFFILIATE_FALLBACKS_PER_PAGE, paginateAffiliateFallbackRows } from "@/lib/affiliate-fallback-pagination";
+import { getAffiliateTargetSuggestion } from "@/lib/affiliate-link-target-suggestion";
 
 type PeriodDays = 7 | 30 | 90;
 type OverridePartner = "stage" | "tradedoubler" | "awin" | "atg" | "eventim" | "other";
@@ -216,6 +218,22 @@ export default function AffiliateLinkFallbackAdmin() {
     });
   };
 
+  const applyCatalogSuggestion = () => {
+    if (!editingTarget) return;
+    const suggestion = getAffiliateTargetSuggestion(editingTarget.musicalId, editingTarget.partner, editingTarget.placement);
+    if (!suggestion) {
+      toast.message("Kein eindeutiger Katalogvorschlag", {
+        description: "Für Termin- und Bannergruppen wird keine Ziel-URL geraten. Bitte die Partner-URL einfügen.",
+      });
+      return;
+    }
+
+    setEditingTarget((current) => current ? { ...current, targetUrl: suggestion.url } : current);
+    toast.success("Geprüften Katalogvorschlag eingefügt", {
+      description: `Quelle: ${suggestion.sourceField}. Bitte vor dem Speichern gegen die Partnerangabe prüfen.`,
+    });
+  };
+
   const saveTarget = async () => {
     if (!editingTarget) return;
     setSavingTarget(true);
@@ -340,7 +358,7 @@ export default function AffiliateLinkFallbackAdmin() {
                           <td className="px-4 py-3 text-xs text-white/55">{formatDate(row.latestAt)}</td>
                           <td className="px-5 py-3 text-right"><div className="flex justify-end gap-2">{activeOverride ? <button type="button" onClick={() => void resetTarget(row)} disabled={savingTarget} className="inline-flex h-8 items-center gap-1.5 rounded-md border border-white/15 px-2 text-xs font-semibold text-white/75 transition hover:border-red-300/70 hover:text-red-200 disabled:opacity-50"><RotateCcw className="h-3.5 w-3.5" /> Katalogziel</button> : null}{editable ? <button type="button" onClick={() => beginTargetEdit(row)} disabled={savingTarget} className="inline-flex h-8 items-center gap-1.5 rounded-md border border-gold/40 px-2 text-xs font-semibold text-gold transition hover:bg-gold/10 disabled:opacity-50"><Pencil className="h-3.5 w-3.5" /> {activeOverride ? "Ändern" : "Ziel bearbeiten"}</button> : null}</div>{activeOverride ? <span className="mt-1 block text-[10px] font-semibold uppercase tracking-wide text-emerald-300">Override aktiv</span> : null}</td>
                         </tr>
-                        {isEditing ? <tr className="border-t border-gold/20 bg-gold/[0.055]"><td colSpan={7} className="px-5 py-4"><div className="grid gap-3 lg:grid-cols-[1fr_auto]"><div><label htmlFor={`target-${overrideKey(row)}`} className="text-sm font-semibold text-white">Neue direkte {row.partner.toUpperCase()}-Ziel-URL</label><input id={`target-${overrideKey(row)}`} value={editingTarget.targetUrl} onChange={(event) => setEditingTarget((current) => current ? { ...current, targetUrl: event.target.value } : current)} placeholder="Partner-Tracking-URL einfügen" autoComplete="off" spellCheck="false" className="mt-2 h-10 w-full rounded-lg border border-white/20 bg-black/35 px-3 font-mono text-xs text-white outline-none transition placeholder:font-sans placeholder:text-white/35 focus:border-gold" /><p className="mt-2 text-xs leading-5 text-white/55">{partnerHints[row.partner]}</p></div><div className="flex items-end gap-2"><button type="button" onClick={() => void saveTarget()} disabled={savingTarget || !editingTarget.targetUrl.trim()} className="inline-flex h-10 items-center gap-2 rounded-lg bg-gold px-3 text-sm font-bold text-black transition hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-50"><Save className="h-4 w-4" /> {savingTarget ? "Speichert …" : "Sicher speichern"}</button><button type="button" onClick={() => setEditingTarget(null)} disabled={savingTarget} className="inline-flex h-10 items-center gap-2 rounded-lg border border-white/15 px-3 text-sm font-semibold text-white/75 transition hover:border-white/40 disabled:opacity-50"><X className="h-4 w-4" /> Abbrechen</button></div></div></td></tr> : null}
+                        {isEditing ? <tr className="border-t border-gold/20 bg-gold/[0.055]"><td colSpan={7} className="px-5 py-4"><div className="grid gap-3 lg:grid-cols-[1fr_auto]"><div><label htmlFor={`target-${overrideKey(row)}`} className="text-sm font-semibold text-white">Neue direkte {row.partner.toUpperCase()}-Ziel-URL</label><input id={`target-${overrideKey(row)}`} value={editingTarget.targetUrl} onChange={(event) => setEditingTarget((current) => current ? { ...current, targetUrl: event.target.value } : current)} placeholder="Partner-Tracking-URL einfügen" autoComplete="off" spellCheck="false" className="mt-2 h-10 w-full rounded-lg border border-white/20 bg-black/35 px-3 font-mono text-xs text-white outline-none transition placeholder:font-sans placeholder:text-white/35 focus:border-gold" /><p className="mt-2 text-xs leading-5 text-white/55">{partnerHints[row.partner]}</p></div><div className="flex flex-wrap items-end gap-2"><button type="button" onClick={applyCatalogSuggestion} disabled={savingTarget} className="inline-flex h-10 items-center gap-2 rounded-lg border border-gold/45 px-3 text-sm font-semibold text-gold transition hover:bg-gold/10 disabled:opacity-50"><WandSparkles className="h-4 w-4" /> Katalogvorschlag</button><button type="button" onClick={() => void saveTarget()} disabled={savingTarget || !editingTarget.targetUrl.trim()} className="inline-flex h-10 items-center gap-2 rounded-lg bg-gold px-3 text-sm font-bold text-black transition hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-50"><Save className="h-4 w-4" /> {savingTarget ? "Speichert …" : "Sicher speichern"}</button><button type="button" onClick={() => setEditingTarget(null)} disabled={savingTarget} className="inline-flex h-10 items-center gap-2 rounded-lg border border-white/15 px-3 text-sm font-semibold text-white/75 transition hover:border-white/40 disabled:opacity-50"><X className="h-4 w-4" /> Abbrechen</button></div></div></td></tr> : null}
                       </Fragment>;
                     })}
                     {filteredRows.length === 0 ? <tr><td colSpan={7} className="px-5 py-8 text-center text-sm text-white/55">Keine Fehlergruppen entsprechen den aktuellen Filtern.</td></tr> : null}
