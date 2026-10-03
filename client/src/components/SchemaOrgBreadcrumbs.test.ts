@@ -14,6 +14,11 @@ describe("Schema.org Breadcrumb-Bezeichnungen", () => {
       name: "Musicals & Shows",
       item: "https://welovemusicals.com/#musicals",
     });
+    expect(breadcrumbs).toHaveLength(3);
+    expect(breadcrumbs).toEqual(expect.arrayContaining([
+      expect.objectContaining({ position: 1, name: "We Love Musicals", item: "https://welovemusicals.com" }),
+      expect.objectContaining({ position: 3, name: "DISNEYS TARZAN", item: "https://welovemusicals.com/musical/tarzan" }),
+    ]));
   });
 
   it("nennt die zentrale Stadtübersicht einheitlich Städte", () => {

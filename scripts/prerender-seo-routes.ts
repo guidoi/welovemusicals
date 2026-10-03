@@ -11,6 +11,7 @@ import { getCitySeo } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
 import { getCityGuide } from "../client/src/lib/city-guide";
 import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
+import { getMusicalFaqSchema, getVisibleFaqItems } from "../client/src/lib/faq-schema";
 import { createGoogleSheetPriceSource, WEBSITE_PRICE_SHEET_CSV_URL } from "../server/googleSheetPriceSource";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
@@ -145,11 +146,17 @@ function createMusicalContent(musical: Musical, heading: string, priceFrom?: str
       return `<li><strong>${escapeHtml(date.city)}</strong> · ${escapeHtml(date.venue)} · ${escapeHtml(duration)}</li>`;
     })
     .join("");
+  const faqItems = getVisibleFaqItems(musical);
+  const faqContent = faqItems.length > 0
+    ? `<section><h2>Alles, was du wissen musst</h2><dl>${faqItems.map((faq) => (
+      `<dt>${escapeHtml(faq.question)}</dt><dd>${escapeHtml(faq.answer)}</dd>`
+    )).join("")}</dl></section>`
+    : "";
   return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(musical.description)}</p>
     ${location ? `<p><strong>Spielort:</strong> ${escapeHtml(location)}</p>` : ""}
     ${priceFrom ? `<p><strong>Tickets ab:</strong> ${escapeHtml(priceFrom)} €</p>` : ""}
     ${upcomingDates ? `<section><h2>Termine &amp; Spielstätten</h2><ul>${upcomingDates}</ul></section>` : ""}
-    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}
+    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}${faqContent}
   </main>`;
 }
 
@@ -189,6 +196,8 @@ function createMusicalPage(musical: Musical, priceFrom?: string): SeoPage {
     },
   );
   pageSchema["@graph"].push(...getMusicalEventSchemas(musical, { priceFrom }));
+  const faqSchema = getMusicalFaqSchema(musical);
+  if (faqSchema) pageSchema["@graph"].push(faqSchema);
 
   return {
     path: `/musical/${musical.slug}`,

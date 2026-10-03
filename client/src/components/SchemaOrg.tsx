@@ -7,6 +7,7 @@
 import { useEffect } from "react";
 import type { Musical } from "@/lib/data";
 import { getMusicalCanonicalUrl, getMusicalEventSchemas, SITE_URL } from "@/lib/event-schema";
+import { getMusicalFaqSchema } from "@/lib/faq-schema";
 
 export { getCountryForCity } from "@/lib/event-schema";
 
@@ -58,6 +59,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
   useEffect(() => {
     const canonicalUrl = getMusicalCanonicalUrl(musical);
     const events = getMusicalEventSchemas(musical, { priceFrom: musical.priceFrom });
+    const faqSchema = getMusicalFaqSchema(musical);
     const staticSchemaElement = document.getElementById("site-schema") as HTMLScriptElement | null;
 
     // A directly opened, pre-rendered detail page already owns its graph. Replace
@@ -92,6 +94,7 @@ export default function SchemaOrg({ musical }: SchemaOrgProps) {
           "@type": "BreadcrumbList",
           itemListElement: getMusicalBreadcrumbItems(musical),
         },
+        ...(faqSchema ? [faqSchema] : []),
       ],
     });
     document.head.appendChild(eventScript);
