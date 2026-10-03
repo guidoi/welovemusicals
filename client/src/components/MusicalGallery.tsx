@@ -72,6 +72,8 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
                   className="w-full object-cover hover:scale-105 transition-transform duration-500"
                   style={{ height: "clamp(220px, 56vw, 480px)" }}
                   loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 768px) 100vw, 100vw"
                 />
               </div>
             ))}

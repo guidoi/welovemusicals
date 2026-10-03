@@ -25,6 +25,8 @@ export default function MusicalKeyVisual({ image, title, ticketLink, landscape, 
       src={image}
       alt={title}
       className="w-full h-auto rounded-lg hover:opacity-95 transition-opacity duration-300"
+      decoding="async"
+      sizes="(min-width: 1024px) 28vw, 100vw"
     />
   ) : (
     // Standard: quadratisch, object-cover
@@ -33,6 +35,8 @@ export default function MusicalKeyVisual({ image, title, ticketLink, landscape, 
         src={image}
         alt={title}
         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        decoding="async"
+        sizes="(min-width: 1024px) 28vw, 100vw"
       />
     </div>
   );

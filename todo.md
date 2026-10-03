@@ -978,3 +978,10 @@
 - [x] Für Stage wird beispielsweise der vorhandene getrackte Show-/Ticketpfad mit `p=394206`, `a=3492604` und vorhandener `g`-Kennung übernommen; Awin/Eventim/ATG behalten die vorhandene Publisherkennung `2865727`.
 - [x] Es werden keine Partnerseiten abgerufen, keine Klicks oder Impressionen ausgelöst und keine Kampagnen-, Banner- oder Städtekodierungen erfunden. Für Termin- und Kampagnenbannergruppen ohne eindeutiges Katalogziel wird bewusst kein Vorschlag erstellt.
 - [x] Nach dem Einfügen ist die URL weiterhin manuell prüf- und editierbar; beim Speichern schützt die bestehende Servervalidierung unverändert. Browserprüfung bestätigt das Einfügen der Tarzan-Stage-URL; 101 Testdateien / 343 Tests, TypeScript, Build, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.
+
+## Redaktionelle Bildoptimierung und WebP-Standard – Oktober 2026
+- [x] 69 aktive redaktionelle JPG-/PNG-Quellen – Karten, Detailhero, Keyvisuals, Galerien und Stadtbilder – ohne Beschnitt als WebP aufbereitet und über das öffentliche CDN eingebunden. Originale bleiben unverändert außerhalb des Projekts unter `/home/ubuntu/webdev-static-assets/editorial-webp-2026-10/` gesichert.
+- [x] Gemessene Gesamtgröße von 19,8 MB auf 8,4 MB reduziert (57,5 % Ersparnis). Alle 69 CDN-Dateien liefern HTTP 200 mit `image/webp`; Stichproben von Karte, Keyvisual und Galerie wurden visuell geprüft.
+- [x] Bestehende Unsplash-Stadtbilder fordern nun mit `auto=format` ein modernes Browserformat an. Native Affiliate-Banner bleiben bewusst unangetastet, damit die exakt gelieferten Creatives, Formate, Abmessungen und Kampagnenplatzierungen unverändert bleiben.
+- [x] Karten, Keyvisuals, Galerie und Hero verwenden asynchrones Bilddecoding; Karten und Keyvisuals erhalten passende `sizes`-Hinweise. 15 repräsentative Seiten mit aktualisierten Assets wurden jeweils als Desktop- und Mobilansicht geprüft.
+- [x] Dauerhafter Standard ergänzt: `scripts/prepare-web-image.py` erzeugt neue WebP-Assets rollenbezogen, `pnpm run test:image-standard` sperrt alte Bildformate im aktiven Katalog und läuft automatisch im Produktionsbuild. Vollständige Test-/Typ-/Build-/Diff-Prüfung erfolgreich.

@@ -269,6 +269,8 @@ export default function MusicalDetail() {
             src={musical.heroImage || musical.image}
             alt={musical.title}
             className="w-full h-full object-cover object-top"
+            decoding="async"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>

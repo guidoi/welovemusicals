@@ -38,6 +38,8 @@ export default function CityCard({ city, index = 0 }: CityCardProps) {
             alt={city.name}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             loading="lazy"
+            decoding="async"
+            sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
           />
 
           {/* Gradient Overlay */}
