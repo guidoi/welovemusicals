@@ -7,6 +7,7 @@
  * Abgelaufene Termine (endDate < heute) werden automatisch ausgeblendet.
  */
 import { cities, MusicalTourDate } from "@/lib/data";
+import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import {
@@ -214,23 +215,12 @@ export default function TourDates({
                 {/* Alle Termine dieser Stadt */}
                 <div className="flex flex-col gap-2">
                   {dates.map((date, idx) => (
-                    <div
+                    <TourDateTicketLink
                       key={idx}
-                      className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
-                    >
-                      <p className="text-sm font-semibold text-gold">
-                        {date.displayLabel || formatDateRange(date.startDate, date.endDate)}
-                      </p>
-                      <a
-                        href={date.eventimUrl}
-                        target="_blank"
-                        rel="noopener sponsored"
-                        className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
-                        onClick={() => onTicketClick?.(date.eventimUrl)}
-                      >
-                        Tickets sichern
-                      </a>
-                    </div>
+                      date={date}
+                      label={date.displayLabel || formatDateRange(date.startDate, date.endDate)}
+                      onTicketClick={onTicketClick}
+                    />
                   ))}
                 </div>
               </div>
@@ -253,5 +243,32 @@ export default function TourDates({
         </div>
       </div>
     </section>
+  );
+}
+
+function TourDateTicketLink({
+  date,
+  label,
+  onTicketClick,
+}: {
+  date: MusicalTourDate;
+  label: string;
+  onTicketClick?: (ticketUrl: string) => void;
+}) {
+  const ticketUrl = getSafeAffiliateTicketLink(date.eventimUrl).url;
+
+  return (
+    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <p className="text-sm font-semibold text-gold">{label}</p>
+      <a
+        href={ticketUrl}
+        target="_blank"
+        rel="noopener sponsored"
+        className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
+        onClick={() => onTicketClick?.(ticketUrl)}
+      >
+        Tickets sichern
+      </a>
+    </div>
   );
 }

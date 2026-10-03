@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
+import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
 
 type DraculaBannerFormat = "wide" | "square";
 
@@ -69,7 +70,7 @@ export default function EventimDraculaBanner({
             placement: "campaign-banner",
             analyticsConsent: consent?.analytics === true,
           });
-          window.open(campaign.clickUrl, "_blank", "noopener");
+          window.open(getSafeAffiliateTicketLink(campaign.clickUrl).url, "_blank", "noopener");
         }}
         className="block w-full overflow-hidden rounded-sm text-left transition-opacity hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         aria-label="Dracula – Das Musical bei Eventim ansehen (Anzeige)"

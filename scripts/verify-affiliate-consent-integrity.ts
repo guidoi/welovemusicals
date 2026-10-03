@@ -102,6 +102,16 @@ function assertConsentGuards() {
     const component = source(componentPath);
     requireSource(component, "if (!consent?.affiliateTracking) return;", componentPath);
   }
+
+  for (const componentPath of [
+    "client/src/components/AovoCampaignBanner.tsx",
+    "client/src/components/AovoTanzDerVampireBanner.tsx",
+    "client/src/components/AwinShowCampaignBanner.tsx",
+    "client/src/components/EventimDraculaBanner.tsx",
+    "client/src/components/EventimFackJuGoehteBanner.tsx",
+  ]) {
+    requireSource(source(componentPath), "getSafeAffiliateTicketLink", componentPath);
+  }
 }
 
 function assertTicketPathsRemainConsentIndependent() {
@@ -116,7 +126,7 @@ function assertTicketPathsRemainConsentIndependent() {
     },
     {
       path: "client/src/components/TourDates.tsx",
-      requiredLinks: ["href={date.eventimUrl}"],
+      requiredLinks: ["getSafeAffiliateTicketLink(date.eventimUrl).url", "href={ticketUrl}"],
     },
   ];
 

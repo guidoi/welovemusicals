@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import AffiliateImpressionPixel from "@/components/AffiliateImpressionPixel";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
+import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
 
 export type AovoCampaign = {
   musicalId: string;
@@ -386,7 +387,10 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
           });
           // `noopener` schützt das Ursprungsfenster, ohne den für die
           // Affiliate-Attribution relevanten Herkunftsverweis zu unterdrücken.
-          window.open(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork), "_blank", "noopener");
+          const ticketUrl = getSafeAffiliateTicketLink(
+            getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork),
+          ).url;
+          window.open(ticketUrl, "_blank", "noopener");
         }}
         className="block w-full overflow-hidden rounded-sm bg-transparent p-0 text-left outline outline-1 outline-white/10 outline-offset-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         aria-label={campaign.clickAriaLabel ?? `Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}

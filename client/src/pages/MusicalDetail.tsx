@@ -52,6 +52,7 @@ import { getExperienceCategory } from "@/lib/experience-categories";
 import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
 import { getTicketCta } from "@/lib/ticket-cta";
+import { getSafeAffiliateTicketLink } from "@/lib/affiliate-link-safety";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick, type AffiliateClickPlacement } from "@/lib/category-analytics";
 
@@ -159,13 +160,13 @@ export default function MusicalDetail() {
   // Get provider info
   const providerInfo = providers.find((p) => p.name === musical.provider);
 
-  const ticketLink = createAwinLink(musical.eventimUrl);
-  const keyvisualTicketLink = musical.keyvisualLink ?? ticketLink;
-  const ctaTicketLink = musical.ticketCtaUrl ?? ticketLink;
+  const ticketLink = getSafeAffiliateTicketLink(createAwinLink(musical.eventimUrl)).url;
+  const keyvisualTicketLink = getSafeAffiliateTicketLink(musical.keyvisualLink ?? ticketLink, ticketLink).url;
+  const ctaTicketLink = getSafeAffiliateTicketLink(musical.ticketCtaUrl ?? ticketLink, ticketLink).url;
   // Awin-spezifische Links für die drei CTA-Positionen (mit clickref)
-  const heroTicketLink = musical.awinHeroUrl ?? ctaTicketLink;
-  const stickyTicketLink = musical.awinStickyUrl ?? ctaTicketLink;
-  const boxTicketLink = musical.awinBoxUrl ?? ctaTicketLink;
+  const heroTicketLink = getSafeAffiliateTicketLink(musical.awinHeroUrl ?? ctaTicketLink, ctaTicketLink).url;
+  const stickyTicketLink = getSafeAffiliateTicketLink(musical.awinStickyUrl ?? ctaTicketLink, ctaTicketLink).url;
+  const boxTicketLink = getSafeAffiliateTicketLink(musical.awinBoxUrl ?? ctaTicketLink, ctaTicketLink).url;
   const usesAtgTickets = isAtgTicketMusical(musical.slug);
   const usesStageProductPage = musical.eventimUrl.includes("stage-entertainment.de");
   const keyvisualOpensShowPage = usesStageProductPage && keyvisualTicketLink !== ticketLink;

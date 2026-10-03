@@ -925,3 +925,8 @@
 - [x] Prüft die sichtbaren Desktop-/Mobile-CTA-, Keyvisual- und Terminpfade gegen eine Koppelung an `affiliateTracking`; sie bleiben damit ohne Einwilligung erreichbar.
 - [x] Prüft, dass Converter und sämtliche Banner-Impressionen nur bei `affiliateTracking` aktiviert werden und keine fremden `document.write`-Werbemittel ausgeführt werden.
 - [x] Der Gate ist der erste Schritt von `pnpm build`; ein Cloudflare-Deployment wird bei einer Abweichung vor dem Produktionsbundle abgebrochen. Aktueller Lauf: 77 direkte Stage-Links, 220 direkte Awin-Links und 14 weitere Partnerziele erfolgreich geprüft.
+
+## Sicherer Affiliate-Link-Fallback – Oktober 2026
+- [x] Lokaler Link-Wächter ergänzt: prüft vor dem Rendern oder Öffnen HTTPS, Partnerdomain und die erforderlichen Stage-, TradeDoubler- und Awin-Parameter. Er ruft keine Partnerendpunkte automatisch auf und erzeugt damit keine künstlichen Klicks, Pixel oder Drittanbieterprotokolle.
+- [x] Bei einer ungültigen oder manipulierten URL wird ausschließlich für diesen Klick temporär eine sichere, offizielle HTTPS-Anbieterseite verwendet – bevorzugt ein bereits valider, show-spezifischer Primärlink; sonst die passende Stage-, ATG-, Eventim-, oeticket-, Ticketcorner- oder Deutsches-Theater-Startseite.
+- [x] Abgesichert für Ticket-CTAs (Desktop/Mobil/Sticky), Keyvisuals, Tourtermine und alle nativen Stage-, TradeDoubler-, Awin- und Eventim-Kampagnenbuttons. Korrekte Direktlinks bleiben bytegleich erhalten.
