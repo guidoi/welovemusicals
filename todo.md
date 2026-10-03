@@ -954,3 +954,9 @@
 - [x] Der CSV-Download wird nun aktiv über die geschützte API angefordert; die Erfolgsmeldung erscheint nur nach dem Empfang einer gültigen, nicht leeren CSV-Datei.
 - [x] Sonner-Pop-up bestätigt den Download mit Dateinamen. Bei einer fehlenden Berechtigung, einer fehlerhaften Antwort oder einer leeren Datei erscheint stattdessen ein Fehlerhinweis; der Download-Button zeigt währenddessen „CSV wird erstellt …“.
 - [x] Erfolgs- und Fehlerpfad unit-getestet; die echte Browserprüfung mit einer kontrollierten CSV-Antwort bestätigt den sichtbaren Erfolgshinweis. Gesamtsuite, TypeScript, Build, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.
+
+## Suche und Filter in der Affiliate-Link-Auswertung – Oktober 2026
+- [x] Lokale Suche für die bereits geladenen, aggregierten Fehlergruppen ergänzt; sie durchsucht Musicalkennung, Netzwerk, Platzierung und Fehlergrund ohne Groß-/Kleinschreibungsabhängigkeit und erkennt deutsche Umlaute (z. B. „König“ für `koenig-der-loewen`).
+- [x] Netzwerk-Dropdown sowie Datumsgrenzen „zuletzt erfasst ab/bis“ (UTC) ergänzt. Die Ansicht zeigt transparent, wie viele der geladenen Gruppen den aktuellen Kriterien entsprechen, und bietet „Filter zurücksetzen“.
+- [x] Kein zusätzlicher Browser-, Tracking- oder Datenbankabruf: Die Filter laufen ausschließlich im geschützten Browserbereich auf den bereits datensparsam aggregierten D1-Daten. CSV-Export und Affiliatepfade bleiben unverändert.
+- [x] Unit- und Browserprüfung für Textsuche, Netzwerk- und Datumsfilter erfolgreich; Gesamtsuite, TypeScript, Produktionsbuild, Diff-Prüfung und Affiliate-Integritätsgate erfolgreich.

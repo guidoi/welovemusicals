@@ -5,12 +5,20 @@ import {
   CheckCircle2,
   Download,
   ExternalLink,
+  Filter,
   RefreshCcw,
+  Search,
   ShieldCheck,
+  X,
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { downloadAffiliateFallbackCsv } from "@/lib/affiliate-link-csv-download";
+import {
+  filterAffiliateFallbackRows,
+  hasActiveAffiliateFallbackFilters,
+  type AffiliateFallbackFilters,
+} from "@/lib/affiliate-fallback-filters";
 
 type PeriodDays = 7 | 30 | 90;
 
@@ -38,6 +46,8 @@ const PERIOD_OPTIONS: Array<{ value: PeriodDays; label: string }> = [
   { value: 30, label: "30 Tage" },
   { value: 90, label: "90 Tage" },
 ];
+
+const EMPTY_FILTERS: AffiliateFallbackFilters = { query: "", partner: "alle", from: "", to: "" };
 
 const placementLabels: Record<string, string> = {
   "ticket-base": "Ticket-CTA",
@@ -85,6 +95,7 @@ export default function AffiliateLinkFallbackAdmin() {
   const [loading, setLoading] = useState(true);
   const [exporting, setExporting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [filters, setFilters] = useState<AffiliateFallbackFilters>(EMPTY_FILTERS);
 
   const loadReport = useCallback(async () => {
     setLoading(true);
@@ -107,11 +118,13 @@ export default function AffiliateLinkFallbackAdmin() {
     void loadReport();
   }, [loadReport]);
 
+  const filteredRows = useMemo(() => filterAffiliateFallbackRows(report?.rows ?? [], filters), [filters, report?.rows]);
+  const partnerOptions = useMemo(() => Array.from(new Set(report?.rows.map((row) => row.partner) ?? [])).sort(), [report?.rows]);
   const partnerBreakdown = useMemo(() => {
     const totals = new Map<string, number>();
-    report?.rows.forEach((row) => totals.set(row.partner, (totals.get(row.partner) ?? 0) + Number(row.eventCount)));
+    filteredRows.forEach((row) => totals.set(row.partner, (totals.get(row.partner) ?? 0) + Number(row.eventCount)));
     return Array.from(totals.entries()).sort((a, b) => b[1] - a[1]);
-  }, [report]);
+  }, [filteredRows]);
 
   const csvExportUrl = `/api/admin/affiliate-link-fallback-events?days=${period}&format=csv`;
 
@@ -166,11 +179,23 @@ export default function AffiliateLinkFallbackAdmin() {
           </section>
 
           {report.summary.total === 0 ? <section className="rounded-2xl border border-emerald-300/20 bg-emerald-400/[0.06] p-6 text-center"><CheckCircle2 className="mx-auto h-8 w-8 text-emerald-300" /><h2 className="mt-3 font-display text-2xl font-bold">Keine Fallbacks im gewählten Zeitraum</h2><p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-white/65">Die geprüften Ticket- und Bannerlinks wurden ohne sicheren Ersatzpfad verwendet. Die automatische Absicherung bleibt aktiv.</p></section> : <>
+            <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white/80"><Filter className="h-4 w-4 text-gold" /> Fehlergruppen gezielt durchsuchen</div>
+                {hasActiveAffiliateFallbackFilters(filters) ? <button type="button" onClick={() => setFilters(EMPTY_FILTERS)} className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-gold transition hover:text-white"><X className="h-3.5 w-3.5" /> Filter zurücksetzen</button> : null}
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <label className="relative block"><span className="sr-only">Fehlergruppen durchsuchen</span><Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white/45" /><input value={filters.query} onChange={(event) => setFilters((current) => ({ ...current, query: event.target.value }))} placeholder="Musical oder Fehlergrund" className="h-10 w-full rounded-lg border border-white/15 bg-black/25 pl-9 pr-3 text-sm text-white outline-none transition placeholder:text-white/40 focus:border-gold" /></label>
+                <label className="block"><span className="sr-only">Netzwerk filtern</span><select value={filters.partner} onChange={(event) => setFilters((current) => ({ ...current, partner: event.target.value }))} className="h-10 w-full rounded-lg border border-white/15 bg-[#1a1822] px-3 text-sm text-white outline-none transition focus:border-gold"><option value="alle">Alle Netzwerke</option>{partnerOptions.map((partner) => <option key={partner} value={partner}>{partner.toUpperCase()}</option>)}</select></label>
+                <label className="block text-xs text-white/55"><span className="mb-1 block">Zuletzt erfasst ab (UTC)</span><input type="date" value={filters.from} max={filters.to || undefined} onChange={(event) => setFilters((current) => ({ ...current, from: event.target.value }))} className="h-10 w-full rounded-lg border border-white/15 bg-[#1a1822] px-3 text-sm text-white outline-none transition focus:border-gold" /></label>
+                <label className="block text-xs text-white/55"><span className="mb-1 block">Zuletzt erfasst bis (UTC)</span><input type="date" value={filters.to} min={filters.from || undefined} onChange={(event) => setFilters((current) => ({ ...current, to: event.target.value }))} className="h-10 w-full rounded-lg border border-white/15 bg-[#1a1822] px-3 text-sm text-white outline-none transition focus:border-gold" /></label>
+              </div>
+            </section>
             <section className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
               <article className="rounded-2xl border border-white/10 bg-black/30 p-5"><h2 className="font-display text-xl font-bold">Nach Partner</h2><div className="mt-5 space-y-3">{partnerBreakdown.map(([partner, count]) => <div key={partner} className="flex items-center justify-between gap-3"><span className="rounded-full bg-white/[0.07] px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white/75">{partner}</span><span className="text-lg font-bold text-gold">{count}</span></div>)}</div></article>
               <article className="rounded-2xl border border-white/10 bg-black/30 p-5"><h2 className="font-display text-xl font-bold">So wird die Zahl gelesen</h2><p className="mt-3 text-sm leading-6 text-white/65">Jede Zeile fasst gleiche technische Fälle zusammen. Prüfen Sie zuerst häufige Fehlergründe und anschließend die zugehörige Show beziehungsweise Platzierung. Ein Ereignis bedeutet nicht automatisch einen defekten Partner oder entgangenen Umsatz.</p></article>
             </section>
-            <section className="overflow-hidden rounded-2xl border border-white/10 bg-black/30"><div className="border-b border-white/10 px-5 py-4"><h2 className="font-display text-xl font-bold">Fehlerübersicht</h2><p className="mt-1 text-xs text-white/50">Aggregiert, maximal 100 Gruppen. URLs und personenbezogene Daten werden nicht gespeichert.</p></div><div className="overflow-x-auto"><table className="w-full min-w-[720px] text-left text-sm"><thead className="bg-white/[0.035] text-xs uppercase tracking-[0.12em] text-white/50"><tr><th className="px-5 py-3">Musical</th><th className="px-4 py-3">Partner</th><th className="px-4 py-3">Platzierung</th><th className="px-4 py-3">Fehlergrund</th><th className="px-4 py-3 text-right">Anzahl</th><th className="px-5 py-3">Zuletzt</th></tr></thead><tbody>{report.rows.map((row) => <tr key={`${row.musicalId}-${row.partner}-${row.placement}-${row.reason}`} className="border-t border-white/[0.07] text-white/75"><td className="px-5 py-3 font-semibold text-white">{row.musicalId}</td><td className="px-4 py-3 uppercase text-gold">{row.partner}</td><td className="px-4 py-3">{placementLabels[row.placement] ?? row.placement}</td><td className="px-4 py-3">{reasonLabels[row.reason] ?? row.reason}</td><td className="px-4 py-3 text-right font-bold text-white">{row.eventCount}</td><td className="px-5 py-3 text-xs text-white/55">{formatDate(row.latestAt)}</td></tr>)}</tbody></table></div></section>
+            <section className="overflow-hidden rounded-2xl border border-white/10 bg-black/30"><div className="border-b border-white/10 px-5 py-4"><h2 className="font-display text-xl font-bold">Fehlerübersicht</h2><p className="mt-1 text-xs text-white/50">{filteredRows.length} von {report.rows.length} Fehlergruppen. Aggregiert, maximal 100 Gruppen. URLs und personenbezogene Daten werden nicht gespeichert.</p></div><div className="overflow-x-auto"><table className="w-full min-w-[720px] text-left text-sm"><thead className="bg-white/[0.035] text-xs uppercase tracking-[0.12em] text-white/50"><tr><th className="px-5 py-3">Musical</th><th className="px-4 py-3">Partner</th><th className="px-4 py-3">Platzierung</th><th className="px-4 py-3">Fehlergrund</th><th className="px-4 py-3 text-right">Anzahl</th><th className="px-5 py-3">Zuletzt</th></tr></thead><tbody>{filteredRows.map((row) => <tr key={`${row.musicalId}-${row.partner}-${row.placement}-${row.reason}`} className="border-t border-white/[0.07] text-white/75"><td className="px-5 py-3 font-semibold text-white">{row.musicalId}</td><td className="px-4 py-3 uppercase text-gold">{row.partner}</td><td className="px-4 py-3">{placementLabels[row.placement] ?? row.placement}</td><td className="px-4 py-3">{reasonLabels[row.reason] ?? row.reason}</td><td className="px-4 py-3 text-right font-bold text-white">{row.eventCount}</td><td className="px-5 py-3 text-xs text-white/55">{formatDate(row.latestAt)}</td></tr>)}{filteredRows.length === 0 ? <tr><td colSpan={6} className="px-5 py-8 text-center text-sm text-white/55">Keine Fehlergruppen entsprechen den aktuellen Filtern.</td></tr> : null}</tbody></table></div></section>
           </>}
         </> : loading && !error ? <p className="py-12 text-center text-sm text-white/60">Technische Ereignisse werden geladen …</p> : null}
       </div>
