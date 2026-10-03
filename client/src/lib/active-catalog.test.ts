@@ -28,4 +28,16 @@ describe("aktiver Musicalkatalog", () => {
     expect(hamburgIds).toContain("tina-das-musical");
     expect(hamburg?.musicalCount).toBe(hamburgIds.length);
   });
+
+  it("führt Aschenbrödel über aktive Tourtermine auf relevanten Stadtseiten und in Stadtfiltern", () => {
+    const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
+    const hamburgIds = getActiveMusicalsByCity("Hamburg").map((musical) => musical.id);
+    const hannoverIds = getActiveMusicalsByCity("Hannover").map((musical) => musical.id);
+
+    expect(berlinIds).toContain("dreihaselnuesse");
+    expect(hamburgIds).toContain("dreihaselnuesse");
+    expect(hannoverIds).toContain("dreihaselnuesse");
+    expect(cities.find((city) => city.slug === "berlin")?.musicalCount).toBe(berlinIds.length);
+    expect(cities.find((city) => city.slug === "hamburg")?.musicalCount).toBe(hamburgIds.length);
+  });
 });

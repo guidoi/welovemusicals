@@ -36,7 +36,7 @@ describe("öffentliche Sitemap", () => {
       .map((city) => `/stadt/${city.slug}`);
 
     expect(sitemapCityPaths(sitemap)).toEqual(expectedPaths);
-    expect(sitemap).not.toContain("/stadt/hannover");
+    expect(sitemap).toContain("/stadt/hannover");
     expect(sitemap).not.toContain("/stadt/oberhausen");
   });
 

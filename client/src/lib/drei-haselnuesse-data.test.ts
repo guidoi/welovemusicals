@@ -5,22 +5,22 @@ import { getMusicalSeo } from "./musical-seo";
 describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
   const musical = getMusicalBySlug("drei-haselnuesse-fuer-aschenbroedel");
 
-  it("übernimmt Preis, SEO und die beiden bestätigten Tourneezeiträume", () => {
+  it("übernimmt Preis, SEO und die bestätigte Tournee bis 2028", () => {
     expect(musical).toBeDefined();
     expect(musical?.priceFrom).toBe("40,49");
-    expect(musical?.detailHeadline).toBe("ZWEI TOUREN. EIN WINTERMÄRCHEN. ÜBER 70 STÄDTE.");
+    expect(musical?.detailHeadline).toBe("ZWEI TOUREN. EIN WINTERMÄRCHEN. 80 STÄDTE.");
     expect(musical?.detailDescription).toContain("Nikolaus-Tour");
     expect(musical?.detailDescription).toContain("Rosalie-Tour");
     expect(musical?.detailDescription).toContain("Lena Marie Hespe");
     expect(musical?.detailDescription).toContain("Cassandra Schütt");
     expect(musical?.showFacts).toContainEqual({
       label: "Auf Tour",
-      value: "15. Okt. 2026 bis 24. Feb. 2027",
+      value: "15. Okt. 2026 bis 13. Jan. 2028",
     });
 
     const seo = getMusicalSeo(musical!);
-    expect(seo.title).toBe("Drei Haselnüsse für Aschenbrödel 2026/27 – Tickets");
-    expect(seo.description).toContain("über 70 Termine");
+    expect(seo.title).toBe("Drei Haselnüsse für Aschenbrödel 2026–2028 – Tickets");
+    expect(seo.description).toContain("80 Städte");
     expect(seo.description).toContain("40,49 €");
   });
 
@@ -33,34 +33,34 @@ describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
       venue: "Sporthalle",
       endDate: "2027-01-28",
     });
-    expect(find("Mannheim", "2026-11-25")).toMatchObject({ venue: "Rosengarten" });
-    expect(find("Heidenheim", "2026-10-25")).toMatchObject({ endDate: "2026-10-25" });
-    expect(find("Heidenheim", "2027-01-17")).toMatchObject({ endDate: "2027-01-17" });
-    expect(find("Halle (Saale)", "2027-02-22")).toMatchObject({ endDate: "2027-02-22" });
-    expect(find("Leipzig", "2027-01-31")).toMatchObject({ endDate: "2027-02-03" });
-    expect(find("Stuttgart", "2026-12-22")).toMatchObject({ endDate: "2026-12-28" });
-    expect(find("Wien", "2027-01-06")).toMatchObject({ endDate: "2027-01-10" });
-    expect(find("Weiden i. d. Oberpfalz", "2026-12-30")).toMatchObject({
-      venue: "Max-Reger-Halle (Gustl Lang Saal)",
+    expect(find("Berlin", "2027-02-28")).toMatchObject({
+      venue: "BlueMax Theater",
+      endDate: "2027-04-04",
     });
-    expect(find("Würzburg", "2026-12-11")).toBeDefined();
-    expect(find("Zweibrücken", "2026-11-20")).toMatchObject({ endDate: "2026-11-21" });
-    expect(find("Zwickau", "2027-02-24")).toBeDefined();
-    expect(find("Hameln", "2026-11-14")).toBeDefined();
+    expect(find("Fulda", "2027-12-21")).toMatchObject({ venue: "Esperantohalle", endDate: "2027-12-22" });
+    expect(find("Hannover", "2027-02-17")).toMatchObject({ venue: "Swiss Life Hall" });
+    expect(find("Nürnberg", "2027-02-02")).toMatchObject({ endDate: "2027-02-04" });
+    expect(find("Wien", "2027-01-06")).toMatchObject({ endDate: "2027-01-17" });
+    expect(find("Neuss", "2028-01-11")).toMatchObject({ endDate: "2028-01-13" });
+    expect(find("Paderborn", "2028-01-03")).toMatchObject({ endDate: "2028-01-07" });
+    expect(find("Würzburg", "2027-12-19")).toMatchObject({ endDate: "2027-12-20" });
+    expect(find("Mannheim", "2026-11-25")).toBeUndefined();
   });
 
-  it("deckt über 70 Städte zwischen dem ersten und letzten bestätigten Spieltag ab", () => {
+  it("deckt 80 Städte zwischen dem ersten und letzten bestätigten Spieltag ab", () => {
     const dates = musical?.tourDates ?? [];
     const uniqueCities = new Set(dates.map((date) => date.city));
 
-    expect(uniqueCities.size).toBeGreaterThan(70);
+    expect(uniqueCities.size).toBe(80);
+    expect(musical?.cities).toContain("Berlin");
+    expect(musical?.cities).toContain("Hannover");
     expect(musical?.cities).toContain("Hamburg");
-    expect(musical?.cities).toContain("Mannheim");
+    expect(musical?.cities).not.toContain("Mannheim");
     expect(musical?.headerCities).toContain("Hamburg");
 
     for (const date of dates) {
       expect(date.startDate >= "2026-10-15").toBe(true);
-      expect((date.endDate ?? date.startDate) <= "2027-02-24").toBe(true);
+      expect((date.endDate ?? date.startDate) <= "2028-01-13").toBe(true);
     }
   });
 
@@ -86,7 +86,8 @@ describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
     }
 
     expect(findDateLink(musical!, "Hamburg")).toContain("clickref=3hn-hamburg-dates");
-    expect(findDateLink(musical!, "Mannheim")).toContain("clickref=3hn-mannheim-dates");
+    expect(findDateLink(musical!, "Berlin")).toContain("clickref=3hn-berlin-dates");
+    expect(findDateLink(musical!, "Neuss")).toContain("clickref=3hn-neuss-dates");
   });
 });
 

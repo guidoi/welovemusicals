@@ -991,3 +991,10 @@
 - [x] Die Tour- und Städteübersicht enthält 85 bestätigte Spieltage in 71 Städten. Ergänzt bzw. korrigiert sind unter anderem Hamburg (27.–28. Januar 2027), Mannheim (25.–26. November 2026), Würzburg, Zweibrücken, Weiden, Halle, Leipzig, Stuttgart, Wien, Zwickau und Hameln (korrekt 14. November 2026).
 - [x] Alle Haupt- und Stadt-CTAs bleiben direkte Awin/Eventim-Links mit Publisher-Kennung `2865727`, individuellen `clickref`-Werten und Eventim-Zieladresse. Keine Trackinglogik, Partnerkennung oder Consent-Gating wurde geändert.
 - [x] Google Sheets und die lokale Preis-API bestätigen für `dreihaselnuesse` `40,49 €`, ohne Sale. Statische SEO-Ausgabe enthält 85 MusicEvent-Objekte, 71 Spielorte, korrekten ShowSlot-Organisator und den Preis `40.49`.
+
+## Drei Haselnüsse für Aschenbrödel – Tourerweiterung bis 2028
+- [x] Die vom Projektinhaber gelieferten Termine vollständig eingepflegt bzw. korrigiert: neue Stopps u. a. in Berlin (BlueMax Theater), Bielefeld, Chemnitz, Deggendorf, Hannover, Karlsruhe, Kempten, Münster, Passau und Trier; Mannheim entfernt. Korrigierte Zeiträume/Spielstätten u. a. für Aschaffenburg, Bremerhaven, Donaueschingen, Fulda (Esperantohalle), Gütersloh, Halle (Saale), Husum, Koblenz, Landau, Neuss, Nürnberg, Offenburg, Paderborn, Ravensburg, Wetzlar, Wien und Würzburg.
+- [x] Der Datensatz umfasst nun 80 Tourstädte von 15.10.2026 bis 13.01.2028. Detailtext, SEO-Titel/-Beschreibung, Fakten und FAQ sind auf diesen Zeitraum abgestimmt.
+- [x] Jede neue oder geänderte Stadtzeile nutzt einen direkten, show- und stadtbezogenen Awin/Eventim-CTA mit `awinmid=11388`, `awinaffid=2865727` und eigenem `clickref`. Es wurden keine Banner, Pixel, Converter oder Consent-Regeln verändert.
+- [x] Berlin, Hamburg und Hannover nehmen Aschenbrödel aufgrund der zukünftigen Tourtermine automatisch in Stadtseite, Stadtfilter, Kartenanzahl, Sitemap und statische SEO-Ausgabe auf. Desktop- und Mobilansichten für Detailseite sowie Berlin/Hamburg geprüft.
+- [x] Gesamtsuite: 102 Testdateien / 348 Tests; TypeScript, Produktionsbuild, Sitemap/SEO-Output, Affiliate-Integritätsgate und Diff-Prüfung erfolgreich.

@@ -17,11 +17,11 @@ describe("Rapunzel Berlin-Termin", () => {
     expect(berlinDate?.eventimUrl).toContain("clickref=rapunzel-berlin-dates");
   });
 
-  it("führt Berlin im Rapunzel-Header und zählt nach dem Fack-Ju-Göhte-Gastspiel vier aktive Musicals", () => {
+  it("führt Berlin im Rapunzel-Header und zählt mit Aschenbrödel fünf aktive Musicals", () => {
     const rapunzel = getMusicalBySlug("rapunzel");
 
     expect(rapunzel?.cities).toContain("Berlin");
-    expect(getActiveMusicalCountByCity("Berlin")).toBe(4);
+    expect(getActiveMusicalCountByCity("Berlin")).toBe(5);
   });
 
   it("nutzt die neuen Rapunzel-Artworks responsiv", () => {
