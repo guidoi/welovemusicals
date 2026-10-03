@@ -919,3 +919,9 @@
 - [x] 44 Sitemap-URLs im Live-Crawl geprüft: alle HTTP 200 und mit Meta-Description. Befund bei Impressum/Datenschutz behoben: eigene statische SEO-Dokumente mit korrektem Canonical, H1 und Schema werden über Cloudflare-Pages-Funktionen ausgeliefert.
 - [x] Mobile Zoom-Sperre (`maximum-scale=1`) entfernt und gegen Wiedereinführung getestet.
 - [x] Größter verbleibender Hebel dokumentiert: responsive, komprimierte Bildvarianten für Karten und Stadtseiten; erst danach Bundle-/DOM-Optimierungen priorisieren. Affiliate-Tracking, Deeplinks, Consent und Impressionen wurden nicht geändert.
+
+## Affiliate-Integritätsgate – Oktober 2026
+- [x] Neuer Befehl `pnpm run test:affiliate-integrity`: prüft alle aktiven Ticket-/Keyvisual-/Terminziele gegen die direkten Stage-Click-Parameter (`p=394206`, `a=3492604`, `g=`) und Awin-Publisherkennung (`2865727`), verhindert doppelt konvertierte Stage-URLs und unterdrückte Referrer.
+- [x] Prüft die sichtbaren Desktop-/Mobile-CTA-, Keyvisual- und Terminpfade gegen eine Koppelung an `affiliateTracking`; sie bleiben damit ohne Einwilligung erreichbar.
+- [x] Prüft, dass Converter und sämtliche Banner-Impressionen nur bei `affiliateTracking` aktiviert werden und keine fremden `document.write`-Werbemittel ausgeführt werden.
+- [x] Der Gate ist der erste Schritt von `pnpm build`; ein Cloudflare-Deployment wird bei einer Abweichung vor dem Produktionsbundle abgebrochen. Aktueller Lauf: 77 direkte Stage-Links, 220 direkte Awin-Links und 14 weitere Partnerziele erfolgreich geprüft.
