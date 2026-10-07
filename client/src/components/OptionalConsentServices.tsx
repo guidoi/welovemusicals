@@ -8,14 +8,19 @@ const GOOGLE_FONTS_ID = "welovemusicals-google-fonts";
 const UMAMI_SCRIPT_ID = "welovemusicals-umami";
 const CLARITY_SCRIPT_ID = "welovemusicals-microsoft-clarity";
 const CLARITY_PROJECT_ID = "yrei35xhu5";
+const GOOGLE_ANALYTICS_SCRIPT_ID = "welovemusicals-google-analytics";
+const GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-V5YZXQEB04";
 const AFFILIATE_EXCLUDED_PATHS = new Set(["/impressum", "/datenschutz"]);
 const PRODUCTION_HOSTNAMES = new Set(["welovemusicals.com", "www.welovemusicals.com"]);
 
 type ClarityFunction = ((...args: unknown[]) => void) & { q?: unknown[][] };
+type GoogleTagFunction = (...args: unknown[]) => void;
 
 declare global {
   interface Window {
     clarity?: ClarityFunction;
+    dataLayer?: unknown[][];
+    gtag?: GoogleTagFunction;
   }
 }
 
@@ -129,6 +134,70 @@ export function shouldLoadClarityForHostname(hostname: string) {
   return PRODUCTION_HOSTNAMES.has(hostname.toLocaleLowerCase("en-US"));
 }
 
+/** GA4 must never receive visits from local or Manus preview environments. */
+export function shouldLoadGoogleAnalyticsForHostname(hostname: string) {
+  return PRODUCTION_HOSTNAMES.has(hostname.toLocaleLowerCase("en-US"));
+}
+
+function getGoogleTag() {
+  const gtag: GoogleTagFunction = window.gtag ?? ((...args: unknown[]) => {
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push(args);
+  });
+  window.gtag = gtag;
+  return gtag;
+}
+
+/**
+ * GA4 is initialized only after the visitor accepts statistics. Advertising
+ * storage remains denied; route changes are sent explicitly for this SPA.
+ */
+function startGoogleAnalytics() {
+  if (document.getElementById(GOOGLE_ANALYTICS_SCRIPT_ID)) return () => undefined;
+
+  const gtag = getGoogleTag();
+  gtag("js", new Date());
+  gtag("consent", "default", {
+    analytics_storage: "granted",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
+  gtag("config", GOOGLE_ANALYTICS_MEASUREMENT_ID, {
+    send_page_view: false,
+    anonymize_ip: true,
+  });
+
+  const script = document.createElement("script");
+  script.id = GOOGLE_ANALYTICS_SCRIPT_ID;
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+
+  return () => {
+    // The consent context immediately reloads after a revocation. This signal
+    // stops any already initialized GA4 collection before that reload occurs.
+    window.gtag?.("consent", "update", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+  };
+}
+
+function trackGoogleAnalyticsPageView() {
+  const gtag = window.gtag;
+  if (!gtag) return;
+
+  gtag("event", "page_view", {
+    send_to: GOOGLE_ANALYTICS_MEASUREMENT_ID,
+    page_location: window.location.href,
+    page_path: `${window.location.pathname}${window.location.search}`,
+    page_title: document.title,
+  });
+}
+
 /**
  * Clarity is a statistics service, not affiliate tracking. The official consentv2
  * signal is queued before its provider script loads; advertising storage remains
@@ -173,6 +242,16 @@ export default function OptionalConsentServices() {
     if (!consent?.analytics || !shouldLoadClarityForHostname(window.location.hostname)) return;
     return startClarity();
   }, [consent?.analytics]);
+
+  useEffect(() => {
+    if (!consent?.analytics || !shouldLoadGoogleAnalyticsForHostname(window.location.hostname)) return;
+    return startGoogleAnalytics();
+  }, [consent?.analytics]);
+
+  useEffect(() => {
+    if (!consent?.analytics || !shouldLoadGoogleAnalyticsForHostname(window.location.hostname)) return;
+    trackGoogleAnalyticsPageView();
+  }, [consent?.analytics, location]);
 
   useEffect(() => {
     if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location, window.location.search)) return;

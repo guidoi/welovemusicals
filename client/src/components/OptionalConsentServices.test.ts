@@ -1,17 +1,28 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { shouldLoadClarityForHostname } from "./OptionalConsentServices";
+import {
+  shouldLoadClarityForHostname,
+  shouldLoadGoogleAnalyticsForHostname,
+} from "./OptionalConsentServices";
 
 const source = readFileSync(new URL("./OptionalConsentServices.tsx", import.meta.url), "utf8");
 
 describe("Optionale Dienste", () => {
-  it("lädt Umami nur nach Analytics-Einwilligung und Schriftarten nur nach separater Einwilligung", () => {
+  it("lädt Statistikdienste nur nach Analytics-Einwilligung und Schriftarten nur nach separater Einwilligung", () => {
     expect(source).toContain("if (!consent?.analytics) return;");
     expect(source).toContain("loadUmami();");
     expect(source).toContain("shouldLoadClarityForHostname(window.location.hostname)");
     expect(source).toContain("https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}");
     expect(source).toContain('clarity("consentv2", { ad_Storage: "denied", analytics_Storage: "granted" });');
     expect(source).toContain('window.clarity?.("consent", false);');
+    expect(source).toContain('const GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-V5YZXQEB04";');
+    expect(source).toContain("shouldLoadGoogleAnalyticsForHostname(window.location.hostname)");
+    expect(source).toContain("https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}");
+    expect(source).toContain('gtag("config", GOOGLE_ANALYTICS_MEASUREMENT_ID, {');
+    expect(source).toContain("send_page_view: false");
+    expect(source).toContain('gtag("event", "page_view", {');
+    expect(source).toContain('analytics_storage: "granted"');
+    expect(source).toContain('ad_storage: "denied"');
     expect(source).toContain("if (!consent?.externalMedia) return;");
     expect(source).toContain("loadGoogleFonts();");
   });
@@ -23,6 +34,10 @@ describe("Optionale Dienste", () => {
     expect(shouldLoadClarityForHostname("www.welovemusicals.com")).toBe(true);
     expect(shouldLoadClarityForHostname("3000-iznkrqg6bor2v4t2z2yq6-ebc61fa6.us1.manus.computer")).toBe(false);
     expect(shouldLoadClarityForHostname("localhost")).toBe(false);
+    expect(shouldLoadGoogleAnalyticsForHostname("welovemusicals.com")).toBe(true);
+    expect(shouldLoadGoogleAnalyticsForHostname("www.welovemusicals.com")).toBe(true);
+    expect(shouldLoadGoogleAnalyticsForHostname("3000-iznkrqg6bor2v4t2z2yq6-ebc61fa6.us1.manus.computer")).toBe(false);
+    expect(shouldLoadGoogleAnalyticsForHostname("localhost")).toBe(false);
   });
 
   it("lädt nur den TradeDoubler-Link-Converter nach Affiliate-Einwilligung", () => {

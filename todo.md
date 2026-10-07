@@ -1073,3 +1073,9 @@
 - [x] Das native FJG-Querbanner bleibt als Partner-Creative und consent-gesteuerte Impression erhalten, erscheint aber erst nach dem vollständigen oberen Fließtext und damit unterhalb des Keyvisual-Kontexts.
 - [x] **STARLIGHT EXPRESS** ist in „Preise & Aktionen“ sowie im veröffentlichten „Website-Export“ auf 59,99 € aktualisiert. Katalogfallback, SEO, Fakten, FAQ und Ticket-CTAs verwenden ebenfalls 59,99 €; die Preis-API liefert den Wert nach Neuladen.
 - [x] Desktop- und Mobilprüfung bestätigen FJG-Position und Berlin-Karte; STEX-Ticket-CTA und Faktbox zeigen 59,99 €.
+
+
+## Google Analytics 4 – Oktober 2026
+- [x] GA4 mit der Mess-ID `G-V5YZXQEB04` ist consent-gesteuert integriert. Das Google-Tag lädt ausschließlich nach Auswahl „Reichweitenmessung“ und nur auf `welovemusicals.com` bzw. `www.welovemusicals.com`.
+- [x] Die Single-Page-App sendet nach Einwilligung einen initialen sowie bei internen Routenwechseln weitere Seitenaufrufe. Werbe-, Personalisierungs- und Anzeigen-Datenspeicher bleiben explizit deaktiviert; bei Widerruf wird die Messung gestoppt und die Seite neu geladen.
+- [x] Manus- und lokale Vorschauen bleiben von GA4 und Clarity ausgeschlossen. Datenschutzhinweis und Regressionen sind ergänzt.
