@@ -8,7 +8,7 @@ function database() {
 }
 
 const endpoint = "https://welovemusicals.com/api/admin/affiliate-link-target-overrides";
-const payload = { musicalId: "tarzan", partner: "stage", placement: "ticket-box", targetUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406" };
+const payload = { musicalId: "tarzan", partner: "stage", placement: "ticket-box", targetUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408" };
 
 describe("geschützte Affiliate-Link-Zielroute", () => {
   it("speichert ausschließlich valide, partnergebundene Direct-Tracking-URLs", async () => {

@@ -120,7 +120,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 4,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BkyJevjHoYNAGGBb.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/HcQFjBBQPyQprfJy.jpg",
       }),
       expect.objectContaining({
         groupId: "26185500",
@@ -128,7 +128,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zrbcvAjlcjmZFmkg.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/WTvQqjFUcwszTzyS.jpg",
       }),
     ]));
     expect(getAovoCampaign("mj-musical")).toMatchObject({

@@ -141,7 +141,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     const tarzan = getMusicalBySlug("disneys-musical-tarzan");
 
     expect(TARZAN_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406",
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",
     );
     expect(TARZAN_STAGE_TEXT_LINK_URL).toBe(TARZAN_STAGE_SHOW_PAGE_URL);
     expect(tarzan?.keyvisualLink).toBe(TARZAN_STAGE_SHOW_PAGE_URL);

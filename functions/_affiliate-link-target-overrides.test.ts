@@ -8,7 +8,7 @@ import {
 
 function databaseMock() {
   const run = vi.fn().mockResolvedValue({ success: true });
-  const all = vi.fn().mockResolvedValue({ results: [{ musicalId: "tarzan", partner: "stage", placement: "ticket-box", targetUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406", updatedAt: "2026-10-03 15:00:00" }] });
+  const all = vi.fn().mockResolvedValue({ results: [{ musicalId: "tarzan", partner: "stage", placement: "ticket-box", targetUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408", updatedAt: "2026-10-03 15:00:00" }] });
   const bind = vi.fn().mockReturnValue({ run, all });
   const prepare = vi.fn().mockReturnValue({ bind });
   return { database: { prepare }, prepare, bind, run, all };
@@ -16,7 +16,7 @@ function databaseMock() {
 
 const input: AffiliateLinkTargetOverrideInput = {
   musicalId: "tarzan", partner: "stage", placement: "ticket-box",
-  targetUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406",
+  targetUrl: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",
 };
 
 describe("Affiliate-Link-Zieloverride-Ablage", () => {

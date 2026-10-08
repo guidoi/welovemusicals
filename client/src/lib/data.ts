@@ -123,7 +123,7 @@ export const MJ_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/clic
 export const ZIZ_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410";
 export const TINA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074";
 export const UND_JULIA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149394";
-export const TARZAN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406";
+export const TARZAN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408";
 export const PRADA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414";
 export const EISKOENIGIN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418";
 export const TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426";

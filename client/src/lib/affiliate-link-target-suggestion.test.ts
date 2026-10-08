@@ -6,7 +6,7 @@ describe("Affiliate-Zielvorschlag aus dem Katalog", () => {
     const suggestion = getAffiliateTargetSuggestion("tarzan", "stage", "ticket-box");
     expect(suggestion).toEqual(expect.objectContaining({
       sourceField: expect.any(String),
-      url: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149406",
+      url: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",
     }));
   });
 
