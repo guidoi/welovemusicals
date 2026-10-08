@@ -1094,3 +1094,8 @@ Die GA4-Initialisierung wurde nach einer Echtzeit-Rückmeldung gehärtet: Der er
 ## Die Eiskönigin – neue Stage-Creatives, 09.10.2026
 
 Die vom Projektinhaber gelieferten nativen Stage-Creatives sind unverändert aktualisiert: `26185658` (728 × 90) erscheint im oberen Fließtext nach dem Abschnitt „Spektakel für alle Sinne“, `26185656` (300 × 250) nach der Galerie vor „Alles, was du wissen musst“. Beide Originale sind außerhalb des Repos gesichert; die öffentlichen CDN-Dateien liefern 200 `image/jpeg` und die korrekten Dimensionen. Direkte Stage-Klickziele bleiben exakt `p=394206`, `a=3492604` und die jeweilige Gruppen-ID; Impressionen bleiben ausschließlich nach Affiliate-Einwilligung aktiv. Desktop, Mobil, direkte Klick-/Impressionspfade und die Sperre ohne Einwilligung sind geprüft.
+
+
+## &JULIA – neue Stage-Creatives, 09.10.2026
+
+Die vom Projektinhaber gelieferten nativen Stage-Creatives sind aktualisiert: `26185666` (728 × 90) erscheint passend im oberen Fließtext nach „Aus dem tragischen Ende wird ein euphorischer Neuanfang“, `26185664` (300 × 250) nach der Galerie vor „Alles, was du wissen musst“. Die Originaldateien sind außerhalb des Repos gesichert; die neuen öffentlichen CDN-Dateien liefern HTTP 200 `image/jpeg` in den korrekten Dimensionen. Direkte Stage-Klickziele verwenden unverändert `p=394206`, `a=3492604` und die jeweilige Gruppen-ID; Impressionen bleiben ausschließlich mit Affiliate-Einwilligung aktiv. Desktop, Mobil, direkte Klick-/Impressionspfade sowie die Sperre ohne Einwilligung sind geprüft.

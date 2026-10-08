@@ -156,7 +156,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 3,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zLhEgGUtvChrLSXQ.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/iZLYVRYfnhSMdcWc.jpg",
       }),
       expect.objectContaining({
         groupId: "26185664",
@@ -164,7 +164,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yGwFLzKjTQuzjxpb.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/iyfrmzybzwFtZpud.jpg",
       }),
     ]));
     expect(wirSindAmLeben).toMatchObject({
