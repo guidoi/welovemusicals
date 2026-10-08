@@ -1079,3 +1079,8 @@
 - [x] GA4 mit der Mess-ID `G-V5YZXQEB04` ist consent-gesteuert integriert. Das Google-Tag lädt ausschließlich nach Auswahl „Reichweitenmessung“ und nur auf `welovemusicals.com` bzw. `www.welovemusicals.com`.
 - [x] Die Single-Page-App sendet nach Einwilligung einen initialen sowie bei internen Routenwechseln weitere Seitenaufrufe. Werbe-, Personalisierungs- und Anzeigen-Datenspeicher bleiben explizit deaktiviert; bei Widerruf wird die Messung gestoppt und die Seite neu geladen.
 - [x] Manus- und lokale Vorschauen bleiben von GA4 und Clarity ausgeschlossen. Datenschutzhinweis und Regressionen sind ergänzt.
+
+
+## Mobile Ticket-CTA – 08.10.2026
+
+Die roten Ticket-CTAs auf allen Musical-Detailseiten verwenden bei regulären Preisen nun die kompakte Beschriftung `ab XX,XX €`; die Abschnittsüberschrift „Tickets sichern“ erklärt die Aktion bereits. Aktive Sale-Labels bleiben unverändert. Die mobilen CTAs verhindern Zeilenumbrüche, nutzen kleinere seitliche Abstände und lassen das Partnerlogo bei knappem Platz sauber in eine neue Zeile fließen. Ticketziele, Affiliate-Kennungen, Clickrefs, Consent und Tracking bleiben unverändert. DKL wurde auf Mobil geprüft; die Preis-CTA `ab 59,99 €` ist einzeilig. Alle 20 aktiven CTA-Beschriftungen wurden auf Länge geprüft (maximal 24 Zeichen).
