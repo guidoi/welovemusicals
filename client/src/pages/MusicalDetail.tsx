@@ -336,10 +336,11 @@ export default function MusicalDetail() {
             href={heroTicketLink}
             target="_blank"
             rel="noopener sponsored"
-            className="flex w-full items-center justify-center gap-2 rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
+            aria-label={`Tickets für ${musical.title}: ${ticketCta.label} bei ${ticketProviderName}`}
+            className="flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
             onClick={() => trackDetailTicketClick("mobile-hero", heroTicketLink)}
           >
-            <Ticket className="w-4 h-4" />
+            <Ticket className="w-4 h-4 shrink-0" />
             {ticketCta.label}
           </a>
         </div>
@@ -602,22 +603,23 @@ export default function MusicalDetail() {
                 ? `Aktuell: ${ticketCta.label} – direkt bei ${ticketProviderName}.`
                 : `Sichere dir jetzt deine Tickets für ${musical.title} – bequem und sicher über ${ticketProviderName}.`}
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <a
                 href={boxTicketLink}
                 target="_blank"
                 rel="noopener sponsored"
-                className="inline-flex items-center gap-2 rounded-sm bg-red px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-red-dark"
+                aria-label={`Tickets für ${musical.title}: ${ticketCta.label} bei ${ticketProviderName}`}
+                className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-sm bg-red px-5 py-4 text-base font-bold text-white transition-colors hover:bg-red-dark sm:gap-2 sm:px-8 sm:text-lg"
                 onClick={() => trackDetailTicketClick("ticket-box", boxTicketLink)}
               >
                 {ticketCta.label}
-                <ExternalLink className="w-5 h-5" />
+                <ExternalLink className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
               </a>
               <img
                 data-testid="ticket-provider-logo"
                 src={ticketProviderBrand.logoSrc}
                 alt={ticketProviderBrand.name}
-                className="ml-3 h-7 max-w-36 w-auto object-contain object-left opacity-90"
+                className="h-7 max-w-28 w-auto shrink-0 object-contain object-left opacity-90 sm:ml-3 sm:max-w-36"
               />
             </div>
             <p className="text-xs text-muted-foreground/50 mt-4">

@@ -21,7 +21,7 @@ export function getTicketCta(
   }
 
   return {
-    label: musical.priceFrom ? `Tickets buchen – ab ${musical.priceFrom} €` : "Tickets buchen",
+    label: musical.priceFrom ? `ab ${musical.priceFrom} €` : "Tickets sichern",
     kind: "standard",
   };
 }

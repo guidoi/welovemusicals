@@ -33,7 +33,8 @@ describe("Öffentliche Farbpalette", () => {
 
   it("reserviert Rot für Sale und unmittelbare Ticket-Conversion", () => {
     expect(musicalDetail).toContain("border border-red p-8");
-    expect(musicalDetail).toContain("bg-red px-8 py-4");
+    expect(musicalDetail).toContain("bg-red px-5 py-4");
+    expect(musicalDetail).toContain("sm:px-8 sm:text-lg");
     expect(musicalDetail).toContain("bg-red py-3");
     expect(tourDates).toContain("bg-red px-5 py-2");
   });

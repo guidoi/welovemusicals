@@ -28,13 +28,13 @@ describe("getTicketCta", () => {
         {
           priceFrom: "44,79",
           sale: { label: "Aktion", discount: "BIS 40 %", validUntil: "2026-09-18" },
-        },
-        now,
-      ),
-    ).toEqual({ label: "Tickets buchen – ab 44,79 €", kind: "standard" });
+      },
+      now,
+    ),
+    ).toEqual({ label: "ab 44,79 €", kind: "standard" });
   });
 
   it("verwendet ohne Preis eine neutrale Ticket-CTA", () => {
-    expect(getTicketCta({}, now)).toEqual({ label: "Tickets buchen", kind: "standard" });
+    expect(getTicketCta({}, now)).toEqual({ label: "Tickets sichern", kind: "standard" });
   });
 });

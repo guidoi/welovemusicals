@@ -5,10 +5,11 @@ const source = readFileSync(new URL("./MusicalDetail.tsx", import.meta.url), "ut
 
 describe("MusicalDetail ticket CTA hierarchy", () => {
   it("verwendet für die Ticket-Conversion oberhalb des mobilen Detailinhalts Rot", () => {
-    expect(source).toContain("border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white");
+    expect(source).toContain("whitespace-nowrap rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white");
     expect(source).toContain('import { getTicketCta } from "@/lib/ticket-cta";');
     expect(source).toContain("const ticketCta = getTicketCta(musical);");
     expect(source).toContain("{ticketCta.label}");
+    expect(source).toContain("aria-label={`Tickets für ${musical.title}: ${ticketCta.label} bei ${ticketProviderName}`}");
     expect(source).toContain('trackDetailTicketClick("mobile-hero", heroTicketLink)');
     expect(source).toContain('trackDetailTicketClick("ticket-box", boxTicketLink)');
     expect(source).toContain('trackDetailTicketClick("sticky", stickyTicketLink)');
@@ -26,10 +27,10 @@ describe("MusicalDetail ticket CTA hierarchy", () => {
     expect(source).toContain('trackDetailTicketClick("city-date", ticketUrl)');
   });
 
-  it("ordnet Partnerlogos auf Mobilgeräten kompakt rechts neben den Ticket-CTAs an", () => {
-    expect(source).toContain('className="flex items-center gap-4"');
-    expect(source).toContain('inline-flex items-center gap-2 rounded-sm bg-red');
-    expect(source).toContain('ml-3 h-7 max-w-36');
+  it("hält den CTA-Text auf Mobilgeräten kompakt und lässt Partnerlogos sauber umbrechen", () => {
+    expect(source).toContain('className="flex flex-wrap items-center gap-4"');
+    expect(source).toContain('inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-sm bg-red px-5 py-4 text-base');
+    expect(source).toContain('h-7 max-w-28 w-auto shrink-0 object-contain object-left opacity-90 sm:ml-3 sm:max-w-36');
     expect(source).toContain('className="flex items-center gap-3"');
     expect(source).toContain('shrink-0 object-contain object-right opacity-90');
   });
