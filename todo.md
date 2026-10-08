@@ -1114,3 +1114,8 @@ Die sechs neu gelieferten nativen Stage-Creatives sind aktualisiert: Salon Rosie
 ### Deeplink-Bestätigung
 
 Der Projektinhaber bestätigte die getrennten produktseitigen Stage-Ziele: Wir sind am Leben `26149434`, Salon Rosie `26149438`. Beide waren bereits aktiv und werden nun zusätzlich mit einer expliziten Regression gegen eine Verwechslung abgesichert.
+
+
+## TINA, Der Teufel trägt Prada, MJ und Tanz der Vampire – neue Stage-Creatives, 09.10.2026
+
+Die acht vom Projektinhaber gelieferten nativen Stage-Creatives sind aktualisiert: TINA `26204070` (728 × 90) / `26204068` (300 × 250), Der Teufel trägt Prada `26185640` / `26185638`, MJ `26180462` / `26180466` und Tanz der Vampire `26185674` / `26185672`. Die Querformate sind im mittleren oberen Fließtext platziert, die 300 × 250-Creatives nach der Galerie vor „Alles, was du wissen musst“. Alle Originale liegen außerhalb des Repos; die acht neuen CDN-Dateien liefern HTTP 200 `image/jpeg` mit den vorgegebenen Dimensionen. Die bestehenden Produktseiten bleiben exakt unverändert: TINA `26204074`, Prada `26149414`, MJ `26149402`, TDV `26149426`. Desktop- und Mobilansichten, direkte Stage-Ziele, Bilddimensionen sowie die Sperre von Stage-Impressions ohne Affiliate-Einwilligung wurden geprüft.

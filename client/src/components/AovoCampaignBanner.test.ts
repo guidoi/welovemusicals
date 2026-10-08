@@ -49,7 +49,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 2,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/krTROylxWabyrCcC.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NoaaqXXsebwRvAeb.jpg",
       }),
       expect.objectContaining({
         groupId: "26204068",
@@ -57,7 +57,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/fqeFcGbNUPrUgytq.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/llOBXxpQYhaNzRBy.jpg",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26204070", "stage")).toBe(
@@ -135,7 +135,7 @@ describe("Aovo campaign banners", () => {
       groupId: "26180466",
       width: 300,
       height: 250,
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kqfKEqTblBouOywS.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tiqvXnBdPglWxtcQ.jpg",
       trackingNetwork: "stage",
       placement: "after-gallery",
       adLabel: "MJ-Ticketangebot",
@@ -199,7 +199,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 4,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yHDbGkiApdeTfiVB.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/nNJlNqZzBBkFCxEw.jpg",
       }),
     ]));
     expect(getAovoCampaignClickUrl("26185666", "stage")).toBe(
@@ -216,12 +216,12 @@ describe("Aovo campaign banners", () => {
       expect.objectContaining({ groupId: "26185720", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BPkgBMtaBRmniDPS.jpg" }),
     ]));
     expect(getAovoCampaigns("tanz-der-vampire")).toEqual(expect.arrayContaining([
-      expect.objectContaining({ groupId: "26185674", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4 }),
-      expect.objectContaining({ groupId: "26185672", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery" }),
+      expect.objectContaining({ groupId: "26185674", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4, imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tDBGPfoLhwaJKjUn.jpg" }),
+      expect.objectContaining({ groupId: "26185672", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/rhQrRnQFCqgoFCBr.jpg" }),
     ]));
     expect(getAovoCampaigns("teufel-traegt-prada")).toEqual(expect.arrayContaining([
-      expect.objectContaining({ groupId: "26185640", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4 }),
-      expect.objectContaining({ groupId: "26185638", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery" }),
+      expect.objectContaining({ groupId: "26185640", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4, imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QWKJdWesQhytFcux.jpg" }),
+      expect.objectContaining({ groupId: "26185638", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UfrgocXJiuRcQTBu.jpg" }),
     ]));
   });
 
@@ -289,11 +289,21 @@ describe("Aovo campaign banners", () => {
     const mjCampaigns = getAovoCampaigns("mj-musical");
 
     expect(mjCampaigns.find((campaign) => campaign.groupId === "26180466")?.imageUrl).toBe(
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kqfKEqTblBouOywS.jpg"
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tiqvXnBdPglWxtcQ.jpg"
     );
     expect(mjCampaigns.find((campaign) => campaign.groupId === "26180462")?.imageUrl).toBe(
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/yHDbGkiApdeTfiVB.jpg"
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/nNJlNqZzBBkFCxEw.jpg"
     );
+  });
+
+  it("behält die gelieferten Stage-Click-Ziele für TINA, Prada und MJ unverändert", () => {
+    const expectedStageClicks = ["26204070", "26204068", "26185640", "26185638", "26180462", "26180466"];
+
+    for (const groupId of expectedStageClicks) {
+      expect(getAovoCampaignClickUrl(groupId, "stage")).toBe(
+        `https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=${groupId}`,
+      );
+    }
   });
 
   it("rendert Kampagnencreatives als native Bilder mit ihren vorgegebenen Abmessungen", () => {
