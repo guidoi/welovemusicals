@@ -1129,3 +1129,8 @@ Das gelieferte 2048 × 1274-Querformat wurde ohne Beschnitt als zwei WebP-Varian
 ## Startseite und befristete Aktionen – 09.10.2026
 
 **STARLIGHT EXPRESS** steht in den neun Top-Empfehlungen jetzt an vierter Stelle direkt vor **Moulin Rouge** (Desktop: zweite Reihe, erste Karte; Mobil: direkt nach Tarzan). Die Reihung ist durch die Highlight-Regression geschützt. Für befristete Aktionen sind die vorhandenen Spalten **„Gültig ab“** und **„Gültig bis“** in beiden Google-Sheets-Blättern mit eindeutigen Kopfzeilen-Hinweisen dokumentiert: akzeptiert werden `TT.MM.JJJJ` oder `JJJJ-MM-TT`; ein leerer Start bedeutet sofort, ein Enddatum läuft am gleichen Tag um 23:59 Uhr aus. Die Website respektiert den Zeitraum bereits automatisch; ungültige oder umgekehrte Daten deaktivieren den Sale sicher. Bestehende Salezeilen und Preise bleiben unverändert.
+
+
+## Tanz der Vampire – Galerie und Stimmen vorerst ausgeblendet, 09.10.2026
+
+Da aktuell keine freigegebenen Live- oder Pressefotos vorliegen, ist der Abschnitt **„Live-Momente“** auf der TDV-Detailseite vorerst ausgeblendet. Ebenso sind die bisherigen allgemeinen Stimmen zur Show ausgeblendet, bis belastbare Rezensionen zur Neuproduktion vorliegen. Header-Artwork, separates Keyvisual, Trailer, Fakten, FAQ, Tourtermin, Ticket-CTA sowie sämtliche Affiliate- und Consentpfade bleiben unverändert. Desktop und Mobil bestätigen, dass beide Abschnitte nicht mehr erscheinen; je eine Regression schützt die Ausblendung.

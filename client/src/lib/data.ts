@@ -1885,15 +1885,8 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2027-03-11", endDate: "2027-09-30", eventimUrl: TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL },
     ],
-    quotes: [
-      { text: "Mystischer, faszinierender und unheimlicher als je zuvor – die Neuproduktion des Originals.", source: "Stage Entertainment" },
-      { text: "Ein unvergessliches Erlebnis voller Gänsehautmomente.", source: "Musical1" },
-      { text: "Tanz der Vampire begeistert seit fast drei Jahrzehnten ein Millionenpublikum weltweit.", source: "Musicalzentrale" },
-    ],
-    gallery: [
-      { url: "/images/tanz-der-vampire/tdv-keyvisual.webp", alt: "TANZ DER VAMPIRE Artwork 2027" },
-      { url: "/images/tanz-der-vampire/tdv-theater.webp", alt: "Stage Apollo Theater Stuttgart" },
-    ],
+    // Vorübergehend keine Pressestimmen: Für die Neuproduktion liegen noch keine belastbaren Rezensionen vor.
+    // Vorübergehend keine Galerie: Es liegen aktuell keine freigegebenen Live- oder Pressefotos vor.
     showFacts: [
       { label: "Spielort", value: "Stage Apollo Theater, Stuttgart" },
       { label: "Spielzeit", value: "11.03.2027 – 30.09.2027" },

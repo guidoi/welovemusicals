@@ -19,4 +19,16 @@ describe("Tanz der Vampire Artwork 2027", () => {
 
     expect(musical?.keyvisual).toBe("/images/tanz-der-vampire/tdv-keyvisual.webp");
   });
+
+  it("blendet Live-Momente vorerst aus, bis freigegebene Pressefotos vorliegen", () => {
+    const musical = getMusicalBySlug("tanz-der-vampire");
+
+    expect(musical?.gallery).toBeUndefined();
+  });
+
+  it("blendet Pressestimmen vorerst aus, bis Rezensionen zur Neuproduktion vorliegen", () => {
+    const musical = getMusicalBySlug("tanz-der-vampire");
+
+    expect(musical?.quotes).toBeUndefined();
+  });
 });
