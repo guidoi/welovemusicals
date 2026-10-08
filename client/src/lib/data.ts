@@ -1342,11 +1342,7 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2024-12-01", endDate: "2027-08-29", eventimUrl: MJ_STAGE_TEXT_LINK_URL },
     ],
-    quotes: [
-      { text: "Wir sind überwältigt von der Resonanz des Publikums, das die überragende Qualität dieser Show und seiner Akteure Abend für Abend mit Standing Ovations und Bestnoten feiert.", source: "Uschi Neuss, Geschäftsführerin Stage Entertainment" },
-      { text: "Ein intensives Live-Gesamterlebnis, das generationenübergreifend begeistert – die höchste Weiterempfehlungsquote aller Stage Entertainment Shows.", source: "Stage Entertainment" },
-      { text: "Michael Jacksons künstlerisches Genie fasziniert bis heute – und diese Show macht es auf der Bühne erlebbar.", source: "Pressemitteilung Stage Entertainment" },
-    ],
+    // Vorübergehend keine Stimmen zur Show: Verifizierte unabhängige Pressestimmen werden nachgereicht.
     gallery: [
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UpRmqRVIkjjzYMuW.webp", alt: "Smooth Criminal – MJ Musical Hamburg (c) Matthew Murphy / Stage Entertainment" },
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xcqDksPPeHsSGXyA.webp", alt: "Szenenmotiv Broadway (c) Matthew Murphy" },
@@ -1426,11 +1422,7 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Stuttgart", venue: "Stage Apollo Theater", startDate: "2024-11-08", endDate: "2027-01-31", eventimUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL },
     ],
-    quotes: [
-      { text: "Die Magie dieser Show liegt nicht nur in ihren spektakulären Momenten, sondern vor allem in der emotionalen Reise, die Elsa und Anna antreten.", source: "Constanze Müller, Theaterleitung Stage Apollo Theater" },
-      { text: "Atemberaubende Effekte, wunderschöne Kostüme und eine Geschichte, die Generationen berührt.", source: "Stage Entertainment" },
-      { text: "Ein einzigartiges Musical für die ganze Familie – Magie pur!", source: "Publikumsstimme" },
-    ],
+    // Vorübergehend keine Stimmen zur Show: Verifizierte unabhängige Pressestimmen werden nachgereicht.
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_Elsa_LetItGo_(c)JohanPersson_a3fe492d.webp", alt: "Elsa – Let It Go (c) Johan Persson / Stage Entertainment" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_ElsaUndAnna_Finale_HoldingHands_(c)JohanPersson_a2fb5b4c.webp", alt: "Elsa und Anna im Finale (c) Johan Persson / Stage Entertainment" },
@@ -1510,7 +1502,6 @@ export const musicals: Musical[] = [
     quotes: [
       { text: "Diese Luftakrobatik ist einzigartig!", source: "Freundin" },
       { text: "Disney eröffnet mit Tarzan eine neue Theaterdimension.", source: "ZDF" },
-      { text: "Das spektakulärste Musical unserer Zeit – ein Mittendrin-Erlebnis für die ganze Familie.", source: "Stage Entertainment" },
     ],
     gallery: [
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/wpVGMFKFqDqYEgHM.webp", alt: "Tarzan – Terence van der Loo (c) Johan Persson / Stage Entertainment" },
@@ -1827,10 +1818,7 @@ export const musicals: Musical[] = [
     ],
     storyHeadline: "Berlin 1990 – Familie, Freiheit und das Chaos nach dem Mauerfall",
     storyText: "Nina und Mario fliehen aus Wittenberg in die Hauptstadt – auf der Suche nach sich selbst, nach Musik, nach einem anderen Leben. In einem besetzten Altbau, dem \"Konsum Hoffnung\", finden sie Anschluss an eine liebenswerte Gemeinschaft. Mario verliebt sich in den kubanischen Tänzer Nando, Nina träumt von einer Karriere als Popsängerin – in einer Stadt, die lieber Techno hört.\n\nUnd dann ist da plötzlich Rosie – gespielt von Steffi Irmen. Eine Mutter, die niemand erwartet hat. Übergriffig, ungebeten, zu spät – und doch entschlossen, ihre Kinder in einem Leben zurückzugewinnen, das längst ohne sie weiterging.",
-    quotes: [
-      { text: "Mit 'WIR SIND AM LEBEN' möchten wir erinnern. An die, die gegangen sind. An die, die zurückblieben. Und an das, was man nicht vergessen darf.", source: "Peter Plate & Ulf Leo Sommer" },
-      { text: "Es wird sehr, sehr komisch. Denn die 90er waren nicht nur traurig oder politisch – sie waren auch absurd, hemmungslos, zärtlich verrückt.", source: "Peter Plate" },
-    ],
+    // Vorübergehend keine Stimmen zur Show: Verifizierte unabhängige Pressestimmen werden nachgereicht.
     uspItems: [
       { icon: "Music", title: "Plate × Sommer × Lange", text: "Erstes komplett eigenes Musical des Erfolgstrios" },
       { icon: "MapPin", title: "Theater des Westens", text: "Berlins legendäre Musical-Bühne" },
@@ -2019,11 +2007,7 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Berlin", venue: "Stage Theater des Westens", startDate: "2026-10-30", endDate: "2027-02-26", eventimUrl: SALON_ROSIE_STAGE_TEXT_LINK_URL },
     ],
-    quotes: [
-      { text: "So lustig war ein Musical schon lange nicht mehr.", source: "Produktionstext" },
-      { text: "Ein Wiedersehen mit Sprengkraft – zwischen Neid, verletztem Stolz und alten Rechnungen.", source: "Produktionstext" },
-      { text: "Zwei Schwestern. Zwei Leben. Zwei Wahrheiten.", source: "Produktionstext" },
-    ],
+    // Vorübergehend keine Stimmen zur Show: Verifizierte unabhängige Pressestimmen werden nachgereicht.
     gallery: [
       { url: "/images/salon-rosie/salon-rosie-keyvisual.webp", alt: "SALON ROSIE Keyvisual © Stage Entertainment" },
     ],

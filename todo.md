@@ -1134,3 +1134,8 @@ Das gelieferte 2048 × 1274-Querformat wurde ohne Beschnitt als zwei WebP-Varian
 ## Tanz der Vampire – Galerie und Stimmen vorerst ausgeblendet, 09.10.2026
 
 Da aktuell keine freigegebenen Live- oder Pressefotos vorliegen, ist der Abschnitt **„Live-Momente“** auf der TDV-Detailseite vorerst ausgeblendet. Ebenso sind die bisherigen allgemeinen Stimmen zur Show ausgeblendet, bis belastbare Rezensionen zur Neuproduktion vorliegen. Header-Artwork, separates Keyvisual, Trailer, Fakten, FAQ, Tourtermin, Ticket-CTA sowie sämtliche Affiliate- und Consentpfade bleiben unverändert. Desktop und Mobil bestätigen, dass beide Abschnitte nicht mehr erscheinen; je eine Regression schützt die Ausblendung.
+
+
+## Stimmen zur Show – Bereinigung nicht verifizierter Zitate, 09.10.2026
+
+Die Bereiche **„Stimmen zur Show“** sind bei **TANZ DER VAMPIRE**, **DER KLEINE LORD**, **DISNEYS DIE EISKÖNIGIN**, **MJ – DAS MICHAEL JACKSON MUSICAL**, **SALON ROSIE** und **WIR SIND AM LEBEN** ausgeblendet. DER KLEINE LORD und TANZ DER VAMPIRE hatten bereits keine aktive Zitatliste; bei den übrigen Seiten wurden Produktions-, Partner- und allgemeine Publikumsaussagen entfernt, bis belastbare Quellen vorliegen. Bei **DISNEYS MUSICAL TARZAN** wurde ausschließlich die Stage-Entertainment-Stimme entfernt; die redaktionellen Zitate von *Freundin* und *ZDF* bleiben sichtbar. Eine zentrale Regression prüft die sechs ausgeblendeten Bereiche sowie die zwei verbliebenen Tarzan-Stimmen. Bildmaterial, Texte, Ticketziele, Affiliate-IDs, Banner und Consent-Logik bleiben unverändert.
