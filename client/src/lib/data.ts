@@ -312,11 +312,6 @@ export const musicals: Musical[] = [
       { city: "Stuttgart", venue: "Liederhalle (Hegel-Saal)", startDate: "2027-12-22", endDate: "2027-12-25", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DStuttgart" },
       { city: "Wien", venue: "MuseumsQuartier Halle E", startDate: "2027-11-23", endDate: "2027-11-28", eventimUrl: "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=Wien&utm_medium=dp" },
     ],
-    quotes: [
-      { text: "Dieser Dracula geht unter die Haut.", source: "Rhein Neckar Zeitung" },
-      { text: "Mitreißend und auch provokativ zugleich.", source: "Abendzeitung" },
-      { text: "Daumen hoch für diesen Dracula!", source: "Münchner Merkur" },
-    ],
     keyvisual: "/images/dracula/dracula-keyvisual-2027.webp",
     keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.dracula, "dracula-keyvisual"),
     gallery: [
@@ -385,11 +380,6 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Köln", venue: "Musical Dome Köln", startDate: "2026-01-01", endDate: "2026-07-18", eventimUrl: "https://shop.atgtickets.de/moulin-rouge-das-musical/webticket/productiondetail?eventsView=calendar&productionId=28", badge: "Nur noch bis 18. Juli!" },
       { city: "Hamburg", venue: "Theater am Großmarkt Hamburg", startDate: "2026-10-28", endDate: "2027-12-31", premiereDate: "2026-11-05", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.moulinRouge, "moulinrouge-hamburg-dates") },
-    ],
-    quotes: [
-      { text: "Hereinspaziert, Platz nehmen, Welt vergessen.", source: "Süddeutsche Zeitung" },
-      { text: "Moulin Rouge ist ein Triumph.", source: "Kölner Stadtanzeiger" },
-      { text: "Eine phänomenale Hommage an die Popkultur.", source: "ntv" },
     ],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp", alt: "Moulin Rouge! – Showszene" },
@@ -536,11 +526,6 @@ export const musicals: Musical[] = [
       { city: "Nürnberg", venue: "Meistersingerhalle", startDate: "2026-06-11", endDate: "2026-06-13", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-nuernberg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F%3Fcityname%3DN%C3%BCrnberg" },
       { city: "München", venue: "Deutsches Theater", startDate: "2026-06-17", endDate: "2026-06-27", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-muenchen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F%3Fcityname%3DM%C3%BCnchen" },
       { city: "Berlin", venue: "BlueMax Theater", startDate: "2026-07-31", endDate: "2026-09-06", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=sisteract-berlin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fsister-act-das-himmlische-musical%2F%3Fcityname%3DBerlin", badge: "5 Wochen Gastspiel" },
-    ],
-    quotes: [
-      { text: "Die Show ist lustig und glänzt vor allem mit ihrem komödiantischen Timing.", source: "WAZ" },
-      { text: "Herausragende Stimmen und beeindruckende Inszenierung!", source: "BUNTE.de" },
-      { text: "Man muss weder katholisch noch ein Musical-Nerd sein, um hier einen guten Abend zu haben!", source: "Münchner Merkur" },
     ],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SisterAct-2026-(c)NicoMoser-Top1_43bcfe49.webp", alt: "Sister Act Ensemble – Nonnen-Chor (c) Nico Moser" },
@@ -701,11 +686,6 @@ export const musicals: Musical[] = [
       { city: "Solingen", venue: "Theater Solingen", startDate: "2026-11-24", endDate: "2026-11-25", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-solingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F%3Fcityname%3DSolingen" },
       { city: "Stuttgart", venue: "Liederhalle – Hegel-Saal", startDate: "2026-12-17", endDate: "2026-12-19", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=fjg-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Ffack-ju-goehte-se-mjusicael%2F%3Fcityname%3DStuttgart" },
       { city: "Wien", venue: "Museumsquartier (Halle E)", startDate: "2026-12-29", endDate: "2027-01-03", eventimUrl: "https://www.oeticket.com/artist/fack-ju-goehte-se-mjusicael/?affiliate=J28&cityname=Wien" },
-    ],
-    quotes: [
-      { text: "Mitreißende Songs mit erfrischenden und selbstbewussten Texten", source: "Hamburger Morgenpost" },
-      { text: "Ebenso unterhaltsam, witzig und gelungen wie die Kinokomödie!", source: "Die Rheinpfalz" },
-      { text: "Eine explosive Mischung aus Musik, Tanz und Komödie, die das Publikum begeistert!", source: "broadwayworld.com" },
     ],
     showFacts: [
       { label: "Showdauer", value: "2 Stunden 30 Minuten (inkl. Pause)" },
@@ -1178,11 +1158,6 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Bochum", venue: "STARLIGHT EXPRESS Theater Bochum", startDate: "2026-01-01", endDate: "2027-12-31", displayLabel: "Spielzeit 2026/2027", eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.starlightExpress, "starlight-express-bochum-dates") },
     ],
-    quotes: [
-      { text: "Das rasanteste Musical im Universum.", source: "Guinness World Records" },
-      { text: "Ein Spektakel, das kein anderes Musical bieten kann.", source: "Westdeutsche Allgemeine Zeitung" },
-      { text: "Starlight Express ist Bochum – und Bochum ist Starlight Express.", source: "Ruhr Nachrichten" },
-    ],
     gallery: [
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-22_d95ea5c7.webp", alt: "Starlight Express – Das Ensemble 2025" },
       { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/stex-ensemble-189_dc71e601.webp", alt: "Starlight Express – Ensemble auf der Bühne" },
@@ -1264,11 +1239,6 @@ export const musicals: Musical[] = [
     ],
     tourDates: [
       { city: "Hamburg", venue: "Stage Theater im Hafen", startDate: "2001-12-02", endDate: "2027-04-04", eventimUrl: KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL },
-    ],
-    quotes: [
-      { text: "Ein kreatives Feuerwerk der Emotionen – atemberaubende Masken, fantastische Kostüme, unvergessliche Klänge.", source: "Stage Entertainment" },
-      { text: "Julie Taymors Inszenierung ist ein Meisterwerk der Bühnenkunst, das Filmgeschichte in ein einzigartiges Theatererlebnis verwandelt.", source: "Pressemappe Stage Entertainment" },
-      { text: "Kein Musical der Welt hat mehr Menschen bewegt als Der König der Löwen.", source: "Disney Theatrical Group" },
     ],
     gallery: [
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/wWzMwXauelLXwePU.webp", alt: "Rafiki – Der König der Löwen Hamburg (c) Stage Entertainment" },
@@ -1499,10 +1469,6 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Hamburg", venue: "Stage Theater Neue Flora", startDate: "2025-10-01", endDate: "2026-10-31", eventimUrl: TARZAN_STAGE_TEXT_LINK_URL },
     ],
-    quotes: [
-      { text: "Diese Luftakrobatik ist einzigartig!", source: "Freundin" },
-      { text: "Disney eröffnet mit Tarzan eine neue Theaterdimension.", source: "ZDF" },
-    ],
     gallery: [
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/wpVGMFKFqDqYEgHM.webp", alt: "Tarzan – Terence van der Loo (c) Johan Persson / Stage Entertainment" },
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/loIrvhkOlSupGgtR.webp", alt: "Tarzan und Jane (c) Johan Persson / Stage Entertainment" },
@@ -1581,11 +1547,6 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Hamburg", venue: "Stage Operettenhaus", startDate: "2026-03-01", endDate: "2027-12-31", eventimUrl: ZIZ_STAGE_TEXT_LINK_URL },
     ],
-    quotes: [
-      { text: "Ein Musical-Erlebnis, das Generationen verbindet – witzig, spektakulär und voller Nostalgie.", source: "Stage Entertainment" },
-      { text: "Die Bühneneffekte sind atemberaubend – wenn der DeLorean losfährt, hält das ganze Publikum den Atem an.", source: "Musical1" },
-      { text: "Nah am Original, aber mit eigenem Musical-Charme. Ein Muss für alle 80er-Fans!", source: "Musicalzentrale" },
-    ],
     gallery: [
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/qxAugxHPBlqjGTbi.webp", alt: "Caden Brauch als Marty McFly (c) Matt Crockett" },
       { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/bhjngddROxOqJZID.webp", alt: "Marty McFly und Doc Brown (c) Matt Crockett" },
@@ -1658,12 +1619,6 @@ export const musicals: Musical[] = [
     ],
     tourDates: [
       { city: "Hamburg", venue: "Stage Theater an der Elbe", startDate: "2026-12-12", endDate: "2027-08-29", eventimUrl: PRADA_STAGE_TEXT_LINK_URL },
-    ],
-    quotes: [
-      { text: "Unterhaltung und ein Riesenspaß!", source: "Anna Wintour" },
-      { text: "Spektakuläre Mode", source: "Vogue" },
-      { text: "Ich war begeistert – Die Show ist faszinierend!", source: "Donatella Versace" },
-      { text: "Eine atemberaubende Show!", source: "Lily Collins" },
     ],
     gallery: [
       { url: "/images/prada/prada-fashionshow.webp", alt: "Fashion Show Szene (c) Matt Crockett" },
@@ -1743,11 +1698,6 @@ export const musicals: Musical[] = [
       { icon: "Laugh", title: "Lachmuskelkater garantiert", text: "Die wahre Geschichte von Romeo und Julia – mit einer gehörigen Portion Humor" },
       { icon: "Star", title: "Steffi Irmen live", text: "Der Star des Theaters des Westens in ihrer kultigsten Rolle" },
       { icon: "Theater", title: "Theater des Westens", text: "Jeden Freitag im legendären Berliner Musical-Theater" },
-    ],
-    quotes: [
-      { text: "Lachen, weinen und staunen – alles an einem Abend.", source: "Stage Entertainment" },
-      { text: "Die lustigste Show der Stadt!", source: "Berliner Morgenpost" },
-      { text: "Steffi Irmen ist eine Wucht als Amme.", source: "BZ Berlin" },
     ],
     seoTitle: "DIE AMME – Das Musical in Berlin | Tickets ab 32,49 €",
     seoDescription: "DIE AMME – Das Musical im Stage Theater des Westens Berlin. Tickets ab 32,49 €. Steffi Irmen in ihrer kultigsten Rolle mit Hits von Peter Plate & Ulf Leo Sommer.",
@@ -1931,11 +1881,6 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Stuttgart", venue: "Stage Palladium Theater", startDate: "2026-07-02", endDate: "2026-08-30", eventimUrl: "https://www.stage-entertainment.de/musicals-shows/we-will-rock-you-stuttgart" },
     ],
-    quotes: [
-      { text: "Ein einzigartiges Rock-Spektakel mit den größten Queen-Hits in mitreißender Konzertatmosphäre.", source: "Stage Entertainment" },
-      { text: "Die futuristische musikalische Komödie gilt als globales Phänomen.", source: "Musical1" },
-      { text: "Grandiose Bühnenbilder, stimmgewaltige Darsteller und die gefeierten Hits.", source: "Musicalzentrale" },
-    ],
     gallery: [
       { url: "/images/we-will-rock-you/wwry-szene-01.webp", alt: "Killer Queen und Ensemble (c) Johan Persson" },
       { url: "/images/we-will-rock-you/wwry-szene-02.webp", alt: "Galileo, Scaramouche und Brit auf dem Motorrad (c) Johan Persson" },
@@ -2067,11 +2012,6 @@ export const musicals: Musical[] = [
     ],
     tourDates: [
       { city: "Stuttgart", venue: "Stage Palladium Theater", startDate: "2026-09-30", endDate: "2027-05-02", eventimUrl: UND_JULIA_STAGE_TEXT_LINK_URL },
-    ],
-    quotes: [
-      { text: "Das Broadway-Musical & JULIA ist wie eine Urgewalt. Von der ersten Sekunde reißt & JULIA das Publikum mit und steckt mit guter Laune und Tanzlust an.", source: "dpa" },
-      { text: "& JULIA ist bunt, wild, laut, temporeich, lustig, dramatisch, ironisch, auch mal gesellschaftspolitisch und insgesamt ein Musical mit ganz viel Charme.", source: "t-online.de" },
-      { text: "Die Zuschauer wirken während der ganzen Vorstellung wie elektrisiert.", source: "Stern" },
     ],
     gallery: [
       { url: "/images/und-julia/und-julia-szene-01.webp", alt: "& JULIA Blow-Szene (c) Johan Persson / Stage Entertainment" },

@@ -1139,3 +1139,8 @@ Da aktuell keine freigegebenen Live- oder Pressefotos vorliegen, ist der Abschni
 ## Stimmen zur Show – Bereinigung nicht verifizierter Zitate, 09.10.2026
 
 Die Bereiche **„Stimmen zur Show“** sind bei **TANZ DER VAMPIRE**, **DER KLEINE LORD**, **DISNEYS DIE EISKÖNIGIN**, **MJ – DAS MICHAEL JACKSON MUSICAL**, **SALON ROSIE** und **WIR SIND AM LEBEN** ausgeblendet. DER KLEINE LORD und TANZ DER VAMPIRE hatten bereits keine aktive Zitatliste; bei den übrigen Seiten wurden Produktions-, Partner- und allgemeine Publikumsaussagen entfernt, bis belastbare Quellen vorliegen. Bei **DISNEYS MUSICAL TARZAN** wurde ausschließlich die Stage-Entertainment-Stimme entfernt; die redaktionellen Zitate von *Freundin* und *ZDF* bleiben sichtbar. Eine zentrale Regression prüft die sechs ausgeblendeten Bereiche sowie die zwei verbliebenen Tarzan-Stimmen. Bildmaterial, Texte, Ticketziele, Affiliate-IDs, Banner und Consent-Logik bleiben unverändert.
+
+
+## Stimmen zur Show – vollständiger Katalogaudit, 09.10.2026
+
+Der vollständige Katalogaudit fand nach der ersten Bereinigung noch **zwölf** aktive Zitatbereiche: Dracula, Moulin Rouge, Sister Act, Fack Ju Göhte, Starlight Express, Der König der Löwen, Tarzan, ZURÜCK IN DIE ZUKUNFT, Der Teufel trägt Prada, Die Amme, WE WILL ROCK YOU und & JULIA. Da im Katalog keine nachprüfbaren Fundstellen hinterlegt waren, sind diese Bereiche auf ausdrücklichen Wunsch ebenfalls ausgeblendet. Damit erscheint aktuell auf **keiner** Detailseite ein Bereich „Stimmen zur Show“. Die zentrale Regression prüft katalogweit, dass keine aktive Zitatliste verbleibt. Sobald belastbare Quellen vorliegen, können Zitate gezielt mit konkreter Fundstelle wieder ergänzt werden.
