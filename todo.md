@@ -1089,3 +1089,8 @@ Die roten Ticket-CTAs auf allen Musical-Detailseiten verwenden bei regulären Pr
 ## Google Analytics 4 – Startreihenfolge, 08.10.2026
 
 Die GA4-Initialisierung wurde nach einer Echtzeit-Rückmeldung gehärtet: Der erste manuelle `page_view` wird jetzt erst nach dem erfolgreichen `load`-Ereignis des Google-Tags gesendet. Bei weiteren Routenwechseln folgt jeweils genau ein weiterer Seitenaufruf. Der Tag bleibt strikt auf die Produktionsdomains begrenzt und startet weiterhin ausschließlich nach Statistik-Einwilligung; Werbespeicher, Werbungspersonalisierung und Affiliate-Tracking bleiben davon getrennt und unverändert. Regressionen, TypeScript, Produktionsbuild, Affiliate-Integritäts- und Bildstandardtest sind erfolgreich.
+
+
+## Die Eiskönigin – neue Stage-Creatives, 09.10.2026
+
+Die vom Projektinhaber gelieferten nativen Stage-Creatives sind unverändert aktualisiert: `26185658` (728 × 90) erscheint im oberen Fließtext nach dem Abschnitt „Spektakel für alle Sinne“, `26185656` (300 × 250) nach der Galerie vor „Alles, was du wissen musst“. Beide Originale sind außerhalb des Repos gesichert; die öffentlichen CDN-Dateien liefern 200 `image/jpeg` und die korrekten Dimensionen. Direkte Stage-Klickziele bleiben exakt `p=394206`, `a=3492604` und die jeweilige Gruppen-ID; Impressionen bleiben ausschließlich nach Affiliate-Einwilligung aktiv. Desktop, Mobil, direkte Klick-/Impressionspfade und die Sperre ohne Einwilligung sind geprüft.

@@ -77,12 +77,12 @@ describe("Aovo campaign banners", () => {
     expect(getAovoCampaigns("eiskoenigin")).toEqual(expect.arrayContaining([
       expect.objectContaining({
         groupId: "26185658",
-        width: 729,
+        width: 728,
         height: 90,
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 4,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XAIAosoXydWgLiUv.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/osgmYIWPeOyuZfSn.jpg",
       }),
       expect.objectContaining({
         groupId: "26185656",
@@ -90,7 +90,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/wkPNMqjIKNhqFhlt.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/lqNxRsgKDNJxTxBA.jpg",
       }),
     ]));
     expect(getAovoCampaigns("tarzan")).toEqual(expect.arrayContaining([
