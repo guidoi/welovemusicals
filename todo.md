@@ -1124,3 +1124,8 @@ Die acht vom Projektinhaber gelieferten nativen Stage-Creatives sind aktualisier
 ## Tanz der Vampire – Artwork für Karte und Detailheader, 09.10.2026
 
 Das gelieferte 2048 × 1274-Querformat wurde ohne Beschnitt als zwei WebP-Varianten vorbereitet und über das CDN eingebunden: 1920 × 1194 für den Detailheader sowie 1200 × 746 für die Startseiten-/Kartenansichten. Das bisherige Theaterfoto ist damit an beiden gewünschten Stellen ersetzt. Das separate quadratische Keyvisual und die Galerie bleiben bewusst unverändert. Original und aufbereitete Varianten liegen außerhalb des Repos; beide CDN-Dateien liefern HTTP 200 `image/webp`. Desktop- und Mobilprüfung bestätigen das zentral ausgerichtete Motiv ohne ungewollte Leerfläche oder störenden Anschnitt.
+
+
+## Startseite und befristete Aktionen – 09.10.2026
+
+**STARLIGHT EXPRESS** steht in den neun Top-Empfehlungen jetzt an vierter Stelle direkt vor **Moulin Rouge** (Desktop: zweite Reihe, erste Karte; Mobil: direkt nach Tarzan). Die Reihung ist durch die Highlight-Regression geschützt. Für befristete Aktionen sind die vorhandenen Spalten **„Gültig ab“** und **„Gültig bis“** in beiden Google-Sheets-Blättern mit eindeutigen Kopfzeilen-Hinweisen dokumentiert: akzeptiert werden `TT.MM.JJJJ` oder `JJJJ-MM-TT`; ein leerer Start bedeutet sofort, ein Enddatum läuft am gleichen Tag um 23:59 Uhr aus. Die Website respektiert den Zeitraum bereits automatisch; ungültige oder umgekehrte Daten deaktivieren den Sale sicher. Bestehende Salezeilen und Preise bleiben unverändert.

@@ -2452,12 +2452,12 @@ export const FEATURED_MUSICAL_IDS = [
   "koenig-der-loewen",
   "eiskoenigin",
   "tarzan",
+  "starlight-express",
   "moulinrouge",
   "gloeckner-von-notre-dame",
   "mj-musical",
   "ziz",
   "tanz-der-vampire",
-  "starlight-express",
 ] as const;
 
 export function getFeaturedMusicals(catalog: Musical[] = musicals): Musical[] {

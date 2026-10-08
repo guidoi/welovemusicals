@@ -14,12 +14,12 @@ describe("Top-Musicals auf der Startseite", () => {
       "koenig-der-loewen",
       "eiskoenigin",
       "tarzan",
+      "starlight-express",
       "moulinrouge",
       "gloeckner-von-notre-dame",
       "mj-musical",
       "ziz",
       "tanz-der-vampire",
-      "starlight-express",
     ]);
     expect(getFeaturedMusicals().map((musical) => musical.id)).toEqual(FEATURED_MUSICAL_IDS);
   });
