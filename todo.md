@@ -1119,3 +1119,8 @@ Der Projektinhaber bestätigte die getrennten produktseitigen Stage-Ziele: Wir s
 ## TINA, Der Teufel trägt Prada, MJ und Tanz der Vampire – neue Stage-Creatives, 09.10.2026
 
 Die acht vom Projektinhaber gelieferten nativen Stage-Creatives sind aktualisiert: TINA `26204070` (728 × 90) / `26204068` (300 × 250), Der Teufel trägt Prada `26185640` / `26185638`, MJ `26180462` / `26180466` und Tanz der Vampire `26185674` / `26185672`. Die Querformate sind im mittleren oberen Fließtext platziert, die 300 × 250-Creatives nach der Galerie vor „Alles, was du wissen musst“. Alle Originale liegen außerhalb des Repos; die acht neuen CDN-Dateien liefern HTTP 200 `image/jpeg` mit den vorgegebenen Dimensionen. Die bestehenden Produktseiten bleiben exakt unverändert: TINA `26204074`, Prada `26149414`, MJ `26149402`, TDV `26149426`. Desktop- und Mobilansichten, direkte Stage-Ziele, Bilddimensionen sowie die Sperre von Stage-Impressions ohne Affiliate-Einwilligung wurden geprüft.
+
+
+## Tanz der Vampire – Artwork für Karte und Detailheader, 09.10.2026
+
+Das gelieferte 2048 × 1274-Querformat wurde ohne Beschnitt als zwei WebP-Varianten vorbereitet und über das CDN eingebunden: 1920 × 1194 für den Detailheader sowie 1200 × 746 für die Startseiten-/Kartenansichten. Das bisherige Theaterfoto ist damit an beiden gewünschten Stellen ersetzt. Das separate quadratische Keyvisual und die Galerie bleiben bewusst unverändert. Original und aufbereitete Varianten liegen außerhalb des Repos; beide CDN-Dateien liefern HTTP 200 `image/webp`. Desktop- und Mobilprüfung bestätigen das zentral ausgerichtete Motiv ohne ungewollte Leerfläche oder störenden Anschnitt.
