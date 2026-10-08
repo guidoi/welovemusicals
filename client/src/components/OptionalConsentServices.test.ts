@@ -20,6 +20,11 @@ describe("Optionale Dienste", () => {
     expect(source).toContain("https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}");
     expect(source).toContain('gtag("config", GOOGLE_ANALYTICS_MEASUREMENT_ID, {');
     expect(source).toContain("send_page_view: false");
+    expect(source).toContain('script.addEventListener("load", () => {');
+    expect(source).toContain('script.dataset.ready = "true";');
+    expect(source).toContain("const [googleAnalyticsReady, setGoogleAnalyticsReady] = useState(false);");
+    expect(source).toContain("return startGoogleAnalytics(() => setGoogleAnalyticsReady(true));");
+    expect(source).toContain("!googleAnalyticsReady");
     expect(source).toContain('gtag("event", "page_view", {');
     expect(source).toContain('analytics_storage: "granted"');
     expect(source).toContain('ad_storage: "denied"');

@@ -1084,3 +1084,8 @@
 ## Mobile Ticket-CTA – 08.10.2026
 
 Die roten Ticket-CTAs auf allen Musical-Detailseiten verwenden bei regulären Preisen nun die kompakte Beschriftung `ab XX,XX €`; die Abschnittsüberschrift „Tickets sichern“ erklärt die Aktion bereits. Aktive Sale-Labels bleiben unverändert. Die mobilen CTAs verhindern Zeilenumbrüche, nutzen kleinere seitliche Abstände und lassen das Partnerlogo bei knappem Platz sauber in eine neue Zeile fließen. Ticketziele, Affiliate-Kennungen, Clickrefs, Consent und Tracking bleiben unverändert. DKL wurde auf Mobil geprüft; die Preis-CTA `ab 59,99 €` ist einzeilig. Alle 20 aktiven CTA-Beschriftungen wurden auf Länge geprüft (maximal 24 Zeichen).
+
+
+## Google Analytics 4 – Startreihenfolge, 08.10.2026
+
+Die GA4-Initialisierung wurde nach einer Echtzeit-Rückmeldung gehärtet: Der erste manuelle `page_view` wird jetzt erst nach dem erfolgreichen `load`-Ereignis des Google-Tags gesendet. Bei weiteren Routenwechseln folgt jeweils genau ein weiterer Seitenaufruf. Der Tag bleibt strikt auf die Produktionsdomains begrenzt und startet weiterhin ausschließlich nach Statistik-Einwilligung; Werbespeicher, Werbungspersonalisierung und Affiliate-Tracking bleiben davon getrennt und unverändert. Regressionen, TypeScript, Produktionsbuild, Affiliate-Integritäts- und Bildstandardtest sind erfolgreich.

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useConsent } from "@/contexts/ConsentContext";
 
@@ -152,8 +152,17 @@ function getGoogleTag() {
  * GA4 is initialized only after the visitor accepts statistics. Advertising
  * storage remains denied; route changes are sent explicitly for this SPA.
  */
-function startGoogleAnalytics() {
-  if (document.getElementById(GOOGLE_ANALYTICS_SCRIPT_ID)) return () => undefined;
+function startGoogleAnalytics(onReady: () => void) {
+  const existingScript = document.getElementById(GOOGLE_ANALYTICS_SCRIPT_ID) as HTMLScriptElement | null;
+  if (existingScript) {
+    if (existingScript.dataset.ready === "true") {
+      onReady();
+      return () => undefined;
+    }
+
+    existingScript.addEventListener("load", onReady, { once: true });
+    return () => existingScript.removeEventListener("load", onReady);
+  }
 
   const gtag = getGoogleTag();
   gtag("js", new Date());
@@ -172,6 +181,10 @@ function startGoogleAnalytics() {
   script.id = GOOGLE_ANALYTICS_SCRIPT_ID;
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}`;
+  script.addEventListener("load", () => {
+    script.dataset.ready = "true";
+    onReady();
+  }, { once: true });
   document.head.appendChild(script);
 
   return () => {
@@ -232,6 +245,7 @@ function startClarity() {
 export default function OptionalConsentServices() {
   const { consent } = useConsent();
   const [location] = useLocation();
+  const [googleAnalyticsReady, setGoogleAnalyticsReady] = useState(false);
 
   useEffect(() => {
     if (!consent?.analytics) return;
@@ -244,14 +258,15 @@ export default function OptionalConsentServices() {
   }, [consent?.analytics]);
 
   useEffect(() => {
+    setGoogleAnalyticsReady(false);
     if (!consent?.analytics || !shouldLoadGoogleAnalyticsForHostname(window.location.hostname)) return;
-    return startGoogleAnalytics();
+    return startGoogleAnalytics(() => setGoogleAnalyticsReady(true));
   }, [consent?.analytics]);
 
   useEffect(() => {
-    if (!consent?.analytics || !shouldLoadGoogleAnalyticsForHostname(window.location.hostname)) return;
+    if (!consent?.analytics || !googleAnalyticsReady || !shouldLoadGoogleAnalyticsForHostname(window.location.hostname)) return;
     trackGoogleAnalyticsPageView();
-  }, [consent?.analytics, location]);
+  }, [consent?.analytics, googleAnalyticsReady, location]);
 
   useEffect(() => {
     if (!consent?.affiliateTracking || !shouldLoadAffiliateTrackingForPath(location, window.location.search)) return;
