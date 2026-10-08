@@ -53,4 +53,23 @@ describe("applyPriceSaleOverrides", () => {
     expect(eiskoenigin?.priceFrom).toBe("41,99");
     expect(eiskoenigin?.sale).toBeUndefined();
   });
+
+  it("übernimmt den aktiven ZIZ-Sale aus dem freigegebenen Website-Export", () => {
+    const result = applyPriceSaleOverrides(musicals, [
+      {
+        musicalId: "ziz",
+        priceFrom: "44,99",
+        saleEnabled: true,
+        saleLabel: "SALE",
+        saleDiscount: "BIS 40%",
+        saleNote: null,
+        saleStartsAt: null,
+        saleEndsAt: null,
+      },
+    ]);
+    const ziz = result.find((musical) => musical.id === "ziz");
+
+    expect(ziz?.priceFrom).toBe("44,99");
+    expect(ziz?.sale).toEqual({ label: "SALE", discount: "BIS 40%", note: undefined, validFrom: undefined, validUntil: undefined });
+  });
 });

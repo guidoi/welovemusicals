@@ -1104,3 +1104,13 @@ Die vom Projektinhaber gelieferten nativen Stage-Creatives sind aktualisiert: `2
 ## ZURÜCK IN DIE ZUKUNFT und Tarzan – Stage-Aktualisierung, 09.10.2026
 
 Die gelieferten ZIZ-„Bye Bye Tickets“-Creatives sind aktualisiert: `26185502` (728 × 90) erscheint im oberen Fließtext nach „Bühneneffekte der Extraklasse“, `26185500` (300 × 250) nach der Galerie vor „Alles, was du wissen musst“. Beide Originale sind außerhalb des Repos gesichert; die neuen öffentlichen CDN-Dateien liefern HTTP 200 `image/jpeg` in der korrekten Größe. Die ZIZ-Preisquelle liefert 44,99 € und `Sale aktiv: Nein`; deshalb bleibt die globale Sale-Kennzeichnung korrekt deaktiviert, obwohl die neuen Motive „bis zu 40 %“ bewerben. Die gelieferte Tarzan-Produktseite `26149408` ersetzt `26149406` einheitlich an Keyvisual, allgemeinen Ticket-CTAs, Terminen, Zielvorschlag und Testdaten. Eiskönigin (`26149418`), &JULIA (`26149394`) und ZIZ (`26149410`) waren bereits korrekt. Klickziele, Consent-Gating, Pixel und übrige Trackingpfade bleiben unverändert; Desktop, Mobil, Preisquelle, direkte Pfade und die Sperre ohne Einwilligung sind geprüft.
+
+
+## Salon Rosie, Wir sind am Leben, König der Löwen und ZIZ – Stage-Aktualisierung, 09.10.2026
+
+Die sechs neu gelieferten nativen Stage-Creatives sind aktualisiert: Salon Rosie `26185722` (728 × 90) und `26185720` (300 × 250), Wir sind am Leben `26185700` (728 × 90) und `26185698` (300 × 250) sowie König der Löwen `26180470` (728 × 90) und `26180460` (300 × 250). Die Querformate erscheinen im mittleren oberen Fließtext, die großen Formate nach der Galerie vor „Alles, was du wissen musst“. Originale liegen außerhalb des Repos; alle sechs CDN-Dateien liefern HTTP 200 `image/jpeg` in den vorgesehenen Dimensionen. Direkte Stage-Klickziele, Affiliate-Einwilligung und Impressiongating bleiben unverändert. Der veröffentlichte ZIZ-Export wird mit 44,99 €, `Sale aktiv: Ja` und `BIS 40%` korrekt gelesen und in der Vorschau als Sale-CTA gezeigt. Der gelieferte Salon-Rosie-Deeplink `26149434` wurde bewusst **nicht** gesetzt, da er bereits der WSAL-Produktseitenpfad ist; Salon Rosie bleibt bis zur Bestätigung auf seinem vorhandenen getrennten Pfad `26149438`.
+
+
+### Deeplink-Bestätigung
+
+Der Projektinhaber bestätigte die getrennten produktseitigen Stage-Ziele: Wir sind am Leben `26149434`, Salon Rosie `26149438`. Beide waren bereits aktiv und werden nun zusätzlich mit einer expliziten Regression gegen eine Verwechslung abgesichert.

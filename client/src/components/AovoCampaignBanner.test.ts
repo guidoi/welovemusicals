@@ -171,10 +171,10 @@ describe("Aovo campaign banners", () => {
       groupId: "26185700",
       width: 728,
       height: 90,
-        trackingNetwork: "stage",
-        placement: "within-detail-description",
-        detailParagraphIndex: 4,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/IQcHUWqrSwbkcVnw.jpg",
+      trackingNetwork: "stage",
+      placement: "within-detail-description",
+      detailParagraphIndex: 4,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XAikZZLFOHfLKdhM.jpg",
     });
     expect(getAovoCampaigns("wir-sind-am-leben")).toEqual(expect.arrayContaining([
       expect.objectContaining({
@@ -183,7 +183,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/cGdAyXLJtNYAdEhS.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xcZOVgRQGIktemOe.jpg",
       }),
     ]));
     expect(mj).toMatchObject({
@@ -212,8 +212,8 @@ describe("Aovo campaign banners", () => {
 
   it("uses the delivered Stage creatives for Salon Rosie, Tanz der Vampire and Der Teufel trägt Prada", () => {
     expect(getAovoCampaigns("salon-rosie")).toEqual(expect.arrayContaining([
-      expect.objectContaining({ groupId: "26185722", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description" }),
-      expect.objectContaining({ groupId: "26185720", width: 300, height: 250, placement: "after-gallery" }),
+      expect.objectContaining({ groupId: "26185722", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/WYnMWynDOdrKGiFW.jpg" }),
+      expect.objectContaining({ groupId: "26185720", width: 300, height: 250, trackingNetwork: "stage", placement: "after-gallery", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BPkgBMtaBRmniDPS.jpg" }),
     ]));
     expect(getAovoCampaigns("tanz-der-vampire")).toEqual(expect.arrayContaining([
       expect.objectContaining({ groupId: "26185674", width: 728, height: 90, trackingNetwork: "stage", placement: "within-detail-description", detailParagraphIndex: 4 }),
@@ -234,7 +234,7 @@ describe("Aovo campaign banners", () => {
         trackingNetwork: "stage",
         placement: "within-detail-description",
         detailParagraphIndex: 4,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/bGQQgJFTLFjAcGBP.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/TdEwZrFcppFjxYLL.jpg",
       }),
       expect.objectContaining({
         groupId: "26180460",
@@ -242,7 +242,7 @@ describe("Aovo campaign banners", () => {
         height: 250,
         trackingNetwork: "stage",
         placement: "after-gallery",
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ekoxWvdvUAIombDp.jpg",
+        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XsclnrVkSHkqekmf.jpg",
       }),
       expect.objectContaining({
         groupId: "26068528",
@@ -273,6 +273,16 @@ describe("Aovo campaign banners", () => {
     expect(getAovoCampaignClickUrl("26068528")).toBe(
       "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=26068528"
     );
+  });
+
+  it("keeps the delivered Stage click targets for the new Salon Rosie, WSAL and KDL creatives", () => {
+    const expectedStageClicks = ["26185722", "26185720", "26185700", "26185698", "26180470", "26180460"];
+
+    for (const groupId of expectedStageClicks) {
+      expect(getAovoCampaignClickUrl(groupId, "stage")).toBe(
+        `https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=${groupId}`,
+      );
+    }
   });
 
   it("referenziert die aktuellen MJ-Creatives über dauerhafte Projekt-Asset-Adressen", () => {

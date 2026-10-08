@@ -109,6 +109,14 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
   });
 
   it("verwendet bei & JULIA, Salon Rosie und Eiskönigin die gelieferten Stage-Produktseiten auch an den Text-CTAs", () => {
+    expect(SALON_ROSIE_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438",
+    );
+    expect(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL).toBe(
+      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434",
+    );
+    expect(SALON_ROSIE_STAGE_SHOW_PAGE_URL).not.toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
+
     const productPageCases = [
       ["und-julia", UND_JULIA_STAGE_SHOW_PAGE_URL, UND_JULIA_STAGE_TEXT_LINK_URL],
       ["salon-rosie", SALON_ROSIE_STAGE_SHOW_PAGE_URL, SALON_ROSIE_STAGE_TEXT_LINK_URL],
