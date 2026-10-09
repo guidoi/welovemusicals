@@ -1144,3 +1144,8 @@ Die Bereiche **„Stimmen zur Show“** sind bei **TANZ DER VAMPIRE**, **DER KLE
 ## Stimmen zur Show – vollständiger Katalogaudit, 09.10.2026
 
 Der vollständige Katalogaudit fand nach der ersten Bereinigung noch **zwölf** aktive Zitatbereiche: Dracula, Moulin Rouge, Sister Act, Fack Ju Göhte, Starlight Express, Der König der Löwen, Tarzan, ZURÜCK IN DIE ZUKUNFT, Der Teufel trägt Prada, Die Amme, WE WILL ROCK YOU und & JULIA. Da im Katalog keine nachprüfbaren Fundstellen hinterlegt waren, sind diese Bereiche auf ausdrücklichen Wunsch ebenfalls ausgeblendet. Damit erscheint aktuell auf **keiner** Detailseite ein Bereich „Stimmen zur Show“. Die zentrale Regression prüft katalogweit, dass keine aktive Zitatliste verbleibt. Sobald belastbare Quellen vorliegen, können Zitate gezielt mit konkreter Fundstelle wieder ergänzt werden.
+
+
+### Korrektur: bekannte Medienzitate wiederhergestellt
+
+Nach Präzisierung durch den Projektinhaber sind die Zitate bekannter Print-, Nachrichten- und etablierter Kulturmedien wieder aktiv. Sichtbar bleiben ausschließlich Quellen wie **Süddeutsche Zeitung**, **Kölner Stadtanzeiger**, **ntv**, **WAZ**, **Münchner Merkur**, **dpa**, **Stern**, **ZDF**, **Vogue** sowie etablierte Musicalmedien. Ausgeblendet bleiben weiterhin sämtliche Produktions-, Partner-, Pressemappe-, Marken-, Personen- und allgemeinen Publikumsaussagen (z. B. Stage Entertainment, Disney, Guinness, Anna Wintour oder Donatella Versace). Die zentrale Regression prüft die exakte, katalogweite Quellenliste, sodass keine ausgeblendete Quelle zurückkehrt.
