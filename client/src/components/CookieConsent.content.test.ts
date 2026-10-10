@@ -26,4 +26,8 @@ describe("CookieConsent wording", () => {
       expect(classes).not.toContain("font-semibold");
     });
   });
+
+  it("schließt Cookie-Texte von Google-Snippets aus", () => {
+    expect([...source.matchAll(/data-nosnippet/g)]).toHaveLength(2);
+  });
 });

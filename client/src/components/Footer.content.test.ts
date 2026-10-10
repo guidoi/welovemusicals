@@ -10,4 +10,8 @@ describe("Footer-Kontrast", () => {
     expect(footerSource).toContain('className="text-xs text-white/90"');
     expect(footerSource).toContain('className="text-xs text-white/90 flex items-center gap-1"');
   });
+
+  it("schließt den wiederkehrenden Footertext aus Google-Snippets aus", () => {
+    expect(footerSource).toContain('<footer className="bg-card border-t border-gold/10 mt-auto" data-nosnippet>');
+  });
 });

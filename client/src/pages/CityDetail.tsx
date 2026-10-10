@@ -16,13 +16,13 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
-import { getCityBySlug, getMusicalsByCity, getActiveMusicalsByCity, getActiveMusicalCountByCity, cities } from "@/lib/data";
+import { getCityBySlug, getActiveMusicalsByCity, getActiveMusicalCountByCity, cities } from "@/lib/data";
 import { useSEO } from "@/hooks/useSEO";
 import SchemaOrgCity from "@/components/SchemaOrgCity";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
 import TicketsAndHotel from "@/components/TicketsAndHotel";
 import { CITY_PROGRAM_SUBLINE, getCityProgramHeading } from "@/lib/city-program-heading";
-import { getCitySeo } from "@/lib/city-seo";
+import { getCitySeo, getUpcomingCityProgram } from "@/lib/city-seo";
 import { SHOW_CITY_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { getCityGuide } from "@/lib/city-guide";
@@ -31,6 +31,8 @@ export default function CityDetail() {
   const params = useParams<{ slug: string }>();
   const { musicals: managedMusicals } = useManagedMusicals();
   const city = getCityBySlug(params.slug || "");
+  const cityMusicals = city ? getActiveMusicalsByCity(city.name, managedMusicals) : [];
+  const musicalCount = cityMusicals.length;
 
   useLayoutEffect(() => {
     // Repeat after the first frame and image/layout restoration to defeat scroll restoration from a deep home-page link.
@@ -46,8 +48,7 @@ export default function CityDetail() {
   }, [params.slug]);
 
   // Dynamische SEO-Meta-Tags
-  const musicalCount = city ? getActiveMusicalCountByCity(city.name, managedMusicals) : 0;
-  const citySeo = city ? getCitySeo(city, musicalCount) : null;
+  const citySeo = city ? getCitySeo(city, musicalCount, cityMusicals) : null;
   const seoTitle = citySeo?.title ?? "Stadt nicht gefunden | We Love Musicals";
   const seoDescription = citySeo?.description ?? "";
   const canonicalUrl = city
@@ -79,7 +80,7 @@ export default function CityDetail() {
     );
   }
 
-  const cityMusicals = getActiveMusicalsByCity(city.name, managedMusicals);
+  const cityProgram = getUpcomingCityProgram(city.name, cityMusicals).slice(0, 6);
   const otherCities = [...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).filter((c) => c.slug !== city.slug).slice(0, 5);
   const cityGuide = getCityGuide(city.slug);
 
@@ -127,14 +128,14 @@ export default function CityDetail() {
               {citySeo?.heading}
             </h1>
             <p className="text-lg text-cream/75 max-w-2xl">
-              {city.description}
+              {citySeo?.description}
             </p>
 
             <div className="flex flex-wrap items-center gap-6 mt-6">
               <div className="flex items-center gap-2">
                 <Music className="w-4 h-4 text-gold" />
                 <span className="text-cream/80 text-sm">
-                  {getActiveMusicalCountByCity(city.name)} {getActiveMusicalCountByCity(city.name) === 1 ? "Musical" : "Musicals"}
+                  {musicalCount} {musicalCount === 1 ? "Musical" : "Musicals"}
                 </span>
               </div>
               {SHOW_CITY_HOTEL_SECTIONS && (
@@ -180,6 +181,21 @@ export default function CityDetail() {
               </p>
             </div>
           )}
+
+          {cityProgram.length > 0 && (
+            <div className="mt-10 rounded-sm border border-gold/20 bg-card/50 p-5 md:p-6">
+              <h3 className="font-display text-xl font-bold text-foreground">Termine & Spielstätten in {city.name}</h3>
+              <ul className="mt-4 grid gap-3 md:grid-cols-2" aria-label={`Aktuelle Musicaltermine in ${city.name}`}>
+                {cityProgram.map((entry) => (
+                  <li key={`${entry.title}-${entry.startDate}-${entry.venue}`} className="border-l-2 border-gold/50 pl-3 text-sm leading-relaxed text-cream/85">
+                    <span className="font-semibold text-gold">{entry.title}</span><br />
+                    {new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" }).format(new Date(`${entry.startDate}T12:00:00`))}
+                    {entry.endDate !== entry.startDate && `–${new Intl.DateTimeFormat("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" }).format(new Date(`${entry.endDate}T12:00:00`))}`} · {entry.venue}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 
@@ -199,13 +215,15 @@ export default function CityDetail() {
                 </li>
               ))}
             </ol>
-            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              {cityGuide.officialLinks.map((link) => (
-                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-gold transition-colors hover:text-gold-light">
-                  {link.label}<ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </div>
+            {cityGuide.officialLinks?.length ? (
+              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+                {cityGuide.officialLinks.map((link) => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-gold transition-colors hover:text-gold-light">
+                    {link.label}<ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
         </section>
       )}
@@ -237,7 +255,7 @@ export default function CityDetail() {
                     {otherCity.name}
                   </h3>
                   <p className="text-xs text-cream/60">
-                    {getActiveMusicalCountByCity(otherCity.name)} {getActiveMusicalCountByCity(otherCity.name) === 1 ? "Musical" : "Musicals"}
+                    {getActiveMusicalCountByCity(otherCity.name, managedMusicals)} {getActiveMusicalCountByCity(otherCity.name, managedMusicals) === 1 ? "Musical" : "Musicals"}
                   </p>
                 </div>
               </Link>

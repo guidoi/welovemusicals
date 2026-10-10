@@ -57,7 +57,7 @@ describe("Schema.org Breadcrumb-Bezeichnungen", () => {
 
     expect(schema).toMatchObject({
       "@type": "CollectionPage",
-      name: "Musicals in Hamburg 2026/2027: Termine & Tickets | We Love Musicals",
+      name: "Musicals in Hamburg – Termine & Tickets 2026/2027",
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: 1,

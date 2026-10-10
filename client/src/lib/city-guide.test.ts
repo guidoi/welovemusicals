@@ -24,6 +24,20 @@ describe("Hamburger Besuchsleitfaden", () => {
     ]));
   });
 
+  it.each([
+    ["bremen", "Metropol Theater", "Metropol Theater"],
+    ["duisburg", "Theater am Marientor", "Theater am Marientor"],
+    ["graz", "Helmut List Halle", "Helmut List Halle"],
+    ["innsbruck", "Musicaltermine in Innsbruck planen", "Congress Innsbruck"],
+  ])("liefert für %s einen eigenständigen, spielortbezogenen Leitfaden", (slug, headingFragment, venue) => {
+    const guide = getCityGuide(slug);
+
+    expect(guide?.heading).toContain(headingFragment);
+    expect(guide?.intro).toContain(venue);
+    expect(guide?.steps).toHaveLength(3);
+    expect(guide?.officialLinks).toBeUndefined();
+  });
+
   it("fügt für nicht priorisierte Städte keinen generischen Leitfaden hinzu", () => {
     expect(getCityGuide("bochum")).toBeUndefined();
   });

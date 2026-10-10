@@ -75,10 +75,11 @@ async function assertStaticHtmlHasNoBlockedInternalLinks() {
 async function main() {
   const hamburg = getCityBySlug("hamburg");
   const berlin = getCityBySlug("berlin");
+  const graz = getCityBySlug("graz");
   const fackJuGoehte = getMusicalBySlug("fack-ju-goehte");
   const derKleineLord = getMusicalBySlug("der-kleine-lord");
   const mj = getMusicalBySlug("mj-das-michael-jackson-musical");
-  if (!hamburg || !berlin || !fackJuGoehte || !derKleineLord || !mj) throw new Error("Expected reference pages are not active");
+  if (!hamburg || !berlin || !graz || !fackJuGoehte || !derKleineLord || !mj) throw new Error("Expected reference pages are not active");
 
   const hamburgSeo = getCitySeo(hamburg, 6);
   const berlinSeo = getCitySeo(berlin, 5);
@@ -102,7 +103,8 @@ async function main() {
       'href="https://welovemusicals.com/stadt/hamburg"',
       'id="site-schema"',
       '"@type":"ItemList"',
-      '<h1>Musicals in Hamburg 2026/2027</h1>',
+      '<h1>Musicals in Hamburg: Termine 2026/2027</h1>',
+      '<h2>Termine &amp; Spielstätten in Hamburg</h2>',
       '<h2>Musicalabend in Hamburg planen</h2>',
       'href="/musical/mj-das-michael-jackson-musical"',
     ]),
@@ -131,6 +133,13 @@ async function main() {
       '<h2>Musicalabend in Berlin planen</h2>',
       'href="/musical/wir-sind-am-leben"',
       'href="/musical/der-kleine-lord"',
+    ]),
+    assertPage("stadt/graz", [
+      `<title>${escapeHtml(getCitySeo(graz, 3).title)}</title>`,
+      '<h2>Termine &amp; Spielstätten in Graz</h2>',
+      'Helmut List Halle',
+      '<h2>Musicaltermine in Graz an der Helmut List Halle planen</h2>',
+      'FACK JU GÖHTE',
     ]),
     assertPage("musical/der-kleine-lord", [
       `<h1>${escapeHtml(derKleineLord.title)}</h1>`,

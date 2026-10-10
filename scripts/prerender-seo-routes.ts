@@ -7,7 +7,7 @@ import {
   type City,
   type Musical,
 } from "../client/src/lib/data";
-import { getCitySeo } from "../client/src/lib/city-seo";
+import { getCitySeo, getUpcomingCityProgram } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
 import { getCityGuide } from "../client/src/lib/city-guide";
 import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
@@ -131,18 +131,26 @@ function getCityItemList(city: City, cityMusicals: Musical[]) {
   };
 }
 
-function createCityContent(city: City, cityMusicals: Musical[], heading: string): string {
+function createCityContent(city: City, cityMusicals: Musical[], heading: string, description: string): string {
   const guide = getCityGuide(city.slug);
+  const cityProgram = getUpcomingCityProgram(city.name, cityMusicals).slice(0, 6);
   const musicalLinks = cityMusicals.map((musical) => (
     `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a></li>`
   )).join("");
+  const programContent = cityProgram.length > 0 ? `
+    <section><h2>Termine &amp; Spielstätten in ${escapeHtml(city.name)}</h2><ul>${cityProgram.map((entry) => {
+      const duration = entry.endDate !== entry.startDate
+        ? `${formatGermanDate(entry.startDate)} bis ${formatGermanDate(entry.endDate)}`
+        : formatGermanDate(entry.startDate);
+      return `<li><strong>${escapeHtml(entry.title)}</strong> · ${escapeHtml(duration)} · ${escapeHtml(entry.venue)}</li>`;
+    }).join("")}</ul></section>` : "";
   const guideContent = guide ? `
     <section><h2>${escapeHtml(guide.heading)}</h2><p>${escapeHtml(guide.intro)}</p>
-      <ol>${guide.steps.map((step) => `<li><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.text)}</p></li>`).join("")}</ol>
+      <ol>${guide.steps.map((step) => `<li><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.text)}</p></li>`).join("")}</ol>${guide.officialLinks?.length ? `<p>${guide.officialLinks.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a>`).join(" · ")}</p>` : ""}
     </section>` : "";
 
-  return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(city.description)}</p>
-    <section><h2>Aktuelle Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${guideContent}
+  return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>
+    <section><h2>Aktuelle Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${programContent}${guideContent}
   </main>`;
 }
 
@@ -153,18 +161,21 @@ function formatGermanDate(value: string): string {
 
 function createMusicalContent(musical: Musical, heading: string, priceFrom?: string): string {
   const location = [musical.city, musical.venue].filter(Boolean).join(" · ");
-  const musicalCities = Array.from(new Set([
-    ...(musical.city ? [musical.city] : []),
-    ...(musical.cities ?? []),
-  ]));
+  const today = new Date().toISOString().slice(0, 10);
+  const upcomingTourDates = (musical.tourDates ?? [])
+    .filter((date) => (date.endDate ?? date.startDate) >= today);
+  const musicalCities = Array.from(new Set(
+    upcomingTourDates.length > 0
+      ? upcomingTourDates.map((date) => date.city)
+      : [...(musical.city ? [musical.city] : []), ...(musical.cities ?? [])],
+  ));
   const cityLinks = musicalCities
     .map((cityName) => cities.find((city) => city.name === cityName))
     .filter((city): city is City => Boolean(city))
     .slice(0, 12)
     .map((city) => `<a href="/stadt/${escapeHtml(city.slug)}">Musicals in ${escapeHtml(city.name)}</a>`)
     .join(" · ");
-  const upcomingDates = (musical.tourDates ?? [])
-    .filter((date) => (date.endDate ?? date.startDate) >= new Date().toISOString().slice(0, 10))
+  const upcomingDates = upcomingTourDates
     .map((date) => {
       const duration = date.endDate && date.endDate !== date.startDate
         ? `${formatGermanDate(date.startDate)} bis ${formatGermanDate(date.endDate)}`
@@ -188,7 +199,7 @@ function createMusicalContent(musical: Musical, heading: string, priceFrom?: str
 
 function createCityPage(city: City): SeoPage {
   const cityMusicals = getActiveMusicalsByCity(city.name);
-  const seo = getCitySeo(city, cityMusicals.length);
+  const seo = getCitySeo(city, cityMusicals.length, cityMusicals);
   const canonicalUrl = `${BASE_URL}/stadt/${city.slug}`;
 
   return {
@@ -203,7 +214,7 @@ function createCityPage(city: City): SeoPage {
       getCityBreadcrumbs(city),
       getCityItemList(city, cityMusicals),
     ),
-    contentHtml: createCityContent(city, cityMusicals, seo.heading),
+    contentHtml: createCityContent(city, cityMusicals, seo.heading, seo.description),
     schemaPage: "city",
   };
 }

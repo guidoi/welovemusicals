@@ -14,7 +14,7 @@ export default function Footer() {
   const footerCities = getFooterDachCities();
 
   return (
-    <footer className="bg-card border-t border-gold/10 mt-auto">
+    <footer className="bg-card border-t border-gold/10 mt-auto" data-nosnippet>
       {/* Gold Divider */}
       <div className="gold-line" />
 

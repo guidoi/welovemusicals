@@ -57,6 +57,23 @@ describe("maschinenlesbare Veranstaltungsdaten", () => {
     });
   });
 
+  it("verwendet für Dracula nur die aktuelle Tour ab Ende 2026 und aktuelle SEO-Angaben", () => {
+    const dracula = getMusicalBySlug("dracula");
+    expect(dracula).toBeDefined();
+
+    const events = getMusicalEventSchemas(dracula!, { priceFrom: "40,40", today: "2026-10-10" });
+
+    expect(dracula).toMatchObject({
+      detailHeadline: "DER GRAF KEHRT ZURÜCK – TOURNEE 2026–2028",
+      seoTitle: "Dracula – Das Musical: Termine 2026–2028 | We Love Musicals",
+    });
+    expect(dracula?.seoDescription).toContain("Termine 2026–2028");
+    expect(events.every((event) => String(event.endDate ?? event.startDate) >= "2026-10-10")).toBe(true);
+    expect(events.some((event) => event.location.address.addressLocality === "Berlin")).toBe(false);
+    expect(events.some((event) => event.location.address.addressLocality === "Graz")).toBe(false);
+    expect(events.some((event) => event.location.address.addressLocality === "Nürnberg")).toBe(true);
+  });
+
   it("führt Preisangebote nur aus, wenn ein verlässlicher Preis vorliegt", () => {
     const tina = getMusicalBySlug("tina-das-tina-turner-musical");
     expect(tina).toBeDefined();

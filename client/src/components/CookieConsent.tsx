@@ -55,6 +55,7 @@ export default function CookieConsent() {
         <section
           className="fixed inset-x-3 bottom-3 z-[90] mx-auto max-w-2xl rounded-sm border border-gold/35 bg-card/95 p-5 shadow-2xl shadow-black/60 backdrop-blur-md md:bottom-6 md:p-6"
           aria-label="Cookie-Einstellungen"
+          data-nosnippet
         >
           <div className="flex gap-4">
             <div className="mt-0.5 hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold sm:flex">
@@ -83,7 +84,7 @@ export default function CookieConsent() {
       )}
 
       {showDialog && (
-        <div className="fixed inset-0 z-[100] flex items-end bg-black/75 p-3 backdrop-blur-sm sm:items-center sm:justify-center" role="presentation">
+        <div className="fixed inset-0 z-[100] flex items-end bg-black/75 p-3 backdrop-blur-sm sm:items-center sm:justify-center" role="presentation" data-nosnippet>
           <section className="w-full max-w-xl rounded-sm border border-gold/35 bg-card p-5 shadow-2xl sm:p-7" role="dialog" aria-modal="true" aria-labelledby="consent-settings-title">
             <div className="flex items-start justify-between gap-5">
               <div className="flex gap-3">

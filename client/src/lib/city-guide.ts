@@ -2,7 +2,7 @@ export type CityGuide = {
   heading: string;
   intro: string;
   steps: Array<{ title: string; text: string }>;
-  officialLinks: Array<{ label: string; href: string }>;
+  officialLinks?: Array<{ label: string; href: string }>;
 };
 
 const CITY_GUIDES: Record<string, CityGuide> = {
@@ -59,6 +59,78 @@ const CITY_GUIDES: Record<string, CityGuide> = {
       {
         label: "Anreise zum Stage Theater des Westens",
         href: "https://www.stage-entertainment.de/musicals-shows/wir-sind-am-leben-berlin/theater-anfahrt",
+      },
+    ],
+  },
+  bremen: {
+    heading: "Musicaltermine im Metropol Theater Bremen planen",
+    intro: "Bremen bündelt die aktuell gelisteten Tournee-Musicals im Metropol Theater. Auf dieser Seite stehen die konkreten Laufzeiten und Produktionen für die Hansestadt übersichtlich zusammen.",
+    steps: [
+      {
+        title: "Zeitraum und Produktion vergleichen",
+        text: "Mehrere Tourneen machen nacheinander in Bremen Halt. Prüfe vor der Planung die jeweilige Laufzeit direkt auf der Showkarte, damit dein Wunschtermin zur richtigen Produktion führt.",
+      },
+      {
+        title: "Metropol Theater als Spielort einplanen",
+        text: "Die gelisteten Gastspiele finden im Metropol Theater statt. Nimm Spielbeginn und den individuellen Einlasshinweis des Veranstalters in deine Abendplanung auf.",
+      },
+      {
+        title: "Stadttermin gezielt buchen",
+        text: "Über den Ticketbutton auf der passenden Showkarte gelangst du zum jeweiligen Terminangebot. Dort sind Sitzplätze, Preise und Verfügbarkeit verbindlich.",
+      },
+    ],
+  },
+  duisburg: {
+    heading: "Musicaltermine im Theater am Marientor Duisburg planen",
+    intro: "Das Theater am Marientor ist der aktuelle Anlaufpunkt für die gelisteten Musicaltourneen in Duisburg. Die Programmübersicht hilft, Produktion, Datum und Spielstätte vor dem Ticketkauf abzugleichen.",
+    steps: [
+      {
+        title: "Tournee-Daten genau vergleichen",
+        text: "In Duisburg wechseln die Produktionen über die Saison hinweg. Vergleiche daher zuerst die Laufzeit auf der jeweiligen Showkarte mit deinem Wunschtermin.",
+      },
+      {
+        title: "Theaterbesuch zeitlich planen",
+        text: "Plane für Anreise, Einlass und Garderobe ausreichend Zeit ein. Die aktuellen Hinweise zum Einlass veröffentlicht der Veranstalter für die einzelne Vorstellung.",
+      },
+      {
+        title: "Passenden Termin beim Anbieter prüfen",
+        text: "Der rote Ticketbutton führt zum passenden Angebot. Preise, Kategorien und freie Plätze werden dort aktuell und verbindlich ausgewiesen.",
+      },
+    ],
+  },
+  graz: {
+    heading: "Musicaltermine in Graz an der Helmut List Halle planen",
+    intro: "Graz empfängt die aktuell gelisteten Musicaltourneen in der Helmut List Halle. Die Übersicht bündelt die Produktionen und Zeiträume für einen gezielten Musicalabend in der steirischen Hauptstadt.",
+    steps: [
+      {
+        title: "Produktion und Reisetermin abstimmen",
+        text: "Die Gastspiele liegen an unterschiedlichen Wochenenden. Prüfe zuerst die auf der Karte ausgewiesene Laufzeit, bevor du Anreise und Übernachtung planst.",
+      },
+      {
+        title: "Helmut List Halle als Spielort berücksichtigen",
+        text: "Alle aktuell gelisteten Tournee-Termine in Graz führen zur Helmut List Halle. Achte bei der Abendplanung auf den konkreten Vorstellungsbeginn und die Hinweise des Veranstalters.",
+      },
+      {
+        title: "Tickets für den Graz-Termin auswählen",
+        text: "Über die jeweilige Showkarte erreichst du das passende Terminangebot. Platzwahl, Preis und Verfügbarkeit werden beim Ticketanbieter verbindlich angezeigt.",
+      },
+    ],
+  },
+  innsbruck: {
+    heading: "Musicaltermine in Innsbruck planen",
+    intro: "In Innsbruck verteilen sich die aktuell gelisteten Tournee-Musicals auf die Säle des Congress Innsbruck. Die Karten oben nennen den jeweiligen Saal und Zeitraum, damit du das passende Gastspiel gezielt auswählst.",
+    steps: [
+      {
+        title: "Saal und Datum zusammen prüfen",
+        text: "Je nach Produktion findet das Gastspiel im Saal Tirol oder in der Dogana statt. Vergleiche Spielort und Termin auf der jeweiligen Showkarte vor der Buchung.",
+      },
+      {
+        title: "Anreise zum Congress Innsbruck planen",
+        text: "Plane den Theaterbesuch mit genügend Zeit für Anreise und Einlass. Aktuelle Einlass- und Veranstaltungsinformationen veröffentlicht der jeweilige Anbieter.",
+      },
+      {
+        title: "Ticketangebot für Innsbruck öffnen",
+        text: "Der Ticketbutton führt zum passenden Stadttermin. Dort siehst du die aktuelle Platzwahl, Preise und Verfügbarkeit für die gewählte Vorstellung.",
       },
     ],
   },

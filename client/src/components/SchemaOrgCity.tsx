@@ -40,7 +40,7 @@ export function getCityBreadcrumbItems(city: Pick<City, "name" | "slug">) {
 export function getCityCollectionPageSchema(city: City, musicals: Musical[]) {
   const BASE_URL = "https://welovemusicals.com";
   const pageUrl = `${BASE_URL}/stadt/${city.slug}`;
-  const seo = getCitySeo(city, musicals.length);
+  const seo = getCitySeo(city, musicals.length, musicals);
 
   return {
     "@context": "https://schema.org",

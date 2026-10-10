@@ -1149,3 +1149,11 @@ Der vollständige Katalogaudit fand nach der ersten Bereinigung noch **zwölf** 
 ### Korrektur: bekannte Medienzitate wiederhergestellt
 
 Nach Präzisierung durch den Projektinhaber sind die Zitate bekannter Print-, Nachrichten- und etablierter Kulturmedien wieder aktiv. Sichtbar bleiben ausschließlich Quellen wie **Süddeutsche Zeitung**, **Kölner Stadtanzeiger**, **ntv**, **WAZ**, **Münchner Merkur**, **dpa**, **Stern**, **ZDF**, **Vogue** sowie etablierte Musicalmedien. Ausgeblendet bleiben weiterhin sämtliche Produktions-, Partner-, Pressemappe-, Marken-, Personen- und allgemeinen Publikumsaussagen (z. B. Stage Entertainment, Disney, Guinness, Anna Wintour oder Donatella Versace). Die zentrale Regression prüft die exakte, katalogweite Quellenliste, sodass keine ausgeblendete Quelle zurückkehrt.
+
+
+## SEO-Qualitätskorrekturen – 10.10.2026
+- [x] Stadtseiten nutzen jetzt programmspezifische, kurze Titles und Descriptions mit den tatsächlich aktuellen Shows, Spielstätten und Saisondaten statt gleichförmiger Ortsvorlagen.
+- [x] Bremen, Duisburg, Graz und Innsbruck haben eigenständige lokale Planungsabschnitte; die sichtbare und statische Ausgabe nennt zusätzlich bis zu sechs aktuelle Termine mit Spielstätte.
+- [x] Wiederkehrende Cookie-Dialog- und Footertexte sind per `data-nosnippet` von Google-Snippets ausgeschlossen. Google kann Snippets weiterhin suchanfrageabhängig bestimmen; die aussagekräftigen Seiteninhalte und Meta-Descriptions werden aber priorisiert.
+- [x] DRACULA ist auf die belegten Laufzeiten 2026–2028 aktualisiert: Titel, Description, Detailheadline, Tour-Fakt und statische Stadtlinks nennen nur aktuelle Tourdaten. Vergangene Berlin-, Graz- und München-Termine erscheinen nicht mehr im statischen Detailseitenprogramm.
+- [x] Desktop- und Mobilansichten für die überarbeiteten Stadtseiten sowie die statische SEO-Ausgabe sind geprüft.
