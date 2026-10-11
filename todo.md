@@ -1164,3 +1164,8 @@ Nach Präzisierung durch den Projektinhaber sind die Zitate bekannter Print-, Na
 - [x] Auch die statisch erzeugten Detail-, Stadt-, Impressums- und Datenschutzseiten sowie Open-Graph- und Twitter-Titel sind synchronisiert.
 - [x] Eine zentrale Titelhilfe verhindert doppelte Herzsymbole; Regressionen prüfen alle 21 aktiven Musical- und 23 Stadtseitentitel.
 - [x] Keine Beschreibungen, Inhalte, Ticketpfade, Affiliate-Kennungen, Tracking- oder Consent-Logik wurden verändert.
+
+
+## Sichtbare Portalübersicht auf der Startseite – 11.10.2026
+
+Die neue SEO- und KI-orientierte Sektion **„Was dich bei We Love Musicals erwartet“** steht bewusst direkt nach den neun Top-Musical-Empfehlungen und vor der großen, filterbaren Gesamtübersicht. So erhalten erst die wichtigsten Ticket-Highlights Vorrang; anschließend erläutert eine kompakte Einführung mit vier Karten die tatsächlich angebotenen Leistungen: Termine und Spielorte, Musical-Städte, Preise und Aktionen sowie passende Ticketangebote. Die Startseiten-Meta-Description, Social-Media-Beschreibungen und die sichtbare Einführung verwenden dieselbe sachliche Positionierung ohne unbelegte Marktführungs- oder Redaktionserklärungen.

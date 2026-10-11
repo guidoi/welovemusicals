@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 
 const homeHtml = readFileSync(new URL("../../index.html", import.meta.url), "utf8");
 const kdlImage = "https://welovemusicals.com/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg";
-const homeDescription = "Die besten Musicals &amp; Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.";
-const structuredDescription = "Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.";
+const homeDescription = "We Love Musicals: Musicals &amp; Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourdaten, Preisen und Ticketangeboten.";
+const structuredDescription = "We Love Musicals: Musicals & Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourdaten, Preisen und Ticketangeboten.";
 const homeTitle = "Musicals 2026/2027 ❤️ Shows, Termine &amp; Tickets | We Love Musicals";
 
 describe("Startseiten-Metadaten", () => {

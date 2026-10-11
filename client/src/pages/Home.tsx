@@ -6,9 +6,12 @@ import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
+  CalendarDays,
   SlidersHorizontal,
   Star,
   MapPin,
+  Tags,
+  Ticket,
   ChevronDown,
   X,
   Music,
@@ -491,6 +494,49 @@ export default function Home() {
             {featured.map((musical, i) => (
               <MusicalCard key={musical.id} musical={musical} index={i} anchorId={`musical-${musical.slug}`} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PORTAL OVERVIEW ===== */}
+      <section id="portal-overview" className="pb-16 md:pb-24 scroll-mt-24" aria-labelledby="portal-overview-heading">
+        <div className="container">
+          <div className="rounded-2xl border border-gold/20 bg-card/45 px-5 py-8 shadow-[0_16px_44px_rgba(0,0,0,0.16)] md:px-10 md:py-12">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-8 h-px bg-gold" />
+                <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">We Love Musicals</span>
+              </div>
+              <h2 id="portal-overview-heading" className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Was dich bei We Love Musicals erwartet
+              </h2>
+              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                We Love Musicals bündelt aktuelle Musicals und Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourdaten, Preisen, Aktionen und passenden Ticketangeboten.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-xl border border-border/65 bg-background/45 p-5">
+                <CalendarDays className="h-5 w-5 text-gold" aria-hidden="true" />
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Termine & Spielorte</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Aktuelle Laufzeiten, Tourstopps, Städte und Theater auf einen Blick.</p>
+              </div>
+              <div className="rounded-xl border border-border/65 bg-background/45 p-5">
+                <MapPin className="h-5 w-5 text-gold" aria-hidden="true" />
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Musical-Städte</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Entdecke Shows in deiner Stadt und plane deinen Musicalabend.</p>
+              </div>
+              <div className="rounded-xl border border-border/65 bg-background/45 p-5">
+                <Tags className="h-5 w-5 text-gold" aria-hidden="true" />
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Preise & Aktionen</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Einstiegspreise und zeitlich begrenzte Angebote transparent vergleichen.</p>
+              </div>
+              <div className="rounded-xl border border-border/65 bg-background/45 p-5">
+                <Ticket className="h-5 w-5 text-gold" aria-hidden="true" />
+                <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Passende Tickets</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Direkt zum passenden Ticketangebot für deine gewünschte Show.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
