@@ -1174,3 +1174,8 @@ Die neue SEO- und KI-orientierte Sektion **„Was dich bei We Love Musicals erwa
 ### Sprachliche Feinjustierung der Portalübersicht
 
 Die unnötig komplizierte Beschreibung in der Karte **„Passende Tickets“** („Direkt zum passenden Ticketangebot für deine gewünschte Show.“) ist entfernt. Die Karte, der Einleitungstext und die drei übrigen Nutzenkarten bleiben bewusst erhalten; die beschreibungsfreie Ticketkarte ist nun optisch zentriert, sodass die kompakte Vier-Karten-Struktur weiterhin ausgewogen bleibt.
+
+
+### Mobile Verdichtung der Portalübersicht
+
+Die Startseiten-Sektion ist auf die vorgegebenen vier Stichpunkte reduziert: aktuelle Musical- und Showtermine, Spielorte/Städte/Tourneeübersichten, Preise mit zeitlich begrenzten Ticketaktionen sowie Empfehlungen nach Erlebniswelten. Auf Mobil erscheinen sie als platzsparende Liste ohne hohe Einzelkarten; ab Tabletgröße stehen sie übersichtlich in zwei Spalten. Die Platzierung nach den Top-Empfehlungen bleibt unverändert.

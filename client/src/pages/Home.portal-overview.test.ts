@@ -14,13 +14,15 @@ describe("sichtbare Portalübersicht auf der Startseite", () => {
     expect(fullCatalogSection).toBeGreaterThan(overviewSection);
   });
 
-  it("nennt ausschließlich die tatsächlich angebotenen Informationen", () => {
-    expect(homeSource).toContain("Was dich bei We Love Musicals erwartet");
-    expect(homeSource).toContain("Terminen, Spielorten, Tourdaten, Preisen, Aktionen und passenden Ticketangeboten");
-    expect(homeSource).toContain("Termine & Spielorte");
-    expect(homeSource).toContain("Musical-Städte");
-    expect(homeSource).toContain("Preise & Aktionen");
-    expect(homeSource).toContain("Passende Tickets");
+  it("zeigt die kompakte, vom Projektinhaber vorgegebene Nutzenübersicht", () => {
+    expect(homeSource).toContain("Was dich bei We Love Musicals erwartet:");
+    expect(homeSource).toContain("Aktuelle Musical- und Showtermine");
+    expect(homeSource).toContain("Spielorte, Städte und Tourneeübersichten");
+    expect(homeSource).toContain("Preise und zeitlich begrenzte Ticketaktionen");
+    expect(homeSource).toContain("Empfehlungen nach Erlebniswelten wie Blockbuster, Familie oder Kult &amp; Klassiker");
+    expect(homeSource).toContain('className="mt-5 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-muted-foreground sm:grid-cols-2 md:text-base"');
+    expect(homeSource).not.toContain("We Love Musicals bündelt aktuelle Musicals und Shows");
+    expect(homeSource).not.toContain('>We Love Musicals<');
     expect(homeSource).not.toContain("Direkt zum passenden Ticketangebot");
     expect(homeSource).not.toContain("größten deutschsprachigen Online-Blogs");
   });
