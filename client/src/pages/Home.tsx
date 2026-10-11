@@ -531,10 +531,9 @@ export default function Home() {
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Preise & Aktionen</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Einstiegspreise und zeitlich begrenzte Angebote transparent vergleichen.</p>
               </div>
-              <div className="rounded-xl border border-border/65 bg-background/45 p-5">
+              <div className="flex flex-col justify-center rounded-xl border border-border/65 bg-background/45 p-5">
                 <Ticket className="h-5 w-5 text-gold" aria-hidden="true" />
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">Passende Tickets</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Direkt zum passenden Ticketangebot für deine gewünschte Show.</p>
               </div>
             </div>
           </div>

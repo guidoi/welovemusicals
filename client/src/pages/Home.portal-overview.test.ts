@@ -21,6 +21,7 @@ describe("sichtbare Portalübersicht auf der Startseite", () => {
     expect(homeSource).toContain("Musical-Städte");
     expect(homeSource).toContain("Preise & Aktionen");
     expect(homeSource).toContain("Passende Tickets");
+    expect(homeSource).not.toContain("Direkt zum passenden Ticketangebot");
     expect(homeSource).not.toContain("größten deutschsprachigen Online-Blogs");
   });
 });

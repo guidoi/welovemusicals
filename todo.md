@@ -1169,3 +1169,8 @@ Nach Präzisierung durch den Projektinhaber sind die Zitate bekannter Print-, Na
 ## Sichtbare Portalübersicht auf der Startseite – 11.10.2026
 
 Die neue SEO- und KI-orientierte Sektion **„Was dich bei We Love Musicals erwartet“** steht bewusst direkt nach den neun Top-Musical-Empfehlungen und vor der großen, filterbaren Gesamtübersicht. So erhalten erst die wichtigsten Ticket-Highlights Vorrang; anschließend erläutert eine kompakte Einführung mit vier Karten die tatsächlich angebotenen Leistungen: Termine und Spielorte, Musical-Städte, Preise und Aktionen sowie passende Ticketangebote. Die Startseiten-Meta-Description, Social-Media-Beschreibungen und die sichtbare Einführung verwenden dieselbe sachliche Positionierung ohne unbelegte Marktführungs- oder Redaktionserklärungen.
+
+
+### Sprachliche Feinjustierung der Portalübersicht
+
+Die unnötig komplizierte Beschreibung in der Karte **„Passende Tickets“** („Direkt zum passenden Ticketangebot für deine gewünschte Show.“) ist entfernt. Die Karte, der Einleitungstext und die drei übrigen Nutzenkarten bleiben bewusst erhalten; die beschreibungsfreie Ticketkarte ist nun optisch zentriert, sodass die kompakte Vier-Karten-Struktur weiterhin ausgewogen bleibt.
