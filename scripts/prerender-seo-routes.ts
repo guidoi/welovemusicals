@@ -9,6 +9,7 @@ import {
 } from "../client/src/lib/data";
 import { getCitySeo, getUpcomingCityProgram } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
+import { withSeoTitleHeart } from "../client/src/lib/seo-title";
 import { getCityGuide } from "../client/src/lib/city-guide";
 import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
 import { getMusicalFaqSchema, getVisibleFaqItems } from "../client/src/lib/faq-schema";
@@ -98,7 +99,7 @@ function createLegalPage(
 ): SeoPage {
   const canonicalUrl = `${BASE_URL}/${path}`;
   const image = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
-  const title = `${heading} | We Love Musicals`;
+  const title = withSeoTitleHeart(`${heading} | We Love Musicals`);
   const imageAlt = "Bühnenatmosphäre bei We Love Musicals";
   const breadcrumbs = [
     { "@type": "ListItem", position: 1, name: "We Love Musicals", item: BASE_URL },

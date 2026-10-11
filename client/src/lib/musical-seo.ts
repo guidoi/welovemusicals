@@ -1,4 +1,5 @@
 import type { Musical } from "./data";
+import { withSeoTitleHeart } from "./seo-title";
 
 const BASE_URL = "https://welovemusicals.com";
 const MAX_DESCRIPTION_LENGTH = 155;
@@ -13,7 +14,7 @@ function trimAtWordBoundary(value: string, maxLength = MAX_DESCRIPTION_LENGTH): 
 }
 
 export function getMusicalSeo(musical: Musical) {
-  const title = musical.seoTitle ?? `${musical.title} – Tickets & Termine | We Love Musicals`;
+  const title = withSeoTitleHeart(musical.seoTitle ?? `${musical.title} – Tickets & Termine | We Love Musicals`);
   const description = musical.seoDescription ?? trimAtWordBoundary(musical.description);
   const canonicalUrl = `${BASE_URL}/musical/${musical.slug || musical.id}`;
 

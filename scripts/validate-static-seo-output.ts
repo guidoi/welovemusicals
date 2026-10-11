@@ -87,13 +87,13 @@ async function main() {
 
   await Promise.all([
     assertPage("impressum", [
-      "<title>Impressum | We Love Musicals</title>",
+      "<title>Impressum ❤️ We Love Musicals</title>",
       'href="https://welovemusicals.com/impressum"',
       "<h1>Impressum</h1>",
       'id="site-schema"',
     ]),
     assertPage("datenschutz", [
-      "<title>Datenschutzerklärung | We Love Musicals</title>",
+      "<title>Datenschutzerklärung ❤️ We Love Musicals</title>",
       'href="https://welovemusicals.com/datenschutz"',
       "<h1>Datenschutzerklärung</h1>",
       'id="site-schema"',

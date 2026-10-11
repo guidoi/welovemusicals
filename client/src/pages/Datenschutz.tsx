@@ -7,12 +7,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
+import { withSeoTitleHeart } from "@/lib/seo-title";
 
 const HEADER_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 
 export default function Datenschutz() {
   useSEO({
-    title: "Datenschutzerklärung | We Love Musicals",
+    title: withSeoTitleHeart("Datenschutzerklärung | We Love Musicals"),
     description: "Datenschutzerklärung von We Love Musicals: Informationen zur Verarbeitung personenbezogener Daten, Cookies, Analyse und Affiliate-Links.",
     image: HEADER_IMAGE,
     url: "https://welovemusicals.com/datenschutz",

@@ -10,7 +10,7 @@ describe("Stadtseiten-SEO", () => {
   it("erzeugt einen eindeutigen, suchintentionstarken Titel für Stadtseiten", () => {
     const seo = getCitySeo(hamburg, 7);
 
-    expect(seo.title).toBe("Musicals in Hamburg – Termine & Tickets 2026/2027");
+    expect(seo.title).toBe("Musicals in Hamburg ❤️ Termine & Tickets 2026/2027");
     expect(seo.heading).toBe("Musicals in Hamburg: Termine 2026/2027");
   });
 

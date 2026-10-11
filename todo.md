@@ -1157,3 +1157,10 @@ Nach Präzisierung durch den Projektinhaber sind die Zitate bekannter Print-, Na
 - [x] Wiederkehrende Cookie-Dialog- und Footertexte sind per `data-nosnippet` von Google-Snippets ausgeschlossen. Google kann Snippets weiterhin suchanfrageabhängig bestimmen; die aussagekräftigen Seiteninhalte und Meta-Descriptions werden aber priorisiert.
 - [x] DRACULA ist auf die belegten Laufzeiten 2026–2028 aktualisiert: Titel, Description, Detailheadline, Tour-Fakt und statische Stadtlinks nennen nur aktuelle Tourdaten. Vergangene Berlin-, Graz- und München-Termine erscheinen nicht mehr im statischen Detailseitenprogramm.
 - [x] Desktop- und Mobilansichten für die überarbeiteten Stadtseiten sowie die statische SEO-Ausgabe sind geprüft.
+
+
+## Rotes Herz in SEO-Titeln – 11.10.2026
+- [x] Die Startseite, alle aktiven Musical-Detailseiten und alle Stadtseiten verwenden jetzt **❤️** als einheitlichen, gut sichtbaren Titeltrenner. Beispiel: `Musicals in Hamburg ❤️ Termine & Tickets 2026/2027`.
+- [x] Auch die statisch erzeugten Detail-, Stadt-, Impressums- und Datenschutzseiten sowie Open-Graph- und Twitter-Titel sind synchronisiert.
+- [x] Eine zentrale Titelhilfe verhindert doppelte Herzsymbole; Regressionen prüfen alle 21 aktiven Musical- und 23 Stadtseitentitel.
+- [x] Keine Beschreibungen, Inhalte, Ticketpfade, Affiliate-Kennungen, Tracking- oder Consent-Logik wurden verändert.

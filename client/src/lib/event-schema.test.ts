@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { getActiveMusicals, getMusicalBySlug } from "./data";
 import { getMusicalEventItemList, getMusicalEventSchemas } from "./event-schema";
+import { getMusicalSeo } from "./musical-seo";
 
 describe("maschinenlesbare Veranstaltungsdaten", () => {
   it("liefert für aktive Termine vollständige MusicEvent-Objekte ohne Affiliate-URL", () => {
@@ -67,6 +68,7 @@ describe("maschinenlesbare Veranstaltungsdaten", () => {
       detailHeadline: "DER GRAF KEHRT ZURÜCK – TOURNEE 2026–2028",
       seoTitle: "Dracula – Das Musical: Termine 2026–2028 | We Love Musicals",
     });
+    expect(getMusicalSeo(dracula!).title).toBe("Dracula – Das Musical: Termine 2026–2028 ❤️ We Love Musicals");
     expect(dracula?.seoDescription).toContain("Termine 2026–2028");
     expect(events.every((event) => String(event.endDate ?? event.startDate) >= "2026-10-10")).toBe(true);
     expect(events.some((event) => event.location.address.addressLocality === "Berlin")).toBe(false);

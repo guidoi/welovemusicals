@@ -5,6 +5,7 @@ const homeHtml = readFileSync(new URL("../../index.html", import.meta.url), "utf
 const kdlImage = "https://welovemusicals.com/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg";
 const homeDescription = "Die besten Musicals &amp; Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.";
 const structuredDescription = "Die besten Musicals & Shows: Termine, Städte, Spielpläne und Tickets für König der Löwen, Moulin Rouge, Starlight Express, Phantom der Oper, Eiskönigin, Mamma Mia! und mehr.";
+const homeTitle = "Musicals 2026/2027 ❤️ Shows, Termine &amp; Tickets | We Love Musicals";
 
 describe("Startseiten-Metadaten", () => {
   it("setzt ein repräsentatives Musicalmotiv statt eines einzelnen Tournee-Keyvisuals", () => {
@@ -22,6 +23,9 @@ describe("Startseiten-Metadaten", () => {
   });
 
   it("setzt den gleichen klaren Nutzenhinweis für Google und Social-Media-Snippets", () => {
+    expect(homeHtml).toContain(`<title>${homeTitle}</title>`);
+    expect(homeHtml).toContain(`property="og:title" content="${homeTitle}"`);
+    expect(homeHtml).toContain(`property="twitter:title" content="${homeTitle}"`);
     expect(homeHtml).toContain(`name="description" content="${homeDescription}"`);
     expect(homeHtml).toContain(`property="og:description" content="${homeDescription}"`);
     expect(homeHtml).toContain(`property="twitter:description" content="${homeDescription}"`);

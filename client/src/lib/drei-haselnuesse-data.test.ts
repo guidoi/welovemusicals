@@ -19,7 +19,7 @@ describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
     });
 
     const seo = getMusicalSeo(musical!);
-    expect(seo.title).toBe("Drei Haselnüsse für Aschenbrödel 2026–2028 – Tickets");
+    expect(seo.title).toBe("Drei Haselnüsse für Aschenbrödel 2026–2028 ❤️ Tickets");
     expect(seo.description).toContain("80 Städte");
     expect(seo.description).toContain("40,49 €");
   });

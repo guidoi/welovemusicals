@@ -1,4 +1,5 @@
 import type { City, Musical } from "./data";
+import { withSeoTitleHeart } from "./seo-title";
 
 const CURRENT_SEASON = "2026/2027";
 const MAX_DESCRIPTION_LENGTH = 160;
@@ -69,7 +70,7 @@ function getProgramDescription(city: CitySeoInput, musicalCount: number, musical
 }
 
 export function getCityPageTitle(cityName: string): string {
-  return `Musicals in ${cityName} – Termine & Tickets ${CURRENT_SEASON}`;
+  return withSeoTitleHeart(`Musicals in ${cityName} | Termine & Tickets ${CURRENT_SEASON}`);
 }
 
 export function getCityPageHeading(cityName: string): string {

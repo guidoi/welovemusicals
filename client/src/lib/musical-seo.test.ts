@@ -17,7 +17,7 @@ describe("Musicalseiten-SEO", () => {
   it("erzeugt kanonische, markenkonsistente Standardmetadaten", () => {
     const seo = getMusicalSeo(musical);
 
-    expect(seo.title).toBe("TEST MUSICAL – Tickets & Termine | We Love Musicals");
+    expect(seo.title).toBe("TEST MUSICAL – Tickets & Termine ❤️ We Love Musicals");
     expect(seo.canonicalUrl).toBe("https://welovemusicals.com/musical/test-musical");
     expect(seo.description.length).toBeLessThanOrEqual(155);
     expect(seo.description).toMatch(/…$/);
@@ -30,7 +30,7 @@ describe("Musicalseiten-SEO", () => {
       seoDescription: "Individuelle, präzise Beschreibung.",
     });
 
-    expect(seo.title).toBe("Individueller Titel | We Love Musicals");
+    expect(seo.title).toBe("Individueller Titel ❤️ We Love Musicals");
     expect(seo.description).toBe("Individuelle, präzise Beschreibung.");
   });
 });

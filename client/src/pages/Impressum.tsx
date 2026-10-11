@@ -8,12 +8,13 @@ import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
+import { withSeoTitleHeart } from "@/lib/seo-title";
 
 const HEADER_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 
 export default function Impressum() {
   useSEO({
-    title: "Impressum | We Love Musicals",
+    title: withSeoTitleHeart("Impressum | We Love Musicals"),
     description: "Impressum und Anbieterinformationen von We Love Musicals, dem Musical-Portal für Deutschland, Österreich und die Schweiz.",
     image: HEADER_IMAGE,
     url: "https://welovemusicals.com/impressum",
