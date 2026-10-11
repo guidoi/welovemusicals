@@ -502,7 +502,7 @@ export default function Home() {
             <h2 id="portal-overview-heading" className="font-display text-2xl font-bold text-foreground md:text-4xl">
               Was dich bei We Love Musicals erwartet:
             </h2>
-            <ul className="mt-5 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-muted-foreground sm:grid-cols-2 md:text-base" role="list">
+            <ul className="mt-5 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-white sm:grid-cols-2 md:text-base" role="list">
               <li className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />Aktuelle Musical- und Showtermine</li>
               <li className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />Spielorte, Städte und Tourneeübersichten</li>
               <li className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />Preise und zeitlich begrenzte Ticketaktionen</li>

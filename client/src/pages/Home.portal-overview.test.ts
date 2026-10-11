@@ -20,7 +20,7 @@ describe("sichtbare Portalübersicht auf der Startseite", () => {
     expect(homeSource).toContain("Spielorte, Städte und Tourneeübersichten");
     expect(homeSource).toContain("Preise und zeitlich begrenzte Ticketaktionen");
     expect(homeSource).toContain("Empfehlungen nach Erlebniswelten wie Blockbuster, Familie oder Kult &amp; Klassiker");
-    expect(homeSource).toContain('className="mt-5 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-muted-foreground sm:grid-cols-2 md:text-base"');
+    expect(homeSource).toContain('className="mt-5 grid gap-x-8 gap-y-3 text-sm leading-relaxed text-white sm:grid-cols-2 md:text-base"');
     expect(homeSource).not.toContain("We Love Musicals bündelt aktuelle Musicals und Shows");
     expect(homeSource).not.toContain('>We Love Musicals<');
     expect(homeSource).not.toContain("Direkt zum passenden Ticketangebot");

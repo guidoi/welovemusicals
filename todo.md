@@ -1179,3 +1179,8 @@ Die unnötig komplizierte Beschreibung in der Karte **„Passende Tickets“** (
 ### Mobile Verdichtung der Portalübersicht
 
 Die Startseiten-Sektion ist auf die vorgegebenen vier Stichpunkte reduziert: aktuelle Musical- und Showtermine, Spielorte/Städte/Tourneeübersichten, Preise mit zeitlich begrenzten Ticketaktionen sowie Empfehlungen nach Erlebniswelten. Auf Mobil erscheinen sie als platzsparende Liste ohne hohe Einzelkarten; ab Tabletgröße stehen sie übersichtlich in zwei Spalten. Die Platzierung nach den Top-Empfehlungen bleibt unverändert.
+
+
+### Weiße Stichpunktschrift
+
+Die vier Stichpunkte der kompakten Portalübersicht verwenden nun reines Weiß statt Grau; die Aufzählungspunkte bleiben goldfarben. Die Browserprüfung bestätigt die berechnete Farbe `rgb(255, 255, 255)` für Liste und Listeneinträge.
