@@ -4,6 +4,7 @@ import {
   cities,
   getActiveMusicals,
   getActiveMusicalsByCity,
+  getFeaturedMusicals,
   type City,
   type Musical,
 } from "../client/src/lib/data";
@@ -198,6 +199,35 @@ function createMusicalContent(musical: Musical, heading: string, priceFrom?: str
   </main>`;
 }
 
+function createHomeContent(): string {
+  const featuredLinks = getFeaturedMusicals()
+    .map((musical) => `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a>${musical.city ? ` · ${escapeHtml(musical.city)}` : ""}</li>`)
+    .join("");
+  const musicalLinks = activeMusicals
+    .map((musical) => `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a></li>`)
+    .join("");
+  const activeCities = cities.filter((city) => getActiveMusicalsByCity(city.name).length > 0);
+  const cityLinks = activeCities
+    .map((city) => `<li><a href="/stadt/${escapeHtml(city.slug)}">Musicals in ${escapeHtml(city.name)}</a></li>`)
+    .join("");
+
+  return `<main class="seo-static-fallback" data-seo-static-fallback>
+    <h1>Musicals 2026/2027: Termine, Städte und Tickets</h1>
+    <p>We Love Musicals bietet aktuelle Musicals und Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourneeübersichten, Preisen und zeitlich begrenzten Ticketaktionen.</p>
+    <section><h2>Top Musical-Empfehlungen</h2><p>Entdecke große Bühnenklassiker, aktuelle Premieren und Tourneeproduktionen für verschiedene Erlebniswelten.</p><ul>${featuredLinks}</ul></section>
+    <section><h2>Alle aktuellen Musicals und Shows</h2><ul>${musicalLinks}</ul></section>
+    <section><h2>Musical-Städte</h2><p>Finde aktuelle Spielorte und Termine in deiner Stadt.</p><ul>${cityLinks}</ul></section>
+  </main>`;
+}
+
+function applyHomeStaticFallback(html: string): string {
+  const root = '<div id="root"></div>';
+  if (!html.includes(root)) throw new Error("Startseiten-HTML enthält keinen leeren React-Root");
+  // Like detail pages, keep the fallback available without JavaScript while
+  // preventing it from flashing briefly before the React app mounts.
+  return html.replace(root, `<div id="root"><noscript>${createHomeContent()}</noscript></div>`);
+}
+
 function createCityPage(city: City): SeoPage {
   const cityMusicals = getActiveMusicalsByCity(city.name);
   const seo = getCitySeo(city, cityMusicals.length, cityMusicals);
@@ -310,7 +340,10 @@ async function main() {
     ...activeMusicals.map((musical) => createMusicalPage(musical, pricesByMusicalId.get(musical.id) ?? musical.priceFrom)),
   ];
 
-  await Promise.all(pages.map((page) => writePage(page, shellHtml)));
+  await Promise.all([
+    writeFile(resolve(DIST_ROOT, "index.html"), applyHomeStaticFallback(shellHtml), "utf8"),
+    ...pages.map((page) => writePage(page, shellHtml)),
+  ]);
   console.log(`Generated static SEO metadata for ${pages.length} canonical city and musical routes.`);
 }
 

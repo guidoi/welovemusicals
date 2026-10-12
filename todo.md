@@ -1184,3 +1184,10 @@ Die Startseiten-Sektion ist auf die vorgegebenen vier Stichpunkte reduziert: akt
 ### Weiße Stichpunktschrift
 
 Die vier Stichpunkte der kompakten Portalübersicht verwenden nun reines Weiß statt Grau; die Aufzählungspunkte bleiben goldfarben. Die Browserprüfung bestätigt die berechnete Farbe `rgb(255, 255, 255)` für Liste und Listeneinträge.
+
+
+## Startseite für Crawler ohne JavaScript und KI-Übersicht – 12.10.2026
+
+Die externe Prüfung hatte einen **richtigen Kern**: Während Stadt-, Musical- und Rechtseiten bereits als statische SEO-Dokumente ausgeliefert wurden, enthielt das Roh-HTML der Startseite nur die React-App-Hülle. Die Startseite wird nun beim Produktionsbuild ebenfalls mit einer statischen, inhaltsgleichen Fallback-Seite erzeugt. Ohne JavaScript sind eine H1, die Einordnung des Portals, Top-Musical-Empfehlungen, alle aktiven Musicals sowie Musical-Städte samt internen Links verfügbar. Bei aktiviertem JavaScript bleibt die sichtbare React-Seite unverändert; der Fallback liegt wie bei den Detailseiten in `noscript` und verursacht keinen Ladeblitz.
+
+Der Startseitentitel ist von 65 auf **43 Zeichen** verkürzt: `Musicals 2026/2027 ❤️ Termine & Tickets`. Google hat keine starre Zeichenobergrenze, schneidet lange Titel aber an die Gerätebreite an; der neue Titel bleibt prägnant und behält den vereinbarten Herztrenner. Zusätzlich liefert `/llms.txt` jetzt als echte UTF-8-Textdatei eine knappe Übersicht zu Inhalt, Städten, Sitemap, Aktualität und Datenquellen. Für Google AI Overviews oder AI Mode ist diese Datei nicht erforderlich; Google verlangt dafür weiterhin ausschließlich indexierbare, crawlbare und hilfreiche Inhalte. Produktionsbuild, 108 Testdateien / 389 Tests, TypeScript, Affiliate- und Bildstandardgates sowie die Roh-HTML-Prüfung sind erfolgreich.

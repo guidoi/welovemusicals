@@ -1,0 +1,20 @@
+# We Love Musicals
+
+> We Love Musicals bündelt aktuelle Musicals und Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourneeübersichten, Preisen und zeitlich begrenzten Ticketaktionen.
+
+## Zentrale Inhalte
+
+- [Musicals & Shows](https://welovemusicals.com/#musicals): Aktuelle Produktionen, Spielzeiten, Fakten und Ticketinformationen.
+- [Musical-Städte](https://welovemusicals.com/#staedte): Städteübersichten mit aktuellen Shows, Spielorten und Planungshinweisen.
+- [Sitemap](https://welovemusicals.com/sitemap.xml): Kanonische Übersicht aller öffentlichen Musical- und Stadtseiten.
+
+## Inhaltlicher Fokus
+
+- Aktuelle Spieltermine, feste Standorte und Tourneestopps.
+- Spielstätten, Städte und Tourneeübersichten.
+- Einstiegspreise und zeitlich begrenzte Ticketaktionen aus der veröffentlichten Preisquelle.
+- Empfehlungen nach Erlebniswelten wie Blockbuster, Familie & Märchen, Kult & Klassiker, Pop, Rock & Film sowie Drama & Komödie.
+
+## Aktualität und Quellen
+
+Preise und Aktionen können sich ändern. Maßgeblich sind die jeweils auf We Love Musicals ausgewiesenen Angaben und die verlinkten Ticketanbieter. Öffentliche Detailseiten enthalten ergänzende FAQs, strukturierte Veranstaltungsdaten und interne Verweise auf passende Städte.

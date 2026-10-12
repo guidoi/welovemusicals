@@ -72,6 +72,42 @@ async function assertStaticHtmlHasNoBlockedInternalLinks() {
   }
 }
 
+async function assertHomePageStaticContent() {
+  const html = await readFile(resolve(DIST_ROOT, "index.html"), "utf8");
+  const expectations = [
+    '<title>Musicals 2026/2027 ❤️ Termine &amp; Tickets</title>',
+    '<div id="root"><noscript><main class="seo-static-fallback"',
+    '<h1>Musicals 2026/2027: Termine, Städte und Tickets</h1>',
+    '<h2>Top Musical-Empfehlungen</h2>',
+    '<h2>Alle aktuellen Musicals und Shows</h2>',
+    '<h2>Musical-Städte</h2>',
+    'href="/musical/starlight-express"',
+    'href="/stadt/hamburg"',
+  ];
+
+  for (const expectation of expectations) {
+    if (!html.includes(expectation)) {
+      throw new Error(`index.html misses expected static home SEO value: ${expectation}`);
+    }
+  }
+}
+
+async function assertLlmsFile() {
+  const content = await readFile(resolve(DIST_ROOT, "llms.txt"), "utf8");
+  const expectations = [
+    "# We Love Musicals",
+    "https://welovemusicals.com/sitemap.xml",
+    "Aktuelle Spieltermine, feste Standorte und Tourneestopps.",
+    "Preise und Aktionen können sich ändern.",
+  ];
+
+  for (const expectation of expectations) {
+    if (!content.includes(expectation)) {
+      throw new Error(`llms.txt misses expected value: ${expectation}`);
+    }
+  }
+}
+
 async function main() {
   const hamburg = getCityBySlug("hamburg");
   const berlin = getCityBySlug("berlin");
@@ -86,6 +122,8 @@ async function main() {
   const mjSeo = getMusicalSeo(mj);
 
   await Promise.all([
+    assertHomePageStaticContent(),
+    assertLlmsFile(),
     assertPage("impressum", [
       "<title>Impressum ❤️ We Love Musicals</title>",
       'href="https://welovemusicals.com/impressum"',

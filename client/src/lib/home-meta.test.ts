@@ -5,7 +5,7 @@ const homeHtml = readFileSync(new URL("../../index.html", import.meta.url), "utf
 const kdlImage = "https://welovemusicals.com/images/kdl/KDL_HH_Prio1_Rafiki_(c)StageEntertainment-1.jpg";
 const homeDescription = "We Love Musicals: Musicals &amp; Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourdaten, Preisen und Ticketangeboten.";
 const structuredDescription = "We Love Musicals: Musicals & Shows in Deutschland, Österreich und der Schweiz – mit Terminen, Spielorten, Tourdaten, Preisen und Ticketangeboten.";
-const homeTitle = "Musicals 2026/2027 ❤️ Shows, Termine &amp; Tickets | We Love Musicals";
+const homeTitle = "Musicals 2026/2027 ❤️ Termine &amp; Tickets";
 
 describe("Startseiten-Metadaten", () => {
   it("setzt ein repräsentatives Musicalmotiv statt eines einzelnen Tournee-Keyvisuals", () => {
@@ -30,5 +30,10 @@ describe("Startseiten-Metadaten", () => {
     expect(homeHtml).toContain(`property="og:description" content="${homeDescription}"`);
     expect(homeHtml).toContain(`property="twitter:description" content="${homeDescription}"`);
     expect(homeHtml.match(new RegExp(`"description": "${structuredDescription}"`, "g"))).toHaveLength(2);
+  });
+
+  it("hält den Startseitentitel prägnant und mit dem vereinbarten Herztrenner", () => {
+    expect(homeTitle).toContain("❤️");
+    expect(homeTitle.length).toBeLessThanOrEqual(55);
   });
 });
