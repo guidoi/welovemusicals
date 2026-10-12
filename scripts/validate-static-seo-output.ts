@@ -75,7 +75,7 @@ async function assertStaticHtmlHasNoBlockedInternalLinks() {
 async function assertHomePageStaticContent() {
   const html = await readFile(resolve(DIST_ROOT, "index.html"), "utf8");
   const expectations = [
-    '<title>Musicals 2026/2027 ❤️ Termine &amp; Tickets</title>',
+    '<title>Musicals &amp; Shows 2026/2027 ❤️ Termine &amp; Tickets</title>',
     '<div id="root"><noscript><main class="seo-static-fallback"',
     '<h1>Musicals 2026/2027: Termine, Städte und Tickets</h1>',
     '<h2>Top Musical-Empfehlungen</h2>',
