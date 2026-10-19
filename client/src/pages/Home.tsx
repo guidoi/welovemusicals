@@ -40,6 +40,7 @@ import {
   DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS,
   DESKTOP_HERO_IMAGE_POSITION_CLASS,
   DESKTOP_HERO_SECTION_CLASS,
+  HOME_HERO_CONTENT_TOP_CLASS,
   MOBILE_HERO_NAVIGATION_BOTTOM_CLASS,
   MOBILE_HERO_NAVIGATION_TOP_CLASS,
 } from "@/lib/home-hero-layout";
@@ -359,7 +360,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Header />
+      <Header staticOnMobile />
       <AnimatePresence>
         {showStickyFilterBar && (
           <motion.div
@@ -417,7 +418,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container text-center pt-20">
+        <div className={`relative z-10 container text-center ${HOME_HERO_CONTENT_TOP_CLASS}`}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

@@ -54,11 +54,21 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
             data-homepage-artwork={isHomepageArtwork || undefined}
             className="relative aspect-[16/10] overflow-hidden bg-black"
           >
+            {isHomepageArtwork && (
+              <img
+                src={musical.homepageArtworkImage}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover opacity-45 blur-xl"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
             <img
               src={musical.homepageArtworkImage ?? musical.image}
               alt={musical.title}
-              className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${
-                isHomepageArtwork ? "object-contain" : "object-cover"
+              className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
+                isHomepageArtwork ? "relative z-10 object-contain" : "object-cover"
               }`}
               loading="lazy"
               decoding="async"
@@ -67,7 +77,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
             {!isHomepageArtwork && <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />}
 
             {/* Sale badge */}
-            {!isHomepageArtwork && hasActiveSale && musical.sale && (
+            {hasActiveSale && musical.sale && (
               <div
                 className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden bg-red px-2 py-0.5 shadow-lg shadow-red-950/40`}
                 aria-label={`Sale: ${musical.sale.discount}`}
@@ -90,7 +100,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
             )}
 
             {/* Featured Badge */}
-            {!isHomepageArtwork && musical.featured && (
+            {musical.featured && (
               <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
                 <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream backdrop-blur-sm`}>
                   <Star className="h-3 w-3 fill-gold text-gold" />
@@ -119,19 +129,6 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
                 <h3 data-testid="teaser-artwork-title" className="mb-2 font-heading text-xl font-semibold leading-tight tracking-wide text-foreground md:text-2xl">
                   {musical.title}
                 </h3>
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  {hasActiveSale && musical.sale && (
-                    <span data-testid="teaser-artwork-sale-badge" className="rounded-md bg-red px-2.5 py-1 text-xs font-semibold text-white shadow-lg shadow-red-950/30">
-                      SALE · {musical.sale.discount}
-                    </span>
-                  )}
-                  {musical.featured && (
-                    <span data-testid="teaser-artwork-featured-badge" className="inline-flex items-center gap-1.5 rounded-md border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream">
-                      <Star className="h-3 w-3 fill-gold text-gold" />
-                      Top-Musical
-                    </span>
-                  )}
-                </div>
               </>
             )}
 

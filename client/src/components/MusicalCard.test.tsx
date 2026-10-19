@@ -196,12 +196,13 @@ describe("MusicalCard Sale-Störer", () => {
 
     expect(markup).toContain('data-testid="teaser-image" data-homepage-artwork="true"');
     expect(markup).toContain('src="https://cdn.example.test/testmusical-artwork.webp"');
-    expect(markup).toContain("object-contain");
-    expect(markup).not.toContain("object-cover");
+    expect(markup).toContain("relative z-10 object-contain");
+    expect(markup).toContain("object-cover opacity-45 blur-xl");
     expect(markup).toContain('data-testid="teaser-artwork-title"');
-    expect(markup).toContain('data-testid="teaser-artwork-sale-badge"');
-    expect(markup).toContain('data-testid="teaser-artwork-featured-badge"');
-    expect(markup).not.toContain('data-testid="featured-badge"');
+    expect(markup).toContain('data-testid="sale-badge"');
+    expect(markup).toContain('data-testid="featured-badge"');
+    expect(markup).not.toContain('data-testid="teaser-artwork-sale-badge"');
+    expect(markup).not.toContain('data-testid="teaser-artwork-featured-badge"');
   });
 
   it("kann Spielortzeilen in kompakten Startseitenkarten ausblenden", () => {

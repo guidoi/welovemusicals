@@ -36,4 +36,14 @@ describe("Header-Hauptnavigation", () => {
     expect(headerSource).toContain('data-testid="header-menu-control-mobile"');
     expect(headerSource).toContain('plzActive || plzOpen ? "border-gold bg-gold text-background hover:bg-gold-light"');
   });
+
+  it("unterstützt auf der Startseite einen nicht verdeckenden mobilen Header", () => {
+    const headerSource = readFileSync(
+      "client/src/components/Header.tsx",
+      "utf8",
+    );
+
+    expect(headerSource).toContain("staticOnMobile?: boolean;");
+    expect(headerSource).toContain('"relative z-50 w-full md:fixed md:inset-x-0 md:top-0"');
+  });
 });
