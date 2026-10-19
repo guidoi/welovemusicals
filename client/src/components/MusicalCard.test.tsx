@@ -241,12 +241,11 @@ describe("MusicalCard Sale-Störer", () => {
     expect(compactMarkup).not.toContain("Hamburg (Testtheater)");
   });
 
-  it("kann wiederholte Beschreibungen in kompakten Startseitenkarten ausblenden", () => {
-    const regularMarkup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
-    const compactMarkup = renderToStaticMarkup(<MusicalCard musical={baseMusical} showDescription={false} />);
+  it("blendet wiederholte Teasertexte in allen Katalogkarten aus", () => {
+    const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
 
-    expect(regularMarkup).toContain("Eine Testbeschreibung.");
-    expect(compactMarkup).not.toContain("Eine Testbeschreibung.");
+    expect(markup).not.toContain("Eine Testbeschreibung.");
+    expect(markup).not.toContain("line-clamp-2");
   });
 
   it("rundet alle Musicalkarten einheitlich großzügiger ab", () => {

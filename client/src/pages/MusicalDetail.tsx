@@ -213,6 +213,7 @@ export default function MusicalDetail() {
   const ticketCta = getTicketCta(musical);
   const desktopKeyvisual = musical.keyvisual || musical.image;
   const desktopKeyvisualLandscape = musical.keyvisualLandscape || musical.id === "moulinrouge" || musical.id === "phantom-der-oper" || musical.id === "gloeckner-von-notre-dame" || musical.id === "starlight-express";
+  const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;
   const trackDetailTicketClick = (placement: AffiliateClickPlacement, ticketUrl: string) => {
     trackAffiliateTicketClick({
       musicalId: musical.id,
@@ -262,7 +263,7 @@ export default function MusicalDetail() {
       </Link>
 
       {/* Hero */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
+      <section className={`relative ${mobileHeroBelowHeader ? "mt-16 lg:mt-0" : ""} min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden`}>
         <div className="absolute inset-0">
           <img
             src={musical.heroImage || musical.image}

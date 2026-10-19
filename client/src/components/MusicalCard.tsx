@@ -18,12 +18,11 @@ interface MusicalCardProps {
   index?: number;
   anchorId?: string;
   showLocation?: boolean;
-  showDescription?: boolean;
   /** Increments after a filter update to replay one subtle result reveal. */
   filterAnimationKey?: number;
 }
 
-export default function MusicalCard({ musical, index = 0, anchorId, showLocation = true, showDescription = true, filterAnimationKey }: MusicalCardProps) {
+export default function MusicalCard({ musical, index = 0, anchorId, showLocation = true, filterAnimationKey }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const reduceMotion = useReducedMotion();
   const isHomepageArtwork = Boolean(musical.homepageArtworkImage);
@@ -92,13 +91,6 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
                   <span>{musical.cities?.slice(0, 3).join(", ")}{musical.cities && musical.cities.length > 3 ? ` +${musical.cities.length - 3}` : ""}</span>
                 )}
               </div>
-            )}
-
-            {/* Description */}
-            {showDescription && (
-              <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-cream/90">
-                {musical.description}
-              </p>
             )}
 
             {/* Erlebniswelt und zeitlich begrenzte Aktion bleiben unter dem Motiv. */}

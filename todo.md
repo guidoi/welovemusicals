@@ -1235,3 +1235,10 @@ Die Katalogkarten folgen jetzt ausnahmslos derselben Logik wie die Top-Karten: B
 ## Größere Erlebniswelt-Buttons auf Mobil – 20.10.2026
 
 Die fünf Erlebniswelt-Buttons im mobilen Hero sind von 40 auf **44 px** Höhe vergrößert und verwenden nun 13 px statt 12 px Schrift. Die seitlichen Innenabstände und der Buchstabenabstand wurden gleichzeitig leicht verdichtet, damit die Kategorien weiterhin in zwei klaren Reihen stehen und keine dritte Reihe entsteht. Desktopmaße bleiben unverändert. Die gezielte Regression, TypeScript-Prüfung und Mobilansicht bestätigen Touchfläche, Lesbarkeit und vollständige Beschriftungen.
+
+
+## Kompakter Katalog und Eiskönigin-Header auf Mobil – 20.10.2026
+
+Die wiederholten redaktionellen Teasertexte sind aus **allen Musicalkarten** entfernt. Der Katalog ist damit deutlich kompakter und konzentriert sich auf Kartenmotiv, Titel, Erlebniswelt, optionale SALE-Pill und Ticket-CTA. Die vollständigen Beschreibungen bleiben unverändert auf den jeweiligen Detailseiten und in den SEO-Inhalten erhalten.
+
+Der mobile Detailheader von **DISNEYS DIE EISKÖNIGIN** berücksichtigt jetzt den fixierten Seitenheader: Das Elsa-und-Anna-Foto beginnt gezielt unterhalb der mobilen Navigation, sodass beide Gesichter vollständig sichtbar bleiben. Auf Desktop bleibt die bestehende Headerposition unverändert. Eine katalogbasierte `mobileHeroBelowHeader`-Kennzeichnung beschränkt die Korrektur ausschließlich auf dieses Motiv; Tests und eine mobile 375-px-Sichtprüfung bestätigen die Freihaltung.

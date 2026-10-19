@@ -497,7 +497,6 @@ export default function Home() {
                 index={i}
                 anchorId={`musical-${musical.slug}`}
                 showLocation={false}
-                showDescription={false}
               />
             ))}
           </div>

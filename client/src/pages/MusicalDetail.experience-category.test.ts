@@ -4,6 +4,11 @@ import { describe, expect, it } from "vitest";
 const musicalDetailSource = readFileSync(new URL("./MusicalDetail.tsx", import.meta.url), "utf8");
 
 describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
+  it("respektiert bei Bildern mit wichtigen oberen Motiven den mobilen Fix-Header", () => {
+    expect(musicalDetailSource).toContain("const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;");
+    expect(musicalDetailSource).toContain('mobileHeroBelowHeader ? "mt-16 lg:mt-0" : ""');
+  });
+
   it("ermittelt und zeigt die zentrale Erlebniswelt im Hero an", () => {
     expect(musicalDetailSource).toContain('import { getExperienceCategory } from "@/lib/experience-categories";');
     expect(musicalDetailSource).toContain("const experienceCategory = getExperienceCategory(musical.experienceCategory);");

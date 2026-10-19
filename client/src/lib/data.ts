@@ -66,6 +66,7 @@ export interface Musical {
   homepageArtworkImage?: string; // Optionales offizielles Artwork ausschließlich für die Startseitenkarte
   homepageArtworkObjectPosition?: string; // Sichere Bildposition für vollflächige Startseiten-Artworks
   heroImage?: string; // Alternatives Hero-Bild für die Detailseite (z.B. Galerie-Bild statt Teaser)
+  mobileHeroBelowHeader?: boolean; // Verhindert, dass wichtige Bildbereiche unter dem mobilen Fix-Header verschwinden
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
   keyvisualLandscape?: boolean; // Querformat-Keyvisual vollständig statt beschnitten darstellen
   keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
@@ -1400,6 +1401,7 @@ export const musicals: Musical[] = [
     homepageArtworkImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/rhFeKqfcblXqdBMT.webp",
     homepageArtworkObjectPosition: "center center",
     heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/SE_EIS_2026_ElsaUndAnna_Finale_HoldingHands_(c)JohanPersson_a2fb5b4c.webp",
+    mobileHeroBelowHeader: true,
     keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/bIQBYuqQLNsyvCum.webp",
     keyvisualLink: EISKOENIGIN_STAGE_SHOW_PAGE_URL,
     eventimUrl: EISKOENIGIN_STAGE_TEXT_LINK_URL,

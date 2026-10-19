@@ -3,6 +3,13 @@ import { musicals } from "./data";
 import { isSaleActive } from "./sale";
 
 describe("Die Eiskönigin sale teaser", () => {
+  it("hält das Elsa-und-Anna-Hero auf Mobilgeräten unterhalb des Fix-Headers sichtbar", () => {
+    const eiskoenigin = musicals.find((musical) => musical.id === "eiskoenigin");
+
+    expect(eiskoenigin?.heroImage).toContain("ElsaUndAnna_Finale_HoldingHands");
+    expect(eiskoenigin?.mobileHeroBelowHeader).toBe(true);
+  });
+
   it("zeigt die aktuelle 15%-Stage-Aktion als aktiven Sale-Störer", () => {
     const eiskoenigin = musicals.find((musical) => musical.id === "eiskoenigin");
 

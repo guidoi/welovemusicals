@@ -24,8 +24,7 @@ describe("Öffentliche Farbpalette", () => {
     expect(saleLayout).not.toContain("border-red-200/90");
   });
 
-  it("verwendet Creme für redaktionelle Inhalte und Gold für Orientierung", () => {
-    expect(musicalCard).toContain("text-cream/90");
+  it("verwendet Creme für den Ticket-CTA und Gold für Orientierung", () => {
     expect(musicalCard).toContain("text-cream transition-colors");
     expect(home).toContain("text-cream/90");
     expect(cityCard).toContain("text-cream/90");
