@@ -1207,3 +1207,7 @@ Die zusätzliche Titel-Schiebeleiste im mobilen Hero ist entfernt. Dort bleiben 
 ### Mobile Header- und Artwork-Korrektur
 
 Auf der Startseite scrollt der Header auf Mobil nun mit dem Dokument, statt Überschriften dauerhaft zu überdecken; auf Desktop sowie auf allen Detailseiten bleibt er fixiert. Bei den drei Artwork-Karten sind SALE- und Top-Musical-Badges wieder oben im Bild. Alle Kartenbilder füllen ihre Fläche nun konsequent ohne Schatten- oder Randfüllung (`object-cover`). Die redundante Kachel-Subline „Das Musical“ ist ausgeblendet; aussagekräftigere Zusätze wie „Das neue Musical“ bleiben sichtbar.
+
+### Logofreies König-der-Löwen-Artwork und sichere Schriftbereiche
+
+Im König-der-Löwen-Startseitenmotiv wurde ausschließlich das kleine Stage-Entertainment-Logo oben rechts entfernt. Disney-, Musical-, Jubiläums- und Copyrightangaben bleiben unverändert erhalten. Das geprüfte neue WebP wird per CDN eingesetzt. Für die drei Startseiten-Artworks sind sichere Bildpositionen hinterlegt: König der Löwen priorisiert den rechten Schriftbereich, Eiskönigin die untere Wortmarke und Tarzan den mittleren bis unteren Logo-/Schriftbereich. So bleiben die Motive vollflächig, ohne dass relevante Schrift abgeschnitten wird.

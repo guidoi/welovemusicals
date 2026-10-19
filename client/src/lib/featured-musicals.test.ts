@@ -33,7 +33,7 @@ describe("Top-Musicals auf der Startseite", () => {
 
   it("nutzt bei den drei Artwork-Tests nur auf der Startseitenkarte offizielle WebP-Motive", () => {
     const expectedArtworkUrls = {
-      "koenig-der-loewen": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/OkUfEwdfPOHqDHSW.webp",
+      "koenig-der-loewen": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/hohlDhyGutIEJMAj.webp",
       eiskoenigin: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/RpLtNCLnXldKJXtE.webp",
       tarzan: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/oFgcKHmyWnZiwaCN.webp",
     };

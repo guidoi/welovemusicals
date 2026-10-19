@@ -189,6 +189,7 @@ describe("MusicalCard Sale-Störer", () => {
           title: "DISNEYS TESTMUSICAL",
           featured: true,
           homepageArtworkImage: "https://cdn.example.test/testmusical-artwork.webp",
+          homepageArtworkObjectPosition: "center 80%",
           sale: { label: "Aktion", discount: "BIS 25 %" },
         }}
       />,
@@ -197,6 +198,8 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="teaser-image" data-homepage-artwork="true"');
     expect(markup).toContain('src="https://cdn.example.test/testmusical-artwork.webp"');
     expect(markup).toContain("h-full w-full object-cover");
+    expect(markup).toContain('data-homepage-artwork-position="center 80%"');
+    expect(markup).toContain("object-position:center 80%");
     expect(markup).not.toContain("blur-xl");
     expect(markup).toContain('data-testid="teaser-artwork-title"');
     expect(markup).toContain('data-testid="sale-badge"');
