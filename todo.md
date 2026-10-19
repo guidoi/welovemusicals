@@ -1216,3 +1216,10 @@ Im König-der-Löwen-Startseitenmotiv wurde ausschließlich das kleine Stage-Ent
 ### Kartenhinweise ohne Motivüberlagerung
 
 Die Zwischenlösung mit SALE- und Top-Musical-Badges oben auf dem Artwork ist ersetzt: Das **Top-Musical**-Badge entfällt vollständig, weil der Abschnitt bereits als „Top Musical-Empfehlungen“ gekennzeichnet ist. Eine aktive Aktion erscheint stattdessen als kompakte rote **SALE-Pill** unter dem Titel neben der goldenen Erlebniswelt. Beide Hinweise liegen in einer flexiblen Zeile und dürfen auf Mobil sauber umbrechen. Dadurch bleiben alle Kartenmotive, insbesondere die drei offiziellen Artworks, frei von Textüberlagerungen. Affiliate-Ziele, Preise, Sale-Zeiträume und Consentlogik bleiben unverändert.
+
+
+## Einheitliche Katalogkarten und sieben Stage-Artworks – 20.10.2026
+
+Alle Musicalkarten verwenden nun dieselbe Überschriftenhierarchie wie die bisherigen König-der-Löwen-, Eiskönigin- und Tarzan-Karten: Das Motiv ist vollständig frei von Textüberlagerungen; der Musicaltitel steht einheitlich als erste Zeile direkt darunter. Sublines, die zuvor teilweise im Bild lagen, sind in Karten ausgeblendet. Stadt, Spielort und Beschreibung bleiben in der gefilterten Katalogübersicht; die neun kompakten Top-Empfehlungen bleiben wie vorher bewusst reduziert.
+
+Sieben gelieferte Stage-Artworks sind als WebP per CDN ausschließlich für Karten eingebunden: **MJ**, **& JULIA**, **DER TEUFEL TRÄGT PRADA**, **TANZ DER VAMPIRE**, **TINA**, **WIR SIND AM LEBEN** und **ZURÜCK IN DIE ZUKUNFT**. Jedes Motiv hat eine eigene, sichere `object-position`, damit Wortmarken und relevante Bildbereiche im vollflächigen 16:10-Kartenformat erhalten bleiben. Originale und aufbereitete Dateien liegen außerhalb des Repos; alle sieben CDN-Dateien liefern HTTP 200 `image/webp`. Die sichtbare Browserprüfung bestätigt die geladenen Quellen und die Karten für MJ, ZIZ, & JULIA, TINA, Prada und WSAL. Detailheader, Galerien, Ticketziele, Partnerkennungen, Impressionen und Consent bleiben unverändert.

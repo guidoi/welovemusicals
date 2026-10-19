@@ -182,7 +182,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("md:text-[10px]");
   });
 
-  it("zeigt optionale Startseiten-Artworks vollständig und den Musicaltitel erst unter dem Motiv", () => {
+  it("zeigt Startseiten-Artworks vollflächig und den Musicaltitel unter dem Motiv", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -202,14 +202,15 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-homepage-artwork-position="center 80%"');
     expect(markup).toContain("object-position:center 80%");
     expect(markup).not.toContain("blur-xl");
-    expect(markup).toContain('data-testid="teaser-artwork-title"');
+    expect(markup).toContain('data-testid="teaser-card-title"');
+    expect(markup).toContain('data-title-placement="below-image"');
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).not.toContain('data-testid="featured-badge"');
     expect(markup).not.toContain('data-testid="teaser-artwork-sale-badge"');
     expect(markup).not.toContain('data-testid="teaser-artwork-featured-badge"');
   });
 
-  it("blendet die redundante Subline Das Musical in Karten aus", () => {
+  it("blendet Karten-Sublines zugunsten der einheitlichen Titelzeile aus", () => {
     const genericMarkup = renderToStaticMarkup(
       <MusicalCard musical={{ ...baseMusical, subtitle: "Das Musical" }} />,
     );
@@ -218,7 +219,16 @@ describe("MusicalCard Sale-Störer", () => {
     );
 
     expect(genericMarkup).not.toContain("Das Musical");
-    expect(editorialMarkup).toContain("Das neue Musical");
+    expect(editorialMarkup).not.toContain("Das neue Musical");
+  });
+
+  it("platziert jede Kartenüberschrift unter dem Bild statt als Bildüberlagerung", () => {
+    const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
+
+    expect(markup).toContain('data-testid="teaser-card-title"');
+    expect(markup).toContain('data-title-placement="below-image"');
+    expect(markup).not.toContain("bg-gradient-to-t from-black/80");
+    expect(markup).not.toContain("absolute bottom-0 left-0 right-0 p-4");
   });
 
   it("kann Spielortzeilen in kompakten Startseitenkarten ausblenden", () => {

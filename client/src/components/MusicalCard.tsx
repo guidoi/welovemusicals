@@ -29,7 +29,6 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
   const isHomepageArtwork = Boolean(musical.homepageArtworkImage);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const experienceCategory = getExperienceCategory(musical.experienceCategory);
-  const showSubtitle = musical.subtitle?.trim().toLowerCase() !== "das musical";
   const providerLogoWidthClass =
     ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
 
@@ -65,30 +64,17 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
               decoding="async"
               sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
             />
-            {!isHomepageArtwork && <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />}
-
-            {/* Title Overlay */}
-            {!isHomepageArtwork && (
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight font-heading tracking-wide">
-                  {musical.title}
-                </h3>
-                {musical.subtitle && showSubtitle && musical.id !== "starlight-express" && musical.id !== "phantom-der-oper" && (
-                  <p className="text-[13px] md:text-[11px] text-white/70 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
-                )}
-              </div>
-            )}
           </div>
 
           {/* Content */}
           <div className="p-4 relative z-10">
-            {isHomepageArtwork && (
-              <>
-                <h3 data-testid="teaser-artwork-title" className="mb-2 font-heading text-xl font-semibold leading-tight tracking-wide text-foreground md:text-2xl">
-                  {musical.title}
-                </h3>
-              </>
-            )}
+            <h3
+              data-testid="teaser-card-title"
+              data-title-placement="below-image"
+              className="mb-2 font-heading text-xl font-semibold leading-tight tracking-wide text-foreground md:text-2xl"
+            >
+              {musical.title}
+            </h3>
 
             {/* Location */}
             {showLocation && (
