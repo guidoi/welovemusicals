@@ -1247,3 +1247,10 @@ Der mobile Detailheader von **DISNEYS DIE EISKÖNIGIN** berücksichtigt jetzt de
 ## Mobile Kopfzeile nach Refresh dauerhaft sichtbar – 20.10.2026
 
 Die Startseite verwendet wieder denselben **fixierten** mobilen Header wie Detail- und Stadtseiten. Logo, Standortsuche, Suche und Burger-Menü bleiben damit auch nach einem Browser-Refresh sowie beim Scrollen am oberen Bildschirmrand sichtbar. Der frühere Sondermodus, bei dem der Header auf der Startseite mit dem Hero scrollte, ist vollständig entfernt. Damit der Hero trotzdem nicht unter die Kopfzeile rutscht, beginnt sein Inhalt mobil mit exakt 80 px Abstand (`pt-20`); die Überschrift bleibt vollständig sichtbar. Browserprüfung nach Scrollen: `position: fixed`, Oberkante `0`, Unterkante `81`, sichtbar `true`. Desktop bleibt unverändert.
+
+
+## Mobile Umkreissuche und Eiskönigin-Header – 20.10.2026
+
+Die mobile Umkreissuche ist deutlich größer und komfortabler: Überschrift und Hilfetext sind lesbarer, das PLZ-Feld hat eine 16-px-Schrift und eine höhere Eingabezeile, die goldene Aktion heißt eindeutig **„Finden“**, und **„Meinen Standort verwenden“** liegt als eigene breite Schaltfläche darunter. Die Umkreiswerte besitzen nun mindestens 40 px Bedienhöhe; der Schließen-Button ist ebenfalls vergrößert. Auf Desktop bleibt die kompakte Zeile mit Standort-Icon bestehen.
+
+Für **DISNEYS DIE EISKÖNIGIN** wurde der mobile Bildabstand auf 80 px erhöht. Das Headerbild startet damit erst vollständig unter der fixierten Navigation; die 375-px-Sichtprüfung zeigt Elsa und Anna ohne Überdeckung. Die gezielten Header-, Umkreissuche- und Eiskönigin-Regressionen einschließlich TypeScript und Diff-Prüfung sind erfolgreich.

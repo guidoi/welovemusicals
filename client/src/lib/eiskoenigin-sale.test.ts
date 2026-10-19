@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { musicals } from "./data";
 import { isSaleActive } from "./sale";
 
@@ -8,6 +9,8 @@ describe("Die Eiskönigin sale teaser", () => {
 
     expect(eiskoenigin?.heroImage).toContain("ElsaUndAnna_Finale_HoldingHands");
     expect(eiskoenigin?.mobileHeroBelowHeader).toBe(true);
+    const detailSource = readFileSync("client/src/pages/MusicalDetail.tsx", "utf8");
+    expect(detailSource).toContain('mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""');
   });
 
   it("zeigt die aktuelle 15%-Stage-Aktion als aktiven Sale-Störer", () => {

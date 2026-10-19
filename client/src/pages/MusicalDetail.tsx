@@ -263,7 +263,7 @@ export default function MusicalDetail() {
       </Link>
 
       {/* Hero */}
-      <section className={`relative ${mobileHeroBelowHeader ? "mt-16 lg:mt-0" : ""} min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden`}>
+      <section className={`relative ${mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""} min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden`}>
         <div className="absolute inset-0">
           <img
             src={musical.heroImage || musical.image}

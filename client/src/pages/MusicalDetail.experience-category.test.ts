@@ -6,7 +6,7 @@ const musicalDetailSource = readFileSync(new URL("./MusicalDetail.tsx", import.m
 describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
   it("respektiert bei Bildern mit wichtigen oberen Motiven den mobilen Fix-Header", () => {
     expect(musicalDetailSource).toContain("const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;");
-    expect(musicalDetailSource).toContain('mobileHeroBelowHeader ? "mt-16 lg:mt-0" : ""');
+    expect(musicalDetailSource).toContain('mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""');
   });
 
   it("ermittelt und zeigt die zentrale Erlebniswelt im Hero an", () => {

@@ -305,26 +305,27 @@ export default function Header() {
             transition={{ duration: 0.18 }}
             className="absolute left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-gold/20 shadow-2xl"
           >
-            <div className="container py-5">
+            <div className="container py-6 md:py-5">
               {/* Header */}
-              <div className="flex items-center gap-3 mb-4">
-                <MapPin className="w-5 h-5 text-gold flex-shrink-0" />
+              <div className="flex items-center gap-3 mb-5 md:mb-4">
+                <MapPin className="h-6 w-6 shrink-0 text-gold md:h-5 md:w-5" />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Musicals &amp; Shows in deiner Nähe</p>
-                  <p className="text-xs text-muted-foreground">PLZ eingeben oder Standort verwenden</p>
+                  <p className="text-base font-semibold text-foreground md:text-sm">Musicals &amp; Shows in deiner Nähe</p>
+                  <p className="text-sm text-muted-foreground md:text-xs">PLZ eingeben oder Standort verwenden</p>
                 </div>
                 <button
                   onClick={() => setPlzOpen(false)}
-                  className="ml-auto text-muted-foreground hover:text-gold transition-colors"
+                  className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold md:h-auto md:w-auto"
+                  aria-label="Umkreissuche schließen"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="h-5 w-5 md:h-4 md:w-4" />
                 </button>
               </div>
 
               {/* Input Row */}
-              <div className="flex gap-2 mb-3">
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 md:mb-3 md:flex">
                 <div className="relative flex-1">
-                  <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gold/50 pointer-events-none" />
+                  <MapPin className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gold/50 md:h-4 md:w-4" />
                   <input
                     ref={plzInputRef}
                     type="text"
@@ -337,12 +338,12 @@ export default function Header() {
                     }}
                     onKeyDown={(e) => { if (e.key === "Enter") handlePlzSearch(); }}
                     placeholder="z.B. 20095 (Hamburg), 1010 (Wien), 8001 (Zürich)…"
-                    className="w-full pl-11 pr-10 py-3 bg-white/5 border border-gold/20 rounded-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 text-sm"
+                    className="w-full rounded-sm border border-gold/20 bg-white/5 py-3.5 pl-12 pr-11 text-base text-foreground placeholder:text-muted-foreground/50 focus:border-gold/50 focus:outline-none md:py-3 md:pl-11 md:pr-10 md:text-sm"
                   />
                   {plzInput && (
                     <button
                       onClick={() => { setPlzInput(""); setPlzError(null); }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-gold transition-colors"
+                      className="absolute right-3 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold"
                     >
                       <X className="w-3.5 h-3.5" />
                     </button>
@@ -351,29 +352,38 @@ export default function Header() {
                 <button
                   onClick={handlePlzSearch}
                   disabled={plzLoading || plzInput.length < 4}
-                  className="px-5 py-3 rounded-sm text-sm font-semibold transition-all disabled:opacity-40 flex items-center gap-2 bg-gold text-background hover:bg-gold-light"
+                  className="flex items-center gap-2 rounded-sm bg-gold px-4 py-3.5 text-sm font-semibold text-background transition-all hover:bg-gold-light disabled:opacity-40 md:px-5 md:py-3"
                 >
-                  {plzLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
-                  <span className="hidden sm:inline">Suchen</span>
+                  {plzLoading ? <Loader2 className="h-5 w-5 animate-spin md:h-4 md:w-4" /> : <Search className="h-5 w-5 md:h-4 md:w-4" />}
+                  <span>Finden</span>
                 </button>
                 <button
                   onClick={handleGeolocate}
                   disabled={plzLoading}
                   title="Meinen Standort verwenden"
-                  className="px-3 py-3 rounded-sm text-sm transition-all disabled:opacity-40 border border-gold/20 text-gold/70 hover:text-gold hover:border-gold/40 bg-white/5"
+                  className="hidden rounded-sm border border-gold/20 bg-white/5 px-3 py-3 text-sm text-gold/70 transition-all hover:border-gold/40 hover:text-gold disabled:opacity-40 md:block"
                 >
                   <Navigation className="w-4 h-4" />
                 </button>
               </div>
 
+              <button
+                onClick={handleGeolocate}
+                disabled={plzLoading}
+                className="mb-5 flex w-full items-center justify-center gap-2 rounded-sm border border-gold/30 bg-white/5 py-3 text-sm font-semibold text-gold transition-colors hover:border-gold/60 hover:bg-gold/10 disabled:opacity-40 md:hidden"
+              >
+                <Navigation className="h-5 w-5" />
+                Meinen Standort verwenden
+              </button>
+
               {/* Radius-Chips */}
-              <div className="flex flex-wrap gap-1.5 mb-3">
-                <span className="text-xs text-muted-foreground/90 self-center mr-1">Umkreis:</span>
+              <div className="mb-4 flex flex-wrap gap-2 md:mb-3 md:gap-1.5">
+                <span className="mr-1 self-center text-sm text-muted-foreground/90 md:text-xs">Umkreis:</span>
                 {RADIUS_OPTIONS.map((r) => (
                   <button
                     key={r}
                     onClick={() => setPlzRadius(r)}
-                    className={`rounded-sm border px-2.5 py-1 text-xs transition-all ${plzRadius === r
+                    className={`min-h-10 rounded-sm border px-3 text-sm transition-all md:min-h-0 md:px-2.5 md:py-1 md:text-xs ${plzRadius === r
                       ? "border-gold/70 bg-gold/20 text-gold"
                       : "border-white/28 bg-transparent text-cream/65"}`}
                   >
@@ -383,12 +393,12 @@ export default function Header() {
               </div>
 
               {/* Error */}
-              {plzError && <p className="text-xs text-red-400 mb-2">{plzError}</p>}
+              {plzError && <p className="mb-3 text-sm text-red-400 md:mb-2 md:text-xs">{plzError}</p>}
 
               {/* Aktive Suche anzeigen */}
               {plzActive && plzLabel && (
-                <div className="flex items-center gap-2 text-xs text-gold/80 bg-gold/5 border border-gold/15 rounded-sm px-3 py-2">
-                  <MapPin className="w-3 h-3 flex-shrink-0" />
+                <div className="flex items-center gap-2 rounded-sm border border-gold/15 bg-gold/5 px-3 py-3 text-sm text-gold/80 md:py-2 md:text-xs">
+                  <MapPin className="h-4 w-4 shrink-0 md:h-3 md:w-3" />
                   <span>Aktiv: {plzLabel}</span>
                   <button
                     onClick={handlePlzClear}

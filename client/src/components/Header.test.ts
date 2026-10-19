@@ -21,6 +21,20 @@ describe("Header-Hauptnavigation", () => {
     expect(headerSource).not.toContain("5-stellig DE · 4-stellig AT/CH");
   });
 
+  it("stellt die mobile Umkreissuche mit großen Bedienelementen und separatem Standortbutton dar", () => {
+    const headerSource = readFileSync(
+      "client/src/components/Header.tsx",
+      "utf8",
+    );
+
+    expect(headerSource).toContain('text-base font-semibold text-foreground md:text-sm');
+    expect(headerSource).toContain('py-3.5 pl-12 pr-11 text-base');
+    expect(headerSource).toContain("Meinen Standort verwenden");
+    expect(headerSource).toContain('className="mb-5 flex w-full items-center justify-center gap-2');
+    expect(headerSource).toContain('min-h-10 rounded-sm border px-3 text-sm');
+    expect(headerSource).toContain("Finden");
+  });
+
   it("verwendet für die Kopfbereich-Werkzeuge kompakte runde Icon-Buttons", () => {
     const headerSource = readFileSync(
       "client/src/components/Header.tsx",
