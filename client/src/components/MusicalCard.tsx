@@ -29,6 +29,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
   const isHomepageArtwork = Boolean(musical.homepageArtworkImage);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const experienceCategory = getExperienceCategory(musical.experienceCategory);
+  const showSubtitle = musical.subtitle?.trim().toLowerCase() !== "das musical";
   const providerLogoWidthClass =
     ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
 
@@ -54,22 +55,10 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
             data-homepage-artwork={isHomepageArtwork || undefined}
             className="relative aspect-[16/10] overflow-hidden bg-black"
           >
-            {isHomepageArtwork && (
-              <img
-                src={musical.homepageArtworkImage}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover opacity-45 blur-xl"
-                loading="lazy"
-                decoding="async"
-              />
-            )}
             <img
               src={musical.homepageArtworkImage ?? musical.image}
               alt={musical.title}
-              className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${
-                isHomepageArtwork ? "relative z-10 object-contain" : "object-cover"
-              }`}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
@@ -115,7 +104,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
                 <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight font-heading tracking-wide">
                   {musical.title}
                 </h3>
-                {musical.subtitle && musical.id !== "starlight-express" && musical.id !== "phantom-der-oper" && (
+                {musical.subtitle && showSubtitle && musical.id !== "starlight-express" && musical.id !== "phantom-der-oper" && (
                   <p className="text-[13px] md:text-[11px] text-white/70 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
                 )}
               </div>

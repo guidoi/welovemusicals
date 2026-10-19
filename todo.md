@@ -1206,4 +1206,4 @@ Die zusätzliche Titel-Schiebeleiste im mobilen Hero ist entfernt. Dort bleiben 
 
 ### Mobile Header- und Artwork-Korrektur
 
-Auf der Startseite scrollt der Header auf Mobil nun mit dem Dokument, statt Überschriften dauerhaft zu überdecken; auf Desktop sowie auf allen Detailseiten bleibt er fixiert. Bei den drei Artwork-Karten sind SALE- und Top-Musical-Badges wieder oben im Bild. Eiskönigin und Tarzan werden weiterhin vollständig, ohne Beschnitt gezeigt; ein unscharfer Hintergrund aus demselben Motiv füllt bei abweichendem Seitenverhältnis nur die Seitenflächen.
+Auf der Startseite scrollt der Header auf Mobil nun mit dem Dokument, statt Überschriften dauerhaft zu überdecken; auf Desktop sowie auf allen Detailseiten bleibt er fixiert. Bei den drei Artwork-Karten sind SALE- und Top-Musical-Badges wieder oben im Bild. Alle Kartenbilder füllen ihre Fläche nun konsequent ohne Schatten- oder Randfüllung (`object-cover`). Die redundante Kachel-Subline „Das Musical“ ist ausgeblendet; aussagekräftigere Zusätze wie „Das neue Musical“ bleiben sichtbar.

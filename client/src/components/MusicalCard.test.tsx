@@ -196,13 +196,25 @@ describe("MusicalCard Sale-Störer", () => {
 
     expect(markup).toContain('data-testid="teaser-image" data-homepage-artwork="true"');
     expect(markup).toContain('src="https://cdn.example.test/testmusical-artwork.webp"');
-    expect(markup).toContain("relative z-10 object-contain");
-    expect(markup).toContain("object-cover opacity-45 blur-xl");
+    expect(markup).toContain("h-full w-full object-cover");
+    expect(markup).not.toContain("blur-xl");
     expect(markup).toContain('data-testid="teaser-artwork-title"');
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="featured-badge"');
     expect(markup).not.toContain('data-testid="teaser-artwork-sale-badge"');
     expect(markup).not.toContain('data-testid="teaser-artwork-featured-badge"');
+  });
+
+  it("blendet die redundante Subline Das Musical in Karten aus", () => {
+    const genericMarkup = renderToStaticMarkup(
+      <MusicalCard musical={{ ...baseMusical, subtitle: "Das Musical" }} />,
+    );
+    const editorialMarkup = renderToStaticMarkup(
+      <MusicalCard musical={{ ...baseMusical, subtitle: "Das neue Musical" }} />,
+    );
+
+    expect(genericMarkup).not.toContain("Das Musical");
+    expect(editorialMarkup).toContain("Das neue Musical");
   });
 
   it("kann Spielortzeilen in kompakten Startseitenkarten ausblenden", () => {
