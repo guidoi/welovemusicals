@@ -26,7 +26,7 @@ const baseMusical: Musical = {
 };
 
 describe("MusicalCard Sale-Störer", () => {
-  it("rendert die kompakte Logo-Rot-Variante mit einheitlicher Sale-Bezeichnung und dunklerotem Preisschild", () => {
+  it("rendert die kompakte rote Sale-Pill im Karteninhalt", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard
         musical={{
@@ -47,21 +47,23 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).toContain('data-testid="sale-badge"');
     expect(markup).toContain('data-testid="sale-label"');
     expect(markup).toContain('data-testid="sale-icon"');
-    expect(markup).toContain('data-testid="sale-icon" class="relative grid h-7 w-7 shrink-0 place-items-center" aria-hidden="true">');
-    expect(markup).toContain("fill-red-dark text-red-dark");
-    expect(markup).toContain('stroke-width="0"');
-    expect(markup).toContain("text-[14px]");
-    expect(markup).toContain('data-testid="featured-badge"');
+    expect(markup).toContain('data-testid="sale-icon" aria-hidden="true"');
+    expect(markup).toContain("h-3.5 w-3.5 shrink-0");
+    expect(markup).not.toContain("fill-red-dark text-red-dark");
+    expect(markup).not.toContain('stroke-width="0"');
+    expect(markup).not.toContain("text-[14px]");
+    expect(markup).not.toContain('data-testid="featured-badge"');
     expect(markup).toContain("whitespace-nowrap");
-    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap font-heading text-xs font-semibold leading-none text-white md:text-sm"');
+    expect(markup).toContain('data-testid="sale-label" class="whitespace-nowrap"');
     expect(markup).toContain("text-white");
-    expect(markup).toContain('border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream backdrop-blur-sm');
-    expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
-    expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
-    expect(markup).toContain("justify-center");
+    expect(markup).toContain('data-sale-placement="content"');
+    expect(markup).toContain('data-sale-layout="inline"');
+    expect(markup).toContain(SALE_BADGE_LAYOUT.pillClasses);
+    expect(markup).toContain('data-testid="teaser-meta-pills"');
+    expect(markup).toContain("flex-wrap");
     expect(markup).toContain("bg-red");
     expect(markup).not.toContain("border-red-200/90");
-    expect(markup.match(/rounded-md/g)).toHaveLength(2);
+    expect(markup).toContain("rounded-full");
     expect(markup).not.toContain("text-[10px] leading-snug text-white/70");
   });
 
@@ -80,16 +82,15 @@ describe("MusicalCard Sale-Störer", () => {
       />,
     );
 
-    expect(markup).toContain('data-sale-layout="compact"');
-    expect(markup).toContain(SALE_BADGE_LAYOUT.widthClasses);
-    expect(markup).toContain(SALE_BADGE_LAYOUT.heightClass);
+    expect(markup).toContain('data-sale-layout="inline"');
+    expect(markup).toContain(SALE_BADGE_LAYOUT.pillClasses);
     expect(markup).toContain(">SALE · 30 %<");
     expect(markup).not.toContain("BACK TO SCHOOL");
     expect(markup).not.toContain("data-testid=\"sale-label-line\"");
     expect(markup).toContain("30 %");
-    expect(markup).toContain("overflow-hidden");
-    expect(markup).toContain("justify-center gap-1");
-    expect(markup).toContain("h-7 w-7");
+    expect(markup).toContain("min-h-8");
+    expect(markup).toContain("items-center gap-1.5");
+    expect(markup).toContain("h-3.5 w-3.5");
     expect(markup).toContain("text-xs");
     expect(markup).toContain("md:text-sm");
     expect(markup).toContain("whitespace-nowrap");
@@ -125,9 +126,9 @@ describe("MusicalCard Sale-Störer", () => {
     expect(twoForOneMarkup).toContain(">SALE · 2 FÜR 1<");
     expect(secondTicketMarkup).toContain(">SALE · 2. TICKET 35 €<");
     expect(priceFromMarkup).toContain(">SALE · AB 35 €<");
-    expect(twoForOneMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
-    expect(secondTicketMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
-    expect(priceFromMarkup).toContain(SALE_BADGE_LAYOUT.widthClasses);
+    expect(twoForOneMarkup).toContain(SALE_BADGE_LAYOUT.pillClasses);
+    expect(secondTicketMarkup).toContain(SALE_BADGE_LAYOUT.pillClasses);
+    expect(priceFromMarkup).toContain(SALE_BADGE_LAYOUT.pillClasses);
   });
 
   it("rendert keinen Sale-Störer ohne sale oder nach Ablauf", () => {
@@ -175,8 +176,8 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("Blockbuster &amp; Spektakel");
     expect(markup).not.toContain("Legacy-Tag");
     expect(markup).toContain('data-testid="teaser-experience-category" class="inline-flex h-8 items-center gap-1.5 rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold md:h-10 md:px-4 md:text-xs"');
-    expect(markup).toContain('data-testid="featured-badge"');
-    expect(markup).toContain("px-2.5 py-1 text-xs");
+    expect(markup).not.toContain('data-testid="featured-badge"');
+    expect(markup).not.toContain("px-2.5 py-1 text-xs");
     expect(markup).not.toContain("shadow-gold");
     expect(markup).not.toContain("md:text-[10px]");
   });
@@ -203,7 +204,7 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("blur-xl");
     expect(markup).toContain('data-testid="teaser-artwork-title"');
     expect(markup).toContain('data-testid="sale-badge"');
-    expect(markup).toContain('data-testid="featured-badge"');
+    expect(markup).not.toContain('data-testid="featured-badge"');
     expect(markup).not.toContain('data-testid="teaser-artwork-sale-badge"');
     expect(markup).not.toContain('data-testid="teaser-artwork-featured-badge"');
   });

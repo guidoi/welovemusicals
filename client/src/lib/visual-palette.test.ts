@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 const styles = readFileSync(new URL("../index.css", import.meta.url), "utf8");
 const home = readFileSync(new URL("../pages/Home.tsx", import.meta.url), "utf8");
 const musicalCard = readFileSync(new URL("../components/MusicalCard.tsx", import.meta.url), "utf8");
+const saleLayout = readFileSync(new URL("./sale-layout.ts", import.meta.url), "utf8");
 const cityCard = readFileSync(new URL("../components/CityCard.tsx", import.meta.url), "utf8");
 const musicalDetail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
 const tourDates = readFileSync(new URL("../components/TourDates.tsx", import.meta.url), "utf8");
@@ -18,9 +19,9 @@ describe("Öffentliche Farbpalette", () => {
     expect(styles).toContain("--color-red:");
   });
 
-  it("verwendet den gemeinsamen Rotton für Sale und lässt das Sale-Badge ohne weißen Rahmen", () => {
-    expect(musicalCard).toContain("bg-red");
-    expect(musicalCard).not.toContain("border-red-200/90");
+  it("verwendet den gemeinsamen Rotton für die zentrale Sale-Pill ohne weißen Rahmen", () => {
+    expect(saleLayout).toContain("bg-red");
+    expect(saleLayout).not.toContain("border-red-200/90");
   });
 
   it("verwendet Creme für redaktionelle Inhalte und Gold für Orientierung", () => {

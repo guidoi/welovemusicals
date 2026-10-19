@@ -3,7 +3,7 @@
  * MusicalCard: Elegante Karte mit Spotlight-Hover-Effekt
  */
 import React from "react";
-import { ArrowUpRight, MapPin, Tag, Star } from "lucide-react";
+import { ArrowUpRight, MapPin, Tag } from "lucide-react";
 import { Link } from "wouter";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Musical } from "@/lib/data";
@@ -67,39 +67,6 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
             />
             {!isHomepageArtwork && <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />}
 
-            {/* Sale badge */}
-            {hasActiveSale && musical.sale && (
-              <div
-                className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden bg-red px-2 py-0.5 shadow-lg shadow-red-950/40`}
-                aria-label={`Sale: ${musical.sale.discount}`}
-                data-testid="sale-badge"
-                data-sale-layout="compact"
-              >
-                <div className="flex h-full items-center justify-center gap-1">
-                  <span data-testid="sale-icon" className="relative grid h-7 w-7 shrink-0 place-items-center" aria-hidden="true">
-                    <Tag className="absolute h-7 w-7 fill-red-dark text-red-dark" strokeWidth={0} />
-                    <span className="relative -translate-x-px font-black text-[14px] leading-none text-white">%</span>
-                  </span>
-                  <span
-                    data-testid="sale-label"
-                    className="whitespace-nowrap font-heading text-xs font-semibold leading-none text-white md:text-sm"
-                  >
-                    SALE · {musical.sale.discount}
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* Featured Badge */}
-            {musical.featured && (
-              <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
-                <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream backdrop-blur-sm`}>
-                  <Star className="h-3 w-3 fill-gold text-gold" />
-                  Top-Musical
-                </span>
-              </div>
-            )}
-
             {/* Title Overlay */}
             {!isHomepageArtwork && (
               <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -148,9 +115,10 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
               </p>
             )}
 
-            {/* Curated experience category */}
-            {experienceCategory && (
-              <div className="mb-4">
+            {/* Erlebniswelt und zeitlich begrenzte Aktion bleiben unter dem Motiv. */}
+            {(experienceCategory || (hasActiveSale && musical.sale)) && (
+              <div data-testid="teaser-meta-pills" className="mb-4 flex flex-wrap items-center gap-2">
+                {experienceCategory && (
                 <span
                   data-testid="teaser-experience-category"
                   className="inline-flex h-8 items-center gap-1.5 rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold md:h-10 md:px-4 md:text-xs"
@@ -158,6 +126,21 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
                   <Tag className="h-3 w-3" />
                   {experienceCategory.shortLabel}
                 </span>
+                )}
+                {hasActiveSale && musical.sale && (
+                  <span
+                    aria-label={`Sale: ${musical.sale.discount}`}
+                    className={`${SALE_BADGE_LAYOUT.pillClasses} text-xs font-semibold text-white md:text-sm`}
+                    data-sale-layout="inline"
+                    data-sale-placement="content"
+                    data-testid="sale-badge"
+                  >
+                    <Tag data-testid="sale-icon" className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                    <span data-testid="sale-label" className="whitespace-nowrap">
+                      SALE · {musical.sale.discount}
+                    </span>
+                  </span>
+                )}
               </div>
             )}
 

@@ -1211,3 +1211,8 @@ Auf der Startseite scrollt der Header auf Mobil nun mit dem Dokument, statt Übe
 ### Logofreies König-der-Löwen-Artwork und sichere Schriftbereiche
 
 Im König-der-Löwen-Startseitenmotiv wurde ausschließlich das kleine Stage-Entertainment-Logo oben rechts entfernt. Disney-, Musical-, Jubiläums- und Copyrightangaben bleiben unverändert erhalten. Das geprüfte neue WebP wird per CDN eingesetzt. Für die drei Startseiten-Artworks sind sichere Bildpositionen hinterlegt: König der Löwen priorisiert den rechten Schriftbereich, Eiskönigin die untere Wortmarke und Tarzan den mittleren bis unteren Logo-/Schriftbereich. So bleiben die Motive vollflächig, ohne dass relevante Schrift abgeschnitten wird.
+
+
+### Kartenhinweise ohne Motivüberlagerung
+
+Die Zwischenlösung mit SALE- und Top-Musical-Badges oben auf dem Artwork ist ersetzt: Das **Top-Musical**-Badge entfällt vollständig, weil der Abschnitt bereits als „Top Musical-Empfehlungen“ gekennzeichnet ist. Eine aktive Aktion erscheint stattdessen als kompakte rote **SALE-Pill** unter dem Titel neben der goldenen Erlebniswelt. Beide Hinweise liegen in einer flexiblen Zeile und dürfen auf Mobil sauber umbrechen. Dadurch bleiben alle Kartenmotive, insbesondere die drei offiziellen Artworks, frei von Textüberlagerungen. Affiliate-Ziele, Preise, Sale-Zeiträume und Consentlogik bleiben unverändert.
