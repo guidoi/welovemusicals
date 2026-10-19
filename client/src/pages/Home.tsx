@@ -659,6 +659,7 @@ export default function Home() {
                   index={i}
                   anchorId={`musical-${musical.slug}`}
                   filterAnimationKey={resultAnimationKey || undefined}
+                  showLocation={false}
                 />
               ))}
               </div>
