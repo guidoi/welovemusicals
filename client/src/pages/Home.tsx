@@ -360,7 +360,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Header staticOnMobile />
+      <Header />
       <AnimatePresence>
         {showStickyFilterBar && (
           <motion.div

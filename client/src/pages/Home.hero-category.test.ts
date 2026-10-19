@@ -20,7 +20,8 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain('placement="hero-mobile"');
     expect(homeSource).toContain('placement="hero-desktop"');
     expect(homeSource.match(/variant="categories"/g)).toHaveLength(2);
-    expect(homeSource).toContain("<Header staticOnMobile />");
+    expect(homeSource).toContain("<Header />");
+    expect(homeSource).not.toContain("staticOnMobile");
     expect(homeSource).toContain('filterAnimationKey={resultAnimationKey || undefined}\n                  showLocation={false}');
     expect(homeSource).not.toContain('showDescription=');
     expect(homeSource).toContain('mb-4 text-[17px] leading-[1.4]');

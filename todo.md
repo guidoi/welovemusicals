@@ -1242,3 +1242,8 @@ Die fünf Erlebniswelt-Buttons im mobilen Hero sind von 40 auf **44 px** Höhe v
 Die wiederholten redaktionellen Teasertexte sind aus **allen Musicalkarten** entfernt. Der Katalog ist damit deutlich kompakter und konzentriert sich auf Kartenmotiv, Titel, Erlebniswelt, optionale SALE-Pill und Ticket-CTA. Die vollständigen Beschreibungen bleiben unverändert auf den jeweiligen Detailseiten und in den SEO-Inhalten erhalten.
 
 Der mobile Detailheader von **DISNEYS DIE EISKÖNIGIN** berücksichtigt jetzt den fixierten Seitenheader: Das Elsa-und-Anna-Foto beginnt gezielt unterhalb der mobilen Navigation, sodass beide Gesichter vollständig sichtbar bleiben. Auf Desktop bleibt die bestehende Headerposition unverändert. Eine katalogbasierte `mobileHeroBelowHeader`-Kennzeichnung beschränkt die Korrektur ausschließlich auf dieses Motiv; Tests und eine mobile 375-px-Sichtprüfung bestätigen die Freihaltung.
+
+
+## Mobile Kopfzeile nach Refresh dauerhaft sichtbar – 20.10.2026
+
+Die Startseite verwendet wieder denselben **fixierten** mobilen Header wie Detail- und Stadtseiten. Logo, Standortsuche, Suche und Burger-Menü bleiben damit auch nach einem Browser-Refresh sowie beim Scrollen am oberen Bildschirmrand sichtbar. Der frühere Sondermodus, bei dem der Header auf der Startseite mit dem Hero scrollte, ist vollständig entfernt. Damit der Hero trotzdem nicht unter die Kopfzeile rutscht, beginnt sein Inhalt mobil mit exakt 80 px Abstand (`pt-20`); die Überschrift bleibt vollständig sichtbar. Browserprüfung nach Scrollen: `position: fixed`, Oberkante `0`, Unterkante `81`, sichtbar `true`. Desktop bleibt unverändert.

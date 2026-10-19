@@ -37,13 +37,13 @@ describe("Header-Hauptnavigation", () => {
     expect(headerSource).toContain('plzActive || plzOpen ? "border-gold bg-gold text-background hover:bg-gold-light"');
   });
 
-  it("unterstützt auf der Startseite einen nicht verdeckenden mobilen Header", () => {
+  it("hält Logo und Burger-Menü auch auf der Startseite mobil dauerhaft fixiert", () => {
     const headerSource = readFileSync(
       "client/src/components/Header.tsx",
       "utf8",
     );
 
-    expect(headerSource).toContain("staticOnMobile?: boolean;");
-    expect(headerSource).toContain('"relative z-50 w-full md:fixed md:inset-x-0 md:top-0"');
+    expect(headerSource).not.toContain("staticOnMobile");
+    expect(headerSource).toContain('className="fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-background/80 backdrop-blur-xl"');
   });
 });

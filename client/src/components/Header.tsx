@@ -18,12 +18,7 @@ function dispatchPlzEvent(state: PlzSearchState) {
   window.dispatchEvent(new CustomEvent("plz-search-update", { detail: state }));
 }
 
-interface HeaderProps {
-  /** Auf der Startseite darf der mobile Header mit dem Hero mitscrollen, damit keine Überschrift verdeckt wird. */
-  staticOnMobile?: boolean;
-}
-
-export default function Header({ staticOnMobile = false }: HeaderProps) {
+export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [plzOpen, setPlzOpen] = useState(false);
@@ -206,12 +201,8 @@ export default function Header({ staticOnMobile = false }: HeaderProps) {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  const headerPositionClass = staticOnMobile
-    ? "relative z-50 w-full md:fixed md:inset-x-0 md:top-0"
-    : "fixed inset-x-0 top-0 z-50";
-
   return (
-    <header className={`${headerPositionClass} border-b border-gold/10 bg-background/80 backdrop-blur-xl`}>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-background/80 backdrop-blur-xl">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
