@@ -458,6 +458,7 @@ export default function Home() {
                 items={heroNavigationItems}
                 onNavigate={handleHeroNavigation}
                 placement="hero-mobile"
+                variant="categories"
                 activeCategoryId={categoryFilter === "alle" ? undefined : categoryFilter}
               />
             </div>
@@ -489,7 +490,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featured.map((musical, i) => (
-              <MusicalCard key={musical.id} musical={musical} index={i} anchorId={`musical-${musical.slug}`} />
+              <MusicalCard
+                key={musical.id}
+                musical={musical}
+                index={i}
+                anchorId={`musical-${musical.slug}`}
+                showLocation={false}
+                showDescription={false}
+              />
             ))}
           </div>
         </div>

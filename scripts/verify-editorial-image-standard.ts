@@ -4,7 +4,12 @@ const modernImage = (url: string) => /\.(?:webp|avif)(?:\?|$)/i.test(url) || /im
 const violations: string[] = [];
 
 for (const musical of getActiveMusicals()) {
-  for (const [field, url] of Object.entries({ image: musical.image, heroImage: musical.heroImage, keyvisual: musical.keyvisual })) {
+  for (const [field, url] of Object.entries({
+    image: musical.image,
+    homepageArtworkImage: musical.homepageArtworkImage,
+    heroImage: musical.heroImage,
+    keyvisual: musical.keyvisual,
+  })) {
     if (url && !modernImage(url)) violations.push(`${musical.id}.${field}: ${url}`);
   }
   for (const [index, galleryImage] of (musical.gallery ?? []).entries()) {

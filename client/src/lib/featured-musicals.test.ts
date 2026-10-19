@@ -31,6 +31,21 @@ describe("Top-Musicals auf der Startseite", () => {
     }
   });
 
+  it("nutzt bei den drei Artwork-Tests nur auf der Startseitenkarte offizielle WebP-Motive", () => {
+    const expectedArtworkUrls = {
+      "koenig-der-loewen": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/OkUfEwdfPOHqDHSW.webp",
+      eiskoenigin: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/RpLtNCLnXldKJXtE.webp",
+      tarzan: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/oFgcKHmyWnZiwaCN.webp",
+    };
+
+    for (const [id, artworkUrl] of Object.entries(expectedArtworkUrls)) {
+      const musical = musicals.find((item) => item.id === id);
+      expect(musical?.homepageArtworkImage).toBe(artworkUrl);
+      expect(musical?.homepageArtworkImage).toMatch(/\.webp$/);
+      expect(musical?.image).not.toBe(artworkUrl);
+    }
+  });
+
   it("liefert in der weiteren Musical-Liste alle aktiven Produktionen ohne die neun Highlights", () => {
     const additionalMusicals = getAdditionalMusicals();
 

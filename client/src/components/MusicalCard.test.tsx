@@ -181,6 +181,54 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("md:text-[10px]");
   });
 
+  it("zeigt optionale Startseiten-Artworks vollständig und den Musicaltitel erst unter dem Motiv", () => {
+    const markup = renderToStaticMarkup(
+      <MusicalCard
+        musical={{
+          ...baseMusical,
+          title: "DISNEYS TESTMUSICAL",
+          featured: true,
+          homepageArtworkImage: "https://cdn.example.test/testmusical-artwork.webp",
+          sale: { label: "Aktion", discount: "BIS 25 %" },
+        }}
+      />,
+    );
+
+    expect(markup).toContain('data-testid="teaser-image" data-homepage-artwork="true"');
+    expect(markup).toContain('src="https://cdn.example.test/testmusical-artwork.webp"');
+    expect(markup).toContain("object-contain");
+    expect(markup).not.toContain("object-cover");
+    expect(markup).toContain('data-testid="teaser-artwork-title"');
+    expect(markup).toContain('data-testid="teaser-artwork-sale-badge"');
+    expect(markup).toContain('data-testid="teaser-artwork-featured-badge"');
+    expect(markup).not.toContain('data-testid="featured-badge"');
+  });
+
+  it("kann Spielortzeilen in kompakten Startseitenkarten ausblenden", () => {
+    const regularMarkup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
+    const compactMarkup = renderToStaticMarkup(<MusicalCard musical={baseMusical} showLocation={false} />);
+
+    expect(regularMarkup).toContain('data-testid="teaser-location"');
+    expect(regularMarkup).toContain("Hamburg (Testtheater)");
+    expect(compactMarkup).not.toContain('data-testid="teaser-location"');
+    expect(compactMarkup).not.toContain("Hamburg (Testtheater)");
+  });
+
+  it("kann wiederholte Beschreibungen in kompakten Startseitenkarten ausblenden", () => {
+    const regularMarkup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
+    const compactMarkup = renderToStaticMarkup(<MusicalCard musical={baseMusical} showDescription={false} />);
+
+    expect(regularMarkup).toContain("Eine Testbeschreibung.");
+    expect(compactMarkup).not.toContain("Eine Testbeschreibung.");
+  });
+
+  it("rundet alle Musicalkarten einheitlich großzügiger ab", () => {
+    const markup = renderToStaticMarkup(<MusicalCard musical={baseMusical} />);
+
+    expect(markup).toContain("rounded-xl");
+    expect(markup).not.toContain("rounded-sm");
+  });
+
   it("spielt nach einer Filteraktualisierung nur eine dezente Teaseranimation ab", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard musical={baseMusical} anchorId="musical-test" filterAnimationKey={2} />,

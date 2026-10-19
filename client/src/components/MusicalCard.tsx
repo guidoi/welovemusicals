@@ -17,13 +17,16 @@ interface MusicalCardProps {
   musical: Musical;
   index?: number;
   anchorId?: string;
+  showLocation?: boolean;
+  showDescription?: boolean;
   /** Increments after a filter update to replay one subtle result reveal. */
   filterAnimationKey?: number;
 }
 
-export default function MusicalCard({ musical, index = 0, anchorId, filterAnimationKey }: MusicalCardProps) {
+export default function MusicalCard({ musical, index = 0, anchorId, showLocation = true, showDescription = true, filterAnimationKey }: MusicalCardProps) {
   const hasActiveSale = isSaleActive(musical.sale);
   const reduceMotion = useReducedMotion();
+  const isHomepageArtwork = Boolean(musical.homepageArtworkImage);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const experienceCategory = getExperienceCategory(musical.experienceCategory);
   const providerLogoWidthClass =
@@ -44,21 +47,27 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
       }}
     >
       <Link href={`/musical/${musical.slug}`} className="block group">
-        <div className="card-spotlight bg-card border border-border/50 rounded-sm overflow-hidden hover:border-gold/30 transition-all duration-400">
+        <div className="card-spotlight overflow-hidden rounded-xl border border-border/50 bg-card transition-all duration-400 hover:border-gold/30">
           {/* Image */}
-          <div className="relative aspect-[16/10] overflow-hidden">
+          <div
+            data-testid="teaser-image"
+            data-homepage-artwork={isHomepageArtwork || undefined}
+            className="relative aspect-[16/10] overflow-hidden bg-black"
+          >
             <img
-              src={musical.image}
+              src={musical.homepageArtworkImage ?? musical.image}
               alt={musical.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${
+                isHomepageArtwork ? "object-contain" : "object-cover"
+              }`}
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            {!isHomepageArtwork && <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />}
 
             {/* Sale badge */}
-            {hasActiveSale && musical.sale && (
+            {!isHomepageArtwork && hasActiveSale && musical.sale && (
               <div
                 className={`absolute top-2.5 left-2.5 z-10 ${SALE_BADGE_LAYOUT.widthClasses} ${SALE_BADGE_LAYOUT.heightClass} ${SALE_BADGE_LAYOUT.roundedClass} overflow-hidden bg-red px-2 py-0.5 shadow-lg shadow-red-950/40`}
                 aria-label={`Sale: ${musical.sale.discount}`}
@@ -81,7 +90,7 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
             )}
 
             {/* Featured Badge */}
-            {musical.featured && (
+            {!isHomepageArtwork && musical.featured && (
               <div data-testid="featured-badge" className="absolute top-2.5 right-2.5 z-10">
                 <span className={`inline-flex items-center gap-1.5 ${SALE_BADGE_LAYOUT.roundedClass} border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream backdrop-blur-sm`}>
                   <Star className="h-3 w-3 fill-gold text-gold" />
@@ -91,38 +100,65 @@ export default function MusicalCard({ musical, index = 0, anchorId, filterAnimat
             )}
 
             {/* Title Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight font-heading tracking-wide">
-                {musical.title}
-              </h3>
-              {musical.subtitle && musical.id !== "starlight-express" && musical.id !== "phantom-der-oper" && (
-                <p className="text-[13px] md:text-[11px] text-white/70 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
-              )}
-            </div>
+            {!isHomepageArtwork && (
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight font-heading tracking-wide">
+                  {musical.title}
+                </h3>
+                {musical.subtitle && musical.id !== "starlight-express" && musical.id !== "phantom-der-oper" && (
+                  <p className="text-[13px] md:text-[11px] text-white/70 mt-0.5 uppercase tracking-widest font-medium">{musical.subtitle}</p>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Content */}
           <div className="p-4 relative z-10">
+            {isHomepageArtwork && (
+              <>
+                <h3 data-testid="teaser-artwork-title" className="mb-2 font-heading text-xl font-semibold leading-tight tracking-wide text-foreground md:text-2xl">
+                  {musical.title}
+                </h3>
+                <div className="mb-3 flex flex-wrap items-center gap-2">
+                  {hasActiveSale && musical.sale && (
+                    <span data-testid="teaser-artwork-sale-badge" className="rounded-md bg-red px-2.5 py-1 text-xs font-semibold text-white shadow-lg shadow-red-950/30">
+                      SALE · {musical.sale.discount}
+                    </span>
+                  )}
+                  {musical.featured && (
+                    <span data-testid="teaser-artwork-featured-badge" className="inline-flex items-center gap-1.5 rounded-md border border-gold/60 bg-black/60 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-cream">
+                      <Star className="h-3 w-3 fill-gold text-gold" />
+                      Top-Musical
+                    </span>
+                  )}
+                </div>
+              </>
+            )}
+
             {/* Location */}
-            <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-3">
-              <MapPin className="w-3.5 h-3.5 text-gold/70" />
-              {musical.city && musical.venuePerCity ? (
-                <span>
-                  {musical.cities?.map((c, i) => (
-                    <span key={c}>{i > 0 && " & "}{c} ({musical.venuePerCity![c]})</span>
-                  ))}
-                </span>
-              ) : musical.city && musical.venue && !musical.venuePerCity && (!musical.cities || musical.cities.length === 1) ? (
-                <span>{musical.city} ({musical.venue})</span>
-              ) : (
-                <span>{musical.cities?.slice(0, 3).join(", ")}{musical.cities && musical.cities.length > 3 ? ` +${musical.cities.length - 3}` : ""}</span>
-              )}
-            </div>
+            {showLocation && (
+              <div data-testid="teaser-location" className="flex items-center gap-1.5 text-sm text-muted-foreground mb-3">
+                <MapPin className="w-3.5 h-3.5 text-gold/70" />
+                {musical.city && musical.venuePerCity ? (
+                  <span>
+                    {musical.cities?.map((c, i) => (
+                      <span key={c}>{i > 0 && " & "}{c} ({musical.venuePerCity![c]})</span>
+                    ))}
+                  </span>
+                ) : musical.city && musical.venue && !musical.venuePerCity && (!musical.cities || musical.cities.length === 1) ? (
+                  <span>{musical.city} ({musical.venue})</span>
+                ) : (
+                  <span>{musical.cities?.slice(0, 3).join(", ")}{musical.cities && musical.cities.length > 3 ? ` +${musical.cities.length - 3}` : ""}</span>
+                )}
+              </div>
+            )}
 
             {/* Description */}
-            <p className="text-sm text-cream/90 leading-relaxed line-clamp-2 mb-4">
-              {musical.description}
-            </p>
+            {showDescription && (
+              <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-cream/90">
+                {musical.description}
+              </p>
+            )}
 
             {/* Curated experience category */}
             {experienceCategory && (

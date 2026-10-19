@@ -1196,3 +1196,10 @@ Der Startseitentitel ist von 65 auf **43 Zeichen** verkürzt: `Musicals 2026/202
 ### Startseitentitel mit „Shows“
 
 Der Startseitentitel lautet nun einheitlich in HTML, Social-Meta-Tags, JSON-LD und der statischen SEO-Ausgabe: **`Musicals & Shows 2026/2027 ❤️ Termine & Tickets`**. Mit 47 Zeichen bleibt er deutlich kompakter als die frühere 65-Zeichen-Version und nennt zugleich neben Musicals ausdrücklich Shows. Die Titel-, TypeScript-, Build-, statische SEO-, Affiliate- und Bildstandardprüfungen sind erfolgreich.
+
+
+## Startseiten-Artwork-Test – 19.10.2026
+
+Für die drei Top-Karten **DISNEYS DER KÖNIG DER LÖWEN**, **DISNEYS DIE EISKÖNIGIN** und **DISNEYS MUSICAL TARZAN** sind die vom Projektinhaber gelieferten offiziellen Artwork-Motive als WebP aufbereitet, außerhalb des Repos gesichert und per CDN eingebunden. Die Artworks erscheinen ausschließlich auf den Startseitenkarten vollständig und ohne Textüberlagerung. Der Musicaltitel steht als erste Zeile direkt unter dem Motiv; Sale-/Top-Musical-Hinweise, Erlebniswelt und Ticket-CTA folgen im Karteninhalt. Spielort und wiederholte Kurzbeschreibung sind in den neun Top-Karten bewusst ausgeblendet, bleiben aber auf Detailseiten und in der gefilterten Gesamtübersicht verfügbar. Das schafft eine klare Artwork-Vorlage für die Startseite; bestehende Szenenfotos bleiben unverändert auf Detailseiten und in Galerien. Die drei WebPs liefern HTTP 200 `image/webp`; gezielte Tests und Desktop-/Mobil-Sichtprüfung bestätigen Darstellung, Bildstandard und unveränderte Affiliate-Ziele.
+
+Die zusätzliche Titel-Schiebeleiste im mobilen Hero ist entfernt. Dort bleiben ausschließlich die fünf Erlebniswelten als direkte Orientierung; die neun Top-Musicals folgen unmittelbar danach als anklickbare Karten. Sämtliche Musicalkarten – Top-Empfehlungen und filterbare Gesamtübersicht – verwenden nun einheitlich die großzügigere Rundung `rounded-xl`.
