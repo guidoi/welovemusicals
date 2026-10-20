@@ -575,7 +575,7 @@ export const musicals: Musical[] = [
   },
   {
     id: "der-kleine-lord",
-    experienceCategory: "familie-maerchen-magie",
+    experienceCategory: "weihnachten",
     slug: "der-kleine-lord",
     title: "DER KLEINE LORD",
     subtitle: "Das Musical",
@@ -732,7 +732,7 @@ export const musicals: Musical[] = [
 
   {
     id: "dreihaselnuesse",
-    experienceCategory: "familie-maerchen-magie",
+    experienceCategory: "weihnachten",
     slug: "drei-haselnuesse-fuer-aschenbroedel",
     title: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL",
     subtitle: "Das Musical",

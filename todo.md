@@ -1259,3 +1259,8 @@ Für **DISNEYS DIE EISKÖNIGIN** wurde der mobile Bildabstand auf 80 px erhöht.
 ### Korrektur: H1 nach mobilem Browser-Refresh vollständig sichtbar
 
 Der ursprüngliche 80-px-Abstand reichte nicht aus, weil der Hero-Inhalt mobil weiterhin vertikal zentriert war. Die Startseite beginnt den Hero-Inhalt nun fest am oberen Rand **unterhalb** der fixierten Kopfzeile (`items-start`, `pt-28` = 112 px); erst ab Desktop wird wieder vertikal zentriert. Ein frischer Chromium-Reload im 390 × 844-Viewport bestätigt: Header von 0–64 px, dekorative Linie ab etwa 112 px und vollständige H1 ohne Überdeckung. Damit kann die Überschrift beim Safari-Refresh nicht mehr hinter die Kopfzeile geraten.
+
+
+## Neue Erlebniswelt Weihnachten – 20.10.2026
+
+Die Erlebniswelt **„Familie & Märchen“** heißt jetzt **„Familie & Kids“**; ihre bestehende URL bleibt aus Kompatibilitätsgründen unverändert. Direkt rechts daneben folgt in der Navigation die neue Erlebniswelt **„Weihnachten“** mit einer eigenen teilbaren Filter-URL `?erlebnis=weihnachten`. Sie enthält zunächst genau **DER KLEINE LORD** und **DREI HASELNÜSSE FÜR ASCHENBRÖDEL**. Beide werden damit nicht mehr zusätzlich in Familie & Kids geführt. Die sechs Kategorien sind zentral definiert, in Hero, Filter, Direktlinks und der Zuordnungsroutine abgesichert. Ticketziele, Termine, Preise, Bilder, Banner sowie Affiliate- und Consentlogik bleiben unverändert.

@@ -16,6 +16,7 @@ describe("teilbare Erlebniswelt-URLs", () => {
     expect(getExperienceCategoryFromSearch("?erlebnis=familie-maerchen-magie")).toBe(
       "familie-maerchen-magie",
     );
+    expect(getExperienceCategoryFromSearch("?erlebnis=weihnachten")).toBe("weihnachten");
     expect(getExperienceCategoryFromSearch("?erlebnis=unbekannt")).toBeUndefined();
     expect(getExperienceCategoryFromSearch("")).toBeUndefined();
   });

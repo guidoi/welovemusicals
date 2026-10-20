@@ -8,26 +8,29 @@ import {
 } from "./experience-categories";
 
 describe("Erlebnis-Kategorien", () => {
-  it("definiert die fünf kuratierten Erlebniswelten", () => {
+  it("definiert die sechs kuratierten Erlebniswelten", () => {
     expect(EXPERIENCE_CATEGORIES.map((category) => category.id)).toEqual([
       "blockbuster-spektakel",
       "kult-klassiker",
       "familie-maerchen-magie",
+      "weihnachten",
       "pop-rock-filmhits",
       "besondere-geschichten",
     ]);
   });
 
-  it("ordnet die Filter mit Familie vor Pop, Rock und Film", () => {
+  it("ordnet Weihnachten direkt nach Familie und Kids ein", () => {
     expect(EXPERIENCE_CATEGORIES.map((category) => category.label)).toEqual([
       "Blockbuster & Spektakel",
       "Kult & Klassiker",
-      "Familie, Märchen & Magie",
+      "Familie & Kids",
+      "Weihnachten",
       "Pop, Rock & Filmhits",
       "Besondere Geschichten",
     ]);
     const familyCategory = EXPERIENCE_CATEGORIES.find((category) => category.id === "familie-maerchen-magie");
-    expect(familyCategory?.shortLabel).toBe("Familie & Märchen");
+    expect(familyCategory?.shortLabel).toBe("Familie & Kids");
+    expect(getExperienceCategory("weihnachten")?.shortLabel).toBe("Weihnachten");
     expect(EXPERIENCE_CATEGORIES.every((category) => category.shortLabel.split(/\s*&\s*/).length <= 2)).toBe(true);
     expect(getExperienceCategory("pop-rock-filmhits")?.shortLabel).toBe("Pop, Rock & Film");
     expect(getExperienceCategory("besondere-geschichten")?.shortLabel).toBe("Drama & Komödie");
@@ -45,6 +48,7 @@ describe("Erlebnis-Kategorien", () => {
     expect(getExperienceCategory("kult-klassiker")?.discoveryHeadline).toBe("Welcher Klassiker passt zu dir?");
     expect(getExperienceCategory("pop-rock-filmhits")?.discoveryHeadline).toBe("Welche Show passt zu deinem Sound?");
     expect(getExperienceCategory("familie-maerchen-magie")?.discoveryHeadline).toBe("Welches Familien-Musical passt zu euch?");
+    expect(getExperienceCategory("weihnachten")?.discoveryHeadline).toBe("Welche Weihnachtsshow passt zu dir?");
     expect(getExperienceCategory("besondere-geschichten")?.discoveryHeadline).toBe("Welche Show lässt dich lachen oder nachdenken?");
   });
 
@@ -53,6 +57,7 @@ describe("Erlebnis-Kategorien", () => {
     expect(getExperienceCategory("kult-klassiker")?.description).toContain("Zeitlose Lieblingsshows");
     expect(getExperienceCategory("pop-rock-filmhits")?.description).toContain("Welthits");
     expect(getExperienceCategory("familie-maerchen-magie")?.description).toContain("Zusammen staunen");
+    expect(getExperienceCategory("weihnachten")?.description).toContain("Festliche Musicals");
     expect(getExperienceCategory("besondere-geschichten")?.description).toContain("Starke Figuren");
   });
 
@@ -78,5 +83,11 @@ describe("Erlebnis-Kategorien", () => {
     expect(activeMusicals.find((musical) => musical.id === "eiskoenigin")?.experienceCategory).toBe("familie-maerchen-magie");
     expect(activeMusicals.find((musical) => musical.id === "koenig-der-loewen")?.experienceCategory).toBe("blockbuster-spektakel");
     expect(activeMusicals.find((musical) => musical.id === "tarzan")?.experienceCategory).toBe("blockbuster-spektakel");
+  });
+
+  it("führt die beiden Weihnachtsmusicals ausschließlich in Weihnachten", () => {
+    const activeMusicals = getActiveMusicals();
+    expect(activeMusicals.find((musical) => musical.id === "der-kleine-lord")?.experienceCategory).toBe("weihnachten");
+    expect(activeMusicals.find((musical) => musical.id === "dreihaselnuesse")?.experienceCategory).toBe("weihnachten");
   });
 });
