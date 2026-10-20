@@ -10,11 +10,14 @@ describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
   });
 
   it("ermittelt und zeigt die zentrale Erlebniswelt im Hero an", () => {
-    expect(musicalDetailSource).toContain('import { getExperienceCategory } from "@/lib/experience-categories";');
-    expect(musicalDetailSource).toContain("const experienceCategory = getExperienceCategory(musical.experienceCategory);");
+    expect(musicalDetailSource).toContain('import { getExperienceCategory, getMusicalExperienceCategories } from "@/lib/experience-categories";');
+    expect(musicalDetailSource).toContain("const experienceCategories = getMusicalExperienceCategories(musical)");
+    expect(musicalDetailSource).toContain("const experienceCategory = experienceCategories[0];");
+    expect(musicalDetailSource).toContain('data-testid="detail-experience-categories"');
     expect(musicalDetailSource).toContain('data-testid="detail-experience-category"');
+    expect(musicalDetailSource).toContain('data-experience-category={category.id}');
     expect(musicalDetailSource).toContain('rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold');
-    expect(musicalDetailSource).toContain("{experienceCategory.shortLabel}");
+    expect(musicalDetailSource).toContain("{category.shortLabel}");
   });
 
   it("zeigt keine früheren Detailseiten-Zusatz-Tags neben der Erlebniswelt", () => {

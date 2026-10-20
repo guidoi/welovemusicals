@@ -182,6 +182,23 @@ describe("MusicalCard Sale-Störer", () => {
     expect(markup).not.toContain("md:text-[10px]");
   });
 
+  it("zeigt bei mehrfach zugeordneten Weihnachts-Familienshows beide Erlebniswelt-Tags", () => {
+    const markup = renderToStaticMarkup(
+      <MusicalCard
+        musical={{
+          ...baseMusical,
+          experienceCategory: "weihnachten",
+          additionalExperienceCategories: ["familie-maerchen-magie"],
+        }}
+      />,
+    );
+
+    expect(markup).toContain('data-experience-category="weihnachten"');
+    expect(markup).toContain('data-experience-category="familie-maerchen-magie"');
+    expect(markup).toContain(">Weihnachten<");
+    expect(markup).toContain(">Familie &amp; Kids<");
+  });
+
   it("zeigt Startseiten-Artworks vollflächig und den Musicaltitel unter dem Motiv", () => {
     const markup = renderToStaticMarkup(
       <MusicalCard

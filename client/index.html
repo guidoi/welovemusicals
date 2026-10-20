@@ -72,8 +72,8 @@
       })();
     </script>
 
-      <!-- Safari restores an old scroll position very early on reload. Start an unanchored home
-           page at its hero before React and the fixed header are painted. -->
+      <!-- Safari can restore an old scroll position shortly after a reload. Start an unanchored
+           home page at its hero before React and the fixed header are painted. -->
       <script id="home-scroll-bootstrap">
         (function() {
           try {
@@ -87,12 +87,28 @@
               window.scrollTo({ top: 0, left: 0, behavior: "auto" });
             };
 
-            resetHomeScroll();
-            window.addEventListener("pageshow", function() {
+            var scheduleHomeScrollReset = function() {
               resetHomeScroll();
               window.requestAnimationFrame(resetHomeScroll);
               window.setTimeout(resetHomeScroll, 120);
+              window.setTimeout(resetHomeScroll, 500);
+            };
+
+            // Safari can apply its restored position after pageshow. For a moment, lock only the
+            // unanchored start page to its hero so its fixed header cannot cover the first line.
+            var lockHomeScroll = function() {
+              resetHomeScroll();
+            };
+            window.addEventListener("scroll", lockHomeScroll, { passive: true });
+            window.setTimeout(function() {
+              window.removeEventListener("scroll", lockHomeScroll);
+            }, 1000);
+
+            scheduleHomeScrollReset();
+            window.addEventListener("pageshow", function() {
+              scheduleHomeScrollReset();
             }, { once: true });
+            window.addEventListener("load", scheduleHomeScrollReset, { once: true });
           } catch (_error) {
             // The page remains usable if a browser does not expose scroll-restoration APIs.
           }

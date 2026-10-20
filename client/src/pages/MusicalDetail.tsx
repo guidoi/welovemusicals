@@ -47,7 +47,7 @@ import EventimDraculaBanner from "@/components/EventimDraculaBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { scheduleScrollToTop } from "@/lib/route-scroll";
-import { getExperienceCategory } from "@/lib/experience-categories";
+import { getExperienceCategory, getMusicalExperienceCategories } from "@/lib/experience-categories";
 import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
 import { getTicketCta } from "@/lib/ticket-cta";
@@ -143,7 +143,10 @@ export default function MusicalDetail() {
     );
   }
 
-  const experienceCategory = getExperienceCategory(musical.experienceCategory);
+  const experienceCategories = getMusicalExperienceCategories(musical)
+    .map(getExperienceCategory)
+    .filter((category) => category !== undefined);
+  const experienceCategory = experienceCategories[0];
 
   // Shows from the same Erlebniswelt come first; provider and production type fill remaining slots.
   const related = getRelatedMusicals(
@@ -281,17 +284,21 @@ export default function MusicalDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="mb-4">
-              {experienceCategory && (
+            {experienceCategories.length > 0 && (
+              <div data-testid="detail-experience-categories" className="mb-4 flex flex-wrap gap-2">
+                {experienceCategories.map((category) => (
                 <span
+                  key={category.id}
                   data-testid="detail-experience-category"
                   className="inline-flex items-center gap-2 rounded-full border border-gold bg-transparent px-3 py-1.5 text-sm font-medium text-gold"
+                  data-experience-category={category.id}
                 >
                   <Tag className="h-3.5 w-3.5" />
-                  {experienceCategory.shortLabel}
+                  {category.shortLabel}
                 </span>
-              )}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* H1 Headline-Effekt: sanftes Fade-in mit Y-Offset – alle Musical-Seiten */}
             <motion.h1

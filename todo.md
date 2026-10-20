@@ -1269,3 +1269,10 @@ Die Erlebniswelt **„Familie & Märchen“** heißt jetzt **„Familie & Kids�
 ### Zusätzliche Safari-Reload-Absicherung für die Startseite
 
 Der mobile Header und die Hero-Anordnung waren bereits korrigiert; Safari konnte bei einem Reload jedoch seine **alte Scrollposition schon vor dem React-Start wiederherstellen**. Dadurch wirkte die Überschrift trotz korrekter Layoutklassen kurzzeitig abgeschnitten. Im HTML-Startdokument wird der Scroll-Restore für eine ankernlose Startseite nun vor dem ersten Rendern auf manuell gesetzt und der Scrollstand sofort, beim `pageshow`, im nächsten Frame sowie nach dem ersten Layout-Intervall auf den Hero-Start zurückgesetzt. Anker-URLs bleiben ausdrücklich unverändert. Eine Regression prüft den frühen Bootstrap. Die frische iPhone-16-Ansicht zeigt Header, dekorative Linie und H1 vollständig sichtbar untereinander; 109 Testdateien / 403 Tests, TypeScript, Build, Bildstandard, Affiliate-Integritätsgate und Diff-Prüfung sind grün.
+
+
+## Sichtbare Familien- und Weihnachts-Tags sowie Safari-Reload – 20.10.2026
+
+- **Der Kleine Lord** und **Drei Haselnüsse für Aschenbrödel** tragen nun sichtbar zwei Erlebniswelt-Tags: **Weihnachten** und **Familie & Kids**. Die Weihnachts-Erlebniswelt bleibt jeweils die primäre Zuordnung; beide Shows sind zusätzlich über Familie & Kids auffindbar. Dies ändert weder die drei redaktionellen Katalogtags noch Ticket-/Affiliate-/Consent-Pfade.
+- Karten und Detailhero rendern sämtliche redaktionell zugeordneten Erlebniswelten einheitlich. Die mobile DKL-Detailansicht wurde mit beiden Tags geprüft.
+- Für Safari-Reloads sperrt ein kurzer, ausschließlich für die ankernlose Startseite aktiver Startschutz verspätete Scrollwiederherstellungen. Ein iPhone-Viewport-Reloadtest bestätigte nach 1,6 Sekunden `scrollY: 0`; Header-Unterkante 65 px, Dekoration 112 px und H1 140 px – somit vollständig sichtbar unter der fixierten Kopfzeile.

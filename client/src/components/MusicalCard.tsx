@@ -8,7 +8,7 @@ import { Link } from "wouter";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Musical } from "@/lib/data";
 import { createAwinLink } from "@/lib/data";
-import { getExperienceCategory } from "@/lib/experience-categories";
+import { getExperienceCategory, getMusicalExperienceCategories } from "@/lib/experience-categories";
 import { SALE_BADGE_LAYOUT } from "@/lib/sale-layout";
 import { isSaleActive } from "@/lib/sale";
 import { getTicketProviderBrand } from "@/lib/ticket-provider-brand";
@@ -28,6 +28,13 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
   const isHomepageArtwork = Boolean(musical.homepageArtworkImage);
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const experienceCategory = getExperienceCategory(musical.experienceCategory);
+  const additionalExperienceCategories = getMusicalExperienceCategories(musical)
+    .slice(1)
+    .map(getExperienceCategory)
+    .filter((category) => category !== undefined);
+  const experienceCategories = experienceCategory
+    ? [experienceCategory, ...additionalExperienceCategories]
+    : additionalExperienceCategories;
   const providerLogoWidthClass =
     ticketProviderBrand.id === "eventim" ? "max-w-20 md:max-w-[4.5rem]" : "max-w-32 md:max-w-28";
 
@@ -94,17 +101,19 @@ export default function MusicalCard({ musical, index = 0, anchorId, showLocation
             )}
 
             {/* Erlebniswelt und zeitlich begrenzte Aktion bleiben unter dem Motiv. */}
-            {(experienceCategory || (hasActiveSale && musical.sale)) && (
+            {(experienceCategories.length > 0 || (hasActiveSale && musical.sale)) && (
               <div data-testid="teaser-meta-pills" className="mb-4 flex flex-wrap items-center gap-2">
-                {experienceCategory && (
-                <span
-                  data-testid="teaser-experience-category"
-                  className="inline-flex h-8 items-center gap-1.5 rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold md:h-10 md:px-4 md:text-xs"
-                >
-                  <Tag className="h-3 w-3" />
-                  {experienceCategory.shortLabel}
-                </span>
-                )}
+                {experienceCategories.map((category) => (
+                  <span
+                    key={category.id}
+                    data-testid="teaser-experience-category"
+                    className="inline-flex h-8 items-center gap-1.5 rounded-full border border-gold/60 bg-transparent px-3 text-[11px] font-semibold text-gold md:h-10 md:px-4 md:text-xs"
+                    data-experience-category={category.id}
+                  >
+                    <Tag className="h-3 w-3" />
+                    {category.shortLabel}
+                  </span>
+                ))}
                 {hasActiveSale && musical.sale && (
                   <span
                     aria-label={`Sale: ${musical.sale.discount}`}
