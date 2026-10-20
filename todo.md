@@ -1254,3 +1254,8 @@ Die Startseite verwendet wieder denselben **fixierten** mobilen Header wie Detai
 Die mobile Umkreissuche ist deutlich größer und komfortabler: Überschrift und Hilfetext sind lesbarer, das PLZ-Feld hat eine 16-px-Schrift und eine höhere Eingabezeile, die goldene Aktion heißt eindeutig **„Finden“**, und **„Meinen Standort verwenden“** liegt als eigene breite Schaltfläche darunter. Die Umkreiswerte besitzen nun mindestens 40 px Bedienhöhe; der Schließen-Button ist ebenfalls vergrößert. Auf Desktop bleibt die kompakte Zeile mit Standort-Icon bestehen.
 
 Für **DISNEYS DIE EISKÖNIGIN** wurde der mobile Bildabstand auf 80 px erhöht. Das Headerbild startet damit erst vollständig unter der fixierten Navigation; die 375-px-Sichtprüfung zeigt Elsa und Anna ohne Überdeckung. Die gezielten Header-, Umkreissuche- und Eiskönigin-Regressionen einschließlich TypeScript und Diff-Prüfung sind erfolgreich.
+
+
+### Korrektur: H1 nach mobilem Browser-Refresh vollständig sichtbar
+
+Der ursprüngliche 80-px-Abstand reichte nicht aus, weil der Hero-Inhalt mobil weiterhin vertikal zentriert war. Die Startseite beginnt den Hero-Inhalt nun fest am oberen Rand **unterhalb** der fixierten Kopfzeile (`items-start`, `pt-28` = 112 px); erst ab Desktop wird wieder vertikal zentriert. Ein frischer Chromium-Reload im 390 × 844-Viewport bestätigt: Header von 0–64 px, dekorative Linie ab etwa 112 px und vollständige H1 ohne Überdeckung. Damit kann die Überschrift beim Safari-Refresh nicht mehr hinter die Kopfzeile geraten.

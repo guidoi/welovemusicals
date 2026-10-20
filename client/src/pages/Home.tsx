@@ -402,7 +402,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* ===== HERO SECTION ===== */}
-      <section className={`relative flex items-center justify-center overflow-hidden ${DESKTOP_HERO_SECTION_CLASS}`}>
+      <section className={`relative flex items-start justify-center overflow-hidden md:items-center ${DESKTOP_HERO_SECTION_CLASS}`}>
         {/* Background */}
         <div className="absolute inset-0">
           <img

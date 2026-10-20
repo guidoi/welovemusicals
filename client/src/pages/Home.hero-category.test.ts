@@ -22,6 +22,7 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource.match(/variant="categories"/g)).toHaveLength(2);
     expect(homeSource).toContain("<Header />");
     expect(homeSource).not.toContain("staticOnMobile");
+    expect(homeSource).toContain("flex items-start justify-center overflow-hidden md:items-center");
     expect(homeSource).toContain('filterAnimationKey={resultAnimationKey || undefined}\n                  showLocation={false}');
     expect(homeSource).not.toContain('showDescription=');
     expect(homeSource).toContain('mb-4 text-[17px] leading-[1.4]');
