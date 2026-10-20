@@ -8,6 +8,8 @@ describe("Drei Haselnüsse für Aschenbrödel – Tour 2026/2027", () => {
   it("übernimmt Preis, SEO und die bestätigte Tournee bis 2028", () => {
     expect(musical).toBeDefined();
     expect(musical?.priceFrom).toBe("40,49");
+    expect(musical?.experienceCategory).toBe("weihnachten");
+    expect(musical?.additionalExperienceCategories).toEqual(["familie-maerchen-magie"]);
     expect(musical?.detailHeadline).toBe("ZWEI TOUREN. EIN WINTERMÄRCHEN. 80 STÄDTE.");
     expect(musical?.detailDescription).toContain("Nikolaus-Tour");
     expect(musical?.detailDescription).toContain("Rosalie-Tour");

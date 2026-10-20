@@ -14,6 +14,7 @@ describe("Hero-Kategorie-Einstiege", () => {
     expect(homeSource).toContain("setShowAllMusicals(true);");
     expect(homeSource).toContain("trackExperienceCategorySelection({");
     expect(homeSource).toContain("analyticsConsent: consent?.analytics === true");
+    expect(homeSource).toContain("hasExperienceCategory(musical, categoryFilter)");
     expect(homeSource).not.toContain("theaterLightKey");
     expect(homeSource).not.toContain("pendingCategoryFilterShine");
     expect(homeSource).not.toContain("guideHeroCategoryToFirstResult");

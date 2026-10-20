@@ -64,8 +64,11 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
 
   it("ist als Familienmusical auf der Berliner Stadtseite und im Stadtfilter aktiv", () => {
     const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
+    const musical = getMusicalBySlug("der-kleine-lord");
 
     expect(berlinIds).toContain("der-kleine-lord");
+    expect(musical?.experienceCategory).toBe("weihnachten");
+    expect(musical?.additionalExperienceCategories).toEqual(["familie-maerchen-magie"]);
   });
 
   it("nennt Spielzeit, Weltpremiere und Veranstalter in den strukturiert auslesbaren Daten", () => {

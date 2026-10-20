@@ -5,6 +5,8 @@ import {
   EXPERIENCE_CATEGORY_BY_MUSICAL_ID,
   QUICK_CITY_NAMES,
   getExperienceCategory,
+  getMusicalExperienceCategories,
+  hasExperienceCategory,
 } from "./experience-categories";
 
 describe("Erlebnis-Kategorien", () => {
@@ -61,7 +63,7 @@ describe("Erlebnis-Kategorien", () => {
     expect(getExperienceCategory("besondere-geschichten")?.description).toContain("Starke Figuren");
   });
 
-  it("ordnet jedes aktive Musical genau einer Erlebniswelt zu", () => {
+  it("ordnet jedes aktive Musical mindestens einer Erlebniswelt zu", () => {
     const activeMusicals = getActiveMusicals();
     expect(activeMusicals).toHaveLength(ACTIVE_MUSICAL_IDS.length);
     expect(activeMusicals.every((musical) => musical.experienceCategory)).toBe(true);
@@ -85,9 +87,21 @@ describe("Erlebnis-Kategorien", () => {
     expect(activeMusicals.find((musical) => musical.id === "tarzan")?.experienceCategory).toBe("blockbuster-spektakel");
   });
 
-  it("führt die beiden Weihnachtsmusicals ausschließlich in Weihnachten", () => {
+  it("führt die beiden Weihnachtsmusicals in Weihnachten und zusätzlich bei Familie und Kids", () => {
     const activeMusicals = getActiveMusicals();
-    expect(activeMusicals.find((musical) => musical.id === "der-kleine-lord")?.experienceCategory).toBe("weihnachten");
-    expect(activeMusicals.find((musical) => musical.id === "dreihaselnuesse")?.experienceCategory).toBe("weihnachten");
+    const christmasMusicals = [
+      activeMusicals.find((musical) => musical.id === "der-kleine-lord"),
+      activeMusicals.find((musical) => musical.id === "dreihaselnuesse"),
+    ];
+
+    for (const musical of christmasMusicals) {
+      expect(musical?.experienceCategory).toBe("weihnachten");
+      expect(getMusicalExperienceCategories(musical ?? {})).toEqual([
+        "weihnachten",
+        "familie-maerchen-magie",
+      ]);
+      expect(hasExperienceCategory(musical ?? {}, "weihnachten")).toBe(true);
+      expect(hasExperienceCategory(musical ?? {}, "familie-maerchen-magie")).toBe(true);
+    }
   });
 });

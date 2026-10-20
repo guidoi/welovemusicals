@@ -71,6 +71,33 @@
         }
       })();
     </script>
+
+      <!-- Safari restores an old scroll position very early on reload. Start an unanchored home
+           page at its hero before React and the fixed header are painted. -->
+      <script id="home-scroll-bootstrap">
+        (function() {
+          try {
+            if ('scrollRestoration' in window.history) {
+              window.history.scrollRestoration = "manual";
+            }
+
+            if (window.location.pathname !== "/" || window.location.hash) return;
+
+            var resetHomeScroll = function() {
+              window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+            };
+
+            resetHomeScroll();
+            window.addEventListener("pageshow", function() {
+              resetHomeScroll();
+              window.requestAnimationFrame(resetHomeScroll);
+              window.setTimeout(resetHomeScroll, 120);
+            }, { once: true });
+          } catch (_error) {
+            // The page remains usable if a browser does not expose scroll-restoration APIs.
+          }
+        })();
+      </script>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://welovemusicals.com/" />

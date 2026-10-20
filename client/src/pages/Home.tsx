@@ -32,7 +32,7 @@ import {
 } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useConsent } from "@/contexts/ConsentContext";
-import { getExperienceCategory, type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
+import { getExperienceCategory, hasExperienceCategory, type CountryFilter, type ExperienceFilterId } from "@/lib/experience-categories";
 import { getHeroNavigationItems, type HeroNavigationItem } from "@/lib/hero-navigation";
 import { trackExperienceCategorySelection } from "@/lib/category-analytics";
 import { HOME_HERO_ALT, HOME_HERO_IMAGE, HOME_HERO_TEASER } from "@/lib/home-hero";
@@ -299,7 +299,7 @@ export default function Home() {
 
     // Redaktionelle Erlebniswelten statt technischer Datenkategorien.
     if (categoryFilter !== "alle") {
-      result = result.filter((musical) => musical.experienceCategory === categoryFilter);
+      result = result.filter((musical) => hasExperienceCategory(musical, categoryFilter));
     }
 
     // Filter nach Land

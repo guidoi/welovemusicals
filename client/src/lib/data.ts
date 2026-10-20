@@ -54,6 +54,7 @@ export interface Musical {
   category: "ensuite" | "fester-standort" | "tournee" | "kinder"; // Legacy, wird durch categories ersetzt
   categories?: Array<"fester-standort" | "tournee" | "erwachsene" | "familie" | "kinder">;
   experienceCategory?: ExperienceCategoryId;
+  additionalExperienceCategories?: ExperienceCategoryId[]; // Zusätzliche redaktionelle Filterzuordnungen
   city?: string;
   cities?: string[];
   headerCities?: string[]; // Die wichtigsten Städte für die Header-Anzeige (z.B. die 10 größten)
@@ -576,6 +577,7 @@ export const musicals: Musical[] = [
   {
     id: "der-kleine-lord",
     experienceCategory: "weihnachten",
+    additionalExperienceCategories: ["familie-maerchen-magie"],
     slug: "der-kleine-lord",
     title: "DER KLEINE LORD",
     subtitle: "Das Musical",
@@ -733,6 +735,7 @@ export const musicals: Musical[] = [
   {
     id: "dreihaselnuesse",
     experienceCategory: "weihnachten",
+    additionalExperienceCategories: ["familie-maerchen-magie"],
     slug: "drei-haselnuesse-fuer-aschenbroedel",
     title: "DREI HASELNÜSSE FÜR ASCHENBRÖDEL",
     subtitle: "Das Musical",

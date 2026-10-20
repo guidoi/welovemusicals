@@ -1264,3 +1264,8 @@ Der ursprüngliche 80-px-Abstand reichte nicht aus, weil der Hero-Inhalt mobil w
 ## Neue Erlebniswelt Weihnachten – 20.10.2026
 
 Die Erlebniswelt **„Familie & Märchen“** heißt jetzt **„Familie & Kids“**; ihre bestehende URL bleibt aus Kompatibilitätsgründen unverändert. Direkt rechts daneben folgt in der Navigation die neue Erlebniswelt **„Weihnachten“** mit einer eigenen teilbaren Filter-URL `?erlebnis=weihnachten`. Sie enthält zunächst genau **DER KLEINE LORD** und **DREI HASELNÜSSE FÜR ASCHENBRÖDEL**. Beide werden damit nicht mehr zusätzlich in Familie & Kids geführt. Die sechs Kategorien sind zentral definiert, in Hero, Filter, Direktlinks und der Zuordnungsroutine abgesichert. Ticketziele, Termine, Preise, Bilder, Banner sowie Affiliate- und Consentlogik bleiben unverändert.
+
+
+### Zusätzliche Safari-Reload-Absicherung für die Startseite
+
+Der mobile Header und die Hero-Anordnung waren bereits korrigiert; Safari konnte bei einem Reload jedoch seine **alte Scrollposition schon vor dem React-Start wiederherstellen**. Dadurch wirkte die Überschrift trotz korrekter Layoutklassen kurzzeitig abgeschnitten. Im HTML-Startdokument wird der Scroll-Restore für eine ankernlose Startseite nun vor dem ersten Rendern auf manuell gesetzt und der Scrollstand sofort, beim `pageshow`, im nächsten Frame sowie nach dem ersten Layout-Intervall auf den Hero-Start zurückgesetzt. Anker-URLs bleiben ausdrücklich unverändert. Eine Regression prüft den frühen Bootstrap. Die frische iPhone-16-Ansicht zeigt Header, dekorative Linie und H1 vollständig sichtbar untereinander; 109 Testdateien / 403 Tests, TypeScript, Build, Bildstandard, Affiliate-Integritätsgate und Diff-Prüfung sind grün.

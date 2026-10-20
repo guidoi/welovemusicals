@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS,
@@ -23,5 +24,15 @@ describe("Mobile Hero-Navigationsabstände", () => {
   it("rückt die Highlights am Desktop näher an den Hero, ohne den mobilen Abstand zu verändern", () => {
     expect(DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS).toBe("md:pt-0");
     expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-5");
+  });
+
+  it("beginnt die ankernlose Startseite bereits vor React zuverlässig am Hero", () => {
+    const indexHtml = readFileSync(new URL("../../index.html", import.meta.url), "utf8");
+
+    expect(indexHtml).toContain('id="home-scroll-bootstrap"');
+    expect(indexHtml).toContain('window.history.scrollRestoration = "manual"');
+    expect(indexHtml).toContain('window.location.pathname !== "/" || window.location.hash');
+    expect(indexHtml).toContain('window.addEventListener("pageshow"');
+    expect(indexHtml).toContain('window.setTimeout(resetHomeScroll, 120)');
   });
 });

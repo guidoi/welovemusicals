@@ -58,8 +58,33 @@ export const EXPERIENCE_CATEGORIES = [
 export type ExperienceCategoryId = (typeof EXPERIENCE_CATEGORIES)[number]["id"];
 export type ExperienceFilterId = "alle" | ExperienceCategoryId;
 
+export type MusicalExperienceCategoryAssignment = {
+  experienceCategory?: ExperienceCategoryId;
+  additionalExperienceCategories?: ExperienceCategoryId[];
+};
+
 export function getExperienceCategory(id: ExperienceCategoryId | undefined) {
   return EXPERIENCE_CATEGORIES.find((category) => category.id === id);
+}
+
+/**
+ * A show has one editorial primary Erlebniswelt, but may additionally appear
+ * in a closely related discovery filter (for example Christmas family shows).
+ */
+export function getMusicalExperienceCategories({
+  experienceCategory,
+  additionalExperienceCategories = [],
+}: MusicalExperienceCategoryAssignment): ExperienceCategoryId[] {
+  return Array.from(new Set([experienceCategory, ...additionalExperienceCategories].filter(
+    (category): category is ExperienceCategoryId => Boolean(category),
+  )));
+}
+
+export function hasExperienceCategory(
+  musical: MusicalExperienceCategoryAssignment,
+  categoryId: ExperienceCategoryId,
+): boolean {
+  return getMusicalExperienceCategories(musical).includes(categoryId);
 }
 
 export const QUICK_CITY_NAMES = [
