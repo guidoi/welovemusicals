@@ -8,6 +8,24 @@ describe("Affiliate-Link-Sicherheitsnetz", () => {
   const awinCreative = "https://www.awin1.com/cread.php?s=4568827&v=11388&q=492097&r=2865727";
   const awinWrappedEventim = "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fexample%2F";
 
+  it("akzeptiert die gelieferten Prada-URLs am TradeDoubler-Stage-Endpunkt ohne Fallback", () => {
+    for (const groupId of ["26185640", "26185638"]) {
+      const link = `https://clk.tradedoubler.com/click?p=394206&a=3492604&g=${groupId}`;
+      expect(getAffiliateOverridePartner(link)).toBe("stage");
+      expect(getSafeAffiliateTicketLink(link)).toEqual({ url: link, usedFallback: false });
+      for (const invalid of [
+        link.replace("p=394206", "p=999"),
+        link.replace("a=3492604", "a=999"),
+        link.replace(`&g=${groupId}`, ""),
+        `${link}&ttid=18`,
+        `${link}&url=https%3A%2F%2Fexample.com`,
+        link.replace("/click?", "/imp?"),
+        link.replace("https:", "http:"),
+        link.replace("clk.tradedoubler.com", "clk.tradedoubler.com.example.com"),
+      ]) expect(isSafeAffiliateTicketUrl(invalid)).toBe(false);
+    }
+  });
+
   it("ordnet kontrollierbare Ziele der korrekten Partnergruppe zu", () => {
     expect(getAffiliateOverridePartner(directStage)).toBe("stage");
     expect(getAffiliateOverridePartner(tradeDoublerCampaign)).toBe("tradedoubler");

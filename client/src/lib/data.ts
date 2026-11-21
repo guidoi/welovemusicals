@@ -17,6 +17,16 @@ export interface MusicalTourDate {
   displayLabel?: string; // Optionaler Anzeigetext statt Datum, z.B. "Spielzeit 2026/2027"
 }
 
+export interface MusicalSeasonAnnouncement {
+  city: string;
+  venue: string;
+  startDate: string;
+  premiereDate?: string;
+  displayLabel: string;
+  note: string;
+  campaignGroupId: string; // Nur das freigegebene Banner; kein erfundener Text-CTA.
+}
+
 export interface MusicalQuote {
   text: string;
   source: string; // z.B. "Die Welt", "Der Spiegel"
@@ -83,6 +93,7 @@ export interface Musical {
   sale?: MusicalSale; // Optionaler Angebots-Störer auf Teaser-Karten
   // Neue Felder für Detail-Seite
   tourDates?: MusicalTourDate[];
+  seasonAnnouncements?: MusicalSeasonAnnouncement[]; // Neue Spielzeiten mit eigenem Banner, solange ein Textlink noch fehlt.
   quotes?: MusicalQuote[];
   gallery?: MusicalGalleryImage[];
   inlineDetailImage?: MusicalGalleryImage; // Einzelnes Pressefoto innerhalb des oberen Fließtexts
@@ -1592,6 +1603,17 @@ export const musicals: Musical[] = [
     tourDates: [
       { city: "Hamburg", venue: "Stage Operettenhaus", startDate: "2026-03-01", endDate: "2027-12-31", eventimUrl: ZIZ_STAGE_TEXT_LINK_URL },
     ],
+    seasonAnnouncements: [
+      {
+        city: "Stuttgart",
+        venue: "Stage Palladium Theater",
+        startDate: "2027-10-05",
+        premiereDate: "2027-10-12",
+        displayLabel: "Ab Oktober 2027",
+        note: "Previews ab 05.10.2027, Premiere am 12.10.2027. Der Vorverkauf läuft bereits. Die Hamburger Black-Sale-Aktion gilt nicht für Stuttgart.",
+        campaignGroupId: "26229530",
+      },
+    ],
     quotes: [
       { text: "Die Bühneneffekte sind atemberaubend – wenn der DeLorean losfährt, hält das ganze Publikum den Atem an.", source: "Musical1" },
       { text: "Nah am Original, aber mit eigenem Musical-Charme. Ein Muss für alle 80er-Fans!", source: "Musicalzentrale" },
@@ -1621,7 +1643,8 @@ export const musicals: Musical[] = [
     storyHeadline: "WILLKOMMEN IN HILL VALLEY – DIE GESCHICHTE",
     storyText: "Als der Teenager Marty McFly in einer von dem exzentrischen Wissenschaftler Doc Brown gebauten Zeitmaschine – einem umgebauten DeLorean – versehentlich ins Jahr 1955 zurückversetzt wird, verändert er den Lauf der Geschichte. Seine Eltern lernen sich nicht kennen, und Marty droht aus der Existenz zu verschwinden.\n\nNun beginnt ein Wettlauf mit der Zeit: Marty muss seine Eltern zusammenbringen, den Lauf der Geschichte korrigieren und einen Weg finden, sich selbst zurück in die Zukunft zu schicken – bevor es zu spät ist. Dabei hilft ihm der junge Doc Brown, der von Martys Zeitreise-Geschichte zunächst nichts wissen will.\n\nEine Geschichte über Freundschaft, Familie und den Mut, sein Schicksal selbst in die Hand zu nehmen – verpackt in ein elektrisierendes Musical-Spektakel mit legendärer Filmmusik.",
     faqItems: [
-      { question: "Wo wird ZURÜCK IN DIE ZUKUNFT – Das Musical gespielt?", answer: "Das Musical läuft im Stage Operettenhaus, Spielbudenplatz 1, 20359 Hamburg – mitten auf der Reeperbahn." },
+      { question: "Wo wird ZURÜCK IN DIE ZUKUNFT – Das Musical gespielt?", answer: "Die Hamburger Produktion spielt im Stage Operettenhaus, Spielbudenplatz 1, 20359 Hamburg. Ab Oktober 2027 kommt das Musical außerdem ins Stage Palladium Theater Stuttgart." },
+      { question: "Ab wann läuft ZURÜCK IN DIE ZUKUNFT in Stuttgart?", answer: "Im Stage Palladium Theater Stuttgart beginnen die Previews am 05.10.2027; die Premiere ist am 12.10.2027. Der Vorverkauf ist bereits gestartet. Ein endgültiges Spielzeitende ist noch nicht angekündigt. Die Hamburger Black-Sale-Aktion gilt nicht für Stuttgart." },
       { question: "Ab wann ist das Musical in Hamburg zu sehen?", answer: "Die Deutschlandpremiere findet im Frühjahr 2026 statt. Tickets sind bereits im Vorverkauf erhältlich." },
       { question: "Wie viel kosten die Tickets?", answer: "Tickets sind ab 44,79 € erhältlich. Die Preise variieren je nach Kategorie und Vorstellungsdatum." },
       { question: "Wo kann ich Tickets kaufen?", answer: "Tickets sind direkt über Stage Entertainment sowie direkt auf stage-entertainment.de erhältlich." },

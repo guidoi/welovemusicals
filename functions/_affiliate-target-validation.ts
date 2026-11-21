@@ -26,7 +26,7 @@ function decodeUrlParameter(value: string | null): string | undefined {
 }
 
 function isDirectStageClick(url: URL): boolean {
-  return url.hostname === STAGE_HOST
+  return (url.hostname === STAGE_HOST || url.hostname === TRADEDOUBLER_CLICK_HOST)
     && url.pathname === "/click"
     && url.searchParams.get("p") === "394206"
     && url.searchParams.get("a") === "3492604"

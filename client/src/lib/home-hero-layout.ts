@@ -2,8 +2,10 @@
 export const MOBILE_HERO_NAVIGATION_TOP_CLASS = "mt-5";
 export const MOBILE_HERO_NAVIGATION_BOTTOM_CLASS = "pt-5";
 // Der mobile Startseiten-Header bleibt fixiert. Der Inhalt beginnt deshalb mobil
-// bewusst unterhalb der Kopfzeile und wird nicht mehr vertikal dagegen zentriert.
-export const HOME_HERO_CONTENT_TOP_CLASS = "pt-28 md:pt-20";
+// mit zusätzlichem Sicherheitsabstand unterhalb der Kopfzeile und wird nicht mehr
+// vertikal dagegen zentriert. Dadurch bleibt auch die Stern-Dekoration nach einem
+// Safari-Reload vollständig sichtbar.
+export const HOME_HERO_CONTENT_TOP_CLASS = "pt-36 md:pt-20";
 export const DESKTOP_HERO_SECTION_CLASS = "md:min-h-[620px] xl:min-h-[700px] 2xl:min-h-[760px]";
 export const DESKTOP_HERO_IMAGE_POSITION_CLASS = "md:object-[50%_18%]";
 export const DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS = "md:pt-0";

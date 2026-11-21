@@ -1,6 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { getCityBySlug, getMusicalBySlug } from "../client/src/lib/data";
+import { cities, getCityBySlug, getMusicalBySlug, hasActiveTourDateForCity } from "../client/src/lib/data";
 import { getCitySeo } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
 import { LEGACY_MUSICAL_REDIRECTS, RETIRED_MUSICAL_SLUGS } from "../functions/_seo-static";
@@ -191,8 +191,10 @@ async function main() {
     assertPage("musical/fack-ju-goehte", [
       `<h1>${escapeHtml(fackJuGoehte.title)}</h1>`,
       'aria-label="Musical-Städte"',
-      'href="/stadt/berlin"',
-      'href="/stadt/bochum"',
+      // Ortslinks werden nach Ablauf der vorhandenen Termine bewusst ausgeblendet.
+      // Der Buildcheck prüft weiterhin die tatsächlich aktiven Stadtverknüpfungen.
+      ...cities.filter((city) => hasActiveTourDateForCity(fackJuGoehte, city.name))
+        .map((city) => `href="/stadt/${city.slug}"`),
     ]),
   ]);
 

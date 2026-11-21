@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { getActiveMusicals } from "../client/src/lib/data";
+import { AOVO_CAMPAIGNS, resolveAovoCampaignClickUrl } from "../client/src/components/AovoCampaignBanner";
+import { getSafeAffiliateTicketLink } from "../client/src/lib/affiliate-link-safety";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const TRADEDOUBLER_WEBSITE_ID = "3492604";
@@ -52,7 +54,8 @@ function assertDirectTicketLink(link: TicketLink) {
   const parsed = new URL(link.url);
   const context = `${link.musicalId} / ${link.placement}`;
 
-  if (parsed.hostname === "visit.stage-entertainment.de") {
+  if (parsed.hostname === "visit.stage-entertainment.de"
+    || (parsed.hostname === "clk.tradedoubler.com" && parsed.searchParams.get("p") === "394206")) {
     if (parsed.pathname !== "/click") fail(`${context} muss den direkten Stage-Click-Endpunkt verwenden.`);
     if (parsed.searchParams.get("p") !== "394206") fail(`${context} muss die Stage-Program-ID p=394206 enthalten.`);
     if (parsed.searchParams.get("a") !== TRADEDOUBLER_WEBSITE_ID) fail(`${context} muss a=${TRADEDOUBLER_WEBSITE_ID} enthalten.`);
@@ -231,6 +234,14 @@ for (const ticketLink of ticketLinks) {
 
 if (stageLinks === 0) fail("Es wurden keine direkten Stage-Ticketlinks geprüft.");
 if (awinLinks === 0) fail("Es wurden keine direkten Awin-Ticketlinks geprüft.");
+for (const campaign of AOVO_CAMPAIGNS) {
+  const url = resolveAovoCampaignClickUrl(campaign);
+  if (getSafeAffiliateTicketLink(url).usedFallback) fail(`${campaign.musicalId} / Banner ${campaign.groupId} wird durch Fallback ersetzt.`);
+  const parsed = new URL(url);
+  if (parsed.searchParams.get("g") !== campaign.groupId) fail(`Banner ${campaign.groupId} hat eine abweichende Werbemittel-ID.`);
+  const network = assertDirectTicketLink({ musicalId: campaign.musicalId, placement: `Banner ${campaign.groupId}`, url });
+  if (campaign.trackingNetwork === "stage" && network !== "stage") fail(`Stage-Banner ${campaign.groupId} hat einen partnerfremden Click-Endpunkt.`);
+}
 assertConsentGuards();
 assertTicketPathsRemainConsentIndependent();
 assertAttributionSafety();

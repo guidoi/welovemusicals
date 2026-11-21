@@ -6,11 +6,79 @@ import {
   getAovoCampaigns,
   getAovoCampaignClickUrl,
   getAovoCampaignImpressionUrl,
+  resolveAovoCampaignClickUrl,
+  getAovoCampaignImageUrl,
 } from "./AovoCampaignBanner";
 
 describe("Aovo campaign banners", () => {
+  it("verknüpft alle eindeutig freigegebenen Black-Sale-Creatives mit passenden Stage-IDs und begrenzter Laufzeit", () => {
+    const expected = {
+      "26185722": "UJgPKhwhnwJwDgxx.jpg",
+      "26185720": "tuNHqvCYYXYuTFZC.jpg",
+      "26185658": "owWZZGWpRzIstsol.jpg",
+      "26185656": "xkxRczJddsOAlGMV.jpg",
+      "26180470": "XJUIQKKUaULjNyHO.jpg",
+      "26180466": "KVRTmqSgMjYOHZiY.jpg",
+      "26180462": "odQonaPQiRcLmGKP.jpg",
+      "26185502": "VYqCMmjdsLjwDixM.jpg",
+      "26185500": "EhkNrPdpwvFlzEQv.jpg",
+      "26185666": "mviShaCbXqtJIjsj.jpg",
+      "26185664": "awRytLNRSmByGCfT.jpg",
+      "26185700": "mxowpUldrZlyEZrT.jpg",
+      "26185698": "VxqBEqBNXMPdspJI.jpg",
+    };
+    const sale = { label: "SALE", discount: "BIS 30 %", validUntil: "2026-11-30" };
+    for (const [groupId, asset] of Object.entries(expected)) {
+      const campaign = AOVO_CAMPAIGNS.find((item) => item.groupId === groupId)!;
+      expect(resolveAovoCampaignClickUrl(campaign)).toBe(`https://clk.tradedoubler.com/click?p=394206&a=3492604&g=${groupId}`);
+      expect(getAovoCampaignImpressionUrl(groupId, "123", campaign.trackingNetwork)).toBe(`https://visit.stage-entertainment.de/imp?type(img)g(${groupId})a(3492604)123`);
+      expect(getAovoCampaignImageUrl(campaign, sale, new Date("2026-11-22T12:00:00"))).toBe(`https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/${asset}`);
+      expect(getAovoCampaignImageUrl(campaign, undefined, new Date("2026-11-22T12:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, sale, new Date("2026-12-01T00:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, { ...sale, validFrom: "2026-11-28" }, new Date("2026-11-22T12:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, { ...sale, validUntil: "2027-11-30" }, new Date("2027-11-22T12:00:00"))).toBe(campaign.imageUrl);
+    }
+    const untouched = AOVO_CAMPAIGNS.filter((item) => !item.clickUrl);
+    expect(untouched.map((item) => item.groupId)).toEqual(["26180460", "26068528", "26068482", "26204070", "26204068", "26185546", "26185544", "26185674", "26185672"]);
+    for (const campaign of untouched) {
+      expect(campaign.promotion).toBeUndefined();
+      expect(resolveAovoCampaignClickUrl(campaign)).toBe(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork));
+    }
+    expect(AOVO_CAMPAIGNS.find((item) => item.groupId === "26180462")?.musicalId).toBe("mj-musical");
+    expect(AOVO_CAMPAIGNS.find((item) => item.groupId === "26185500")?.musicalId).toBe("ziz");
+  });
+
+  it("zeigt Stuttgart als eigenständige Vorverkaufsanzeige, nie als Hamburger Rabattcreative", () => {
+    const campaign = AOVO_CAMPAIGNS.find((item) => item.groupId === "26229530")!;
+    expect(campaign).toMatchObject({ musicalId: "ziz", width: 300, height: 250, placement: "within-season-announcement", trackingNetwork: "stage" });
+    expect(campaign.promotion).toBeUndefined();
+    expect(resolveAovoCampaignClickUrl(campaign)).toBe("https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26229530");
+    expect(getAovoCampaignImageUrl(campaign, { label: "SALE", discount: "BIS 40 %" })).toBe(campaign.imageUrl);
+  });
+
+  it("integriert die Prada-Black-Friday-Motive und exakten URLs, ohne Stage-Impressionen umzuleiten", () => {
+    const expected = [
+      { groupId: "26185640", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xHKXvjHHESEEEovz.jpg" },
+      { groupId: "26185638", imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZLfXGtmkrHGOoNOx.jpg" },
+    ];
+    const sale = { label: "SALE", discount: "Bis 15 % sparen", validUntil: "2026-11-30" };
+    for (const entry of expected) {
+      const campaign = getAovoCampaigns("teufel-traegt-prada").find((item) => item.groupId === entry.groupId)!;
+      expect(campaign.trackingNetwork).toBe("stage");
+      expect(resolveAovoCampaignClickUrl(campaign)).toBe(`https://clk.tradedoubler.com/click?p=394206&a=3492604&g=${entry.groupId}`);
+      expect(getAovoCampaignImpressionUrl(entry.groupId, "123", campaign.trackingNetwork)).toBe(`https://visit.stage-entertainment.de/imp?type(img)g(${entry.groupId})a(3492604)123`);
+      expect(getAovoCampaignImageUrl(campaign, sale, new Date("2026-11-21T12:00:00"))).toBe(entry.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, sale, new Date("2026-11-30T23:59:58"))).toBe(entry.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, sale, new Date("2026-12-01T00:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, undefined, new Date("2026-11-21T12:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, { ...sale, validFrom: "2026-11-28" }, new Date("2026-11-21T12:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, { ...sale, validUntil: "2026-11-22" }, new Date("2026-11-23T12:00:00"))).toBe(campaign.imageUrl);
+      expect(getAovoCampaignImageUrl(campaign, { ...sale, validUntil: "2027-11-30" }, new Date("2027-11-21T12:00:00"))).toBe(campaign.imageUrl);
+    }
+  });
+
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(24);
+    expect(AOVO_CAMPAIGNS).toHaveLength(25);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "salon-rosie",
       "salon-rosie",
@@ -36,8 +104,9 @@ describe("Aovo campaign banners", () => {
       "wir-sind-am-leben",
       "und-julia",
       "und-julia",
+      "ziz",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(24);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(25);
   });
 
   it("uses the supplied native TINA creatives and Stage tracking IDs", () => {
@@ -310,7 +379,7 @@ describe("Aovo campaign banners", () => {
     const componentSource = readFileSync(new URL("./AovoCampaignBanner.tsx", import.meta.url), "utf8");
 
     expect(componentSource).toContain("<img");
-    expect(componentSource).toContain("src={campaign.imageUrl}");
+    expect(componentSource).toContain("src={getAovoCampaignImageUrl(campaign, sale)}");
     expect(componentSource).toContain("width={campaign.width}");
     expect(componentSource).toContain("height={campaign.height}");
     expect(componentSource).toContain("campaign.compactTopSpacing");

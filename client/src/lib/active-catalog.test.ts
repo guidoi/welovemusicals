@@ -1,7 +1,12 @@
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { ACTIVE_MUSICAL_IDS, cities, getActiveMusicals, getActiveMusicalsByCity, musicals } from "./data";
 
 describe("aktiver Musicalkatalog", () => {
+  // Die redaktionellen Teaserzählungen wurden im Oktoberstand erfasst.
+  // Reales Verstreichen von Spielzeitenden darf diesen Snapshot nicht ändern.
+  beforeAll(() => { vi.useFakeTimers(); vi.setSystemTime(new Date("2026-10-20T12:00:00")); });
+  afterAll(() => vi.useRealTimers());
+
   it("zeigt Wir sind am Leben und entfernt We Will Rock You nach Spielzeitende", () => {
     const activeIds = getActiveMusicals(musicals).map((musical) => musical.id);
 

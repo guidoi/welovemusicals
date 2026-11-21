@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroAnchorNavigation from "@/components/HeroAnchorNavigation";
 import MusicalCard from "@/components/MusicalCard";
+import BlackSaleNotice from "@/components/BlackSaleNotice";
 import CityCard from "@/components/CityCard";
 import MusicalFilters from "@/components/MusicalFilters";
 import PlzSearch, { musicalInRadius, type PlzSearchState } from "@/components/PlzSearch";
@@ -56,6 +57,7 @@ import {
   getExperienceCategoryFromSearch,
 } from "@/lib/experience-category-url";
 import { getDiscoveryResultHint } from "@/lib/discovery-result-hint";
+import { getBlackSaleCampaign } from "@/lib/black-sale";
 
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
@@ -67,6 +69,13 @@ const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "L
 export default function Home() {
   const { musicals: managedMusicals } = useManagedMusicals();
   const { consent } = useConsent();
+  const [saleNow, setSaleNow] = useState(() => new Date());
+  const [saleOnly, setSaleOnly] = useState(false);
+  const blackSaleCampaign = useMemo(
+    () => getBlackSaleCampaign(managedMusicals, saleNow),
+    [managedMusicals, saleNow],
+  );
+  const activeSaleFilter = saleOnly && blackSaleCampaign !== null;
   const [categoryFilter, setCategoryFilter] = useState<ExperienceFilterId>("alle");
   const [countryFilter, setCountryFilter] = useState<CountryFilter>("alle");
   const [cityFilter, setCityFilter] = useState<string>("alle");
@@ -85,6 +94,23 @@ export default function Home() {
   const resultGridRef = useRef<HTMLDivElement>(null);
   const filterPanelRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    // Auch eine offen gebliebene Seite blendet den Störer zum Tages-/Kampagnenende aus.
+    const now = new Date();
+    const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const refresh = () => setSaleNow(new Date());
+    const timer = window.setTimeout(refresh, Math.min(30_000, nextDay.getTime() - now.getTime()));
+    window.addEventListener("focus", refresh);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("focus", refresh);
+    };
+  }, [saleNow]);
+
+  useEffect(() => {
+    if (!blackSaleCampaign) setSaleOnly(false);
+  }, [blackSaleCampaign]);
 
   const scrollToFirstResult = useCallback(() => {
     requestAnimationFrame(() => {
@@ -128,6 +154,7 @@ export default function Home() {
   }, []);
 
   const resetToAdditionalOverview = useCallback(() => {
+    setSaleOnly(false);
     setCategoryFilter("alle");
     setCountryFilter("alle");
     setCityFilter("alle");
@@ -136,6 +163,16 @@ export default function Home() {
     setShowAllMusicals(false);
     window.history.replaceState(window.history.state, "", createMusicalOverviewHref());
   }, []);
+
+  const handleViewSaleShows = useCallback(() => {
+    if (!getBlackSaleCampaign(managedMusicals)) return;
+    resetToAdditionalOverview();
+    setSaleOnly(true);
+    setShowCompleteCatalog(true);
+    setShowAllMusicals(true);
+    setResultAnimationKey((currentKey) => currentKey + 1);
+    window.setTimeout(scrollToFilterPanel, 80);
+  }, [managedMusicals, resetToAdditionalOverview, scrollToFilterPanel]);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -149,6 +186,7 @@ export default function Home() {
 
   useEffect(() => {
     const restoreCategoryFromSharedUrl = () => {
+      setSaleOnly(false);
       const categoryFromUrl = getExperienceCategoryFromSearch(window.location.search);
 
       if (categoryFromUrl) {
@@ -224,6 +262,7 @@ export default function Home() {
   const handleHeroNavigation = useCallback((item: HeroNavigationItem, placement: "hero-mobile" | "hero-desktop") => {
     const { href, kind } = item;
     if (kind === "musical") return;
+    setSaleOnly(false);
 
     if (kind === "overview" && item.id === "all-musicals") {
       setCategoryFilter("alle");
@@ -273,6 +312,7 @@ export default function Home() {
   }, []);
 
   const hasNarrowingFilter =
+    activeSaleFilter ||
     categoryFilter !== "alle" ||
     countryFilter !== "alle" ||
     cityFilter !== "alle" ||
@@ -280,6 +320,7 @@ export default function Home() {
   const includeHighlightsInOverview = showCompleteCatalog || hasNarrowingFilter;
   const selectedExperienceCategory = getExperienceCategory(categoryFilter === "alle" ? undefined : categoryFilter);
   const stickyFilterSummary = [
+    activeSaleFilter ? "BLACK SALE" : undefined,
     selectedExperienceCategory?.shortLabel,
     countryFilter === "de" ? "Deutschland" : countryFilter === "at" ? "Österreich" : countryFilter === "ch" ? "Schweiz" : undefined,
     cityFilter !== "alle" ? cityFilter : undefined,
@@ -296,6 +337,11 @@ export default function Home() {
     // Ohne Auswahl bleibt die Übersicht doppelfrei. Sobald gefiltert wird,
     // durchsucht sie das komplette aktive Angebot einschließlich der Highlights.
     let result = getEditorialOverviewMusicals(includeHighlightsInOverview, managedMusicals);
+
+    if (activeSaleFilter && blackSaleCampaign) {
+      const saleIds = new Set(blackSaleCampaign.musicalIds);
+      result = result.filter((musical) => saleIds.has(musical.id));
+    }
 
     // Redaktionelle Erlebniswelten statt technischer Datenkategorien.
     if (categoryFilter !== "alle") {
@@ -338,7 +384,7 @@ export default function Home() {
     }
 
     return result;
-  }, [categoryFilter, countryFilter, cityFilter, plzSearch, managedMusicals, includeHighlightsInOverview]);
+  }, [categoryFilter, countryFilter, cityFilter, plzSearch, managedMusicals, includeHighlightsInOverview, activeSaleFilter, blackSaleCampaign]);
 
   const dynamicDiscoveryIntro = selectedExperienceCategory
     ? `${selectedExperienceCategory.description} ${cityFilter !== "alle" ? `Entdecke deine Auswahl in ${cityFilter} und finde deinen nächsten besonderen Musicalabend.` : selectedCountryLabel ? `Entdecke deine Auswahl in ${selectedCountryLabel} und finde deinen nächsten besonderen Musicalabend.` : "Finde die Show, die deinen nächsten Musicalabend unvergesslich macht."}`
@@ -481,6 +527,7 @@ export default function Home() {
       {/* ===== FEATURED MUSICALS ===== */}
       <section id="musicals" className={`${MOBILE_HERO_NAVIGATION_BOTTOM_CLASS} ${DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS} pb-16 md:pb-24 scroll-mt-24`}>
         <div className="container">
+          <BlackSaleNotice campaign={blackSaleCampaign} onViewShows={handleViewSaleShows} />
           <div className="flex items-center gap-4 mb-3">
             <div className="w-8 h-px bg-gold" />
             <span className="text-xs text-gold uppercase tracking-[0.2em] font-medium">Highlights</span>
@@ -554,9 +601,26 @@ export default function Home() {
           </button>
 
           <div ref={filterPanelRef} className="mb-10 rounded-2xl border border-gold/20 bg-card/60 p-4 shadow-[0_16px_42px_rgba(0,0,0,0.18)] sm:p-6">
+            {activeSaleFilter && (
+              <div data-testid="black-sale-filter" className="mb-5 flex flex-col gap-3 border-b border-gold/25 pb-5 text-white sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm font-semibold text-white" aria-live="polite">BLACK SALE · Nur aktive Aktionsshows</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSaleOnly(false);
+                    animateUpdatedResults();
+                  }}
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/70 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold active:scale-[0.97]"
+                >
+                  <X className="h-4 w-4" aria-hidden="true" />
+                  BLACK SALE-Filter aufheben
+                </button>
+              </div>
+            )}
             <MusicalFilters
               categoryFilter={categoryFilter}
               setCategoryFilter={(category) => {
+                if (category === "alle") setSaleOnly(false);
                 setCategoryFilter(category);
                 setShowCompleteCatalog(true);
                 setShowAllMusicals(true);
@@ -635,13 +699,7 @@ export default function Home() {
                     Für diese Filterkombination gibt es aktuell keine Ergebnisse.
                   </p>
                   <button
-                    onClick={() => {
-                      setCategoryFilter('alle');
-                      setCountryFilter('alle');
-                      setCityFilter('alle');
-                      setShowCompleteCatalog(false);
-                      setShowAllMusicals(false);
-                    }}
+                    onClick={resetToAdditionalOverview}
                     className="px-4 py-2 text-sm rounded-sm border border-gold/30 text-gold hover:bg-gold/10 transition-colors"
                   >
                     Filter zurücksetzen

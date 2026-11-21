@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { getActiveMusicalCountByCity, getMusicalBySlug } from "./data";
 
 describe("Rapunzel Berlin-Termin", () => {
+  afterEach(() => vi.useRealTimers());
+
   it("enthält den Berlin-Termin im BlueMax Theater mit korrektem Zeitraum", () => {
     const rapunzel = getMusicalBySlug("rapunzel");
     const berlinDate = rapunzel?.tourDates?.find((date) => date.city === "Berlin");
@@ -17,7 +19,9 @@ describe("Rapunzel Berlin-Termin", () => {
     expect(berlinDate?.eventimUrl).toContain("clickref=rapunzel-berlin-dates");
   });
 
-  it("führt Berlin im Rapunzel-Header und zählt mit Fack Ju Göhte, Aschenbrödel, Der Kleine Lord und dem Biest acht aktive Musicals", () => {
+  it("führt Berlin im Rapunzel-Header und zählt im Oktoberstand mit Fack Ju Göhte, Aschenbrödel, Der Kleine Lord und dem Biest acht aktive Musicals", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-20T12:00:00"));
     const rapunzel = getMusicalBySlug("rapunzel");
 
     expect(rapunzel?.cities).toContain("Berlin");

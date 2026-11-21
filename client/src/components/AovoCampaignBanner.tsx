@@ -4,6 +4,8 @@ import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick } from "@/lib/category-analytics";
 import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
+import type { MusicalSale } from "@/lib/data";
+import { isSaleActive } from "@/lib/sale";
 
 export type AovoCampaign = {
   musicalId: string;
@@ -12,8 +14,10 @@ export type AovoCampaign = {
   width: number;
   height: number;
   imageUrl: string;
+  clickUrl?: string; // Exakte, vom Projektinhaber gelieferte URL; verändert nicht das Impressionnetzwerk.
+  promotion?: { imageUrl: string; validUntil: string }; // Datiertes Creative, zusätzlich an das Sheet-Angebot gebunden.
   trackingNetwork?: "tradedoubler" | "stage";
-  placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-gallery";
+  placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-gallery" | "within-season-announcement";
   storyParagraphIndex?: number;
   detailParagraphIndex?: number;
   compactTopSpacing?: boolean;
@@ -29,6 +33,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/WYnMWynDOdrKGiFW.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185722",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UJgPKhwhnwJwDgxx.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 2,
@@ -42,6 +51,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BPkgBMtaBRmniDPS.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185720",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tuNHqvCYYXYuTFZC.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "Salon Rosie Ticketangebot",
@@ -54,6 +68,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QWKJdWesQhytFcux.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185640",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xHKXvjHHESEEEovz.jpg",
+      validUntil: "2026-11-30", // Enddatum aus dem Sheet, geprüft am 21.11.2026.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 4,
@@ -67,6 +86,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UfrgocXJiuRcQTBu.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185638",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZLfXGtmkrHGOoNOx.jpg",
+      validUntil: "2026-11-30",
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "Der-Teufel-trägt-Prada-Ticketangebot",
@@ -79,6 +103,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/osgmYIWPeOyuZfSn.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185658",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/owWZZGWpRzIstsol.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     // Nach dem vollständigen Abschnitt „Spektakel für alle Sinne“;
@@ -94,6 +123,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/lqNxRsgKDNJxTxBA.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185656",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xkxRczJddsOAlGMV.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "Die Eiskönigin Ticketangebot",
@@ -106,6 +140,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/TdEwZrFcppFjxYLL.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26180470",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XJUIQKKUaULjNyHO.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 4,
@@ -143,6 +182,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tiqvXnBdPglWxtcQ.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26180466",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/KVRTmqSgMjYOHZiY.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "MJ-Ticketangebot",
@@ -155,6 +199,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/nNJlNqZzBBkFCxEw.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26180462",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/odQonaPQiRcLmGKP.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 4,
@@ -205,6 +254,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/HcQFjBBQPyQprfJy.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185502",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/VYqCMmjdsLjwDixM.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 4,
@@ -218,6 +272,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/WTvQqjFUcwszTzyS.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185500",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/EhkNrPdpwvFlzEQv.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "Zurück-in-die-Zukunft-Ticketangebot",
@@ -280,6 +339,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/XAikZZLFOHfLKdhM.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185700",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/mxowpUldrZlyEZrT.jpg",
+      validUntil: "2026-11-30",
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 4,
@@ -293,6 +357,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xcZOVgRQGIktemOe.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185698",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/VxqBEqBNXMPdspJI.jpg",
+      validUntil: "2026-11-30",
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "Wir sind am Leben Ticketangebot",
@@ -305,6 +374,11 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 728,
     height: 90,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/iZLYVRYfnhSMdcWc.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185666",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/mviShaCbXqtJIjsj.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "within-detail-description",
     detailParagraphIndex: 3,
@@ -318,10 +392,29 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     width: 300,
     height: 250,
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/iyfrmzybzwFtZpud.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185664",
+    promotion: {
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/awRytLNRSmByGCfT.jpg",
+      validUntil: "2026-11-30", // Sheet-Enddatum; früheres Abschalten im Sheet hat Vorrang.
+    },
     trackingNetwork: "stage",
     placement: "after-gallery",
     adLabel: "&-Julia-Ticketangebot",
     clickAriaLabel: "&-Julia-Ticketangebot in neuem Tab öffnen",
+  },
+  {
+    musicalId: "ziz",
+    musicalTitle: "Zurück in die Zukunft – Stuttgart",
+    groupId: "26229530",
+    width: 300,
+    height: 250,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tfsnyFZLYJhxTNGv.jpg",
+    clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26229530",
+    trackingNetwork: "stage",
+    placement: "within-season-announcement",
+    compactTopSpacing: true,
+    adLabel: "Zurück in die Zukunft – Vorverkauf Stuttgart ab Oktober 2027",
+    clickAriaLabel: "Zurück-in-die-Zukunft-Ticketangebot für Stuttgart in neuem Tab öffnen",
   },
 ];
 
@@ -343,6 +436,19 @@ export function getAovoCampaignClickUrl(
   return `${baseUrl}&g=${groupId}`;
 }
 
+export function resolveAovoCampaignClickUrl(campaign: AovoCampaign) {
+  return campaign.clickUrl ?? getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork);
+}
+
+export function getAovoCampaignImageUrl(campaign: AovoCampaign, sale?: MusicalSale, now = new Date()) {
+  // Die Sheet-Aktion kann das Motiv früher beenden; spätere Aktionen dürfen
+  // das alte Black-Friday-Creative nach seinem eigenen Ende nicht reaktivieren.
+  return campaign.promotion && isSaleActive(sale, now)
+    && isSaleActive({ label: "Creative", discount: "", validUntil: campaign.promotion.validUntil }, now)
+    ? campaign.promotion.imageUrl
+    : campaign.imageUrl;
+}
+
 export function getAovoCampaignImpressionUrl(
   groupId: string,
   cacheBuster: string,
@@ -354,14 +460,14 @@ export function getAovoCampaignImpressionUrl(
   return `${baseUrl}?type(img)g(${groupId})a(3492604)${cacheBuster}`;
 }
 
-export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaign }) {
+export default function AovoCampaignBanner({ campaign, sale }: { campaign: AovoCampaign; sale?: MusicalSale }) {
   const { consent } = useConsent();
   const isInlineWideCampaign = campaign.placement === "within-detail-description" && campaign.width >= 700;
   const impressionUrl = useMemo(
     () => getAovoCampaignImpressionUrl(campaign.groupId, String(Math.random()).slice(2, 11), campaign.trackingNetwork),
     [campaign.groupId, campaign.trackingNetwork]
   );
-  const campaignClickUrl = getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork);
+  const campaignClickUrl = resolveAovoCampaignClickUrl(campaign);
   const safeClickLink = useSafeAffiliateTicketLink(campaignClickUrl, {
     musicalId: campaign.musicalId,
     partner: campaign.trackingNetwork === "stage" ? "stage" : "tradedoubler",
@@ -407,7 +513,7 @@ export default function AovoCampaignBanner({ campaign }: { campaign: AovoCampaig
         aria-label={campaign.clickAriaLabel ?? `Ticket-und-Hotel-Angebot für ${campaign.musicalTitle} in neuem Tab öffnen`}
       >
         <img
-          src={campaign.imageUrl}
+          src={getAovoCampaignImageUrl(campaign, sale)}
           alt=""
           width={campaign.width}
           height={campaign.height}

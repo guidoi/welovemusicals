@@ -51,7 +51,7 @@ function tryDecodeUrlParameter(value: string | null): string | undefined {
 }
 
 function isDirectStageClick(parsed: URL): boolean {
-  return parsed.hostname === STAGE_HOST
+  return (parsed.hostname === STAGE_HOST || parsed.hostname === TRADEDOUBLER_CLICK_HOST)
     && parsed.pathname === "/click"
     && parsed.searchParams.get("p") === "394206"
     && parsed.searchParams.get("a") === "3492604"
@@ -109,6 +109,7 @@ export function getAffiliateOverridePartner(value: string | undefined): Affiliat
   const parsed = tryParseUrl(value);
   if (!parsed) return "other";
   if (parsed.hostname === STAGE_HOST) return "stage";
+  if (parsed.hostname === TRADEDOUBLER_CLICK_HOST && parsed.searchParams.get("p") === "394206") return "stage";
   if (parsed.hostname === TRADEDOUBLER_CLICK_HOST) return "tradedoubler";
   if (parsed.hostname.endsWith("atgtickets.de")) return "atg";
   if (parsed.hostname === AWIN_HOST) {

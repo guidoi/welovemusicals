@@ -6,7 +6,8 @@
  * Alle Termine einer Stadt werden chronologisch untereinander angezeigt.
  * Abgelaufene Termine (endDate < heute) werden automatisch ausgeblendet.
  */
-import { cities, MusicalTourDate } from "@/lib/data";
+import { cities, type MusicalTourDate, type MusicalSeasonAnnouncement } from "@/lib/data";
+import SeasonAnnouncementCard from "@/components/SeasonAnnouncementCard";
 import { getAffiliateOverridePartner } from "@/lib/affiliate-link-safety";
 import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
@@ -23,6 +24,7 @@ import React, { useState } from "react";
 
 interface TourDatesProps {
   tourDates: MusicalTourDate[];
+  seasonAnnouncements?: MusicalSeasonAnnouncement[];
   musicalId?: string;
   forceDropdown?: boolean;
   musicalSlug?: string;
@@ -57,6 +59,7 @@ function groupByCity(tourDates: MusicalTourDate[]): Record<string, MusicalTourDa
 }
 export default function TourDates({
   tourDates,
+  seasonAnnouncements = [],
   musicalId = "unknown",
   forceDropdown = false,
   musicalSlug,
@@ -64,10 +67,10 @@ export default function TourDates({
 }: TourDatesProps) {
   const [selectedCity, setSelectedCity] = useState<string>("alle");
 
-  if (!tourDates || tourDates.length === 0) return null;
+  if ((!tourDates || tourDates.length === 0) && seasonAnnouncements.length === 0) return null;
 
   // Abgelaufene Termine herausfiltern
-  const upcomingDates = tourDates.filter((d) => isUpcoming(d.endDate));
+  const upcomingDates = (tourDates ?? []).filter((d) => isUpcoming(d.endDate));
 
   const usesStageProductPage = upcomingDates.some((date) => date.eventimUrl.includes("stage-entertainment.de"));
   const usesAtgTickets = upcomingDates.some((date) => date.eventimUrl.includes("atgtickets.de"));
@@ -78,11 +81,11 @@ export default function TourDates({
       : "eventim.de";
 
   // Wenn alle Termine abgelaufen sind, Abschnitt komplett ausblenden
-  if (upcomingDates.length === 0) return null;
+  if (upcomingDates.length === 0 && seasonAnnouncements.length === 0) return null;
 
   // Städte alphabetisch sortieren (nur noch aus zukünftigen Terminen)
   const allCities = Array.from(
-    new Set(upcomingDates.map((d) => d.city))
+    new Set([...upcomingDates.map((d) => d.city), ...seasonAnnouncements.map((season) => season.city)])
   ).sort((a, b) => a.localeCompare(b, "de"));
 
   // Gefilterte Daten nach Stadtauswahl
@@ -90,6 +93,9 @@ export default function TourDates({
     selectedCity === "alle"
       ? upcomingDates
       : upcomingDates.filter((d) => d.city === selectedCity);
+  const filteredAnnouncements = seasonAnnouncements.filter(
+    (season) => selectedCity === "alle" || season.city === selectedCity,
+  );
 
   // Nach Stadt gruppieren (alphabetisch nach Stadtname sortiert)
   const grouped = groupByCity(filteredDates);
@@ -233,7 +239,15 @@ export default function TourDates({
           })}
         </div>
 
-        {sortedCityEntries.length === 0 && (
+        {filteredAnnouncements.length > 0 && (
+          <div className="mx-auto mt-6 flex max-w-2xl flex-col gap-4">
+            {filteredAnnouncements.map((announcement) => (
+              <SeasonAnnouncementCard key={`${announcement.city}-${announcement.startDate}`} announcement={announcement} musicalId={musicalId} />
+            ))}
+          </div>
+        )}
+
+        {sortedCityEntries.length === 0 && filteredAnnouncements.length === 0 && (
           <div className="text-center py-12">
             <p className="text-foreground/60 text-lg">
               Keine Termine für diese Stadt verfügbar.

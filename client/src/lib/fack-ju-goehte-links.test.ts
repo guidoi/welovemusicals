@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { getActiveMusicalsByCity, getMusicalBySlug } from "./data";
 
 describe("Fack Ju Göhte Affiliate-Links", () => {
+  afterEach(() => vi.useRealTimers());
+
   it("verwendet den gelieferten AWIN-Textlink für allgemeine CTAs", () => {
     const musical = getMusicalBySlug("fack-ju-goehte");
     expect(musical).toBeDefined();
@@ -28,10 +30,21 @@ describe("Fack Ju Göhte Affiliate-Links", () => {
     expect(berlin?.eventimUrl).not.toContain("linkid=4568988");
   });
 
-  it("führt die aktuelle Berliner BlueMax-Spielzeit auf Stadtseite und in Ortsfiltern", () => {
+  it("führt die Berliner BlueMax-Spielzeit während der Laufzeit auf Stadtseite und in Ortsfiltern", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-10-20T12:00:00"));
     const berlinIds = getActiveMusicalsByCity("Berlin").map((musical) => musical.id);
 
     expect(berlinIds).toContain("fackjugoehte");
+  });
+
+  it("blendet abgelaufene Berliner Termine aus, ohne deren Datensatz oder Affiliate-Link zu entfernen", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-11-21T12:00:00"));
+    expect(getActiveMusicalsByCity("Berlin").map((musical) => musical.id)).not.toContain("fackjugoehte");
+    const berlin = getMusicalBySlug("fack-ju-goehte")?.tourDates?.find((date) => date.city === "Berlin");
+    expect(berlin?.endDate).toBe("2026-10-31");
+    expect(berlin?.eventimUrl).toContain("clickref=fjg-berlin-dates");
   });
 
   it("führt den Tabellenpreis als redaktionellen Fallback ohne abgelaufene Sale-Aktion", () => {

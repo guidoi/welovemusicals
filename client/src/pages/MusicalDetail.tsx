@@ -393,7 +393,7 @@ export default function MusicalDetail() {
                         {inlineDescriptionCampaign?.placement === "within-detail-description" &&
                           i === inlineDescriptionCampaign.detailParagraphIndex && (
                             <div className="hidden lg:block" data-testid="within-detail-description-campaign">
-                              <AovoCampaignBanner campaign={inlineDescriptionCampaign} />
+                              <AovoCampaignBanner campaign={inlineDescriptionCampaign} sale={musical.sale} />
                             </div>
                           )}
                         {/* Mobile Video:
@@ -440,7 +440,7 @@ export default function MusicalDetail() {
                         {inlineDescriptionCampaign?.placement === "within-detail-description" &&
                           i === inlineDescriptionCampaign.detailParagraphIndex && (
                             <div className="lg:hidden" data-testid="within-detail-description-campaign-mobile">
-                              <AovoCampaignBanner campaign={inlineDescriptionCampaign} />
+                              <AovoCampaignBanner campaign={inlineDescriptionCampaign} sale={musical.sale} />
                             </div>
                           )}
                         {musical.inlineDetailImage && musical.inlineDetailImageAfterParagraphIndex === i && (
@@ -487,7 +487,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
+          <TourDates tourDates={musical.tourDates} seasonAnnouncements={musical.seasonAnnouncements} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
         )}
       </div>
 
@@ -508,7 +508,7 @@ export default function MusicalDetail() {
                   <Fragment key={index}>
                     {aovoCampaign?.placement === "before-story-paragraph" &&
                       index === aovoCampaign.storyParagraphIndex && (
-                        <AovoCampaignBanner campaign={aovoCampaign} />
+                        <AovoCampaignBanner campaign={aovoCampaign} sale={musical.sale} />
                       )}
                     <p
                       className={`mb-4 text-lg leading-relaxed text-cream/80 ${
@@ -651,7 +651,7 @@ export default function MusicalDetail() {
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
             {afterGalleryCampaigns.map((campaign) => (
-              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
+              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} sale={musical.sale} />
             ))}
             {musical.id === "dracula" && <EventimDraculaBanner format="square" />}
             {awinShowCampaign && <AwinShowCampaignBanner campaign={awinShowCampaign} format="square" />}
@@ -707,7 +707,7 @@ export default function MusicalDetail() {
         >
           <div className="container max-w-4xl">
             {afterFaqCampaigns.map((campaign) => (
-              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} />
+              <AovoCampaignBanner key={campaign.groupId} campaign={campaign} sale={musical.sale} />
             ))}
           </div>
         </section>
@@ -717,7 +717,7 @@ export default function MusicalDetail() {
       {aovoCampaign && !aovoCampaign.placement && (
         <section className="py-12 md:py-16 bg-background" data-testid="musical-campaign-section">
           <div className="container max-w-4xl">
-            {!aovoCampaign?.placement && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} />}
+            {!aovoCampaign?.placement && aovoCampaign && <AovoCampaignBanner campaign={aovoCampaign} sale={musical.sale} />}
           </div>
         </section>
       )}
