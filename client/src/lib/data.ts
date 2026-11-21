@@ -1503,7 +1503,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: TARZAN_STAGE_TEXT_LINK_URL,
     awinBoxUrl: TARZAN_STAGE_TEXT_LINK_URL,
     youtubeTrailerId: "-N3CbbBAyMM",
-    featured: true,
+    featured: false,
     tags: ["Disney", "Familie", "Ensuite"],
     sale: {
       label: "SALE",
@@ -2095,7 +2095,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: UND_JULIA_STAGE_TEXT_LINK_URL,
     awinBoxUrl: UND_JULIA_STAGE_TEXT_LINK_URL,
     youtubeTrailerId: "2W1AQr11rqo",
-    featured: false,
+    featured: true,
     tags: ["Pop-Musical", "Feel-Good", "Party-Garantie"],
     uspItems: [
       { icon: "Music", title: "24 Nummer-1-Pop-Hits", text: "Roar, Can't Stop The Feeling, Perfect, Overprotected, Domino und viele mehr in englischer Originalfassung" },
@@ -2468,7 +2468,7 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 export const FEATURED_MUSICAL_IDS = [
   "koenig-der-loewen",
   "eiskoenigin",
-  "tarzan",
+  "und-julia",
   "starlight-express",
   "moulinrouge",
   "gloeckner-von-notre-dame",

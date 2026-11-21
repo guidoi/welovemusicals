@@ -13,7 +13,7 @@ describe("Top-Musicals auf der Startseite", () => {
     expect(FEATURED_MUSICAL_IDS).toEqual([
       "koenig-der-loewen",
       "eiskoenigin",
-      "tarzan",
+      "und-julia",
       "starlight-express",
       "moulinrouge",
       "gloeckner-von-notre-dame",
@@ -24,11 +24,22 @@ describe("Top-Musicals auf der Startseite", () => {
     expect(getFeaturedMusicals().map((musical) => musical.id)).toEqual(FEATURED_MUSICAL_IDS);
   });
 
-  it("führt & Julia, Dracula und Drei Haselnüsse ausschließlich außerhalb der Highlights", () => {
-    for (const id of ["und-julia", "dracula", "dreihaselnuesse"]) {
+  it("führt Tarzan, Dracula und Drei Haselnüsse ausschließlich außerhalb der Highlights", () => {
+    for (const id of ["tarzan", "dracula", "dreihaselnuesse"]) {
       expect(FEATURED_MUSICAL_IDS).not.toContain(id);
       expect(musicals.find((musical) => musical.id === id)?.featured).toBe(false);
     }
+  });
+
+  it("hebt & JULIA ohne Duplikat hervor und erhält Tarzans Katalogdaten und Affiliatepfade", () => {
+    const julia = musicals.find((musical) => musical.id === "und-julia");
+    const tarzan = musicals.find((musical) => musical.id === "tarzan");
+    expect(julia?.featured).toBe(true);
+    expect(getFeaturedMusicals()[2]).toBe(julia);
+    expect(getAdditionalMusicals().filter((musical) => musical.id === "und-julia")).toHaveLength(0);
+    expect(ACTIVE_MUSICAL_IDS).toContain("tarzan");
+    expect(tarzan?.eventimUrl).toBe("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408");
+    expect(tarzan?.tourDates?.[0].endDate).toBe("2026-10-31");
   });
 
   it("nutzt bei den drei Artwork-Tests nur auf der Startseitenkarte offizielle WebP-Motive", () => {
