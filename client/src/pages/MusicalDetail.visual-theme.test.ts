@@ -7,6 +7,7 @@ const home = readFileSync(new URL("./Home.tsx", import.meta.url), "utf8");
 const css = readFileSync(new URL("../index.css", import.meta.url), "utf8").toLowerCase();
 const html = readFileSync(new URL("../../index.html", import.meta.url), "utf8").toLowerCase();
 const gallery = readFileSync(new URL("../components/MusicalGallery.tsx", import.meta.url), "utf8");
+const header = readFileSync(new URL("../components/Header.tsx", import.meta.url), "utf8");
 
 function surfaceTag(source: string, surface: string) {
   return source.match(new RegExp(`<section[^>]*data-visual-surface="${surface}"[^>]*>`))?.[0] ?? "";
@@ -59,12 +60,25 @@ describe("Freigegebenes warmgraues Musical-Farbkonzept", () => {
     expect(css).toContain("color: var(--color-gold-light);");
   });
 
-  it("behält Abschnitte, Ticketpfade, Bildmaße und mobile Headerabstände unverändert bei", () => {
+  it("gleicht den universellen Hero-Abstand an die unveränderte Höhe des deckenden Fix-Headers an", () => {
+    const headerClasses = header.match(/<header className="([^"]+)"/ )?.[1] ?? "";
+    expect(headerClasses).toBe("fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-[#111111]");
+    const headerContainer = header.match(/<div className="container flex items-center justify-between ([^"]+)"/)?.[1] ?? "";
+    const headerHeights = headerContainer.split(/\s+/).filter(className => /(?:^|:)h-/.test(className));
+    expect(headerHeights).toEqual(["h-16", "md:h-20"]);
+    const heroClasses = surfaceTag(detail, "hero").match(/className="([^"]+)"/)?.[1] ?? "";
+    const heroMargins = heroClasses.split(/\s+/).filter(className => /(?:^|:)mt-/.test(className));
+    expect(heroMargins).toEqual(["mt-[calc(4rem+1px)]", "md:mt-[calc(5rem+1px)]"]);
+    expect(heroClasses).toBe("musical-detail-hero relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)] min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden");
+    expect(heroClasses).not.toContain("lg:mt-0");
+  });
+
+  it("behält Abschnitte, Ticketpfade und Bildmaße bei dem universellen Headerabstand unverändert bei", () => {
     const markers = ["{/* Content */}", "{/* Tour Dates */}", "{/* Story */}", "{/* Ticket CTA", "{/* Pressequotes */}", "{/* Gallery */}", "{/* Show Facts + FAQ */}", "{/* Related Musicals"];
     const positions = markers.map(marker => detail.indexOf(marker));
     expect(positions.every(position => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
-    expect(detail).toContain('mobileHeroBelowHeader ? "mt-20 lg:mt-0"');
+    expect(surfaceTag(detail, "hero")).toContain('className="musical-detail-hero relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)] min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden"');
     expect(detail).toContain('className="w-full h-full object-cover object-top"');
     expect(detail).toContain("href={boxTicketLink}");
     expect(detail).toContain("href={heroTicketLink}");

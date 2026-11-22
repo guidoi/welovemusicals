@@ -4,9 +4,17 @@ import { describe, expect, it } from "vitest";
 const musicalDetailSource = readFileSync(new URL("./MusicalDetail.tsx", import.meta.url), "utf8");
 
 describe("Erlebnis-Kategorie auf Musical-Detailseiten", () => {
-  it("respektiert bei Bildern mit wichtigen oberen Motiven den mobilen Fix-Header", () => {
-    expect(musicalDetailSource).toContain("const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;");
-    expect(musicalDetailSource).toContain('mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""');
+  it("startet den Hero für jede Show unter dem mobilen und Desktop-Fix-Header", () => {
+    const heroTag = musicalDetailSource.match(/<section data-visual-surface="hero"[^>]*>/)?.[0];
+    expect(heroTag).toBe('<section data-visual-surface="hero" className="musical-detail-hero relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)] min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">');
+  });
+
+  it("setzt den Hero weder bedingt noch ab einem größeren Breakpoint auf den Seitenanfang zurück", () => {
+    const heroTag = musicalDetailSource.match(/<section data-visual-surface="hero"[^>]*>/)?.[0] ?? "";
+    expect(heroTag).toContain("relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)]");
+    expect(heroTag).not.toMatch(/(?:^|[\s"`])(?:\w+:)*(?:-?mt-0|top-0|inset-0)(?=[\s"`])/);
+    expect(heroTag).not.toContain("lg:mt-0");
+    expect(heroTag).not.toContain("?");
   });
 
   it("ermittelt und zeigt die zentrale Erlebniswelt im Hero an", () => {

@@ -10,7 +10,8 @@ describe("Die Eiskönigin sale teaser", () => {
     expect(eiskoenigin?.heroImage).toContain("ElsaUndAnna_Finale_HoldingHands");
     expect(eiskoenigin?.mobileHeroBelowHeader).toBe(true);
     const detailSource = readFileSync("client/src/pages/MusicalDetail.tsx", "utf8");
-    expect(detailSource).toContain('mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""');
+    expect(detailSource).toContain('className="musical-detail-hero relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)] min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden"');
+    expect(detailSource).not.toContain('mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""');
   });
 
   it("zeigt die aktuelle 15%-Stage-Aktion als aktiven Sale-Störer", () => {

@@ -240,7 +240,6 @@ export default function MusicalDetail() {
   const stickyTicketCtaCityLabel = showTicketCityInLabel ? `${stickyTicketCta.label} · ${citySelection.city}` : stickyTicketCta.label;
   const desktopKeyvisual = musical.keyvisual || musical.image;
   const desktopKeyvisualLandscape = musical.keyvisualLandscape || musical.id === "moulinrouge" || musical.id === "phantom-der-oper" || musical.id === "gloeckner-von-notre-dame" || musical.id === "starlight-express";
-  const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;
   const trackDetailTicketClick = (placement: AffiliateClickPlacement, ticketUrl: string) => {
     trackAffiliateTicketClick({
       musicalId: musical.id,
@@ -292,7 +291,7 @@ export default function MusicalDetail() {
       </Link>
 
       {/* Hero */}
-      <section data-visual-surface="hero" className={`musical-detail-hero relative ${mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""} min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden`}>
+      <section data-visual-surface="hero" className="musical-detail-hero relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)] min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={musical.heroImage || musical.image}

@@ -203,6 +203,28 @@
     );
   }
 
+  /* KDL: leuchtendes Gelb im unteren Bildbereich, dann weich in den grauen Content. */
+  .musical-detail-page[data-musical-id="koenig-der-loewen"] .musical-detail-hero {
+    --hero-content-fade-space: 3rem;
+  }
+
+  .musical-detail-page[data-musical-id="koenig-der-loewen"] .musical-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      transparent 15%,
+      color-mix(in srgb, var(--musical-color) 40%, transparent) 45%,
+      var(--musical-color) 68%,
+      var(--musical-color) calc(100% - var(--hero-content-fade-space)),
+      var(--background) 100%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .musical-detail-page[data-musical-id="koenig-der-loewen"] .musical-detail-hero {
+      --hero-content-fade-space: 4rem;
+    }
+  }
+
   .musical-tone-section {
     --foreground: var(--musical-foreground);
     background-color: var(--musical-color-deep);
@@ -250,6 +272,18 @@
 
   .musical-detail-hero :is(.text-gold, [class*="text-gold/"]) {
     color: var(--color-gold-light);
+  }
+
+  .musical-detail-page[data-musical-id="koenig-der-loewen"] .musical-detail-hero > .container {
+    padding-bottom: var(--hero-content-fade-space);
+  }
+
+  .musical-detail-page[data-musical-id="koenig-der-loewen"] .musical-detail-hero :is(h1, .text-gold, [class*="text-gold/"], [class*="text-cream"]) {
+    color: var(--musical-foreground);
+  }
+
+  .musical-detail-page[data-musical-id="koenig-der-loewen"] .musical-detail-hero [data-testid="detail-experience-category"] {
+    border-color: currentColor;
   }
 }
 
