@@ -35,13 +35,26 @@ describe("WBT: explizite Stadtproduktseiten", () => {
     }
     expect(detail).toContain("campaign.city === citySelection.city");
     expect(detail).toContain("onSelectedCityChange={cityTicketCandidate ? setSelectedTicketCity : undefined}");
-    expect(detail).toContain('const ticketCtaCityLabel = cityTicketCandidate ? `${ticketCta.label} · ${citySelection.city}`');
+    expect(detail).toContain('const ticketCtaCityLabel = showTicketCityInLabel ? `${ticketCta.label} · ${citySelection.city}`');
     expect(detail).not.toContain("TicketCitySelector");
     expect(detail).not.toContain("ticketCitySelector");
     expect(detail).not.toContain("Produktseite & Tickets: Spielort");
     expect(detail).toContain('selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined}');
     expect(detail).toContain('hideCityFilter={musical.id === "weihnachten-mit-bibi-tina"}');
     expect(detail).toContain('`Aktuell: ${ticketCtaCityLabel} – direkt bei ${ticketProviderName}.`');
+  });
+
+  it("nennt bei WBT in allgemeinen Aktions- und Preis-CTAs keine einzelne Stadt", () => {
+    const detail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
+    expect(detail).toContain('const showTicketCityInLabel = Boolean(cityTicketCandidate) && musical.id !== "weihnachten-mit-bibi-tina";');
+    expect(detail).toContain('const stickyTicketCtaCityLabel = showTicketCityInLabel ? `${stickyTicketCta.label} · ${citySelection.city}` : stickyTicketCta.label;');
+    expect(detail).toContain('${showTicketCityInLabel ? ` in ${citySelection.city}` : ""}');
+    expect(detail).toContain("href={heroTicketLink}");
+    expect(detail).toContain("href={boxTicketLink}");
+    expect(detail).toContain("href={stickyTicketLink}");
+    const musical = getMusicalBySlug("weihnachten-mit-bibi-tina")!;
+    expect(musical.ticketUrlsByCity).toEqual({ Berlin, Hamburg });
+    expect(musical.tourDates?.map((date) => date.eventimUrl)).toEqual([Berlin, Hamburg]);
   });
 
   it("zeigt beide Städte samt Theater auch ohne einzelne Hauptstadt im Detailheader", () => {

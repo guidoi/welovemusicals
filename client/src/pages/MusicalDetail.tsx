@@ -233,9 +233,10 @@ export default function MusicalDetail() {
   const ticketProviderDomain = usesStageProductPage ? "stage-entertainment.de" : usesAtgTickets ? "atgtickets.de" : "eventim.de";
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const ticketCta = getTicketCta(musical);
-  const ticketCtaCityLabel = cityTicketCandidate ? `${ticketCta.label} · ${citySelection.city}` : ticketCta.label;
+  const showTicketCityInLabel = Boolean(cityTicketCandidate) && musical.id !== "weihnachten-mit-bibi-tina";
+  const ticketCtaCityLabel = showTicketCityInLabel ? `${ticketCta.label} · ${citySelection.city}` : ticketCta.label;
   const stickyTicketCta = getStickyTicketCta(musical);
-  const stickyTicketCtaCityLabel = cityTicketCandidate ? `${stickyTicketCta.label} · ${citySelection.city}` : stickyTicketCta.label;
+  const stickyTicketCtaCityLabel = showTicketCityInLabel ? `${stickyTicketCta.label} · ${citySelection.city}` : stickyTicketCta.label;
   const desktopKeyvisual = musical.keyvisual || musical.image;
   const desktopKeyvisualLandscape = musical.keyvisualLandscape || musical.id === "moulinrouge" || musical.id === "phantom-der-oper" || musical.id === "gloeckner-von-notre-dame" || musical.id === "starlight-express";
   const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;
@@ -633,7 +634,7 @@ export default function MusicalDetail() {
             <p className="text-muted-foreground mb-6 leading-relaxed">
               {ticketCta.kind === "offer"
                 ? `Aktuell: ${ticketCtaCityLabel} – direkt bei ${ticketProviderName}.`
-                : `Sichere dir jetzt deine Tickets für ${musical.title}${cityTicketCandidate ? ` in ${citySelection.city}` : ""} – bequem und sicher über ${ticketProviderName}.`}
+                : `Sichere dir jetzt deine Tickets für ${musical.title}${showTicketCityInLabel ? ` in ${citySelection.city}` : ""} – bequem und sicher über ${ticketProviderName}.`}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a

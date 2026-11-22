@@ -1353,3 +1353,13 @@ Freigabe: Nutzer liefert exakt neue clk.tradedoubler.com-Clicklinks und präzisi
 - [x] Finale Browserprüfung390/1440 erfolgreich: alle neun Shows je sechs exakte Textlinks inklusive Keyvisual/Hero/Box/Sticky/Termine und Stage-Branding; vier Bannerhandler mit exakten Clickzielen und noopener lokal abgefangen. Einfacher goldener Rahmen, zentrierter BLACK-SALE-Inhalt, Logo-Rot und keine laufenden Lichteffekte auf beiden Breiten. Ohne Consent keine Trackingrequests; mit Affiliate-Consent unveränderte Stage-Impressionen und Converteranforderung, alle Partnerrequests lokal geblockt. Keine JS-Fehler/Overflow/echten Affiliateklicks. Testselector berücksichtigt responsive Banner-Duplikate.
 
 Kein Cloudflare-Produktionsdeployment durchgeführt. Tatsächliche Partnerverbuchung/Provisionen sind durch lokale Codeprüfung allein nicht bestätigt; keine echten Affiliate-Klicks oder Impressionen zu Testzwecken ausgelöst.
+
+## 22.11.2026 – WBT ohne Berlin-Zusatz in allgemeinen Ticket-/SALE-CTAs
+
+- [x] Nutzerwunsch09:50:26: einzelne Stadt Berlin aus rotem WBT-Aktionsbutton entfernen, da die Show Berlin und Hamburg umfasst. Nur Beschriftung angepasst; keine neue Aussage zur tatsächlichen Flex-Sale-Gültigkeit erfunden.
+- [x] WBT-spezifische Anzeigeausnahme showTicketCityInLabel entfernt den automatisch gewählten Berlin-Zusatz aus Hero-SALE-CTA, Angebotsbegleittext/Aria-Beschriftung und preisorientiertem mobilen Footer. Auch Standard-Ticketbegleittext neutral; andere Shows behalten ihre Stadthinweise.
+- [x] Rabattwert/Zeiträume/Preis12,50/Katalogdaten/Original-BERg26149442-HAMg26175768-Ziele, beide Termine/Theater, Banner, Tracking, Consent und Converter unverändert; kein City-Selector hinzugefügt. Kein Cloudflare-Produktionsdeployment.
+- [x] Neue WBT-Regression für neutrale Beschriftung und unveränderte Original-Stadtziele.117Dateien492Tests,tsc,Produktionsbuild,AffiliateGate85Stage254Awin14weitere,Bildstandard22Shows23Städte,statischesSEO unddiffcheck erfolgreich.
+- [x] Browser390/1440 bestätigt WBT-SALE-CTAs ohne Berlin/Hamburg-Zusatz, neutralen Footer, beide ursprünglichen Stadtlinks/Theater, ausreichenden mobilen Innenabstand, keinen Overflow/JS-Fehler/Trackingrequest ohneConsent. Sämtliche Partneraufrufe abgefangen, keine Testklicks.
+
+Ausgangspunkt/Rollback54a1ebba. Offene ZIZ-Zuordnungsfrage aus dem vorherigen Auftrag bleibt ausdrücklich unverändert offen.
