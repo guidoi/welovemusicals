@@ -34,7 +34,7 @@ export default function BlackSaleNotice({ campaign, onViewShows }: BlackSaleNoti
             </div>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-white">
-            Ausgewählte Shows und Vorstellungen; Bedingungen beim Anbieter
+            Ausgewählte Shows und Vorstellungen
           </p>
         </div>
         <button

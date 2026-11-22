@@ -21,13 +21,14 @@ describe("BlackSaleNotice", () => {
     expect(render(null)).toBe("");
   });
 
-  it("zeigt die dynamische Ersparnis, das Sheet-Ende, den CTA und Anbieterbedingungen", () => {
+  it("zeigt Ersparnis, Aktionsende und CTA ohne den entfernten Anbieterbedingungen-Zusatz", () => {
     const markup = render(campaign);
     expect(markup).toContain("BLACK SALE");
     expect(markup).toContain("Bis zu 40 % sparen");
     expect(markup).toContain('<time dateTime="2026-11-30">30.11.2026</time>');
     expect(markup).toContain("Aktionsshows ansehen");
-    expect(markup).toContain("Ausgewählte Shows und Vorstellungen; Bedingungen beim Anbieter");
+    expect(markup).toContain("Ausgewählte Shows und Vorstellungen");
+    expect(markup).not.toContain("Bedingungen beim Anbieter");
     expect(markup).not.toContain("Stuttgart");
     expect(markup).not.toContain("<img");
     expect(markup).not.toMatch(/fixed|sticky|role="dialog"/);

@@ -18,7 +18,8 @@ describe("BLACK SALE – kompakte Desktopdarstellung", () => {
     expect(source).toContain('data-testid="black-sale-view-shows"');
     expect(source).toContain("min-h-11");
     expect(source).toContain("text-white");
-    expect(source).toContain("Ausgewählte Shows und Vorstellungen; Bedingungen beim Anbieter");
+    expect(source).toContain("Ausgewählte Shows und Vorstellungen");
+    expect(source).not.toContain("Bedingungen beim Anbieter");
   });
 
   it("nutzt für das Label den Logo-Rot-Token und erhält seine Größe und Breite", () => {
@@ -36,7 +37,7 @@ describe("BLACK SALE – kompakte Desktopdarstellung", () => {
     expect(indexCss).not.toMatch(/\.black-sale-notice\b|black-sale-frame-light|--black-sale-light/);
   });
 
-  it("zentriert Label, Angebotszeile, Bedingungen und CTA auch mobil bis 767px", () => {
+  it("zentriert Label, Angebotszeile, Hinweis und CTA auch mobil bis 767px", () => {
     expect(source).toContain('data-testid="black-sale-content" className="flex flex-col gap-3 text-center md:flex-row');
     expect(source).toContain('className="flex flex-col items-center gap-3"');
     expect(source).toContain('data-testid="black-sale-offer-line" className="flex w-full items-center justify-center gap-3"');
