@@ -1,0 +1,204 @@
+{
+  "retrieved": "2026-11-22",
+  "sources": [
+    "https://showslot.com/de/musicals-shows/der-kleine-lord/tickets/",
+    "https://showslot.com/de/musicals-shows/der-kleine-lord/tickets/?seite=2",
+    "https://showslot.com/de/musicals-shows/der-kleine-lord/",
+    "https://www.eventim.de/en/event/der-kleine-lord-das-musical-tipsarena-linz-22233603/"
+  ],
+  "source_city_count": 21,
+  "berlin_policy": "Nutzer: alle außer Berlin neu hinzufügen, Berlin einmalig oben. Bestehenden Berliner Datensatz 13.11.–30.12.2026 und dessen Originalticketpfad bewahren; kein Duplikat aus dem aktuell gefilterten ShowSlot-Kalender 22.11.–31.12.2026 erzeugen.",
+  "affiliate_policy": "Alle neuen Stadttermine über bestehendes eigenes Awin-Eventim-Programm11388/Publisher2865727 zu bereinigten Eventim-Zielen. Keine ShowSlot-Trackingparameter affiliate=SS_/MXA/J81/TUG oder utm_*. Linz26.12.2027, TipsArena Linz, bei Eventim direkt verifiziert; Oeticket-Ziel bleibt als Referenz, kein falscher Merchant für Oeticket. Bestehende Berliner Clicklinks/Publisher/Banner/Consent unverändert.",
+  "tour": [
+    {
+      "city": "Bochum",
+      "venue": "RuhrCongress",
+      "startDate": "2028-01-14",
+      "endDate": "2028-01-15",
+      "ticketCity": "bochum",
+      "page": 1,
+      "sourceVenue": "RuhrCongress Bochum"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2027-12-16",
+      "endDate": "2027-12-16",
+      "ticketCity": "braunschweig",
+      "page": 1
+    },
+    {
+      "city": "Bremen",
+      "venue": "Metropol Theater",
+      "startDate": "2027-12-10",
+      "endDate": "2027-12-12",
+      "ticketCity": "bremen",
+      "page": 1,
+      "sourceVenue": "Metropol Theater Bremen"
+    },
+    {
+      "city": "Bremerhaven",
+      "venue": "Stadthalle",
+      "startDate": "2027-12-07",
+      "endDate": "2027-12-08",
+      "ticketCity": "bremerhaven",
+      "page": 1,
+      "sourceVenue": "Stadthalle Bremerhaven"
+    },
+    {
+      "city": "Cottbus",
+      "venue": "Stadthalle",
+      "startDate": "2028-01-04",
+      "endDate": "2028-01-04",
+      "ticketCity": "cottbus",
+      "page": 1,
+      "sourceVenue": "Stadthalle Cottbus"
+    },
+    {
+      "city": "Dresden",
+      "venue": "Alter Schlachthof",
+      "startDate": "2028-01-05",
+      "endDate": "2028-01-06",
+      "ticketCity": "dresden",
+      "page": 1
+    },
+    {
+      "city": "Halle (Saale)",
+      "sourceCity": "Halle / Saale",
+      "venue": "Georg-Friedrich-Händel HALLE",
+      "startDate": "2027-12-22",
+      "endDate": "2027-12-23",
+      "ticketCity": "halle saale",
+      "page": 1
+    },
+    {
+      "city": "Husum",
+      "venue": "NCC NordseeCongressCentrum",
+      "startDate": "2027-12-14",
+      "endDate": "2027-12-14",
+      "ticketCity": "husum",
+      "page": 1
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2027-12-13",
+      "endDate": "2027-12-13",
+      "ticketCity": "kiel",
+      "page": 1
+    },
+    {
+      "city": "Koblenz",
+      "venue": "Rhein-Mosel-Halle",
+      "sourceVenue": "Rhein-Mosel-Halle Koblenz",
+      "startDate": "2027-11-28",
+      "endDate": "2027-11-29",
+      "ticketCity": "koblenz",
+      "page": 1
+    },
+    {
+      "city": "Landau",
+      "sourceCity": "Landau In Der Pfalz",
+      "venue": "Jugendstil-Festhalle",
+      "startDate": "2027-12-01",
+      "endDate": "2027-12-05",
+      "ticketCity": "landau",
+      "page": 1
+    },
+    {
+      "city": "Leipzig",
+      "venue": "Haus Auensee",
+      "startDate": "2027-12-28",
+      "endDate": "2027-12-30",
+      "ticketCity": "leipzig",
+      "page": 2
+    },
+    {
+      "city": "Linz",
+      "venue": "TipsArena",
+      "startDate": "2027-12-26",
+      "endDate": "2027-12-26",
+      "ticketCity": "linz",
+      "ticketProvider": "eventim",
+      "sourceTicketUrl": "https://www.oeticket.com/artist/der-kleine-lord-das-musical/?affiliate=J81&cityname=linz",
+      "page": 2,
+      "verifiedEventimEventUrl": "https://www.eventim.de/en/event/der-kleine-lord-das-musical-tipsarena-linz-22233603/",
+      "verifiedEventimDate": "2027-12-26",
+      "sourceVenue": "TipsArena Linz"
+    },
+    {
+      "city": "Magdeburg",
+      "venue": "Stadthalle",
+      "startDate": "2028-01-01",
+      "endDate": "2028-01-02",
+      "ticketCity": "magdeburg",
+      "page": 2,
+      "sourceVenue": "Stadthalle Magdeburg"
+    },
+    {
+      "city": "Nürnberg",
+      "venue": "Meistersingerhalle",
+      "startDate": "2028-01-11",
+      "endDate": "2028-01-12",
+      "ticketCity": "nürnberg",
+      "page": 2,
+      "sourceVenue": "Meistersingerhalle Nürnberg"
+    },
+    {
+      "city": "Ravensburg",
+      "venue": "Oberschwabenhalle",
+      "startDate": "2028-01-08",
+      "endDate": "2028-01-08",
+      "ticketCity": "ravensburg",
+      "page": 2,
+      "sourceVenue": "Oberschwabenhalle Ravensburg"
+    },
+    {
+      "city": "Rostock",
+      "venue": "StadtHalle",
+      "startDate": "2027-11-23",
+      "endDate": "2027-11-24",
+      "ticketCity": "rostock",
+      "page": 2,
+      "sourceVenue": "StadtHalle inRostock"
+    },
+    {
+      "city": "Schwerin",
+      "venue": "Sport- und Kongresshalle",
+      "startDate": "2027-11-25",
+      "endDate": "2027-11-26",
+      "ticketCity": "schwerin",
+      "page": 2,
+      "sourceVenue": "Sport- und Kongresshalle Schwerin"
+    },
+    {
+      "city": "Siegen",
+      "venue": "Siegerlandhalle",
+      "startDate": "2027-12-01",
+      "endDate": "2027-12-05",
+      "ticketCity": "siegen",
+      "page": 2
+    },
+    {
+      "city": "Wolfsburg",
+      "venue": "CongressPark",
+      "startDate": "2027-12-17",
+      "endDate": "2027-12-18",
+      "ticketCity": "wolfsburg",
+      "page": 2,
+      "sourceVenue": "CongressPark Wolfsburg"
+    }
+  ],
+  "pagination_verification": {
+    "checked": "2026-11-22T10:12:39+01:00",
+    "officialPages": [
+      1,
+      2
+    ],
+    "page1CityCount": 12,
+    "page2CityCount": 9,
+    "officialTotalCityCount": 21,
+    "page3": "Direkt geprüft: keine weiteren Ticketstadt-Einträge. Offizielle Navigation führt ausschließlich Seite1 und2.",
+    "coverage": "Berlin einmalig unverändert + sämtliche20Tourstopps aus beiden Ergebnisseiten. Keine zusätzliche Navigation im Portal."
+  }
+}

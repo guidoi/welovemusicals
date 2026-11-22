@@ -340,7 +340,16 @@ export default function MusicalDetail() {
 
             <div className="flex items-center gap-2 text-cream/70">
               <MapPin className="w-4 h-4 shrink-0 text-gold" />
-              {musical.venuePerCity && musical.cities?.length ? (
+              {musical.id === "der-kleine-lord" && musical.headerCities && musical.cities && musical.headerCities.length < musical.cities.length ? (
+                <span>
+                  {musical.headerCities.map((city, index) => (
+                    <span key={city}>
+                      {index > 0 && ", "}{city}{musical.venuePerCity?.[city] && ` (${musical.venuePerCity[city]})`}
+                    </span>
+                  ))}{" "}
+                  <span className="text-gold">und {musical.cities.length - musical.headerCities.length} weitere Tourneestädte</span>
+                </span>
+              ) : musical.venuePerCity && musical.cities?.length ? (
                 <span>
                   {musical.cities?.map((c, i) => (
                     <span key={c}>{i > 0 && <span className="text-gold"> &amp; </span>}{c} ({musical.venuePerCity![c]})</span>
@@ -512,7 +521,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} hideCityFilter={musical.id === "weihnachten-mit-bibi-tina"} selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined} onSelectedCityChange={cityTicketCandidate ? setSelectedTicketCity : undefined} seasonAnnouncements={musical.seasonAnnouncements} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
+          <TourDates tourDates={musical.tourDates} hideCityFilter={musical.id === "weihnachten-mit-bibi-tina" || musical.id === "der-kleine-lord"} selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined} onSelectedCityChange={cityTicketCandidate ? setSelectedTicketCity : undefined} seasonAnnouncements={musical.seasonAnnouncements} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
         )}
       </div>
 

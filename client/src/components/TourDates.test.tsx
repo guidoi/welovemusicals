@@ -54,6 +54,13 @@ describe("TourDates", () => {
     expect(markup).toContain('rel="noopener sponsored"');
     expect(markup).not.toContain("noreferrer");
     expect(markup).toContain('href="https://www.eventim.de/"');
+    expect(markup).toContain('class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"');
+    expect(markup).toContain('class="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"');
+    expect(markup).toMatch(/<a[^>]*>Tickets sichern<\/a>/);
+    expect(markup).not.toContain('data-testid="wbt-city-ticket"');
+    expect(markup).not.toContain("data-wbt-city");
+    expect(markup).not.toContain("Tickets für Hamburg");
+    expect(markup).not.toContain("min-h-12");
   });
 
   it("zeigt bei Bibi beide Städte ohne Auswahlbuttons und ignoriert alte Einzelstadt-Auswahl", () => {
@@ -65,6 +72,50 @@ describe("TourDates", () => {
     expect(markup).toContain("Stage Operettenhaus");
     expect(markup).toContain(`href="${musical.ticketUrlsByCity!.Berlin.replace(/&/g, "&amp;")}"`);
     expect(markup).toContain(`href="${musical.ticketUrlsByCity!.Hamburg.replace(/&/g, "&amp;")}"`);
+    expect(markup).not.toContain("<button");
+    expect(markup).not.toContain("Alle Städte");
+    expect(markup).not.toContain("combobox");
+  });
+
+  it("stapelt nur WBT-Stadttickets mobil mit 48px Mindesthöhe, voller Breite und 12px Abstand und erhält das md-Desktoplayout", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-11-22T12:00:00"));
+    const musical = getMusicalBySlug("weihnachten-mit-bibi-tina")!;
+    const markup = renderToStaticMarkup(
+      <TourDates musicalId={musical.id} tourDates={musical.tourDates!} hideCityFilter selectedCity="Berlin" />,
+    );
+    const tickets = Array.from(markup.matchAll(
+      /<div class="([^"]*)"><p class="text-sm font-semibold text-gold">([^<]+)<\/p><a ([^>]*data-testid="wbt-city-ticket"[^>]*)>(.*?)<\/a><\/div>/g,
+    ));
+    const expectedCities = [
+      { city: "Berlin", url: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149442" },
+      { city: "Hamburg", url: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26175768" },
+    ];
+
+    expect(Array.from(markup.matchAll(/data-wbt-city="([^"]+)"/g), (match) => match[1]))
+      .toEqual(expectedCities.map(({ city }) => city));
+    expect(tickets).toHaveLength(2);
+    expect(markup.match(/data-testid="wbt-city-ticket"/g)).toHaveLength(2);
+
+    tickets.forEach(([, layout, dateLabel, attributes, content], index) => {
+      const { city, url } = expectedCities[index];
+      // Tailwind's default spacing scale: min-h-12 = 48px and gap-3 = 12px.
+      expect(layout.split(" ")).toEqual([
+        "flex", "flex-col", "gap-3", "md:flex-row", "md:items-center", "md:justify-between",
+      ]);
+      expect(dateLabel).not.toBe("");
+      expect(attributes).toContain(`href="${url.replace(/&/g, "&amp;")}"`);
+      expect(attributes).toContain('target="_blank"');
+      expect(attributes).toContain('rel="noopener sponsored"');
+      expect(attributes).toContain(`aria-label="Tickets für Weihnachten mit Bibi &amp; Tina in ${city}"`);
+      const classes = attributes.match(/class="([^"]+)"/)![1].split(" ");
+      expect(classes).toEqual(expect.arrayContaining([
+        "inline-flex", "min-h-12", "w-full", "items-center", "justify-center", "px-5", "py-3",
+        "md:min-h-0", "md:w-auto", "md:py-2",
+      ]));
+      expect(classes.some((className) => className.startsWith("sm:"))).toBe(false);
+      expect(content).toBe(`<span class="md:hidden">Tickets für ${city}</span><span class="hidden md:inline">Tickets sichern</span>`);
+    });
     expect(markup).not.toContain("<button");
     expect(markup).not.toContain("Alle Städte");
     expect(markup).not.toContain("combobox");

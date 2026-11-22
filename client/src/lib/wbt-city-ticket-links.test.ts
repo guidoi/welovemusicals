@@ -40,7 +40,7 @@ describe("WBT: explizite Stadtproduktseiten", () => {
     expect(detail).not.toContain("ticketCitySelector");
     expect(detail).not.toContain("Produktseite & Tickets: Spielort");
     expect(detail).toContain('selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined}');
-    expect(detail).toContain('hideCityFilter={musical.id === "weihnachten-mit-bibi-tina"}');
+    expect(detail).toContain('hideCityFilter={musical.id === "weihnachten-mit-bibi-tina" || musical.id === "der-kleine-lord"}');
     expect(detail).toContain('`Aktuell: ${ticketCtaCityLabel} – direkt bei ${ticketProviderName}.`');
   });
 

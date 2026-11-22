@@ -94,10 +94,20 @@ export default function TourDates({
   // Wenn alle Termine abgelaufen sind, Abschnitt komplett ausblenden
   if (upcomingDates.length === 0 && seasonAnnouncements.length === 0) return null;
 
-  // Städte alphabetisch sortieren (nur noch aus zukünftigen Terminen)
+  // Beim Kleinen Lord bleibt die Berliner Weltpremiere einmalig vor der Tournee.
+  // Alle anderen Shows behalten ihre bisherige alphabetische Reihenfolge.
+  const compareCities = (a: string, b: string) => {
+    if (musicalId === "der-kleine-lord") {
+      if (a === "Berlin" && b !== "Berlin") return -1;
+      if (b === "Berlin" && a !== "Berlin") return 1;
+    }
+    return a.localeCompare(b, "de");
+  };
+
+  // Städte aus zukünftigen Terminen und Ankündigungen zusammenführen.
   const allCities = Array.from(
     new Set([...upcomingDates.map((d) => d.city), ...seasonAnnouncements.map((season) => season.city)])
-  ).sort((a, b) => a.localeCompare(b, "de"));
+  ).sort(compareCities);
 
   // Gefilterte Daten nach Stadtauswahl
   const filteredDates =
@@ -110,9 +120,7 @@ export default function TourDates({
 
   // Nach Stadt gruppieren (alphabetisch nach Stadtname sortiert)
   const grouped = groupByCity(filteredDates);
-  const sortedCityEntries = Object.entries(grouped).sort(([a], [b]) =>
-    a.localeCompare(b, "de")
-  );
+  const sortedCityEntries = Object.entries(grouped).sort(([a], [b]) => compareCities(a, b));
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr + "T12:00:00");
@@ -197,6 +205,8 @@ export default function TourDates({
             return (
               <div
                 key={city}
+                data-tour-city={city}
+                data-wbt-city={musicalId === "weihnachten-mit-bibi-tina" ? city : undefined}
                 className="bg-card border border-border rounded-lg p-5 transition-all duration-300 md:hover:border-gold md:hover:shadow-[0_0_0_1px_rgba(218,185,99,0.3)] focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/40"
               >
                 {/* Stadtname + optionales Badge */}
@@ -304,17 +314,30 @@ function TourDateTicketLink({
         : "eventim",
   }]);
 
+  const isWbtCityTicket = musicalId === "weihnachten-mit-bibi-tina";
+
   return (
-    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+    <div className={isWbtCityTicket
+      ? "flex flex-col gap-3 md:flex-row md:items-center md:justify-between"
+      : "flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"}>
       <p className="text-sm font-semibold text-gold">{label}</p>
       <a
         href={safeTicketLink.url}
         target="_blank"
         rel="noopener sponsored"
-        className="shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"
+        data-testid={isWbtCityTicket ? "wbt-city-ticket" : undefined}
+        aria-label={isWbtCityTicket ? `Tickets für Weihnachten mit Bibi & Tina in ${date.city}` : undefined}
+        className={isWbtCityTicket
+          ? "inline-flex min-h-12 w-full shrink-0 items-center justify-center rounded-sm bg-red px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-card md:min-h-0 md:w-auto md:py-2"
+          : "shrink-0 rounded-sm bg-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-red-dark"}
         onClick={() => onTicketClick?.(safeTicketLink.url)}
       >
-        Tickets sichern
+        {isWbtCityTicket ? (
+          <>
+            <span className="md:hidden">Tickets für {date.city}</span>
+            <span className="hidden md:inline">Tickets sichern</span>
+          </>
+        ) : "Tickets sichern"}
       </a>
     </div>
   );
