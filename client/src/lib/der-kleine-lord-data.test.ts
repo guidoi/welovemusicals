@@ -131,11 +131,12 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
     expect(new URL(linz.eventimUrl).searchParams.get("ued")).toBe(DKL_LINZ_EVENT_URL);
   });
 
-  it("verwendet das logo-freie WebP-Motiv für Karte und Header und behält das Keyvisual bei", () => {
+  it("behält das logo-freie Kartenmotiv und Keyvisual bei und verwendet Pressefotos für Header und Galerie", () => {
     const musical = getMusicalBySlug("der-kleine-lord");
 
     expect(musical?.image).toBe(DKL_LOGO_FREE_CARD_AND_HERO);
-    expect(musical?.heroImage).toBe(DKL_LOGO_FREE_CARD_AND_HERO);
+    expect(musical?.heroImage).toMatch(/^https:\/\/.+\.webp$/);
+    expect(musical?.heroImage).not.toBe(DKL_LOGO_FREE_CARD_AND_HERO);
     expect(musical?.keyvisual).toBe(DKL_BRANDED_KEYVISUAL);
     expect(musical?.inlineDetailImage).toEqual(
       expect.objectContaining({
@@ -144,7 +145,7 @@ describe("Der Kleine Lord – Katalog und Ticketpfade", () => {
       }),
     );
     expect(musical?.inlineDetailImageAfterParagraphIndex).toBe(4);
-    expect(musical?.gallery).toBeUndefined();
+    expect(musical?.gallery).toHaveLength(9);
   });
 
   it("bleibt ein Familien-Weihnachtsmusical und erhält die ergänzten Standort-/Tournee-Kategorien", () => {

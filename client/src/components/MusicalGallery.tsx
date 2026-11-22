@@ -12,9 +12,10 @@ import React, { useRef, useState, useEffect } from "react";
 
 interface MusicalGalleryProps {
   images: MusicalGalleryImage[];
+  preserveAspectRatio?: boolean;
 }
 
-export default function MusicalGallery({ images }: MusicalGalleryProps) {
+export default function MusicalGallery({ images, preserveAspectRatio = false }: MusicalGalleryProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -70,8 +71,8 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="w-full object-cover hover:scale-105 transition-transform duration-500"
-                  style={{ height: "clamp(220px, 56vw, 480px)" }}
+                  className={preserveAspectRatio ? "w-full h-auto" : "w-full object-cover hover:scale-105 transition-transform duration-500"}
+                  style={{ height: preserveAspectRatio ? "auto" : "clamp(220px, 56vw, 480px)" }}
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 768px) 100vw, 100vw"

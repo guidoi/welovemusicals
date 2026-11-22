@@ -86,7 +86,8 @@ describe("Freigegebenes warmgraues Musical-Farbkonzept", () => {
     expect(detail).toContain("landscape={desktopKeyvisualLandscape}");
     expect(detail).toContain("analyticsConsent: consent?.analytics === true");
     expect(gallery).toContain('src={image.url}');
-    expect(gallery).toContain('height: "clamp(220px, 56vw, 480px)"');
+    expect(gallery).toContain('preserveAspectRatio = false');
+    expect(gallery).toContain('height: preserveAspectRatio ? "auto" : "clamp(220px, 56vw, 480px)"');
     expect(home).toContain("HOME_HERO_CONTENT_TOP_CLASS");
     expect(html).toContain('id="home-scroll-bootstrap"');
   });

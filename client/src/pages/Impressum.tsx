@@ -133,6 +133,7 @@ export default function Impressum() {
                     <h4 className="font-semibold text-gold mb-2">DRACULA – DAS MUSICAL &amp; FACK JU GÖHTE – DAS MUSICAL &amp; DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
                       <li><strong>Pressefotos:</strong> © Nico Moser</li>
+                      <li><strong>Drei Haselnüsse für Aschenbrödel – Headerbild &amp; Galerie:</strong> Nikolaus-Tour, © Nico Moser; bereitgestellt von ShowSlot</li>
                       <li><strong>Keyvisual &amp; Grafiken:</strong> © ShowSlot Touring GmbH</li>
                       <li><strong>YouTube Video:</strong> © ShowSlot Touring GmbH</li>
                     </ul>
@@ -142,7 +143,8 @@ export default function Impressum() {
                   <div>
                     <h4 className="font-semibold text-gold mb-2">DER KLEINE LORD – DAS MUSICAL</h4>
                     <ul className="space-y-2 ml-4">
-                      <li><strong>Keyvisual &amp; Headerbild:</strong> Presse- und Bildmaterial, bereitgestellt von ShowSlot Touring GmbH</li>
+                      <li><strong>Keyvisual &amp; bisheriges Header-Artwork:</strong> Presse- und Bildmaterial, bereitgestellt von ShowSlot Touring GmbH</li>
+                      <li><strong>Headerbild &amp; Galerie:</strong> Showbilder aus dem BlueMax Theater, © Jens Ochmann; bereitgestellt von ShowSlot</li>
                       <li><strong>Uwe Kröger – Pressefoto:</strong> Pressematerial, bereitgestellt von ShowSlot Touring GmbH</li>
                     </ul>
                   </div>

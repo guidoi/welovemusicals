@@ -52,4 +52,11 @@ describe("Impressum – Affiliate-Transparenz", () => {
     expect(impressumSource).toContain("Szenenfotos, Headerbild &amp; Galerie:</strong> © Jörn Hartmann");
     expect(impressumSource).toContain("Artwork &amp; Keyvisual:</strong> Vom Projektinhaber bereitgestelltes Produktionsmaterial");
   });
+
+  it("nennt die bestätigten Fotografen für die neuen Top-Fotos und bewahrt die bisherigen DKL-Nachweise", () => {
+    expect(impressumSource).toContain("Nikolaus-Tour, © Nico Moser; bereitgestellt von ShowSlot");
+    expect(impressumSource).toContain("Showbilder aus dem BlueMax Theater, © Jens Ochmann; bereitgestellt von ShowSlot");
+    expect(impressumSource).toContain("Keyvisual &amp; bisheriges Header-Artwork:");
+    expect(impressumSource).toContain("Uwe Kröger – Pressefoto:</strong> Pressematerial, bereitgestellt von ShowSlot Touring GmbH");
+  });
 });

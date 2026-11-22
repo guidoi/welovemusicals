@@ -295,8 +295,9 @@ export default function MusicalDetail() {
         <div className="absolute inset-0">
           <img
             src={musical.heroImage || musical.image}
-            alt={musical.title}
+            alt={musical.heroImageAlt || musical.title}
             className="w-full h-full object-cover object-top"
+            style={musical.heroImageFit ? { objectFit: musical.heroImageFit } : undefined}
             decoding="async"
             sizes="100vw"
           />
@@ -678,7 +679,7 @@ export default function MusicalDetail() {
 
       {/* Gallery */}
       {musical.gallery && musical.gallery.length > 0 && (
-        <MusicalGallery images={musical.gallery} />
+        <MusicalGallery images={musical.gallery} preserveAspectRatio={musical.galleryPreserveAspectRatio} />
       )}
 
       {(afterGalleryCampaigns.length > 0 || musical.id === "dracula" || Boolean(awinShowCampaign)) && (

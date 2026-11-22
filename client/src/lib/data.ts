@@ -77,6 +77,8 @@ export interface Musical {
   homepageArtworkImage?: string; // Optionales offizielles Artwork ausschließlich für die Startseitenkarte
   homepageArtworkObjectPosition?: string; // Sichere Bildposition für vollflächige Startseiten-Artworks
   heroImage?: string; // Alternatives Hero-Bild für die Detailseite (z.B. Galerie-Bild statt Teaser)
+  heroImageAlt?: string; // Konkrete Szenenbeschreibung und bestätigter Bildnachweis
+  heroImageFit?: "contain"; // Vollständiges Pressefoto ohne abgeschnittene Darsteller
   mobileHeroBelowHeader?: boolean; // Verhindert, dass wichtige Bildbereiche unter dem mobilen Fix-Header verschwinden
   keyvisual?: string; // Quadratisches Bild für Detail-Seite
   keyvisualLandscape?: boolean; // Querformat-Keyvisual vollständig statt beschnitten darstellen
@@ -98,6 +100,7 @@ export interface Musical {
   seasonAnnouncements?: MusicalSeasonAnnouncement[]; // Neue Spielzeiten mit eigenem Banner, solange ein Textlink noch fehlt.
   quotes?: MusicalQuote[];
   gallery?: MusicalGalleryImage[];
+  galleryPreserveAspectRatio?: boolean; // Neue Pressefotos in ihrem vollständigen Originalformat zeigen
   inlineDetailImage?: MusicalGalleryImage; // Einzelnes Pressefoto innerhalb des oberen Fließtexts
   inlineDetailImageAfterParagraphIndex?: number; // 0-basiert nach welchem Beschreibungsabsatz es erscheint
   showFacts?: MusicalShowFact[];
@@ -694,7 +697,9 @@ export const musicals: Musical[] = [
     detailHeadline: "EIN WEIHNACHTSWUNDER FÜR DIE GANZE FAMILIE",
     detailDescription: "Ab 13. November 2026 feiert DER KLEINE LORD – DAS MUSICAL im BlueMax Theater am Potsdamer Platz Weltpremiere. Die berührende Geschichte um Ceddie, Lord Fauntleroy und seinen zunächst unnahbaren Großvater wird mit neuer Musik, großen Bildern und bewegenden Choreografien zum besonderen Erlebnis in der Adventszeit.\n\n**VON NEW YORK INS VIKTORIANISCHE ENGLAND**\n\nCeddie wächst unbeschwert mit seiner Mutter in New York auf. Als sich herausstellt, dass er der alleinige Erbe eines englischen Adelsbesitzes ist, beginnt für ihn eine Reise in eine völlig neue Welt. Als kleiner Lord Fauntleroy begegnet er seinem Großvater, dem stolzen Grafen von Dorincourt – und gewinnt dessen verhärtetes Herz mit Wärme, Mut und Offenheit.\n\n**UWE KRÖGER ALS GRAF VON DORINCOURT**\n\nMusicalstar Uwe Kröger übernimmt vom 13. November bis 16. Dezember 2026 die Rolle des Grafen von Dorincourt. Mit ihm erzählt die Weltpremiere eine Geschichte über Familie, Versöhnung und die Kraft der Liebe – festlich, emotional und passend für gemeinsame Winterabende in Berlin.\n\nDie Musik stammt von Marian Lux, Buch und Liedtexte von Constanze Behrends sowie Stephan Kanyar. Creative Development verantworten Stephan Huber und Leonie Webb. So wird der Klassiker als modernes Musical mit großen Gefühlen für Kinder, Eltern und Großeltern neu erlebbar.\n\n**TOURNEE 2027/2028**\n\nNach der Berliner Weltpremiere geht DER KLEINE LORD – DAS MUSICAL von November 2027 bis Januar 2028 auf Tournee. Alle angekündigten Städte, Spielstätten und Zeiträume stehen unter Spielorte & Termine.",
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/sMrkJMvPtRQdnlMJ.webp",
-    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/sMrkJMvPtRQdnlMJ.webp",
+    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/aHgwIjUJAAOyfhgG.webp",
+    heroImageAlt: "Der kleine Lord – Begegnung vor blauem Bühnenvorhang mit drei Darstellern und einem Hund (Top 1) © Jens Ochmann",
+    heroImageFit: "contain",
     keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UARCYeGDkgcsgNrm.webp",
     keyvisualLink: createAwinTextLink(AWIN_TEXT_LINKS.derKleineLord, "dkl-keyvisual"),
     ticketCtaUrl: createAwinTextLink(AWIN_TEXT_LINKS.derKleineLord, "dkl-cta"),
@@ -730,6 +735,19 @@ export const musicals: Musical[] = [
     ],
     inlineDetailImage: { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZWCOQhljNRjcinLB.webp", alt: "Uwe Kröger als Graf von Dorincourt in Der Kleine Lord – Das Musical" },
     inlineDetailImageAfterParagraphIndex: 4,
+    // Nutzerfreigabe 22.11.2026: Top 1 im Header; Top 2–10 numerisch in der Galerie.
+    galleryPreserveAspectRatio: true,
+    gallery: [
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/KnIzgAiRfFupjpFh.webp", alt: "Der kleine Lord – Ensemble vor einem festlich beleuchteten Weihnachtsbaum (Top 2) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/rZTDIaewqvwThcGP.webp", alt: "Der kleine Lord – Darsteller an der Reling eines Schiffs (Top 3) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kHmomWBuvwnQynOx.webp", alt: "Der kleine Lord – Tanzensemble vor einer New Yorker Straßenkulisse (Top 4) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/uLbuFMAihwTKqzuI.webp", alt: "Der kleine Lord – Gespräch am Schreibtisch im holzvertäfelten Schlosszimmer (Top 5) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/MLRhbnMgWUduWpth.webp", alt: "Der kleine Lord – Darsteller mit einem historischen Dreirad vor einer winterlichen Landschaft (Top 6) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/HuAJSWpoqelGUDbv.webp", alt: "Der kleine Lord – Ensemble vor einer Straßen- und Häuserkulisse (Top 7) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/RBleDOXAAWftmwFP.webp", alt: "Der kleine Lord – Soloszene einer Darstellerin im Schlosszimmer (Top 8) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/pEvybPrVkNDBRYtW.webp", alt: "Der kleine Lord – Ensembleszene vor dem Laden Hop's Groceries (Top 9) © Jens Ochmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xJcTAcngYTIUqQDu.webp", alt: "Der kleine Lord – Ensemble im festlichen Schlosssaal (Top 10) © Jens Ochmann" },
+    ],
     showFacts: [
       { label: "Spielzeit", value: "13. November bis 30. Dezember 2026" },
       { label: "Spielort", value: "BlueMax Theater am Potsdamer Platz, Berlin" },
@@ -872,6 +890,9 @@ export const musicals: Musical[] = [
     detailHeadline: "ZWEI TOUREN. EIN WINTERMÄRCHEN. 77 STÄDTE.",
     detailDescription: "Wenn verschneite Wälder, die unvergessliche Melodie von Karel Svoboda und ein königlicher Schlossball auf die Bühne kommen, beginnt die Zeit für DREI HASELNÜSSE FÜR ASCHENBRÖDEL – DAS MUSICAL. Die Familienproduktion erzählt den beliebten Filmklassiker live und bringt seine Mischung aus Abenteuer, Romantik und Winterzauber von November 2026 bis Januar 2028 in 77 Städte in Deutschland und Österreich.\n\n**Zwei Tourneen für mehrere Wintersaisons**\n\nDie Nikolaus-Tour gastiert mit mehrtägigen Stopps in großen Theater- und Konzertmetropolen: Duisburg, Frankfurt am Main, München, Dresden, Stuttgart, Bremen, Wien, Köln, Hamburg, Nürnberg und Berlin stehen auf dem Tourplan. Parallel reist die Rosalie-Tour durch die Regionen – von Aschaffenburg bis Zwickau. So findet das Wintermärchen auch in vielen Städten abseits der großen Musicalmetropolen einen Spielort.\n\n**Zwei Ensembles, eine vertraute Geschichte**\n\nIn der Nikolaus-Tour spielt Lena Marie Hespe die Titelrolle an der Seite von Fabian Grimmeisen als Prinz; Shlomit Butbul verkörpert die Stiefmutter und Lena Ponge die Dorchen. Die Rosalie-Tour wird von Cassandra Schütt als Aschenbrödel und Paul Aschenwald als Prinz getragen; Timna Engelmayer und Melina Niccum übernehmen Stiefmutter und Dorchen. Beide Ensembles verbinden die vertraute Magie des Märchens mit einer großen, familienfreundlichen Musicalinszenierung.\n\n**Kultmusik trifft neue Musicalmomente**\n\nDie Titelmelodie von Karel Svoboda bleibt der musikalische Gänsehautmoment für Generationen. Ergänzt wird sie durch Kompositionen von Thomas Zaufke. Zwischen verschneitem Wald, drei magischen Haselnüssen und dem Ball im Schloss entsteht ein Live-Erlebnis, das Filmnostalgie und neues Musicalgefühl zusammenbringt.",
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YuwJUWWcbmSXZUHi.webp",
+    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZUpkvfTWvZSCjToy.webp",
+    heroImageAlt: "Drei Haselnüsse für Aschenbrödel – Hochzeitsszene mit dem Paar und Ensemble unter roten Blütenblättern (Top 1) © Nico Moser",
+    heroImageFit: "contain",
     keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/TYeawFkzjEqXLBKk.webp",
     keyvisualLink: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-keyvisual&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
     eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-eventim&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F",
@@ -984,6 +1005,19 @@ export const musicals: Musical[] = [
       { city: "Würzburg", venue: "Congress Centrum Würzburg", startDate: "2027-12-19", endDate: "2027-12-20", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wuerzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DW%C3%BCrzburg" },
       { city: "Zwickau", venue: "Sparkassenarena", startDate: "2026-12-09", endDate: "2026-12-09", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-zwickau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DZwickau" },
       { city: "Zwickau", venue: "Sparkassenarena", startDate: "2027-02-24", endDate: "2027-02-24", eventimUrl: "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-zwickau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DZwickau" },
+    ],
+    // Nikolaus-Tour © Nico Moser; Top 1 im Header, Top 2–10 in der Galerie.
+    galleryPreserveAspectRatio: true,
+    gallery: [
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/xgHqUeNghtKePKpU.webp", alt: "Drei Haselnüsse für Aschenbrödel – Gruppe in Winterkostümen auf der Bühne (Top 2) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZflbRrqpSkFTjpnc.webp", alt: "Drei Haselnüsse für Aschenbrödel – Gespräch zwischen zwei Darstellerinnen auf der Bühnentreppe (Top 3) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/nndXjFPYlRLxWKHZ.webp", alt: "Drei Haselnüsse für Aschenbrödel – Ensembleszene vor einer verschneiten Waldkulisse (Top 4) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/OtLmROANfQTaBbMX.webp", alt: "Drei Haselnüsse für Aschenbrödel – Tanzensemble beim festlichen Schlossball (Top 5) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/vyUxRVDHGuEvXMoz.webp", alt: "Drei Haselnüsse für Aschenbrödel – Ensemble um die königliche Empore im Schlosssaal (Top 6) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YPVcdoTLXMCGALWM.webp", alt: "Drei Haselnüsse für Aschenbrödel – Soloszene einer Darstellerin auf der Treppe (Top 7) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/WqOQVEvOhdohxRKB.webp", alt: "Drei Haselnüsse für Aschenbrödel – Drei Darsteller bei einer Szene vor dem Winterwald (Top 8) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/oOLIwdURArPoQFSR.webp", alt: "Drei Haselnüsse für Aschenbrödel – Aschenbrödel und der Prinz beim Tanz (Top 9) © Nico Moser" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/irKjTfgfIFTekfSU.webp", alt: "Drei Haselnüsse für Aschenbrödel – Soloszene im hellblauen Ballkleid (Top 10) © Nico Moser" },
     ],
     showFacts: [
       { label: "Showdauer", value: "ca. 2 Stunden 15 Minuten (inkl. Pause)" },

@@ -80,8 +80,9 @@ describe("MusicalDetail: mehr sichtbares Moulin-Rouge-Herobild nur durch den Ove
     expect(moulinImageFields).toContain('image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/mIYGgCjKwguACpBm.webp"');
     expect(moulinImageFields).toContain('heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/mr-01_751f70f4.webp"');
     expect(hero.match(/<img\b/g)).toHaveLength(1);
+    expect(moulinImageFields).not.toMatch(/heroImageAlt:|heroImageFit:/);
     expect(normalize(hero.match(/<img\b[\s\S]*?\/>/)?.[0] ?? "")).toBe(
-      '<img src={musical.heroImage || musical.image} alt={musical.title} className="w-full h-full object-cover object-top" decoding="async" sizes="100vw" />'
+      '<img src={musical.heroImage || musical.image} alt={musical.heroImageAlt || musical.title} className="w-full h-full object-cover object-top" style={musical.heroImageFit ? { objectFit: musical.heroImageFit } : undefined} decoding="async" sizes="100vw" />'
     );
     expect(hero.match(/data-testid="musical-hero-overlay"/g)).toHaveLength(1);
     expect(hero).toContain('<div data-testid="musical-hero-overlay" className="absolute inset-0 musical-hero-overlay" />');
@@ -91,7 +92,8 @@ describe("MusicalDetail: mehr sichtbares Moulin-Rouge-Herobild nur durch den Ove
     expect(hero).toContain('className="musical-detail-hero relative mt-[calc(4rem+1px)] md:mt-[calc(5rem+1px)] min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden"');
     expect(hero).toContain('<div className="absolute inset-0">');
     expect(hero).toContain('className="relative z-10 container pb-6 md:pb-10 pt-40"');
-    expect(hero).not.toMatch(/object-contain|object-center|scale-|transform:|objectPosition|objectFit|on(?:Load|Error|Click)\s*=|moulinrouge/);
+    const defaultHero = hero.replace('style={musical.heroImageFit ? { objectFit: musical.heroImageFit } : undefined}', "");
+    expect(defaultHero).not.toMatch(/object-contain|object-center|scale-|transform:|objectPosition|objectFit|on(?:Load|Error|Click)\s*=|moulinrouge/);
     const mobileCta = detail.match(/\{\/\* Mobile CTA[\s\S]*?\{\/\* Content \*\/\}/)?.[0] ?? "";
     expect(mobileCta).toContain("href={heroTicketLink}");
     expect(mobileCta).toContain('onClick={() => trackDetailTicketClick("mobile-hero", heroTicketLink)}');

@@ -42,7 +42,8 @@ describe("MusicalDetail: weicher Übergang nur an der unteren Hero-Bildkante", (
     expect(hero).toContain('<div className="absolute inset-0">');
     expect(hero.match(/<img\b/g)).toHaveLength(1);
     const imageTag = hero.match(/<img\b[\s\S]*?\/>/)?.[0].replace(/\s+/g, " ").trim();
-    expect(imageTag).toBe('<img src={musical.heroImage || musical.image} alt={musical.title} className="w-full h-full object-cover object-top" decoding="async" sizes="100vw" />');
-    expect(hero).not.toMatch(/object-contain|object-center|scale-|transform:|objectPosition|objectFit/);
+    expect(imageTag).toBe('<img src={musical.heroImage || musical.image} alt={musical.heroImageAlt || musical.title} className="w-full h-full object-cover object-top" style={musical.heroImageFit ? { objectFit: musical.heroImageFit } : undefined} decoding="async" sizes="100vw" />');
+    const defaultHero = hero.replace('style={musical.heroImageFit ? { objectFit: musical.heroImageFit } : undefined}', "");
+    expect(defaultHero).not.toMatch(/object-contain|object-center|scale-|transform:|objectPosition|objectFit/);
   });
 });
