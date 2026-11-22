@@ -183,23 +183,27 @@
   .musical-detail-page {
     --musical-color: #171717;
     --musical-color-deep: #111111;
+    --musical-foreground: #FFFFFF;
+    --musical-hero-color: #171717;
+    --musical-hero-deep: #111111;
   }
 
   .musical-detail-hero {
-    background: linear-gradient(180deg, var(--musical-color-deep), var(--musical-color));
+    background: linear-gradient(180deg, var(--musical-hero-deep), var(--musical-hero-color));
   }
 
   .musical-hero-overlay {
     background: linear-gradient(
       180deg,
       transparent 15%,
-      color-mix(in srgb, var(--musical-color-deep) 35%, transparent) 45%,
-      color-mix(in srgb, var(--musical-color-deep) 90%, transparent) 75%,
-      var(--musical-color) 100%
+      color-mix(in srgb, var(--musical-hero-deep) 35%, transparent) 45%,
+      color-mix(in srgb, var(--musical-hero-deep) 90%, transparent) 75%,
+      var(--musical-hero-color) 100%
     );
   }
 
   .musical-tone-section {
+    --foreground: var(--musical-foreground);
     background-color: var(--musical-color-deep);
     background-image: linear-gradient(
       135deg,
@@ -233,11 +237,16 @@
 }
 
 @layer utilities {
+  .musical-tone-section :is(h2, h3, p).text-white,
+  .musical-tone-section .text-cream,
   .musical-tone-section [class*="text-cream/"] {
-    color: var(--foreground);
+    color: var(--musical-foreground);
   }
 
-  .musical-tone-section :is(.text-gold, [class*="text-gold/"]),
+  .musical-tone-section :is(.text-gold, [class*="text-gold/"]) {
+    color: var(--musical-foreground);
+  }
+
   .musical-detail-hero :is(.text-gold, [class*="text-gold/"]) {
     color: var(--color-gold-light);
   }
