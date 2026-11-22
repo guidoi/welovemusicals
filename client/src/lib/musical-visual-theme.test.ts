@@ -111,14 +111,20 @@ describe("Musical-Visual-Themes", () => {
 });
 
 describe("Warme Neutralpalette", () => {
+  it("übernimmt exakt den Stage-Hintergrund #171717 statt des zu hellen Vorgängers", () => {
+    expect(WARM_NEUTRAL_THEME.background).toBe("#171717");
+    expect(luminance(WARM_NEUTRAL_THEME.background)).toBeLessThan(luminance("#373431"));
+    expect(luminance(WARM_NEUTRAL_THEME.card)).toBeLessThan(luminance("#423E3A"));
+  });
+
   it("exportiert exakt die freigegebenen acht Neutralfarben", () => {
     expect(WARM_NEUTRAL_THEME).toEqual({
-      background: "#373431",
-      card: "#423E3A",
-      popover: "#3D3936",
-      muted: "#3D3936",
-      border: "#655E57",
-      input: "#4A443F",
+      background: "#171717",
+      card: "#242424",
+      popover: "#202020",
+      muted: "#202020",
+      border: "#4A4A4A",
+      input: "#2C2C2C",
       foreground: "#F2EDE7",
       mutedForeground: "#C4BAB0",
     });

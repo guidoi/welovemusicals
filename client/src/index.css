@@ -57,37 +57,37 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #373431;
+  --background: #171717;
   --foreground: #f2ede7;
-  --card: #423e3a;
+  --card: #242424;
   --card-foreground: #f2ede7;
-  --popover: #3d3936;
+  --popover: #202020;
   --popover-foreground: #f2ede7;
   --primary: oklch(0.78 0.12 85);
-  --primary-foreground: #373431;
-  --secondary: #3d3936;
+  --primary-foreground: #171717;
+  --secondary: #202020;
   --secondary-foreground: #ded5cb;
-  --muted: #3d3936;
+  --muted: #202020;
   --muted-foreground: #c4bab0;
   --accent: oklch(0.4 0.15 15);
   --accent-foreground: oklch(0.95 0.01 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: #655e57;
-  --input: #4a443f;
+  --border: #4a4a4a;
+  --input: #2c2c2c;
   --ring: oklch(0.78 0.12 85);
   --chart-1: oklch(0.78 0.12 85);
   --chart-2: oklch(0.65 0.12 85);
   --chart-3: oklch(0.4 0.15 15);
   --chart-4: oklch(0.5 0.15 15);
   --chart-5: oklch(0.3 0.05 260);
-  --sidebar: #373431;
+  --sidebar: #171717;
   --sidebar-foreground: #f2ede7;
   --sidebar-primary: oklch(0.78 0.12 85);
-  --sidebar-primary-foreground: #373431;
-  --sidebar-accent: #3d3936;
+  --sidebar-primary-foreground: #171717;
+  --sidebar-accent: #202020;
   --sidebar-accent-foreground: #f2ede7;
-  --sidebar-border: #655e57;
+  --sidebar-border: #4a4a4a;
   --sidebar-ring: oklch(0.78 0.12 85);
 }
 
@@ -181,8 +181,8 @@
 
   /* Showfarben sind auf die eigene Detailseite begrenzt. Servicebereiche bleiben grau. */
   .musical-detail-page {
-    --musical-color: #373431;
-    --musical-color-deep: #2b2927;
+    --musical-color: #171717;
+    --musical-color-deep: #111111;
   }
 
   .musical-detail-hero {

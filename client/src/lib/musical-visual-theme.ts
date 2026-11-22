@@ -1,12 +1,14 @@
 import type { CSSProperties } from "react";
 
+// Stage-Entertainment-Startseite: main/#musicals, computed rgb(23, 23, 23), 22.11.2026.
+// Exportname bleibt für bestehende Importe stabil; die Grundfläche ist jetzt neutral-dunkelgrau.
 export const WARM_NEUTRAL_THEME = {
-  background: "#373431",
-  card: "#423E3A",
-  popover: "#3D3936",
-  muted: "#3D3936",
-  border: "#655E57",
-  input: "#4A443F",
+  background: "#171717",
+  card: "#242424",
+  popover: "#202020",
+  muted: "#202020",
+  border: "#4A4A4A",
+  input: "#2C2C2C",
   foreground: "#F2EDE7",
   mutedForeground: "#C4BAB0",
 };
