@@ -109,7 +109,11 @@ describe("MusicalDetail: leuchtend gelber KDL-Hero mit eigenem unteren Fadeberei
       "background: linear-gradient( 180deg, transparent 15%, color-mix(in srgb, var(--musical-hero-deep) 35%, transparent) 45%, color-mix(in srgb, var(--musical-hero-deep) 90%, transparent) 75%, var(--musical-hero-color) 85%, var(--background) 100% );"
     );
     const overlayRules = rules.filter(rule => rule.selector.includes(".musical-hero-overlay"));
-    expect(overlayRules.map(rule => rule.selector)).toEqual([".musical-hero-overlay", overlaySelector]);
+    expect(overlayRules.map(rule => rule.selector)).toEqual([
+      ".musical-hero-overlay",
+      '.musical-detail-page[data-musical-id="moulinrouge"] .musical-hero-overlay',
+      overlaySelector,
+    ]);
     const textRules = rules.filter(
       rule => rule.selector.includes(".musical-detail-hero") && /(?:^|;)\s*(?:color|border-color)\s*:/.test(rule.body)
     );
