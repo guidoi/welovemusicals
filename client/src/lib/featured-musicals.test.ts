@@ -50,22 +50,23 @@ describe("Top-Musicals auf der Startseite", () => {
       expect(getAdditionalMusicals().filter((musical) => musical.id === id)).toHaveLength(0);
       expect(getEditorialOverviewMusicals(false).filter((musical) => musical.id === id)).toHaveLength(0);
     }
-    expect(ACTIVE_MUSICAL_IDS).toContain("tarzan");
-    expect(getMusicalBySlug("disneys-musical-tarzan")).toBe(tarzan);
+    expect(ACTIVE_MUSICAL_IDS).not.toContain("tarzan");
+    expect(getMusicalBySlug("disneys-musical-tarzan")).toBeUndefined();
+    expect(tarzan).toBeDefined();
     expect(tarzan?.eventimUrl).toBe("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408");
     expect(tarzan?.tourDates?.[0].endDate).toBe("2026-10-31");
   });
 
-  it("blendet Tarzan in beiden Startseitenübersichten aus, aber nicht aus dem aktiven Katalog", () => {
+  it("blendet Tarzan in beiden Startseitenübersichten und aus dem aktiven Katalog aus", () => {
     expect(HOME_HIDDEN_MUSICAL_IDS).toEqual(["tarzan"]);
-    expect(getActiveMusicals().map((musical) => musical.id)).toContain("tarzan");
-    expect(getAdditionalMusicals().map((musical) => musical.id)).toContain("tarzan");
+    expect(getActiveMusicals().map((musical) => musical.id)).not.toContain("tarzan");
+    expect(getAdditionalMusicals().map((musical) => musical.id)).not.toContain("tarzan");
     expect(getHomepageMusicals().map((musical) => musical.id)).not.toContain("tarzan");
-    expect(getHomepageMusicals()).toHaveLength(getActiveMusicals().length - 1);
+    expect(getHomepageMusicals()).toHaveLength(getActiveMusicals().length);
     for (const includeHighlights of [false, true]) {
       expect(getEditorialOverviewMusicals(includeHighlights).map((musical) => musical.id)).not.toContain("tarzan");
     }
-    const tarzan = getMusicalBySlug("disneys-musical-tarzan")!;
+    const tarzan = musicals.find((musical) => musical.id === "tarzan")!;
     // Auch aktivierbare Alias-Datensätze dürfen die Startseiten-Ausblendung nicht umgehen.
     expect(getHomepageMusicals([{ ...tarzan, id: "alias", slug: "tarzan" }])).toEqual([]);
   });

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { resolvePublicPriceSaleOverrides } from "./priceSales";
+import { musicals } from "../client/src/lib/data";
 
 const sheetValue = {
   musicalId: "eiskoenigin",
@@ -45,11 +46,19 @@ describe("öffentliche Preis- und Sale-Quelle", () => {
     ]);
   });
 
-  it("erweitert einen Teil-Export um einen sicheren Fallback für eine andere Show", () => {
+  it("gibt Tarzans archivierten Preis auch bei einem Teil-Export nicht als öffentlichen Fallback aus", () => {
     const tarzanDatabaseValue = { ...databaseValue, musicalId: "tarzan", priceFrom: "66,99" };
-    expect(resolvePublicPriceSaleOverrides([sheetValue], [tarzanDatabaseValue])).toMatchObject([
+    expect(resolvePublicPriceSaleOverrides([sheetValue], [tarzanDatabaseValue])).toEqual([sheetValue]);
+    expect(musicals.find((musical) => musical.id === "tarzan")).toMatchObject({
+      id: "tarzan", priceFrom: "66,99",
+    });
+  });
+
+  it("erweitert einen Teil-Export weiterhin um einen sicheren Fallback für eine andere aktive Show", () => {
+    const mjDatabaseValue = { ...databaseValue, musicalId: "mj-musical", priceFrom: "56,99" };
+    expect(resolvePublicPriceSaleOverrides([sheetValue], [mjDatabaseValue])).toMatchObject([
       { musicalId: "eiskoenigin", priceFrom: "39,99" },
-      { musicalId: "tarzan", priceFrom: "66,99" },
+      { musicalId: "mj-musical", priceFrom: "56,99" },
     ]);
   });
 

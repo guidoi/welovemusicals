@@ -4,6 +4,7 @@ import {
   getActiveMusicals,
   KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL,
   MJ_STAGE_SHOW_PAGE_URL,
+  musicals,
   PRADA_STAGE_SHOW_PAGE_URL,
   SALON_ROSIE_STAGE_SHOW_PAGE_URL,
   TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL,
@@ -18,7 +19,8 @@ describe("Keyvisual-Affiliate-Links", () => {
   it("verbindet jedes aktive Keyvisual mit einem sicheren HTTPS-Partnerlink", () => {
     const activeMusicals = getActiveMusicals();
 
-    expect(activeMusicals).toHaveLength(22);
+    expect(activeMusicals).toHaveLength(21);
+    expect(activeMusicals.some((musical) => musical.id === "tarzan")).toBe(false);
 
     for (const musical of activeMusicals) {
       expect(musical.keyvisual, `${musical.title} benötigt ein Keyvisual`).toBeTruthy();
@@ -36,7 +38,7 @@ describe("Keyvisual-Affiliate-Links", () => {
     }
   });
 
-  it("führt die Stage-Keyvisuals auf die jeweilige offizielle Show-Landingpage; die freigegebenen Produktseiten-Ausnahmen nutzen diese bewusst auch an Text-CTAs", () => {
+  it("erhält die Stage-Showseiten und Text-CTA-Ausnahmen für aktive Musicals sowie den archivierten Tarzan", () => {
     const stageShowPages = {
       "koenig-der-loewen": KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL,
       "mj-musical": MJ_STAGE_SHOW_PAGE_URL,
@@ -52,7 +54,8 @@ describe("Keyvisual-Affiliate-Links", () => {
     } as const;
 
     for (const [id, showPageLink] of Object.entries(stageShowPages)) {
-      const musical = getActiveMusicals().find((entry) => entry.id === id);
+      const catalog = id === "tarzan" ? musicals : getActiveMusicals();
+      const musical = catalog.find((entry) => entry.id === id);
 
       expect(musical?.keyvisualLink).toBe(showPageLink);
       if (["mj-musical", "tarzan", "koenig-der-loewen", "tina-das-musical", "ziz", "teufel-traegt-prada", "tanz-der-vampire", "und-julia", "salon-rosie", "eiskoenigin", "wir-sind-am-leben"].includes(id)) {

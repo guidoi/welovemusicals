@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getActiveMusicals } from "./data";
+import { getActiveMusicals, musicals } from "./data";
 import {
   getMusicalVisualTheme,
   getMusicalVisualThemeForeground,
@@ -8,7 +8,7 @@ import {
   WARM_NEUTRAL_THEME,
 } from "./musical-visual-theme";
 
-const ACTIVE_IDS = [
+const PALETTE_IDS = [
   "weihnachten-mit-bibi-tina",
   "dracula",
   "moulinrouge",
@@ -32,6 +32,7 @@ const ACTIVE_IDS = [
   "und-julia",
   "tina-das-musical",
 ];
+const ACTIVE_IDS = PALETTE_IDS.filter(id => id !== "tarzan");
 const VALID_HEX = /^#[0-9A-F]{6}$/;
 const OPAQUE_GOLD = "#ECC980";
 const FALLBACK = { color: "#423E3A", deep: "#302D2A" };
@@ -52,20 +53,25 @@ function contrast(a: string, b: string): number {
 const sorted = (values: string[]) => [...values].sort();
 
 describe("Kräftige Musical-Visual-Themes", () => {
-  it("deckt genau die 22 aktiven Artwork-IDs statisch ab", () => {
-    expect(ACTIVE_IDS).toHaveLength(22);
+  it("deckt die 21 aktiven Artwork-IDs und den archivierten Tarzan mit unverändert 22 Paletten statisch ab", () => {
+    expect(PALETTE_IDS).toHaveLength(22);
+    expect(ACTIVE_IDS).toHaveLength(21);
     expect(sorted(Object.keys(MUSICAL_VISUAL_THEMES))).toEqual(
-      sorted(ACTIVE_IDS)
+      sorted(PALETTE_IDS)
     );
     expect(sorted(getActiveMusicals().map(m => m.id))).toEqual(
       sorted(ACTIVE_IDS)
     );
+    expect(PALETTE_IDS.filter(id => !ACTIVE_IDS.includes(id))).toEqual(["tarzan"]);
+    expect(getActiveMusicals().find(m => m.id === "tarzan")).toBeUndefined();
+    expect(musicals.find(m => m.id === "tarzan")).toBeDefined();
   });
   it.each([
     ["koenig-der-loewen", "#FFDD00", "#E6C700"],
     ["eiskoenigin", "#0B88E6", "#0A80D8"],
     ["mj-musical", "#E60B1D", "#CF0A1A"],
     ["fackjugoehte", "#0BE6D5", "#0ACFBF"],
+    ["tarzan", "#0BE652", "#0ACF4A"],
   ])("verwendet die kräftigere Showfarbe für %s", (id, color, deep) => {
     expect(getMusicalVisualTheme(id)).toEqual({ color, deep });
   });
@@ -92,7 +98,7 @@ describe("Kräftige Musical-Visual-Themes", () => {
       expect(style["--musical-foreground"]).toBe("#FFFFFF");
     }
   );
-  it.each([...ACTIVE_IDS, "fallback"])(
+  it.each([...PALETTE_IDS, "fallback"])(
     "verwendet valide HEX-Werte und einen dunkleren Deep-Ton für %s",
     id => {
       const { color, deep } = getMusicalVisualTheme(id);
@@ -101,7 +107,7 @@ describe("Kräftige Musical-Visual-Themes", () => {
       expect(luminance(deep)).toBeLessThan(luminance(color));
     }
   );
-  it.each(ACTIVE_IDS)(
+  it.each(PALETTE_IDS)(
     "ist für %s kräftig und hoch gesättigt, nicht gedeckt",
     id => {
       const c = channels(getMusicalVisualTheme(id).color);
@@ -111,7 +117,7 @@ describe("Kräftige Musical-Visual-Themes", () => {
       expect((max - min) / max).toBeGreaterThanOrEqual(0.94);
     }
   );
-  it.each(ACTIVE_IDS)(
+  it.each(PALETTE_IDS)(
     "erreicht mindestens 4,5:1 für die passende Schrift/Akzente auf %s",
     id => {
       const foreground = getMusicalVisualThemeForeground(id);
@@ -120,7 +126,7 @@ describe("Kräftige Musical-Visual-Themes", () => {
       expect(contrast(foreground, deep)).toBeGreaterThanOrEqual(4.5);
     }
   );
-  it.each(ACTIVE_IDS)(
+  it.each(PALETTE_IDS)(
     "hält den Foto-Hero für %s mit heller Schrift und Gold lesbar",
     id => {
       const style = getMusicalVisualThemeStyle(id);
@@ -133,7 +139,7 @@ describe("Kräftige Musical-Visual-Themes", () => {
       }
     }
   );
-  it.each(ACTIVE_IDS)(
+  it.each(PALETTE_IDS)(
     "exportiert für %s nur die fünf lokal benötigten CSS-Variablen",
     id => {
       const style = getMusicalVisualThemeStyle(id);

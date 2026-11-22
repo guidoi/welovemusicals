@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ACTIVE_MUSICAL_IDS, getActiveMusicals } from "./data";
+import { ACTIVE_MUSICAL_IDS, getActiveMusicals, musicals } from "./data";
 import {
   EXPERIENCE_CATEGORIES,
   EXPERIENCE_CATEGORY_BY_MUSICAL_ID,
@@ -80,12 +80,13 @@ describe("Erlebnis-Kategorien", () => {
     expect(getActiveMusicals().find((musical) => musical.id === "phantom-der-oper")?.experienceCategory).toBe("kult-klassiker");
   });
 
-  it("ordnet die Disney-Highlights nach ihrer primären Erlebniswelt ein", () => {
+  it("ordnet die aktiven Disney-Highlights und den archivierten Tarzan nach ihrer primären Erlebniswelt ein", () => {
     const activeMusicals = getActiveMusicals();
     expect(activeMusicals.find((musical) => musical.id === "eiskoenigin")?.experienceCategory).toBe("familie-maerchen-magie");
     expect(activeMusicals.find((musical) => musical.id === "koenig-der-loewen")?.experienceCategory).toBe("blockbuster-spektakel");
-    expect(activeMusicals.find((musical) => musical.id === "tarzan")?.experienceCategory).toBe("blockbuster-spektakel");
-  });
+    expect(activeMusicals.find((musical) => musical.id === "tarzan")).toBeUndefined();
+    expect(musicals.find((musical) => musical.id === "tarzan")?.experienceCategory).toBe("blockbuster-spektakel");
+    });
 
   it("führt die drei Weihnachtsmusicals in Weihnachten und zusätzlich bei Familie und Kids", () => {
     const activeMusicals = getActiveMusicals();

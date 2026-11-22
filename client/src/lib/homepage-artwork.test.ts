@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { getActiveMusicals } from "./data";
+import { getActiveMusicals, musicals } from "./data";
 
 describe("Startseiten-Artwork-Standard", () => {
-  it("führt alle ausdrücklich gelieferten Startseiten-Artworks mit sicheren Bildpositionen", () => {
-    const artworkEntries = getActiveMusicals()
+  it("erhält alle gelieferten Artworks samt archiviertem Tarzan und zeigt nur das aktive Subset", () => {
+    const artworkEntries = musicals
       .filter((musical) => musical.homepageArtworkImage)
       .map((musical) => ({ id: musical.id, url: musical.homepageArtworkImage, objectPosition: musical.homepageArtworkObjectPosition }));
 
-    expect(artworkEntries).toEqual([
+    const expectedArtworkEntries = [
       {
         id: "weihnachten-mit-bibi-tina",
         url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YqlpbjvubQJLnLqO.webp",
@@ -68,6 +68,11 @@ describe("Startseiten-Artwork-Standard", () => {
         url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/UWpTHsymdzTwPhRy.webp",
         objectPosition: "center center",
       },
-    ]);
+    ];
+    expect(artworkEntries).toEqual(expectedArtworkEntries);
+    const activeArtworkEntries = getActiveMusicals()
+      .filter((musical) => musical.homepageArtworkImage)
+      .map((musical) => ({ id: musical.id, url: musical.homepageArtworkImage, objectPosition: musical.homepageArtworkObjectPosition }));
+    expect(activeArtworkEntries).toEqual(expectedArtworkEntries.filter((entry) => entry.id !== "tarzan"));
   });
 });

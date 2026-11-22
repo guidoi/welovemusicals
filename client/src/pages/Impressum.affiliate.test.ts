@@ -38,7 +38,10 @@ describe("Impressum – Affiliate-Transparenz", () => {
   });
 
   it("nennt für jedes aktive Musical einen Bildnachweis und sichert TINA sowie die neuen Rapunzel-Artworks", () => {
-    expect(Object.keys(IMAGE_CREDIT_HEADING_BY_MUSICAL_ID).sort()).toEqual([...ACTIVE_MUSICAL_IDS].sort());
+    const archivedCreditIds = Object.keys(IMAGE_CREDIT_HEADING_BY_MUSICAL_ID);
+    expect(archivedCreditIds.filter((id) => ACTIVE_MUSICAL_IDS.includes(id)).sort()).toEqual([...ACTIVE_MUSICAL_IDS].sort());
+    expect(archivedCreditIds.filter((id) => !ACTIVE_MUSICAL_IDS.includes(id))).toEqual(["tarzan"]);
+    expect(impressumSource).toContain('ACTIVE_MUSICAL_IDS.includes("tarzan") && (');
 
     Object.values(IMAGE_CREDIT_HEADING_BY_MUSICAL_ID).forEach((heading) => {
       expect(impressumSource).toContain(heading);

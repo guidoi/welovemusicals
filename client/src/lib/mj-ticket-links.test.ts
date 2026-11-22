@@ -8,6 +8,7 @@ import {
   KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL,
   MJ_STAGE_SHOW_PAGE_URL,
   MJ_STAGE_TEXT_LINK_URL,
+  musicals,
   PRADA_STAGE_SHOW_PAGE_URL,
   PRADA_STAGE_TEXT_LINK_URL,
   SALON_ROSIE_STAGE_SHOW_PAGE_URL,
@@ -145,8 +146,8 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     expect(createAwinLink(TINA_STAGE_TEXT_LINK_URL)).toBe(TINA_STAGE_SHOW_PAGE_URL);
   });
 
-  it("verwendet bei Tarzan die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
-    const tarzan = getMusicalBySlug("disneys-musical-tarzan");
+  it("erhält beim archivierten Tarzan die gelieferte Stage-Produktseite auch an den Text-CTAs", () => {
+    const tarzan = musicals.find((musical) => musical.id === "tarzan");
 
     expect(TARZAN_STAGE_SHOW_PAGE_URL).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",

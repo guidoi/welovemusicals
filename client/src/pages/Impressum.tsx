@@ -9,6 +9,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
 import { withSeoTitleHeart } from "@/lib/seo-title";
+import { ACTIVE_MUSICAL_IDS } from "@/lib/data";
 
 const HEADER_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/hero-stage-LExvJcmcPP3dpbDQunFpAD.webp";
 
@@ -235,6 +236,7 @@ export default function Impressum() {
                   </div>
 
                   {/* Tarzan */}
+                  {ACTIVE_MUSICAL_IDS.includes("tarzan") && (
                   <div>
                     <h4 className="font-semibold text-gold mb-2">DISNEYS MUSICAL TARZAN</h4>
                     <ul className="space-y-2 ml-4">
@@ -242,6 +244,7 @@ export default function Impressum() {
                       <li><strong>Keyvisual:</strong> © Stage Entertainment</li>
                     </ul>
                   </div>
+                  )}
 
                   {/* ZIZ - Zurück in die Zukunft */}
                   <div>

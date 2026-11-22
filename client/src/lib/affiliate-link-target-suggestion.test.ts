@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { getAffiliateTargetSuggestion } from "./affiliate-link-target-suggestion";
+import { musicals } from "./data";
 
 describe("Affiliate-Zielvorschlag aus dem Katalog", () => {
-  it("liefert nur einen bereits validen Stage-Katalogpfad für die passende Show", () => {
+  it("liefert keinen aktiven Vorschlag für Tarzan, erhält aber dessen validen Stage-Katalogpfad im Archiv", () => {
     const suggestion = getAffiliateTargetSuggestion("tarzan", "stage", "ticket-box");
-    expect(suggestion).toEqual(expect.objectContaining({
-      sourceField: expect.any(String),
-      url: "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408",
-    }));
+    expect(suggestion).toBeUndefined();
+    const tarzan = musicals.find((musical) => musical.id === "tarzan");
+    expect(tarzan?.awinBoxUrl).toBe("https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408");
   });
 
   it("liefert für eine Eventim-CTA einen direkten Awin-Katalogpfad", () => {

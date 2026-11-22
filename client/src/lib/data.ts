@@ -2400,7 +2400,7 @@ export const cities: City[] = [
     name: "Hamburg",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-hamburg-hiqvQVm59Z9s8oonK6znyR.webp",
     description: "Die Musical-Hauptstadt Deutschlands. Mit großen Musical-Theatern und Weltklasse-Shows wie Moulin Rouge! bietet Hamburg das vielfältigste Musical-Angebot des Landes.",
-    musicalCount: 9,
+    musicalCount: 8,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hamburg&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%2525107905%26orderBy%3DRecommendations",
   },
 
@@ -2530,13 +2530,13 @@ export function getMusicalBySlug(slug: string, catalog: Musical[] = musicals): M
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "der-kleine-lord", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical", "weihnachten-mit-bibi-tina"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "der-kleine-lord", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical", "weihnachten-mit-bibi-tina"];
 
 export function getActiveMusicals(catalog: Musical[] = musicals): Musical[] {
   return catalog.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
 }
 
-// Startseiten-exklusiv ausblenden; Detailseiten, Stadtseiten und Affiliatepfade bleiben aktiv.
+// Zusätzlicher Startseitenschutz; Tarzan ist auch global deaktiviert, sein Datensatz bleibt gespeichert.
 export const HOME_HIDDEN_MUSICAL_IDS = ["tarzan"] as const;
 
 export function getHomepageMusicals(catalog: Musical[] = musicals): Musical[] {

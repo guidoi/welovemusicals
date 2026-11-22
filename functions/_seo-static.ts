@@ -1,3 +1,5 @@
+import { getActiveMusicals, musicals } from "../client/src/lib/data";
+
 export type StaticAssetFetcher = {
   fetch: (input: Request | URL | string) => Promise<Response>;
 };
@@ -86,6 +88,18 @@ export async function serveCanonicalSeoRoute(
 
   if (routeSegment === "musical") {
     const canonicalSlug = LEGACY_MUSICAL_REDIRECTS[slug];
+    // Preserved catalog entries can be temporarily inactive. Do not let their
+    // missing SEO asset fall through to the SPA shell or redirect an inactive alias.
+    const catalogMusical = musicals.find((musical) => (
+      musical.slug === (canonicalSlug ?? slug) || musical.id === slug
+    ));
+    if (catalogMusical && getActiveMusicals([catalogMusical]).length === 0 && !RETIRED_MUSICAL_SLUGS.has(slug)) {
+      return new Response(context.request.method === "HEAD" ? null : "Not Found", {
+        status: 404,
+        headers: { "Cache-Control": "no-store", "X-Robots-Tag": "noindex" },
+      });
+    }
+
     if (canonicalSlug) {
       const redirectUrl = new URL(`/musical/${canonicalSlug}`, context.request.url);
       redirectUrl.search = new URL(context.request.url).search;
