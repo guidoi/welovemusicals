@@ -1,0 +1,2245 @@
+{
+  "retrieved": "2026-11-22",
+  "source": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+  "pages": [
+    {
+      "page": 1,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "count": 12
+    },
+    {
+      "page": 2,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "count": 12
+    },
+    {
+      "page": 3,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "count": 12
+    },
+    {
+      "page": 4,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "count": 12
+    },
+    {
+      "page": 5,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "count": 12
+    },
+    {
+      "page": 6,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "count": 12
+    },
+    {
+      "page": 7,
+      "url": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=7",
+      "count": 1
+    }
+  ],
+  "sourceCityCount": 73,
+  "sourceRows": [
+    {
+      "id": "22358567",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-12-04T19:00:00.000Z",
+      "dateLabel": "04.–05.12.2027",
+      "venue": "Eurogress Aachen",
+      "city": "Aachen",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=aachen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Aachen"
+    },
+    {
+      "id": "21464845",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-14T19:00:00.000Z",
+      "dateLabel": "14.12.2026–28.12.2027",
+      "venue": "Stadthalle am Schloss - Kirchner Saal",
+      "city": "Aschaffenburg",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=aschaffenburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Aschaffenburg"
+    },
+    {
+      "id": "22368487",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-12-29T19:00:00.000Z",
+      "dateLabel": "29.–30.12.2027",
+      "venue": "KONGRESS am PARK Augsburg",
+      "city": "Augsburg",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=augsburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [
+        {
+          "label": "Neu im Verkauf",
+          "color": "#FF6800"
+        }
+      ],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Augsburg"
+    },
+    {
+      "id": "21587085",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-12T19:00:00.000Z",
+      "dateLabel": "12.–14.02.2027",
+      "venue": "Stadthalle Aurich",
+      "city": "Aurich",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=aurich&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Aurich"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-kongress-theaterhaus-bad-ischl-21465939/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2026-12-21T18:00:00.000Z",
+      "dateLabel": "21.12.2026",
+      "venue": "",
+      "city": "Bad Ischl",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-kongress-theaterhaus-bad-ischl-21465939/?affiliate=J46",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Bad Ischl"
+    },
+    {
+      "id": "21747519",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2027-02-28T19:00:00.000Z",
+      "dateLabel": "28.02.–04.04.2027",
+      "venue": "BlueMax Theater Berlin",
+      "city": "Berlin",
+      "price": 49.99,
+      "link": "https://www.eventim.de/artist/3-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&calendarview=1&cityname=Berlin&utm_medium=dp&startdate=2027-03-01",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Berlin"
+    },
+    {
+      "id": "21915834",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-12-07T19:00:00.000Z",
+      "dateLabel": "07.–08.12.2027",
+      "venue": "Lokschuppen",
+      "city": "Bielefeld",
+      "price": 69.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=bielefeld&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Bielefeld"
+    },
+    {
+      "id": "21536203",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-15T19:00:00.000Z",
+      "dateLabel": "15.–16.01.2027",
+      "venue": "Bitburger Stadthalle",
+      "city": "Bitburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=bitburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Bitburg"
+    },
+    {
+      "id": "21587082",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-25T19:00:00.000Z",
+      "dateLabel": "25.01.2027",
+      "venue": "RuhrCongress Bochum",
+      "city": "Bochum",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=bochum&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Bochum"
+    },
+    {
+      "id": "21587087",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-15T19:00:00.000Z",
+      "dateLabel": "15.02.2027",
+      "venue": "Volkswagen Halle",
+      "city": "Braunschweig",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=braunschweig&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Braunschweig"
+    },
+    {
+      "id": "21116403",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2026-12-30T19:30:00.000Z",
+      "dateLabel": "30.12.2026–03.01.2027",
+      "venue": "Metropol Theater Bremen",
+      "city": "Bremen",
+      "price": 50.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=bremen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Bremen"
+    },
+    {
+      "id": "22022997",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-10-19T19:00:00.000Z",
+      "dateLabel": "19.–20.10.2027",
+      "venue": "Stadthalle Bremerhaven",
+      "city": "Bremerhaven",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=bremerhaven&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/",
+      "portalCity": "Bremerhaven"
+    },
+    {
+      "id": "21874081",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-26T19:00:00.000Z",
+      "dateLabel": "26.02.2027",
+      "venue": "Stadthalle Chemnitz, Stadthallen-Saal",
+      "city": "Chemnitz",
+      "price": 59,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=chemnitz&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Chemnitz"
+    },
+    {
+      "id": "21536064",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-04T19:00:00.000Z",
+      "dateLabel": "04.–05.01.2027",
+      "venue": "Stadthalle Cottbus",
+      "city": "Cottbus",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=cottbus&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [
+        {
+          "label": "Zusatzshow am 05.01.",
+          "color": "#FF2D00"
+        }
+      ],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Cottbus"
+    },
+    {
+      "id": "22020772",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-28T19:00:00.000Z",
+      "dateLabel": "28.12.2026",
+      "venue": "Stadthallen Deggendorf GmbH",
+      "city": "Deggendorf",
+      "price": 59,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=deggendorf&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Deggendorf"
+    },
+    {
+      "id": "21454529",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-15T19:00:00.000Z",
+      "dateLabel": "15.12.2026–11.11.2027",
+      "venue": "Donauhallen Donaueschingen",
+      "city": "Donaueschingen",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=donaueschingen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Donaueschingen"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-kulturhaus-dornbirn-21544244/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-01-19T18:00:00.000Z",
+      "dateLabel": "19.01.2027",
+      "venue": "",
+      "city": "Dornbirn",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=dornbirn",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Dornbirn"
+    },
+    {
+      "id": "21156560",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2026-12-16T19:30:00.000Z",
+      "dateLabel": "16.12.2026–14.02.2027",
+      "venue": "MESSE DRESDEN, HALLE 1",
+      "city": "Dresden",
+      "price": 40.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=dresden&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [
+        {
+          "label": "Zusatzshow am 11.02.",
+          "color": "#FF2D00"
+        }
+      ],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Dresden"
+    },
+    {
+      "id": "20975094",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2026-11-22T14:00:00.000Z",
+      "dateLabel": "22.11.2026–28.11.2027",
+      "venue": "Theater am Marientor",
+      "city": "Duisburg",
+      "price": 39.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=duisburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Duisburg"
+    },
+    {
+      "id": "22314951",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-12-21T19:00:00.000Z",
+      "dateLabel": "21.–22.12.2027",
+      "venue": "Deutsches Haus",
+      "city": "Flensburg",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=flensburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Flensburg"
+    },
+    {
+      "id": "21094383",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2026-11-26T19:30:00.000Z",
+      "dateLabel": "26.11.2026–07.02.2027",
+      "venue": "myticket Jahrhunderthalle Frankfurt",
+      "city": "Frankfurt",
+      "price": 40.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=frankfurt&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Frankfurt am Main"
+    },
+    {
+      "id": "21535871",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-03T19:00:00.000Z",
+      "dateLabel": "03.01.2027",
+      "venue": "Messehalle 1",
+      "city": "Frankfurt / Oder",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=frankfurt%20oder&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Frankfurt (Oder)"
+    },
+    {
+      "id": "21612711",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-11-28T19:00:00.000Z",
+      "dateLabel": "28.11.2026–22.12.2027",
+      "venue": "Esperantohalle",
+      "city": "Fulda",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=fulda&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Fulda"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-helmut-list-halle-21179066/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-02-19T18:30:00.000Z",
+      "dateLabel": "19.–21.02.2027",
+      "venue": "",
+      "city": "Graz",
+      "price": 40.49,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=graz",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2",
+      "portalCity": "Graz"
+    },
+    {
+      "id": "21817758",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-11T19:00:00.000Z",
+      "dateLabel": "11.–12.01.2027",
+      "venue": "Stadthalle Gütersloh",
+      "city": "Gütersloh",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=g%C3%BCtersloh&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Gütersloh"
+    },
+    {
+      "id": "21386420",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-03T19:00:00.000Z",
+      "dateLabel": "03.12.2026–30.12.2027",
+      "venue": "Georg-Friedrich-Händel HALLE",
+      "city": "Halle / Saale",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=halle%20saale&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Halle (Saale)"
+    },
+    {
+      "id": "22320293",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2027-01-26T19:30:00.000Z",
+      "dateLabel": "26.–28.01.2027",
+      "venue": "Sporthalle Hamburg",
+      "city": "Hamburg",
+      "price": 40.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=hamburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [
+        {
+          "label": "Zusatzshow am 26.01.",
+          "color": "#FF2D00"
+        }
+      ],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Hamburg"
+    },
+    {
+      "id": "22064774",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-17T19:00:00.000Z",
+      "dateLabel": "17.02.2027",
+      "venue": "Swiss Life Hall",
+      "city": "Hannover",
+      "price": 59,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=hannover&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Hannover"
+    },
+    {
+      "id": "21780336",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-17T19:00:00.000Z",
+      "dateLabel": "17.01.2027",
+      "venue": "Congress Centrum Heidenheim",
+      "city": "Heidenheim",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=heidenheim&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Heidenheim"
+    },
+    {
+      "id": "21455457",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-29T19:00:00.000Z",
+      "dateLabel": "29.12.2026–03.12.2027",
+      "venue": "Konzert- und Kongresszentrum Harmonie",
+      "city": "Heilbronn",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=heilbronn&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [
+        {
+          "label": "Zustazshows 2027/28",
+          "color": "#FF6800"
+        }
+      ],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Heilbronn"
+    },
+    {
+      "id": "22023080",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-10-28T19:00:00.000Z",
+      "dateLabel": "28.–29.10.2027",
+      "venue": "NCC NordseeCongressCentrum",
+      "city": "Husum",
+      "price": 62.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=husum&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Husum"
+    },
+    {
+      "id": "22315319",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-12-14T19:00:00.000Z",
+      "dateLabel": "14.–15.12.2027",
+      "venue": "kING – Kultur- und Kongresshalle",
+      "city": "Ingelheim Am Rhein",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=ingelheim&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Ingelheim am Rhein"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-congress-innsbruck-21391898/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2026-12-22T18:00:00.000Z",
+      "dateLabel": "22.12.2026",
+      "venue": "",
+      "city": "Innsbruck",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=innsbruck",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Innsbruck"
+    },
+    {
+      "id": "21543243",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-26T19:00:00.000Z",
+      "dateLabel": "26.01.2027",
+      "venue": "Sparkassen Arena",
+      "city": "Jena",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=jena&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Jena"
+    },
+    {
+      "id": "22203832",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-12-25T19:00:00.000Z",
+      "dateLabel": "25.–26.12.2027",
+      "venue": "Schwarzwaldhalle",
+      "city": "Karlsruhe",
+      "price": 69.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=karlsruhe&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Karlsruhe"
+    },
+    {
+      "id": "21871471",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-11-22T18:00:00.000Z",
+      "dateLabel": "22.11.2026",
+      "venue": "bigBOX Allgäu",
+      "city": "Kempten",
+      "price": 59,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=kempten&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3",
+      "portalCity": "Kempten"
+    },
+    {
+      "id": "21536207",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-06T19:00:00.000Z",
+      "dateLabel": "06.02.2027",
+      "venue": "MERKUR Ostseehalle",
+      "city": "Kiel",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=kiel&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Kiel"
+    },
+    {
+      "id": "21464477",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-11-30T19:00:00.000Z",
+      "dateLabel": "30.11.2026–09.11.2027",
+      "venue": "Rhein-Mosel-Halle Koblenz",
+      "city": "Koblenz",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=koblenz&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Koblenz"
+    },
+    {
+      "id": "21157075",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2027-01-20T19:30:00.000Z",
+      "dateLabel": "20.–24.01.2027",
+      "venue": "Motorworld",
+      "city": "Köln",
+      "price": 50.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=k%C3%B6ln&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Köln"
+    },
+    {
+      "id": "21457578",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-12T19:00:00.000Z",
+      "dateLabel": "12.–13.12.2026",
+      "venue": "Jugendstil-Festhalle",
+      "city": "Landau In Der Pfalz",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=landau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Landau"
+    },
+    {
+      "id": "22342915",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2028-01-05T19:00:00.000Z",
+      "dateLabel": "05.01.2028",
+      "venue": "Sparkassen-Arena",
+      "city": "Landshut",
+      "price": 69,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=landshut&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Landshut"
+    },
+    {
+      "id": "21457683",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-31T19:00:00.000Z",
+      "dateLabel": "31.01.–03.02.2027",
+      "venue": "Haus Auensee",
+      "city": "Leipzig",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=leipzig&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Leipzig"
+    },
+    {
+      "id": "21395872",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-19T19:00:00.000Z",
+      "dateLabel": "19.12.2026–17.12.2027",
+      "venue": "Stadthalle Limburg",
+      "city": "Limburg",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=limburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [
+        {
+          "label": "Zusatzshows 2027/28",
+          "color": "#FF6800"
+        }
+      ],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Limburg"
+    },
+    {
+      "id": "21454936",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-23T19:00:00.000Z",
+      "dateLabel": "23.12.2026",
+      "venue": "Inselhalle Lindau",
+      "city": "Lindau / Bodensee",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=lindau%20bodensee&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Lindau"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-tipsarena-linz-21394288/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2026-12-27T18:00:00.000Z",
+      "dateLabel": "27.12.2026",
+      "venue": "",
+      "city": "Linz",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=linz",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Linz"
+    },
+    {
+      "id": "21535760",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-02T19:00:00.000Z",
+      "dateLabel": "02.01.–27.10.2027",
+      "venue": "LKH Arena Lüneburg",
+      "city": "Lüneburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=l%C3%BCneburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Lüneburg"
+    },
+    {
+      "id": "21587080",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-08T19:00:00.000Z",
+      "dateLabel": "08.–10.02.2027",
+      "venue": "AMO Kulturhaus",
+      "city": "Magdeburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=magdeburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Magdeburg"
+    },
+    {
+      "id": "22426027",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-11-04T19:00:00.000Z",
+      "dateLabel": "04.11.2027",
+      "venue": "Rosengarten Mozartsaal",
+      "city": "Mannheim",
+      "price": 54,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=mannheim&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=4",
+      "portalCity": "Mannheim"
+    },
+    {
+      "id": "21869499",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-16T19:00:00.000Z",
+      "dateLabel": "16.02.2027",
+      "venue": "Messe+Congress Centrum Halle Münsterland",
+      "city": "Münster",
+      "price": 59,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=m%C3%BCnster&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Münster"
+    },
+    {
+      "id": "22374104",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2028-01-15T19:30:00.000Z",
+      "dateLabel": "15.–16.01.2028",
+      "venue": "ratiopharm arena",
+      "city": "Neu-ulm",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=neu-ulm&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Neu-Ulm"
+    },
+    {
+      "id": "22060248",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2028-01-11T19:00:00.000Z",
+      "dateLabel": "11.–13.01.2028",
+      "venue": "Stadthalle Neuss",
+      "city": "Neuss",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=neuss&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Neuss"
+    },
+    {
+      "id": "21628550",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2027-02-02T19:30:00.000Z",
+      "dateLabel": "02.–04.02.2027",
+      "venue": "Meistersingerhalle Nürnberg",
+      "city": "Nürnberg",
+      "price": 40.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=n%C3%BCrnberg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Nürnberg"
+    },
+    {
+      "id": "22022861",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-10-11T19:00:00.000Z",
+      "dateLabel": "11.–12.10.2027",
+      "venue": "Oberrheinhalle Offenburg",
+      "city": "Offenburg",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=offenburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Offenburg"
+    },
+    {
+      "id": "21926447",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2028-01-03T19:00:00.000Z",
+      "dateLabel": "03.–07.01.2028",
+      "venue": "PaderHalle",
+      "city": "Paderborn",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=paderborn&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Paderborn"
+    },
+    {
+      "id": "21870955",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-20T18:00:00.000Z",
+      "dateLabel": "20.12.2026–28.11.2027",
+      "venue": "Dreiländerhalle",
+      "city": "Passau",
+      "price": 59,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=passau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Passau"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-zentrum-fuer-visionen-21544243/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2026-12-25T18:00:00.000Z",
+      "dateLabel": "25.–26.12.2026",
+      "venue": "",
+      "city": "Puch-urstein Bei Salzburg",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=salzburg",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Puch bei Salzburg"
+    },
+    {
+      "id": "21464148",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-11-26T19:00:00.000Z",
+      "dateLabel": "26.11.2026",
+      "venue": "BadnerHalle Rastatt",
+      "city": "Rastatt",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=rastatt&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Rastatt"
+    },
+    {
+      "id": "21468018",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-16T19:00:00.000Z",
+      "dateLabel": "16.12.2026–28.02.2027",
+      "venue": "Oberschwabenhalle Ravensburg",
+      "city": "Ravensburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=ravensburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Ravensburg"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-ooev-saal-21544884/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-01-20T18:00:00.000Z",
+      "dateLabel": "20.01.2027",
+      "venue": "",
+      "city": "Ried Im Innkreis",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=ried%20im%20innkreis",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Ried im Innkreis"
+    },
+    {
+      "id": "21523476",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-06T19:00:00.000Z",
+      "dateLabel": "06.–07.01.2027",
+      "venue": "StadtHalle inRostock",
+      "city": "Rostock",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=rostock&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=5",
+      "portalCity": "Rostock"
+    },
+    {
+      "id": "21536144",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-09T19:00:00.000Z",
+      "dateLabel": "09.01.2027",
+      "venue": "Sport- und Kongresshalle Schwerin",
+      "city": "Schwerin",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=schwerin&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Schwerin"
+    },
+    {
+      "id": "22311240",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-12-12T19:30:00.000Z",
+      "dateLabel": "12.–13.12.2027",
+      "venue": "Siegerlandhalle",
+      "city": "Siegen",
+      "price": 75.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=siegen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Siegen"
+    },
+    {
+      "id": "21536587",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-18T19:00:00.000Z",
+      "dateLabel": "18.01.2027",
+      "venue": "Stadthalle Singen",
+      "city": "Singen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=singen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Singen"
+    },
+    {
+      "id": "21691996",
+      "title": "Drei Haselnüsse für Aschenbrödel - Nikolaus-Tour",
+      "isoDateTime": "2026-12-22T19:30:00.000Z",
+      "dateLabel": "22.–28.12.2026",
+      "venue": "Liederhalle Hegelsaal",
+      "city": "Stuttgart",
+      "price": 40.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=stuttgart&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Stuttgart"
+    },
+    {
+      "id": "21863449",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-20T18:00:00.000Z",
+      "dateLabel": "20.02.2027",
+      "venue": "SWT Arena Trier",
+      "city": "Trier",
+      "price": 69,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=trier&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Trier"
+    },
+    {
+      "id": "21395818",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-17T19:00:00.000Z",
+      "dateLabel": "17.12.2026",
+      "venue": "Stadthalle Tuttlingen",
+      "city": "Tuttlingen",
+      "price": 70.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=tuttlingen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Tuttlingen"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-voecklabruck-stadtsaal-21544281/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-01-21T18:00:00.000Z",
+      "dateLabel": "21.–22.01.2027",
+      "venue": "",
+      "city": "Vöcklabruck",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=v%C3%B6cklabruck",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Vöcklabruck"
+    },
+    {
+      "id": "21539056",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-01-13T19:00:00.000Z",
+      "dateLabel": "13.01.2027",
+      "venue": "CC Weimarhalle",
+      "city": "Weimar",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=weimar&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Weimar"
+    },
+    {
+      "id": "21464374",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-11-29T19:00:00.000Z",
+      "dateLabel": "29.11.2026–15.10.2027",
+      "venue": "Stadthallen Wetzlar",
+      "city": "Wetzlar",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=wetzlar&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Wetzlar"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-museumsquartier-wien-21179310/?affiliate=J81",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical",
+      "isoDateTime": "2027-01-06T18:30:00.000Z",
+      "dateLabel": "06.–17.01.2027",
+      "venue": "",
+      "city": "Wien",
+      "price": 40.49,
+      "link": "https://www.oeticket.com/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=J46&cityname=wien",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Wien"
+    },
+    {
+      "id": "21523903",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-02-04T19:00:00.000Z",
+      "dateLabel": "04.–05.02.2027",
+      "venue": "CongressPark Wolfsburg",
+      "city": "Wolfsburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=wolfsburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Wolfsburg"
+    },
+    {
+      "id": "21919465",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2027-12-19T19:00:00.000Z",
+      "dateLabel": "19.–20.12.2027",
+      "venue": "Congress Centrum Würzburg",
+      "city": "Würzburg",
+      "price": 59.99,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=w%C3%BCrzburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=6",
+      "portalCity": "Würzburg"
+    },
+    {
+      "id": "21438928",
+      "title": "Drei Haselnüsse für Aschenbrödel - Das Musical / Rosalie Tour",
+      "isoDateTime": "2026-12-09T19:00:00.000Z",
+      "dateLabel": "09.12.2026–24.02.2027",
+      "venue": "Sparkassen-Arena Zwickau",
+      "city": "Zwickau",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?affiliate=3HN&cityname=zwickau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp",
+      "flags": [],
+      "sourcePage": 7,
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=7",
+      "portalCity": "Zwickau"
+    }
+  ],
+  "resolvedAggregates": [
+    {
+      "city": "Duisburg",
+      "verified": true,
+      "newStops": [
+        {
+          "startDate": "2027-11-26",
+          "endDate": "2027-11-28",
+          "venue": "Theater am Marientor",
+          "sourceUrl": "https://tam.theater/portfolio/drei-haselnuesse-fuer-aschenbroedel-das-musical/"
+        }
+      ],
+      "notes": "Offizielle Spielstätte bestätigt 26. und 27.11.2027, jeweils19:30, sowie28.11.2027,14:00. Bestehender Block18.–23.11.2026unverändert. StadtgefilterteEventim-Liste zusätzlich bestätigt; keine durchgängigeJahresspielzeit."
+    },
+    {
+      "city": "Heilbronn",
+      "verified": true,
+      "newStops": [
+        {
+          "startDate": "2027-12-03",
+          "endDate": "2027-12-03",
+          "venue": "Konzert- und Kongresszentrum Harmonie",
+          "sourceUrl": "https://www.eventim.de/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-drei-haselnuesse-fuer-aschenbroedel-das-musical-konzert-und-kongresszentrum-harmonie-22358933/"
+        }
+      ],
+      "notes": "StadtgefilterteEventim-Liste und Einzeltermin bestätigen03.12.2027,19:00; vorhandener29.12.2026ebenfallsHarmonie bleibt. Bisheriger Datensatz heißt korrektHarmonie, kein LKH-Arena-Fehler imPortal."
+    },
+    {
+      "city": "Limburg",
+      "verified": true,
+      "newStops": [
+        {
+          "startDate": "2027-12-16",
+          "endDate": "2027-12-17",
+          "venue": "Stadthalle",
+          "sourceUrl": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?cityname=limburg&calendarview=1&startdate=2027-12-01"
+        }
+      ],
+      "notes": "16. und17.12.2027,je19:00, aufEventim und offizielleSpielstätte https://www.stadthalle-limburg.de/fuer-besucher/programm/drei-haselnuesse-fuer-aschenbroedel-1 sowie -2 bestätigt. Bestehender19.12.2026behalten."
+    },
+    {
+      "city": "Lüneburg",
+      "verified": true,
+      "newStops": [
+        {
+          "startDate": "2027-10-26",
+          "endDate": "2027-10-27",
+          "venue": "LKH Arena",
+          "sourceUrl": "https://www.eventim.de/artist/drei-haselnuesse-fuer-aschenbroedel-das-musical/?cityname=l%C3%BCneburg"
+        }
+      ],
+      "notes": "26. und27.10.2027,je19:00, übergeöffneteEventim-Einzeltermine22023143 und22023177 bestätigt. Alter02.01.2027behalten; kein durchgängigerJanuar-bis-Oktober-Block."
+    },
+    {
+      "city": "Passau",
+      "verified": true,
+      "newStops": [
+        {
+          "startDate": "2027-11-28",
+          "endDate": "2027-11-28",
+          "venue": "Dreiländerhalle",
+          "sourceUrl": "https://www.eventim.de/event/drei-haselnuesse-fuer-aschenbroedel-das-musical-drei-haselnuesse-fuer-aschenbroedel-das-musical-dreilaenderhalle-22343493/"
+        }
+      ],
+      "notes": "28.11.2027,18:00 überEinzelevent und https://www.cofo.de/events/drei-haselnuesse-fuer-aschenbroedel/3512/info.html bestätigt. Alter20.12.2026behalten; zwei getrennteSpielzeiten."
+    }
+  ],
+  "activeCityCount": 77,
+  "activeStopCount": 95,
+  "expiredStops": [
+    {
+      "city": "Bad Neustadt a. d. Saale",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-19",
+      "endDate": "2026-11-19",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-badneustadtadsaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBad%20Neustadt%20an%20der%20Saale"
+    },
+    {
+      "city": "Bochum",
+      "venue": "RuhrCongress",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-19",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBochum"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2026-10-15",
+      "endDate": "2026-10-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-braunschweig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBraunschweig"
+    },
+    {
+      "city": "Bremerhaven",
+      "venue": "Stadthalle",
+      "startDate": "2026-10-29",
+      "endDate": "2026-10-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bremerhaven-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBremerhaven"
+    },
+    {
+      "city": "Cloppenburg",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-cloppenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DCloppenburg"
+    },
+    {
+      "city": "Flensburg",
+      "venue": "Deutsches Haus",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-flensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DFlensburg"
+    },
+    {
+      "city": "Hameln",
+      "venue": "Rattenfängerhalle",
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hameln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHameln"
+    },
+    {
+      "city": "Heidenheim",
+      "venue": "Congress Centrum",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-heidenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHeidenheim"
+    },
+    {
+      "city": "Husum",
+      "venue": "Messe Husum & Congress",
+      "startDate": "2026-10-30",
+      "endDate": "2026-10-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-husum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHusum"
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-kiel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKiel"
+    },
+    {
+      "city": "Leipzig",
+      "venue": "Haus Auensee",
+      "startDate": "2026-11-08",
+      "endDate": "2026-11-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-leipzig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLeipzig"
+    },
+    {
+      "city": "Magdeburg",
+      "venue": "AMO Kulturhaus",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DMagdeburg"
+    },
+    {
+      "city": "Mainz",
+      "venue": "Rheingoldhalle",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-mainz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DMainz"
+    },
+    {
+      "city": "Neuss",
+      "venue": "Stadthalle Neuss",
+      "startDate": "2026-10-22",
+      "endDate": "2026-10-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-neuss-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DNeuss"
+    },
+    {
+      "city": "Offenburg",
+      "venue": "Oberrheinhalle",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-offenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DOffenburg"
+    },
+    {
+      "city": "Osnabrück",
+      "venue": "OsnabrückHalle (Europa Saal)",
+      "startDate": "2026-10-28",
+      "endDate": "2026-10-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-osnabrueck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DOsnabr%C3%BCck"
+    },
+    {
+      "city": "Paderborn",
+      "venue": "Paderhalle",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-paderborn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DPaderborn"
+    },
+    {
+      "city": "Rostock",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-rostock-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRostock"
+    },
+    {
+      "city": "Saarbrücken",
+      "venue": "Saarlandhalle",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-saarbruecken-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSaarbr%C3%BCcken"
+    },
+    {
+      "city": "Schwerin",
+      "venue": "Sport- und Kongresshalle",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-schwerin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSchwerin"
+    },
+    {
+      "city": "Siegen",
+      "venue": "Siegerlandhalle",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-siegen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSiegen"
+    },
+    {
+      "city": "Suhl",
+      "venue": "Congress Centrum",
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-suhl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSuhl"
+    },
+    {
+      "city": "Uelzen",
+      "venue": "Theater an der Ilmenau",
+      "startDate": "2026-10-23",
+      "endDate": "2026-10-23",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-uelzen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DUelzen"
+    },
+    {
+      "city": "Wolfsburg",
+      "venue": "Congresspark",
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wolfsburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWolfsburg"
+    },
+    {
+      "city": "Zweibrücken",
+      "venue": "Festhalle",
+      "startDate": "2026-11-20",
+      "endDate": "2026-11-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-zweibruecken-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DZweibr%C3%BCcken"
+    }
+  ],
+  "retainedFutureStops": [
+    {
+      "city": "Aschaffenburg",
+      "venue": "Stadthalle am Schloss",
+      "startDate": "2026-12-14",
+      "endDate": "2026-12-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAschaffenburg"
+    },
+    {
+      "city": "Aschaffenburg",
+      "venue": "Stadthalle am Schloss",
+      "startDate": "2027-12-27",
+      "endDate": "2027-12-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAschaffenburg"
+    },
+    {
+      "city": "Aurich",
+      "venue": "Stadthalle",
+      "startDate": "2027-02-12",
+      "endDate": "2027-02-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aurich-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DAurich"
+    },
+    {
+      "city": "Bad Ischl",
+      "venue": "Theaterhaus",
+      "startDate": "2026-12-21",
+      "endDate": "2026-12-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-badischl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBad%20Ischl"
+    },
+    {
+      "city": "Bad Neustadt a. d. Saale",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-19",
+      "endDate": "2026-11-19",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-badneustadtadsaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBad%20Neustadt%20an%20der%20Saale"
+    },
+    {
+      "city": "Berlin",
+      "venue": "BlueMax Theater",
+      "startDate": "2027-02-28",
+      "endDate": "2027-04-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-berlin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBerlin"
+    },
+    {
+      "city": "Bielefeld",
+      "venue": "Lokschuppen",
+      "startDate": "2027-12-07",
+      "endDate": "2027-12-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bielefeld-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBielefeld"
+    },
+    {
+      "city": "Bitburg",
+      "venue": "Stadthalle",
+      "startDate": "2027-01-15",
+      "endDate": "2027-01-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bitburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBitburg"
+    },
+    {
+      "city": "Bochum",
+      "venue": "RuhrCongress",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-19",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBochum"
+    },
+    {
+      "city": "Bochum",
+      "venue": "RuhrCongress",
+      "startDate": "2027-01-25",
+      "endDate": "2027-01-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBochum"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2026-10-15",
+      "endDate": "2026-10-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-braunschweig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBraunschweig"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2027-02-15",
+      "endDate": "2027-02-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-braunschweig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBraunschweig"
+    },
+    {
+      "city": "Bremen",
+      "venue": "Metropol Theater",
+      "startDate": "2026-12-30",
+      "endDate": "2027-01-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bremen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBremen"
+    },
+    {
+      "city": "Bremerhaven",
+      "venue": "Stadthalle",
+      "startDate": "2026-10-29",
+      "endDate": "2026-10-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bremerhaven-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBremerhaven"
+    },
+    {
+      "city": "Bremerhaven",
+      "venue": "Stadthalle",
+      "startDate": "2027-10-19",
+      "endDate": "2027-10-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-bremerhaven-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DBremerhaven"
+    },
+    {
+      "city": "Chemnitz",
+      "venue": "Stadthalle",
+      "startDate": "2027-02-26",
+      "endDate": "2027-02-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-chemnitz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DChemnitz"
+    },
+    {
+      "city": "Cloppenburg",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-cloppenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DCloppenburg"
+    },
+    {
+      "city": "Cottbus",
+      "venue": "Stadthalle",
+      "startDate": "2027-01-04",
+      "endDate": "2027-01-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-cottbus-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DCottbus"
+    },
+    {
+      "city": "Crailsheim",
+      "venue": "Hangar",
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-crailsheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DCrailsheim"
+    },
+    {
+      "city": "Deggendorf",
+      "venue": "Stadthalle",
+      "startDate": "2026-12-18",
+      "endDate": "2026-12-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-deggendorf-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDeggendorf"
+    },
+    {
+      "city": "Donaueschingen",
+      "venue": "Donauhalle (Mozart-Saal)",
+      "startDate": "2026-12-15",
+      "endDate": "2026-12-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-donaueschingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDonaueschingen"
+    },
+    {
+      "city": "Donaueschingen",
+      "venue": "Donauhallen",
+      "startDate": "2027-11-10",
+      "endDate": "2027-11-11",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-donaueschingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDonaueschingen"
+    },
+    {
+      "city": "Dornbirn",
+      "venue": "Kulturhaus",
+      "startDate": "2027-01-19",
+      "endDate": "2027-01-19",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-dornbirn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDornbirn"
+    },
+    {
+      "city": "Dresden",
+      "venue": "Messe",
+      "startDate": "2026-12-16",
+      "endDate": "2026-12-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-dresden-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDresden"
+    },
+    {
+      "city": "Dresden",
+      "venue": "Messe",
+      "startDate": "2027-02-12",
+      "endDate": "2027-02-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-dresden-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDresden"
+    },
+    {
+      "city": "Duisburg",
+      "venue": "Theater am Marientor",
+      "startDate": "2026-11-18",
+      "endDate": "2026-11-23",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDuisburg"
+    },
+    {
+      "city": "Flensburg",
+      "venue": "Deutsches Haus",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-flensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DFlensburg"
+    },
+    {
+      "city": "Frankfurt (Oder)",
+      "venue": "Messe – Halle 1",
+      "startDate": "2027-01-03",
+      "endDate": "2027-01-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-frankfurtoder-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fevent%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical-drei-haselnuesse-fuer-aschenbroedel-das-musical-messegelaende-frankfurt-oder-21535871%2F%3Faffiliate%3DZEE"
+    },
+    {
+      "city": "Frankfurt am Main",
+      "venue": "myticket Jahrhunderthalle",
+      "startDate": "2026-11-26",
+      "endDate": "2026-11-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-frankfurtammain-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dfrankfurt"
+    },
+    {
+      "city": "Frankfurt am Main",
+      "venue": "myticket Jahrhunderthalle",
+      "startDate": "2027-02-06",
+      "endDate": "2027-02-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-frankfurtammain-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dfrankfurt"
+    },
+    {
+      "city": "Fulda",
+      "venue": "Esperantohalle",
+      "startDate": "2026-11-28",
+      "endDate": "2026-11-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-fulda-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DFulda"
+    },
+    {
+      "city": "Fulda",
+      "venue": "Esperantohalle",
+      "startDate": "2026-12-06",
+      "endDate": "2026-12-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-fulda-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DFulda"
+    },
+    {
+      "city": "Fulda",
+      "venue": "Esperantohalle",
+      "startDate": "2027-12-21",
+      "endDate": "2027-12-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-fulda-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DFulda"
+    },
+    {
+      "city": "Gera",
+      "venue": "Kultur- und Kongresszentrum Gera",
+      "startDate": "2026-12-07",
+      "endDate": "2026-12-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-gera-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DGera"
+    },
+    {
+      "city": "Graz",
+      "venue": "Helmut List Halle",
+      "startDate": "2027-02-19",
+      "endDate": "2027-02-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-graz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DGraz"
+    },
+    {
+      "city": "Gütersloh",
+      "venue": "Stadthalle",
+      "startDate": "2027-01-11",
+      "endDate": "2027-01-12",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-guetersloh-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DG%C3%BCtersloh"
+    },
+    {
+      "city": "Halle (Saale)",
+      "venue": "HändelHALLE",
+      "startDate": "2026-12-03",
+      "endDate": "2026-12-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hallesaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dhalle+saale"
+    },
+    {
+      "city": "Halle (Saale)",
+      "venue": "HändelHALLE",
+      "startDate": "2027-12-25",
+      "endDate": "2027-12-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hallesaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dhalle+saale"
+    },
+    {
+      "city": "Halle (Saale)",
+      "venue": "HändelHALLE",
+      "startDate": "2027-02-22",
+      "endDate": "2027-02-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hallesaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dhalle+saale"
+    },
+    {
+      "city": "Hameln",
+      "venue": "Rattenfängerhalle",
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hameln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHameln"
+    },
+    {
+      "city": "Hamburg",
+      "venue": "Sporthalle",
+      "startDate": "2027-01-27",
+      "endDate": "2027-01-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHamburg"
+    },
+    {
+      "city": "Hannover",
+      "venue": "Swiss Life Hall",
+      "startDate": "2027-02-17",
+      "endDate": "2027-02-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hannover-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHannover"
+    },
+    {
+      "city": "Heidenheim",
+      "venue": "Congress Centrum",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-heidenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHeidenheim"
+    },
+    {
+      "city": "Heidenheim",
+      "venue": "Congress Centrum",
+      "startDate": "2027-01-17",
+      "endDate": "2027-01-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-heidenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHeidenheim"
+    },
+    {
+      "city": "Heilbronn",
+      "venue": "Harmonie",
+      "startDate": "2026-12-29",
+      "endDate": "2026-12-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-heilbronn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHeilbronn"
+    },
+    {
+      "city": "Husum",
+      "venue": "Messe Husum & Congress",
+      "startDate": "2026-10-30",
+      "endDate": "2026-10-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-husum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHusum"
+    },
+    {
+      "city": "Husum",
+      "venue": "Messe Husum & Congress",
+      "startDate": "2027-10-28",
+      "endDate": "2027-10-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-husum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHusum"
+    },
+    {
+      "city": "Innsbruck",
+      "venue": "Congress (Saal Tirol)",
+      "startDate": "2026-12-22",
+      "endDate": "2026-12-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-innsbruck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DInnsbruck"
+    },
+    {
+      "city": "Jena",
+      "venue": "Sparkassen-Arena",
+      "startDate": "2027-01-26",
+      "endDate": "2027-01-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-jena-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DJena"
+    },
+    {
+      "city": "Karlsruhe",
+      "venue": "Schwarzwaldhalle",
+      "startDate": "2027-12-25",
+      "endDate": "2027-12-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-karlsruhe-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKarlsruhe"
+    },
+    {
+      "city": "Kempten",
+      "venue": "bigBOX Allgäu",
+      "startDate": "2026-11-22",
+      "endDate": "2026-11-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-kempten-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKempten"
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-kiel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKiel"
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2027-02-06",
+      "endDate": "2027-02-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-kiel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKiel"
+    },
+    {
+      "city": "Koblenz",
+      "venue": "Rhein-Mosel-Halle",
+      "startDate": "2026-11-30",
+      "endDate": "2026-11-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-koblenz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKoblenz"
+    },
+    {
+      "city": "Koblenz",
+      "venue": "Rhein-Mosel-Halle",
+      "startDate": "2027-11-08",
+      "endDate": "2027-11-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-koblenz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKoblenz"
+    },
+    {
+      "city": "Köln",
+      "venue": "Motorworld",
+      "startDate": "2027-01-20",
+      "endDate": "2027-01-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-koeln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DK%C3%B6ln"
+    },
+    {
+      "city": "Landau",
+      "venue": "Jugendstil-Festhalle",
+      "startDate": "2026-12-12",
+      "endDate": "2026-12-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-landau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLandau"
+    },
+    {
+      "city": "Leipzig",
+      "venue": "Haus Auensee",
+      "startDate": "2026-11-08",
+      "endDate": "2026-11-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-leipzig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLeipzig"
+    },
+    {
+      "city": "Leipzig",
+      "venue": "Haus Auensee",
+      "startDate": "2027-01-31",
+      "endDate": "2027-02-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-leipzig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLeipzig"
+    },
+    {
+      "city": "Limburg",
+      "venue": "Stadthalle",
+      "startDate": "2026-12-19",
+      "endDate": "2026-12-19",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-limburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLimburg"
+    },
+    {
+      "city": "Lindau",
+      "venue": "Inselhalle",
+      "startDate": "2026-12-23",
+      "endDate": "2026-12-23",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-lindau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLindau%20%2F%20Bodensee"
+    },
+    {
+      "city": "Linz",
+      "venue": "TipsArena",
+      "startDate": "2026-12-27",
+      "endDate": "2026-12-27",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-linz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLinz"
+    },
+    {
+      "city": "Lüneburg",
+      "venue": "LKH Arena",
+      "startDate": "2027-01-02",
+      "endDate": "2027-01-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-lueneburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DL%C3%BCneburg"
+    },
+    {
+      "city": "Magdeburg",
+      "venue": "AMO Kulturhaus",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DMagdeburg"
+    },
+    {
+      "city": "Magdeburg",
+      "venue": "AMO Kulturhaus",
+      "startDate": "2027-02-08",
+      "endDate": "2027-02-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DMagdeburg"
+    },
+    {
+      "city": "Mainz",
+      "venue": "Rheingoldhalle",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-mainz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DMainz"
+    },
+    {
+      "city": "München",
+      "venue": "Deutsches Theater",
+      "startDate": "2026-12-01",
+      "endDate": "2026-12-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-muenchen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DM%C3%BCnchen"
+    },
+    {
+      "city": "Münster",
+      "venue": "Messe+Congress Centrum Halle Münsterland",
+      "startDate": "2027-02-16",
+      "endDate": "2027-02-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-muenster-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DM%C3%BCnster"
+    },
+    {
+      "city": "Neuss",
+      "venue": "Stadthalle Neuss",
+      "startDate": "2026-10-22",
+      "endDate": "2026-10-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-neuss-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DNeuss"
+    },
+    {
+      "city": "Neuss",
+      "venue": "Stadthalle Neuss",
+      "startDate": "2028-01-11",
+      "endDate": "2028-01-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-neuss-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DNeuss"
+    },
+    {
+      "city": "Nürnberg",
+      "venue": "Meistersingerhalle",
+      "startDate": "2027-02-02",
+      "endDate": "2027-02-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-nuernberg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DN%C3%BCrnberg"
+    },
+    {
+      "city": "Offenburg",
+      "venue": "Oberrheinhalle",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-offenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DOffenburg"
+    },
+    {
+      "city": "Offenburg",
+      "venue": "Oberrheinhalle",
+      "startDate": "2027-10-11",
+      "endDate": "2027-10-12",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-offenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DOffenburg"
+    },
+    {
+      "city": "Osnabrück",
+      "venue": "OsnabrückHalle (Europa Saal)",
+      "startDate": "2026-10-28",
+      "endDate": "2026-10-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-osnabrueck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DOsnabr%C3%BCck"
+    },
+    {
+      "city": "Paderborn",
+      "venue": "Paderhalle",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-paderborn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DPaderborn"
+    },
+    {
+      "city": "Paderborn",
+      "venue": "Paderhalle",
+      "startDate": "2028-01-03",
+      "endDate": "2028-01-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-paderborn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DPaderborn"
+    },
+    {
+      "city": "Passau",
+      "venue": "Dreiländerhalle",
+      "startDate": "2026-12-20",
+      "endDate": "2026-12-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-passau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DPassau"
+    },
+    {
+      "city": "Puch bei Salzburg",
+      "venue": "Zentrum für Visionen",
+      "startDate": "2026-12-25",
+      "endDate": "2026-12-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-puchbeisalzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DPuch-Urstein%20bei%20Salzburg"
+    },
+    {
+      "city": "Rastatt",
+      "venue": "Badner Halle",
+      "startDate": "2026-11-26",
+      "endDate": "2026-11-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-rastatt-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRastatt"
+    },
+    {
+      "city": "Ravensburg",
+      "venue": "Oberschwabenhalle",
+      "startDate": "2026-12-16",
+      "endDate": "2026-12-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-ravensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRavensburg"
+    },
+    {
+      "city": "Ravensburg",
+      "venue": "Oberschwabenhalle",
+      "startDate": "2027-02-28",
+      "endDate": "2027-02-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-ravensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRavensburg"
+    },
+    {
+      "city": "Ried im Innkreis",
+      "venue": "övv Saal (OG Halle 17) Messe Ried",
+      "startDate": "2027-01-20",
+      "endDate": "2027-01-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-riediminnkreis-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRied%20im%20Innkreis"
+    },
+    {
+      "city": "Rostock",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-rostock-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRostock"
+    },
+    {
+      "city": "Rostock",
+      "venue": "Stadthalle",
+      "startDate": "2027-01-06",
+      "endDate": "2027-01-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-rostock-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DRostock"
+    },
+    {
+      "city": "Saarbrücken",
+      "venue": "Saarlandhalle",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-saarbruecken-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSaarbr%C3%BCcken"
+    },
+    {
+      "city": "Schwerin",
+      "venue": "Sport- und Kongresshalle",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-schwerin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSchwerin"
+    },
+    {
+      "city": "Schwerin",
+      "venue": "Sport- und Kongresshalle",
+      "startDate": "2027-01-09",
+      "endDate": "2027-01-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-schwerin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSchwerin"
+    },
+    {
+      "city": "Siegen",
+      "venue": "Siegerlandhalle",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-siegen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSiegen"
+    },
+    {
+      "city": "Singen",
+      "venue": "Stadthalle",
+      "startDate": "2027-01-18",
+      "endDate": "2027-01-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-singen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSingen"
+    },
+    {
+      "city": "Stuttgart",
+      "venue": "Liederhalle (Hegel-Saal)",
+      "startDate": "2026-12-22",
+      "endDate": "2026-12-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DStuttgart"
+    },
+    {
+      "city": "Suhl",
+      "venue": "Congress Centrum",
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-suhl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSuhl"
+    },
+    {
+      "city": "Trier",
+      "venue": "SWT Arena",
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-trier-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DTrier"
+    },
+    {
+      "city": "Tuttlingen",
+      "venue": "Stadthalle",
+      "startDate": "2026-12-17",
+      "endDate": "2026-12-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-tuttlingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DTuttlingen"
+    },
+    {
+      "city": "Uelzen",
+      "venue": "Theater an der Ilmenau",
+      "startDate": "2026-10-23",
+      "endDate": "2026-10-23",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-uelzen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DUelzen"
+    },
+    {
+      "city": "Vöcklabruck",
+      "venue": "Stadtsaal Vöcklabruck",
+      "startDate": "2027-01-21",
+      "endDate": "2027-01-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-voecklabruck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DV%C3%B6cklabruck"
+    },
+    {
+      "city": "Weiden i. d. Oberpfalz",
+      "venue": "Max-Reger-Halle (Gustl Lang Saal)",
+      "startDate": "2026-12-30",
+      "endDate": "2026-12-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-weidenidoberpfalz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWeiden"
+    },
+    {
+      "city": "Weimar",
+      "venue": "Stadthalle",
+      "startDate": "2027-01-13",
+      "endDate": "2027-01-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-weimar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWeimar"
+    },
+    {
+      "city": "Wetzlar",
+      "venue": "Stadthalle",
+      "startDate": "2026-11-29",
+      "endDate": "2026-11-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wetzlar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWetzlar"
+    },
+    {
+      "city": "Wetzlar",
+      "venue": "Stadthalle",
+      "startDate": "2027-10-14",
+      "endDate": "2027-10-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wetzlar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWetzlar"
+    },
+    {
+      "city": "Wien",
+      "venue": "MuseumsQuartier Halle E",
+      "startDate": "2027-01-06",
+      "endDate": "2027-01-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wien-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWien"
+    },
+    {
+      "city": "Wolfsburg",
+      "venue": "Congresspark",
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wolfsburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWolfsburg"
+    },
+    {
+      "city": "Wolfsburg",
+      "venue": "Congresspark",
+      "startDate": "2027-02-04",
+      "endDate": "2027-02-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wolfsburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DWolfsburg"
+    },
+    {
+      "city": "Würzburg",
+      "venue": "Congress Centrum Würzburg",
+      "startDate": "2027-12-19",
+      "endDate": "2027-12-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-wuerzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DW%C3%BCrzburg"
+    },
+    {
+      "city": "Zweibrücken",
+      "venue": "Festhalle",
+      "startDate": "2026-11-20",
+      "endDate": "2026-11-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-zweibruecken-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DZweibr%C3%BCcken"
+    },
+    {
+      "city": "Zwickau",
+      "venue": "Sparkassenarena",
+      "startDate": "2026-12-09",
+      "endDate": "2026-12-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-zwickau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DZwickau"
+    },
+    {
+      "city": "Zwickau",
+      "venue": "Sparkassenarena",
+      "startDate": "2027-02-24",
+      "endDate": "2027-02-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-zwickau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DZwickau"
+    }
+  ],
+  "newStops": [
+    {
+      "city": "Aachen",
+      "venue": "Eurogress",
+      "startDate": "2027-12-04",
+      "endDate": "2027-12-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-aachen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Daachen"
+    },
+    {
+      "city": "Augsburg",
+      "venue": "KONGRESS am PARK",
+      "startDate": "2027-12-29",
+      "endDate": "2027-12-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-augsburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Daugsburg"
+    },
+    {
+      "city": "Deggendorf",
+      "venue": "Stadthalle",
+      "startDate": "2026-12-28",
+      "endDate": "2026-12-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-deggendorf-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDeggendorf"
+    },
+    {
+      "city": "Flensburg",
+      "venue": "Deutsches Haus",
+      "startDate": "2027-12-21",
+      "endDate": "2027-12-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-flensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DFlensburg"
+    },
+    {
+      "city": "Ingelheim am Rhein",
+      "venue": "kING – Kultur- und Kongresshalle",
+      "startDate": "2027-12-14",
+      "endDate": "2027-12-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-ingelheim-am-rhein-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dingelheim"
+    },
+    {
+      "city": "Landshut",
+      "venue": "Sparkassen-Arena",
+      "startDate": "2028-01-05",
+      "endDate": "2028-01-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-landshut-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dlandshut"
+    },
+    {
+      "city": "Mannheim",
+      "venue": "Rosengarten (Mozartsaal)",
+      "startDate": "2027-11-04",
+      "endDate": "2027-11-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-mannheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dmannheim"
+    },
+    {
+      "city": "Neu-Ulm",
+      "venue": "ratiopharm arena",
+      "startDate": "2028-01-15",
+      "endDate": "2028-01-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-neu-ulm-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3Dneu-ulm"
+    },
+    {
+      "city": "Siegen",
+      "venue": "Siegerlandhalle",
+      "startDate": "2027-12-12",
+      "endDate": "2027-12-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-siegen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DSiegen"
+    },
+    {
+      "city": "Duisburg",
+      "venue": "Theater am Marientor",
+      "startDate": "2027-11-26",
+      "endDate": "2027-11-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DDuisburg"
+    },
+    {
+      "city": "Heilbronn",
+      "venue": "Harmonie",
+      "startDate": "2027-12-03",
+      "endDate": "2027-12-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-heilbronn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHeilbronn"
+    },
+    {
+      "city": "Limburg",
+      "venue": "Stadthalle",
+      "startDate": "2027-12-16",
+      "endDate": "2027-12-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-limburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DLimburg"
+    },
+    {
+      "city": "Lüneburg",
+      "venue": "LKH Arena",
+      "startDate": "2027-10-26",
+      "endDate": "2027-10-27",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-lueneburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DL%C3%BCneburg"
+    },
+    {
+      "city": "Passau",
+      "venue": "Dreiländerhalle",
+      "startDate": "2027-11-28",
+      "endDate": "2027-11-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-passau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DPassau"
+    }
+  ],
+  "extensions": [
+    {
+      "before": {
+        "city": "Cottbus",
+        "venue": "Stadthalle",
+        "startDate": "2027-01-04",
+        "endDate": "2027-01-04",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-cottbus-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DCottbus"
+      },
+      "after": {
+        "city": "Cottbus",
+        "venue": "Stadthalle",
+        "startDate": "2027-01-04",
+        "endDate": "2027-01-05",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-cottbus-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DCottbus"
+      },
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=2"
+    },
+    {
+      "before": {
+        "city": "Hamburg",
+        "venue": "Sporthalle",
+        "startDate": "2027-01-27",
+        "endDate": "2027-01-28",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHamburg"
+      },
+      "after": {
+        "city": "Hamburg",
+        "venue": "Sporthalle",
+        "startDate": "2027-01-26",
+        "endDate": "2027-01-28",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-hamburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DHamburg"
+      },
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3"
+    },
+    {
+      "before": {
+        "city": "Karlsruhe",
+        "venue": "Schwarzwaldhalle",
+        "startDate": "2027-12-25",
+        "endDate": "2027-12-25",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-karlsruhe-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKarlsruhe"
+      },
+      "after": {
+        "city": "Karlsruhe",
+        "venue": "Schwarzwaldhalle",
+        "startDate": "2027-12-25",
+        "endDate": "2027-12-26",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=3hn-karlsruhe-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdrei-haselnuesse-fuer-aschenbroedel-das-musical%2F%3Fcityname%3DKarlsruhe"
+      },
+      "sourceUrl": "https://showslot.com/en/musicals-shows/three-wishes-for-cinderella/tickets/?seite=3"
+    }
+  ],
+  "sourceOnlyMissingFutureCitiesRetained": [
+    "Crailsheim",
+    "Gera",
+    "München",
+    "Weiden i. d. Oberpfalz"
+  ]
+}

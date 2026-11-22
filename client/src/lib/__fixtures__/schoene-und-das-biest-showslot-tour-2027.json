@@ -1,0 +1,2064 @@
+{
+  "retrieved": "2026-11-22",
+  "source": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+  "pages": [
+    {
+      "page": 1,
+      "url": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "count": 12
+    },
+    {
+      "page": 2,
+      "url": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "count": 12
+    },
+    {
+      "page": 3,
+      "url": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "count": 12
+    },
+    {
+      "page": 4,
+      "url": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "count": 12
+    },
+    {
+      "page": 5,
+      "url": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "count": 12
+    },
+    {
+      "page": 6,
+      "url": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "count": 7
+    }
+  ],
+  "sourceCityCount": 67,
+  "sourceRows": [
+    {
+      "id": "21354932",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-21T19:00:00.000Z",
+      "dateLabel": "21.02.2027",
+      "venue": "Eurogress Aachen",
+      "city": "Aachen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=aachen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Aachen"
+    },
+    {
+      "id": "21570878",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-17T19:00:00.000Z",
+      "dateLabel": "17.03.2027",
+      "venue": "Stadthalle am Schloss - Kirchner Saal",
+      "city": "Aschaffenburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=aschaffenburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Aschaffenburg"
+    },
+    {
+      "id": "21357335",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-26T19:00:00.000Z",
+      "dateLabel": "26.02.2027",
+      "venue": "Stadthalle Aurich",
+      "city": "Aurich",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=aurich&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Aurich"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/die-schoene-und-das-biest-das-neue-musical-kongress-theaterhaus-bad-ischl-21564775/?affiliate=J81",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-23T18:00:00.000Z",
+      "dateLabel": "23.03.2027",
+      "venue": "",
+      "city": "Bad Ischl",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=J81&cityname=bad%20ischl",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bad Ischl"
+    },
+    {
+      "id": "21610826",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-07T19:00:00.000Z",
+      "dateLabel": "07.05.2027",
+      "venue": "Stadthalle Bad Neustadt",
+      "city": "Bad Neustadt A.d. Saale",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=bad%20neustadt%20an%20der%20saale&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bad Neustadt a. d. Saale"
+    },
+    {
+      "id": "21776227",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-20T19:00:00.000Z",
+      "dateLabel": "20.04.2027",
+      "venue": "VILCO Bad Vilbel",
+      "city": "Bad Vilbel / Frankfurt",
+      "price": 60.49,
+      "link": "https://www.eventim.de/event/die-schoene-und-das-biest-das-neue-musical-vilco-bad-vilbel-21776227/?affiliate=NG6",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bad Vilbel"
+    },
+    {
+      "id": "21950156",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-01-06T19:00:00.000Z",
+      "dateLabel": "06.–23.01.2027",
+      "venue": "BlueMax Theater Berlin",
+      "city": "Berlin",
+      "price": 49.99,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=berlin&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Berlin"
+    },
+    {
+      "id": "21573555",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-05T19:00:00.000Z",
+      "dateLabel": "05.04.2027",
+      "venue": "Lokschuppen",
+      "city": "Bielefeld",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=bielefeld&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bielefeld"
+    },
+    {
+      "id": "21623851",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-16T19:00:00.000Z",
+      "dateLabel": "16.03.2027",
+      "venue": "Bitburger Stadthalle",
+      "city": "Bitburg",
+      "price": 70.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=bitburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bitburg"
+    },
+    {
+      "id": "22046266",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-11T19:00:00.000Z",
+      "dateLabel": "11.–12.03.2027",
+      "venue": "RuhrCongress Bochum",
+      "city": "Bochum",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=bochum&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bochum"
+    },
+    {
+      "id": "21570633",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-03T19:00:00.000Z",
+      "dateLabel": "03.02.2027",
+      "venue": "Volkswagen Halle",
+      "city": "Braunschweig",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=braunschweig&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Braunschweig"
+    },
+    {
+      "id": "21354997",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-02T19:00:00.000Z",
+      "dateLabel": "02.02.2027",
+      "venue": "Metropol Theater Bremen",
+      "city": "Bremen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=bremen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 1,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/",
+      "portalCity": "Bremen"
+    },
+    {
+      "id": "21611586",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-01T19:00:00.000Z",
+      "dateLabel": "01.05.2027",
+      "venue": "Stadthalle Cottbus",
+      "city": "Cottbus",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=cottbus&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Cottbus"
+    },
+    {
+      "id": "21611005",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-21T19:00:00.000Z",
+      "dateLabel": "21.04.2027",
+      "venue": "Donauhallen Donaueschingen",
+      "city": "Donaueschingen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=donaueschingen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Donaueschingen"
+    },
+    {
+      "id": "21357178",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-01T19:00:00.000Z",
+      "dateLabel": "01.03.2027",
+      "venue": "Alter Schlachthof",
+      "city": "Dresden",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=dresden&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Dresden"
+    },
+    {
+      "id": "22046268",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-01-27T19:00:00.000Z",
+      "dateLabel": "27.–28.01.2027",
+      "venue": "Theater am Marientor",
+      "city": "Duisburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=duisburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Duisburg"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/die-schoene-und-das-biest-das-neue-musical-montforthaus-feldkirch-21359790/?affiliate=J81",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-13T18:00:00.000Z",
+      "dateLabel": "13.02.2027",
+      "venue": "",
+      "city": "Feldkirch",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=J81&cityname=feldkirch",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Feldkirch"
+    },
+    {
+      "id": "21354858",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-24T19:00:00.000Z",
+      "dateLabel": "24.02.2027",
+      "venue": "Deutsches Haus",
+      "city": "Flensburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=flensburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Flensburg"
+    },
+    {
+      "id": "21611619",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-02T19:00:00.000Z",
+      "dateLabel": "02.05.2027",
+      "venue": "Messehalle 1",
+      "city": "Frankfurt / Oder",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=frankfurt%20oder&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Frankfurt (Oder)"
+    },
+    {
+      "id": "21709631",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-15T19:00:00.000Z",
+      "dateLabel": "15.04.2027",
+      "venue": "Graf-Zeppelin-Haus",
+      "city": "Friedrichshafen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=friedrichshafen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Friedrichshafen"
+    },
+    {
+      "id": "21610859",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-03T19:00:00.000Z",
+      "dateLabel": "03.04.2027",
+      "venue": "Esperantohalle",
+      "city": "Fulda",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=fulda&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Fulda"
+    },
+    {
+      "id": "21571634",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-18T19:00:00.000Z",
+      "dateLabel": "18.03.2027",
+      "venue": "Stadthalle Gersthofen",
+      "city": "Gersthofen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=gersthofen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Gersthofen"
+    },
+    {
+      "id": "21612349",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-11T19:00:00.000Z",
+      "dateLabel": "11.04.2027",
+      "venue": "Stadthalle Göttingen",
+      "city": "Göttingen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=g%C3%B6ttingen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Göttingen"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/die-schoene-und-das-biest-das-neue-musical-helmut-list-halle-21566423/?affiliate=J81",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-23T17:00:00.000Z",
+      "dateLabel": "23.–25.04.2027",
+      "venue": "",
+      "city": "Graz",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=J81&cityname=graz",
+      "flags": [],
+      "sourcePage": 2,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2",
+      "portalCity": "Graz"
+    },
+    {
+      "id": "21570130",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-22T19:00:00.000Z",
+      "dateLabel": "22.02.2027",
+      "venue": "Stadthalle Gütersloh",
+      "city": "Gütersloh",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=g%C3%BCtersloh&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Gütersloh"
+    },
+    {
+      "id": "21612053",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-07T19:00:00.000Z",
+      "dateLabel": "07.03.2027",
+      "venue": "KONGRESS- und EVENTPARK Stadthalle Hagen GmbH",
+      "city": "Hagen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=hagen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Hagen"
+    },
+    {
+      "id": "21359676",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-02T19:00:00.000Z",
+      "dateLabel": "02.03.2027",
+      "venue": "Georg-Friedrich-Händel HALLE",
+      "city": "Halle / Saale",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=halle%20saale&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Halle (Saale)"
+    },
+    {
+      "id": "22046270",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-15T19:00:00.000Z",
+      "dateLabel": "15.–16.02.2027",
+      "venue": "Congress Park Hanau",
+      "city": "Hanau",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=hanau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Hanau"
+    },
+    {
+      "id": "21862471",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-18T19:00:00.000Z",
+      "dateLabel": "18.02.2027",
+      "venue": "Theater am Aegi",
+      "city": "Hannover",
+      "price": 59,
+      "link": "https://www.eventim.de/event/die-schoene-und-das-biest-das-neue-musical-theater-am-aegi-21862471/?affiliate=NG6",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Hannover"
+    },
+    {
+      "id": "21610898",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-16T19:00:00.000Z",
+      "dateLabel": "16.04.2027",
+      "venue": "Congress Centrum Heidenheim",
+      "city": "Heidenheim",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=heidenheim&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Heidenheim"
+    },
+    {
+      "id": "22367399",
+      "title": "Die Schöne und das Biest - Das neue Musical - Sternenbühne Open Air",
+      "isoDateTime": "2027-08-12T19:00:00.000Z",
+      "dateLabel": "12.–22.08.2027",
+      "venue": "Freilichtbühne Heppenheim",
+      "city": "Heppenheim",
+      "price": 49.9,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NGF&cityname=heppenheim",
+      "flags": [
+        {
+          "label": "Sternenbühne Open Air",
+          "color": "#FF2D00"
+        }
+      ],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Heppenheim"
+    },
+    {
+      "id": "21612643",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-10T19:00:00.000Z",
+      "dateLabel": "10.02.2027",
+      "venue": "Kulturzentrum Herne",
+      "city": "Herne",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=herne&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Herne"
+    },
+    {
+      "id": "21612765",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-25T19:00:00.000Z",
+      "dateLabel": "25.02.2027",
+      "venue": "NCC NordseeCongressCentrum",
+      "city": "Husum",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=husum&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Husum"
+    },
+    {
+      "id": "22368777",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-09T19:00:00.000Z",
+      "dateLabel": "09.03.2027",
+      "venue": "Messe Idar-Oberstein",
+      "city": "Idar-oberstein",
+      "price": 60.49,
+      "link": "https://www.eventim.de/event/die-schoene-und-das-biest-das-neue-musical-messe-idar-oberstein-22368777/",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Idar-Oberstein"
+    },
+    {
+      "id": "21999734",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-02T19:00:00.000Z",
+      "dateLabel": "02.04.2027",
+      "venue": "Harzlandhalle",
+      "city": "Ilsenburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=ilsenburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Ilsenburg"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/die-schoene-und-das-biest-das-neue-musical-congress-innsbruck-21359789/?affiliate=J81",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-12T18:00:00.000Z",
+      "dateLabel": "12.02.2027",
+      "venue": "",
+      "city": "Innsbruck",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=J81&cityname=innsbruck",
+      "flags": [],
+      "sourcePage": 3,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3",
+      "portalCity": "Innsbruck"
+    },
+    {
+      "id": "21610901",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-18T19:00:00.000Z",
+      "dateLabel": "18.04.2027",
+      "venue": "Sparkassen Arena",
+      "city": "Jena",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=jena&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Jena"
+    },
+    {
+      "id": "21355697",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-05T19:00:00.000Z",
+      "dateLabel": "05.02.2027",
+      "venue": "MERKUR Ostseehalle",
+      "city": "Kiel",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=kiel&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Kiel"
+    },
+    {
+      "id": "21570877",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-15T19:00:00.000Z",
+      "dateLabel": "15.03.2027",
+      "venue": "Rhein-Mosel-Halle Koblenz",
+      "city": "Koblenz",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=koblenz&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Koblenz"
+    },
+    {
+      "id": "22046267",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-06T19:00:00.000Z",
+      "dateLabel": "06.–08.04.2027",
+      "venue": "Motorworld",
+      "city": "Köln",
+      "price": 70.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=k%C3%B6ln&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Köln"
+    },
+    {
+      "id": "21570818",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-08T19:00:00.000Z",
+      "dateLabel": "08.03.2027",
+      "venue": "Jugendstil-Festhalle",
+      "city": "Landau In Der Pfalz",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=landau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Landau"
+    },
+    {
+      "id": "21357220",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-03T19:00:00.000Z",
+      "dateLabel": "03.03.2027",
+      "venue": "Haus Auensee",
+      "city": "Leipzig",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=leipzig&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Leipzig"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/die-schoene-und-das-biest-das-neue-musical-tipsarena-linz-21595838/?affiliate=J81",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-26T17:00:00.000Z",
+      "dateLabel": "26.04.2027",
+      "venue": "",
+      "city": "Linz",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=J81&cityname=linz",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Linz"
+    },
+    {
+      "id": "21619278",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-01-30T19:00:00.000Z",
+      "dateLabel": "30.01.2027",
+      "venue": "LKH Arena Lüneburg",
+      "city": "Lüneburg",
+      "price": 70.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=l%C3%BCneburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Lüneburg"
+    },
+    {
+      "id": "21342536",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-01-25T19:00:00.000Z",
+      "dateLabel": "25.–26.01.2027",
+      "venue": "AMO Kulturhaus",
+      "city": "Magdeburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=magdeburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Magdeburg"
+    },
+    {
+      "id": "21570698",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-06T19:00:00.000Z",
+      "dateLabel": "06.03.2027",
+      "venue": "Rheingoldhalle Mainz",
+      "city": "Mainz",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=mainz&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Mainz"
+    },
+    {
+      "id": "21874835",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-09T19:00:00.000Z",
+      "dateLabel": "09.02.2027",
+      "venue": "Rosengarten Mozartsaal",
+      "city": "Mannheim",
+      "price": 54,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=mannheim&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Mannheim"
+    },
+    {
+      "id": "21573705",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-27T19:00:00.000Z",
+      "dateLabel": "27.–29.04.2027",
+      "venue": "Meistersingerhalle Nürnberg",
+      "city": "Nürnberg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=n%C3%BCrnberg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 4,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4",
+      "portalCity": "Nürnberg"
+    },
+    {
+      "id": "21355760",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-10T19:00:00.000Z",
+      "dateLabel": "10.03.2027",
+      "venue": "Oberrheinhalle Offenburg",
+      "city": "Offenburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=offenburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Offenburg"
+    },
+    {
+      "id": "21359420",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-01-31T19:00:00.000Z",
+      "dateLabel": "31.01.2027",
+      "venue": "OsnabrückHalle - Europa-Saal",
+      "city": "Osnabrück",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=osnabr%C3%BCck&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Osnabrück"
+    },
+    {
+      "id": "21610888",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-10T19:00:00.000Z",
+      "dateLabel": "10.04.2027",
+      "venue": "PaderHalle",
+      "city": "Paderborn",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=paderborn&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Paderborn"
+    },
+    {
+      "id": "https://www.oeticket.com/noapp/event/die-schoene-und-das-biest-das-neue-musical-zentrum-fuer-visionen-21595795/?affiliate=J81",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-13T17:00:00.000Z",
+      "dateLabel": "13.–14.04.2027",
+      "venue": "",
+      "city": "Puch-urstein Bei Salzburg",
+      "price": 41.75,
+      "link": "https://www.oeticket.com/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=J81&cityname=salzburg",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Puch bei Salzburg"
+    },
+    {
+      "id": "21572497",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-24T19:00:00.000Z",
+      "dateLabel": "24.03.2027",
+      "venue": "Oberschwabenhalle Ravensburg",
+      "city": "Ravensburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=ravensburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Ravensburg"
+    },
+    {
+      "id": "21355672",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-04T19:00:00.000Z",
+      "dateLabel": "04.02.2027",
+      "venue": "StadtHalle inRostock",
+      "city": "Rostock",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=rostock&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Rostock"
+    },
+    {
+      "id": "21355848",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-01T19:00:00.000Z",
+      "dateLabel": "01.04.2027",
+      "venue": "Sport- und Kongresshalle Schwerin",
+      "city": "Schwerin",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=schwerin&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Schwerin"
+    },
+    {
+      "id": "21355725",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-07T19:00:00.000Z",
+      "dateLabel": "07.02.2027",
+      "venue": "Siegerlandhalle",
+      "city": "Siegen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=siegen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Siegen"
+    },
+    {
+      "id": "21611620",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-04T19:00:00.000Z",
+      "dateLabel": "04.05.2027",
+      "venue": "Stadthalle Singen",
+      "city": "Singen",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=singen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Singen"
+    },
+    {
+      "id": "21355813",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-25T19:00:00.000Z",
+      "dateLabel": "25.–29.03.2027",
+      "venue": "Liederhalle Hegelsaal",
+      "city": "Stuttgart",
+      "price": 70.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=stuttgart&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Stuttgart"
+    },
+    {
+      "id": "21357238",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-04T19:00:00.000Z",
+      "dateLabel": "04.03.2027",
+      "venue": "CCS - Congress Centrum Suhl - Touristik und Congress GmbH",
+      "city": "Suhl",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=suhl&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Suhl"
+    },
+    {
+      "id": "21612672",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-05T19:00:00.000Z",
+      "dateLabel": "05.05.2027",
+      "venue": "Stadthalle Tuttlingen",
+      "city": "Tuttlingen",
+      "price": 70.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=tuttlingen&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 5,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5",
+      "portalCity": "Tuttlingen"
+    },
+    {
+      "id": "21629003",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-04-04T19:00:00.000Z",
+      "dateLabel": "04.04.2027",
+      "venue": "Stadthalle Unna",
+      "city": "Unna",
+      "price": 60.49,
+      "link": "https://www.eventim.de/event/die-schoene-und-das-biest-das-neue-musical-stadthalle-unna-21629003/?affiliate=NG6",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Unna"
+    },
+    {
+      "id": "21611714",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-06T19:00:00.000Z",
+      "dateLabel": "06.05.2027",
+      "venue": "Max-Reger-Halle",
+      "city": "Weiden",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=weiden&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Weiden i. d. Oberpfalz"
+    },
+    {
+      "id": "21611715",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-05-08T19:00:00.000Z",
+      "dateLabel": "08.–09.05.2027",
+      "venue": "CC Weimarhalle",
+      "city": "Weimar",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=weimar&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Weimar"
+    },
+    {
+      "id": "21355759",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-27T19:00:00.000Z",
+      "dateLabel": "27.02.2027",
+      "venue": "CongressPark Wolfsburg",
+      "city": "Wolfsburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=wolfsburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Wolfsburg"
+    },
+    {
+      "id": "21570202",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-17T19:00:00.000Z",
+      "dateLabel": "17.02.2027",
+      "venue": "Congress Centrum Würzburg",
+      "city": "Würzburg",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=w%C3%BCrzburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Würzburg"
+    },
+    {
+      "id": "21572459",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-02-20T19:00:00.000Z",
+      "dateLabel": "20.02.2027",
+      "venue": "Festhalle Zweibrücken",
+      "city": "Zweibrücken",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=zweibr%C3%BCcken&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Zweibrücken"
+    },
+    {
+      "id": "21610857",
+      "title": "Die Schöne und das Biest - Das neue Musical",
+      "isoDateTime": "2027-03-30T19:00:00.000Z",
+      "dateLabel": "30.03.2027",
+      "venue": "Sparkassen-Arena Zwickau",
+      "city": "Zwickau",
+      "price": 60.49,
+      "link": "https://www.eventim.de/artist/die-schoene-und-das-biest-das-neue-musical/?affiliate=NG6&cityname=zwickau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp&promo_id=196589",
+      "flags": [],
+      "sourcePage": 6,
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6",
+      "portalCity": "Zwickau"
+    }
+  ],
+  "tour": [
+    {
+      "city": "Aachen",
+      "venue": "Eurogress",
+      "startDate": "2027-02-21",
+      "endDate": "2027-02-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-aachen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DAachen"
+    },
+    {
+      "city": "Aschaffenburg",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-17",
+      "endDate": "2027-03-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DAschaffenburg"
+    },
+    {
+      "city": "Aurich",
+      "venue": "Stadthalle",
+      "startDate": "2027-02-26",
+      "endDate": "2027-02-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-aurich-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DAurich"
+    },
+    {
+      "city": "Bad Ischl",
+      "venue": "Kongress & Theaterhaus",
+      "startDate": "2027-03-23",
+      "endDate": "2027-03-23",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-badischl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBad%20Ischl"
+    },
+    {
+      "city": "Bad Neustadt a. d. Saale",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-07",
+      "endDate": "2027-05-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-badneustadt-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBad%20Neustadt%20an%20der%20Saale"
+    },
+    {
+      "city": "Bad Vilbel",
+      "venue": "VILCO",
+      "startDate": "2027-04-20",
+      "endDate": "2027-04-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bad-vilbel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fevent%2Fdie-schoene-und-das-biest-das-neue-musical-vilco-bad-vilbel-21776227%2F"
+    },
+    {
+      "city": "Berlin",
+      "venue": "BlueMax Theater",
+      "startDate": "2027-01-06",
+      "endDate": "2027-01-23",
+      "eventimUrl": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3737237&clickref=dsudb-ticket"
+    },
+    {
+      "city": "Bielefeld",
+      "venue": "Lokschuppen",
+      "startDate": "2027-04-05",
+      "endDate": "2027-04-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bielefeld-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBielefeld"
+    },
+    {
+      "city": "Bitburg",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-16",
+      "endDate": "2027-03-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bitburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBitburg"
+    },
+    {
+      "city": "Bochum",
+      "venue": "RuhrCongress",
+      "startDate": "2027-03-11",
+      "endDate": "2027-03-12",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBochum"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2027-02-03",
+      "endDate": "2027-02-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-braunschweig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBraunschweig"
+    },
+    {
+      "city": "Bremen",
+      "venue": "Metropol Theater",
+      "startDate": "2027-02-02",
+      "endDate": "2027-02-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bremen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBremen"
+    },
+    {
+      "city": "Cottbus",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-01",
+      "endDate": "2027-05-01",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-cottbus-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DCottbus"
+    },
+    {
+      "city": "Donaueschingen",
+      "venue": "Donauhallen",
+      "startDate": "2027-04-21",
+      "endDate": "2027-04-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-donaueschingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDonaueschingen"
+    },
+    {
+      "city": "Dresden",
+      "venue": "Alter Schlachthof",
+      "startDate": "2027-03-01",
+      "endDate": "2027-03-01",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-dresden-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDresden"
+    },
+    {
+      "city": "Duisburg",
+      "venue": "Theater am Marientor",
+      "startDate": "2027-01-27",
+      "endDate": "2027-01-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDuisburg"
+    },
+    {
+      "city": "Feldkirch",
+      "venue": "Montforthaus",
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-feldkirch-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFeldkirch"
+    },
+    {
+      "city": "Flensburg",
+      "venue": "Deutsches Haus",
+      "startDate": "2027-02-24",
+      "endDate": "2027-02-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-flensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFlensburg"
+    },
+    {
+      "city": "Frankfurt (Oder)",
+      "venue": "Messe (Halle 1)",
+      "startDate": "2027-05-02",
+      "endDate": "2027-05-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-frankfurtoder-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFrankfurt%20%28Oder%29"
+    },
+    {
+      "city": "Friedrichshafen",
+      "venue": "Graf-Zeppelin-Haus",
+      "startDate": "2027-04-15",
+      "endDate": "2027-04-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-friedrichshafen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dfriedrichshafen"
+    },
+    {
+      "city": "Fulda",
+      "venue": "Esperantohalle",
+      "startDate": "2027-04-03",
+      "endDate": "2027-04-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-fulda-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFulda"
+    },
+    {
+      "city": "Gersthofen",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-18",
+      "endDate": "2027-03-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-gersthofen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DGersthofen"
+    },
+    {
+      "city": "Göttingen",
+      "venue": "Stadthalle",
+      "startDate": "2027-04-11",
+      "endDate": "2027-04-11",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-goettingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DG%C3%B6ttingen"
+    },
+    {
+      "city": "Graz",
+      "venue": "Helmut List Halle",
+      "startDate": "2027-04-23",
+      "endDate": "2027-04-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-graz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DGraz"
+    },
+    {
+      "city": "Gütersloh",
+      "venue": "Stadthalle",
+      "startDate": "2027-02-22",
+      "endDate": "2027-02-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-guetersloh-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DG%C3%BCtersloh"
+    },
+    {
+      "city": "Hagen",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-07",
+      "endDate": "2027-03-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hagen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHagen"
+    },
+    {
+      "city": "Halle (Saale)",
+      "venue": "Händel Halle",
+      "startDate": "2027-03-02",
+      "endDate": "2027-03-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hallesaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dhalle+saale"
+    },
+    {
+      "city": "Hanau",
+      "venue": "Congress Park",
+      "startDate": "2027-02-15",
+      "endDate": "2027-02-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hanau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHanau"
+    },
+    {
+      "city": "Hannover",
+      "venue": "Theater am Aegi",
+      "startDate": "2027-02-18",
+      "endDate": "2027-02-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hannover-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fevent%2Fdie-schoene-und-das-biest-das-neue-musical-theater-am-aegi-21862471%2F"
+    },
+    {
+      "city": "Heidenheim",
+      "venue": "Congress Centrum",
+      "startDate": "2027-04-16",
+      "endDate": "2027-04-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-heidenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHeidenheim"
+    },
+    {
+      "city": "Heppenheim",
+      "venue": "Freilichtbühne",
+      "startDate": "2027-08-12",
+      "endDate": "2027-08-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-heppenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dheppenheim"
+    },
+    {
+      "city": "Herne",
+      "venue": "Kulturzentrum KUZ",
+      "startDate": "2027-02-10",
+      "endDate": "2027-02-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-herne-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHerne"
+    },
+    {
+      "city": "Husum",
+      "venue": "Messe Husum & Congress",
+      "startDate": "2027-02-25",
+      "endDate": "2027-02-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-husum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHusum"
+    },
+    {
+      "city": "Idar-Oberstein",
+      "venue": "Messe",
+      "startDate": "2027-03-09",
+      "endDate": "2027-03-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-idaroberstein-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DIdar-Oberstein"
+    },
+    {
+      "city": "Ilsenburg",
+      "venue": "Harzlandhalle",
+      "startDate": "2027-04-02",
+      "endDate": "2027-04-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-ilsenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dilsenburg"
+    },
+    {
+      "city": "Innsbruck",
+      "venue": "Congress Innsbruck (Saal Tirol)",
+      "startDate": "2027-02-12",
+      "endDate": "2027-02-12",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-innsbruck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DInnsbruck"
+    },
+    {
+      "city": "Jena",
+      "venue": "Sparkassen-Arena",
+      "startDate": "2027-04-18",
+      "endDate": "2027-04-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-jena-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DJena"
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2027-02-05",
+      "endDate": "2027-02-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-kiel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DKiel"
+    },
+    {
+      "city": "Koblenz",
+      "venue": "Rhein-Mosel-Halle",
+      "startDate": "2027-03-15",
+      "endDate": "2027-03-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-koblenz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DKoblenz"
+    },
+    {
+      "city": "Köln",
+      "venue": "Motorworld",
+      "startDate": "2027-04-06",
+      "endDate": "2027-04-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-koeln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DK%C3%B6ln"
+    },
+    {
+      "city": "Landau",
+      "venue": "Jugendstil-Festhalle",
+      "startDate": "2027-03-08",
+      "endDate": "2027-03-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-landau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DLandau"
+    },
+    {
+      "city": "Leipzig",
+      "venue": "Haus Auensee",
+      "startDate": "2027-03-03",
+      "endDate": "2027-03-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-leipzig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DLeipzig"
+    },
+    {
+      "city": "Linz",
+      "venue": "TipsArena",
+      "startDate": "2027-04-26",
+      "endDate": "2027-04-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-linz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DLinz"
+    },
+    {
+      "city": "Lüneburg",
+      "venue": "LKH Arena",
+      "startDate": "2027-01-30",
+      "endDate": "2027-01-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-lueneburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DL%C3%BCneburg"
+    },
+    {
+      "city": "Magdeburg",
+      "venue": "AMO Kulturhaus",
+      "startDate": "2027-01-25",
+      "endDate": "2027-01-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMagdeburg"
+    },
+    {
+      "city": "Mainz",
+      "venue": "Rheingoldhalle (Kongresssaal)",
+      "startDate": "2027-03-06",
+      "endDate": "2027-03-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-mainz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMainz"
+    },
+    {
+      "city": "Mannheim",
+      "venue": "Rosengarten (Mozartsaal)",
+      "startDate": "2027-02-09",
+      "endDate": "2027-02-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-mannheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dmannheim"
+    },
+    {
+      "city": "Nürnberg",
+      "venue": "Meistersingerhalle",
+      "startDate": "2027-04-27",
+      "endDate": "2027-04-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-nuernberg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DN%C3%BCrnberg"
+    },
+    {
+      "city": "Offenburg",
+      "venue": "Oberrheinhalle",
+      "startDate": "2027-03-10",
+      "endDate": "2027-03-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-offenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DOffenburg"
+    },
+    {
+      "city": "Osnabrück",
+      "venue": "OsnabrückHalle (Europa Saal)",
+      "startDate": "2027-01-31",
+      "endDate": "2027-01-31",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-osnabrueck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DOsnabr%C3%BCck"
+    },
+    {
+      "city": "Paderborn",
+      "venue": "Paderhalle",
+      "startDate": "2027-04-10",
+      "endDate": "2027-04-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-paderborn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DPaderborn"
+    },
+    {
+      "city": "Puch bei Salzburg",
+      "venue": "Zentrum für Visionen",
+      "startDate": "2027-04-13",
+      "endDate": "2027-04-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-puchbeisalzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DPuch-Urstein%20bei%20Salzburg"
+    },
+    {
+      "city": "Ravensburg",
+      "venue": "Oberschwabenhalle",
+      "startDate": "2027-03-24",
+      "endDate": "2027-03-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-ravensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DRavensburg"
+    },
+    {
+      "city": "Rostock",
+      "venue": "StadtHalle",
+      "startDate": "2027-02-04",
+      "endDate": "2027-02-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-rostock-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DRostock"
+    },
+    {
+      "city": "Schwerin",
+      "venue": "Sport- und Kongresshalle",
+      "startDate": "2027-04-01",
+      "endDate": "2027-04-01",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-schwerin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSchwerin"
+    },
+    {
+      "city": "Siegen",
+      "venue": "Siegerlandhalle",
+      "startDate": "2027-02-07",
+      "endDate": "2027-02-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-siegen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSiegen"
+    },
+    {
+      "city": "Singen",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-04",
+      "endDate": "2027-05-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-singen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSingen"
+    },
+    {
+      "city": "Stuttgart",
+      "venue": "Liederhalle (Hegel-Saal)",
+      "startDate": "2027-03-25",
+      "endDate": "2027-03-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DStuttgart"
+    },
+    {
+      "city": "Suhl",
+      "venue": "Congress Centrum",
+      "startDate": "2027-03-04",
+      "endDate": "2027-03-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-suhl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSuhl"
+    },
+    {
+      "city": "Tuttlingen",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-05",
+      "endDate": "2027-05-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-tuttlingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DTuttlingen"
+    },
+    {
+      "city": "Unna",
+      "venue": "Stadthalle",
+      "startDate": "2027-04-04",
+      "endDate": "2027-04-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-unna-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DUnna"
+    },
+    {
+      "city": "Weiden i. d. Oberpfalz",
+      "venue": "Max-Reger-Halle",
+      "startDate": "2027-05-06",
+      "endDate": "2027-05-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-weiden-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWeiden"
+    },
+    {
+      "city": "Weimar",
+      "venue": "Weimarhalle",
+      "startDate": "2027-05-08",
+      "endDate": "2027-05-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-weimar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWeimar"
+    },
+    {
+      "city": "Wolfsburg",
+      "venue": "Congress Park",
+      "startDate": "2027-02-27",
+      "endDate": "2027-02-27",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-wolfsburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWolfsburg"
+    },
+    {
+      "city": "Würzburg",
+      "venue": "Congress Centrum",
+      "startDate": "2027-02-17",
+      "endDate": "2027-02-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-wuerzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DW%C3%BCrzburg"
+    },
+    {
+      "city": "Zweibrücken",
+      "venue": "Festhalle",
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-zweibruecken-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DZweibr%C3%BCcken"
+    },
+    {
+      "city": "Zwickau",
+      "venue": "Sparkassen-Arena",
+      "startDate": "2027-03-30",
+      "endDate": "2027-03-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-zwickau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dzwickau"
+    }
+  ],
+  "newStops": [
+    {
+      "city": "Bad Vilbel",
+      "venue": "VILCO",
+      "startDate": "2027-04-20",
+      "endDate": "2027-04-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bad-vilbel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fevent%2Fdie-schoene-und-das-biest-das-neue-musical-vilco-bad-vilbel-21776227%2F"
+    },
+    {
+      "city": "Friedrichshafen",
+      "venue": "Graf-Zeppelin-Haus",
+      "startDate": "2027-04-15",
+      "endDate": "2027-04-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-friedrichshafen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dfriedrichshafen"
+    },
+    {
+      "city": "Hannover",
+      "venue": "Theater am Aegi",
+      "startDate": "2027-02-18",
+      "endDate": "2027-02-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hannover-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fevent%2Fdie-schoene-und-das-biest-das-neue-musical-theater-am-aegi-21862471%2F"
+    },
+    {
+      "city": "Heppenheim",
+      "venue": "Freilichtbühne",
+      "startDate": "2027-08-12",
+      "endDate": "2027-08-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-heppenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dheppenheim"
+    },
+    {
+      "city": "Ilsenburg",
+      "venue": "Harzlandhalle",
+      "startDate": "2027-04-02",
+      "endDate": "2027-04-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-ilsenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dilsenburg"
+    },
+    {
+      "city": "Mannheim",
+      "venue": "Rosengarten (Mozartsaal)",
+      "startDate": "2027-02-09",
+      "endDate": "2027-02-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-mannheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dmannheim"
+    },
+    {
+      "city": "Zwickau",
+      "venue": "Sparkassen-Arena",
+      "startDate": "2027-03-30",
+      "endDate": "2027-03-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-zwickau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dzwickau"
+    }
+  ],
+  "changes": [
+    {
+      "before": {
+        "city": "Bochum",
+        "venue": "RuhrCongress",
+        "startDate": "2027-03-12",
+        "endDate": "2027-03-12",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBochum"
+      },
+      "after": {
+        "city": "Bochum",
+        "venue": "RuhrCongress",
+        "startDate": "2027-03-11",
+        "endDate": "2027-03-12",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBochum"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/"
+    },
+    {
+      "before": {
+        "city": "Duisburg",
+        "venue": "Theater am Marientor",
+        "startDate": "2027-01-28",
+        "endDate": "2027-01-28",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDuisburg"
+      },
+      "after": {
+        "city": "Duisburg",
+        "venue": "Theater am Marientor",
+        "startDate": "2027-01-27",
+        "endDate": "2027-01-28",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDuisburg"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=2"
+    },
+    {
+      "before": {
+        "city": "Hanau",
+        "venue": "Congress Park",
+        "startDate": "2027-02-16",
+        "endDate": "2027-02-16",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hanau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHanau"
+      },
+      "after": {
+        "city": "Hanau",
+        "venue": "Congress Park",
+        "startDate": "2027-02-15",
+        "endDate": "2027-02-16",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hanau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHanau"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3"
+    },
+    {
+      "before": {
+        "city": "Idar-Oberstein",
+        "venue": "Stadttheater",
+        "startDate": "2027-03-09",
+        "endDate": "2027-03-09",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-idaroberstein-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DIdar-Oberstein"
+      },
+      "after": {
+        "city": "Idar-Oberstein",
+        "venue": "Messe",
+        "startDate": "2027-03-09",
+        "endDate": "2027-03-09",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-idaroberstein-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DIdar-Oberstein"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=3"
+    },
+    {
+      "before": {
+        "city": "Köln",
+        "venue": "Motorworld",
+        "startDate": "2027-04-07",
+        "endDate": "2027-04-08",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-koeln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DK%C3%B6ln"
+      },
+      "after": {
+        "city": "Köln",
+        "venue": "Motorworld",
+        "startDate": "2027-04-06",
+        "endDate": "2027-04-08",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-koeln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DK%C3%B6ln"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4"
+    },
+    {
+      "before": {
+        "city": "Magdeburg",
+        "venue": "AMO Kulturhaus",
+        "startDate": "2027-01-25",
+        "endDate": "2027-01-25",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMagdeburg"
+      },
+      "after": {
+        "city": "Magdeburg",
+        "venue": "AMO Kulturhaus",
+        "startDate": "2027-01-25",
+        "endDate": "2027-01-26",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMagdeburg"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=4"
+    },
+    {
+      "before": {
+        "city": "Suhl",
+        "venue": "Congress Centrum",
+        "startDate": "2027-04-03",
+        "endDate": "2027-04-03",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-suhl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSuhl"
+      },
+      "after": {
+        "city": "Suhl",
+        "venue": "Congress Centrum",
+        "startDate": "2027-03-04",
+        "endDate": "2027-03-04",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-suhl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSuhl"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=5"
+    },
+    {
+      "before": {
+        "city": "Weimar",
+        "venue": "Weimarhalle",
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-08",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-weimar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWeimar"
+      },
+      "after": {
+        "city": "Weimar",
+        "venue": "Weimarhalle",
+        "startDate": "2027-05-08",
+        "endDate": "2027-05-09",
+        "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-weimar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWeimar"
+      },
+      "sourceUrl": "https://showslot.com/de/musicals-shows/die-schoene-und-das-biest/tickets/?seite=6"
+    }
+  ],
+  "originalStops": [
+    {
+      "city": "Berlin",
+      "venue": "BlueMax Theater",
+      "startDate": "2027-01-06",
+      "endDate": "2027-01-23",
+      "eventimUrl": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3737237&clickref=dsudb-ticket"
+    },
+    {
+      "city": "Magdeburg",
+      "venue": "AMO Kulturhaus",
+      "startDate": "2027-01-25",
+      "endDate": "2027-01-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-magdeburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMagdeburg"
+    },
+    {
+      "city": "Duisburg",
+      "venue": "Theater am Marientor",
+      "startDate": "2027-01-28",
+      "endDate": "2027-01-28",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDuisburg"
+    },
+    {
+      "city": "Lüneburg",
+      "venue": "LKH Arena",
+      "startDate": "2027-01-30",
+      "endDate": "2027-01-30",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-lueneburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DL%C3%BCneburg"
+    },
+    {
+      "city": "Osnabrück",
+      "venue": "OsnabrückHalle (Europa Saal)",
+      "startDate": "2027-01-31",
+      "endDate": "2027-01-31",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-osnabrueck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DOsnabr%C3%BCck"
+    },
+    {
+      "city": "Bremen",
+      "venue": "Metropol Theater",
+      "startDate": "2027-02-02",
+      "endDate": "2027-02-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bremen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBremen"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2027-02-03",
+      "endDate": "2027-02-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-braunschweig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBraunschweig"
+    },
+    {
+      "city": "Rostock",
+      "venue": "StadtHalle",
+      "startDate": "2027-02-04",
+      "endDate": "2027-02-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-rostock-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DRostock"
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2027-02-05",
+      "endDate": "2027-02-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-kiel-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DKiel"
+    },
+    {
+      "city": "Siegen",
+      "venue": "Siegerlandhalle",
+      "startDate": "2027-02-07",
+      "endDate": "2027-02-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-siegen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSiegen"
+    },
+    {
+      "city": "Herne",
+      "venue": "Kulturzentrum KUZ",
+      "startDate": "2027-02-10",
+      "endDate": "2027-02-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-herne-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHerne"
+    },
+    {
+      "city": "Innsbruck",
+      "venue": "Congress Innsbruck (Saal Tirol)",
+      "startDate": "2027-02-12",
+      "endDate": "2027-02-12",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-innsbruck-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DInnsbruck"
+    },
+    {
+      "city": "Feldkirch",
+      "venue": "Montforthaus",
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-feldkirch-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFeldkirch"
+    },
+    {
+      "city": "Würzburg",
+      "venue": "Congress Centrum",
+      "startDate": "2027-02-17",
+      "endDate": "2027-02-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-wuerzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DW%C3%BCrzburg"
+    },
+    {
+      "city": "Zweibrücken",
+      "venue": "Festhalle",
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-zweibruecken-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DZweibr%C3%BCcken"
+    },
+    {
+      "city": "Aachen",
+      "venue": "Eurogress",
+      "startDate": "2027-02-21",
+      "endDate": "2027-02-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-aachen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DAachen"
+    },
+    {
+      "city": "Flensburg",
+      "venue": "Deutsches Haus",
+      "startDate": "2027-02-24",
+      "endDate": "2027-02-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-flensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFlensburg"
+    },
+    {
+      "city": "Husum",
+      "venue": "Messe Husum & Congress",
+      "startDate": "2027-02-25",
+      "endDate": "2027-02-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-husum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHusum"
+    },
+    {
+      "city": "Aurich",
+      "venue": "Stadthalle",
+      "startDate": "2027-02-26",
+      "endDate": "2027-02-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-aurich-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DAurich"
+    },
+    {
+      "city": "Wolfsburg",
+      "venue": "Congress Park",
+      "startDate": "2027-02-27",
+      "endDate": "2027-02-27",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-wolfsburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWolfsburg"
+    },
+    {
+      "city": "Dresden",
+      "venue": "Alter Schlachthof",
+      "startDate": "2027-03-01",
+      "endDate": "2027-03-01",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-dresden-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDresden"
+    },
+    {
+      "city": "Halle (Saale)",
+      "venue": "Händel Halle",
+      "startDate": "2027-03-02",
+      "endDate": "2027-03-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hallesaale-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3Dhalle+saale"
+    },
+    {
+      "city": "Leipzig",
+      "venue": "Haus Auensee",
+      "startDate": "2027-03-03",
+      "endDate": "2027-03-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-leipzig-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DLeipzig"
+    },
+    {
+      "city": "Mainz",
+      "venue": "Rheingoldhalle (Kongresssaal)",
+      "startDate": "2027-03-06",
+      "endDate": "2027-03-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-mainz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DMainz"
+    },
+    {
+      "city": "Idar-Oberstein",
+      "venue": "Stadttheater",
+      "startDate": "2027-03-09",
+      "endDate": "2027-03-09",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-idaroberstein-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DIdar-Oberstein"
+    },
+    {
+      "city": "Offenburg",
+      "venue": "Oberrheinhalle",
+      "startDate": "2027-03-10",
+      "endDate": "2027-03-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-offenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DOffenburg"
+    },
+    {
+      "city": "Bochum",
+      "venue": "RuhrCongress",
+      "startDate": "2027-03-12",
+      "endDate": "2027-03-12",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBochum"
+    },
+    {
+      "city": "Koblenz",
+      "venue": "Rhein-Mosel-Halle",
+      "startDate": "2027-03-15",
+      "endDate": "2027-03-15",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-koblenz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DKoblenz"
+    },
+    {
+      "city": "Bitburg",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-16",
+      "endDate": "2027-03-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bitburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBitburg"
+    },
+    {
+      "city": "Aschaffenburg",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-17",
+      "endDate": "2027-03-17",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-aschaffenburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DAschaffenburg"
+    },
+    {
+      "city": "Gersthofen",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-18",
+      "endDate": "2027-03-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-gersthofen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DGersthofen"
+    },
+    {
+      "city": "Ravensburg",
+      "venue": "Oberschwabenhalle",
+      "startDate": "2027-03-24",
+      "endDate": "2027-03-24",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-ravensburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DRavensburg"
+    },
+    {
+      "city": "Stuttgart",
+      "venue": "Liederhalle (Hegel-Saal)",
+      "startDate": "2027-03-25",
+      "endDate": "2027-03-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DStuttgart"
+    },
+    {
+      "city": "Schwerin",
+      "venue": "Sport- und Kongresshalle",
+      "startDate": "2027-04-01",
+      "endDate": "2027-04-01",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-schwerin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSchwerin"
+    },
+    {
+      "city": "Suhl",
+      "venue": "Congress Centrum",
+      "startDate": "2027-04-03",
+      "endDate": "2027-04-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-suhl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSuhl"
+    },
+    {
+      "city": "Unna",
+      "venue": "Stadthalle",
+      "startDate": "2027-04-04",
+      "endDate": "2027-04-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-unna-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DUnna"
+    },
+    {
+      "city": "Bielefeld",
+      "venue": "Lokschuppen",
+      "startDate": "2027-04-05",
+      "endDate": "2027-04-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-bielefeld-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBielefeld"
+    },
+    {
+      "city": "Köln",
+      "venue": "Motorworld",
+      "startDate": "2027-04-07",
+      "endDate": "2027-04-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-koeln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DK%C3%B6ln"
+    },
+    {
+      "city": "Göttingen",
+      "venue": "Stadthalle",
+      "startDate": "2027-04-11",
+      "endDate": "2027-04-11",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-goettingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DG%C3%B6ttingen"
+    },
+    {
+      "city": "Puch bei Salzburg",
+      "venue": "Zentrum für Visionen",
+      "startDate": "2027-04-13",
+      "endDate": "2027-04-14",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-puchbeisalzburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DPuch-Urstein%20bei%20Salzburg"
+    },
+    {
+      "city": "Heidenheim",
+      "venue": "Congress Centrum",
+      "startDate": "2027-04-16",
+      "endDate": "2027-04-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-heidenheim-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHeidenheim"
+    },
+    {
+      "city": "Jena",
+      "venue": "Sparkassen-Arena",
+      "startDate": "2027-04-18",
+      "endDate": "2027-04-18",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-jena-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DJena"
+    },
+    {
+      "city": "Donaueschingen",
+      "venue": "Donauhallen",
+      "startDate": "2027-04-21",
+      "endDate": "2027-04-21",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-donaueschingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DDonaueschingen"
+    },
+    {
+      "city": "Graz",
+      "venue": "Helmut List Halle",
+      "startDate": "2027-04-23",
+      "endDate": "2027-04-25",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-graz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DGraz"
+    },
+    {
+      "city": "Linz",
+      "venue": "TipsArena",
+      "startDate": "2027-04-26",
+      "endDate": "2027-04-26",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-linz-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DLinz"
+    },
+    {
+      "city": "Nürnberg",
+      "venue": "Meistersingerhalle",
+      "startDate": "2027-04-27",
+      "endDate": "2027-04-29",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-nuernberg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DN%C3%BCrnberg"
+    },
+    {
+      "city": "Cottbus",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-01",
+      "endDate": "2027-05-01",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-cottbus-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DCottbus"
+    },
+    {
+      "city": "Frankfurt (Oder)",
+      "venue": "Messe (Halle 1)",
+      "startDate": "2027-05-02",
+      "endDate": "2027-05-02",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-frankfurtoder-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFrankfurt%20%28Oder%29"
+    },
+    {
+      "city": "Bad Neustadt a. d. Saale",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-07",
+      "endDate": "2027-05-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-badneustadt-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBad%20Neustadt%20an%20der%20Saale"
+    },
+    {
+      "city": "Weiden i. d. Oberpfalz",
+      "venue": "Max-Reger-Halle",
+      "startDate": "2027-05-06",
+      "endDate": "2027-05-06",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-weiden-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWeiden"
+    },
+    {
+      "city": "Weimar",
+      "venue": "Weimarhalle",
+      "startDate": "2027-05-08",
+      "endDate": "2027-05-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-weimar-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DWeimar"
+    },
+    {
+      "city": "Singen",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-04",
+      "endDate": "2027-05-04",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-singen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DSingen"
+    },
+    {
+      "city": "Tuttlingen",
+      "venue": "Stadthalle",
+      "startDate": "2027-05-05",
+      "endDate": "2027-05-05",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-tuttlingen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DTuttlingen"
+    },
+    {
+      "city": "Fulda",
+      "venue": "Esperantohalle",
+      "startDate": "2027-04-03",
+      "endDate": "2027-04-03",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-fulda-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DFulda"
+    },
+    {
+      "city": "Paderborn",
+      "venue": "Paderhalle",
+      "startDate": "2027-04-10",
+      "endDate": "2027-04-10",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-paderborn-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DPaderborn"
+    },
+    {
+      "city": "Hanau",
+      "venue": "Congress Park",
+      "startDate": "2027-02-16",
+      "endDate": "2027-02-16",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hanau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHanau"
+    },
+    {
+      "city": "Hagen",
+      "venue": "Stadthalle",
+      "startDate": "2027-03-07",
+      "endDate": "2027-03-07",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-hagen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DHagen"
+    },
+    {
+      "city": "Gütersloh",
+      "venue": "Stadthalle",
+      "startDate": "2027-02-22",
+      "endDate": "2027-02-22",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-guetersloh-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DG%C3%BCtersloh"
+    },
+    {
+      "city": "Bad Ischl",
+      "venue": "Kongress & Theaterhaus",
+      "startDate": "2027-03-23",
+      "endDate": "2027-03-23",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-badischl-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DBad%20Ischl"
+    },
+    {
+      "city": "Landau",
+      "venue": "Jugendstil-Festhalle",
+      "startDate": "2027-03-08",
+      "endDate": "2027-03-08",
+      "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dsudb-landau-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdie-schoene-und-das-biest-das-neue-musical%2F%3Fcityname%3DLandau"
+    }
+  ]
+}
