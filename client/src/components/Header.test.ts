@@ -58,6 +58,18 @@ describe("Header-Hauptnavigation", () => {
     );
 
     expect(headerSource).not.toContain("staticOnMobile");
-    expect(headerSource).toContain('className="fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-background/80 backdrop-blur-xl"');
+    expect(headerSource).toContain('className="fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-[#111111]"');
+  });
+
+  it("zeigt den Header nahezu schwarz #111111 und deckend, bei unveränderter Seitenfarbe #171717", () => {
+    const headerSource = readFileSync("client/src/components/Header.tsx", "utf8");
+    const cssSource = readFileSync("client/src/index.css", "utf8");
+    const headerClass = headerSource.match(/<header className="([^"]+)"/)?.[1];
+
+    expect(cssSource).toContain("--background: #171717;");
+    expect(headerClass?.split(" ")).toContain("bg-[#111111]");
+    expect(headerClass).not.toMatch(/bg-\S+\/\d+/);
+    expect(headerClass?.split(" ")).not.toContain("bg-black");
+    expect(headerClass).not.toContain("backdrop-blur");
   });
 });

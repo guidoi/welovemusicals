@@ -202,7 +202,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-background/80 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/10 bg-[#111111]">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
