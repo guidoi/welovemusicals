@@ -6,7 +6,7 @@ import { lazy, Suspense, useEffect, useLayoutEffect, useRef } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import { didRouteChange, resetScrollToTop } from "./lib/route-scroll";
+import { didRouteChange, getScrollRestorationMode, resetScrollToTop } from "./lib/route-scroll";
 import { ConsentProvider } from "./contexts/ConsentContext";
 import CookieConsent from "./components/CookieConsent";
 import OptionalConsentServices from "./components/OptionalConsentServices";
@@ -28,16 +28,14 @@ function ScrollToTop() {
   const [location] = useLocation();
   const prevLocation = useRef<string | null>(null);
 
-  useEffect(() => {
-    const previousScrollRestoration = window.history.scrollRestoration;
-    window.history.scrollRestoration = "manual";
-
-    return () => {
-      window.history.scrollRestoration = previousScrollRestoration;
-    };
-  }, []);
-
   useLayoutEffect(() => {
+    // Preserve native Home reload/pull-to-refresh; never force a startup position.
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = getScrollRestorationMode(
+        window.location.pathname,
+        window.location.hash,
+      );
+    }
     // Reset synchronously before paint so city cards opened from a deep home-page anchor start at the city hero.
     if (didRouteChange(prevLocation.current, location)) {
       resetScrollToTop((options) => window.scrollTo(options));

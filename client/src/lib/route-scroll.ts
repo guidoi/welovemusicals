@@ -1,3 +1,7 @@
+export function getScrollRestorationMode(pathname: string, hash: string): ScrollRestoration {
+  return pathname === "/" && !hash ? "auto" : "manual";
+}
+
 export function didRouteChange(previousLocation: string | null, nextLocation: string): boolean {
   return previousLocation !== null && previousLocation !== nextLocation;
 }

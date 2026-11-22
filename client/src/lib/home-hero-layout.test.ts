@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
-import { describe, expect, it } from "vitest";
+import { runInNewContext } from "node:vm";
+import { describe, expect, it, vi } from "vitest";
 import {
   DESKTOP_HERO_HIGHLIGHTS_TOP_CLASS,
   DESKTOP_HERO_IMAGE_POSITION_CLASS,
@@ -26,20 +27,30 @@ describe("Mobile Hero-Navigationsabstände", () => {
     expect(MOBILE_HERO_NAVIGATION_BOTTOM_CLASS).toBe("pt-5");
   });
 
-  it("beginnt die ankernlose Startseite bereits vor React zuverlässig am Hero", () => {
+  it("überlässt die ankernlose Startseite nativ dem Browser, ohne Scrollkorrekturen oder Handler", () => {
     const indexHtml = readFileSync(new URL("../../index.html", import.meta.url), "utf8");
+    const bootstrap = indexHtml.match(/<script id="home-scroll-bootstrap">([\s\S]*?)<\/script>/)?.[1];
+    expect(bootstrap).toBeTruthy();
+    const window = {
+      history: { scrollRestoration: "manual" },
+      location: { pathname: "/", hash: "", search: "?category=shows" },
+      scrollY: 60,
+      scrollTo: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      setTimeout: vi.fn(),
+      requestAnimationFrame: vi.fn(),
+    };
 
-    expect(indexHtml).toContain('id="home-scroll-bootstrap"');
-    expect(indexHtml).toContain('window.history.scrollRestoration = "manual"');
-    expect(indexHtml).toContain('window.location.pathname !== "/" || window.location.hash');
-    expect(indexHtml).toContain('window.addEventListener("pageshow"');
-    expect(indexHtml).toContain('window.setTimeout(resetHomeScroll, 120)');
-    expect(indexHtml).toContain('window.setTimeout(resetHomeScroll, 500)');
-    expect(indexHtml).toContain('window.addEventListener("scroll", lockHomeScroll');
-    expect(indexHtml).toContain('window.removeEventListener("scroll", lockHomeScroll)');
-    expect(indexHtml).toContain('}, 1000)');
-    expect(indexHtml).toContain('window.addEventListener("load", onHomeReady');
-    expect(indexHtml).toContain('window.addEventListener("pageshow", onHomeReady');
-    expect(indexHtml).toContain('behavior: "instant"');
+    runInNewContext(bootstrap!, { window });
+
+    expect(window.history.scrollRestoration).toBe("auto");
+    expect(window.scrollY).toBe(60);
+    expect(window.scrollTo).not.toHaveBeenCalled();
+    expect(window.addEventListener).not.toHaveBeenCalled();
+    expect(window.removeEventListener).not.toHaveBeenCalled();
+    expect(window.setTimeout).not.toHaveBeenCalled();
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+    expect(bootstrap).not.toMatch(/\b(?:scrollTo|scrollBy|addEventListener|removeEventListener|setTimeout|setInterval|requestAnimationFrame|sessionStorage)\b/);
   });
 });

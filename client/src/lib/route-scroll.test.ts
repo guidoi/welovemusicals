@@ -1,10 +1,39 @@
 import { describe, expect, it } from "vitest";
-import { didRouteChange, getScrollToTopOptions, resetScrollToTop, scheduleScrollToTop } from "./route-scroll";
+import {
+  didRouteChange,
+  getScrollRestorationMode,
+  getScrollToTopOptions,
+  resetScrollToTop,
+  scheduleScrollToTop,
+} from "./route-scroll";
 
 describe("route scroll helpers", () => {
+  it.each([
+    ["/", "", "auto"],
+    ["/", "#more-musicals", "manual"],
+    ["/", "#", "manual"],
+    ["/musical/der-kleine-lord", "", "manual"],
+    ["/musical/der-kleine-lord", "#tickets", "manual"],
+    ["/stadt/graz", "", "manual"],
+    ["/stadt/hamburg", "#musicals", "manual"],
+  ] as const)("wählt für %s%s den Wiederherstellungsmodus %s", (pathname, hash, mode) => {
+    expect(getScrollRestorationMode(pathname, hash)).toBe(mode);
+  });
+
+  it.each(["/?category=shows", "/?city=hamburg&view=list"])(
+    "belässt die Home-Wiederherstellung mit Query %s beim Browser",
+    (value) => {
+      const url = new URL(value, "https://welovemusicals.com");
+      expect(getScrollRestorationMode(url.pathname, url.hash)).toBe("auto");
+    },
+  );
+
   it("scrollt nicht beim ersten Render, aber bei jedem echten internen Routenwechsel", () => {
+    expect(didRouteChange(null, "/")).toBe(false);
+    expect(didRouteChange(null, "/musical/der-kleine-lord")).toBe(false);
     expect(didRouteChange(null, "/stadt/graz")).toBe(false);
     expect(didRouteChange("/", "/stadt/graz")).toBe(true);
+    expect(didRouteChange("/stadt/graz", "/")).toBe(true);
     expect(didRouteChange("/stadt/graz", "/stadt/graz")).toBe(false);
   });
 
