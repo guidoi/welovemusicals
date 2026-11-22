@@ -198,7 +198,8 @@
       transparent 15%,
       color-mix(in srgb, var(--musical-hero-deep) 35%, transparent) 45%,
       color-mix(in srgb, var(--musical-hero-deep) 90%, transparent) 75%,
-      var(--musical-hero-color) 100%
+      var(--musical-hero-color) 85%,
+      var(--background) 100%
     );
   }
 
