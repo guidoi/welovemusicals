@@ -127,6 +127,46 @@ describe("Google-Sheets-Preisquelle", () => {
     expect(JSON.stringify(overrides)).not.toContain("untrusted.example");
   });
 
+  it.each(["weihnachten-mit-bibi-tina", "WBT", "wbt"])("kanonisiert den freigegebenen WBT-Preisdatensatz %s ohne Ticketlinks zu übernehmen", (sourceId) => {
+    // Synthetischer Testpreis, keine redaktionelle Preisfreigabe oder Sheetänderung.
+    const csv = `${header}\n${sourceId},"42,42",Ja,BIS 30 %,BLACK FRIDAY,,30.11.2026,https://untrusted.example/wbt,`;
+    expect(parseGoogleSheetPriceCsv(csv)).toEqual([{
+      musicalId: "weihnachten-mit-bibi-tina",
+      priceFrom: "42,42",
+      saleEnabled: true,
+      saleLabel: "SALE",
+      saleDiscount: "BIS 30 %",
+      saleNote: "BLACK FRIDAY",
+      saleStartsAt: null,
+      saleEndsAt: "2026-11-30",
+    }]);
+    expect(JSON.stringify(parseGoogleSheetPriceCsv(csv))).not.toContain("untrusted.example");
+  });
+
+  it("überschreibt bei WBT-Kürzel und kanonischer ID nur denselben Datensatz, nicht bestehende ID-Zuordnungen", () => {
+    const csv = [
+      header,
+      'weihnachten-mit-bibi-tina,"41,41",Nein,,,,,,',
+      'WBT,"42,42",Nein,,,,,,',
+      'fackjugoehte,"40,40",Nein,,,,,,',
+      'fack-ju-goehte,"40,40",Nein,,,,,,',
+      'der-kleine-lord,"40,40",Nein,,,,,,',
+    ].join("\n");
+    expect(parseGoogleSheetPriceCsv(csv).map(({ musicalId, priceFrom }) => ({ musicalId, priceFrom }))).toEqual([
+      { musicalId: "weihnachten-mit-bibi-tina", priceFrom: "42,42" },
+      { musicalId: "fackjugoehte", priceFrom: "40,40" },
+    ]);
+  });
+
+  it("erfindet keinen WBT-Einstiegspreis, wenn der Sheetpreis fehlt oder nicht valide ist", () => {
+    const csv = [
+      header,
+      "WBT,,Ja,BIS 30 %,BLACK FRIDAY,,30.11.2026,,",
+      "weihnachten-mit-bibi-tina,später,Nein,,,,,,",
+    ].join("\n");
+    expect(parseGoogleSheetPriceCsv(csv)).toEqual([]);
+  });
+
   it("verwendet den Cache innerhalb des Intervalls und bei einem späteren Quellfehler den Letztstand", async () => {
     let currentTime = 1_000;
     const fetcher = vi

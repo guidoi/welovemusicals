@@ -11,6 +11,7 @@ export const BLACK_SALE_MUSICAL_IDS = [
   "eiskoenigin",
   "wir-sind-am-leben",
   "ziz",
+  "weihnachten-mit-bibi-tina",
 ] as const;
 
 const campaignIds = new Set<string>(BLACK_SALE_MUSICAL_IDS);

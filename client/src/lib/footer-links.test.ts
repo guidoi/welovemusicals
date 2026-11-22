@@ -10,7 +10,7 @@ import { FOOTER_INFORMATION_LINKS, FOOTER_LINK_GROUP_LABELS } from "./footer-con
 describe("Footer-Linkkonfiguration", () => {
   it("verwendet die aktuelle zentrale Highlight-Reihenfolge für Top-Musicals", () => {
     expect(getFeaturedMusicals().map((musical) => musical.id)).toEqual(FEATURED_MUSICAL_IDS);
-    expect(getFeaturedMusicals()).toHaveLength(9);
+    expect(getFeaturedMusicals()).toHaveLength(11);
   });
 
   it("verlinkt wichtige Musical-Städte aus Deutschland, Österreich und der Schweiz", () => {

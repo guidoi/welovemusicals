@@ -6,6 +6,7 @@ import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging } from "@/lib/affiliate-link-fallback-logger";
 import type { MusicalSale } from "@/lib/data";
 import { isSaleActive } from "@/lib/sale";
+import { WBT_PENDING_BANNERS } from "@/lib/bibi-tina-weihnachten-draft";
 
 export type AovoCampaign = {
   musicalId: string;
@@ -15,6 +16,9 @@ export type AovoCampaign = {
   height: number;
   imageUrl: string;
   clickUrl?: string; // Exakte, vom Projektinhaber gelieferte URL; verändert nicht das Impressionnetzwerk.
+  city?: string; // Expliziter Stadtbezug; Detailseite zeigt nur die ausgewählte Stadt.
+  activeUntil?: string; // Befristetes Original ohne neutrales Folgecreative: anschließend ausblenden.
+  requiresActiveSale?: boolean;
   promotion?: { imageUrl: string; validUntil: string }; // Datiertes Creative, zusätzlich an das Sheet-Angebot gebunden.
   trackingNetwork?: "tradedoubler" | "stage";
   placement?: "after-hotel" | "after-faq" | "before-usp" | "before-story-paragraph" | "within-detail-description" | "after-gallery" | "within-season-announcement";
@@ -416,6 +420,17 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     adLabel: "Zurück in die Zukunft – Vorverkauf Stuttgart ab Oktober 2027",
     clickAriaLabel: "Zurück-in-die-Zukunft-Ticketangebot für Stuttgart in neuem Tab öffnen",
   },
+  ...WBT_PENDING_BANNERS.map((banner): AovoCampaign => ({
+    ...banner,
+    musicalId: "weihnachten-mit-bibi-tina",
+    musicalTitle: `Weihnachten mit Bibi & Tina – ${banner.city}`,
+    trackingNetwork: "stage",
+    activeUntil: "2026-11-30",
+    requiresActiveSale: true,
+    detailParagraphIndex: banner.width === 728 ? 2 : undefined,
+    adLabel: `Weihnachten mit Bibi & Tina – BLACK SALE ${banner.city}`,
+    clickAriaLabel: `WBT-Ticketangebot für ${banner.city} in neuem Tab öffnen`,
+  })),
 ];
 
 export function getAovoCampaign(musicalId: string) {
@@ -449,6 +464,11 @@ export function getAovoCampaignImageUrl(campaign: AovoCampaign, sale?: MusicalSa
     : campaign.imageUrl;
 }
 
+export function isAovoCampaignVisible(campaign: AovoCampaign, sale?: MusicalSale, now = new Date()) {
+  return (!campaign.activeUntil || isSaleActive({ label: "Creative", discount: "", validUntil: campaign.activeUntil }, now))
+    && (!campaign.requiresActiveSale || isSaleActive(sale, now));
+}
+
 export function getAovoCampaignImpressionUrl(
   groupId: string,
   cacheBuster: string,
@@ -479,6 +499,8 @@ export default function AovoCampaignBanner({ campaign, sale }: { campaign: AovoC
     placement: "campaign-banner",
     partner: campaign.trackingNetwork === "stage" ? "stage" : "tradedoubler",
   }]);
+
+  if (!isAovoCampaignVisible(campaign, sale)) return null;
 
   return (
     <aside

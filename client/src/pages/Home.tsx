@@ -30,6 +30,7 @@ import {
   getEditorialOverviewMusicals,
   getFeaturedMusicals,
   getActiveMusicalCountByCity,
+  getHomepageMusicals,
 } from "@/lib/data";
 import { useManagedMusicals } from "@/contexts/PricingContext";
 import { useConsent } from "@/contexts/ConsentContext";
@@ -67,7 +68,8 @@ const AT_CITIES = new Set(["Graz", "Wien", "Innsbruck", "Linz", "Bad Ischl", "Do
 const CH_CITIES = new Set(["Zürich", "Basel", "Bern", "Genève", "Lausanne", "Luzern", "St. Gallen"]);
 
 export default function Home() {
-  const { musicals: managedMusicals } = useManagedMusicals();
+  const { musicals: allManagedMusicals } = useManagedMusicals();
+  const managedMusicals = useMemo(() => getHomepageMusicals(allManagedMusicals), [allManagedMusicals]);
   const { consent } = useConsent();
   const [saleNow, setSaleNow] = useState(() => new Date());
   const [saleOnly, setSaleOnly] = useState(false);
@@ -491,7 +493,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10">
               <div className="flex items-center gap-1.5 md:gap-2">
                 <Music className="w-4 h-4 text-gold md:w-5 md:h-5" />
-                <span className="text-cream/80 text-xs md:text-sm">{ACTIVE_MUSICAL_IDS.length} Musicals</span>
+                <span className="text-cream/80 text-xs md:text-sm">{managedMusicals.length} Musicals</span>
               </div>
               <div className="flex items-center gap-1.5 md:gap-2">
                 <MapPin className="w-4 h-4 text-gold md:w-5 md:h-5" />

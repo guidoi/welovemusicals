@@ -9,6 +9,11 @@ describe("Startseiten-Artwork-Standard", () => {
 
     expect(artworkEntries).toEqual([
       {
+        id: "weihnachten-mit-bibi-tina",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YqlpbjvubQJLnLqO.webp",
+        objectPosition: "center center",
+      },
+      {
         id: "koenig-der-loewen",
         url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/JibeHjKrGppDdBZn.webp",
         objectPosition: "center center",

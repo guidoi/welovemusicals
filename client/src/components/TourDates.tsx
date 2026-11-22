@@ -29,6 +29,8 @@ interface TourDatesProps {
   forceDropdown?: boolean;
   musicalSlug?: string;
   onTicketClick?: (ticketUrl: string) => void;
+  selectedCity?: string;
+  onSelectedCityChange?: (city: string) => void;
 }
 
 /** Gibt true zurück, wenn das endDate heute oder in der Zukunft liegt.
@@ -64,15 +66,22 @@ export default function TourDates({
   forceDropdown = false,
   musicalSlug,
   onTicketClick,
+  selectedCity: controlledCity,
+  onSelectedCityChange,
 }: TourDatesProps) {
-  const [selectedCity, setSelectedCity] = useState<string>("alle");
+  const [localCity, setLocalCity] = useState<string>("alle");
+  const selectedCity = controlledCity ?? localCity;
+  const setSelectedCity = (city: string) => {
+    setLocalCity(city);
+    onSelectedCityChange?.(city);
+  };
 
   if ((!tourDates || tourDates.length === 0) && seasonAnnouncements.length === 0) return null;
 
   // Abgelaufene Termine herausfiltern
   const upcomingDates = (tourDates ?? []).filter((d) => isUpcoming(d.endDate));
 
-  const usesStageProductPage = upcomingDates.some((date) => date.eventimUrl.includes("stage-entertainment.de"));
+  const usesStageProductPage = upcomingDates.some((date) => date.eventimUrl.includes("stage-entertainment.de") || getAffiliateOverridePartner(date.eventimUrl) === "stage");
   const usesAtgTickets = upcomingDates.some((date) => date.eventimUrl.includes("atgtickets.de"));
   const ticketProviderDomain = usesStageProductPage
     ? "stage-entertainment.de"
@@ -286,7 +295,7 @@ function TourDateTicketLink({
     link: safeTicketLink,
     musicalId,
     placement: "city-date",
-    partner: safeTicketLink.url.includes("stage-entertainment.de")
+    partner: (safeTicketLink.url.includes("stage-entertainment.de") || getAffiliateOverridePartner(safeTicketLink.url) === "stage")
       ? "stage"
       : safeTicketLink.url.includes("atgtickets.de")
         ? "atg"

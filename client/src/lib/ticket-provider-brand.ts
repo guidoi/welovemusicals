@@ -1,3 +1,5 @@
+import { getAffiliateOverridePartner } from "./affiliate-link-safety";
+
 export type TicketProviderBrandId = "stage" | "atg" | "eventim";
 
 export interface TicketProviderBrand {
@@ -38,6 +40,6 @@ export function isAtgTicketMusical(slug: string): boolean {
 
 export function getTicketProviderBrand(slug: string, ticketUrl: string): TicketProviderBrand {
   if (isAtgTicketMusical(slug)) return BRANDS.atg;
-  if (ticketUrl.includes("stage-entertainment.de")) return BRANDS.stage;
+  if (ticketUrl.includes("stage-entertainment.de") || getAffiliateOverridePartner(ticketUrl) === "stage") return BRANDS.stage;
   return BRANDS.eventim;
 }

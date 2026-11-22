@@ -27,6 +27,7 @@ const IMAGE_CREDIT_HEADING_BY_MUSICAL_ID: Record<string, string> = {
   "salon-rosie": "SALON ROSIE",
   "und-julia": "& JULIA – DAS POP-MUSICAL",
   "tina-das-musical": "TINA – DAS TINA TURNER MUSICAL",
+  "weihnachten-mit-bibi-tina": "WEIHNACHTEN MIT BIBI &amp; TINA – DAS MUSICAL",
 };
 
 describe("Impressum – Affiliate-Transparenz", () => {
@@ -45,5 +46,7 @@ describe("Impressum – Affiliate-Transparenz", () => {
 
     expect(impressumSource).toContain("© Manuel Harlan / Stage Entertainment");
     expect(impressumSource).toContain("Headerbild, Keyvisual &amp; Logo:</strong> © ShowSlot Touring GmbH");
+    expect(impressumSource).toContain("Szenenfotos, Headerbild &amp; Galerie:</strong> © Jörn Hartmann");
+    expect(impressumSource).toContain("Artwork &amp; Keyvisual:</strong> Vom Projektinhaber bereitgestelltes Produktionsmaterial");
   });
 });

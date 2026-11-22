@@ -8,9 +8,32 @@ import {
   getAovoCampaignImpressionUrl,
   resolveAovoCampaignClickUrl,
   getAovoCampaignImageUrl,
+  isAovoCampaignVisible,
 } from "./AovoCampaignBanner";
 
 describe("Aovo campaign banners", () => {
+  it("ordnet die vier nativen WBT-Banner nur Berlin und Hamburg zu und blendet sie zum Aktionsende aus", () => {
+    const campaigns = getAovoCampaigns("weihnachten-mit-bibi-tina");
+    expect(campaigns.map(({ city, groupId, width, height }) => ({ city, groupId, width, height }))).toEqual([
+      { city: "Hamburg", groupId: "26185746", width: 728, height: 90 },
+      { city: "Hamburg", groupId: "26185744", width: 300, height: 250 },
+      { city: "Berlin", groupId: "26185738", width: 728, height: 90 },
+      { city: "Berlin", groupId: "26185736", width: 300, height: 250 },
+    ]);
+    const sale = { label: "BLACK SALE", discount: "BIS 30 %", validUntil: "2026-11-30" };
+    for (const campaign of campaigns) {
+      expect(resolveAovoCampaignClickUrl(campaign)).toBe(`https://clk.tradedoubler.com/click?p=394206&a=3492604&g=${campaign.groupId}`);
+      expect(getAovoCampaignImpressionUrl(campaign.groupId, "123", campaign.trackingNetwork)).toBe(`https://visit.stage-entertainment.de/imp?type(img)g(${campaign.groupId})a(3492604)123`);
+      expect(campaign.imageUrl).toMatch(/\.jpg$/);
+      expect(isAovoCampaignVisible(campaign, sale, new Date("2026-11-30T23:59:58"))).toBe(true);
+      expect(isAovoCampaignVisible(campaign, sale, new Date("2026-12-01T00:00:00"))).toBe(false);
+      expect(isAovoCampaignVisible(campaign, undefined, new Date("2026-11-22T12:00:00"))).toBe(false);
+      expect(isAovoCampaignVisible(campaign, { ...sale, validUntil: "2026-11-22" }, new Date("2026-11-23T12:00:00"))).toBe(false);
+      expect(isAovoCampaignVisible(campaign, { ...sale, validFrom: "2026-11-28" }, new Date("2026-11-22T12:00:00"))).toBe(false);
+      expect(isAovoCampaignVisible(campaign, { ...sale, validUntil: "2027-11-30" }, new Date("2027-11-22T12:00:00"))).toBe(false);
+    }
+  });
+
   it("verknüpft alle eindeutig freigegebenen Black-Sale-Creatives mit passenden Stage-IDs und begrenzter Laufzeit", () => {
     const expected = {
       "26185722": "UJgPKhwhnwJwDgxx.jpg",
@@ -78,7 +101,7 @@ describe("Aovo campaign banners", () => {
   });
 
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(25);
+    expect(AOVO_CAMPAIGNS).toHaveLength(29);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "salon-rosie",
       "salon-rosie",
@@ -105,8 +128,12 @@ describe("Aovo campaign banners", () => {
       "und-julia",
       "und-julia",
       "ziz",
+      "weihnachten-mit-bibi-tina",
+      "weihnachten-mit-bibi-tina",
+      "weihnachten-mit-bibi-tina",
+      "weihnachten-mit-bibi-tina",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(25);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(29);
   });
 
   it("uses the supplied native TINA creatives and Stage tracking IDs", () => {

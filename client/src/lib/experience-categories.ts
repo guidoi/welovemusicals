@@ -125,6 +125,7 @@ export const EXPERIENCE_CATEGORY_BY_MUSICAL_ID: Record<string, ExperienceCategor
   "schoene-und-das-biest": "familie-maerchen-magie",
   "der-kleine-lord": "weihnachten",
   dreihaselnuesse: "weihnachten",
+  "weihnachten-mit-bibi-tina": "weihnachten",
   rapunzel: "familie-maerchen-magie",
   "teufel-traegt-prada": "besondere-geschichten",
   "wir-sind-am-leben": "besondere-geschichten",

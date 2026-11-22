@@ -18,18 +18,20 @@ export default function BlackSaleNotice({ campaign, onViewShows }: BlackSaleNoti
     <aside
       aria-label="BLACK SALE – ausgewählte Ticketangebote"
       data-testid="black-sale-notice"
-      className="mb-7 rounded-xl border border-gold/45 bg-black px-4 py-4 text-white sm:px-5"
+      className="mb-7 rounded-xl border border-gold/45 bg-black px-4 py-4 text-white sm:px-5 lg:mx-auto lg:w-[40%]"
     >
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-5 lg:flex-col lg:gap-3 lg:text-center">
         <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <span className="rounded-sm bg-red-800 px-3 py-1.5 text-xs font-bold tracking-[0.14em] text-white">
+          <div className="flex flex-col items-start gap-3 lg:items-center">
+            <span data-testid="black-sale-label" className="inline-flex min-h-12 items-center justify-center rounded-sm bg-red-800 px-6 py-3 text-2xl font-bold tracking-[0.1em] text-white sm:text-3xl">
               BLACK SALE
             </span>
-            <p className="text-base font-bold text-white sm:text-lg">{saving}</p>
-            <p className="text-sm text-white">
-              Ende <time dateTime={campaign.endsOn}>{formatBlackSaleEndDate(campaign.endsOn)}</time>
-            </p>
+            <div data-testid="black-sale-offer-line" className="flex w-full items-center gap-3 lg:justify-center">
+              <p data-testid="black-sale-saving" className="min-w-0 text-base font-bold text-white sm:text-lg">{saving}</p>
+              <p data-testid="black-sale-end" className="shrink-0 whitespace-nowrap text-xs text-white sm:text-sm">
+                Ende <time dateTime={campaign.endsOn}>{formatBlackSaleEndDate(campaign.endsOn)}</time>
+              </p>
+            </div>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-white">
             Ausgewählte Shows und Vorstellungen; Bedingungen beim Anbieter

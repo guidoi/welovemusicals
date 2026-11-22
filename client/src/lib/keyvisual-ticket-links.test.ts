@@ -18,7 +18,7 @@ describe("Keyvisual-Affiliate-Links", () => {
   it("verbindet jedes aktive Keyvisual mit einem sicheren HTTPS-Partnerlink", () => {
     const activeMusicals = getActiveMusicals();
 
-    expect(activeMusicals).toHaveLength(21);
+    expect(activeMusicals).toHaveLength(22);
 
     for (const musical of activeMusicals) {
       expect(musical.keyvisual, `${musical.title} benötigt ein Keyvisual`).toBeTruthy();
@@ -28,6 +28,7 @@ describe("Keyvisual-Affiliate-Links", () => {
       expect(keyvisualUrl.protocol, `${musical.title} muss HTTPS verwenden`).toBe("https:");
       expect([
         "visit.stage-entertainment.de",
+        "clk.tradedoubler.com",
         "www.awin1.com",
         "www.eventim.de",
         "www.atgtickets.de",

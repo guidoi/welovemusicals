@@ -80,7 +80,13 @@ const KNOWN_MUSICAL_IDS = new Set([
   "salon-rosie",
   "und-julia",
   "tina-das-musical",
+  "weihnachten-mit-bibi-tina",
 ]);
+
+// Nur ausdrücklich freigegebene Kürzel kanonisieren; bestehende IDs unverändert lassen.
+const MUSICAL_ID_ALIASES: Record<string, string> = {
+  wbt: "weihnachten-mit-bibi-tina",
+};
 
 type ParsedCsv = {
   records: SheetPriceSaleOverride[];
@@ -251,7 +257,8 @@ function parseSheetCsvDetailed(csv: string): ParsedCsv {
 
   dataRows.forEach((rawRow) => {
     const row = normalizeUnquotedGermanPrice(rawRow, rows[0].length, indexes.priceFrom);
-    const musicalId = getCell(row, indexes.musicalId).toLocaleLowerCase("de");
+    const sourceMusicalId = getCell(row, indexes.musicalId).toLocaleLowerCase("de");
+    const musicalId = MUSICAL_ID_ALIASES[sourceMusicalId] ?? sourceMusicalId;
     const priceFrom = parseGermanPrice(getCell(row, indexes.priceFrom));
     const requestedSale = parseBoolean(getCell(row, indexes.saleEnabled));
 

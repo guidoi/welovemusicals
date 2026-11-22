@@ -334,6 +334,15 @@ export default function Impressum() {
                     </ul>
                   </div>
 
+                  {/* Weihnachten mit Bibi & Tina */}
+                  <div data-musical-credit="weihnachten-mit-bibi-tina">
+                    <h4 className="font-semibold text-gold mb-2">WEIHNACHTEN MIT BIBI &amp; TINA – DAS MUSICAL</h4>
+                    <ul className="space-y-2 ml-4">
+                      <li><strong>Szenenfotos, Headerbild &amp; Galerie:</strong> © Jörn Hartmann</li>
+                      <li><strong>Artwork &amp; Keyvisual:</strong> Vom Projektinhaber bereitgestelltes Produktionsmaterial</li>
+                    </ul>
+                  </div>
+
                   {/* Unsplash + Pixabay */}
                   <div>
                     <h4 className="font-semibold text-gold mb-2">Städtefotos & Atmosphärebilder</h4>

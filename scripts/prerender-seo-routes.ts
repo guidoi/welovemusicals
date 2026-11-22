@@ -5,6 +5,7 @@ import {
   getActiveMusicals,
   getActiveMusicalsByCity,
   getFeaturedMusicals,
+  getHomepageMusicals,
   type City,
   type Musical,
 } from "../client/src/lib/data";
@@ -203,7 +204,7 @@ function createHomeContent(): string {
   const featuredLinks = getFeaturedMusicals()
     .map((musical) => `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a>${musical.city ? ` · ${escapeHtml(musical.city)}` : ""}</li>`)
     .join("");
-  const musicalLinks = activeMusicals
+  const musicalLinks = getHomepageMusicals()
     .map((musical) => `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a></li>`)
     .join("");
   const activeCities = cities.filter((city) => getActiveMusicalsByCity(city.name).length > 0);

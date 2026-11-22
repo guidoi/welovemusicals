@@ -17,8 +17,10 @@ function musical(id = "und-julia", offer: MusicalSale | undefined = sale): Music
 }
 
 describe("BLACK SALE – November 2026", () => {
-  it("berücksichtigt genau die acht freigegebenen IDs und nicht Tarzan", () => {
+  it("berücksichtigt die neun freigegebenen Shows einschließlich WBT und nicht Tarzan", () => {
     const catalog = [...BLACK_SALE_MUSICAL_IDS, "tarzan", "anderes-musical"].map((id) => musical(id));
+    expect(BLACK_SALE_MUSICAL_IDS).toHaveLength(9);
+    expect(BLACK_SALE_MUSICAL_IDS).toContain("weihnachten-mit-bibi-tina");
     expect(getBlackSaleCampaign(catalog, now)?.musicalIds).toEqual(BLACK_SALE_MUSICAL_IDS);
     expect(getBlackSaleCampaign([musical("tarzan")], now)).toBeNull();
     expect(getBlackSaleCampaign([musical("fremde-id", sale), { ...musical("tarzan"), slug: "und-julia" }], now)).toBeNull();

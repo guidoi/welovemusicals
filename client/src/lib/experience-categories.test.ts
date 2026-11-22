@@ -87,11 +87,12 @@ describe("Erlebnis-Kategorien", () => {
     expect(activeMusicals.find((musical) => musical.id === "tarzan")?.experienceCategory).toBe("blockbuster-spektakel");
   });
 
-  it("führt die beiden Weihnachtsmusicals in Weihnachten und zusätzlich bei Familie und Kids", () => {
+  it("führt die drei Weihnachtsmusicals in Weihnachten und zusätzlich bei Familie und Kids", () => {
     const activeMusicals = getActiveMusicals();
     const christmasMusicals = [
       activeMusicals.find((musical) => musical.id === "der-kleine-lord"),
       activeMusicals.find((musical) => musical.id === "dreihaselnuesse"),
+      activeMusicals.find((musical) => musical.id === "weihnachten-mit-bibi-tina"),
     ];
 
     for (const musical of christmasMusicals) {

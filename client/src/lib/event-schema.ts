@@ -18,6 +18,11 @@ const PROVIDER_URLS: Record<string, string> = {
   "Plate & Sommer": "https://musicalsberlin.com/",
 };
 
+// WBT: Der Ticketanbieter bleibt Stage; beide Spielorte haben diesen bestätigten Veranstalter.
+const ORGANIZER_NAMES_BY_MUSICAL_ID: Record<string, string> = {
+  "weihnachten-mit-bibi-tina": "Stage Entertainment Produktionsgesellschaft mbH",
+};
+
 export function getCountryForCity(city: string): "DE" | "AT" | "CH" {
   const normalized = city.trim().toLocaleLowerCase("de-DE");
   if (["wien", "graz", "innsbruck", "linz", "dornbirn", "puch bei salzburg", "ried im innkreis", "vöcklabruck", "bad ischl"].includes(normalized)) {
@@ -107,7 +112,7 @@ export function getMusicalEventSchema(
     },
     organizer: {
       "@type": "Organization",
-      name: musical.provider,
+      name: ORGANIZER_NAMES_BY_MUSICAL_ID[musical.id] ?? musical.provider,
       ...(organizerUrl ? { url: organizerUrl } : {}),
     },
     ...(price ? {

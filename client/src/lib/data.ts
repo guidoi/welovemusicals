@@ -82,6 +82,8 @@ export interface Musical {
   keyvisualLandscape?: boolean; // Querformat-Keyvisual vollständig statt beschnitten darstellen
   keyvisualLink?: string; // Optionaler eigener Link für das Keyvisual (überschreibt den Standard-Ticket-Link)
   ticketCtaUrl?: string; // Optionaler eigener Link für den roten "Tickets sichern"-Button
+  ticketUrlsByCity?: Record<string, string>; // Freigegebene Textlinks für Produktionen mit mehreren Spielorten
+  defaultTicketCity?: string; // Vorausgewählter Spielort für die stadtbezogenen Ticket-CTAs
   awinHeroUrl?: string; // Awin-Link für den Gold-Ghost-Button oben (mit clickref=...-hero)
   awinStickyUrl?: string; // Awin-Link für den Sticky-Footer-Button (mit clickref=...-sticky)
   awinBoxUrl?: string; // Awin-Link für den roten CTA-Kasten (mit clickref=...-box)
@@ -159,6 +161,11 @@ export const PRADA_STAGE_TEXT_LINK_URL = PRADA_STAGE_SHOW_PAGE_URL;
 export const TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL = TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL;
 export const WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL = WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL;
 export const SALON_ROSIE_STAGE_TEXT_LINK_URL = SALON_ROSIE_STAGE_SHOW_PAGE_URL;
+
+// Vom Projektinhaber am 22.11.2026 ausdrücklich freigegebene WBT-Textproduktseiten.
+// Keine Banner-g-IDs oder nicht bestätigte weitere Städte als Textlink verwenden.
+export const WBT_STAGE_BERLIN_TEXT_LINK_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149442";
+export const WBT_STAGE_HAMBURG_TEXT_LINK_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26175768";
 
 export const AWIN_TEXT_LINKS = {
   moulinRouge: { gid: "597568", merchantId: "111888", linkId: "4845203" },
@@ -281,6 +288,86 @@ export const providers: Provider[] = [
 ];
 
 export const musicals: Musical[] = [
+  {
+    id: "weihnachten-mit-bibi-tina",
+    slug: "weihnachten-mit-bibi-tina",
+    title: "WEIHNACHTEN MIT BIBI & TINA",
+    subtitle: "Das Musical",
+    provider: "Stage Entertainment",
+    category: "kinder",
+    categories: ["fester-standort", "familie", "kinder"],
+    experienceCategory: "weihnachten",
+    additionalExperienceCategories: ["familie-maerchen-magie"],
+    cities: ["Berlin", "Hamburg"],
+    venuePerCity: {
+      Berlin: "Stage Theater des Westens",
+      Hamburg: "Stage Operettenhaus",
+    },
+    description: "Bibi Blocksberg und Tina Martin erleben ein winterliches Abenteuer auf dem Martinshof. Das Familienmusical spielt zur Weihnachtszeit 2026 in Berlin und Hamburg – mit bekannten Bibi-&-Tina-Songs und Weihnachtsliedern.",
+    detailHeadline: "HEX-HEX! WEIHNACHTSZAUBER AUF DEM MARTINSHOF",
+    detailDescription: "Bibi Blocksberg und Tina Martin bringen ihre Freundschaft zur Weihnachtszeit auf die Bühne: Auf dem winterlichen Martinshof geraten die beiden in ein neues Abenteuer. Mut, Zusammenhalt und Bibis Hexenkraft helfen ihnen dabei, die Herausforderungen gemeinsam zu meistern.\n\n**Bekannte Hits und festliche Musik**\n\nDie Show verbindet Songs aus der Welt von Bibi & Tina mit Weihnachtsliedern. Hinter der Musik und der Produktion stehen Peter Plate und Ulf Leo Sommer. Farbenfrohe Kostüme, ein gestaltetes Bühnenbild und eine lebhafte Inszenierung begleiten die erzählte Geschichte – es handelt sich um ein Musical, nicht um ein reines Konzert.\n\n**Ein gemeinsamer Ausflug in der Weihnachtszeit**\n\n2026 kehrt Weihnachten mit Bibi & Tina ins Berliner Stage Theater des Westens zurück und ist erstmals auch im Hamburger Stage Operettenhaus zu sehen. Die Berliner Spielzeit läuft vom 14. November 2026 bis 3. Januar 2027, die Hamburger vom 21. November 2026 bis 3. Januar 2027. An ausgewählten Spieltagen gibt es mehrere Vorstellungen; nicht an jedem Tag wird gespielt.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YqlpbjvubQJLnLqO.webp",
+    homepageArtworkImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YqlpbjvubQJLnLqO.webp",
+    homepageArtworkObjectPosition: "center center",
+    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/VnOoWhZMdWLXybYP.webp",
+    mobileHeroBelowHeader: true,
+    keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YqlpbjvubQJLnLqO.webp",
+    keyvisualLandscape: true,
+    eventimUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+    keyvisualLink: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+    ticketCtaUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+    awinHeroUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+    awinStickyUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+    awinBoxUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+    ticketUrlsByCity: {
+      Berlin: WBT_STAGE_BERLIN_TEXT_LINK_URL,
+      Hamburg: WBT_STAGE_HAMBURG_TEXT_LINK_URL,
+    },
+    defaultTicketCity: "Berlin",
+    featured: true,
+    tags: ["Weihnachten", "Familie", "Kinder"],
+    // BF-Rabatt aus dem gelieferten Originalcreative; globales Aktionsende bereits bestätigt.
+    // Kein Einstiegspreis, solange der Projektinhaber keinen Preis freigegeben hat.
+    sale: { label: "BLACK FRIDAY", discount: "BIS 30 %", validUntil: "2026-11-30" },
+    tourDates: [
+      { city: "Berlin", venue: "Stage Theater des Westens", startDate: "2026-11-14", endDate: "2027-01-03", eventimUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL },
+      { city: "Hamburg", venue: "Stage Operettenhaus", startDate: "2026-11-21", endDate: "2027-01-03", eventimUrl: WBT_STAGE_HAMBURG_TEXT_LINK_URL },
+    ],
+    gallery: [
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/bBsTfSbBsVAxjgow.webp", alt: "Weihnachten mit Bibi & Tina – Ensemble in der Bühnenküche, © Jörn Hartmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/PEYnYBwtFrCpcLJU.webp", alt: "Weihnachten mit Bibi & Tina – Ensemble auf der Bühne, © Jörn Hartmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/FGAMZthjKvvvRZoK.webp", alt: "Weihnachten mit Bibi & Tina – gemeinsame Backszene, © Jörn Hartmann" },
+      { url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/VnOoWhZMdWLXybYP.webp", alt: "Weihnachten mit Bibi & Tina – Blick auf die Bühne, © Jörn Hartmann" },
+    ],
+    showFacts: [
+      { label: "Berlin", value: "Stage Theater des Westens · 14.11.2026 – 03.01.2027" },
+      { label: "Hamburg", value: "Stage Operettenhaus · 21.11.2026 – 03.01.2027" },
+      { label: "Showdauer", value: "Laut Stage ca. 70 Minuten, ohne Pause" },
+      { label: "Einlassalter", value: "Ab 3 Jahren; kein Einlass unter 3 Jahren" },
+      { label: "Musik", value: "Peter Plate und Ulf Leo Sommer" },
+      { label: "Veranstalter", value: "Stage Entertainment Produktionsgesellschaft mbH" },
+    ],
+    storyHeadline: "FREUNDSCHAFT, MUSIK UND EIN WINTERLICHES ABENTEUER",
+    storyText: "Bibi und Tina erleben auf dem Martinshof eine winterliche Geschichte voller Abenteuer und Hexerei. Im Mittelpunkt stehen die Freundschaft der beiden Mädchen und ihr Zusammenhalt. Vertraute Lieder und festliche Songs begleiten die Handlung – für einen gemeinsamen Musicalbesuch mit Kindern, Eltern und Großeltern.",
+    faqItems: [
+      { question: "Wo und wann wird Weihnachten mit Bibi & Tina gespielt?", answer: "In Berlin läuft das Musical vom 14. November 2026 bis 3. Januar 2027 im Stage Theater des Westens. In Hamburg ist es vom 21. November 2026 bis 3. Januar 2027 im Stage Operettenhaus zu sehen. Es wird an ausgewählten Spieltagen gespielt, nicht täglich." },
+      { question: "Ab welchem Alter dürfen Kinder die Show besuchen?", answer: "Stage erlaubt den Einlass ab drei Jahren; Kinder unter drei Jahren werden nicht eingelassen. Laut Produktions-FAQ müssen Kinder unter 14 Jahren von einem Erziehungsberechtigten begleitet werden." },
+      { question: "Wie lange dauert die Vorstellung und gibt es eine Pause?", answer: "Stage gibt etwa 70 Minuten ohne Pause an. Die Produktionswebsite nennt etwa 65 Minuten, ebenfalls ohne Pause. Plant für die Show ungefähr 70 Minuten ein; die Angaben zur ungefähren Dauer unterscheiden sich leicht." },
+      { question: "Ist Weihnachten mit Bibi & Tina ein Konzert oder ein Musical?", answer: "Es ist ein Musical mit einer erzählten Abenteuerhandlung. Bekannte Bibi-&-Tina-Hits und Weihnachtslieder gehören zur Show." },
+      { question: "Sind die Vorstellungen bestuhlt?", answer: "Ja. Laut Produktions-FAQ sind alle Vorstellungen vollständig bestuhlt und die Plätze nummeriert." },
+      { question: "Dürfen wir eine Sitzerhöhung mitbringen?", answer: "Ja. Die Produktions-FAQ erlaubt handelsübliche Sitzerhöhungen für Kinder." },
+      { question: "Wer veranstaltet Weihnachten mit Bibi & Tina?", answer: "Veranstalter ist die Stage Entertainment Produktionsgesellschaft mbH. Für die Produktion zeichnen Peter Plate und Ulf Leo Sommer verantwortlich." },
+    ],
+    uspItems: [
+      { icon: "Users", title: "Gemeinsam mit der Familie", text: "Ein Weihnachtsmusical für Kinder ab drei Jahren und ihre Begleitung" },
+      { icon: "Music", title: "Bibi-&-Tina-Hits", text: "Vertraute Songs treffen auf festliche Weihnachtslieder" },
+      { icon: "Sparkles", title: "Winterliches Abenteuer", text: "Freundschaft und Hexenkraft auf dem Martinshof" },
+      { icon: "MapPin", title: "Berlin und Hamburg", text: "Zwei Stage-Spielstätten in der Weihnachtszeit 2026" },
+    ],
+    seoTitle: "Weihnachten mit Bibi & Tina 2026/2027 | Berlin & Hamburg",
+    seoDescription: "Weihnachten mit Bibi & Tina: Termine in Berlin und Hamburg bis 3. Januar 2027. Spielstätten, Familieninfos, Bilder und Hinweise zum Besuch ab drei Jahren.",
+  },
+
   {
     id: "dracula",
     experienceCategory: "kult-klassiker",
@@ -1683,7 +1770,7 @@ export const musicals: Musical[] = [
     awinStickyUrl: PRADA_STAGE_TEXT_LINK_URL,
     awinBoxUrl: PRADA_STAGE_TEXT_LINK_URL,
     youtubeTrailerId: "saissbQkgjA",
-    featured: false,
+    featured: true,
     tags: ["Glamour", "Komödie", "Elton John"],
     uspItems: [
       { icon: "Music", title: "Songs von Elton John", text: "Mitreißende Musik vom legendären Weltstar – exklusiv für dieses Musical komponiert" },
@@ -2211,7 +2298,7 @@ export const cities: City[] = [
     name: "Berlin",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-berlin-isrpM3SJSsQbjuVy58kX5V.webp",
     description: "Berlin lockt mit dem Theater des Westens und dem BlueMax Theater. Kultur, Musical und zahlreiche Tournee-Gastspiele vereint in einer Stadt.",
-    musicalCount: 8,
+    musicalCount: 9,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-berlin&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%252555133%26orderBy%3DRecommendations",
   },
 
@@ -2292,7 +2379,7 @@ export const cities: City[] = [
     name: "Hamburg",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/city-hamburg-hiqvQVm59Z9s8oonK6znyR.webp",
     description: "Die Musical-Hauptstadt Deutschlands. Mit großen Musical-Theatern und Weltklasse-Shows wie Moulin Rouge! bietet Hamburg das vielfältigste Musical-Angebot des Landes.",
-    musicalCount: 8,
+    musicalCount: 9,
     hotelSearchUrl: "https://www.awin1.com/cread.php?awinmid=15152&awinpid=2865727&clickref=hotel-hamburg&ued=https%3A%2F%2Fwww.hrs.de%2Fde%2Flist%3Flocation%3D%2525107905%26orderBy%3DRecommendations",
   },
 
@@ -2422,10 +2509,18 @@ export function getMusicalBySlug(slug: string, catalog: Musical[] = musicals): M
 
 // Liste der aktiv freigeschalteten Musical-IDs/Slugs
 // Hier eintragen, wenn ein neues Musical live geht
-export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "der-kleine-lord", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical"];
+export const ACTIVE_MUSICAL_IDS = ["dracula", "moulinrouge", "phantom-der-oper", "der-kleine-lord", "fack-ju-goehte", "dreihaselnuesse", "rapunzel", "schoene-und-das-biest", "gloeckner-von-notre-dame", "starlight-express", "eiskoenigin", "koenig-der-loewen", "mj-musical", "tarzan", "ziz", "teufel-traegt-prada", "wir-sind-am-leben", "tanz-der-vampire", "salon-rosie", "und-julia", "tina-das-musical", "weihnachten-mit-bibi-tina"];
 
 export function getActiveMusicals(catalog: Musical[] = musicals): Musical[] {
   return catalog.filter((m) => ACTIVE_MUSICAL_IDS.includes(m.id) || ACTIVE_MUSICAL_IDS.includes(m.slug));
+}
+
+// Startseiten-exklusiv ausblenden; Detailseiten, Stadtseiten und Affiliatepfade bleiben aktiv.
+export const HOME_HIDDEN_MUSICAL_IDS = ["tarzan"] as const;
+
+export function getHomepageMusicals(catalog: Musical[] = musicals): Musical[] {
+  const hiddenIds = new Set<string>(HOME_HIDDEN_MUSICAL_IDS);
+  return getActiveMusicals(catalog).filter((musical) => !hiddenIds.has(musical.id) && !hiddenIds.has(musical.slug));
 }
 
 export function getMusicalsByCity(cityName: string, catalog: Musical[] = musicals): Musical[] {
@@ -2467,14 +2562,16 @@ export function getProviderBySlug(slug: string): Provider | undefined {
 
 export const FEATURED_MUSICAL_IDS = [
   "koenig-der-loewen",
-  "eiskoenigin",
-  "und-julia",
+  "mj-musical",
+  "teufel-traegt-prada",
   "starlight-express",
   "moulinrouge",
   "gloeckner-von-notre-dame",
-  "mj-musical",
+  "eiskoenigin",
   "ziz",
   "tanz-der-vampire",
+  "weihnachten-mit-bibi-tina",
+  "und-julia",
 ] as const;
 
 export function getFeaturedMusicals(catalog: Musical[] = musicals): Musical[] {
@@ -2490,11 +2587,12 @@ export function getAdditionalMusicals(catalog: Musical[] = musicals): Musical[] 
 }
 
 export function getEditorialOverviewMusicals(includeHighlights: boolean, catalog: Musical[] = musicals): Musical[] {
-  if (!includeHighlights) return getAdditionalMusicals(catalog);
+  const homepageMusicals = getHomepageMusicals(catalog);
+  if (!includeHighlights) return getAdditionalMusicals(homepageMusicals);
 
-  const activeMusicals = getActiveMusicals(catalog);
+  const activeMusicals = homepageMusicals;
   const activeIds = new Set(activeMusicals.map((musical) => musical.id));
-  const featuredMusicals = getFeaturedMusicals(catalog).filter((musical) => activeIds.has(musical.id));
+  const featuredMusicals = getFeaturedMusicals(homepageMusicals).filter((musical) => activeIds.has(musical.id));
   const featuredIds = new Set(featuredMusicals.map((musical) => musical.id));
 
   // Bei einer bewussten Auswahl folgen die stärksten, passenden Top-Musicals zuerst.
