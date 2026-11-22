@@ -57,6 +57,7 @@ import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging, type AffiliateFallbackLogEntry } from "@/lib/affiliate-link-fallback-logger";
 import { useConsent } from "@/contexts/ConsentContext";
 import { trackAffiliateTicketClick, type AffiliateClickPlacement } from "@/lib/category-analytics";
+import { getMusicalVisualThemeStyle } from "@/lib/musical-visual-theme";
 
 function getAffiliatePartner(ticketUrl: string): "eventim" | "atg" | "stage" {
   if (ticketUrl.includes("stage-entertainment.de") || getAffiliateOverridePartner(ticketUrl) === "stage") return "stage";
@@ -267,7 +268,7 @@ export default function MusicalDetail() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div data-testid="musical-detail-page" data-musical-id={musical.id} className="musical-detail-page min-h-screen flex flex-col bg-background" style={getMusicalVisualThemeStyle(musical.id)}>
       <AffiliateFallbackLogger
         musicalId={musical.id}
         links={[
@@ -291,7 +292,7 @@ export default function MusicalDetail() {
       </Link>
 
       {/* Hero */}
-      <section className={`relative ${mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""} min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden`}>
+      <section data-visual-surface="hero" className={`musical-detail-hero relative ${mobileHeroBelowHeader ? "mt-20 lg:mt-0" : ""} min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden`}>
         <div className="absolute inset-0">
           <img
             src={musical.heroImage || musical.image}
@@ -300,7 +301,7 @@ export default function MusicalDetail() {
             decoding="async"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+          <div data-testid="musical-hero-overlay" className="absolute inset-0 musical-hero-overlay" />
         </div>
 
         <div className="relative z-10 container pb-6 md:pb-10 pt-40">
@@ -389,7 +390,7 @@ export default function MusicalDetail() {
       )}
 
       {/* Content */}
-      <section className="pt-6 md:pt-16 pb-12 md:pb-16">
+      <section data-visual-surface="introduction" className="pt-6 md:pt-16 pb-12 md:pb-16">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Keyvisual – Desktop linke Spalte für alle Musicals.
@@ -527,7 +528,7 @@ export default function MusicalDetail() {
 
       {/* Story */}
       {musical.storyHeadline && musical.storyText && (
-        <section className="py-12 md:py-16 bg-background">
+        <section data-visual-surface="story" className="musical-tone-section py-12 md:py-16">
           <div className="container max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -583,7 +584,7 @@ export default function MusicalDetail() {
         };
         return (
           <>
-          <section className="py-8 md:py-10 bg-background">
+          <section data-visual-surface="highlights" className="musical-tone-section py-8 md:py-10">
             <div className="container max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -625,7 +626,7 @@ export default function MusicalDetail() {
       })()}
 
       {/* Ticket CTA – nach Tourtermine & Story, vor Pressequotes */}
-      <section className="py-8 md:py-10 bg-background">
+      <section data-visual-surface="tickets" className="py-8 md:py-10 bg-background">
         <div className="container max-w-4xl">
           <motion.div
             ref={ticketBoxRef}

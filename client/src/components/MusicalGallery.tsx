@@ -39,7 +39,7 @@ export default function MusicalGallery({ images }: MusicalGalleryProps) {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-background">
+    <section data-visual-surface="gallery" className="musical-tone-section py-12 md:py-16">
       <div className="container max-w-6xl px-4">
         <h2 className="text-3xl font-bold mb-8 text-foreground text-center">Live-Momente</h2>
 
