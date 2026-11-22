@@ -135,17 +135,17 @@ export const AWIN_PUBLISHER_ID = "2865727"; // Awin Publisher-ID
 // Offizielle Stage-Show-Landingpages für die als zusätzliche Information
 // anklickbaren Keyvisuals. Aus den zuvor gelieferten TradeDoubler-Snippets
 // abgeleitet; externe JavaScript- und document.write-Snippets werden nie ausgeführt.
-export const KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398";
-export const MJ_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402";
-export const ZIZ_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410";
+export const KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149398";
+export const MJ_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149402";
+export const ZIZ_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149410";
 export const TINA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204074";
-export const UND_JULIA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149394";
+export const UND_JULIA_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149394";
 export const TARZAN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149408";
-export const PRADA_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414";
-export const EISKOENIGIN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149418";
-export const TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426";
-export const WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434";
-export const SALON_ROSIE_STAGE_SHOW_PAGE_URL = "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438";
+export const PRADA_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149414";
+export const EISKOENIGIN_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149418";
+export const TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149426";
+export const WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149434";
+export const SALON_ROSIE_STAGE_SHOW_PAGE_URL = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149438";
 
 // Direkte Stage-Shop-Deeplinks für sichtbare Ticket-CTAs, Angebote und Termine.
 // MJ, KDL, ZIZ, Tarzan, TINA, Der Teufel trägt Prada, Tanz der Vampire, & JULIA, Salon Rosie, Eiskönigin und Wir sind am Leben sind die bewusst freigegebenen Ausnahmen: Auch ihre Textlinks

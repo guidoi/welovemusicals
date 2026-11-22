@@ -15,23 +15,6 @@ function render(value: BlackSaleCampaign | null) {
 
 const noticeSource = readFileSync(new URL("./BlackSaleNotice.tsx", import.meta.url), "utf8");
 const indexCss = readFileSync(new URL("../index.css", import.meta.url), "utf8");
-const frameCss = indexCss.slice(indexCss.indexOf("/* BLACK SALE:"));
-
-// Extract complete CSS blocks, including nested media queries / keyframes.
-function cssBlock(css: string, selector: string) {
-  const start = css.indexOf(selector);
-  expect(start, `Missing CSS block: ${selector}`).toBeGreaterThanOrEqual(0);
-  const opening = css.indexOf("{", start);
-  let depth = 1;
-  let end = opening + 1;
-  while (end < css.length && depth > 0) {
-    if (css[end] === "{") depth++;
-    if (css[end] === "}") depth--;
-    end++;
-  }
-  expect(depth).toBe(0);
-  return css.slice(opening + 1, end - 1);
-}
 
 describe("BlackSaleNotice", () => {
   it("rendert ohne aktives Angebot gar nichts und reserviert keinen Platz", () => {
@@ -50,61 +33,16 @@ describe("BlackSaleNotice", () => {
     expect(markup).not.toMatch(/fixed|sticky|role="dialog"/);
   });
 
-  it("rendert ausschließlich am Außenrahmen verborgene, nicht-interaktive Goldlichter", () => {
+  it("rendert den einfachen goldenen Rahmen ohne Lichtpunkte, Glüheffekt oder Animation", () => {
     const markup = render(campaign);
-    const frame = markup.match(/<div[^>]*data-testid="black-sale-frame-lights"[^>]*>(.*?)<\/div>/)?.[0];
-    expect(frame).toContain('aria-hidden="true"');
-    expect(frame).toContain("pointer-events-none");
-    expect(frame).not.toMatch(/BLACK SALE|<button|<a\b|tabindex|<img|<svg/);
-    const lights = Array.from((frame ?? "").matchAll(/<span class="black-sale-notice-light" style="([^"]+)"/g));
-    expect(lights).toHaveLength(24);
-    const coordinates = lights.map(([, style]) => ({
-      x: Number(style.match(/--black-sale-light-x:(\d+)%/)?.[1]),
-      y: Number(style.match(/--black-sale-light-y:(\d+)%/)?.[1]),
-    }));
-    expect(coordinates.every(({ x, y }) => x === 0 || x === 100 || y === 0 || y === 100)).toBe(true);
-    for (const side of [0, 100]) {
-      expect(coordinates.some(({ x }) => x === side)).toBe(true);
-      expect(coordinates.some(({ y }) => y === side)).toBe(true);
-    }
-    expect(cssBlock(frameCss, ".black-sale-notice-frame")).toContain("pointer-events: none;");
-    expect(cssBlock(frameCss, ".black-sale-notice-light")).toContain("width: 3px;");
-    expect(cssBlock(frameCss, ".black-sale-notice-light")).toContain("height: 3px;");
-  });
-
-  it("läuft einmal sanft gestaffelt und endet einschließlich der letzten Verzögerung innerhalb von fünf Sekunden", () => {
-    const motion = cssBlock(frameCss, "@media (prefers-reduced-motion: no-preference)");
-    const animation = cssBlock(motion, ".black-sale-notice-light::after");
-    expect(animation).toContain("animation-name: black-sale-frame-light-once;");
-    expect(animation).toContain("animation-iteration-count: 1;");
-    expect(animation).toContain("animation-fill-mode: both;");
-    const duration = Number(animation.match(/animation-duration:\s*(\d+)ms;/)?.[1]);
-    const stagger = Number(animation.match(/animation-delay:\s*calc\(var\(--black-sale-light-order\) \* (\d+)ms\);/)?.[1]);
-    const orders = Array.from(render(campaign).matchAll(/--black-sale-light-order:(\d+)/g)).map(([, order]) => Number(order));
-    expect(orders).toEqual(Array.from({ length: 24 }, (_, order) => order));
-    expect(duration).toBeGreaterThan(0);
-    expect(stagger).toBeGreaterThan(0);
-    expect(duration + Math.max(...orders) * stagger).toBeLessThanOrEqual(5000);
-    expect(frameCss).not.toMatch(/infinite|rotate|animation-play-state/);
-    expect(noticeSource).not.toMatch(/setTimeout|setInterval|useEffect|requestAnimationFrame|animate-/);
-  });
-
-  it("bleibt bei Reduced Motion von Anfang an statisch und verändert nur die Deckkraft/Skalierung der Lichtdeko", () => {
-    const mediaSelector = "@media (prefers-reduced-motion: no-preference)";
-    const motion = cssBlock(frameCss, mediaSelector);
-    const outsideMotion = frameCss.replace(`${mediaSelector} {${motion}}`, "");
-    // Without no-preference, no animation declaration can apply at all.
-    expect(outsideMotion).not.toMatch(/animation(?:-[a-z-]+)?\s*:/);
-    expect(motion.match(/\.black-sale-[^{]+\{/g)).toEqual([".black-sale-notice-light::after {"]);
-    const glow = cssBlock(frameCss, ".black-sale-notice-light::after");
-    expect(glow).toContain("opacity: 0.35;");
-    expect(glow).toContain("transform: scale(0.92);");
-    const keyframes = cssBlock(frameCss, "@keyframes black-sale-frame-light-once");
-    const finalState = cssBlock(keyframes, "0%, 100%");
-    expect(finalState).toContain("opacity: 0.35;");
-    expect(finalState).toContain("transform: scale(0.92);");
-    const animatedProperties = Array.from(keyframes.matchAll(/([a-z-]+)\s*:/g)).map(([, property]) => property);
-    expect(Array.from(new Set(animatedProperties)).sort()).toEqual(["opacity", "transform"]);
+    const notice = markup.match(/<aside[^>]*>/)?.[0];
+    expect(notice).toContain("rounded-xl border border-gold/45 bg-black");
+    expect(markup).not.toMatch(/black-sale-frame-lights|black-sale-notice-(?:frame|light)|--black-sale-light/);
+    expect(markup.match(/<span\b/g)).toHaveLength(1); // Nur das BLACK-SALE-Label, keine dekorativen Lichtpunkte.
+    expect(markup).not.toContain('style="');
+    expect(markup).not.toMatch(/animate-|shadow-|theat(?:re|er)-light/);
+    expect(noticeSource).not.toMatch(/FRAME_LIGHT_POSITIONS|setTimeout|setInterval|useEffect|requestAnimationFrame|animation|animate-/);
+    expect(indexCss).not.toMatch(/\.black-sale-notice\b|black-sale-frame-light|--black-sale-light|theat(?:re|er)-light/);
   });
 
   it("bleibt weiß lesbar mit mobilem Padding und Tastaturfokus", () => {

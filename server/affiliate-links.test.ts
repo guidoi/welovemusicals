@@ -297,7 +297,7 @@ describe("Affiliate-Link-Zuordnung", () => {
 
     expect(ziz).toBeDefined();
     expect(ZIZ_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410"
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149410"
     );
     expect(ZIZ_STAGE_TEXT_LINK_URL).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
     expect([
@@ -316,7 +316,7 @@ describe("Affiliate-Link-Zuordnung", () => {
 
     expect(tanzDerVampire).toBeDefined();
     expect(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426"
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149426"
     );
     expect(TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
     expect([
@@ -335,7 +335,7 @@ describe("Affiliate-Link-Zuordnung", () => {
 
     expect(wirSindAmLeben).toBeDefined();
     expect(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434"
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149434"
     );
     expect(WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
     expect([

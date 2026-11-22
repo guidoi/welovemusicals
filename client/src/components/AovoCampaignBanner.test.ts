@@ -62,13 +62,62 @@ describe("Aovo campaign banners", () => {
       expect(getAovoCampaignImageUrl(campaign, { ...sale, validUntil: "2027-11-30" }, new Date("2027-11-22T12:00:00"))).toBe(campaign.imageUrl);
     }
     const untouched = AOVO_CAMPAIGNS.filter((item) => !item.clickUrl);
-    expect(untouched.map((item) => item.groupId)).toEqual(["26180460", "26068528", "26068482", "26204070", "26204068", "26185546", "26185544", "26185674", "26185672"]);
+    expect(untouched.map((item) => item.groupId)).toEqual(["26180460", "26068528", "26068482", "26185546", "26185544"]);
     for (const campaign of untouched) {
       expect(campaign.promotion).toBeUndefined();
       expect(resolveAovoCampaignClickUrl(campaign)).toBe(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork));
+      expect(resolveAovoCampaignClickUrl(campaign)).toBe(campaign.trackingNetwork === "stage"
+        ? `https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=${campaign.groupId}`
+        : `https://clk.tradedoubler.com/click?p=377032&a=3492604&g=${campaign.groupId}`);
     }
     expect(AOVO_CAMPAIGNS.find((item) => item.groupId === "26180462")?.musicalId).toBe("mj-musical");
     expect(AOVO_CAMPAIGNS.find((item) => item.groupId === "26185500")?.musicalId).toBe("ziz");
+  });
+
+  it.each([
+    {
+      musicalId: "tanz-der-vampire", groupId: "26185674", width: 728, height: 90,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/tDBGPfoLhwaJKjUn.jpg",
+      placement: "within-detail-description", detailParagraphIndex: 4,
+      clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185674",
+      impressionUrl: "https://visit.stage-entertainment.de/imp?type(img)g(26185674)a(3492604)123456789",
+    },
+    {
+      musicalId: "tanz-der-vampire", groupId: "26185672", width: 300, height: 250,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/rhQrRnQFCqgoFCBr.jpg",
+      placement: "after-gallery", detailParagraphIndex: undefined,
+      clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26185672",
+      impressionUrl: "https://visit.stage-entertainment.de/imp?type(img)g(26185672)a(3492604)123456789",
+    },
+    {
+      musicalId: "tina-das-musical", groupId: "26204070", width: 728, height: 90,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/NoaaqXXsebwRvAeb.jpg",
+      placement: "within-detail-description", detailParagraphIndex: 2,
+      clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26204070",
+      impressionUrl: "https://visit.stage-entertainment.de/imp?type(img)g(26204070)a(3492604)123456789",
+    },
+    {
+      musicalId: "tina-das-musical", groupId: "26204068", width: 300, height: 250,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/llOBXxpQYhaNzRBy.jpg",
+      placement: "after-gallery", detailParagraphIndex: undefined,
+      clickUrl: "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26204068",
+      impressionUrl: "https://visit.stage-entertainment.de/imp?type(img)g(26204068)a(3492604)123456789",
+    },
+  ])("löst den genehmigten Click für $musicalId/$groupId exakt auf und behält Bild, Format, Placement und Stage-Impression bei", (expected) => {
+    const campaigns = getAovoCampaigns(expected.musicalId);
+    expect(campaigns).toHaveLength(2);
+    const campaign = campaigns.find((item) => item.groupId === expected.groupId)!;
+    expect(campaign).toMatchObject({
+      musicalId: expected.musicalId, groupId: expected.groupId,
+      width: expected.width, height: expected.height, imageUrl: expected.imageUrl,
+      trackingNetwork: "stage", placement: expected.placement, clickUrl: expected.clickUrl,
+    });
+    expect(campaign.detailParagraphIndex).toBe(expected.detailParagraphIndex);
+    expect(campaign.promotion).toBeUndefined();
+    expect(resolveAovoCampaignClickUrl(campaign)).toBe(expected.clickUrl);
+    expect(getAovoCampaignImageUrl(campaign)).toBe(expected.imageUrl);
+    expect(getAovoCampaignImageUrl(campaign, { label: "SALE", discount: "BIS 30 %", validUntil: "2026-11-30" }, new Date("2026-11-22T12:00:00"))).toBe(expected.imageUrl);
+    expect(getAovoCampaignImpressionUrl(campaign.groupId, "123456789", campaign.trackingNetwork)).toBe(expected.impressionUrl);
   });
 
   it("zeigt Stuttgart als eigenständige Vorverkaufsanzeige, nie als Hamburger Rabattcreative", () => {
@@ -156,8 +205,8 @@ describe("Aovo campaign banners", () => {
         imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/llOBXxpQYhaNzRBy.jpg",
       }),
     ]));
-    expect(getAovoCampaignClickUrl("26204070", "stage")).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26204070"
+    expect(resolveAovoCampaignClickUrl(getAovoCampaign("tina-das-musical")!)).toBe(
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26204070"
     );
     expect(getAovoCampaignImpressionUrl("26204068", "123456789", "stage")).toBe(
       "https://visit.stage-entertainment.de/imp?type(img)g(26204068)a(3492604)123456789"
@@ -392,12 +441,13 @@ describe("Aovo campaign banners", () => {
     );
   });
 
-  it("behält die gelieferten Stage-Click-Ziele für TINA, Prada und MJ unverändert", () => {
-    const expectedStageClicks = ["26204070", "26204068", "26185640", "26185638", "26180462", "26180466"];
+  it("löst die ausdrücklich freigegebenen Click-Ziele für TINA, Prada und MJ exakt auf", () => {
+    const expectedClicks = ["26204070", "26204068", "26185640", "26185638", "26180462", "26180466"];
 
-    for (const groupId of expectedStageClicks) {
-      expect(getAovoCampaignClickUrl(groupId, "stage")).toBe(
-        `https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=${groupId}`,
+    for (const groupId of expectedClicks) {
+      const campaign = AOVO_CAMPAIGNS.find((item) => item.groupId === groupId)!;
+      expect(resolveAovoCampaignClickUrl(campaign)).toBe(
+        `https://clk.tradedoubler.com/click?p=394206&a=3492604&g=${groupId}`,
       );
     }
   });

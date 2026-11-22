@@ -41,7 +41,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
 
     expect(mj).toBeDefined();
     expect(MJ_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149402",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149402",
     );
     expect(MJ_STAGE_TEXT_LINK_URL).toBe(MJ_STAGE_SHOW_PAGE_URL);
     expect(mj?.keyvisualLink).toBe(MJ_STAGE_SHOW_PAGE_URL);
@@ -53,7 +53,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     const koenigDerLoewen = getMusicalBySlug("koenig-der-loewen");
 
     expect(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149398",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149398",
     );
     expect(KOENIG_DER_LOEWEN_STAGE_TEXT_LINK_URL).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
     expect(koenigDerLoewen?.keyvisualLink).toBe(KOENIG_DER_LOEWEN_STAGE_SHOW_PAGE_URL);
@@ -64,7 +64,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     const prada = getMusicalBySlug("der-teufel-traegt-prada-das-musical");
 
     expect(PRADA_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149414",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149414",
     );
     expect(PRADA_STAGE_TEXT_LINK_URL).toBe(PRADA_STAGE_SHOW_PAGE_URL);
     expect(prada?.keyvisualLink).toBe(PRADA_STAGE_SHOW_PAGE_URL);
@@ -76,7 +76,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     const ziz = getMusicalBySlug("zurueck-in-die-zukunft-das-musical");
 
     expect(ZIZ_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149410",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149410",
     );
     expect(ZIZ_STAGE_TEXT_LINK_URL).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
     expect(ziz?.keyvisualLink).toBe(ZIZ_STAGE_SHOW_PAGE_URL);
@@ -88,7 +88,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     const tanzDerVampire = getMusicalBySlug("tanz-der-vampire");
 
     expect(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149426",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149426",
     );
     expect(TANZ_DER_VAMPIRE_STAGE_TEXT_LINK_URL).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
     expect(tanzDerVampire?.keyvisualLink).toBe(TANZ_DER_VAMPIRE_STAGE_SHOW_PAGE_URL);
@@ -100,7 +100,7 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
     const wirSindAmLeben = getMusicalBySlug("wir-sind-am-leben");
 
     expect(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149434",
     );
     expect(WIR_SIND_AM_LEBEN_STAGE_TEXT_LINK_URL).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
     expect(wirSindAmLeben?.keyvisualLink).toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
@@ -110,10 +110,10 @@ describe("Stage-Showseiten und Ticketshop-Deeplinks", () => {
 
   it("verwendet bei & JULIA, Salon Rosie und Eiskönigin die gelieferten Stage-Produktseiten auch an den Text-CTAs", () => {
     expect(SALON_ROSIE_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149438",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149438",
     );
     expect(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL).toBe(
-      "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26149434",
+      "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149434",
     );
     expect(SALON_ROSIE_STAGE_SHOW_PAGE_URL).not.toBe(WIR_SIND_AM_LEBEN_STAGE_SHOW_PAGE_URL);
 

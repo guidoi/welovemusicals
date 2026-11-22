@@ -28,19 +28,12 @@ describe("BLACK SALE – kompakte Desktopdarstellung", () => {
     expect(source).not.toContain("bg-red-800");
   });
 
-  it("behält volle Mobilbreite, Desktopbreite, Abstände und Touchziel trotz Rahmenlichtern", () => {
+  it("behält den einfachen goldenen Rahmen, volle Mobilbreite, Desktopbreite, Abstände und Touchziel", () => {
     expect(source).toContain("relative mb-7 w-full rounded-xl border border-gold/45 bg-black px-4 py-4 text-white sm:px-5 lg:mx-auto lg:w-[40%]");
     expect(source).toContain("min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-full border border-gold px-5 py-3");
     expect(source).toContain("focus-visible:ring-offset-black active:scale-[0.97] md:w-auto");
-    const frameRule = indexCss.match(/\.black-sale-notice-frame\s*\{([^}]+)\}/)?.[1];
-    expect(frameRule).toContain("position: absolute;");
-    expect(frameRule).toContain("inset: 0;");
-    expect(frameRule).toContain("overflow: hidden;");
-    expect(frameRule).toContain("border-radius: inherit;");
-    const noticeRule = indexCss.match(/\.black-sale-notice\s*\{([^}]+)\}/)?.[1];
-    expect(noticeRule).not.toMatch(/width|height|padding|margin|overflow|animation/);
-    expect(indexCss).toContain("left: clamp(4px, var(--black-sale-light-x), calc(100% - 4px));");
-    expect(indexCss).toContain("top: clamp(4px, var(--black-sale-light-y), calc(100% - 4px));");
+    expect(source).not.toMatch(/black-sale-notice-(?:frame|light)|black-sale-frame-lights|shadow-|animate-/);
+    expect(indexCss).not.toMatch(/\.black-sale-notice\b|black-sale-frame-light|--black-sale-light/);
   });
 
   it("zentriert Label, Angebotszeile, Bedingungen und CTA auch mobil bis 767px", () => {
