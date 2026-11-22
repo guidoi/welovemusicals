@@ -1499,8 +1499,25 @@ Ausgangspunkt/Rollback54a1ebba. Offene ZIZ-Zuordnungsfrage aus dem vorherigen Au
 - [x] Aufnahme: Fixheader unverändert, alle Dokumentelemente nach Refresh gemeinsam −180 Originalpixel. Bisherige gespeicherte Positionskorrektur greift damit weiterhin falsch ein; keine Layout-/Bildgrößenänderung belegt.
 - [x] Home-Reload-Bootstrap vollständig von Koordinatenspeicherung, Touch-Auswertung, Timern, Load-/Pageshow-Korrekturen und Scroll-Lock befreit. Ankernlose Startseite verwendet native history.scrollRestoration=auto; alte Session-Koordinaten werden ignoriert.
 - [x] Globales React-manual entfernt; nur tatsächliche interne Routenwechsel bleiben gezielte Top-Resets. Detail-/Stadt-/Ankerinitialisierung bleibt manual. Home/Header/Fotohöhen/Original144px-Abstand/CSS/Tracking/Affiliate unverändert.
-- [ ] Native Reload-Regressionen, Routing/Anker, Fulltests/TypeScript/Build und frische Produktionsauslieferung prüfen. Echte iPhone-Pull-Geste erst mit Gerätebestätigung als erledigt bewerten.
-- [ ] Danach separaten Dracula-Abgleich über alle offiziellen ShowSlot-Ergebnisseiten abschließen und ausschließlich fehlende Termine/Städte ergänzen; sämtliche bisherigen Termine und Originallinks erhalten.
+- [x] Native Reload-Regressionen, Routing/Anker, Fulltests/TypeScript/Build und frische Produktionsauslieferung e8fa138b geprüft.
+- [ ] Echte iPhone-Pull-Geste erst mit Gerätebestätigung als erledigt bewerten; keine Gerätegarantie aus Headless-WebKit ableiten.
+- [x] Separaten Dracula-Abgleich über alle offiziellen ShowSlot-Ergebnisseiten abgeschlossen, ausschließlich fehlende Termine/Städte ergänzt; sämtliche bisherigen Termine und Originallinks erhalten.
 
 - [x] Native-Reload-Änderung: 130 Dateien/997 Tests, TypeScript und Produktionsbuild inklusive Affiliate78Stage/270Awin/14weitere, Bild21Shows/23Städte,46SEO/Sitemap,diffcheck bestanden. 328 übrige Quell-/Funktions-/Server-/Skriptdateien und HTML außerhalbBootstrap bytegleich zu3aee6d92.
 - [x] Browser: Chromium393/390/1440 stellt0und60natividentischwiederher; WebKit393/390/1440 erhältTop0nachReloadundsynthetischemDownpullohneeigeneScrollaufrufe. Wichtig: HeadlessWebKitrestoretNonzero60nativauf0trotzauto; NICHTalsidentischeNonzero-Wiederherstellungbehauptet. Alle6KonfigurationenRoutenreset/SPAHomeAuto/InitialAnkerbestanden;8weiterefrüheAnkerTouchWheelbestanden. ZweiQA-Scriptfehler(TitelannahmeMomenteundHashwechselnichtNeudokument) außerhalbRepo korrigiert,keinePortaländerung. EchteNativeiPhonegesteweiterunbestätigt.
+
+## 22.11.2026 20:24:17 – Originalfarben des Startseitenfotos
+
+- [x] Flächigen Verlauf über dem Rafiki/KDL-Foto entfernt: vorher80%oben/40%mitte. Originalbild/Originalpixel/Farbton/Sättigung/Crop/Layout erhalten; nur untere28%alsweicherSeitenauslauf. LokalerTextschattenstattFotoabdunklung,keineÄnderungamFixheader111111oderRefreshmodusauto.
+- [x] Motivgeladen/Originalfarben/Lesbarkeit/identischeGeometrie nachReload mobilundDesktop geprüft; freigegebeneVersionbereitfürbestehendenCheckpoint-main-Veröffentlichungsweg.
+
+## 22.11.2026 – Dracula alle ShowSlot-Ergebnisseiten
+
+- [x] Beide echten JSON-Pages12+6=18Städte vollständiggelesen. FünfneueStädteBraunschweigFreiburgHamburgKielLeipzig und siebenneueGastspieleBerlinGrazInnsbruckMünchenNürnbergDuisburgWien ergänzt:25gespeicherteBlöcke18Städte,13Originallinks/-blöckefieldidentischinklAltdaten2026erhalten. BestehendeautomatischeFrontend-AusblendungabgespielterTermineunverändert:21aktiveTerminlinks.
+- [x] Duisburg14.–16.01.2028/Wien27.–30.01.2028separatverifiziertundergänzt,keinebreitenZwei-Monats-Sammelblöcke. KölnQuelle29.–31.10liegtinBestand28.–31.10:Bestandinkl28.10unverändert. Neue5Awin-ZielesaubereEventim-Citylinksmit11388/2865727;7Bestandsstadtlinksunverändertwiederverwendet,ÖsterreichP96nieunterfalschemMerchant. Preis40,40/Bilder/SEO/Texte/Trailer/Kategorien/Quotes/alleanderenMusicals/ConsentConverterTrackingunverändert.46neueSourceCoverageRetentionFilterRegressionsfällePASS.
+- [x] BrowserabnahmebeideBreiten/alle18Städte21Links/FilterStadtseitenundFullQAabgeschlossen; freigegebeneVersionbereitfürbestehendenCheckpoint-main-Veröffentlichungsweg.
+
+- [x] Dracula-Stadtkonsistenz: Berlin-Zähler9→10/Hamburg8→9 entsprechend zusätzlich aktivenDracula-Gastspielen;StadttexteBilderHotel-URLsundalleanderenMusicals unverändert. BestehenderSchema-Test prüftjetztneueBerlin2027/Graz2028 stattveralteterNichtvorhanden-Annahme;Rapunzeltestzählung10,sämtlicheRapunzelfelderunberührt.
+- [x] ErstevisuelleMobilDesktopprüfungzeigteerbtext-shadowfärbtbackground-clip:Textgoldscheinbarschwarz. AusschließlichlokalenschriftseitigenDrop-Shadowstatttext-shadowverwendet,GoldverlaufundOriginalfoto unverfälscht;keineBildfilter,neueFullwidth-AbdunklungoderLayoutänderung. FinaleAbnahmeerneut.
+
+- [x] Finale132Testdateien1046Tests/TypeScript/ProductionBuildAffiliate78Stage278Awin18weitere/Bild21Shows23Städte/46SEOSitemap/diffPASS. 330übrigeSourceFunctionsScriptsServer+RefreshBootstrapAppCSSHeaderTrackingbytegleichzu e8fa138b. 393/1440 beideHomefotoOriginalfilterNoneOpacity1/ober72%keinTint/GolddropShadow/originalRectsauchReloadidentisch,Dracula18Boxen21FutureLinksDatumstextURLexakt/alle5neuenStadtfilter+BerlinDuisburgWien/3CitypagesPASS. BeideHomeundbeideDraculaAufnahmenvisuellgeprüft. NativeiPhonegestebleibtoffen, alteZIZZuordnungnichtTeilauftragunverändert.

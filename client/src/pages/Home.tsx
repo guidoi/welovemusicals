@@ -462,11 +462,18 @@ export default function Home() {
             decoding="sync"
             className={`w-full h-full object-cover ${DESKTOP_HERO_IMAGE_POSITION_CLASS}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
+          <div
+            aria-hidden="true"
+            data-testid="home-hero-bottom-fade"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-background to-transparent"
+          />
         </div>
 
         {/* Content */}
-        <div className={`relative z-10 container text-center ${HOME_HERO_CONTENT_TOP_CLASS}`}>
+        <div
+          className={`relative z-10 container text-center ${HOME_HERO_CONTENT_TOP_CLASS}`}
+          style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.9))" }}
+        >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

@@ -71,8 +71,8 @@ describe("maschinenlesbare Veranstaltungsdaten", () => {
     expect(getMusicalSeo(dracula!).title).toBe("Dracula – Das Musical: Termine 2026–2028 ❤️ We Love Musicals");
     expect(dracula?.seoDescription).toContain("Termine 2026–2028");
     expect(events.every((event) => String(event.endDate ?? event.startDate) >= "2026-10-10")).toBe(true);
-    expect(events.some((event) => event.location.address.addressLocality === "Berlin")).toBe(false);
-    expect(events.some((event) => event.location.address.addressLocality === "Graz")).toBe(false);
+    expect(events.some((event) => event.location.address.addressLocality === "Berlin" && String(event.startDate).startsWith("2027-09-10"))).toBe(true);
+    expect(events.some((event) => event.location.address.addressLocality === "Graz" && String(event.startDate).startsWith("2028-01-21"))).toBe(true);
     expect(events.some((event) => event.location.address.addressLocality === "Nürnberg")).toBe(true);
   });
 

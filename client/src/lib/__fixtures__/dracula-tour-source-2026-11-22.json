@@ -1,0 +1,646 @@
+{
+  "source": {
+    "retrievedAt": "2026-11-22T19:18:05.880544+00:00",
+    "url": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+    "api": "https://showslot.com/api/musical-events/",
+    "musicalUuid": "f496c3ca-cfa6-4c0e-a894-6c90b925d88e",
+    "pages": [
+      {
+        "page": 1,
+        "count": 12
+      },
+      {
+        "page": 2,
+        "count": 6
+      }
+    ],
+    "total": 18,
+    "rows": [
+      {
+        "id": "21780903",
+        "city": "Berlin",
+        "venue": "BlueMax Theater Berlin",
+        "startDate": "2027-09-10",
+        "endDate": "2027-10-03",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=MXA&calendarview=1"
+      },
+      {
+        "id": "21517809",
+        "city": "Bochum",
+        "venue": "RuhrCongress Bochum",
+        "startDate": "2028-01-18",
+        "endDate": "2028-01-19",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=bochum&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "21702839",
+        "city": "Braunschweig",
+        "venue": "Volkswagen Halle",
+        "startDate": "2028-01-05",
+        "endDate": "2028-01-06",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=braunschweig&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "21270445",
+        "city": "Bremen",
+        "venue": "Metropol Theater Bremen",
+        "startDate": "2027-11-11",
+        "endDate": "2027-11-14",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/eventseries/dracula-das-musical-tour-2027-3946039/?affiliate=DUA&cityname=bremen&utm_medium=dp"
+      },
+      {
+        "id": "21265738",
+        "city": "Duisburg",
+        "venue": "Theater am Marientor",
+        "startDate": "2027-11-18",
+        "endDate": "2028-01-16",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/eventseries/dracula-das-musical-tour-2027-3946039/?affiliate=DUA&cityname=duisburg&utm_medium=dp"
+      },
+      {
+        "id": "21271080",
+        "city": "Frankfurt",
+        "venue": "myticket Jahrhunderthalle Frankfurt",
+        "startDate": "2027-12-03",
+        "endDate": "2027-12-05",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/eventseries/dracula-das-musical-tour-2027-3946039/?affiliate=DUA&cityname=frankfurt&utm_medium=dp"
+      },
+      {
+        "id": "21702999",
+        "city": "Freiburg",
+        "venue": "SICK-ARENA, Messe Freiburg",
+        "startDate": "2028-01-08",
+        "endDate": "2028-01-09",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=freiburg%20im%20breisgau&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "https://www.oeticket.com/noapp/event/dracula-das-musical-helmut-list-halle-21503667/?affiliate=J81",
+        "city": "Graz",
+        "venue": "",
+        "startDate": "2028-01-21",
+        "endDate": "2028-01-22",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=graz"
+      },
+      {
+        "id": "21518781",
+        "city": "Halle (Saale)",
+        "venue": "Georg-Friedrich-Händel HALLE",
+        "startDate": "2027-11-02",
+        "endDate": "2027-11-03",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=halle%20saale&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "21701270",
+        "city": "Hamburg",
+        "venue": "Sporthalle Hamburg",
+        "startDate": "2028-02-08",
+        "endDate": "2028-02-09",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=hamburg&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "https://www.oeticket.com/noapp/event/dracula-das-musical-congress-innsbruck-21503225/?affiliate=J81",
+        "city": "Innsbruck",
+        "venue": "",
+        "startDate": "2027-12-10",
+        "endDate": "2027-12-11",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=innsbruck"
+      },
+      {
+        "id": "21702766",
+        "city": "Kiel",
+        "venue": "MERKUR Ostseehalle",
+        "startDate": "2028-01-01",
+        "endDate": "2028-01-02",
+        "sourcePage": 1,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=kiel&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "21265286",
+        "city": "Köln",
+        "venue": "Motorworld",
+        "startDate": "2027-10-29",
+        "endDate": "2027-10-31",
+        "sourcePage": 2,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/?seite=2",
+        "link": "https://www.eventim.de/eventseries/dracula-das-musical-tour-2027-3946039/?affiliate=DUA&cityname=köln&utm_medium=dp"
+      },
+      {
+        "id": "21703557",
+        "city": "Leipzig",
+        "venue": "QUARTERBACK Immobilien ARENA",
+        "startDate": "2027-12-14",
+        "endDate": "2027-12-15",
+        "sourcePage": 2,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/?seite=2",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=leipzig&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "22253366",
+        "city": "München",
+        "venue": "Deutsches Theater",
+        "startDate": "2027-10-05",
+        "endDate": "2027-10-24",
+        "sourcePage": 2,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/?seite=2",
+        "link": "https://www.deutsches-theater.de/dracula/"
+      },
+      {
+        "id": "21242774",
+        "city": "Nürnberg",
+        "venue": "Meistersingerhalle Nürnberg",
+        "startDate": "2027-11-06",
+        "endDate": "2027-11-07",
+        "sourcePage": 2,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/?seite=2",
+        "link": "https://www.eventim.de/eventseries/dracula-das-musical-tour-2027-3946039/?affiliate=DUA&cityname=n%C3%BCrnberg&utm_medium=dp"
+      },
+      {
+        "id": "21517670",
+        "city": "Stuttgart",
+        "venue": "Liederhalle Hegelsaal",
+        "startDate": "2027-12-22",
+        "endDate": "2027-12-25",
+        "sourcePage": 2,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/?seite=2",
+        "link": "https://www.eventim.de/artist/dracula-das-musical/?affiliate=DUA&cityname=stuttgart&utm_source=SS_&utm_campaign=showslot&utm_medium=dp"
+      },
+      {
+        "id": "https://www.oeticket.com/noapp/event/dracula-das-musical-museumsquartier-wien-21254384/?affiliate=J81",
+        "city": "Wien",
+        "venue": "",
+        "startDate": "2027-11-23",
+        "endDate": "2028-01-30",
+        "sourcePage": 2,
+        "sourceUrl": "https://showslot.com/de/musicals-shows/dracula/tickets/?seite=2",
+        "link": "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=wien"
+      }
+    ]
+  },
+  "baseline": {
+    "provenance": "Originalbestand vor der Ergänzung am 22.11.2026; keine Ableitung aus dem aktualisierten data.ts.",
+    "musicalIds": [
+      "weihnachten-mit-bibi-tina",
+      "dracula",
+      "moulinrouge",
+      "phantom-der-oper",
+      "sisteract",
+      "der-kleine-lord",
+      "fackjugoehte",
+      "dreihaselnuesse",
+      "rapunzel",
+      "schoene-und-das-biest",
+      "gloeckner-von-notre-dame",
+      "starlight-express",
+      "koenig-der-loewen",
+      "mj-musical",
+      "eiskoenigin",
+      "tarzan",
+      "ziz",
+      "teufel-traegt-prada",
+      "die-amme",
+      "wir-sind-am-leben",
+      "tanz-der-vampire",
+      "we-will-rock-you",
+      "salon-rosie",
+      "und-julia",
+      "tina-das-musical"
+    ],
+    "dracula": {
+      "id": "dracula",
+      "experienceCategory": "kult-klassiker",
+      "slug": "dracula",
+      "title": "DRACULA",
+      "subtitle": "Das Musical",
+      "provider": "ShowSlot",
+      "priceFrom": "40,40",
+      "category": "tournee",
+      "categories": [
+        "tournee",
+        "erwachsene"
+      ],
+      "cities": [
+        "Berlin",
+        "Bochum",
+        "Bremen",
+        "Duisburg",
+        "Frankfurt",
+        "Graz",
+        "Halle (Saale)",
+        "Innsbruck",
+        "Köln",
+        "München",
+        "Nürnberg",
+        "Stuttgart",
+        "Wien"
+      ],
+      "description": "Erlebe die unsterbliche Liebesgeschichte von Dracula als fesselndes Musical-Erlebnis über ewige Liebe, dunkle Begierde und die Macht der Verführung.",
+      "detailHeadline": "DER GRAF KEHRT ZURÜCK – TOURNEE 2026–2028",
+      "detailDescription": "Große Nachfrage, neue Tour: Aufgrund der sensationellen Nachfrage nach Tickets und zahlreicher ausverkaufter Shows kehrt DRACULA – DAS MUSICAL zurück. Der legendäre Vampirmythos um die Macht von Liebe, Verführung und ewiger Nacht geht von Ende 2026 bis 2028 als packendes Broadway-Musical auf große Tournee durch Deutschland und Österreich.\n\n**Die unsterbliche Liebesgeschichte**\n\nDie unsterbliche Liebesgeschichte rund um Graf Dracula fasziniert seit Generationen und entfaltet live auf der Bühne eine ganz besondere Sogwirkung. Bram Stokers weltberühmter Vampirroman erwacht dabei mit einem epischen Soundtrack von Star-Komponist Frank Wildhorn zu neuem Leben. Seine Musik – geprägt von emotionalen Balladen und kraftvollen Rocksongs – verleiht der Geschichte eine moderne, dramatische Intensität.\n\nAuf der Tournee von 2026 bis 2028 erwartet das Publikum ein erstklassig besetztes Ensemble, das die Titelrolle des Fürsten der Finsternis mit Leidenschaft und Intensität zum Leben erweckt – Herzklopfen und Gänsehaut pur garantiert.\n\n**Atmosphäre und Inszenierung**\n\nBegleitet von einer 8-köpfigen Live-Band taucht das Publikum ein in die romantisch-düstere Welt Transsilvaniens und Londons. Spektakuläre Bilder in viktorianischem Bühnenbild, ein atmosphärisches Lichtdesign sowie schaurig-schöne Kostüme schaffen eine eindrucksvolle Szenerie, die die ewige Jagd nach Blut und Liebe eindringlich erlebbar macht.\n\nUnter der Regie von Alex Balga wird DRACULA – DAS MUSICAL zu einem fesselnden Gesamterlebnis voller Emotion, Spannung und Gänsehaut.",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/dracula_hero_9cb3c050.webp",
+      "heroImage": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/msCnlWzpUxHutzXd.webp",
+      "eventimUrl": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3889201&clickref=dracula-ticket",
+      "awinHeroUrl": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3889201&clickref=dracula-hero",
+      "awinStickyUrl": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3889201&clickref=dracula-sticky",
+      "awinBoxUrl": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3889201&clickref=dracula-box",
+      "featured": false,
+      "tags": [
+        "Tournee",
+        "Romantik",
+        "Schaurigschön"
+      ],
+      "youtubeTrailerId": "9lJc0EM-jBo",
+      "uspItems": [
+        {
+          "icon": "Skull",
+          "title": "Bram Stokers Romanvorlage",
+          "text": "Schaurige Geschichte um den unsterblichen Grafen"
+        },
+        {
+          "icon": "Music",
+          "title": "Mitreißende Rockmusik",
+          "text": "Packende Songs von Don Black & Christopher Hampton"
+        },
+        {
+          "icon": "MapPin",
+          "title": "Tournee 2026–2028",
+          "text": "Live in Deutschland und Österreich"
+        },
+        {
+          "icon": "Star",
+          "title": "Spektakuläre Bühneneffekte",
+          "text": "Atemberaubende Licht- und Nebelshow"
+        }
+      ],
+      "seoTitle": "Dracula – Das Musical: Termine 2026–2028 | We Love Musicals",
+      "seoDescription": "Dracula – Das Musical: Termine 2026–2028 in Nürnberg, Innsbruck, Köln, Bremen, Wien und weiteren Städten. Tickets ab 40,40 €.",
+      "tourDates": [
+        {
+          "city": "Berlin",
+          "venue": "BlueMax Theater",
+          "startDate": "2026-05-01",
+          "endDate": "2026-06-07",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-berlin-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBerlin",
+          "badge": "5 Wochen Gastspiel"
+        },
+        {
+          "city": "Bochum",
+          "venue": "RuhrCongress",
+          "startDate": "2028-01-18",
+          "endDate": "2028-01-19",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-bochum-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBochum"
+        },
+        {
+          "city": "Bremen",
+          "venue": "Metropol Theater",
+          "startDate": "2027-11-11",
+          "endDate": "2027-11-14",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-bremen-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DBremen"
+        },
+        {
+          "city": "Duisburg",
+          "venue": "Theater am Marientor",
+          "startDate": "2027-11-18",
+          "endDate": "2027-11-21",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-duisburg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DDuisburg"
+        },
+        {
+          "city": "Frankfurt",
+          "venue": "myticket Jahrhunderthalle",
+          "startDate": "2027-12-03",
+          "endDate": "2027-12-05",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-frankfurt-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3Dfrankfurt"
+        },
+        {
+          "city": "Graz",
+          "venue": "Helmut List Halle",
+          "startDate": "2026-04-25",
+          "endDate": "2026-04-26",
+          "eventimUrl": "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=Graz&utm_medium=dp"
+        },
+        {
+          "city": "Halle (Saale)",
+          "venue": "Händel Halle",
+          "startDate": "2027-11-02",
+          "endDate": "2027-11-03",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-halle-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3Dhalle+saale"
+        },
+        {
+          "city": "Innsbruck",
+          "venue": "Congress Innsbruck (Dogana)",
+          "startDate": "2027-04-21",
+          "endDate": "2027-04-23",
+          "eventimUrl": "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=Innsbruck&utm_medium=dp"
+        },
+        {
+          "city": "Köln",
+          "venue": "Motorworld",
+          "startDate": "2027-10-28",
+          "endDate": "2027-10-31",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-koeln-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DK%C3%B6ln"
+        },
+        {
+          "city": "München",
+          "venue": "Deutsches Theater",
+          "startDate": "2026-04-07",
+          "endDate": "2026-04-19",
+          "eventimUrl": "https://www.deutsches-theater.de/dracula/"
+        },
+        {
+          "city": "Nürnberg",
+          "venue": "Meistersingerhalle",
+          "startDate": "2026-11-06",
+          "endDate": "2026-11-07",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-nuernberg-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DN%C3%BCrnberg"
+        },
+        {
+          "city": "Stuttgart",
+          "venue": "Liederhalle (Hegel-Saal)",
+          "startDate": "2027-12-22",
+          "endDate": "2027-12-25",
+          "eventimUrl": "https://www.awin1.com/cread.php?awinmid=11388&awinaffid=2865727&clickref=dracula-stuttgart-dates&ued=https%3A%2F%2Fwww.eventim.de%2Fartist%2Fdracula-das-musical%2F%3Fcityname%3DStuttgart"
+        },
+        {
+          "city": "Wien",
+          "venue": "MuseumsQuartier Halle E",
+          "startDate": "2027-11-23",
+          "endDate": "2027-11-28",
+          "eventimUrl": "https://www.oeticket.com/artist/dracula-das-musical/?affiliate=P96&cityname=Wien&utm_medium=dp"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Dieser Dracula geht unter die Haut.",
+          "source": "Rhein Neckar Zeitung"
+        },
+        {
+          "text": "Mitreißend und auch provokativ zugleich.",
+          "source": "Abendzeitung"
+        },
+        {
+          "text": "Daumen hoch für diesen Dracula!",
+          "source": "Münchner Merkur"
+        }
+      ],
+      "keyvisual": "/images/dracula/dracula-keyvisual-2027.webp",
+      "keyvisualLink": "https://www.awin1.com/awclick.php?gid=492097&mid=11388&awinaffid=2865727&linkid=3889201&clickref=dracula-keyvisual",
+      "gallery": [
+        {
+          "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/msCnlWzpUxHutzXd.webp",
+          "alt": "Dracula Pressefoto 1"
+        },
+        {
+          "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/lqjIytBXBILCWTHQ.webp",
+          "alt": "Dracula Pressefoto 2"
+        },
+        {
+          "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/mEkPKAXqtLpkeXnX.webp",
+          "alt": "Dracula Pressefoto 3"
+        },
+        {
+          "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/lKKwRsOYlbvsqeJv.webp",
+          "alt": "Dracula Pressefoto 4"
+        },
+        {
+          "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/FHgxESsoSVhkpzwZ.webp",
+          "alt": "Dracula Pressefoto 5"
+        },
+        {
+          "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/BdBLKNdUwXXbYOiw.webp",
+          "alt": "Dracula Pressefoto 6"
+        }
+      ],
+      "showFacts": [
+        {
+          "label": "Showdauer",
+          "value": "2 Stunden 30 Minuten (inkl. Pause)"
+        },
+        {
+          "label": "Sprache",
+          "value": "Alle Dialoge und Songs in deutscher Sprache"
+        },
+        {
+          "label": "Auf Tour",
+          "value": "2026–2028"
+        }
+      ],
+      "storyHeadline": "VERFÜHRT, GEBISSEN, VERLOREN",
+      "storyText": "Für den jungen Anwalt Jonathan Harker wird eine Geschäftsreise zum Albtraum: Graf Dracula lädt ihn nach Transsilvanien ein, um ein Anwesen in London zu erwerben. Doch als der Vampir das Porträt von Jonathans Verlobter Mina entdeckt, verfällt er in eine gefährliche Faszination und das Schicksal nimmt eine unheilvolle Wendung.\n\nDracula verlässt sein Schloss in Transsilvanien, um Mina in London zu finden – und hinterlässt eine Spur aus Blut, Sehnsucht und Verzweiflung. Selbst der legendäre Vampirjäger Van Helsing scheint machtlos gegen diese dunkle Leidenschaft. Im Schatten der Nacht entscheidet sich Minas Schicksal: Wählt sie das Licht – oder das ewige Leben an Draculas Seite?",
+      "faqItems": [
+        {
+          "question": "Wo wird das Musical gespielt?",
+          "answer": "Das Musical gastiert an verschiedenen Spielstätten in Deutschland und Österreich."
+        },
+        {
+          "question": "Wo sind Tickets erhältlich?",
+          "answer": "Tickets sind online über Eventim und Oeticket erhältlich."
+        },
+        {
+          "question": "Was kosten die Tickets?",
+          "answer": "Die Preise variieren je nach Spieltag und Preiskategorie und beginnen ab 40,40 Euro pro Ticket."
+        },
+        {
+          "question": "Wie lange dauert eine Vorstellung?",
+          "answer": "Die Vorstellung dauert etwa 2 Stunden 30 Minuten inklusive Pause."
+        },
+        {
+          "question": "Gibt es eine Altersempfehlung?",
+          "answer": "Das Musical ist ab 12 Jahren empfohlen."
+        },
+        {
+          "question": "Gibt es eine Pause?",
+          "answer": "Ja, es gibt eine 15-minütige Pause nach dem ersten Akt."
+        },
+        {
+          "question": "Gibt es eine Live-Band?",
+          "answer": "Ja, das Musical wird von einer 8-köpfigen Live-Band begleitet: Musikalische Leitung, Keyboard, Geige, Cello, Reed, Gitarre, Bass, Drums."
+        }
+      ]
+    },
+    "otherHashes": {
+      "weihnachten-mit-bibi-tina": "f50d4387b7d20ae12db729b257a4c68613b97443bfb17e2ba9ba590f3daa8490",
+      "moulinrouge": "c67bc99391c77a00e94c8ddaad8d34aa91ebbe90e27e2a57b9e730b5077bbcdb",
+      "phantom-der-oper": "0c1524bff84fbf468fa9541bfa5949b3fb89db6ea6e925696f77b6ad3140f461",
+      "sisteract": "49d8e747e9f732697cdb53cb7e1aaf34151af22ce830dbaa91fe1bc2a750b335",
+      "der-kleine-lord": "f7f954b2a92be86e0ef37f05c19e4ff548284607f3d7940c75bdb167820d8b49",
+      "fackjugoehte": "c524776acf80ac4114df582c2cae87f05b34b8edc39feeb5b6af1e0873b5820c",
+      "dreihaselnuesse": "354cbba03b5d0140c6e9d6a06ac20c3aa070a83a2cb057042072635ddcfb837b",
+      "rapunzel": "1fd1ef2e85b23b49bab75858ea8c825dacbdc4262ae1eb500a26e3ec1abb720a",
+      "schoene-und-das-biest": "52ca84c07efc0f1787200076a28bab86d3b467e4509d291c15d5a5adcebaa04a",
+      "gloeckner-von-notre-dame": "0c149c79fcc675dd1042b9c697713b0bfb7673720e7c2dcbfd527a60436c0051",
+      "starlight-express": "d1a9efa36b9ed7453f2f6190c3ab9740f0d5eb715e6b206d0038608e2ed8b8db",
+      "koenig-der-loewen": "59ed128d8f471e84c715a5984a39e61fff6af943a86e6bc8c39aeae2c7935280",
+      "mj-musical": "dabd9961e68031fd2fcf02ac60823f2b2ae3716dfffe35a6fe6e26f00bcc4cae",
+      "eiskoenigin": "0bff5a5a59ea3745209c8716be39a23d32f65cf1bac3711f463536d2881a71d0",
+      "tarzan": "db2dbab812c9b80d9c5538ecc4961711e0bc7396d0df6271766fe769c77e6d4b",
+      "ziz": "cef8fa1ab76b20b8049aeb83e853292c269ffd555b332118958a3238e0ef67df",
+      "teufel-traegt-prada": "b15edfac40ea1cfea9237cee38058d36a6484b40e1346b3874fa2223e56c686f",
+      "die-amme": "784ddd8482525245e28371b15ae4e0bc8b2fcef418ea0ecd4e94a21dee7b7625",
+      "wir-sind-am-leben": "bcec688c340460df61f67584fe780e8b529f27738c8e7329f41b1c035c7b6688",
+      "tanz-der-vampire": "c839799cb98c2962ed383fd4e83435778cbcfa7dcc6cfdbb0e3ee9f5913bf9f0",
+      "we-will-rock-you": "298a443ec36afe6c46384327a3e10d1420d891d6075afceb38187cb720a7be2d",
+      "salon-rosie": "2e99a6ab4352a8d6de853fa72bf60f0fe3b2d3d564bcf3cd4ff53b546b18a0b4",
+      "und-julia": "0993d9e01af9d5cbbf9d2186d84cb49bf1f02ef33f03df533bf0d5405fcee43d",
+      "tina-das-musical": "25e0623b4cb5956d9a0e35a5b65cf0f7c387cfd2ef27ba464b836fc86a0bfd2e"
+    },
+    "hashFormat": "SHA-256 of UTF-8 JSON.stringify with recursively sorted object keys; array order unchanged"
+  },
+  "additions": [
+    {
+      "city": "Berlin",
+      "venue": "BlueMax Theater",
+      "startDate": "2027-09-10",
+      "endDate": "2027-10-03"
+    },
+    {
+      "city": "Braunschweig",
+      "venue": "Volkswagen Halle",
+      "startDate": "2028-01-05",
+      "endDate": "2028-01-06",
+      "ticketCity": "braunschweig",
+      "clickref": "dracula-braunschweig-dates"
+    },
+    {
+      "city": "Duisburg",
+      "venue": "Theater am Marientor",
+      "startDate": "2028-01-14",
+      "endDate": "2028-01-16"
+    },
+    {
+      "city": "Freiburg",
+      "venue": "SICK-ARENA, Messe Freiburg",
+      "startDate": "2028-01-08",
+      "endDate": "2028-01-09",
+      "ticketCity": "freiburg im breisgau",
+      "clickref": "dracula-freiburg-dates"
+    },
+    {
+      "city": "Graz",
+      "venue": "Helmut List Halle",
+      "startDate": "2028-01-21",
+      "endDate": "2028-01-22"
+    },
+    {
+      "city": "Hamburg",
+      "venue": "Sporthalle Hamburg",
+      "startDate": "2028-02-08",
+      "endDate": "2028-02-09",
+      "ticketCity": "hamburg",
+      "clickref": "dracula-hamburg-dates"
+    },
+    {
+      "city": "Innsbruck",
+      "venue": "Congress Innsbruck (Dogana)",
+      "startDate": "2027-12-10",
+      "endDate": "2027-12-11"
+    },
+    {
+      "city": "Kiel",
+      "venue": "MERKUR Ostseehalle",
+      "startDate": "2028-01-01",
+      "endDate": "2028-01-02",
+      "ticketCity": "kiel",
+      "clickref": "dracula-kiel-dates"
+    },
+    {
+      "city": "Leipzig",
+      "venue": "QUARTERBACK Immobilien ARENA",
+      "startDate": "2027-12-14",
+      "endDate": "2027-12-15",
+      "ticketCity": "leipzig",
+      "clickref": "dracula-leipzig-dates"
+    },
+    {
+      "city": "München",
+      "venue": "Deutsches Theater",
+      "startDate": "2027-10-05",
+      "endDate": "2027-10-24"
+    },
+    {
+      "city": "Nürnberg",
+      "venue": "Meistersingerhalle",
+      "startDate": "2027-11-06",
+      "endDate": "2027-11-07"
+    },
+    {
+      "city": "Wien",
+      "venue": "MuseumsQuartier Halle E",
+      "startDate": "2028-01-27",
+      "endDate": "2028-01-30"
+    }
+  ],
+  "newCities": [
+    "Braunschweig",
+    "Freiburg",
+    "Hamburg",
+    "Kiel",
+    "Leipzig"
+  ],
+  "coverageExceptions": [
+    {
+      "city": "Duisburg",
+      "kind": "split",
+      "verifiedBy": "https://www.eventim.de/artist/dracula-das-musical/?cityname=duisburg",
+      "ranges": [
+        {
+          "startDate": "2027-11-18",
+          "endDate": "2027-11-21"
+        },
+        {
+          "startDate": "2028-01-14",
+          "endDate": "2028-01-16"
+        }
+      ]
+    },
+    {
+      "city": "Wien",
+      "kind": "split",
+      "verifiedBy": "https://www.viennaticketoffice.com/dracula-das-musical-tickets-423653-en.html",
+      "ranges": [
+        {
+          "startDate": "2027-11-23",
+          "endDate": "2027-11-28"
+        },
+        {
+          "startDate": "2028-01-27",
+          "endDate": "2028-01-30"
+        }
+      ]
+    },
+    {
+      "city": "Köln",
+      "kind": "retained-covering-range",
+      "ranges": [
+        {
+          "startDate": "2027-10-28",
+          "endDate": "2027-10-31"
+        }
+      ]
+    }
+  ],
+  "venueVerifications": {
+    "Graz": "https://www.helmut-list-halle.com/event/dracula-das-musical-3/",
+    "Innsbruck": "https://events.tt.com/veranstaltung/33655/dracula-das-musical"
+  }
+}
