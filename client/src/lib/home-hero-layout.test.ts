@@ -38,6 +38,8 @@ describe("Mobile Hero-Navigationsabstände", () => {
     expect(indexHtml).toContain('window.addEventListener("scroll", lockHomeScroll');
     expect(indexHtml).toContain('window.removeEventListener("scroll", lockHomeScroll)');
     expect(indexHtml).toContain('}, 1000)');
-    expect(indexHtml).toContain('window.addEventListener("load", scheduleHomeScrollReset');
+    expect(indexHtml).toContain('window.addEventListener("load", onHomeReady');
+    expect(indexHtml).toContain('window.addEventListener("pageshow", onHomeReady');
+    expect(indexHtml).toContain('behavior: "instant"');
   });
 });

@@ -83,32 +83,74 @@
 
             if (window.location.pathname !== "/" || window.location.hash) return;
 
+            var stopped = false;
+            var lifecycleSeen = false;
+            var resetTimers = [];
+            var releaseTimer;
+            var frameId;
+            var inputEvents = ["touchstart", "wheel", "pointerdown", "keydown"];
+
+            var clearScheduledResets = function() {
+              resetTimers.forEach(window.clearTimeout);
+              resetTimers = [];
+              window.clearTimeout(releaseTimer);
+              if (frameId !== undefined) window.cancelAnimationFrame(frameId);
+            };
+
+            var stopHomeScrollProtection = function() {
+              stopped = true;
+              clearScheduledResets();
+              window.removeEventListener("scroll", lockHomeScroll);
+              window.removeEventListener("load", onHomeReady);
+              window.removeEventListener("pageshow", onHomeReady);
+              inputEvents.forEach(function(event) {
+                window.removeEventListener(event, stopHomeScrollProtection);
+              });
+            };
+
             var resetHomeScroll = function() {
-              window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+              if (stopped) return;
+              if (window.location.pathname !== "/" || window.location.hash) {
+                stopHomeScrollProtection();
+                return;
+              }
+              // "auto" inherits CSS smooth scrolling; reload correction must not animate.
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
             };
 
-            var scheduleHomeScrollReset = function() {
-              resetHomeScroll();
-              window.requestAnimationFrame(resetHomeScroll);
-              window.setTimeout(resetHomeScroll, 120);
-              window.setTimeout(resetHomeScroll, 500);
-            };
-
-            // Safari can apply its restored position after pageshow. For a moment, lock only the
-            // unanchored start page to its hero so its fixed header cannot cover the first line.
             var lockHomeScroll = function() {
               resetHomeScroll();
             };
-            window.addEventListener("scroll", lockHomeScroll, { passive: true });
-            window.setTimeout(function() {
-              window.removeEventListener("scroll", lockHomeScroll);
-            }, 1000);
 
-            scheduleHomeScrollReset();
-            window.addEventListener("pageshow", function() {
+            var scheduleHomeScrollReset = function() {
+              if (stopped) return;
+              clearScheduledResets();
+              resetHomeScroll();
+              if (stopped) return;
+              window.addEventListener("scroll", lockHomeScroll, { passive: true });
+              frameId = window.requestAnimationFrame(resetHomeScroll);
+              resetTimers.push(window.setTimeout(resetHomeScroll, 120));
+              resetTimers.push(window.setTimeout(resetHomeScroll, 500));
+              // Keep the same finite window, but start it at load/pageshow as well as parsing.
+              releaseTimer = window.setTimeout(function() {
+                window.removeEventListener("scroll", lockHomeScroll);
+                clearScheduledResets();
+                if (lifecycleSeen) stopHomeScrollProtection();
+              }, 1000);
+            };
+
+            var onHomeReady = function() {
+              lifecycleSeen = true;
               scheduleHomeScrollReset();
-            }, { once: true });
-            window.addEventListener("load", scheduleHomeScrollReset, { once: true });
+            };
+
+            // Never fight deliberate scrolling, another pull gesture, or anchor navigation.
+            inputEvents.forEach(function(event) {
+              window.addEventListener(event, stopHomeScrollProtection, { passive: true });
+            });
+            window.addEventListener("pageshow", onHomeReady, { once: true });
+            window.addEventListener("load", onHomeReady, { once: true });
+            scheduleHomeScrollReset();
           } catch (_error) {
             // The page remains usable if a browser does not expose scroll-restoration APIs.
           }
