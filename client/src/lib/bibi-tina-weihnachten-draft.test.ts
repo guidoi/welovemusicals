@@ -3,7 +3,7 @@ import { ACTIVE_MUSICAL_IDS, getMusicalBySlug } from "./data";
 import { WBT_PENDING_BANNERS, WBT_PUBLICATION_REQUIREMENTS } from "./bibi-tina-weihnachten-draft";
 
 describe("WBT – aktivierte Veröffentlichung und originales Affiliate-Material", () => {
-  it("ist nach expliziter Textlink-Freigabe aktiv, weiterhin ohne freigegebenen Einstiegspreis", () => {
+  it("ist mit explizit freigegebenen Textlinks und Einstiegspreis aktiv", () => {
     const musical = getMusicalBySlug("weihnachten-mit-bibi-tina");
     expect(ACTIVE_MUSICAL_IDS).toContain("weihnachten-mit-bibi-tina");
     expect(musical).toBeDefined();
@@ -18,8 +18,8 @@ describe("WBT – aktivierte Veröffentlichung und originales Affiliate-Material
       Berlin: WBT_PUBLICATION_REQUIREMENTS.approvedTextLinks.Berlin,
       Hamburg: WBT_PUBLICATION_REQUIREMENTS.approvedTextLinks.Hamburg,
     });
-    expect(WBT_PUBLICATION_REQUIREMENTS.approvedPrice).toBeNull();
-    expect(musical?.priceFrom).toBeUndefined();
+    expect(WBT_PUBLICATION_REQUIREMENTS.approvedPrice).toBe("12,50");
+    expect(musical?.priceFrom).toBe("12,50");
     expect(WBT_PUBLICATION_REQUIREMENTS.rollbackCheckpoint).toBe("3c21c548");
   });
 

@@ -294,6 +294,7 @@ export const musicals: Musical[] = [
     title: "WEIHNACHTEN MIT BIBI & TINA",
     subtitle: "Das Musical",
     provider: "Stage Entertainment",
+    priceFrom: "12,50",
     category: "kinder",
     categories: ["fester-standort", "familie", "kinder"],
     experienceCategory: "weihnachten",
@@ -327,7 +328,7 @@ export const musicals: Musical[] = [
     featured: true,
     tags: ["Weihnachten", "Familie", "Kinder"],
     // BF-Rabatt aus dem gelieferten Originalcreative; globales Aktionsende bereits bestätigt.
-    // Kein Einstiegspreis, solange der Projektinhaber keinen Preis freigegeben hat.
+    // Einstiegspreis 12,50 € vom Projektinhaber am 22.11.2026 freigegeben.
     sale: { label: "BLACK FRIDAY", discount: "BIS 30 %", validUntil: "2026-11-30" },
     tourDates: [
       { city: "Berlin", venue: "Stage Theater des Westens", startDate: "2026-11-14", endDate: "2027-01-03", eventimUrl: WBT_STAGE_BERLIN_TEXT_LINK_URL },
@@ -342,6 +343,7 @@ export const musicals: Musical[] = [
     showFacts: [
       { label: "Berlin", value: "Stage Theater des Westens · 14.11.2026 – 03.01.2027" },
       { label: "Hamburg", value: "Stage Operettenhaus · 21.11.2026 – 03.01.2027" },
+      { label: "Tickets ab", value: "12,50 €" },
       { label: "Showdauer", value: "Laut Stage ca. 70 Minuten, ohne Pause" },
       { label: "Einlassalter", value: "Ab 3 Jahren; kein Einlass unter 3 Jahren" },
       { label: "Musik", value: "Peter Plate und Ulf Leo Sommer" },

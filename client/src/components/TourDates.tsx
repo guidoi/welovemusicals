@@ -27,6 +27,7 @@ interface TourDatesProps {
   seasonAnnouncements?: MusicalSeasonAnnouncement[];
   musicalId?: string;
   forceDropdown?: boolean;
+  hideCityFilter?: boolean;
   musicalSlug?: string;
   onTicketClick?: (ticketUrl: string) => void;
   selectedCity?: string;
@@ -64,13 +65,14 @@ export default function TourDates({
   seasonAnnouncements = [],
   musicalId = "unknown",
   forceDropdown = false,
+  hideCityFilter = false,
   musicalSlug,
   onTicketClick,
   selectedCity: controlledCity,
   onSelectedCityChange,
 }: TourDatesProps) {
   const [localCity, setLocalCity] = useState<string>("alle");
-  const selectedCity = controlledCity ?? localCity;
+  const selectedCity = hideCityFilter ? "alle" : controlledCity ?? localCity;
   const setSelectedCity = (city: string) => {
     setLocalCity(city);
     onSelectedCityChange?.(city);
@@ -135,7 +137,7 @@ export default function TourDates({
         </h2>
 
         {/* Stadtfilter – nur bei mehr als einer Stadt anzeigen */}
-        {allCities.length > 1 && <div className="mb-8">
+        {!hideCityFilter && allCities.length > 1 && <div className="mb-8">
           {forceDropdown ? (
             <div className="flex items-center gap-4 flex-wrap">
               <Select value={selectedCity} onValueChange={setSelectedCity}>

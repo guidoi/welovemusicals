@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { getCityTicketSelection } from "./city-ticket-links";
 import { getTicketProviderBrand } from "./ticket-provider-brand";
 import { getSafeAffiliateTicketLink, getAffiliateOverridePartner } from "./affiliate-link-safety";
+import { getMusicalBySlug } from "./data";
 
 const Berlin = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26149442";
 const Hamburg = "https://clk.tradedoubler.com/click?p=394206&a=3492604&g=26175768";
@@ -15,6 +16,7 @@ describe("WBT: explizite Stadtproduktseiten", () => {
     expect(getCityTicketSelection(wbt, "Berlin").url).toBe(Berlin);
     expect(getCityTicketSelection(wbt, "Stuttgart").url).toBe(Berlin);
     expect(getCityTicketSelection({}, "Berlin").url).toBeUndefined();
+    expect(getCityTicketSelection(wbt, "alle").url).toBe(Berlin);
   });
 
   it("bewahrt beide Original-URLs ohne Fallback oder Eventim-/Awin-Umlenkung", () => {
@@ -26,7 +28,7 @@ describe("WBT: explizite Stadtproduktseiten", () => {
     expect(getTicketProviderBrand("example", "https://clk.tradedoubler.com/click?p=377032&a=3492604&g=123").id).not.toBe("stage");
   });
 
-  it("teilt die sichtbare Spielortwahl zwischen Keyvisual, allen CTAs, Bannern und Stadtterminen", () => {
+  it("bewahrt die Stadtlinks ohne zusätzliche Spielort-Auswahlfelder außerhalb der Tourtermine", () => {
     const detail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
     for (const field of ["keyvisualLink", "ticketCtaUrl", "awinHeroUrl", "awinStickyUrl", "awinBoxUrl"]) {
       expect(detail).toContain(`cityTicketCandidate ?? musical.${field}`);
@@ -34,8 +36,25 @@ describe("WBT: explizite Stadtproduktseiten", () => {
     expect(detail).toContain("campaign.city === citySelection.city");
     expect(detail).toContain("onSelectedCityChange={cityTicketCandidate ? setSelectedTicketCity : undefined}");
     expect(detail).toContain('const ticketCtaCityLabel = cityTicketCandidate ? `${ticketCta.label} · ${citySelection.city}`');
-    const selector = readFileSync(new URL("../components/TicketCitySelector.tsx", import.meta.url), "utf8");
-    expect(selector).toContain("Produktseite & Tickets: Spielort");
-    expect(selector).toContain("min-h-11");
+    expect(detail).not.toContain("TicketCitySelector");
+    expect(detail).not.toContain("ticketCitySelector");
+    expect(detail).not.toContain("Produktseite & Tickets: Spielort");
+    expect(detail).toContain('selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined}');
+    expect(detail).toContain('hideCityFilter={musical.id === "weihnachten-mit-bibi-tina"}');
+    expect(detail).toContain('`Aktuell: ${ticketCtaCityLabel} – direkt bei ${ticketProviderName}.`');
+  });
+
+  it("zeigt beide Städte samt Theater auch ohne einzelne Hauptstadt im Detailheader", () => {
+    const musical = getMusicalBySlug("weihnachten-mit-bibi-tina")!;
+    expect(musical.city).toBeUndefined();
+    expect(musical.cities).toEqual(["Berlin", "Hamburg"]);
+    expect(musical.venuePerCity).toEqual({
+      Berlin: "Stage Theater des Westens",
+      Hamburg: "Stage Operettenhaus",
+    });
+    const detail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
+    expect(detail).toContain("musical.venuePerCity && musical.cities?.length ? (");
+    expect(detail).not.toContain("musical.city && musical.venuePerCity ? (");
+    expect(detail).toContain("{c} ({musical.venuePerCity![c]})");
   });
 });

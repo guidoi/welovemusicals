@@ -1,7 +1,10 @@
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import TourDates from "./TourDates";
+import { getMusicalBySlug } from "@/lib/data";
+
+afterEach(() => vi.useRealTimers());
 
 describe("TourDates", () => {
   it("zeigt Ticketdaten ohne Anbieterlogo in der Ticketkarte", () => {
@@ -51,5 +54,28 @@ describe("TourDates", () => {
     expect(markup).toContain('rel="noopener sponsored"');
     expect(markup).not.toContain("noreferrer");
     expect(markup).toContain('href="https://www.eventim.de/"');
+  });
+
+  it("zeigt bei Bibi beide Städte ohne Auswahlbuttons und ignoriert alte Einzelstadt-Auswahl", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-11-22T12:00:00"));
+    const musical = getMusicalBySlug("weihnachten-mit-bibi-tina")!;
+    const markup = renderToStaticMarkup(<TourDates musicalId={musical.id} tourDates={musical.tourDates!} hideCityFilter selectedCity="Berlin" />);
+    expect(markup).toContain("Stage Theater des Westens");
+    expect(markup).toContain("Stage Operettenhaus");
+    expect(markup).toContain(`href="${musical.ticketUrlsByCity!.Berlin.replace(/&/g, "&amp;")}"`);
+    expect(markup).toContain(`href="${musical.ticketUrlsByCity!.Hamburg.replace(/&/g, "&amp;")}"`);
+    expect(markup).not.toContain("<button");
+    expect(markup).not.toContain("Alle Städte");
+    expect(markup).not.toContain("combobox");
+  });
+
+  it("behält den bisherigen Stadtfilter standardmäßig für andere Tourneeübersichten", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-11-22T12:00:00"));
+    const musical = getMusicalBySlug("weihnachten-mit-bibi-tina")!;
+    const markup = renderToStaticMarkup(<TourDates tourDates={musical.tourDates!} />);
+    expect(markup).toContain("Alle Städte (2)");
+    expect(markup).toContain("<button");
   });
 });

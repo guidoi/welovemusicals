@@ -6,14 +6,24 @@ const source = readFileSync(new URL("./MusicalDetail.tsx", import.meta.url), "ut
 describe("MusicalDetail ticket CTA hierarchy", () => {
   it("verwendet für die Ticket-Conversion oberhalb des mobilen Detailinhalts Rot", () => {
     expect(source).toContain("whitespace-nowrap rounded-sm border border-red bg-red py-3 text-sm font-semibold tracking-wide text-white");
-    expect(source).toContain('import { getTicketCta } from "@/lib/ticket-cta";');
+    expect(source).toContain('import { getStickyTicketCta, getTicketCta } from "@/lib/ticket-cta";');
     expect(source).toContain("const ticketCta = getTicketCta(musical);");
     expect(source).toContain("{ticketCta.label}");
-    expect(source).toContain("aria-label={`Tickets für ${musical.title}: ${ticketCta.label} bei ${ticketProviderName}`}");
+    expect(source).toContain("aria-label={`Tickets für ${musical.title}: ${ticketCtaCityLabel} bei ${ticketProviderName}`}" );
     expect(source).toContain('trackDetailTicketClick("mobile-hero", heroTicketLink)');
     expect(source).toContain('trackDetailTicketClick("ticket-box", boxTicketLink)');
     expect(source).toContain('trackDetailTicketClick("sticky", stickyTicketLink)');
     expect(source.match(/rel="noopener sponsored"/g)).toHaveLength(3);
+  });
+
+  it("zeigt im mobilen Sticky-Footer den Ab-Preis statt der SALE-Beschriftung", () => {
+    expect(source).toContain("const stickyTicketCta = getStickyTicketCta(musical);");
+    const sticky = source.slice(source.indexOf("{/* Sticky CTA – Mobile only"), source.indexOf("<Footer />", source.indexOf("{/* Sticky CTA – Mobile only")));
+    expect(sticky).toContain('data-testid="sticky-ticket-cta"');
+    expect(sticky).toContain("{stickyTicketCtaCityLabel}");
+    expect(sticky).not.toContain("{ticketCtaCityLabel}");
+    expect(sticky).toContain("href={stickyTicketLink}");
+    expect(sticky).toContain('trackDetailTicketClick("sticky", stickyTicketLink)');
   });
 
   it("behält Gold für die Erlebniswelt und Orientierung im Hero", () => {

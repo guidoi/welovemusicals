@@ -32,7 +32,7 @@ describe("WEIHNACHTEN MIT BIBI & TINA – aktive Produktionsdaten", () => {
     expect(getFeaturedMusicals()[9]).toBe(musical);
     expect(getAdditionalMusicals().map((show) => show.id)).not.toContain(id);
     expect(musical?.headerCities).toBeUndefined();
-    expect(musical?.priceFrom).toBeUndefined();
+    expect(musical?.priceFrom).toBe("12,50");
     expect(musical?.tags).toHaveLength(3);
   });
 
@@ -100,13 +100,14 @@ describe("WEIHNACHTEN MIT BIBI & TINA – aktive Produktionsdaten", () => {
     expect(musical.quotes).toBeUndefined();
   });
 
-  it("führt den bestätigten BF-Rabatt ohne Einstiegspreis nur bis einschließlich 30. November", () => {
+  it("führt den freigegebenen Einstiegspreis und den BF-Rabatt nur bis einschließlich 30. November", () => {
     const musical = getMusicalBySlug(id)!;
     expect(musical.sale).toEqual({ label: "BLACK FRIDAY", discount: "BIS 30 %", validUntil: "2026-11-30" });
     expect(isSaleActive(musical.sale, new Date("2026-11-22T12:00:00"))).toBe(true);
     expect(isSaleActive(musical.sale, new Date("2026-11-30T23:59:59"))).toBe(true);
     expect(isSaleActive(musical.sale, new Date("2026-12-01T00:00:00"))).toBe(false);
-    expect(musical).not.toHaveProperty("priceFrom");
+    expect(musical.priceFrom).toBe("12,50");
+    expect(musical.showFacts).toContainEqual({ label: "Tickets ab", value: "12,50 €" });
     expect([musical.description, musical.detailDescription, musical.seoDescription].join(" ")).not.toMatch(/\d+[,.]\d{2}\s*(?:€|Euro)|Tickets ab/);
   });
 
@@ -132,6 +133,10 @@ describe("WEIHNACHTEN MIT BIBI & TINA – aktive Produktionsdaten", () => {
       expect(event).not.toHaveProperty("offers");
     }
     expect(JSON.stringify(events)).not.toMatch(/clk\.tradedoubler|awin1\.com|Stuttgart|pop-out/);
+    const pricedEvents = getMusicalEventSchemas(musical, { today: "2026-11-22", priceFrom: musical.priceFrom });
+    for (const event of pricedEvents) {
+      expect(event.offers).toMatchObject({ "@type": "Offer", price: "12.50", priceCurrency: "EUR", url: canonicalUrl });
+    }
     expect(getMusicalEventSchemas(musical, { today: "2027-01-04" })).toEqual([]);
   });
 });

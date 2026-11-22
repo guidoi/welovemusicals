@@ -32,7 +32,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MusicalCard from "@/components/MusicalCard";
 import MusicalKeyVisual from "@/components/MusicalKeyVisual";
-import TicketCitySelector from "@/components/TicketCitySelector";
 import { getCityTicketSelection } from "@/lib/city-ticket-links";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import MusicalQuotes from "@/components/MusicalQuotes";
@@ -52,7 +51,7 @@ import { scheduleScrollToTop } from "@/lib/route-scroll";
 import { getExperienceCategory, getMusicalExperienceCategories } from "@/lib/experience-categories";
 import { getMusicalSeo } from "@/lib/musical-seo";
 import { getRelatedMusicals } from "@/lib/related-musicals";
-import { getTicketCta } from "@/lib/ticket-cta";
+import { getStickyTicketCta, getTicketCta } from "@/lib/ticket-cta";
 import { getAffiliateOverridePartner, type SafeAffiliateLink } from "@/lib/affiliate-link-safety";
 import { useSafeAffiliateTicketLink } from "@/lib/use-affiliate-link-target";
 import { useAffiliateLinkFallbackLogging, type AffiliateFallbackLogEntry } from "@/lib/affiliate-link-fallback-logger";
@@ -184,7 +183,6 @@ export default function MusicalDetail() {
 
   const citySelection = getCityTicketSelection(musical, selectedTicketCity);
   const cityTicketCandidate = citySelection.url;
-  const ticketCitySelector = cityTicketCandidate ? <TicketCitySelector cities={citySelection.cities} value={citySelection.city} onChange={setSelectedTicketCity} /> : null;
   const ticketBaseCandidate = createAwinLink(cityTicketCandidate ?? musical.eventimUrl);
   const ticketLinkSafety = useSafeAffiliateTicketLink(ticketBaseCandidate, {
     musicalId: musical.id,
@@ -236,6 +234,8 @@ export default function MusicalDetail() {
   const ticketProviderBrand = getTicketProviderBrand(musical.slug, musical.eventimUrl);
   const ticketCta = getTicketCta(musical);
   const ticketCtaCityLabel = cityTicketCandidate ? `${ticketCta.label} · ${citySelection.city}` : ticketCta.label;
+  const stickyTicketCta = getStickyTicketCta(musical);
+  const stickyTicketCtaCityLabel = cityTicketCandidate ? `${stickyTicketCta.label} · ${citySelection.city}` : stickyTicketCta.label;
   const desktopKeyvisual = musical.keyvisual || musical.image;
   const desktopKeyvisualLandscape = musical.keyvisualLandscape || musical.id === "moulinrouge" || musical.id === "phantom-der-oper" || musical.id === "gloeckner-von-notre-dame" || musical.id === "starlight-express";
   const mobileHeroBelowHeader = musical.mobileHeroBelowHeader === true;
@@ -338,8 +338,8 @@ export default function MusicalDetail() {
             )}
 
             <div className="flex items-center gap-2 text-cream/70">
-              <MapPin className="w-4 h-4 text-gold" />
-              {musical.city && musical.venuePerCity ? (
+              <MapPin className="w-4 h-4 shrink-0 text-gold" />
+              {musical.venuePerCity && musical.cities?.length ? (
                 <span>
                   {musical.cities?.map((c, i) => (
                     <span key={c}>{i > 0 && <span className="text-gold"> &amp; </span>}{c} ({musical.venuePerCity![c]})</span>
@@ -364,7 +364,6 @@ export default function MusicalDetail() {
       {/* Mobile CTA – direkt nach Hero für alle Musicals */}
       {heroTicketLink && (
         <div ref={topCtaRef} className="lg:hidden bg-background px-4 pt-2 md:pt-6 pb-2">
-          {ticketCitySelector}
           <a
             href={heroTicketLink}
             target="_blank"
@@ -387,7 +386,6 @@ export default function MusicalDetail() {
                 Der Trailer bleibt bewusst weiter unten im Seitenfluss. */}
             <div className="hidden lg:block lg:col-span-1 order-1 lg:order-1">
               <div>
-                {ticketCitySelector}
                 <MusicalKeyVisual image={desktopKeyvisual} title={cityTicketCandidate ? `${musical.title} – ${citySelection.city}` : musical.title} ticketLink={keyvisualTicketLink} landscape={desktopKeyvisualLandscape} ticketProvider={ticketProviderName} linkPurpose={keyvisualOpensShowPage ? "show-page" : "tickets"} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
               </div>
             </div>
@@ -458,7 +456,6 @@ export default function MusicalDetail() {
                         {(musical.id === 'weihnachten-mit-bibi-tina' ? i === 0 : musical.id === 'moulinrouge' ? i === 2 : musical.id === 'dreihaselnuesse' ? i === 0 : musical.id === 'fackjugoehte' ? i === 3 : musical.id === 'phantom-der-oper' ? i === 2 : musical.id === 'gloeckner-von-notre-dame' ? i === 2 : musical.id === 'dracula' ? i === 3 : musical.id === 'starlight-express' ? i === 4 : musical.id === 'eiskoenigin' ? i === 2 : musical.id === 'mj-musical' ? i === 2 : musical.id === 'koenig-der-loewen' ? i === 2 : musical.id === 'tarzan' ? i === 2 : musical.id === 'ziz' ? i === 2 : musical.id === 'teufel-traegt-prada' ? i === 2 : musical.id === 'die-amme' ? i === 2 : musical.id === 'wir-sind-am-leben' ? i === 2 : musical.id === 'tanz-der-vampire' ? i === 2 : musical.id === 'we-will-rock-you' ? i === 2 : musical.id === 'salon-rosie' ? i === 2 : musical.id === 'und-julia' ? i === 2 : musical.id === 'tina-das-musical' ? i === 1 : i === 1) && (
                           <div className="lg:hidden my-8">
                             <div>
-                              {ticketCitySelector}
                               <MusicalKeyVisual image={desktopKeyvisual} title={cityTicketCandidate ? `${musical.title} – ${citySelection.city}` : musical.title} ticketLink={keyvisualTicketLink} landscape={desktopKeyvisualLandscape} ticketProvider={ticketProviderName} linkPurpose={keyvisualOpensShowPage ? "show-page" : "tickets"} onTicketClick={() => trackDetailTicketClick("keyvisual", keyvisualTicketLink)} />
 
                             </div>
@@ -514,7 +511,7 @@ export default function MusicalDetail() {
       {/* Tour Dates */}
       <div ref={tourDatesRef}>
         {musical.tourDates && musical.tourDates.length > 0 && (
-          <TourDates tourDates={musical.tourDates} selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined} onSelectedCityChange={cityTicketCandidate ? setSelectedTicketCity : undefined} seasonAnnouncements={musical.seasonAnnouncements} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
+          <TourDates tourDates={musical.tourDates} hideCityFilter={musical.id === "weihnachten-mit-bibi-tina"} selectedCity={cityTicketCandidate ? selectedTicketCity || "alle" : undefined} onSelectedCityChange={cityTicketCandidate ? setSelectedTicketCity : undefined} seasonAnnouncements={musical.seasonAnnouncements} musicalId={musical.id} forceDropdown={musical.id === "dreihaselnuesse" || musical.id === "schoene-und-das-biest"} musicalSlug={musical.slug} onTicketClick={(ticketUrl) => trackDetailTicketClick("city-date", ticketUrl)} />
         )}
       </div>
 
@@ -635,16 +632,15 @@ export default function MusicalDetail() {
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               {ticketCta.kind === "offer"
-                ? `Aktuell: ${ticketCta.label} – direkt bei ${ticketProviderName}.`
-                : `Sichere dir jetzt deine Tickets für ${musical.title} – bequem und sicher über ${ticketProviderName}.`}
+                ? `Aktuell: ${ticketCtaCityLabel} – direkt bei ${ticketProviderName}.`
+                : `Sichere dir jetzt deine Tickets für ${musical.title}${cityTicketCandidate ? ` in ${citySelection.city}` : ""} – bequem und sicher über ${ticketProviderName}.`}
             </p>
-            {ticketCitySelector}
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href={boxTicketLink}
                 target="_blank"
                 rel="noopener sponsored"
-                aria-label={`Tickets für ${musical.title}: ${ticketCta.label} bei ${ticketProviderName}`}
+                aria-label={`Tickets für ${musical.title}: ${ticketCtaCityLabel} bei ${ticketProviderName}`}
                 className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-sm bg-red px-5 py-4 text-base font-bold text-white transition-colors hover:bg-red-dark sm:gap-2 sm:px-8 sm:text-lg"
                 onClick={() => trackDetailTicketClick("ticket-box", boxTicketLink)}
               >
@@ -678,7 +674,6 @@ export default function MusicalDetail() {
       {(afterGalleryCampaigns.length > 0 || musical.id === "dracula" || Boolean(awinShowCampaign)) && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
-            {cityTicketCandidate && <div className="mx-auto max-w-sm">{ticketCitySelector}</div>}
             {afterGalleryCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} sale={musical.sale} />
             ))}
@@ -784,11 +779,12 @@ export default function MusicalDetail() {
               href={stickyTicketLink}
               target="_blank"
               rel="noopener sponsored"
+              data-testid="sticky-ticket-cta"
               className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red py-3 text-sm font-bold tracking-wide text-white transition-colors duration-200 hover:bg-red-dark"
               onClick={() => trackDetailTicketClick("sticky", stickyTicketLink)}
             >
               <Ticket className="w-4 h-4" />
-              {ticketCtaCityLabel}
+              {stickyTicketCtaCityLabel}
             </a>
             <img
               data-testid="sticky-ticket-provider-logo"
