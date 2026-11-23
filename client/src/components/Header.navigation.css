@@ -1,0 +1,54 @@
+/* Scoped to primary header links; never changes header or link geometry. */
+.header-navigation-link {
+  position: relative;
+}
+
+.header-navigation-link::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset-inline-start: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0;
+  transform: scaleX(0.65);
+  transform-origin: left center;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), opacity 180ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header-navigation-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Keyboard feedback must be immediate, not an animated hover substitute. */
+.header-navigation-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
+  transition: none;
+}
+
+.header-navigation-link:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: none;
+}
+
+@media (max-width: 767px) {
+  .header-navigation-link::after {
+    bottom: 0;
+    width: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-navigation-link,
+  .header-navigation-link::after {
+    transition: none;
+  }
+}

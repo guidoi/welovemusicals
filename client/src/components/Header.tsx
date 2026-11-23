@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getActiveMusicals, type Musical } from "@/lib/data";
 import { primaryNavigationItems } from "@/lib/header-navigation";
 import { searchByPlz, RADIUS_OPTIONS, type PlzSearchState } from "@/components/PlzSearch";
+import "./Header.navigation.css";
 
 // Globaler PLZ-State – wird von Home.tsx über Context oder Props gesteuert.
 // Da Header keinen direkten Zugriff auf Home-State hat, verwenden wir ein
@@ -225,7 +226,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={(e) => handleAnchorClick(e, item.href)}
-              className="text-sm font-medium text-foreground hover:text-gold transition-colors tracking-wide uppercase"
+              className="header-navigation-link text-sm font-medium text-foreground hover:text-gold focus-visible:text-gold transition-colors duration-200 tracking-wide uppercase"
             >
               {item.label}
             </a>
@@ -512,7 +513,7 @@ export default function Header() {
                     handleAnchorClick(e, item.href);
                     setMobileOpen(false);
                   }}
-                  className="text-lg font-display text-foreground hover:text-gold transition-colors py-2 border-b border-border/30"
+                  className="header-navigation-link text-lg font-display text-foreground hover:text-gold focus-visible:text-gold transition-colors duration-200 py-2 border-b border-border/30"
                 >
                   {item.label}
                 </a>
