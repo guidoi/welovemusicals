@@ -5,30 +5,32 @@ import { HOME_HERO_IMAGE } from "../lib/home-hero";
 const source = readFileSync(new URL("./Home.tsx", import.meta.url), "utf8");
 const hero = source.slice(source.indexOf("{/* ===== HERO SECTION ===== */}"), source.indexOf("{/* Stats */}"));
 
-describe("Originalfarben des KDL-Startseitenfotos", () => {
-  it("entfernt die flächige Abdunklung statt Foto oder Sättigung künstlich zu verändern", () => {
-    expect(hero).not.toContain("from-background/80");
-    expect(hero).not.toContain("via-background/40");
+describe("Wiederhergestellte Lesbarkeit des KDL-Startseitenheaders", () => {
+  it("stellt den ursprünglichen flächigen transparenten Dunkelverlauf exakt wieder her", () => {
+    expect(hero).toContain('className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background"');
+    expect(hero).not.toContain('data-testid="home-hero-bottom-fade"');
+    expect(hero).not.toContain("h-[28%]");
     expect(hero).not.toMatch(/brightness-|saturate-|contrast-|opacity-\d+/);
     expect(hero).toContain("src={HOME_HERO_IMAGE}");
     expect(HOME_HERO_IMAGE).toContain("KDL_HH_Prio1_Rafiki_");
   });
 
-  it("behält nur einen kurzen unteren Übergang, der das obere Motiv nicht abdunkelt", () => {
-    expect(hero).toContain('data-testid="home-hero-bottom-fade"');
-    expect(hero).toContain("bottom-0 h-[28%] bg-gradient-to-t from-background to-transparent");
-    expect(hero).toContain('aria-hidden="true"');
-    expect(hero).toContain("pointer-events-none");
+  it("behält die ursprüngliche weiße und goldene Schrift ohne zusätzlichen Schattenfilter", () => {
+    expect(hero).toContain("font-bold text-white");
+    expect(hero).toContain('className="gold-gradient"');
+    expect(hero).toContain("text-cream/75");
+    expect(hero).not.toContain("drop-shadow(");
+    expect(hero).not.toContain("textShadow:");
+    expect(hero).not.toContain("filter:");
   });
 
-  it("sichert Schrift ohne neue Bild-Abdunklung oder Layoutänderung", () => {
-    expect(hero).toContain('filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.9))"');
-    expect(hero).not.toContain("textShadow:");
+  it("erhält Originalfoto, Bildausschnitt, Abstände und Eingangsanimation unverändert", () => {
     expect(hero).toContain("HOME_HERO_CONTENT_TOP_CLASS");
     expect(hero).toContain("DESKTOP_HERO_SECTION_CLASS");
     expect(hero).toContain("DESKTOP_HERO_IMAGE_POSITION_CLASS");
     expect(hero).toContain('width={676}');
     expect(hero).toContain('height={496}');
     expect(hero).toContain('initial={{ opacity: 0, y: 40 }}');
+    expect(hero).toContain('animate={{ opacity: 1, y: 0 }}');
   });
 });
