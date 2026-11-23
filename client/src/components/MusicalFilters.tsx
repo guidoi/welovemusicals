@@ -48,6 +48,8 @@ interface MusicalFiltersProps {
 
 const basePillClass = "rounded-full border px-3.5 py-2 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.97]";
 
+const categoryPillClass = "rounded-full border px-3.5 py-2 text-sm font-semibold transition-colors duration-150 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
 export default function MusicalFilters({
   categoryFilter,
   setCategoryFilter,
@@ -102,7 +104,7 @@ export default function MusicalFilters({
           <button
             type="button"
             onClick={() => setCategoryFilter("alle")}
-            className={`${basePillClass} ${categoryFilter === "alle" ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+            className={`${categoryPillClass} ${categoryFilter === "alle" ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold"}`}
             aria-pressed={categoryFilter === "alle"}
           >
             Alle Musicals &amp; Shows
@@ -113,7 +115,7 @@ export default function MusicalFilters({
               type="button"
               onClick={() => setCategoryFilter(category.id)}
               title={category.description}
-              className={`${basePillClass} ${categoryFilter === category.id ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold hover:bg-gold/10"}`}
+              className={`${categoryPillClass} ${categoryFilter === category.id ? "border-2 border-gold bg-transparent text-gold shadow-[0_0_0_1px_rgba(184,148,74,0.35)]" : "border-gold/45 bg-card/60 text-gold hover:border-gold"}`}
               aria-pressed={categoryFilter === category.id}
             >
               {category.shortLabel}
