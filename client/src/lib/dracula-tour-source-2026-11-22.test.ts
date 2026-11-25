@@ -157,12 +157,17 @@ describe("Dracula – vollständiger ShowSlot-Abgleich vom 22.11.2026", () => {
     expect(dracula().priceFrom).toBe("40,40");
   });
 
-  it("schützt den vollständigen übrigen Musicalbestand über kanonische Original-JSON-Hashes", () => {
+  it("schützt den übrigen Musicalbestand mit Original-Hashes und freigegebenen Inhaltsaktualisierungen", () => {
     expect(musicals.map(({ id }) => id)).toEqual(fixture.baseline.musicalIds);
     const otherMusicals = musicals.filter(({ id }) => id !== "dracula");
     expect(otherMusicals).toHaveLength(24);
     expect(Object.fromEntries(otherMusicals.map((musical) => [musical.id, stableHash(musical)])))
-      .toEqual(fixture.baseline.otherHashes);
+      .toEqual({
+        ...fixture.baseline.otherHashes,
+        // Nutzerfreigabe 25.11.2026: Moulin-Rouge-Spielort in Fakten/FAQ nur Hamburg,
+        // ohne Zukunfts-/Premierenhinweis. Historische Quellfixture bleibt unverändert.
+        moulinrouge: "74485518451cf5f947bb0764328ff8200547940a0a2fa612eb2f8b4c1a0320e4",
+      });
   });
 
   it.each(fixture.newCities)("verwendet für %s eigenes Awin-Tracking und ein sauberes Eventim-Artist-City-Ziel", (city) => {
