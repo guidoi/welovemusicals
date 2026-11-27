@@ -10,10 +10,10 @@ import TravelcircusProviderLogo from "@/components/TravelcircusProviderLogo";
  */
 export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOffer }) {
   const benefits = [
-    { Icon: Hotel, text: "Übernachtung in einem Premium Hotel nach Wahl" },
+    { Icon: Hotel, text: offer.hotelBenefit },
     { Icon: Coffee, text: "Tägliches Frühstück im gewählten Hotel" },
-    { Icon: Ticket, text: "Tickets für Disneys DER KÖNIG DER LÖWEN Musical" },
-    { Icon: Ship, text: "Schiff-Shuttleservice von den Landungsbrücken zum Theater" },
+    { Icon: Ticket, text: offer.ticketBenefit },
+    ...(offer.includesShuttle ? [{ Icon: Ship, text: "Schiff-Shuttleservice von den Landungsbrücken zum Theater" }] : []),
     { Icon: Gift, text: "Weitere Extras, je nach gewähltem Hotel" },
   ];
 
@@ -48,7 +48,7 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
               Deine Musicalreise · {offer.city}
             </p>
             <h2 className="font-display text-2xl font-bold leading-tight md:text-[1.65rem]">
-              Disneys DER KÖNIG DER LÖWEN
+              {offer.title}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-white/85">
               Inkl. Musical-Ticket, Hotel-Übernachtung mit Frühstück.
@@ -59,7 +59,7 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
                 <span className="font-display text-[2rem] font-bold leading-tight text-white">
                   <span className="mr-1 text-base font-normal">ab</span>{offer.priceFrom} €
                 </span>
-                <del className="text-sm text-white/60" aria-label={`Vergleichspreis ab ${offer.originalPrice} Euro`}>ab {offer.originalPrice} €</del>
+                <del className="text-sm text-gold" aria-label={`Vergleichspreis ab ${offer.originalPrice} Euro`}>ab {offer.originalPrice} €</del>
               </div>
               <p className="mt-1 text-sm text-white/75">pro Person</p>
             </div>
@@ -68,7 +68,7 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
               target="_blank"
               rel="sponsored noopener"
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-sm bg-gold px-4 py-3 text-center text-sm font-bold text-[#111111] transition-colors duration-150 hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold motion-reduce:transition-none"
-              aria-label="Ticket und Hotel für König der Löwen bei Travelcircus ansehen (öffnet in neuem Tab)"
+              aria-label={offer.ctaAriaLabel}
             >
               Ticket + Hotel ansehen
               <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />

@@ -266,7 +266,7 @@ export default function MusicalDetail() {
   const awinShowCampaign = getAwinShowCampaign(musical.id);
   const travelcircusOffer = getTravelcircusOffer(musical.id);
   // Nutzer27.11.: Reisebox nach Galerie vor FAQ, bestehende KDL-Anzeige an den alten Boxplatz.
-  const relocatedStageCampaign = travelcircusOffer
+  const relocatedStageCampaign = musical.id === "koenig-der-loewen" && travelcircusOffer
     ? afterGalleryCampaigns.find((campaign) => campaign.groupId === "26180460")
     : undefined;
   const visibleAfterGalleryCampaigns = afterGalleryCampaigns.filter((campaign) => campaign !== relocatedStageCampaign);

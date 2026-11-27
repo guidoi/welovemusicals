@@ -3,9 +3,8 @@ import { resolve } from "node:path";
 import { getActiveMusicals } from "../client/src/lib/data";
 import { AOVO_CAMPAIGNS, resolveAovoCampaignClickUrl } from "../client/src/components/AovoCampaignBanner";
 import { getSafeAffiliateTicketLink } from "../client/src/lib/affiliate-link-safety";
-import { KDL_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
+import { KDL_TRAVELCIRCUS_OFFER, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
 import { TRAVELCIRCUS_LOGO } from "../client/src/lib/travelcircus-logo";
-
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const TRADEDOUBLER_WEBSITE_ID = "3492604";
 const AWIN_PUBLISHER_ID = "2865727";
@@ -223,16 +222,30 @@ function assertTargetOverrideSafety() {
 }
 
 function assertTravelcircusOfferSafety() {
-  const offer = KDL_TRAVELCIRCUS_OFFER;
-  const parsed = new URL(offer.affiliateUrl);
-  if (parsed.protocol !== "https:" || parsed.hostname !== "www.awin1.com" || parsed.pathname !== "/cread.php"
-    || parsed.searchParams.get("awinmid") !== "9151"
-    || parsed.searchParams.get("awinaffid") !== AWIN_PUBLISHER_ID
-    || parsed.searchParams.get("ued") !== offer.destinationUrl
-    || [...parsed.searchParams.keys()].sort().join(",") !== "awinaffid,awinmid,ued") {
-    fail("KDL-Reisebox muss den exakt freigegebenen Travelcircus-Deeplink verwenden.");
+  const expectedDestinations = {
+    "koenig-der-loewen": "https://www.travelcircus.de/koenig-der-loewen-hamburg",
+    "mj-musical": "https://www.travelcircus.de/michael-jackson-musical-hamburg",
+    "eiskoenigin": "https://www.travelcircus.de/eiskoenigin-das-musical",
+    "teufel-traegt-prada": "https://www.travelcircus.de/der-teufel-traegt-prada-das-musical",
+  } as const;
+  for (const offer of [KDL_TRAVELCIRCUS_OFFER, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER]) {
+    const expectedDestination = expectedDestinations[offer.musicalId];
+    const parsed = new URL(offer.affiliateUrl);
+    if (parsed.protocol !== "https:" || parsed.hostname !== "www.awin1.com" || parsed.pathname !== "/cread.php"
+      || parsed.searchParams.get("awinmid") !== "9151"
+      || parsed.searchParams.get("awinaffid") !== AWIN_PUBLISHER_ID
+      || offer.destinationUrl !== expectedDestination
+      || parsed.searchParams.get("ued") !== expectedDestination
+      || offer.affiliateUrl !== `https://www.awin1.com/cread.php?awinmid=9151&awinaffid=2865727&ued=${encodeURIComponent(expectedDestination)}`
+      || [...parsed.searchParams.keys()].sort().join(",") !== "awinaffid,awinmid,ued") {
+      fail(`${offer.musicalId}-Reisebox muss den exakt freigegebenen Travelcircus-Deeplink verwenden.`);
+    }
+    if (!offer.imageUrl.startsWith("https://files.manuscdn.com/") || !offer.imageUrl.endsWith(".webp")
+      || offer.imageWidth <= 0 || offer.imageHeight <= 0) {
+      fail(`${offer.musicalId}-Reisebox muss ein öffentliches WebP-Foto mit expliziten Originalmaßen verwenden.`);
+    }
+    assertDirectTicketLink({ musicalId: offer.musicalId, placement: "travelcircus-offer", url: offer.affiliateUrl });
   }
-  assertDirectTicketLink({ musicalId: offer.musicalId, placement: "travelcircus-offer", url: offer.affiliateUrl });
   const component = source("client/src/components/TravelcircusOfferBox.tsx");
   requireSource(component, "href={offer.affiliateUrl}", "Travelcircus-Reisebox");
   requireSource(component, 'rel="sponsored noopener"', "Travelcircus-Reisebox");

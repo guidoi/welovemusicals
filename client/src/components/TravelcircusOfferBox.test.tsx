@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import TravelcircusOfferBox from "./TravelcircusOfferBox";
-import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER as offer } from "@/lib/travelcircus-offers";
+import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER as offer, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER } from "@/lib/travelcircus-offers";
 import { musicals } from "@/lib/data";
 
 const html = () => renderToStaticMarkup(<TravelcircusOfferBox offer={offer} />);
@@ -19,9 +19,12 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(html()).toContain(offer.affiliateUrl.replaceAll("&", "&amp;"));
   });
 
-  it("zeigt das neue Reiseangebot ausschließlich für König der Löwen", () => {
+  it("zeigt Reiseangebote ausschließlich für die freigegebenen Shows KDL, MJ, Eiskönigin und Prada", () => {
     expect(getTravelcircusOffer("koenig-der-loewen")).toBe(offer);
-    for (const musical of musicals.filter((show) => show.id !== offer.musicalId)) {
+    expect(getTravelcircusOffer("mj-musical")).toBe(MJ_TRAVELCIRCUS_OFFER);
+    expect(getTravelcircusOffer("eiskoenigin")).toBe(EISKOENIGIN_TRAVELCIRCUS_OFFER);
+    expect(getTravelcircusOffer("teufel-traegt-prada")).toBe(PRADA_TRAVELCIRCUS_OFFER);
+    for (const musical of musicals.filter((show) => show.id !== offer.musicalId && show.id !== MJ_TRAVELCIRCUS_OFFER.musicalId && show.id !== EISKOENIGIN_TRAVELCIRCUS_OFFER.musicalId && show.id !== PRADA_TRAVELCIRCUS_OFFER.musicalId)) {
       expect(getTravelcircusOffer(musical.id)).toBeUndefined();
     }
     expect(getTravelcircusOffer("unknown")).toBeUndefined();
@@ -82,6 +85,7 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(markup).toContain("Nur für kurze Zeit:");
     expect(markup).toContain("119,00 €");
     expect(markup).toMatch(/<del[^>]*>ab 145,00 €<\/del>/);
+    expect(markup).toMatch(/<del class="text-sm text-gold"/);
     expect(markup).toContain("pro Person");
     expect(markup).toContain("Exklusiv für Travelcircus Kunden");
     expect(markup).toContain("Übernachtung in einem Premium Hotel nach Wahl");
