@@ -105,9 +105,9 @@ export const TINA_TRAVELCIRCUS_OFFER = {
   provider: "Travelcircus",
   destinationUrl: "https://www.travelcircus.de/tina-turner-musical-hamburg",
   affiliateUrl: "https://www.awin1.com/cread.php?awinmid=9151&awinaffid=2865727&ued=https%3A%2F%2Fwww.travelcircus.de%2Ftina-turner-musical-hamburg",
-  imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/eiwfFmxXEloKRcIx.webp",
-  imageWidth: 510,
-  imageHeight: 368,
+  imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/pqOxeTxLfBROqAYq.webp",
+  imageWidth: 1774,
+  imageHeight: 1280,
   imageAlt: "Stage Operettenhaus in Hamburg am Abend mit beleuchteter Fassade und großer Leuchtwand zu TINA – Das Tina Turner Musical",
   imageCredit: "Stage Operettenhaus · Hamburg",
   priceFrom: "109,00", // Nutzerangabe und offizielle Travelcircus-Angebotsseite, geprüft 27.11.2026.

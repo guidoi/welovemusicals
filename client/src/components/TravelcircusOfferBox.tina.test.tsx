@@ -28,7 +28,7 @@ describe("TINA Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () => {
     expect(h).not.toMatch(/Schiff|Shuttle|Bestpreisgarantie|Stornierung|Kostenlos stornierbar/);
   });
   it("zeigt das volle Querformat-Foto ohne Crop", () => {
-    expect(html()).toContain("eiwfFmxXEloKRcIx.webp");
+    expect(html()).toContain("pqOxeTxLfBROqAYq.webp");
     expect(html()).toContain("Stage Operettenhaus · Hamburg");
     expect(html()).toContain("object-contain");
     expect(html()).not.toMatch(/object-cover|scale-|manus-storage/);
