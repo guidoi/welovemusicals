@@ -27,12 +27,16 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(getTravelcircusOffer("unknown")).toBeUndefined();
   });
 
-  it("verwendet ein vollständiges quadratisches öffentliches WebP mit expliziten Maßen und ohne Crop", () => {
+  it("verwendet das vollständige Hafenfoto als öffentliches 16:9-WebP mit expliziten Maßen und Fotografencredit", () => {
     const markup = html();
     expect(offer.imageUrl).toMatch(/^https:\/\/files\.manuscdn\.com\/.*\.webp$/);
-    expect(markup).toContain('width="1080" height="1080"');
+    expect(offer.imageUrl).toContain("RrpSTmvrCaqJrNbs.webp");
+    expect(markup).toContain('width="1920" height="1080"');
     expect(markup).toContain("object-contain");
-    expect(markup).toContain("© Disney");
+    expect(markup).toContain(offer.imageAlt);
+    expect(markup).toContain("Foto: Morris Mac Matzen");
+    expect(markup).toContain("<figcaption");
+    expect(markup).not.toContain("gelbes Löwen-Artwork");
     expect(markup).not.toMatch(/object-cover|scale-|manus-storage/);
   });
 
@@ -50,7 +54,7 @@ describe("KDL Travelcircus-Reisebox", () => {
     const source = readFileSync(new URL("./TravelcircusOfferBox.tsx", import.meta.url), "utf8");
     expect(source).not.toMatch(/useConsent|AffiliateImpressionPixel|useSafeAffiliateTicketLink|<script|window\.open|trackAffiliateTicketClick/);
     expect(html()).not.toMatch(/<script|<iframe|cshow\.php|imp\.tradedoubler/);
-    expect((html().match(/<a /g) ?? []).length).toBe(1);
+    expect((html().match(/<a /g) ?? []).length).toBe(2); // Direktes Angebot und separat freigegebenes Anbieterlogo.
   });
 
   it("behält den kompakten Nach-FAQ-Slot und mobil gestapelte Darstellung bei", () => {
@@ -81,5 +85,14 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect((markup.match(/<li /g) ?? []).length).toBe(5);
     expect(markup).toContain("Preis und Verfügbarkeit je nach Termin und Hotel");
     expect(markup).not.toMatch(/% sparen|BLACK SALE|FreizeitparkDeals|partner-referral/);
+  });
+
+  it("zeigt die bestätigte Bestpreisgarantie mit kleinem Häkchen, ohne pauschale kostenlose Ticketstornierung zu versprechen", () => {
+    const markup = html();
+    expect(markup).toContain('data-testid="travelcircus-offer-assurances"');
+    expect(markup).toContain("Bestpreisgarantie");
+    expect(markup).toContain("lucide-check");
+    expect(markup).toContain('aria-hidden="true"');
+    expect(markup).not.toContain("Kostenlos stornierbar");
   });
 });

@@ -7,9 +7,11 @@ export const KDL_TRAVELCIRCUS_OFFER = {
   provider: "Travelcircus",
   destinationUrl: "https://www.travelcircus.de/koenig-der-loewen-hamburg",
   affiliateUrl: "https://www.awin1.com/cread.php?awinmid=9151&awinaffid=2865727&ued=https%3A%2F%2Fwww.travelcircus.de%2Fkoenig-der-loewen-hamburg",
-  imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zXPIhsWSwCWCUqyi.webp",
-  imageWidth: 1080,
+  imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/RrpSTmvrCaqJrNbs.webp",
+  imageWidth: 1920,
   imageHeight: 1080,
+  imageAlt: "Stage Theater im Hafen Hamburg mit Disneys DER KÖNIG DER LÖWEN, goldenen Lichtstrahlen und Spiegelungen auf der Elbe",
+  imageCredit: "Foto: Morris Mac Matzen",
   priceFrom: "119,00", // Travelcircus und Nutzer, geprüft 27.11.2026.
   originalPrice: "145,00", // Nutzerangabe; Quellenextraktion bestätigt den Vergleichspreis nicht.
 } as const;

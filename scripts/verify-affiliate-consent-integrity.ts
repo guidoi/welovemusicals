@@ -4,6 +4,7 @@ import { getActiveMusicals } from "../client/src/lib/data";
 import { AOVO_CAMPAIGNS, resolveAovoCampaignClickUrl } from "../client/src/components/AovoCampaignBanner";
 import { getSafeAffiliateTicketLink } from "../client/src/lib/affiliate-link-safety";
 import { KDL_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
+import { TRAVELCIRCUS_LOGO } from "../client/src/lib/travelcircus-logo";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const TRADEDOUBLER_WEBSITE_ID = "3492604";
@@ -236,7 +237,24 @@ function assertTravelcircusOfferSafety() {
   requireSource(component, "href={offer.affiliateUrl}", "Travelcircus-Reisebox");
   requireSource(component, 'rel="sponsored noopener"', "Travelcircus-Reisebox");
   if (/AffiliateImpressionPixel|useConsent|useSafeAffiliateTicketLink|<script|document\.write|noreferrer/.test(component)) {
-    fail("Travelcircus-Pilot darf keine Impressionen, Skripte, Ticketfallbacks oder Consent-Sperre hinzufügen.");
+    fail("Direkter Travelcircus-Angebotspfad darf keine Impressionen, Skripte, Ticketfallbacks oder Consent-Sperre hinzufügen.");
+  }
+  // Separat autorisiertes natives Anbieterlogo, nicht der direkte Angebots-CTA.
+  const logo = TRAVELCIRCUS_LOGO;
+  const logoParameters = "s=4803309&v=9151&q=319940&r=2865727";
+  if (logo.clickUrl !== `https://www.awin1.com/cread.php?${logoParameters}`
+    || logo.impressionUrl !== `https://www.awin1.com/cshow.php?${logoParameters}`
+    || logo.width !== 1818 || logo.height !== 519
+    || !logo.imageUrl.startsWith("https://files.manuscdn.com/") || !logo.imageUrl.endsWith(".jpg")) {
+    fail("Travelcircus-Logo muss native Maße, Originalformat und exakt freigegebene Awin-Kennungen behalten.");
+  }
+  const logoComponent = source("client/src/components/TravelcircusProviderLogo.tsx");
+  requireSource(logoComponent, "href={logo.clickUrl}", "Travelcircus-Logo");
+  requireSource(logoComponent, "src={logo.imageUrl}", "Travelcircus-Logo");
+  requireSource(logoComponent, "enabled={consent?.affiliateTracking === true}", "Travelcircus-Logo-Impression");
+  requireSource(logoComponent, 'typeof window !== "undefined"', "Travelcircus-Logo-NoJS");
+  if (/useSafeAffiliateTicketLink|<script|document\.write|noreferrer|src=\{logo\.impressionUrl\}/.test(logoComponent)) {
+    fail("Natives Travelcircus-Logo darf keine Ticketfallbacks, Skripte oder ungesteuerte Impressionen hinzufügen.");
   }
 }
 

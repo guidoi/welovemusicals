@@ -1,8 +1,10 @@
 import React from "react";
-import { ArrowUpRight, Coffee, Gift, Hotel, Ship, Ticket } from "lucide-react";
+import { ArrowUpRight, Check, Coffee, Gift, Hotel, Ship, Ticket } from "lucide-react";
 import type { TravelcircusOffer } from "@/lib/travelcircus-offers";
+import TravelcircusProviderLogo from "@/components/TravelcircusProviderLogo";
 
-/** Eigene Angebotsbox, kein natives Partnerbanner und kein Tracking-Snippet.
+/** Eigene Angebotsbox, kein natives Reisebanner und kein fremdes Skript.
+ * Das separat autorisierte Anbieterlogo nutzt die vorhandene native Consent-Logik.
  * Der explizit gelieferte Awin-Deeplink ist unabhängig vom optionalen Consent.
  * Nicht durch den auf reine Ticketanbieter begrenzten Ticketresolver schicken.
  */
@@ -26,18 +28,21 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
         Anzeige · Affiliate-Link
       </p>
       <div className="overflow-hidden rounded-sm border border-gold/30 bg-[#111111] text-white">
-        <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <div className="flex items-center bg-[#F8D229]">
+        <div className="flex flex-col">
+          <figure className="m-0 bg-[#111111]">
             <img
               src={offer.imageUrl}
-              alt="Disneys DER KÖNIG DER LÖWEN – gelbes Löwen-Artwork, © Disney"
+              alt={offer.imageAlt}
               width={offer.imageWidth}
               height={offer.imageHeight}
               loading="lazy"
               decoding="async"
               className="block h-auto w-full object-contain"
             />
-          </div>
+            <figcaption className="px-6 py-2 text-right text-xs text-white/65 md:px-7">
+              {offer.imageCredit}
+            </figcaption>
+          </figure>
           <div className="flex flex-col p-6 md:p-7">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-gold">
               Deine Musicalreise · {offer.city}
@@ -57,6 +62,12 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
                 <del className="text-sm text-white/60" aria-label={`Vergleichspreis ab ${offer.originalPrice} Euro`}>ab {offer.originalPrice} €</del>
               </div>
               <p className="mt-1 text-sm text-white/75">pro Person</p>
+            </div>
+            <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs leading-relaxed text-white/85" data-testid="travelcircus-offer-assurances">
+              <span className="inline-flex items-center gap-2">
+                <Check className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+                Bestpreisgarantie
+              </span>
             </div>
             <a
               href={offer.affiliateUrl}
@@ -82,10 +93,13 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
               </li>
             ))}
           </ul>
-          <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-relaxed text-white/65">
-            Reiseangebot von <span className="font-semibold text-white/85">{offer.provider}</span>.
-            {" "}Preis und Verfügbarkeit je nach Termin und Hotel. Es gilt der aktuelle Preis beim Anbieter.
-          </p>
+          <div className="mt-5 border-t border-white/10 pt-4">
+            <TravelcircusProviderLogo />
+            <p className="text-xs leading-relaxed text-white/65">
+              Reiseangebot von <span className="font-semibold text-white/85">{offer.provider}</span>.
+              {" "}Preis und Verfügbarkeit je nach Termin und Hotel. Es gilt der aktuelle Preis beim Anbieter.
+            </p>
+          </div>
         </div>
       </div>
     </aside>
