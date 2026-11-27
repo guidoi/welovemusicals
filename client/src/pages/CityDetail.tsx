@@ -25,7 +25,8 @@ import { CITY_PROGRAM_SUBLINE, getCityProgramHeading } from "@/lib/city-program-
 import { getCitySeo, getUpcomingCityProgram } from "@/lib/city-seo";
 import { SHOW_CITY_HOTEL_SECTIONS } from "@/lib/hotel-experience";
 import { useManagedMusicals } from "@/contexts/PricingContext";
-import { getCityGuide } from "@/lib/city-guide";
+import TravelcircusOfferBox from "@/components/TravelcircusOfferBox";
+import { KDL_TRAVELCIRCUS_OFFER } from "@/lib/travelcircus-offers";
 
 export default function CityDetail() {
   const params = useParams<{ slug: string }>();
@@ -82,7 +83,6 @@ export default function CityDetail() {
 
   const cityProgram = getUpcomingCityProgram(city.name, cityMusicals).slice(0, 6);
   const otherCities = [...cities].sort((a, b) => a.name.localeCompare(b.name, "de")).filter((c) => c.slug !== city.slug).slice(0, 5);
-  const cityGuide = getCityGuide(city.slug);
 
   return (
     <>
@@ -199,31 +199,10 @@ export default function CityDetail() {
         </div>
       </section>
 
-      {cityGuide && (
-        <section className="bg-card/40 py-12 md:py-16" aria-labelledby="city-guide-heading">
+      {city.slug === "hamburg" && (
+        <section className="bg-background pt-2 pb-10 md:pt-3 md:pb-12" data-testid="city-travelcircus-section">
           <div className="container max-w-4xl">
-            <h2 id="city-guide-heading" className="font-display text-2xl font-bold text-foreground md:text-3xl">
-              {cityGuide.heading}
-            </h2>
-            <p className="mt-4 max-w-3xl leading-relaxed text-cream/85">{cityGuide.intro}</p>
-            <ol className="mt-8 grid gap-5 md:grid-cols-3">
-              {cityGuide.steps.map((step, index) => (
-                <li key={step.title} className="rounded-sm border border-border/60 bg-background/60 p-5">
-                  <span className="text-sm font-semibold text-gold">{String(index + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-2 font-display text-lg font-bold text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.text}</p>
-                </li>
-              ))}
-            </ol>
-            {cityGuide.officialLinks?.length ? (
-              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-                {cityGuide.officialLinks.map((link) => (
-                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-gold transition-colors hover:text-gold-light">
-                    {link.label}<ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                ))}
-              </div>
-            ) : null}
+            <TravelcircusOfferBox offer={KDL_TRAVELCIRCUS_OFFER} />
           </div>
         </section>
       )}

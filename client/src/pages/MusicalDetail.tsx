@@ -44,6 +44,8 @@ import { useSEO } from "@/hooks/useSEO";
 import SchemaOrg from "@/components/SchemaOrg";
 import AovoCampaignBanner, { getAovoCampaign, getAovoCampaigns, isAovoCampaignVisible } from "@/components/AovoCampaignBanner";
 import AwinShowCampaignBanner, { getAwinShowCampaign } from "@/components/AwinShowCampaignBanner";
+import TravelcircusOfferBox from "@/components/TravelcircusOfferBox";
+import { getTravelcircusOffer } from "@/lib/travelcircus-offers";
 import EventimDraculaBanner from "@/components/EventimDraculaBanner";
 import { getTicketProviderBrand, isAtgTicketMusical } from "@/lib/ticket-provider-brand";
 import { SHOW_MUSICAL_HOTEL_SECTIONS } from "@/lib/hotel-experience";
@@ -262,7 +264,8 @@ export default function MusicalDetail() {
     (campaign) => campaign.placement === "after-faq"
   );
   const awinShowCampaign = getAwinShowCampaign(musical.id);
-  const hasCompactAfterFaqCampaign = afterFaqCampaigns.some(
+  const travelcircusOffer = getTravelcircusOffer(musical.id);
+  const hasCompactAfterFaqCampaign = Boolean(travelcircusOffer) || afterFaqCampaigns.some(
     (campaign) => campaign.compactTopSpacing
   );
 
@@ -735,7 +738,7 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {afterFaqCampaigns.length > 0 && (
+      {(afterFaqCampaigns.length > 0 || travelcircusOffer) && (
         <section
           className={hasCompactAfterFaqCampaign ? "bg-background pt-2 pb-10 md:pt-3 md:pb-12" : "py-12 md:py-16 bg-background"}
           data-testid="after-faq-campaign-section"
@@ -744,6 +747,7 @@ export default function MusicalDetail() {
             {afterFaqCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} sale={musical.sale} />
             ))}
+            {travelcircusOffer && <TravelcircusOfferBox offer={travelcircusOffer} />}
           </div>
         </section>
       )}

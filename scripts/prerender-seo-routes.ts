@@ -12,7 +12,10 @@ import {
 import { getCitySeo, getUpcomingCityProgram } from "../client/src/lib/city-seo";
 import { getMusicalSeo } from "../client/src/lib/musical-seo";
 import { withSeoTitleHeart } from "../client/src/lib/seo-title";
-import { getCityGuide } from "../client/src/lib/city-guide";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import TravelcircusOfferBox from "../client/src/components/TravelcircusOfferBox";
+import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
 import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
 import { getMusicalFaqSchema, getVisibleFaqItems } from "../client/src/lib/faq-schema";
 import { createGoogleSheetPriceSource, WEBSITE_PRICE_SHEET_CSV_URL } from "../server/googleSheetPriceSource";
@@ -135,7 +138,6 @@ function getCityItemList(city: City, cityMusicals: Musical[]) {
 }
 
 function createCityContent(city: City, cityMusicals: Musical[], heading: string, description: string): string {
-  const guide = getCityGuide(city.slug);
   const cityProgram = getUpcomingCityProgram(city.name, cityMusicals).slice(0, 6);
   const musicalLinks = cityMusicals.map((musical) => (
     `<li><a href="/musical/${escapeHtml(musical.slug)}">${escapeHtml(musical.title)}</a></li>`
@@ -147,13 +149,12 @@ function createCityContent(city: City, cityMusicals: Musical[], heading: string,
         : formatGermanDate(entry.startDate);
       return `<li><strong>${escapeHtml(entry.title)}</strong> · ${escapeHtml(duration)} · ${escapeHtml(entry.venue)}</li>`;
     }).join("")}</ul></section>` : "";
-  const guideContent = guide ? `
-    <section><h2>${escapeHtml(guide.heading)}</h2><p>${escapeHtml(guide.intro)}</p>
-      <ol>${guide.steps.map((step) => `<li><h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.text)}</p></li>`).join("")}</ol>${guide.officialLinks?.length ? `<p>${guide.officialLinks.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a>`).join(" · ")}</p>` : ""}
-    </section>` : "";
+  const travelOfferContent = city.slug === "hamburg"
+    ? renderToStaticMarkup(createElement(TravelcircusOfferBox, { offer: KDL_TRAVELCIRCUS_OFFER }))
+    : "";
 
   return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>
-    <section><h2>Aktuelle Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${programContent}${guideContent}
+    <section><h2>Aktuelle Musicals in ${escapeHtml(city.name)}</h2><ul>${musicalLinks}</ul></section>${programContent}${travelOfferContent}
   </main>`;
 }
 
@@ -192,11 +193,15 @@ function createMusicalContent(musical: Musical, heading: string, priceFrom?: str
       `<dt>${escapeHtml(faq.question)}</dt><dd>${escapeHtml(faq.answer)}</dd>`
     )).join("")}</dl></section>`
     : "";
+  const travelcircusOffer = getTravelcircusOffer(musical.id);
+  const travelOfferContent = travelcircusOffer
+    ? renderToStaticMarkup(createElement(TravelcircusOfferBox, { offer: travelcircusOffer }))
+    : "";
   return `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(musical.description)}</p>
     ${location ? `<p><strong>Spielort:</strong> ${escapeHtml(location)}</p>` : ""}
     ${priceFrom ? `<p><strong>Tickets ab:</strong> ${escapeHtml(priceFrom)} €</p>` : ""}
     ${upcomingDates ? `<section><h2>Termine &amp; Spielstätten</h2><ul>${upcomingDates}</ul></section>` : ""}
-    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}${faqContent}
+    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}${faqContent}${travelOfferContent}
   </main>`;
 }
 

@@ -143,7 +143,10 @@ async function main() {
       '"@type":"ItemList"',
       '<h1>Musicals in Hamburg: Termine 2026/2027</h1>',
       '<h2>Termine &amp; Spielstätten in Hamburg</h2>',
-      '<h2>Musicalabend in Hamburg planen</h2>',
+      'data-testid="travelcircus-offer-box"',
+      '119,00 €',
+      '>ab 145,00 €</del>',
+      'awinmid=9151&amp;awinaffid=2865727',
       'href="/musical/mj-das-michael-jackson-musical"',
     ]),
     assertPage("musical/mj-das-michael-jackson-musical", [
@@ -168,7 +171,6 @@ async function main() {
     ]),
     assertPage("stadt/berlin", [
       `<title>${escapeHtml(berlinSeo.title)}</title>`,
-      '<h2>Musicalabend in Berlin planen</h2>',
       'href="/musical/wir-sind-am-leben"',
       'href="/musical/der-kleine-lord"',
     ]),
@@ -176,7 +178,6 @@ async function main() {
       `<title>${escapeHtml(getCitySeo(graz, 3).title)}</title>`,
       '<h2>Termine &amp; Spielstätten in Graz</h2>',
       'Helmut List Halle',
-      '<h2>Musicaltermine in Graz an der Helmut List Halle planen</h2>',
       'FACK JU GÖHTE',
     ]),
     assertPage("musical/der-kleine-lord", [
@@ -199,6 +200,16 @@ async function main() {
   ]);
 
   await assertStaticHtmlHasNoBlockedInternalLinks();
+
+  for (const city of cities) {
+    const html = await readFile(resolve(DIST_ROOT, "stadt", city.slug, "index.html"), "utf8");
+    if (/<h2>[^<]*planen<\/h2>|city-guide-heading/.test(html)) {
+      throw new Error(`${city.slug}: entfernte Planungssequenz darf nicht im statischen HTML verbleiben`);
+    }
+    if (html.includes('data-testid="travelcircus-offer-box"') !== (city.slug === "hamburg")) {
+      throw new Error(`${city.slug}: Stadt-Reisebox ist ausschließlich für Hamburg freigegeben`);
+    }
+  }
 
   console.log("Static SEO output assertions passed.");
 }

@@ -168,18 +168,6 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     clickAriaLabel: "König-der-Löwen-Ticketangebot in neuem Tab öffnen",
   },
   {
-    musicalId: "koenig-der-loewen",
-    musicalTitle: "König der Löwen",
-    groupId: "26068528",
-    width: 750,
-    height: 200,
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/fSsmgKqWQourDufP.png",
-    placement: "after-faq",
-    compactTopSpacing: true,
-    adLabel: "König der Löwen Ticket & Hotel",
-    clickAriaLabel: "König-der-Löwen-Ticket-und-Hotel-Angebot in neuem Tab öffnen",
-  },
-  {
     musicalId: "mj-musical",
     musicalTitle: "MJ – Das Michael Jackson Musical",
     groupId: "26180466",
