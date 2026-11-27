@@ -79,12 +79,32 @@ export const PRADA_TRAVELCIRCUS_OFFER = {
   includesShuttle: false,
   ctaAriaLabel: "Ticket und Hotel für DER TEUFEL TRÄGT PRADA – Das Musical bei Travelcircus ansehen (öffnet in neuem Tab)",
 } as const;
-export type TravelcircusOffer = typeof KDL_TRAVELCIRCUS_OFFER | typeof MJ_TRAVELCIRCUS_OFFER | typeof EISKOENIGIN_TRAVELCIRCUS_OFFER | typeof PRADA_TRAVELCIRCUS_OFFER;
+export const JULIA_TRAVELCIRCUS_OFFER = {
+  musicalId: "und-julia",
+  title: "& JULIA – Das Pop-Musical",
+  city: "Stuttgart",
+  provider: "Travelcircus",
+  destinationUrl: "https://www.travelcircus.de/und-julia-das-musical",
+  affiliateUrl: "https://www.awin1.com/cread.php?awinmid=9151&awinaffid=2865727&ued=https%3A%2F%2Fwww.travelcircus.de%2Fund-julia-das-musical",
+  imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/FWidVGVMJAlHrXZX.webp",
+  imageWidth: 1707,
+  imageHeight: 1280,
+  imageAlt: "Stage Palladium Theater in Stuttgart bei strahlend blauem Himmel mit großen Leuchtwänden zu & JULIA – Das Pop-Musical und herbstlicher Dekoration aus Strohballen und Kürbissen",
+  imageCredit: "Stage Palladium Theater · Stuttgart",
+  priceFrom: "99,00", // Nutzerangabe und offizielle Travelcircus-Angebotsseite, geprüft 27.11.2026.
+  originalPrice: "119,00", // Explizite Nutzerangabe; offizielle Seite zeigt keinen Vergleichspreis.
+  hotelBenefit: "Übernachtung in einem Premium Hotel deiner Wahl in Stuttgart",
+  ticketBenefit: "Tickets für & JULIA – Das Pop-Musical im Stage Palladium Theater Stuttgart",
+  includesShuttle: false,
+  ctaAriaLabel: "Ticket und Hotel für & JULIA – Das Pop-Musical in Stuttgart bei Travelcircus ansehen (öffnet in neuem Tab)",
+} as const;
+export type TravelcircusOffer = typeof KDL_TRAVELCIRCUS_OFFER | typeof MJ_TRAVELCIRCUS_OFFER | typeof EISKOENIGIN_TRAVELCIRCUS_OFFER | typeof PRADA_TRAVELCIRCUS_OFFER | typeof JULIA_TRAVELCIRCUS_OFFER;
 
 export function getTravelcircusOffer(musicalId: string): TravelcircusOffer | undefined {
   if (musicalId === KDL_TRAVELCIRCUS_OFFER.musicalId) return KDL_TRAVELCIRCUS_OFFER;
   if (musicalId === MJ_TRAVELCIRCUS_OFFER.musicalId) return MJ_TRAVELCIRCUS_OFFER;
   if (musicalId === EISKOENIGIN_TRAVELCIRCUS_OFFER.musicalId) return EISKOENIGIN_TRAVELCIRCUS_OFFER;
   if (musicalId === PRADA_TRAVELCIRCUS_OFFER.musicalId) return PRADA_TRAVELCIRCUS_OFFER;
+  if (musicalId === JULIA_TRAVELCIRCUS_OFFER.musicalId) return JULIA_TRAVELCIRCUS_OFFER;
   return undefined;
 }

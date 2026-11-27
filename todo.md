@@ -1605,3 +1605,8 @@ MittelfristigerNutzerwunsch08:31:58: neuesHeaderkonzept mit klarerTrennungBildmo
 - [x] Nutzer-Keyvisual 460x259 (16:9) im Original als WebP 92 ohne Crop/Stretch, CDN snEmxoUBkwaUZWFI.webp, Credit neutral Key Visual; Original/WebP/Manifest SHA256 in webdev-static-assets/prada-travelcircus-2026-11-27. Quellbild klein: auf Desktop leicht weich, Hochauflösung kann nachgereicht werden.
 - [x] Prada-only Detailbox vor FAQ; Stage-Banner 26185640/26185638 unverändert; Gate, Scope-Test und vier neue Prada-Tests; Browser-QA 393/1440 Consent false/true PASS.
 
+
+## 27.11.2026 22:40 – &Julia-Reisebox Stuttgart
+- [x] Nutzerfreigabe &Julia: exakter Awin-Deeplink awinmid9151/awinaffid2865727/ued und-julia-das-musical; 99,00 pro Person, Streichpreis 119,00 (gold, Nutzerangabe, offizielle Seite zeigt nur 99,00), Nur für kurze Zeit. Vier Leistungen Stuttgart/Stage Palladium, kein Schiff-Shuttle; offizielle Seite bestätigt 99,00 und alle Leistungen.
+- [x] Nutzerfoto Stage Palladium 2048×1536 (4:3) → 1707×1280 WebP 92 ohne Crop/Stretch, CDN FWidVGVMJAlHrXZX.webp, Credit neutral (kein Fotograf bekannt); Original/WebP/Manifest in webdev-static-assets/julia-travelcircus-2026-11-27.
+- [x] Box vor FAQ auf /musical/und-julia; Stage-Banner 26185666/26185664 unverändert; Gate, Scope-Test, vier Julia-Tests; Browser-QA 393/1440 Consent false/true PASS.

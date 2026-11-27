@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import TravelcircusOfferBox from "./TravelcircusOfferBox";
-import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER as offer, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER } from "@/lib/travelcircus-offers";
+import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER as offer, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER } from "@/lib/travelcircus-offers";
 import { musicals } from "@/lib/data";
 
 const html = () => renderToStaticMarkup(<TravelcircusOfferBox offer={offer} />);
@@ -19,12 +19,13 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(html()).toContain(offer.affiliateUrl.replaceAll("&", "&amp;"));
   });
 
-  it("zeigt Reiseangebote ausschließlich für die freigegebenen Shows KDL, MJ, Eiskönigin und Prada", () => {
+  it("zeigt Reiseangebote ausschließlich für die freigegebenen Shows KDL, MJ, Eiskönigin, Prada und &Julia", () => {
     expect(getTravelcircusOffer("koenig-der-loewen")).toBe(offer);
     expect(getTravelcircusOffer("mj-musical")).toBe(MJ_TRAVELCIRCUS_OFFER);
     expect(getTravelcircusOffer("eiskoenigin")).toBe(EISKOENIGIN_TRAVELCIRCUS_OFFER);
     expect(getTravelcircusOffer("teufel-traegt-prada")).toBe(PRADA_TRAVELCIRCUS_OFFER);
-    for (const musical of musicals.filter((show) => show.id !== offer.musicalId && show.id !== MJ_TRAVELCIRCUS_OFFER.musicalId && show.id !== EISKOENIGIN_TRAVELCIRCUS_OFFER.musicalId && show.id !== PRADA_TRAVELCIRCUS_OFFER.musicalId)) {
+    expect(getTravelcircusOffer("und-julia")).toBe(JULIA_TRAVELCIRCUS_OFFER);
+    for (const musical of musicals.filter((show) => show.id !== offer.musicalId && show.id !== MJ_TRAVELCIRCUS_OFFER.musicalId && show.id !== EISKOENIGIN_TRAVELCIRCUS_OFFER.musicalId && show.id !== PRADA_TRAVELCIRCUS_OFFER.musicalId && show.id !== JULIA_TRAVELCIRCUS_OFFER.musicalId)) {
       expect(getTravelcircusOffer(musical.id)).toBeUndefined();
     }
     expect(getTravelcircusOffer("unknown")).toBeUndefined();
