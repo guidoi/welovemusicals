@@ -22,7 +22,7 @@ const expectedAovoSha256 =
 const protectedSources = [
   {
     path: "client/src/lib/data.ts",
-    sha256: "5ba87668bd31a9dfb15086c9f0aa98b36542822c262a24af0f29106916188e39",
+    sha256: "2d545494511c5e0d437a22cb17d0f1d95ef8f83624cae037b08463adf936ba76", // Nutzerfreigabe 28.11.2026: Top-Reihenfolge Phantom/Glöckner
   },
   {
     path: "client/src/contexts/ConsentContext.tsx",

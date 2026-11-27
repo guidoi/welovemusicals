@@ -13,6 +13,14 @@ import {
 } from "./data";
 
 describe("Top-Musicals auf der Startseite", () => {
+  it("Nutzer 28.11.2026: Phantom nach Moulin Rouge in den Tops, Glöckner neben Dracula", () => {
+    const ids = FEATURED_MUSICAL_IDS as readonly string[];
+    expect(ids.indexOf("phantom-der-oper")).toBe(ids.indexOf("moulinrouge") + 1);
+    expect(ids).not.toContain("gloeckner-von-notre-dame");
+    const rest = getAdditionalMusicals().map((musical) => musical.id);
+    expect(rest.indexOf("gloeckner-von-notre-dame")).toBe(rest.indexOf("dracula") + 1);
+    expect(rest).not.toContain("phantom-der-oper");
+  });
   it("führt MJ auf Platz 2, Prada auf Platz 3, WBT unter den Top-Empfehlungen und & JULIA zuletzt", () => {
     expect(FEATURED_MUSICAL_IDS).toEqual([
       "koenig-der-loewen",
@@ -20,7 +28,7 @@ describe("Top-Musicals auf der Startseite", () => {
       "teufel-traegt-prada",
       "starlight-express",
       "moulinrouge",
-      "gloeckner-von-notre-dame",
+      "phantom-der-oper",
       "eiskoenigin",
       "ziz",
       "tanz-der-vampire",

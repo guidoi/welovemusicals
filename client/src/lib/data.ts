@@ -570,7 +570,7 @@ export const musicals: Musical[] = [
     eventimUrl: createAwinTextLink(AWIN_TEXT_LINKS.phantomDerOper, "phantom-der-oper-ticket"),
     priceFrom: "59,99",
     youtubeTrailerId: "A02SZ71tgRI",
-    featured: false,
+    featured: true,
     tags: ["Fester Standort", "Romantik", "Weltklasse"],
     uspItems: [
       { icon: "Crown", title: "Deutschlandpremiere 2026", text: "Erstmals in Deutschland – exklusiv im Musical Dome Köln" },
@@ -1258,7 +1258,7 @@ export const musicals: Musical[] = [
     awinBoxUrl: "https://www.atgtickets.de/musicals-shows/gloeckner-von-notre-dame/tickets/",
     priceFrom: "49,99",
     youtubeTrailerId: "IWrg3s9gMsY",
-    featured: true,
+    featured: false,
     tags: ["Disney", "Familie", "Tournee"],
     uspItems: [
       { icon: "Crown", title: "Disney-Welterfolg erstmals auf Tournee", text: "Glocken läuten – der Klassiker kommt nach Deutschland" },
@@ -2631,7 +2631,7 @@ export const FEATURED_MUSICAL_IDS = [
   "teufel-traegt-prada",
   "starlight-express",
   "moulinrouge",
-  "gloeckner-von-notre-dame",
+  "phantom-der-oper",
   "eiskoenigin",
   "ziz",
   "tanz-der-vampire",
@@ -2648,7 +2648,14 @@ export function getFeaturedMusicals(catalog: Musical[] = musicals): Musical[] {
 
 export function getAdditionalMusicals(catalog: Musical[] = musicals): Musical[] {
   const featuredMusicalIds = new Set<string>(FEATURED_MUSICAL_IDS);
-  return getActiveMusicals(catalog).filter((musical) => !featuredMusicalIds.has(musical.id));
+  const additional = getActiveMusicals(catalog).filter((musical) => !featuredMusicalIds.has(musical.id));
+  // Nutzerwunsch 28.11.2026: Glöckner steht in der weiteren Übersicht direkt neben Dracula.
+  const gloeckner = additional.find((musical) => musical.id === "gloeckner-von-notre-dame");
+  const draculaIndex = additional.findIndex((musical) => musical.id === "dracula");
+  if (!gloeckner || draculaIndex < 0) return additional;
+  const rest = additional.filter((musical) => musical !== gloeckner);
+  rest.splice(rest.findIndex((musical) => musical.id === "dracula") + 1, 0, gloeckner);
+  return rest;
 }
 
 export function getEditorialOverviewMusicals(includeHighlights: boolean, catalog: Musical[] = musicals): Musical[] {
