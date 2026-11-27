@@ -172,6 +172,7 @@ export const ROSIE_TRAVELCIRCUS_OFFER = {
   hotelBenefit: "Übernachtung im Premium Hotel deiner Wahl",
   ticketBenefit: "Tickets für Salon Rosie – Das Musical in Berlin",
   includesShuttle: false,
+  hideExtras: true, // Nutzerwunsch 27.11.2026: nur Hotel, Frühstück, Tickets.
   ctaAriaLabel: "Ticket und Hotel für Salon Rosie – Das Musical bei Travelcircus ansehen (öffnet in neuem Tab)",
 } as const;
 export const WSAL_TRAVELCIRCUS_OFFER = {

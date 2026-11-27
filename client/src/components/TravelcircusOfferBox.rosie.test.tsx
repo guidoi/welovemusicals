@@ -14,7 +14,7 @@ describe("Salon Rosie Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () =
     expect(Array.from(url.searchParams.keys()).sort()).toEqual(["awinaffid", "awinmid", "ued"]);
     expect(html()).toContain(offer.affiliateUrl.replace(/&/g, "&amp;"));
   });
-  it("zeigt Preise, goldenen Streichpreis und genau die vier Leistungen ohne Shuttle", () => {
+  it("zeigt Preise, goldenen Streichpreis und genau die drei Leistungen ohne Shuttle", () => {
     const h = html();
     expect(h).toContain("119,00");
     expect(h).toContain("145,00");
@@ -24,7 +24,7 @@ describe("Salon Rosie Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () =
     expect(h).toContain("Übernachtung im Premium Hotel deiner Wahl");
     expect(h).toContain("Tägliches Frühstück im gewählten Hotel");
     expect(h).toContain("Tickets für Salon Rosie – Das Musical in Berlin");
-    expect(h).toContain("Weitere Extras, je nach gewähltem Hotel");
+    expect(h).not.toContain("Weitere Extras");
     expect(h).not.toMatch(/Schiff|Shuttle|Bestpreisgarantie|Stornierung|Kostenlos stornierbar/);
   });
   it("zeigt das volle Hochformat-Foto ohne Crop", () => {

@@ -14,7 +14,7 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
     ...("breakfastInExtras" in offer ? [] : [{ Icon: Coffee, text: "Tägliches Frühstück im gewählten Hotel" }]),
     { Icon: Ticket, text: offer.ticketBenefit },
     ...(offer.includesShuttle ? [{ Icon: Ship, text: "Schiff-Shuttleservice von den Landungsbrücken zum Theater" }] : []),
-    { Icon: Gift, text: "breakfastInExtras" in offer ? "Weitere Extras wie Frühstück, je nach gewähltem Hotel" : "Weitere Extras, je nach gewähltem Hotel" },
+    ..."hideExtras" in offer ? [] : [{ Icon: Gift, text: "breakfastInExtras" in offer ? "Weitere Extras wie Frühstück, je nach gewähltem Hotel" : "Weitere Extras, je nach gewähltem Hotel" }],
   ];
 
   return (
