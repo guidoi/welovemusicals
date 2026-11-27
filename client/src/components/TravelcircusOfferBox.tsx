@@ -11,10 +11,10 @@ import TravelcircusProviderLogo from "@/components/TravelcircusProviderLogo";
 export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOffer }) {
   const benefits = [
     { Icon: Hotel, text: offer.hotelBenefit },
-    { Icon: Coffee, text: "Tägliches Frühstück im gewählten Hotel" },
+    ...("breakfastInExtras" in offer ? [] : [{ Icon: Coffee, text: "Tägliches Frühstück im gewählten Hotel" }]),
     { Icon: Ticket, text: offer.ticketBenefit },
     ...(offer.includesShuttle ? [{ Icon: Ship, text: "Schiff-Shuttleservice von den Landungsbrücken zum Theater" }] : []),
-    { Icon: Gift, text: "Weitere Extras, je nach gewähltem Hotel" },
+    { Icon: Gift, text: "breakfastInExtras" in offer ? "Weitere Extras wie Frühstück, je nach gewähltem Hotel" : "Weitere Extras, je nach gewähltem Hotel" },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
               {offer.title}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-white/85">
-              Inkl. Musical-Ticket, Hotel-Übernachtung mit Frühstück.
+              {"breakfastInExtras" in offer ? "Inkl. Musical-Ticket und Hotel-Übernachtung." : "Inkl. Musical-Ticket, Hotel-Übernachtung mit Frühstück."}
             </p>
             <div className="my-5" data-testid="travelcircus-offer-price">
               <p className="mb-2 text-sm font-semibold text-gold">Nur für kurze Zeit:</p>

@@ -1618,3 +1618,5 @@ MittelfristigerNutzerwunsch08:31:58: neuesHeaderkonzept mit klarerTrennungBildmo
 - [x] Prada-Keyvisual 1920x1080 statt 460x259
 - [x] Nutzerauftrag 23:02: Aovo (alter Ticket-&-Hotel-Banner MJ 26068482) entfernt; das 300x250-Stage-Banner steht bei allen Show-Seiten mit Box an der Stelle nach der FAQ (nicht nur KDL). Native Stage-Banner sonst unverändert.
 - [x] tsc, 1121 Tests, Build inkl. Gates, Browser-QA 393/1440 Consent false/true
+- [x] WSAL-Travelcircus-Box (89,00 / Streichpreis 115,00 = Nutzerangabe), 3 Leistungen laut offizieller Seite, Hochformatfoto ohne Crop, Deeplink ued=wir-sind-am-leben-das-berlin-musical
+- [ ] Rosie: Nutzer nannte 3 Leistungen, Box zeigt zusätzlich "Weitere Extras" (offizielle Seite) – bei Bedarf entfernen

@@ -27,7 +27,7 @@ describe("Salon Rosie Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () =
     expect(h).toContain("Weitere Extras, je nach gewähltem Hotel");
     expect(h).not.toMatch(/Schiff|Shuttle|Bestpreisgarantie|Stornierung|Kostenlos stornierbar/);
   });
-  it("zeigt das volle Querformat-Foto ohne Crop", () => {
+  it("zeigt das volle Hochformat-Foto ohne Crop", () => {
     expect(html()).toContain("jAHLkIRKnHqNGUfc.webp");
     expect(html()).toContain("Theater des Westens · Berlin");
     expect(html()).toContain("object-contain");

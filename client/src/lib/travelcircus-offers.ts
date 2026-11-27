@@ -174,7 +174,27 @@ export const ROSIE_TRAVELCIRCUS_OFFER = {
   includesShuttle: false,
   ctaAriaLabel: "Ticket und Hotel für Salon Rosie – Das Musical bei Travelcircus ansehen (öffnet in neuem Tab)",
 } as const;
-export type TravelcircusOffer = typeof KDL_TRAVELCIRCUS_OFFER | typeof MJ_TRAVELCIRCUS_OFFER | typeof EISKOENIGIN_TRAVELCIRCUS_OFFER | typeof PRADA_TRAVELCIRCUS_OFFER | typeof JULIA_TRAVELCIRCUS_OFFER | typeof TINA_TRAVELCIRCUS_OFFER | typeof ZIZ_TRAVELCIRCUS_OFFER | typeof TDV_TRAVELCIRCUS_OFFER | typeof ROSIE_TRAVELCIRCUS_OFFER;
+export const WSAL_TRAVELCIRCUS_OFFER = {
+  musicalId: "wir-sind-am-leben",
+  title: "WIR SIND AM LEBEN – Das Berlin Musical inkl. Übernachtung im Premium Hotel",
+  city: "Berlin",
+  provider: "Travelcircus",
+  destinationUrl: "https://www.travelcircus.de/wir-sind-am-leben-das-berlin-musical",
+  affiliateUrl: "https://www.awin1.com/cread.php?awinmid=9151&awinaffid=2865727&ued=https%3A%2F%2Fwww.travelcircus.de%2Fwir-sind-am-leben-das-berlin-musical",
+  imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/kYjKQEjFAgJRlJxb.webp",
+  imageWidth: 1033,
+  imageHeight: 1280,
+  imageAlt: "Theater des Westens in Berlin bei Nacht, warm beleuchtet mit großen WIR-SIND-AM-LEBEN-Bannern an der Fassade und Lichtstreifen im Vordergrund",
+  imageCredit: "Theater des Westens · Berlin",
+  priceFrom: "89,00", // Nutzerangabe und offizielle Travelcircus-Angebotsseite, geprüft 27.11.2026.
+  originalPrice: "115,00", // Explizite Nutzerangabe; offizielle Seite zeigt keinen Vergleichspreis.
+  hotelBenefit: "Übernachtung im Premium Hotel deiner Wahl",
+  ticketBenefit: "Tickets für WIR SIND AM LEBEN – Das Berlin Musical",
+  includesShuttle: false,
+  breakfastInExtras: true, // Offizielle Leistung: Frühstück nur "wie Frühstück, je nach gewähltem Hotel".
+  ctaAriaLabel: "Ticket und Hotel für WIR SIND AM LEBEN – Das Berlin Musical bei Travelcircus ansehen (öffnet in neuem Tab)",
+} as const;
+export type TravelcircusOffer = typeof KDL_TRAVELCIRCUS_OFFER | typeof MJ_TRAVELCIRCUS_OFFER | typeof EISKOENIGIN_TRAVELCIRCUS_OFFER | typeof PRADA_TRAVELCIRCUS_OFFER | typeof JULIA_TRAVELCIRCUS_OFFER | typeof TINA_TRAVELCIRCUS_OFFER | typeof ZIZ_TRAVELCIRCUS_OFFER | typeof TDV_TRAVELCIRCUS_OFFER | typeof ROSIE_TRAVELCIRCUS_OFFER | typeof WSAL_TRAVELCIRCUS_OFFER;
 
 export function getTravelcircusOffer(musicalId: string): TravelcircusOffer | undefined {
   if (musicalId === KDL_TRAVELCIRCUS_OFFER.musicalId) return KDL_TRAVELCIRCUS_OFFER;
@@ -186,5 +206,6 @@ export function getTravelcircusOffer(musicalId: string): TravelcircusOffer | und
   if (musicalId === ZIZ_TRAVELCIRCUS_OFFER.musicalId) return ZIZ_TRAVELCIRCUS_OFFER;
   if (musicalId === TDV_TRAVELCIRCUS_OFFER.musicalId) return TDV_TRAVELCIRCUS_OFFER;
   if (musicalId === ROSIE_TRAVELCIRCUS_OFFER.musicalId) return ROSIE_TRAVELCIRCUS_OFFER;
+  if (musicalId === WSAL_TRAVELCIRCUS_OFFER.musicalId) return WSAL_TRAVELCIRCUS_OFFER;
   return undefined;
 }
