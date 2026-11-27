@@ -17,7 +17,7 @@ function sourceSha256(relativePath: string) {
 // Der Hash schützt auch alle übrigen Konfigurationen, Click-/Impression-Handler,
 // Consent-Gates und die Darstellung; keine Normalisierung oder Git-Abhängigkeit.
 const expectedAovoSha256 =
-  "62dd7cce61cec53a8b51cf060d5b4344185380f4a9df330ef91742b7383023a6";
+  "f73fc1a4412c017120970ff1b77497776e19eb337e88dbd295053f0ec3fa32fc";
 
 const protectedSources = [
   {
@@ -101,29 +101,13 @@ describe("KDL-Travelcircus: unveränderte Bestandskampagnen und Schutzpfade", ()
       },
     ]);
     expect(AOVO_CAMPAIGNS.some(({ groupId }) => groupId === "26068528")).toBe(false);
-    expect(AOVO_CAMPAIGNS).toHaveLength(28);
+    expect(AOVO_CAMPAIGNS).toHaveLength(27);
   });
 
-  it("behält das MJ-Ticket-und-Hotel-Banner 26068482 unverändert nach den FAQs", () => {
+  it("hat das alte MJ-Aovo-Ticket-und-Hotel-Banner 26068482 auf Nutzerwunsch entfernt, beide Stage-Banner bleiben", () => {
     const campaigns = getAovoCampaigns("mj-musical");
-
-    expect(campaigns).toHaveLength(3);
-    expect(campaigns.filter(({ placement }) => placement === "after-faq")).toEqual([
-      {
-        musicalId: "mj-musical",
-        musicalTitle: "MJ – Das Michael Jackson Musical",
-        groupId: "26068482",
-        width: 750,
-        height: 200,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
-        placement: "after-faq",
-        compactTopSpacing: true,
-        adLabel: "MJ Ticket & Hotel",
-        clickAriaLabel: "MJ Ticket-und-Hotel-Angebot in neuem Tab öffnen",
-      },
-    ]);
+    expect(campaigns.map(({ groupId }) => groupId).sort()).toEqual(["26180462", "26180466"]);
   });
-
   it.each(protectedSources)("behält $path bytegleich zur Baseline f5507fe8", ({ path, sha256 }) => {
     expect(sourceSha256(path)).toBe(sha256);
   });

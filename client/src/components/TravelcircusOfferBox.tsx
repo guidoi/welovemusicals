@@ -37,7 +37,7 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
               height={offer.imageHeight}
               loading="lazy"
               decoding="async"
-              className="block h-auto w-full object-contain"
+              className={offer.imageHeight > offer.imageWidth ? "mx-auto block h-auto max-h-[480px] w-auto max-w-full object-contain md:max-h-[560px]" : "block h-auto w-full object-contain"}
             />
             <figcaption className="px-6 py-2 text-right text-xs text-white/65 md:px-7">
               {offer.imageCredit}

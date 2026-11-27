@@ -72,7 +72,7 @@ describe("Eiskönigin Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () =
     expect(campaigns.find(({ groupId }) => groupId === "26185658")?.placement).toBe("within-detail-description");
     expect(campaigns.find(({ groupId }) => groupId === "26185656")?.placement).toBe("after-gallery");
     const detail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
-    expect(detail).toContain('const relocatedStageCampaign = musical.id === "koenig-der-loewen" && travelcircusOffer');
+    expect(detail).toContain('const relocatedStageCampaign = travelcircusOffer');
     expect(detail.indexOf("<MusicalGallery")).toBeLessThan(detail.indexOf("<TravelcircusOfferBox offer={travelcircusOffer} />"));
     expect(detail.indexOf("<TravelcircusOfferBox offer={travelcircusOffer} />")).toBeLessThan(detail.indexOf("<MusicalShowFacts"));
     expect(readFileSync(new URL("../pages/CityDetail.tsx", import.meta.url), "utf8")).not.toContain("EISKOENIGIN_TRAVELCIRCUS_OFFER");

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import TravelcircusOfferBox from "./TravelcircusOfferBox";
-import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER as offer, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER } from "@/lib/travelcircus-offers";
+import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER as offer, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER, TINA_TRAVELCIRCUS_OFFER, ZIZ_TRAVELCIRCUS_OFFER, TDV_TRAVELCIRCUS_OFFER, ROSIE_TRAVELCIRCUS_OFFER } from "@/lib/travelcircus-offers";
 import { musicals } from "@/lib/data";
 
 const html = () => renderToStaticMarkup(<TravelcircusOfferBox offer={offer} />);
@@ -19,13 +19,17 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(html()).toContain(offer.affiliateUrl.replaceAll("&", "&amp;"));
   });
 
-  it("zeigt Reiseangebote ausschließlich für die freigegebenen Shows KDL, MJ, Eiskönigin, Prada und &Julia", () => {
+  it("zeigt Reiseangebote ausschließlich für die freigegebenen Shows KDL, MJ, Eiskönigin, Prada, &Julia, TINA und ZIZ", () => {
     expect(getTravelcircusOffer("koenig-der-loewen")).toBe(offer);
     expect(getTravelcircusOffer("mj-musical")).toBe(MJ_TRAVELCIRCUS_OFFER);
     expect(getTravelcircusOffer("eiskoenigin")).toBe(EISKOENIGIN_TRAVELCIRCUS_OFFER);
     expect(getTravelcircusOffer("teufel-traegt-prada")).toBe(PRADA_TRAVELCIRCUS_OFFER);
     expect(getTravelcircusOffer("und-julia")).toBe(JULIA_TRAVELCIRCUS_OFFER);
-    for (const musical of musicals.filter((show) => show.id !== offer.musicalId && show.id !== MJ_TRAVELCIRCUS_OFFER.musicalId && show.id !== EISKOENIGIN_TRAVELCIRCUS_OFFER.musicalId && show.id !== PRADA_TRAVELCIRCUS_OFFER.musicalId && show.id !== JULIA_TRAVELCIRCUS_OFFER.musicalId)) {
+    expect(getTravelcircusOffer("tina-das-musical")).toBe(TINA_TRAVELCIRCUS_OFFER);
+    expect(getTravelcircusOffer("ziz")).toBe(ZIZ_TRAVELCIRCUS_OFFER);
+    expect(getTravelcircusOffer("tanz-der-vampire")).toBe(TDV_TRAVELCIRCUS_OFFER);
+    expect(getTravelcircusOffer("salon-rosie")).toBe(ROSIE_TRAVELCIRCUS_OFFER);
+    for (const musical of musicals.filter((show) => show.id !== offer.musicalId && show.id !== MJ_TRAVELCIRCUS_OFFER.musicalId && show.id !== EISKOENIGIN_TRAVELCIRCUS_OFFER.musicalId && show.id !== PRADA_TRAVELCIRCUS_OFFER.musicalId && show.id !== JULIA_TRAVELCIRCUS_OFFER.musicalId && show.id !== TINA_TRAVELCIRCUS_OFFER.musicalId && show.id !== ZIZ_TRAVELCIRCUS_OFFER.musicalId && show.id !== TDV_TRAVELCIRCUS_OFFER.musicalId && show.id !== ROSIE_TRAVELCIRCUS_OFFER.musicalId)) {
       expect(getTravelcircusOffer(musical.id)).toBeUndefined();
     }
     expect(getTravelcircusOffer("unknown")).toBeUndefined();
@@ -72,7 +76,7 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(source.indexOf("<MusicalShowFacts")).toBeLessThan(source.indexOf(faqSlot));
     expect(faqSlot).toContain("<AovoCampaignBanner campaign={relocatedStageCampaign} sale={musical.sale} />");
     expect(faqSlot).not.toContain("<TravelcircusOfferBox");
-    expect(source).toContain('afterGalleryCampaigns.find((campaign) => campaign.groupId === "26180460")');
+    expect(source).toContain('afterGalleryCampaigns.find((campaign) => campaign.width === 300 && campaign.height === 250)');
     const prerender = readFileSync(new URL("../../../scripts/prerender-seo-routes.ts", import.meta.url), "utf8");
     expect(prerender).toContain("${travelOfferContent}${faqContent}");
     expect(html()).toContain("max-w-[750px]");

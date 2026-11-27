@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { getActiveMusicals } from "../client/src/lib/data";
 import { AOVO_CAMPAIGNS, resolveAovoCampaignClickUrl } from "../client/src/components/AovoCampaignBanner";
 import { getSafeAffiliateTicketLink } from "../client/src/lib/affiliate-link-safety";
-import { KDL_TRAVELCIRCUS_OFFER, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
+import { KDL_TRAVELCIRCUS_OFFER, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER, TINA_TRAVELCIRCUS_OFFER, ZIZ_TRAVELCIRCUS_OFFER, TDV_TRAVELCIRCUS_OFFER, ROSIE_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
 import { TRAVELCIRCUS_LOGO } from "../client/src/lib/travelcircus-logo";
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const TRADEDOUBLER_WEBSITE_ID = "3492604";
@@ -228,8 +228,12 @@ function assertTravelcircusOfferSafety() {
     "eiskoenigin": "https://www.travelcircus.de/eiskoenigin-das-musical",
     "teufel-traegt-prada": "https://www.travelcircus.de/der-teufel-traegt-prada-das-musical",
     "und-julia": "https://www.travelcircus.de/und-julia-das-musical",
+    "tina-das-musical": "https://www.travelcircus.de/tina-turner-musical-hamburg",
+    "ziz": "https://www.travelcircus.de/zurueck-in-die-zukunft-das-musical",
+    "tanz-der-vampire": "https://www.travelcircus.de/tanz-der-vampire-musical-mit-hotel",
+    "salon-rosie": "https://www.travelcircus.de/salon-rosie-musical-berlin",
   } as const;
-  for (const offer of [KDL_TRAVELCIRCUS_OFFER, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER]) {
+  for (const offer of [KDL_TRAVELCIRCUS_OFFER, MJ_TRAVELCIRCUS_OFFER, EISKOENIGIN_TRAVELCIRCUS_OFFER, PRADA_TRAVELCIRCUS_OFFER, JULIA_TRAVELCIRCUS_OFFER, TINA_TRAVELCIRCUS_OFFER, ZIZ_TRAVELCIRCUS_OFFER, TDV_TRAVELCIRCUS_OFFER, ROSIE_TRAVELCIRCUS_OFFER]) {
     const expectedDestination = expectedDestinations[offer.musicalId];
     const parsed = new URL(offer.affiliateUrl);
     if (parsed.protocol !== "https:" || parsed.hostname !== "www.awin1.com" || parsed.pathname !== "/cread.php"

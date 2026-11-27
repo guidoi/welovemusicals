@@ -28,7 +28,7 @@ describe("Prada Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () => {
     expect(h).not.toMatch(/Schiff|Shuttle|Bestpreisgarantie|Stornierung|Kostenlos stornierbar/);
   });
   it("zeigt das volle Querformat-Foto ohne Crop", () => {
-    expect(html()).toContain("snEmxoUBkwaUZWFI.webp");
+    expect(html()).toContain("DpEyVtHrQhqdIvha.webp");
     expect(html()).toContain("Key Visual · DER TEUFEL TRÄGT PRADA – Das Musical");
     expect(html()).toContain("object-contain");
     expect(html()).not.toMatch(/object-cover|scale-|manus-storage/);
@@ -39,7 +39,7 @@ describe("Prada Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () => {
     expect(html()).not.toMatch(/<script|<iframe|cshow\.php|noreferrer/);
     expect(getAovoCampaigns("teufel-traegt-prada").length).toBeGreaterThan(0);
     const detail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
-    expect(detail).toContain('const relocatedStageCampaign = musical.id === "koenig-der-loewen" && travelcircusOffer');
+    expect(detail).toContain('const relocatedStageCampaign = travelcircusOffer');
     expect(readFileSync(new URL("../pages/CityDetail.tsx", import.meta.url), "utf8")).not.toContain("PRADA_TRAVELCIRCUS_OFFER");
   });
 });

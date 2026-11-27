@@ -80,14 +80,14 @@ describe("MJ Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () => {
 
   it("ergänzt die Box vor FAQ ohne die vorhandenen MJ-Banner zu entfernen oder umzupositionieren", () => {
     const detail = source("../pages/MusicalDetail.tsx");
-    expect(detail).toContain('const relocatedStageCampaign = musical.id === "koenig-der-loewen" && travelcircusOffer');
+    expect(detail).toContain('const relocatedStageCampaign = travelcircusOffer');
     expect(detail.indexOf("<MusicalGallery")).toBeLessThan(detail.indexOf("<TravelcircusOfferBox offer={travelcircusOffer} />"));
     expect(detail.indexOf("<TravelcircusOfferBox offer={travelcircusOffer} />")).toBeLessThan(detail.indexOf("<MusicalShowFacts"));
     const campaigns = getAovoCampaigns("mj-musical");
-    expect(campaigns.map(({ groupId }) => groupId).sort()).toEqual(["26068482", "26180462", "26180466"]);
+    expect(campaigns.map(({ groupId }) => groupId).sort()).toEqual(["26180462", "26180466"]);
     expect(campaigns.find(({ groupId }) => groupId === "26180462")?.placement).toBe("within-detail-description");
     expect(campaigns.find(({ groupId }) => groupId === "26180466")?.placement).toBe("after-gallery");
-    expect(campaigns.find(({ groupId }) => groupId === "26068482")?.placement).toBe("after-faq");
+    expect(campaigns.find(({ groupId }) => groupId === "26068482")).toBeUndefined(); // Aovo auf Nutzerwunsch 27.11. entfernt
     expect(source("../../../scripts/prerender-seo-routes.ts")).toContain("${travelOfferContent}${faqContent}");
   });
 

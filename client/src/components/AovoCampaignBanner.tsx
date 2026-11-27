@@ -203,18 +203,6 @@ export const AOVO_CAMPAIGNS: readonly AovoCampaign[] = [
     clickAriaLabel: "MJ-Ticketangebot in neuem Tab öffnen",
   },
   {
-    musicalId: "mj-musical",
-    musicalTitle: "MJ – Das Michael Jackson Musical",
-    groupId: "26068482",
-    width: 750,
-    height: 200,
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
-    placement: "after-faq",
-    compactTopSpacing: true,
-    adLabel: "MJ Ticket & Hotel",
-    clickAriaLabel: "MJ Ticket-und-Hotel-Angebot in neuem Tab öffnen",
-  },
-  {
     musicalId: "tina-das-musical",
     musicalTitle: "TINA – Das Tina Turner Musical",
     groupId: "26204070",

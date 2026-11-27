@@ -1610,3 +1610,11 @@ MittelfristigerNutzerwunsch08:31:58: neuesHeaderkonzept mit klarerTrennungBildmo
 - [x] Nutzerfreigabe &Julia: exakter Awin-Deeplink awinmid9151/awinaffid2865727/ued und-julia-das-musical; 99,00 pro Person, Streichpreis 119,00 (gold, Nutzerangabe, offizielle Seite zeigt nur 99,00), Nur für kurze Zeit. Vier Leistungen Stuttgart/Stage Palladium, kein Schiff-Shuttle; offizielle Seite bestätigt 99,00 und alle Leistungen.
 - [x] Nutzerfoto Stage Palladium 2048×1536 (4:3) → 1707×1280 WebP 92 ohne Crop/Stretch, CDN FWidVGVMJAlHrXZX.webp, Credit neutral (kein Fotograf bekannt); Original/WebP/Manifest in webdev-static-assets/julia-travelcircus-2026-11-27.
 - [x] Box vor FAQ auf /musical/und-julia; Stage-Banner 26185666/26185664 unverändert; Gate, Scope-Test, vier Julia-Tests; Browser-QA 393/1440 Consent false/true PASS.
+
+## Travelcircus-Boxen Nachtrag 27.11.2026 (22:48-23:12)
+- [x] TINA (109/143 Nutzerangabe), ZIZ (109/140), TDV Stuttgart (109/120, Foto komprimiert 121 -> 85 KB, 1440x812 WebP), Salon Rosie Berlin (119/145, Hochformat 1033x1280 mit Höhenbegrenzung, ohne Crop)
+- [x] ZIZ: "Weitere Extras" nur einmal. ZIZ-Deeplink/Rosie-Deeplink exakt nach Awin-Muster; ZIZ-Stuttgart-Terminbox unverändert (Nutzer: so lassen)
+- [x] Headlines MJ, Eiskönigin, &Julia: "inkl. Übernachtung im Premium Hotel"
+- [x] Prada-Keyvisual 1920x1080 statt 460x259
+- [x] Nutzerauftrag 23:02: Aovo (alter Ticket-&-Hotel-Banner MJ 26068482) entfernt; das 300x250-Stage-Banner steht bei allen Show-Seiten mit Box an der Stelle nach der FAQ (nicht nur KDL). Native Stage-Banner sonst unverändert.
+- [x] tsc, 1121 Tests, Build inkl. Gates, Browser-QA 393/1440 Consent false/true

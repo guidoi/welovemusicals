@@ -39,7 +39,7 @@ describe("&Julia Travelcircus-Reisebox – Nutzerfreigabe 27.11.2026", () => {
     expect(html()).not.toMatch(/<script|<iframe|cshow\.php|noreferrer/);
     expect(getAovoCampaigns("und-julia").length).toBeGreaterThan(0);
     const detail = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
-    expect(detail).toContain('const relocatedStageCampaign = musical.id === "koenig-der-loewen" && travelcircusOffer');
+    expect(detail).toContain('const relocatedStageCampaign = travelcircusOffer');
     expect(readFileSync(new URL("../pages/CityDetail.tsx", import.meta.url), "utf8")).not.toContain("JULIA_TRAVELCIRCUS_OFFER");
   });
 });

@@ -62,7 +62,7 @@ describe("Aovo campaign banners", () => {
       expect(getAovoCampaignImageUrl(campaign, { ...sale, validUntil: "2027-11-30" }, new Date("2027-11-22T12:00:00"))).toBe(campaign.imageUrl);
     }
     const untouched = AOVO_CAMPAIGNS.filter((item) => !item.clickUrl);
-    expect(untouched.map((item) => item.groupId)).toEqual(["26180460", "26068482", "26185546", "26185544"]);
+    expect(untouched.map((item) => item.groupId)).toEqual(["26180460", "26185546", "26185544"]);
     for (const campaign of untouched) {
       expect(campaign.promotion).toBeUndefined();
       expect(resolveAovoCampaignClickUrl(campaign)).toBe(getAovoCampaignClickUrl(campaign.groupId, campaign.trackingNetwork));
@@ -150,7 +150,7 @@ describe("Aovo campaign banners", () => {
   });
 
   it("maps all provided musical campaigns to unique tracking group IDs", () => {
-    expect(AOVO_CAMPAIGNS).toHaveLength(28);
+    expect(AOVO_CAMPAIGNS).toHaveLength(27);
     expect(AOVO_CAMPAIGNS.map((campaign) => campaign.musicalId)).toEqual([
       "salon-rosie",
       "salon-rosie",
@@ -160,7 +160,6 @@ describe("Aovo campaign banners", () => {
       "eiskoenigin",
       "koenig-der-loewen",
       "koenig-der-loewen",
-      "mj-musical",
       "mj-musical",
       "mj-musical",
       "tina-das-musical",
@@ -181,7 +180,7 @@ describe("Aovo campaign banners", () => {
       "weihnachten-mit-bibi-tina",
       "weihnachten-mit-bibi-tina",
     ]);
-    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(28);
+    expect(new Set(AOVO_CAMPAIGNS.map((campaign) => campaign.groupId)).size).toBe(27);
   });
 
   it("uses the supplied native TINA creatives and Stage tracking IDs", () => {
@@ -391,16 +390,7 @@ describe("Aovo campaign banners", () => {
     ]));
     expect(getAovoCampaigns("koenig-der-loewen")).toHaveLength(2);
     expect(AOVO_CAMPAIGNS.some((campaign) => campaign.groupId === "26068528")).toBe(false);
-    expect(getAovoCampaigns("mj-musical")).toEqual(expect.arrayContaining([
-      expect.objectContaining({
-        groupId: "26068482",
-        width: 750,
-        height: 200,
-        placement: "after-faq",
-        compactTopSpacing: true,
-        imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/gVVzRonIwuCZlwnB.png",
-      }),
-    ]));
+    expect(getAovoCampaigns("mj-musical").some((campaign) => campaign.groupId === "26068482")).toBe(false); // Aovo-Ticket-&-Hotel auf Nutzerwunsch 27.11.2026 entfernt
     expect(getAovoCampaigns("mj-musical").some((campaign) => campaign.groupId === "26068476")).toBe(false);
     expect(getAovoCampaignClickUrl("26180470", "stage")).toBe(
       "https://visit.stage-entertainment.de/click?p=394206&a=3492604&g=26180470"
