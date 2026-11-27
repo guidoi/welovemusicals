@@ -57,13 +57,20 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect((html().match(/<a /g) ?? []).length).toBe(2); // Direktes Angebot und separat freigegebenes Anbieterlogo.
   });
 
-  it("behält den kompakten Nach-FAQ-Slot und mobil gestapelte Darstellung bei", () => {
+  it("tauscht nur bei KDL Reisebox und Stage-Anzeige: Box nach Galerie vor FAQ, Anzeige nach FAQ", () => {
     const source = readFileSync(new URL("../pages/MusicalDetail.tsx", import.meta.url), "utf8");
-    const slot = source.slice(source.indexOf("{(afterFaqCampaigns.length > 0 || travelcircusOffer)"), source.indexOf("{/* Kampagnenanzeigen bleiben"));
-    expect(slot).toContain('data-testid="after-faq-campaign-section"');
-    expect(slot).toContain("<TravelcircusOfferBox offer={travelcircusOffer} />");
-    expect(source.indexOf("<MusicalShowFacts")).toBeLessThan(source.indexOf(slot));
-    expect(source.indexOf(slot)).toBeLessThan(source.indexOf("{/* Related Musicals"));
+    const gallerySlot = source.slice(source.indexOf("{(visibleAfterGalleryCampaigns.length"), source.indexOf("{/* Show Facts + FAQ */}"));
+    const faqSlot = source.slice(source.indexOf("{(afterFaqCampaigns.length > 0 || relocatedStageCampaign)"), source.indexOf("{/* Kampagnenanzeigen bleiben"));
+    expect(gallerySlot).toContain('data-testid="after-gallery-campaign-section"');
+    expect(gallerySlot).toContain("<TravelcircusOfferBox offer={travelcircusOffer} />");
+    expect(source.indexOf("<MusicalGallery")).toBeLessThan(source.indexOf(gallerySlot));
+    expect(source.indexOf(gallerySlot)).toBeLessThan(source.indexOf("<MusicalShowFacts"));
+    expect(source.indexOf("<MusicalShowFacts")).toBeLessThan(source.indexOf(faqSlot));
+    expect(faqSlot).toContain("<AovoCampaignBanner campaign={relocatedStageCampaign} sale={musical.sale} />");
+    expect(faqSlot).not.toContain("<TravelcircusOfferBox");
+    expect(source).toContain('afterGalleryCampaigns.find((campaign) => campaign.groupId === "26180460")');
+    const prerender = readFileSync(new URL("../../../scripts/prerender-seo-routes.ts", import.meta.url), "utf8");
+    expect(prerender).toContain("${travelOfferContent}${faqContent}");
     expect(html()).toContain("max-w-[750px]");
     expect(html()).toContain("md:grid-cols-");
   });
@@ -87,12 +94,12 @@ describe("KDL Travelcircus-Reisebox", () => {
     expect(markup).not.toMatch(/% sparen|BLACK SALE|FreizeitparkDeals|partner-referral/);
   });
 
-  it("zeigt die bestätigte Bestpreisgarantie mit kleinem Häkchen, ohne pauschale kostenlose Ticketstornierung zu versprechen", () => {
+  it("nennt auf ausdrücklichen Nutzerwunsch weder Bestpreisgarantie noch Stornierungshinweise", () => {
     const markup = html();
-    expect(markup).toContain('data-testid="travelcircus-offer-assurances"');
-    expect(markup).toContain("Bestpreisgarantie");
-    expect(markup).toContain("lucide-check");
-    expect(markup).toContain('aria-hidden="true"');
+    expect(markup).not.toContain('data-testid="travelcircus-offer-assurances"');
+    expect(markup).not.toContain("Bestpreisgarantie");
+    expect(markup).not.toContain("lucide-check");
     expect(markup).not.toContain("Kostenlos stornierbar");
+    expect(markup).not.toMatch(/Stornierung|Stornokosten/);
   });
 });

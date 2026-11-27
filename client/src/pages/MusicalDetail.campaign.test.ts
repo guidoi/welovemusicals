@@ -22,7 +22,7 @@ describe("MJ-Kampagnenplatzierung", () => {
 
   it("platziert große Kampagnen nach der Bildergalerie und vor dem Wissensbereich", () => {
     const gallery = musicalDetailSource.indexOf("{/* Gallery */}");
-    const campaignPlacement = musicalDetailSource.indexOf('afterGalleryCampaigns.length > 0');
+    const campaignPlacement = musicalDetailSource.indexOf('visibleAfterGalleryCampaigns.length > 0');
     const showFacts = musicalDetailSource.indexOf("{/* Show Facts + FAQ */}");
 
     expect(campaignPlacement).toBeGreaterThan(-1);

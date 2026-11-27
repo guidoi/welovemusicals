@@ -201,7 +201,7 @@ function createMusicalContent(musical: Musical, heading: string, priceFrom?: str
     ${location ? `<p><strong>Spielort:</strong> ${escapeHtml(location)}</p>` : ""}
     ${priceFrom ? `<p><strong>Tickets ab:</strong> ${escapeHtml(priceFrom)} €</p>` : ""}
     ${upcomingDates ? `<section><h2>Termine &amp; Spielstätten</h2><ul>${upcomingDates}</ul></section>` : ""}
-    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}${faqContent}${travelOfferContent}
+    ${cityLinks ? `<nav aria-label="Musical-Städte"><p>${cityLinks}</p></nav>` : ""}${travelOfferContent}${faqContent}
   </main>`;
 }
 

@@ -265,7 +265,12 @@ export default function MusicalDetail() {
   );
   const awinShowCampaign = getAwinShowCampaign(musical.id);
   const travelcircusOffer = getTravelcircusOffer(musical.id);
-  const hasCompactAfterFaqCampaign = Boolean(travelcircusOffer) || afterFaqCampaigns.some(
+  // Nutzer27.11.: Reisebox nach Galerie vor FAQ, bestehende KDL-Anzeige an den alten Boxplatz.
+  const relocatedStageCampaign = travelcircusOffer
+    ? afterGalleryCampaigns.find((campaign) => campaign.groupId === "26180460")
+    : undefined;
+  const visibleAfterGalleryCampaigns = afterGalleryCampaigns.filter((campaign) => campaign !== relocatedStageCampaign);
+  const hasCompactAfterFaqCampaign = Boolean(relocatedStageCampaign) || afterFaqCampaigns.some(
     (campaign) => campaign.compactTopSpacing
   );
 
@@ -685,12 +690,13 @@ export default function MusicalDetail() {
         <MusicalGallery images={musical.gallery} preserveAspectRatio={musical.galleryPreserveAspectRatio} />
       )}
 
-      {(afterGalleryCampaigns.length > 0 || musical.id === "dracula" || Boolean(awinShowCampaign)) && (
+      {(visibleAfterGalleryCampaigns.length > 0 || travelcircusOffer || musical.id === "dracula" || Boolean(awinShowCampaign)) && (
         <section className="bg-background pb-12 md:pb-16" data-testid="after-gallery-campaign-section">
           <div className="container max-w-4xl">
-            {afterGalleryCampaigns.map((campaign) => (
+            {visibleAfterGalleryCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} sale={musical.sale} />
             ))}
+            {travelcircusOffer && <TravelcircusOfferBox offer={travelcircusOffer} />}
             {musical.id === "dracula" && <EventimDraculaBanner format="square" />}
             {awinShowCampaign && <AwinShowCampaignBanner campaign={awinShowCampaign} format="square" />}
           </div>
@@ -738,7 +744,7 @@ export default function MusicalDetail() {
         </section>
       )}
 
-      {(afterFaqCampaigns.length > 0 || travelcircusOffer) && (
+      {(afterFaqCampaigns.length > 0 || relocatedStageCampaign) && (
         <section
           className={hasCompactAfterFaqCampaign ? "bg-background pt-2 pb-10 md:pt-3 md:pb-12" : "py-12 md:py-16 bg-background"}
           data-testid="after-faq-campaign-section"
@@ -747,7 +753,7 @@ export default function MusicalDetail() {
             {afterFaqCampaigns.map((campaign) => (
               <AovoCampaignBanner key={campaign.groupId} campaign={campaign} sale={musical.sale} />
             ))}
-            {travelcircusOffer && <TravelcircusOfferBox offer={travelcircusOffer} />}
+            {relocatedStageCampaign && <AovoCampaignBanner campaign={relocatedStageCampaign} sale={musical.sale} />}
           </div>
         </section>
       )}

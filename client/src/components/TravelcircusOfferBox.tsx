@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Check, Coffee, Gift, Hotel, Ship, Ticket } from "lucide-react";
+import { ArrowUpRight, Coffee, Gift, Hotel, Ship, Ticket } from "lucide-react";
 import type { TravelcircusOffer } from "@/lib/travelcircus-offers";
 import TravelcircusProviderLogo from "@/components/TravelcircusProviderLogo";
 
@@ -62,12 +62,6 @@ export default function TravelcircusOfferBox({ offer }: { offer: TravelcircusOff
                 <del className="text-sm text-white/60" aria-label={`Vergleichspreis ab ${offer.originalPrice} Euro`}>ab {offer.originalPrice} €</del>
               </div>
               <p className="mt-1 text-sm text-white/75">pro Person</p>
-            </div>
-            <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs leading-relaxed text-white/85" data-testid="travelcircus-offer-assurances">
-              <span className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                Bestpreisgarantie
-              </span>
             </div>
             <a
               href={offer.affiliateUrl}
