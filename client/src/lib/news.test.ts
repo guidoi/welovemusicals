@@ -112,4 +112,13 @@ describe("News-Einbindung", () => {
     const header = read("client/src/components/Header.tsx");
     expect(header).toContain('if (!href.includes("#")) return;');
   });
+  it("hat nur einen Show-Filter (kein Städtefilter) und verlinkt Quellen nicht", () => {
+    const list = read("client/src/pages/NewsList.tsx");
+    expect(list).toContain('data-testid="news-filter-show"');
+    expect(list).not.toContain("news-filter-city");
+    const article = read("client/src/pages/NewsArticle.tsx");
+    expect(article).not.toContain("sourceUrl");
+    expect(read("client/src/lib/news.ts")).not.toMatch(/sourceUrl:/);
+    expect(read("scripts/prerender-seo-routes.ts")).not.toContain("sourceUrl");
+  });
 });

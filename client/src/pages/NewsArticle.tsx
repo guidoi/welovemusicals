@@ -2,7 +2,7 @@
  * Einzelne News-Meldung unter /news/:slug mit Ticket-CTA zur Show.
  */
 import { useEffect } from "react";
-import { ArrowLeft, ArrowRight, CalendarDays, ExternalLink, Ticket } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Ticket } from "lucide-react";
 import { Link, useParams } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -82,12 +82,7 @@ function NewsArticleView({ article }: { article: NewsArticle }) {
 
           {article.sourceName && (
             <p className="mt-8 text-sm text-foreground/70">
-              Quelle:{" "}
-              {article.sourceUrl ? (
-                <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-gold hover:text-gold-light">
-                  {article.sourceName} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
-              ) : article.sourceName}
+              Quelle: {article.sourceName}
             </p>
           )}
 

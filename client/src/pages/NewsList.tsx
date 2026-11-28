@@ -34,9 +34,8 @@ export default function NewsList() {
   const articles = useMemo(() => getNewsArticles(), []);
   const options = useMemo(() => getNewsFilterOptions(), []);
   const [musicalId, setMusicalId] = useState("");
-  const [city, setCity] = useState("");
-  const visible = useMemo(() => filterNews(articles, { musicalId, city }), [articles, musicalId, city]);
-  const hasFilter = Boolean(musicalId || city);
+  const visible = useMemo(() => filterNews(articles, { musicalId }), [articles, musicalId]);
+  const hasFilter = Boolean(musicalId);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -73,19 +72,10 @@ export default function NewsList() {
                   ))}
                 </select>
               </label>
-              <label className="flex flex-col gap-1.5 text-xs font-medium uppercase tracking-wide text-gold">
-                Stadt
-                <select className={selectClass} value={city} onChange={(event) => setCity(event.target.value)} data-testid="news-filter-city">
-                  <option value="">Alle Städte</option>
-                  {options.cities.map((name) => (
-                    <option key={name} value={name}>{name}</option>
-                  ))}
-                </select>
-              </label>
               {hasFilter && (
                 <button
                   type="button"
-                  onClick={() => { setMusicalId(""); setCity(""); }}
+                  onClick={() => setMusicalId("")}
                   className="h-11 rounded-sm border border-gold/40 px-4 text-sm font-semibold text-foreground transition-colors hover:border-gold"
                 >
                   Filter zurücksetzen

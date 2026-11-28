@@ -188,7 +188,7 @@ function createNewsArticlePage(article: NewsArticle): SeoPage {
     `<p><a href="/musical/${show.slug}">Termine &amp; Tickets: ${escapeHtml(show.title)}</a></p>`
   )).join("");
   const source = article.sourceName
-    ? `<p>Quelle: ${article.sourceUrl ? `<a href="${escapeHtml(article.sourceUrl)}" rel="noopener noreferrer">${escapeHtml(article.sourceName)}</a>` : escapeHtml(article.sourceName)}</p>`
+    ? `<p>Quelle: ${escapeHtml(article.sourceName)}</p>`
     : "";
   return {
     path: getNewsUrl(article),

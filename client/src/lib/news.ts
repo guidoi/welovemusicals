@@ -11,6 +11,7 @@
  * - musicalIds: IDs aus client/src/lib/data.ts (z. B. "ziz", "dracula")
  * - cities: Stadtnamen wie in data.ts (z. B. "Hamburg", "Stuttgart")
  * - body: Absätze als einzelne Strings, keine HTML-Tags
+ * - sourceName: nur als Text, Quellen werden bewusst NICHT verlinkt (Nutzervorgabe)
  */
 import { getActiveMusicals, musicals, type Musical } from "./data";
 
@@ -26,7 +27,6 @@ export interface NewsArticle {
   image: string;
   imageAlt: string;
   sourceName?: string;
-  sourceUrl?: string;
 }
 
 export const NEWS_ARTICLES: NewsArticle[] = [
@@ -61,7 +61,6 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/aHgwIjUJAAOyfhgG.webp",
     imageAlt: "DER KLEINE LORD – Das Musical",
     sourceName: "ShowSlot",
-    sourceUrl: "https://showslot.com/de/musicals-shows/der-kleine-lord/tickets/",
   },
   {
     slug: "dracula-musical-tour-2027-2028-termine",
@@ -78,7 +77,6 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/msCnlWzpUxHutzXd.webp",
     imageAlt: "DRACULA – Das Musical",
     sourceName: "ShowSlot",
-    sourceUrl: "https://showslot.com/de/musicals-shows/dracula/",
   },
 ];
 
