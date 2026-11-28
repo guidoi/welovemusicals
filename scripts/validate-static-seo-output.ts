@@ -1,4 +1,5 @@
 import { readdir, readFile } from "node:fs/promises";
+import { getNewsArticles, getNewsMusicals, getNewsUrl } from "../client/src/lib/news";
 import { resolve } from "node:path";
 import { cities, getCityBySlug, getMusicalBySlug, hasActiveTourDateForCity } from "../client/src/lib/data";
 import { getCitySeo } from "../client/src/lib/city-seo";
@@ -136,6 +137,22 @@ async function main() {
       "<h1>Datenschutzerklärung</h1>",
       'id="site-schema"',
     ]),
+    assertPage("news", [
+      "<title>Musical-News: Premieren, Tourneen &amp; Spielpläne ❤️ We Love Musicals</title>",
+      'href="https://welovemusicals.com/news"',
+      "<h1>Musical-News</h1>",
+      '"@type":"ItemList"',
+      ...getNewsArticles().map((article) => `href="${getNewsUrl(article)}"`),
+    ]),
+    ...getNewsArticles().map((article) => assertPage(`news/${article.slug}`, [
+      `href="https://welovemusicals.com/news/${article.slug}"`,
+      `<h1>${escapeHtml(article.title)}</h1>`,
+      '"@type":"NewsArticle"',
+      `"datePublished":"${article.publishedAt}"`,
+      '"@type":"BreadcrumbList"',
+      'href="/news"',
+      ...getNewsMusicals(article).map((show) => `href="/musical/${show.slug}"`),
+    ])),
     assertPage("stadt/hamburg", [
       `<title>${escapeHtml(hamburgSeo.title)}</title>`,
       'href="https://welovemusicals.com/stadt/hamburg"',

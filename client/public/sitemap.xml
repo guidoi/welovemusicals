@@ -16,6 +16,26 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://welovemusicals.com/news</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://welovemusicals.com/news/zurueck-in-die-zukunft-musical-stuttgart-2027</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://welovemusicals.com/news/der-kleine-lord-musical-tournee-2027-2028</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://welovemusicals.com/news/dracula-musical-tour-2027-2028-termine</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://welovemusicals.com/musical/weihnachten-mit-bibi-tina</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

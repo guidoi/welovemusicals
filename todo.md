@@ -1620,3 +1620,12 @@ MittelfristigerNutzerwunsch08:31:58: neuesHeaderkonzept mit klarerTrennungBildmo
 - [x] tsc, 1121 Tests, Build inkl. Gates, Browser-QA 393/1440 Consent false/true
 - [x] WSAL-Travelcircus-Box (89,00 / Streichpreis 115,00 = Nutzerangabe), 3 Leistungen laut offizieller Seite, Hochformatfoto ohne Crop, Deeplink ued=wir-sind-am-leben-das-berlin-musical
 - [ ] Rosie: Nutzer nannte 3 Leistungen, Box zeigt zusätzlich "Weitere Extras" (offizielle Seite) – bei Bedarf entfernen
+
+## News-Rubrik (Nutzerfreigabe 28.11.2026 01:23)
+- [x] Datenmodul client/src/lib/news.ts (Pflege: Nutzer schickt Texte, Agent trägt ein; kein Admin-Editor)
+- [x] /news Landingpage mit Filter Show/Stadt, /news/:slug mit Breadcrumb, Datum, Quelle, Ticket-CTA zur Showseite
+- [x] Header-Menüpunkt "News" (Desktop/mobil), Links ohne Anker navigieren normal
+- [x] Detailseiten: "Neuigkeiten zu [Show]" nach Tickets-Section, vor Quotes/Galerie; Fallback neueste allgemeine News
+- [x] Startseite: 3 neueste News unter Top-Musicals
+- [x] NoJS-Prerender (NewsArticle-/ItemList-Schema), Sitemap (Build + Server), Express-/Cloudflare-Routen, SEO-Gate
+- [x] Startbestand: 3 Meldungen nur aus verifizierten Datenbestandsfakten (ZIZ Stuttgart, DKL-Tour, Dracula-Tour)

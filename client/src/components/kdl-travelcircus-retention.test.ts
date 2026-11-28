@@ -41,12 +41,14 @@ const protectedSources = [
     sha256: "d2217479359071f16aa2d207f15dcb37f54aefc4561d1214f3b6cdfcdad5ec2d",
   },
   {
+    // Nutzerfreigabe 28.11.2026 01:23: News-Teaser unter den Top-Musicals.
     path: "client/src/pages/Home.tsx",
-    sha256: "a5f9b7dbd681e5f0b843c873fb6bdbe9a355707688c50380fd5afb76fa8d518e",
+    sha256: "20482e25dee966055f2fbe19653b379a5742599759559791e3df2ae38cad77df",
   },
   {
+    // Nutzerfreigabe 28.11.2026 01:23: Menüpunkt News (Links ohne Anker navigieren normal).
     path: "client/src/components/Header.tsx",
-    sha256: "8d12129f035c79c0affd8cc53193135fdfd7edd47f886e1ae6285f4f8398eec8",
+    sha256: "3d0e3e22410b236924b821a0caed32adf138e18c01ea15d516a3a8d7cc7b785e",
   },
   {
     path: "client/index.html",

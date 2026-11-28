@@ -2,6 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { cities, getActiveMusicals, getActiveMusicalsByCity } from "../client/src/lib/data";
+import { getNewsArticles, getNewsUrl } from "../client/src/lib/news";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
 const DEFAULT_BASE_URL = "https://welovemusicals.com";
@@ -32,7 +33,13 @@ export function createSitemapXml(baseUrl = DEFAULT_BASE_URL): string {
     { path: "/", changefreq: "weekly", priority: "1.0" },
     { path: "/impressum", changefreq: "yearly", priority: "0.3" },
     { path: "/datenschutz", changefreq: "yearly", priority: "0.3" },
+    { path: "/news", changefreq: "weekly", priority: "0.7" },
   ];
+  const newsPages: SitemapEntry[] = getNewsArticles().map((article) => ({
+    path: getNewsUrl(article),
+    changefreq: "monthly",
+    priority: "0.6",
+  }));
   const musicalPages: SitemapEntry[] = getActiveMusicals().map((musical) => ({
     path: `/musical/${musical.slug}`,
     changefreq: "monthly",
@@ -48,7 +55,7 @@ export function createSitemapXml(baseUrl = DEFAULT_BASE_URL): string {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...staticPages, ...musicalPages, ...cityPages].map((entry) => toUrlEntry(normalizedBaseUrl, entry)).join("\n")}
+${[...staticPages, ...newsPages, ...musicalPages, ...cityPages].map((entry) => toUrlEntry(normalizedBaseUrl, entry)).join("\n")}
 </urlset>
 `;
 }

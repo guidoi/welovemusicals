@@ -56,7 +56,7 @@ export const RETIRED_MUSICAL_SLUGS = new Set([
  */
 export async function serveCanonicalStaticPage(
   context: Omit<SeoStaticRouteContext, "params">,
-  page: "impressum" | "datenschutz",
+  page: "impressum" | "datenschutz" | "news",
 ): Promise<Response> {
   if (context.request.method !== "GET" && context.request.method !== "HEAD") {
     return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });
@@ -75,7 +75,7 @@ export async function serveCanonicalStaticPage(
  */
 export async function serveCanonicalSeoRoute(
   context: SeoStaticRouteContext,
-  routeSegment: "stadt" | "musical",
+  routeSegment: "stadt" | "musical" | "news",
 ): Promise<Response> {
   if (context.request.method !== "GET" && context.request.method !== "HEAD") {
     return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });

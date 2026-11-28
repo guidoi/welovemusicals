@@ -7,6 +7,7 @@ describe("Header-Hauptnavigation", () => {
     expect(primaryNavigationItems).toEqual([
       { label: "Musicals & Shows", href: "/#musicals" },
       { label: "Städte", href: "/#staedte" },
+      { label: "News", href: "/news" },
     ]);
   });
 

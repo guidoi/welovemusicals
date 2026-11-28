@@ -177,6 +177,8 @@ export default function Header() {
   };
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Links ohne Anker (z. B. /news) navigieren normal im Browser.
+    if (!href.includes("#")) return;
     e.preventDefault();
     const anchor = href.split("#")[1];
     if (location === "/") {

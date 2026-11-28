@@ -36,6 +36,8 @@ import { getCityTicketSelection } from "@/lib/city-ticket-links";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import MusicalQuotes from "@/components/MusicalQuotes";
 import MusicalGallery from "@/components/MusicalGallery";
+import NewsTeaserSection from "@/components/NewsTeaserSection";
+import { getNewsForMusical } from "@/lib/news";
 import MusicalShowFacts from "@/components/MusicalShowFacts";
 import TourDates from "@/components/TourDates";
 import { ACTIVE_MUSICAL_IDS, cities, createAwinLink, getActiveMusicals, providers } from "@/lib/data";
@@ -679,6 +681,19 @@ export default function MusicalDetail() {
           </motion.div>
         </div>
       </section>
+
+      {/* News zur Show (Fallback: neueste allgemeine News) */}
+      {(() => {
+        const showNews = getNewsForMusical(musical.id, 3);
+        return (
+          <NewsTeaserSection
+            articles={showNews.articles}
+            heading={showNews.isFallback ? "Aktuelle Musical-News" : `Neuigkeiten zu ${musical.title}`}
+            testId="musical-news-section"
+            className="py-8 md:py-12 bg-background"
+          />
+        );
+      })()}
 
       {/* Pressequotes */}
       {musical.quotes && musical.quotes.length > 0 && (

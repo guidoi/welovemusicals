@@ -59,6 +59,8 @@ import {
 } from "@/lib/experience-category-url";
 import { getDiscoveryResultHint } from "@/lib/discovery-result-hint";
 import { getBlackSaleCampaign } from "@/lib/black-sale";
+import NewsTeaserSection from "@/components/NewsTeaserSection";
+import { getLatestNews } from "@/lib/news";
 
 const ATMOSPHERE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663510091225/JeioEZoPZ6g8uvSM7g4a8t/musical-atmosphere-4CsbZ3XqCMsoLK2mN9oi9f.webp";
 
@@ -552,6 +554,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== NEWS ===== */}
+      <NewsTeaserSection
+        articles={getLatestNews(3)}
+        heading="Aktuelle Musical-News"
+        testId="home-news-section"
+        className="pb-12 md:pb-20"
+      />
       {/* ===== PORTAL OVERVIEW ===== */}
       <section id="portal-overview" className="pb-10 md:pb-20 scroll-mt-24" aria-labelledby="portal-overview-heading">
         <div className="container">

@@ -21,6 +21,8 @@ const MusicalDetail = lazy(() => import("./pages/MusicalDetail"));
 const CityDetail = lazy(() => import("./pages/CityDetail"));
 const Impressum = lazy(() => import("./pages/Impressum"));
 const Datenschutz = lazy(() => import("./pages/Datenschutz"));
+const NewsList = lazy(() => import("./pages/NewsList"));
+const NewsArticlePage = lazy(() => import("./pages/NewsArticle"));
 const PriceSalesAdmin = lazy(() => import("./pages/PriceSalesAdmin"));
 const AffiliateLinkFallbackAdmin = lazy(() => import("./pages/AffiliateLinkFallbackAdmin"));
 
@@ -75,6 +77,8 @@ function Router() {
           <Route path={"/stadt/:slug"} component={CityDetail} />
           <Route path={"/impressum"} component={Impressum} />
           <Route path={"/datenschutz"} component={Datenschutz} />
+          <Route path={"/news"} component={NewsList} />
+          <Route path={"/news/:slug"} component={NewsArticlePage} />
           <Route path={"/verwaltung/preise"} component={PriceSalesAdminRoute} />
           <Route path={"/verwaltung/affiliate-links"} component={AffiliateLinkFallbackAdmin} />
           <Route path={"/404"} component={NotFound} />

@@ -18,6 +18,17 @@ import TravelcircusOfferBox from "../client/src/components/TravelcircusOfferBox"
 import { getTravelcircusOffer, KDL_TRAVELCIRCUS_OFFER } from "../client/src/lib/travelcircus-offers";
 import { getMusicalEventSchemas } from "../client/src/lib/event-schema";
 import { getMusicalFaqSchema, getVisibleFaqItems } from "../client/src/lib/faq-schema";
+import {
+  formatNewsDate,
+  getNewsArticles,
+  getNewsArticleSchema,
+  getNewsArticleSeo,
+  getNewsMusicals,
+  getNewsUrl,
+  NEWS_LIST_IMAGE,
+  NEWS_LIST_SEO,
+  type NewsArticle,
+} from "../client/src/lib/news";
 import { createGoogleSheetPriceSource, WEBSITE_PRICE_SHEET_CSV_URL } from "../server/googleSheetPriceSource";
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "..");
@@ -120,6 +131,83 @@ function createLegalPage(
     canonicalUrl,
     schema: createPageSchema({ title, description, image, imageAlt, canonicalUrl }, breadcrumbs),
     contentHtml: `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p></main>`,
+  };
+}
+
+function createNewsListPage(): SeoPage {
+  const articles = getNewsArticles();
+  const { title: rawTitle, description, canonicalUrl, heading } = NEWS_LIST_SEO;
+  const title = withSeoTitleHeart(rawTitle);
+  const image = NEWS_LIST_IMAGE;
+  const imageAlt = "Musical-News bei We Love Musicals";
+  const breadcrumbs = [
+    { "@type": "ListItem", position: 1, name: "We Love Musicals", item: BASE_URL },
+    { "@type": "ListItem", position: 2, name: "News", item: canonicalUrl },
+  ];
+  const itemList = {
+    "@type": "ItemList",
+    name: heading,
+    numberOfItems: articles.length,
+    itemListElement: articles.map((article, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${BASE_URL}${getNewsUrl(article)}`,
+      name: article.title,
+    })),
+  };
+  const items = articles.map((article) => (
+    `<li><article><h2><a href="${getNewsUrl(article)}">${escapeHtml(article.title)}</a></h2>`
+    + `<p><time datetime="${article.publishedAt}">${formatNewsDate(article.publishedAt)}</time></p>`
+    + `<p>${escapeHtml(article.teaser)}</p></article></li>`
+  )).join("");
+  return {
+    path: "/news",
+    title,
+    description,
+    image,
+    imageAlt,
+    canonicalUrl,
+    schema: createPageSchema({ title, description, image, imageAlt, canonicalUrl }, breadcrumbs, itemList),
+    contentHtml: `<main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>`
+      + (items ? `<ul>${items}</ul>` : "<p>Hier erscheinen in Kürze die ersten Musical-News.</p>")
+      + "</main>",
+  };
+}
+
+function createNewsArticlePage(article: NewsArticle): SeoPage {
+  const seo = getNewsArticleSeo(article);
+  const title = withSeoTitleHeart(seo.title);
+  const { description, canonicalUrl } = seo;
+  const breadcrumbs = [
+    { "@type": "ListItem", position: 1, name: "We Love Musicals", item: BASE_URL },
+    { "@type": "ListItem", position: 2, name: "News", item: `${BASE_URL}/news` },
+    { "@type": "ListItem", position: 3, name: article.title, item: canonicalUrl },
+  ];
+  const shows = getNewsMusicals(article);
+  const showLinks = shows.map((show) => (
+    `<p><a href="/musical/${show.slug}">Termine &amp; Tickets: ${escapeHtml(show.title)}</a></p>`
+  )).join("");
+  const source = article.sourceName
+    ? `<p>Quelle: ${article.sourceUrl ? `<a href="${escapeHtml(article.sourceUrl)}" rel="noopener noreferrer">${escapeHtml(article.sourceName)}</a>` : escapeHtml(article.sourceName)}</p>`
+    : "";
+  return {
+    path: getNewsUrl(article),
+    title,
+    description,
+    image: article.image,
+    imageAlt: article.imageAlt,
+    canonicalUrl,
+    schema: createPageSchema(
+      { title, description, image: article.image, imageAlt: article.imageAlt, canonicalUrl },
+      breadcrumbs,
+      getNewsArticleSchema(article),
+    ),
+    contentHtml: `<main><article><h1>${escapeHtml(article.title)}</h1>`
+      + `<p><time datetime="${article.publishedAt}">${formatNewsDate(article.publishedAt)}</time></p>`
+      + `<p>${escapeHtml(article.teaser)}</p>`
+      + article.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")
+      + source + showLinks
+      + `<p><a href="/news">Alle News</a></p></article></main>`,
   };
 }
 
@@ -342,6 +430,8 @@ async function main() {
       "Datenschutzerklärung",
       "Datenschutzerklärung von We Love Musicals: Informationen zur Verarbeitung personenbezogener Daten, Cookies, Analyse und Affiliate-Links.",
     ),
+    createNewsListPage(),
+    ...getNewsArticles().map(createNewsArticlePage),
     ...cities.map(createCityPage),
     ...activeMusicals.map((musical) => createMusicalPage(musical, pricesByMusicalId.get(musical.id) ?? musical.priceFrom)),
   ];
@@ -350,7 +440,7 @@ async function main() {
     writeFile(resolve(DIST_ROOT, "index.html"), applyHomeStaticFallback(shellHtml), "utf8"),
     ...pages.map((page) => writePage(page, shellHtml)),
   ]);
-  console.log(`Generated static SEO metadata for ${pages.length} canonical city and musical routes.`);
+  console.log(`Generated static SEO metadata for ${pages.length} canonical legal, news, city and musical routes.`);
 }
 
 main().catch((error) => {
