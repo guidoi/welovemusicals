@@ -14,6 +14,12 @@ describe("Startseiten-Artwork-Standard", () => {
         objectPosition: "center center",
       },
       {
+        // Nutzerfreigabe 28.11.2026 02:16
+        id: "dracula",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/HCsqYSJSQxfUCgbR.webp",
+        objectPosition: "right center",
+      },
+      {
         // Nutzerfreigabe 28.11.2026 02:07: Moulin-Rouge-Logo statt Foto
         id: "moulinrouge",
         url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QmjrNGYBmOnuvRUG.webp",
@@ -24,6 +30,30 @@ describe("Startseiten-Artwork-Standard", () => {
         id: "phantom-der-oper",
         url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/aTKqAeutTXsmNBmb.webp",
         objectPosition: "center center",
+      },
+      {
+        // Nutzerfreigabe 28.11.2026 02:16
+        id: "der-kleine-lord",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/GKKSrpaPZUQdonvz.webp",
+        objectPosition: "70% center",
+      },
+      {
+        // Nutzerfreigabe 28.11.2026 02:19
+        id: "fackjugoehte",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/uqLRbxFaDHkOSvqV.webp",
+        objectPosition: "right center",
+      },
+      {
+        // Nutzerfreigabe 28.11.2026 02:19
+        id: "dreihaselnuesse",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QJUhzIabHKwxzxBR.webp",
+        objectPosition: "right center",
+      },
+      {
+        // Nutzerfreigabe 28.11.2026 02:19
+        id: "rapunzel",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ejGPbNZXmoGZAlGS.webp",
+        objectPosition: "right center",
       },
       {
         // Nutzerfreigabe 28.11.2026 02:08: Starlight-Express-Artwork statt Foto

@@ -1637,3 +1637,6 @@ MittelfristigerNutzerwunsch08:31:58: neuesHeaderkonzept mit klarerTrennungBildmo
 - [x] Starlight Express: Nutzer-KV 2048×1478 WebP 184 KB -> 1000×722 WebP q85 89 KB (zVqhIulNxEZYRBuA.webp)
 - [x] Nur homepageArtworkImage/-ObjectPosition in data.ts, Detailseiten unverändert; Guards (data.ts-Hash, Musical-Hashes, Artwork-Liste) mit Freigabe aktualisiert
 - [x] 1137 Tests, tsc, Build/Gates, Screenshots 393/1440 PASS
+- [x] 02:16 Der kleine Lord (1920×1080 JPG 2,2 MB -> 1000×562 WebP 65 KB, Ausschnitt 70%) und Dracula (2048×1128 -> 1000×551 WebP 43 KB, rechts) auf Startseitenkarten
+- [x] 02:19 Drei Haselnüsse (44 KB), Rapunzel (57 KB), Fack Ju Göhte (2,9 MB -> 900×506 WebP 115 KB) auf Startseitenkarten, Ausschnitt rechts, Logos vollständig
+- [x] Guards mit Freigabe aktualisiert, 1137 Tests, tsc, Build, Screenshots 393/1440 PASS

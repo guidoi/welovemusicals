@@ -22,7 +22,7 @@ const expectedAovoSha256 =
 const protectedSources = [
   {
     path: "client/src/lib/data.ts",
-    sha256: "067ac17b6f198196ce5b55d90f8020ca265209376817f32232d2e90c2c4046b5", // Nutzerfreigabe 28.11.2026: Top-Reihenfolge Phantom/Glöckner; 02:04-02:08 Startseiten-Artworks Phantom, Moulin Rouge, Starlight Express
+    sha256: "6306320a5202b1c7387c9c132da48ca6b63f54e3b6fc9e5c7b8336cba74b2145", // Nutzerfreigabe 28.11.2026: Top-Reihenfolge Phantom/Glöckner; 02:04-02:19 Startseiten-Artworks Phantom, Moulin Rouge, Starlight Express, Der kleine Lord, Dracula, Drei Haselnüsse, Rapunzel, Fack Ju Göhte
   },
   {
     path: "client/src/contexts/ConsentContext.tsx",

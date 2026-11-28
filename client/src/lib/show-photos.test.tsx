@@ -91,7 +91,8 @@ describe.each(shows)("$slug – Pressefotos Top 1 bis Top 10", (show) => {
 
     expect(musical.image).toBe(show.originalImage);
     expect(musical.keyvisual).toBe(show.originalKeyvisual);
-    expect(musical.homepageArtworkImage).toBeUndefined();
+    // Nutzerfreigabe 28.11.2026 02:16: DKL-Startseitenkarte nutzt das gelieferte Keyvisual.
+    expect(musical.homepageArtworkImage).toBe(show.slug === "drei-haselnuesse-fuer-aschenbroedel" ? "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QJUhzIabHKwxzxBR.webp" : show.slug === "der-kleine-lord" ? "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/GKKSrpaPZUQdonvz.webp" : undefined);
     expect(musical.quotes ?? []).toEqual([]);
   });
 });

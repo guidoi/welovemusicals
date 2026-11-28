@@ -153,7 +153,11 @@ describe("Dracula – vollständiger ShowSlot-Abgleich vom 22.11.2026", () => {
   });
 
   it("schützt alle übrigen Dracula-Felder inklusive Preis, Awin-Hauptpfaden, Fotos, SEO, Texten, Kategorien und Trailer", () => {
-    expect(protectedFields(dracula())).toEqual(protectedFields(original));
+    // Nutzerfreigabe 28.11.2026 02:16: nur Startseiten-Artwork ergänzt, alle übrigen Felder unverändert.
+    const { homepageArtworkImage, homepageArtworkObjectPosition, ...currentProtected } = protectedFields(dracula()) as Record<string, unknown>;
+    expect(homepageArtworkImage).toBe("https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/HCsqYSJSQxfUCgbR.webp");
+    expect(homepageArtworkObjectPosition).toBe("right center");
+    expect(currentProtected).toEqual(protectedFields(original));
     expect(dracula().priceFrom).toBe("40,40");
   });
 
@@ -169,6 +173,14 @@ describe("Dracula – vollständiger ShowSlot-Abgleich vom 22.11.2026", () => {
         // Nutzerfreigabe 28.11.2026 02:07/02:08: Startseiten-Artwork Moulin Rouge und Starlight Express.
         moulinrouge: "426c0eda7e8f9f2f128de79fa7f0ba95389f4c96fd8dc5f66aeb3950b54f4206",
         "starlight-express": "15b099eaa59f05ee3147bed7b5ef22afb7ef06728b30f71e06f1dd3cc9b34379",
+        // Nutzerfreigabe 28.11.2026 02:16: Startseiten-Artwork Der kleine Lord.
+        "der-kleine-lord": "3bdff9bf35d9ab1f2d8821849b09499956cd3177d47f5d20c936d91e01d5846e",
+        // Nutzerfreigabe 28.11.2026 02:19: Startseiten-Artwork.
+        "dreihaselnuesse": "5e9b005741839b737024023c62697e90f5cc7bda64bb4d313b56c442678959e7",
+        // Nutzerfreigabe 28.11.2026 02:19: Startseiten-Artwork.
+        "rapunzel": "8375f7e99a9f55188295c28eb91c06fe2e3d95e2b7d1fe632468cba8ebc9b082",
+        // Nutzerfreigabe 28.11.2026 02:19: Startseiten-Artwork.
+        "fackjugoehte": "4d38ddbba03b1483dc6e7ea06ea35dea28481e7a297014e50e8479d63324acc3",
         // Nutzerfreigabe 28.11.2026: nur featured-Flag (Phantom Top, Glöckner neben Dracula).
         "gloeckner-von-notre-dame": "15265e658bbd11da8e4929ad22fb88a78a866a87b1f4c333c86f267f94cf62d1",
         // Nutzerfreigabe 28.11.2026 02:04: Phantom-Artwork auf der Startseite.
