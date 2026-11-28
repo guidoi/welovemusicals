@@ -912,7 +912,7 @@ export const musicals: Musical[] = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/YuwJUWWcbmSXZUHi.webp",
     homepageArtworkImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QJUhzIabHKwxzxBR.webp",
     homepageArtworkObjectPosition: "right center",
-    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/ZUpkvfTWvZSCjToy.webp",
+    heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/TAzrjVqsSpuESozs.webp",
     heroImageAlt: "Drei Haselnüsse für Aschenbrödel – Hochzeitsszene mit dem Paar und Ensemble unter roten Blütenblättern (Top 1) © Nico Moser",
     heroImageFit: "contain",
     keyvisual: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/TYeawFkzjEqXLBKk.webp",

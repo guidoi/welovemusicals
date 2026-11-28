@@ -176,7 +176,7 @@ describe("Dracula – vollständiger ShowSlot-Abgleich vom 22.11.2026", () => {
         // Nutzerfreigabe 28.11.2026 02:16: Startseiten-Artwork Der kleine Lord.
         "der-kleine-lord": "3bdff9bf35d9ab1f2d8821849b09499956cd3177d47f5d20c936d91e01d5846e",
         // Nutzerfreigabe 28.11.2026 02:19: Startseiten-Artwork.
-        "dreihaselnuesse": "5e9b005741839b737024023c62697e90f5cc7bda64bb4d313b56c442678959e7",
+        "dreihaselnuesse": "4301043e42e868aa6563c76987115bf401684ced6883b65c8d66c7e01340ebce",
         // Nutzerfreigabe 28.11.2026 02:19: Startseiten-Artwork.
         "rapunzel": "8375f7e99a9f55188295c28eb91c06fe2e3d95e2b7d1fe632468cba8ebc9b082",
         // Nutzerfreigabe 28.11.2026 02:19: Startseiten-Artwork.

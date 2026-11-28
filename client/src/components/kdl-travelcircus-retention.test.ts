@@ -22,7 +22,7 @@ const expectedAovoSha256 =
 const protectedSources = [
   {
     path: "client/src/lib/data.ts",
-    sha256: "6306320a5202b1c7387c9c132da48ca6b63f54e3b6fc9e5c7b8336cba74b2145", // Nutzerfreigabe 28.11.2026: Top-Reihenfolge Phantom/Glöckner; 02:04-02:19 Startseiten-Artworks Phantom, Moulin Rouge, Starlight Express, Der kleine Lord, Dracula, Drei Haselnüsse, Rapunzel, Fack Ju Göhte
+    sha256: "a2ba6e2a1a99e70d770ba42bd294185f90f4ba2678fc94b08d847a1dc7f5c91c", // Nutzerfreigabe 28.11.2026: Top-Reihenfolge Phantom/Glöckner; 02:04-02:19 Startseiten-Artworks Phantom, Moulin Rouge, Starlight Express, Der kleine Lord, Dracula, Drei Haselnüsse, Rapunzel, Fack Ju Göhte; 02:27 Aschenbrödel-Headerfoto komprimiert
   },
   {
     path: "client/src/contexts/ConsentContext.tsx",

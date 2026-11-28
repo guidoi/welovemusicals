@@ -682,13 +682,14 @@ export default function MusicalDetail() {
         </div>
       </section>
 
-      {/* News zur Show (Fallback: neueste allgemeine News) */}
+      {/* News nur zur Show; ohne passende Meldung entfällt der Bereich */}
       {(() => {
         const showNews = getNewsForMusical(musical.id, 3);
+        if (showNews.length === 0) return null;
         return (
           <NewsTeaserSection
-            articles={showNews.articles}
-            heading={showNews.isFallback ? "Aktuelle Musical-News" : `Neuigkeiten zu ${musical.title}`}
+            articles={showNews}
+            heading={`Neuigkeiten zu ${musical.title}`}
             testId="musical-news-section"
             className="py-8 md:py-12 bg-background"
           />

@@ -99,17 +99,17 @@ export function getLatestNews(limit = 3, catalog: NewsArticle[] = NEWS_ARTICLES)
 }
 
 /**
- * Meldungen zu einer Show. Gibt es keine, werden die neuesten allgemeinen
- * Meldungen gezeigt (isFallback = true).
+ * Nur Meldungen, die der Show zugeordnet sind (Nutzerwunsch 28.11.2026).
+ * Gibt es keine, ist die Liste leer und der Bereich entfällt auf der Detailseite.
  */
 export function getNewsForMusical(
   musicalId: string,
   limit = 3,
   catalog: NewsArticle[] = NEWS_ARTICLES,
-): { articles: NewsArticle[]; isFallback: boolean } {
-  const own = getNewsArticles(catalog).filter((article) => article.musicalIds.includes(musicalId));
-  if (own.length > 0) return { articles: own.slice(0, limit), isFallback: false };
-  return { articles: getLatestNews(limit, catalog), isFallback: true };
+): NewsArticle[] {
+  return getNewsArticles(catalog)
+    .filter((article) => article.musicalIds.includes(musicalId))
+    .slice(0, limit);
 }
 
 /** Nur aktive Shows werden verlinkt (TARZAN o. Ä. bleiben deaktiviert). */

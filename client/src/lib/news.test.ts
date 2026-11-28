@@ -45,11 +45,10 @@ describe("News-Datenbestand", () => {
 
   it("zeigt Show-News und fällt sonst auf die neuesten allgemeinen News zurück", () => {
     const catalog = [sample("x", "2026-01-01", ["dracula"]), sample("y", "2026-02-01", ["ziz"])];
-    expect(getNewsForMusical("dracula", 3, catalog)).toEqual({ articles: [catalog[0]], isFallback: false });
-    const fallback = getNewsForMusical("mj", 3, catalog);
-    expect(fallback.isFallback).toBe(true);
-    expect(fallback.articles.map((item) => item.slug)).toEqual(["y", "x"]);
-    expect(getNewsForMusical("mj", 3, [])).toEqual({ articles: [], isFallback: true });
+    expect(getNewsForMusical("dracula", 3, catalog)).toEqual([catalog[0]]);
+    // Nutzerwunsch 28.11.2026: keine fremden News als Ersatz, Bereich entfällt.
+    expect(getNewsForMusical("mj", 3, catalog)).toEqual([]);
+    expect(getNewsForMusical("mj", 3, [])).toEqual([]);
   });
 
   it("filtert nach Show und Stadt", () => {
@@ -98,6 +97,8 @@ describe("News-Einbindung", () => {
     expect(news).toBeLessThan(quotes);
     expect(news).toBeLessThan(gallery);
     expect(detail).toContain("Neuigkeiten zu ${musical.title}");
+    expect(detail).toContain("if (showNews.length === 0) return null;");
+    expect(detail).not.toContain("isFallback");
   });
   it("zeigt die drei neuesten News auf der Startseite direkt unter den Top-Musicals", () => {
     const home = read("client/src/pages/Home.tsx");
