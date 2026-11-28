@@ -166,10 +166,13 @@ describe("Dracula – vollständiger ShowSlot-Abgleich vom 22.11.2026", () => {
         ...fixture.baseline.otherHashes,
         // Nutzerfreigabe 25.11.2026: Moulin-Rouge-Spielort in Fakten/FAQ nur Hamburg,
         // ohne Zukunfts-/Premierenhinweis. Historische Quellfixture bleibt unverändert.
-        moulinrouge: "74485518451cf5f947bb0764328ff8200547940a0a2fa612eb2f8b4c1a0320e4",
+        // Nutzerfreigabe 28.11.2026 02:07/02:08: Startseiten-Artwork Moulin Rouge und Starlight Express.
+        moulinrouge: "426c0eda7e8f9f2f128de79fa7f0ba95389f4c96fd8dc5f66aeb3950b54f4206",
+        "starlight-express": "15b099eaa59f05ee3147bed7b5ef22afb7ef06728b30f71e06f1dd3cc9b34379",
         // Nutzerfreigabe 28.11.2026: nur featured-Flag (Phantom Top, Glöckner neben Dracula).
         "gloeckner-von-notre-dame": "15265e658bbd11da8e4929ad22fb88a78a866a87b1f4c333c86f267f94cf62d1",
-        "phantom-der-oper": "3bb0b3be4d18052cf988934f00f1699e8a35ffad03022f8cbca64b4a511059bf",
+        // Nutzerfreigabe 28.11.2026 02:04: Phantom-Artwork auf der Startseite.
+        "phantom-der-oper": "11f837f201ab35614ae10303530ad697aac45c8166c5d82618c41bcc8a40450b",
       });
   });
 

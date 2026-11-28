@@ -14,6 +14,24 @@ describe("Startseiten-Artwork-Standard", () => {
         objectPosition: "center center",
       },
       {
+        // Nutzerfreigabe 28.11.2026 02:07: Moulin-Rouge-Logo statt Foto
+        id: "moulinrouge",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/QmjrNGYBmOnuvRUG.webp",
+        objectPosition: "center center",
+      },
+      {
+        // Nutzerfreigabe 28.11.2026 02:04
+        id: "phantom-der-oper",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/aTKqAeutTXsmNBmb.webp",
+        objectPosition: "center center",
+      },
+      {
+        // Nutzerfreigabe 28.11.2026 02:08: Starlight-Express-Artwork statt Foto
+        id: "starlight-express",
+        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/zVqhIulNxEZYRBuA.webp",
+        objectPosition: "center center",
+      },
+      {
         id: "koenig-der-loewen",
         url: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663510091225/JibeHjKrGppDdBZn.webp",
         objectPosition: "center center",

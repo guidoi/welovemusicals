@@ -1630,3 +1630,10 @@ MittelfristigerNutzerwunsch08:31:58: neuesHeaderkonzept mit klarerTrennungBildmo
 - [x] NoJS-Prerender (NewsArticle-/ItemList-Schema), Sitemap (Build + Server), Express-/Cloudflare-Routen, SEO-Gate
 - [x] Startbestand: 3 Meldungen nur aus verifizierten Datenbestandsfakten (ZIZ Stuttgart, DKL-Tour, Dracula-Tour)
 - [x] Nutzer 28.11.2026 01:50: Städtefilter in News entfernt (nur Show-Filter); Quellen nur als Text, keine Links (React + NoJS), Feld sourceUrl entfernt
+
+## 28.11.2026 02:04–02:08 Startseiten-Artworks Phantom, Moulin Rouge, Starlight Express
+- [x] Phantom: Nutzer-KV 1200×628 JPG 287 KB -> 800×419 WebP q85 76 KB (aTKqAeutTXsmNBmb.webp), ohne Crop
+- [x] Moulin Rouge: Nutzer-Logo 1920×701 PNG 976 KB -> 1280×800 WebP 74 KB, Logo unverkürzt zentriert auf Original-Schwarz (QmjrNGYBmOnuvRUG.webp)
+- [x] Starlight Express: Nutzer-KV 2048×1478 WebP 184 KB -> 1000×722 WebP q85 89 KB (zVqhIulNxEZYRBuA.webp)
+- [x] Nur homepageArtworkImage/-ObjectPosition in data.ts, Detailseiten unverändert; Guards (data.ts-Hash, Musical-Hashes, Artwork-Liste) mit Freigabe aktualisiert
+- [x] 1137 Tests, tsc, Build/Gates, Screenshots 393/1440 PASS
